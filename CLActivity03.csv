@@ -1,0 +1,63 @@
+UserID,NroUSP,Type,Group,CLRole,PlayerRole,ParticipationLevel,NroNecessaryInteractions,(1) Elaborar lista de exercícios,(2) Demonstrar a solução de um problema,(3) Enviar (ou reenviar) a solução do problema,(c) Aceitar a solução como boa,NroSolutionReviewed (Apprentice),NroSolutionReviewed (Master),NroSolutionWithoutReviewed (Apprentice),NroSolutionWithoutReviewed (Master),NroSolutionGoodReview,NroDesiredInteractions,(a) Expressar dúvidas em relação à demonstração,(b) Esclarecer as dúvidas,(d) Notificar os erros existentes na solução,(e) Apresentar dicas ou otra forma de ajuda,(f) Expressar dificuldade em resolver o problema,(g) Explicar como resolver o problema
+10238,10276953,ont-gamified,Grupo Belos,Apprentice,Yee Socializer,semicomplete,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+10217,9805341,ont-gamified,Grupo Belos,Master,Yee Socializer,complete,6,1,1,0,4,0,5,0,0,0,5,0,0,0,5,0,0
+10183,10352030,non-gamified,Grupo Belos,Apprentice,Yee Socializer,complete,4,0,0,4,0,4,0,0,0,3,0,0,0,0,0,0,0
+10237,10377688,ont-gamified,Grupo Ellaru,Apprentice,Yee Socializer,partial,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+10212,9065750,ont-gamified,Grupo Ellaru,Apprentice,Yee Socializer,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10216,10276720,ont-gamified,Grupo Ellaru,Master,Yee Socializer,complete,2,1,1,0,0,0,1,0,0,0,4,0,0,2,2,0,0
+10230,10351992,ont-gamified,Grupo Koil,Apprentice,Yee Achiever,partial,5,0,0,5,0,2,0,3,0,0,2,2,0,0,0,0,0
+10214,10277022,ont-gamified,Grupo Koil,Apprentice,Yee Achiever,complete,3,0,0,3,0,3,0,0,0,3,0,0,0,0,0,0,0
+10172,10273971,ont-gamified,Grupo Koil,Master,Yee Achiever,semicomplete,5,1,1,0,3,0,5,0,3,0,2,0,0,2,0,0,0
+10228,10310492,ont-gamified,Grupo Losvakai,Apprentice,Yee Achiever,partial,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0
+10210,10277015,ont-gamified,Grupo Losvakai,Apprentice,Yee Achiever,complete,6,0,0,6,0,6,0,0,0,5,0,0,0,0,0,0,0
+10171,698531,ont-gamified,Grupo Losvakai,Master,Yee Achiever,semicomplete,7,1,1,0,5,0,6,0,1,0,6,0,0,2,4,0,0
+10202,10277036,ont-gamified,Grupo Paldira,Apprentice,Yee Achiever,complete,6,0,0,6,0,3,0,3,0,2,0,0,0,0,0,0,0
+10203,9921470,ont-gamified,Grupo Paldira,Apprentice,Yee Achiever,partial,2,0,0,2,0,2,0,0,0,0,1,0,0,0,0,1,0
+10188,10276995,ont-gamified,Grupo Paldira,Master,Yee Achiever,semicomplete,4,1,1,0,2,0,5,0,3,0,6,0,0,3,3,0,0
+10187,9790781,ont-gamified,Grupo Razorg,Apprentice,Yee Achiever,complete,3,0,0,3,0,3,0,0,0,3,0,0,0,0,0,0,0
+10211,9311643,ont-gamified,Grupo Razorg,Master,Yee Achiever,complete,5,1,1,0,3,0,4,0,0,0,1,0,0,1,0,0,0
+10219,10276831,ont-gamified,Grupo Razorg,Apprentice,Yee Achiever,partial,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+10209,10262669,non-gamified,Grupo Team 1,Master,,semicomplete,5,1,1,0,3,0,4,0,1,0,2,0,1,0,1,0,0
+10174,10276852,non-gamified,Grupo Team 1,Apprentice,,semicomplete,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+10198,10310888,non-gamified,Grupo Team 1,Apprentice,,complete,4,0,0,4,0,3,0,1,0,2,1,1,0,0,0,0,0
+10218,9842913,non-gamified,Grupo Team 10,Apprentice,,partial,2,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0
+10169,10377538,non-gamified,Grupo Team 10,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10201,10276928,non-gamified,Grupo Team 10,Master,,complete,4,2,2,0,0,0,2,0,0,0,2,0,0,1,1,0,0
+10197,10276661,non-gamified,Grupo Team 11,Master,,complete,2,1,1,0,0,0,3,0,0,0,3,0,0,2,1,0,0
+10178,8656201,non-gamified,Grupo Team 11,Apprentice,,partial,3,0,0,3,0,3,0,0,0,0,0,0,0,0,0,0,0
+10242,9424506,non-gamified,Grupo Team 11,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10193,10276762,non-gamified,Grupo Team 2,Master,,complete,2,1,1,0,0,0,1,0,0,0,2,0,1,0,1,0,0
+10189,9363926,non-gamified,Grupo Team 2,Apprentice,,partial,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0,0,0
+10227,9274382,non-gamified,Grupo Team 2,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10232,10276974,non-gamified,Grupo Team 3,Apprentice,,complete,3,0,0,3,0,3,0,0,0,3,0,0,0,0,0,0,0
+10221,9082496,non-gamified,Grupo Team 3,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10223,9795185,non-gamified,Grupo Team 3,Master,,complete,5,1,1,0,3,0,3,0,0,0,0,0,0,0,0,0,0
+10231,10276911,non-gamified,Grupo Team 4,Master,,complete,5,2,2,0,1,0,6,0,0,0,9,0,1,5,3,0,0
+10200,9795272,non-gamified,Grupo Team 4,Apprentice,,semicomplete,3,0,0,3,0,3,0,0,0,1,1,1,0,0,0,0,0
+10220,9760151,non-gamified,Grupo Team 4,Apprentice,,partial,3,0,0,3,0,3,0,0,0,0,0,0,0,0,0,0,0
+10204,10310471,non-gamified,Grupo Team 5,Master,,semicomplete,5,1,1,0,3,0,4,0,2,0,4,0,2,1,1,0,0
+10196,10310655,non-gamified,Grupo Team 5,Apprentice,,complete,4,0,0,4,0,2,0,2,0,2,1,1,0,0,0,0,0
+10186,10310551,non-gamified,Grupo Team 5,Apprentice,,semicomplete,2,0,0,2,0,2,0,0,0,1,1,1,0,0,0,0,0
+10170,10260351,non-gamified,Grupo Team 6,Apprentice,,complete,6,0,0,6,0,6,0,0,0,3,0,0,0,0,0,0,0
+10175,10310700,non-gamified,Grupo Team 6,Master,,complete,5,1,1,0,3,0,7,0,0,0,7,0,0,4,3,0,0
+10234,10310676,non-gamified,Grupo Team 6,Apprentice,,partial,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+10215,9285227,non-gamified,Grupo Team 7,Apprentice,,complete,4,0,0,4,0,4,0,0,0,3,0,0,0,0,0,0,0
+10184,10276675,non-gamified,Grupo Team 7,Master,,complete,7,1,1,0,5,0,7,0,0,0,9,0,0,3,5,0,1
+10181,10276866,non-gamified,Grupo Team 7,Apprentice,,complete,3,0,0,3,0,3,0,0,0,2,1,0,0,0,0,1,0
+10240,10276654,non-gamified,Grupo Team 8,Apprentice,,semicomplete,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+10213,10277040,non-gamified,Grupo Team 8,Master,,complete,6,1,1,0,4,0,4,0,0,0,0,0,0,0,0,0,0
+10190,10276907,non-gamified,Grupo Team 8,Apprentice,,complete,3,0,0,3,0,3,0,0,0,3,0,0,0,0,0,0,0
+10206,10310721,non-gamified,Grupo Team 9,Master,,complete,8,1,1,0,6,0,6,0,0,0,2,0,1,1,0,0,0
+10176,10276949,non-gamified,Grupo Team 9,Apprentice,,complete,4,0,0,4,0,4,0,0,0,4,0,0,0,0,0,0,0
+10224,9368772,non-gamified,Grupo Team 9,Apprentice,,complete,2,0,0,2,0,2,0,0,0,2,1,1,0,0,0,0,0
+10233,9805320,ont-gamified,Grupo Tosskor,Apprentice,Yee Achiever,partial,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0
+10185,10276960,ont-gamified,Grupo Tosskor,Master,Yee Achiever,semicomplete,3,1,1,0,1,0,2,0,4,0,1,0,0,0,1,0,0
+10179,10310759,ont-gamified,Grupo Tosskor,Apprentice,Yee Achiever,semicomplete,5,0,0,5,0,2,0,3,0,1,0,0,0,0,0,0,0
+10208,10276932,ont-gamified,Grupo Yeka,Master,Yee Socializer,complete,11,1,1,0,9,0,6,0,0,0,2,0,0,2,0,0,0
+10191,10276981,ont-gamified,Grupo Yeka,Apprentice,Yee Socializer,semicomplete,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+10226,10310342,ont-gamified,Grupo Yeka,Apprentice,Yee Socializer,semicomplete,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+10192,10276682,ont-gamified,Grupo Yeka,Apprentice,Yee Socializer,complete,4,0,0,4,0,4,0,0,0,3,0,0,0,0,0,0,0
+,,,,,,,,,,,,,,,,,,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,,0

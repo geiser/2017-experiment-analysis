@@ -1,0 +1,185 @@
+library(readr)
+library(dplyr)
+library(readxl)
+library(parallel)
+#options(mc.cores=6)
+
+## get vpl data
+vpl_leg <- read_excel("LearningData02.xlsx", sheet = "legend-VPL")
+vpl_dat <- read_excel("LearningData02.xlsx", sheet = "VPLData")
+vpl_dat <- abs(vpl_dat)
+vpl_dat[is.na(vpl_dat)] <- 0
+
+vpl_dat <- score_programming_tasks(dat = vpl_dat
+  , nview_str = 'start', apxt_str = 'exat', def_non_view_score = -1
+  , keys = c("P1","P2","P3","P4","PA","PB","PC","PD","PE","PF","PG","PH"))
+
+## get participants cvs
+participants <- read_csv('Participant02.csv')
+
+## get p1a and p1b information (provinha1-a and provinha1-b)
+p1a_part1_dat <- read_excel("LearningData02.xlsx", sheet = "provinha1a-cond-part1")
+p1a_part1_dat <- select(
+  p1a_part1_dat, starts_with('NUSP')
+  , starts_with('remember'), starts_with('understand')
+  , starts_with('apply'), starts_with('evaluate'))
+p1a_part1_dat <- p1a_part1_dat[complete.cases(p1a_part1_dat),]
+
+p1b_part1_dat <- read_excel("LearningData02.xlsx", sheet = "provinha1b-cond-part1")
+p1b_part1_dat <- select(
+  p1b_part1_dat, starts_with('NUSP')
+  , starts_with('remember'), starts_with('understand')
+  , starts_with('apply'), starts_with('evaluate'))
+p1b_part1_dat <- p1b_part1_dat[complete.cases(p1b_part1_dat),]
+
+p1a_part2_dat <- read_excel("LearningData02.xlsx", sheet = "provinha1a-cond-part2")
+p1a <- merge(p1a_part1_dat, p1a_part2_dat, by='NUSP')
+colnames(p1a) <- sub('remember', 'Re', colnames(p1a))
+colnames(p1a) <- sub('understand', 'Un', colnames(p1a))
+colnames(p1a) <- sub('apply', 'Ap', colnames(p1a))
+colnames(p1a) <- sub('analyse', 'An', colnames(p1a))
+colnames(p1a) <- sub('evaluate', 'Ev', colnames(p1a))
+colnames(p1a) <- sub('-unistructural', '1', colnames(p1a))
+colnames(p1a) <- sub('-multistructural', '2', colnames(p1a))
+colnames(p1a) <- sub('-relational', '3', colnames(p1a))
+p1a <- select(
+  p1a, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
+  , starts_with('Ap'), starts_with('An'), starts_with('Ev'))
+p1a <- merge(participants, p1a, by.x = 'NroUSP', by.y = 'NUSP')
+
+p1b_part2_dat <- read_excel("LearningData02.xlsx", sheet = "provinha1b-cond-part2")
+p1b <- merge(p1b_part1_dat, p1b_part2_dat, by='NUSP')
+colnames(p1b) <- sub('remember', 'Re', colnames(p1b))
+colnames(p1b) <- sub('understand', 'Un', colnames(p1b))
+colnames(p1b) <- sub('apply', 'Ap', colnames(p1b))
+colnames(p1b) <- sub('analyse', 'An', colnames(p1b))
+colnames(p1b) <- sub('evaluate', 'Ev', colnames(p1b))
+colnames(p1b) <- sub('-unistructural', 'A', colnames(p1b))
+colnames(p1b) <- sub('-multistructural', 'B', colnames(p1b))
+colnames(p1b) <- sub('-relational', 'C', colnames(p1b))
+p1b <- select(
+  p1b, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
+  , starts_with('Ap'), starts_with('An'), starts_with('Ev'))
+p1b <- merge(participants, p1b, by.x = 'NroUSP', by.y = 'NUSP')
+
+userids <- intersect(p1a$UserID, p1b$UserID)
+
+## get pre TAMs
+pre_dat <- merge(p1a, select(vpl_dat, starts_with('UserID'), starts_with('P1')), by='UserID')
+rownames(pre_dat) <- pre_dat$UserID
+pre_dat <- pre_dat[pre_dat$UserID %in% userids,]
+
+preTAMs <- load_and_save_TAMs_to_measure_change(
+  pre_dat, column_names = list(P1=c(NA, 'P1s3', 'P1s2', 'P1s1', 'P1s0')
+                               , Re1=c(NA, 'Re1'), Re2=c(NA, 'Re2')
+                               , Un1=c(NA, 'Un1'), Un2=c(NA, 'Un2')
+                               , Ap1=c(NA, 'Ap1'), Ap2=c(NA, 'Ap2'), Ap3=c(NA, 'Ap3')
+                               , An3=c(NA, 'An3')
+                               , Ev1=c(NA, 'Ev1'), Ev2=c(NA, 'Ev2'))
+  , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214720&authkey=ABwrjZPet-L6vo0"
+  , prefix =  "LearningOutcome2pre", min_columns = 9)
+View(preTAMs$information)
+
+## get pos TAMs
+pos_dat <- merge(p1b, select(vpl_dat, starts_with('UserID'), starts_with('PA'), starts_with('PB')), by='UserID')
+rownames(pos_dat) <- pos_dat$UserID
+pos_dat <- pos_dat[pos_dat$UserID %in% userids,]
+
+posTAMs <- load_and_save_TAMs_to_measure_change(
+  pos_dat, column_names = list(PA=c(NA, 'PAs3', 'PAs2', 'PAs1', 'PAs0')
+                               , PB=c(NA, 'PBs3', 'PBs2', 'PBs1', 'PBs0')
+                               , ReA=c(NA, 'ReA'), ReB=c(NA, 'ReB')
+                               , UnA=c(NA, 'UnA'), UnB=c(NA, 'UnB')
+                               , ApA=c(NA, 'ApA'), ApB=c(NA, 'ApB'), ApC=c(NA, 'ApC')
+                               , AnC=c(NA, 'AnC')
+                               , EvA=c(NA, 'EvA'), EvB=c(NA, 'EvB'))
+  , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214721&authkey=AONbAbVs_VXG3hs"
+  , prefix =  "LearningOutcome2pos", min_columns = 9)
+View(posTAMs$information)
+
+##############################################################################
+
+pos_mod <- pos_tam_models[['PAs0+PBs0+ReA+ReB+UnA+UnB+ApA+ApC+EvB']]
+wle_mod <- tam.wle(pos_mod)
+detect_mod <- conf.detect(data = pos_mod$resp, score = wle_mod$theta
+                          , itemcluster = colnames(pos_mod$resp))
+
+
+pos_mod <- posTAMs$unidimensional$`PAs1+PBs2+ReB+UnA+UnB+ApB+ApC+AnC+EvA`
+pos_uni <- test_unidimensionality(pos_mod)
+pos_uni$detect_mod$detect.summary
+
+## get p1a information (provinha1-a)
+
+
+## get pos TAMs
+pos_dat <- merge(p1b, select(vpl_dat, starts_with('UserID'), starts_with('PA'), starts_with('PB')), by='UserID')
+
+
+
+
+preTAMs <- get_all_TAMs_for_programming_tasks(
+  dat = pre_dat
+  , column_names = list(P1=c(NA, 'P1s3', 'P1s2', 'P1s1', 'P1s0')
+                        , Re1=c(NA, 'Re1'), Re2=c(NA, 'Re2')
+                        , Un1=c(NA, 'Un1'), Un2=c(NA, 'Un2')
+                        , Ap1=c(NA, 'Ap1'), Ap2=c(NA, 'Ap2'), Ap3=c(NA, 'Ap3')
+                        , An3=c(NA, 'An3')
+                        , Ev1=c(NA, 'Ev1'), Ev2=c(NA, 'Ev2')
+                        ))
+
+#fixed <- c('Re1','Re2','Un1','Un2','Ap1','Ap2','Ap3','An3','Ev1','Ev2')
+#tam_mod <- tam.mml.2pl(pre_dat[fixed], irtmodel="GPCM")
+# <- tam.fit(tam_mod)
+
+wle_mod <- tam.wle(tam_mod)
+
+summary(conf.detect(tam_mod$resp, score = wle_mod$theta, itemcluster = substring(colnames(tam_mod$resp),1,2)))
+summary(conf.detect(tam_mod$resp, score = wle_mod$theta, itemcluster = colnames(tam_mod$resp)))
+
+expl.detect(tam_mod$resp, score = wle_mod$theta, nclusters = 9, N.est = nrow(tam_mod$resp))
+
+View(tam.fit(tam_mod)$itemfit)
+
+tam_mod <- tam.mml.2pl(
+  pre_dat[c('Re2','Un1','Un2','Ap1','Ap2','Ap3','An3','Ev1','Ev2')]
+  , irtmodel="GPCM")
+View(tam.fit(tam_mod)$itemfit)
+
+
+
+pre_dat <- merge(p1a, select(vpl_dat, starts_with('UserID'), starts_with('P1')), by='UserID')
+preTAMs <- get_TAMs_for_programming_tasks(
+  pre_dat, list(P1=c('P1s3', 'P1s2', 'P1s1', 'P1s0'))
+  , fixed = c('Re2','Un1','Un2','Ap1','Ap2','Ap3','An3','Ev1','Ev2')
+  , non_detect = TRUE)
+
+tam.
+
+
+sirt::conf.detect(pre_dat[,col_fixed], score = wle_mod$theta, itemcluster=substring(colnames(pre_dat[,col_fixed]), 1, 2))
+substring(colnames(pre_dat),1,2)
+
+tfit <- tam.fit(preTAMs$unidimensional$`P1s3+Re2+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1+Ev2`)
+
+tfit <- tam.fit(preTAMs$unidimensional$`P1s1+Re1+Re2+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1+Ev2`)
+tfit <- tam.fit(preTAMs$unidimensional$`P1s3+Re1+Re2+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1+Ev2`)
+View(tfit$itemfit)
+
+
+pre_mod <- preTAMs$unidimensional$`P1s1+Re1+Re2+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1+Ev2`
+pre_uni <- test_unidimensionality(pre_mod, non_detect = TRUE)
+fitMeasures(pre_uni$lav_mod)
+summary(pre_uni$lav_mod, standardized=T, fit.measures=T, rsquare=T)
+tam.fit(pre_mod)
+
+View(preTAMs2$non_unidimensional)
+
+## get post-test information
+p1b_part1_dat <- read_excel("LearningData02.xlsx", sheet = "provinha1b-cond-part1")
+p1b_part2_dat <- read_excel("LearningData02.xlsx", sheet = "provinha1b-cond-part2")
+p1b <- merge(p1b_part1_dat, p1b_part2_dat, by='NUSP')
+p1b <- select(
+  p1b, starts_with('NUSP')
+  , starts_with('remember'), starts_with('understand'), starts_with('apply')
+  , starts_with('analyse'), starts_with('evaluate'))
