@@ -715,39 +715,48 @@ GPCM.measure_change <- function(
     , xsi = info.stacking$xsi, tt = info.stacking$tt, B = data.frame(mod2$B[,,])
     , global.estimation = list(mod = mod2, B = data.frame(mod2$B[,,]))
     , info.stacking = info.stacking, info.racking = info.racking
-    , ability = dat_non))
+    , ability = dat_non, ability.all = dat))
 }
 
 ## Save changes in file
 GPCM.measure_change.saveFile <- function(result, filename = 'GPCM.measure_change.xlsx') {
-  
+  library(sirt)
   library(r2excel)
+  
   wb <- createWorkbook(type='xlsx')
   
   ## write ability estimates (with outliers)
   ability_estimates_wo <- result$ability
+  ability_estimates_all <- result$ability.all
   
   personfit_df <- sirt::pcm.fit(b = result$info.stacking$pre_mod$AXsi_[, -1]
                                 , theta = result$info.stacking$pre_wle$theta
                                 , dat = result$info.stacking$pre_mod$resp)$personfit
   personfit_df <- personfit_df[, -which(names(personfit_df) %in% 'person')]
   colnames(personfit_df) <- c('pre.outfit','pre.outfit.t','pre.infit','pre.infit.t')
-  ability_estimates_wo <- cbind(ability_estimates_wo, personfit_df)
-  
+  ability_estimates_all <- cbind(ability_estimates_all, personfit_df)
   
   personfit_df <- sirt::pcm.fit(b = result$info.stacking$pos_mod$AXsi_[, -1]
                                 , theta = result$info.stacking$pos_wle$theta
                                 , dat = result$info.stacking$pos_mod$resp)$personfit
   personfit_df <- personfit_df[, -which(names(personfit_df) %in% 'person')]
   colnames(personfit_df) <- c('pos.outfit','pos.outfit.t','pos.infit','pos.infit.t')
-  ability_estimates_wo <- cbind(ability_estimates_wo, personfit_df)
-  rownames(ability_estimates_wo) <- ability_estimates_wo$UserID
+  ability_estimates_all <- cbind(ability_estimates_all, personfit_df)
   
-  sheet1 <- createSheet(wb, sheetName = 'Ability Estimates')
-  xlsx.addTable(wb, sheet1, ability_estimates_wo, startCol = 1, row.names = F, columnWidth = 16)
+  rownames(ability_estimates_all) <- ability_estimates_all$UserID
+  
+  ## write ability estimates (without inf)
+  ability_estimates <- ability_estimates_all[which(ability_estimates_all$UserID %in% result$ability$UserID),]
+  
+  sheet0 <- createSheet(wb, sheetName = 'Ability Estimates')
+  xlsx.addTable(wb, sheet0, ability_estimates, startCol = 1, row.names = F, columnWidth = 16)
+  
+  ## write ability estimates (all)
+  sheet1 <- createSheet(wb, sheetName = 'Ability Estimates (all)')
+  xlsx.addTable(wb, sheet1, ability_estimates_all, startCol = 1, row.names = F, columnWidth = 16)
   
   ## write ability estimates (with-out outliers)
-  ability_estimates <- ability_estimates_wo[which(ability_estimates_wo$UserID %in% result$ability.without$UserID),]
+  ability_estimates <- ability_estimates_all[which(ability_estimates_all$UserID %in% result$ability.without$UserID),]
   
   sheet2 <- createSheet(wb, sheetName = 'Ability Estimates (wo outliers)')
   xlsx.addTable(wb, sheet2, ability_estimates, startCol = 1, row.names = F, columnWidth = 16)

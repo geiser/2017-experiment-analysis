@@ -130,6 +130,10 @@ result_changes <- GPCM.measure_change(
 )
 if (!file.exists(file_result_changes_str)) save(result_changes, file = file_result_changes_str)
 
+if (!file.exists('GPCMLearningOutcome02.xlsx')) {
+  GPCM.measure_change.saveFile(result_changes, filename = 'GPCMLearningOutcome02.xlsx')
+}
+
 ## get meassure changes using unify GPCMs
 pre_dat_unify <- pre_dat
 pos_dat_unify <- pos_dat
@@ -173,6 +177,10 @@ result_changes_unify <- GPCM.measure_change(
 )
 if (!file.exists(file_result_changes_unify_str)) save(result_changes_unify, file = file_result_changes_unify_str)
 
+if (!file.exists('GPCMLearningOutcome02unify.xlsx')) {
+  GPCM.measure_change.saveFile(result_changes_unify, filename = 'GPCMLearningOutcome02unify.xlsx')
+}
+
 ## quick analysis using wilcoxon
 rdat <- merge(participants, result_changes$ability.without[,c('UserID','pre.theta','pos.theta')], by = 'UserID')
 rownames(rdat) <- rdat$UserID
@@ -196,8 +204,7 @@ print(wilcox_analysis(
   , alternative = 'less'
   , ylab = 'Difference in Logits'))
 
-
-## quick analysis using wilcoxon
+## quick analysis using wilcoxon with unify data
 rdat_unify <- merge(participants, result_changes_unify$ability.without[,c('UserID','pre.theta','pos.theta')], by = 'UserID')
 rownames(rdat_unify) <- rdat_unify$UserID
 colnames(rdat_unify) <- c('UserID','NroUSP','Type','CLGroup','CLRole', 'PlayerRole', 'PreSkill',  'PostSkill')
@@ -222,7 +229,6 @@ print(wilcox_analysis(
 
 ##############################################################################
 
-GPCM.measure_change.saveFile(result_changes, filename = 'gpcm-measure-02.xlsx')
 
 write_csv(result_changes$ability.without, path = 'Ability02.csv')
 
