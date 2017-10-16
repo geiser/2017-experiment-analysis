@@ -244,15 +244,20 @@ get_all_TAMs <- function(dat, column_names = NULL, tam_models = NULL, fixed = NU
 }
 
 ## evaluate the unidimensionality by DETECT
-test_detect <- function(tam_mod) {
+test_detect <- function(tam_mod, itemequals = NULL) {
   library(sirt)
   
   # polydetect statistic analysis
   cat('\n... ', paste0(colnames(tam_mod$resp), collapse = '+'), ' ...\n')
   
   wle_mod <- tam.wle(tam_mod)
-  detect_mod <- conf.detect(data = tam_mod$resp, score = wle_mod$theta
-                            , itemcluster = colnames(tam_mod$resp)) # all items are cluster for only one lattent factor
+  itemcluster <- colnames(tam_mod$resp)
+  if (!is.null(itemequals)) {
+    for (n_col in names(itemequals)) {
+      itemcluster[itemcluster %in% itemequals[[n_col]]]  <- n_col
+    }
+  }
+  detect_mod <- conf.detect(data = tam_mod$resp, score = wle_mod$theta, itemcluster = itemcluster) # all items are cluster for only one lattent factor
   # evaluate detect value
   detect <- NA
   detect_val <- max(abs(detect_mod$detect.summary['DETECT',]), na.rm = T)
@@ -313,9 +318,9 @@ test_lav <- function(tam_mod) {
 }
 
 ## filter non-unideminsional vs unidimensional TAMs
-filter_by_test_unidimensionality <- function(tam_models, step = 0.05, information = NULL) {
+filter_by_test_unidimensionality <- function(tam_models, step = 0.05, information = NULL, itemequals = NULL) {
   
-  resp_detect_tests <- lapply(tam_models, test_detect)
+  resp_detect_tests <- lapply(tam_models, test_detect, itemequals = itemequals)
   # detect filtering
   unidim_test <- c()
   DETECT <- c()
@@ -385,12 +390,14 @@ filter_by_test_unidimensionality <- function(tam_models, step = 0.05, informatio
 }
 
 ## get TAMs to measure change
-get_TAMs_to_measure_change <- function(dat = NULL, column_names = NULL, tam_models = NULL, fixed = NULL) {
+get_TAMs_to_measure_change <- function(dat = NULL, column_names = NULL
+                                       , tam_models = NULL, fixed = NULL, itemequals = NULL) {
   if (is.null(tam_models)) {
     tam_models <- get_TAMs(dat, column_names = column_names, tam_models = tam_models, fixed = fixed)
   }
   resp_TAMs <- get_all_TAMs(tam_models = tam_models, fixed = fixed)
-  resp_filter_TAMs <- filter_by_test_unidimensionality(tam_models = tam_models, information = resp_TAMs$information)
+  resp_filter_TAMs <- filter_by_test_unidimensionality(
+    tam_models = tam_models, information = resp_TAMs$information, itemequals = itemequals)
   
   return(list(all = names(tam_models)
               , detect.test = resp_filter_TAMs$detect.test
@@ -401,7 +408,8 @@ get_TAMs_to_measure_change <- function(dat = NULL, column_names = NULL, tam_mode
 }
 
 ## load and save TAMs to measure change
-load_and_save_TAMs_to_measure_change <- function(dat, column_names, prefix, url_str = NULL, min_columns = 3) {
+load_and_save_TAMs_to_measure_change <- function(
+  dat, column_names, prefix, url_str = NULL, min_columns = 3, itemequals = NULL) {
   
   TAMs <- NULL
   file_tams_str <- paste0(prefix, '_tams.RData')
@@ -429,7 +437,7 @@ load_and_save_TAMs_to_measure_change <- function(dat, column_names, prefix, url_
       if (curr_length >= length(tam_models)) break
       save(tam_models, file = file_tam_models_str)
     }
-    TAMs <- get_TAMs_to_measure_change(tam_models = tam_models)
+    TAMs <- get_TAMs_to_measure_change(tam_models = tam_models, itemequals = itemequals)
     
     save(TAMs, file = file_tams_str)
   }

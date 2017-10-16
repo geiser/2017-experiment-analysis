@@ -128,7 +128,7 @@ result_changes <- GPCM.measure_change(
   , same_items.pos = c('UnA', 'ApA', 'ApC')
   , tam_models = tam_models
 )
-save(result_changes, file = file_result_changes_str)
+if (!file.exists(file_result_changes_str)) save(result_changes, file = file_result_changes_str)
 
 ## get meassure changes using unify GPCMs
 pre_dat_unify <- pre_dat
@@ -171,9 +171,9 @@ result_changes_unify <- GPCM.measure_change(
   , same_items.pos = c('UnA', 'UnB', 'ApA', 'ApC', 'AnC', 'EvA')
   , tam_models = tam_models_unify
 )
-save(result_changes_unify, file = file_result_changes_unify_str)
+if (!file.exists(file_result_changes_unify_str)) save(result_changes_unify, file = file_result_changes_unify_str)
 
-## quick analysis using wilcoxon???????
+## quick analysis using wilcoxon
 rdat <- merge(participants, result_changes$ability.without[,c('UserID','pre.theta','pos.theta')], by = 'UserID')
 rownames(rdat) <- rdat$UserID
 colnames(rdat) <- c('UserID','NroUSP','Type','CLGroup','CLRole', 'PlayerRole', 'PreSkill',  'PostSkill')
@@ -207,7 +207,7 @@ print(wilcox_analysis(
   rdat4test_unify$Type
   , rdat4test_unify$PostSkill-rdat4test_unify$PreSkill
   , title = 'Programming Performance Skill (Master)'
-  , sub = 'Quick Analysis Using Wilcox and Unify Data'
+  , sub = 'Quick Analysis Using Wilcox and Unified Data'
   , alternative = 'less'
   , ylab = 'Difference in Logits'))
 
@@ -216,7 +216,7 @@ print(wilcox_analysis(
   rdat4test_unify$Type
   , rdat4test_unify$PostSkill-rdat4test_unify$PreSkill
   , title = 'Programming Performance Skill (Apprentice)'
-  , sub = 'Quick Analysis Using Wilcox and Unify Data'
+  , sub = 'Quick Analysis Using Wilcox and Unified Data'
   , alternative = 'less'
   , ylab = 'Difference in Logits'))
 
