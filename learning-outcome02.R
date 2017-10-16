@@ -102,21 +102,78 @@ posTAMs <- load_and_save_TAMs_to_measure_change(
 View(posTAMs$information)
 
 ## get meassure changes using GPCMs
-# +Re2+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1         +P1s0
-#     +UnA+UnB+ApA+   +ApC+AnC+EvA+EvB+PAs1+PBs2
 pre_dat[,'Cr2'] <- pre_dat[,'P1s0']
 pos_dat[,'CrA'] <- pos_dat[,'PAs1']
 pos_dat[,'CrB'] <- pos_dat[,'PBs2']
 
+tam_models <- NULL
+file_result_changes_str <- 'LearningOutcome2result_changes.RData'
+if (file.exists(file_result_changes_str)) {
+  result_changes <- get(load(file_result_changes_str))
+  tam_models <- list(
+    pre_mod1 = result_changes$info.verification$pre_mod
+    , pos_mod1 = result_changes$info.verification$pos_mod
+    , mod2 = result_changes$global.estimation$mod
+    , pre_mod3 = result_changes$info.stacking$pre_mod
+    , pos_mod3 = result_changes$info.stacking$pos_mod
+    , mod4 = result_changes$info.racking$mod)
+}
 result_changes <- GPCM.measure_change(
+  # +Re2+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1         +P1s0
+  #     +UnA+UnB+ApA+   +ApC+AnC+EvA+EvB+PAs1+PBs2
   pre_dat = pre_dat, pos_dat = pos_dat, userid = "UserID"
   , items.pre = c('Re2', 'Un1', 'Un2', 'Ap1', 'Ap2', 'Ap3', 'An3', 'Ev1', 'Cr2')
   , items.pos = c('UnA', 'UnB', 'ApA', 'ApC', 'AnC', 'EvA', 'EvB', 'CrA', 'CrB')
   , same_items.pre = c('Un1', 'Ap1', 'Ap3')
   , same_items.pos = c('UnA', 'ApA', 'ApC')
+  , tam_models = tam_models
 )
+save(result_changes, file = file_result_changes_str)
 
-## quick analysis using wilcoxon
+## get meassure changes using unify GPCMs
+pre_dat_unify <- pre_dat
+pos_dat_unify <- pos_dat
+
+pre_dat_unify[,'Ap2'] <- pre_dat[,'Ap2']*12
+pos_dat_unify[,'ApB'] <- pos_dat[,'ApB']*1
+
+pre_dat_unify[,'Ev2'] <- pre_dat[,'Ev2']*6
+pos_dat_unify[,'EvB'] <- pos_dat[,'EvB']*5
+
+pre_dat_unify[,'Ev1'] <- pre_dat[,'Ev1']*1
+pos_dat_unify[,'EvA'] <- pos_dat[,'EvA']*2
+
+pre_dat_unify[,'Un2'] <- pre_dat[,'Un2']*2
+pos_dat_unify[,'UnB'] <- pos_dat[,'UnB']*3
+
+pre_dat_unify[,'An3'] <- pre_dat[,'An3']*7
+pos_dat_unify[,'AnC'] <- pos_dat[,'AnC']*8
+
+tam_models_unify <- NULL
+file_result_changes_unify_str <- 'LearningOutcome2result_changes_unify.RData'
+if (file.exists(file_result_changes_unify_str)) {
+  result_changes_unify <- get(load(file_result_changes_unify_str))
+  tam_models_unify <- list(
+    pre_mod1 = result_changes_unify$info.verification$pre_mod
+    , pos_mod1 = result_changes_unify$info.verification$pos_mod
+    , mod2 = result_changes_unify$global.estimation$mod
+    , pre_mod3 = result_changes_unify$info.stacking$pre_mod
+    , pos_mod3 = result_changes_unify$info.stacking$pos_mod
+    , mod4 = result_changes_unify$info.racking$mod)
+}
+result_changes_unify <- GPCM.measure_change(
+  # +Re2+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1         +P1s0
+  #     +UnA+UnB+ApA+   +ApC+AnC+EvA+EvB+PAs1+PBs2
+  pre_dat = pre_dat_unify, pos_dat = pos_dat_unify, userid = "UserID"
+  , items.pre = c('Re2', 'Un1', 'Un2', 'Ap1', 'Ap2', 'Ap3', 'An3', 'Ev1', 'Cr2')
+  , items.pos = c('UnA', 'UnB', 'ApA', 'ApC', 'AnC', 'EvA', 'EvB', 'CrA', 'CrB')
+  , same_items.pre = c('Un1', 'Un2', 'Ap1', 'Ap3', 'An3', 'Ev1')
+  , same_items.pos = c('UnA', 'UnB', 'ApA', 'ApC', 'AnC', 'EvA')
+  , tam_models = tam_models_unify
+)
+save(result_changes_unify, file = file_result_changes_unify_str)
+
+## quick analysis using wilcoxon???????
 rdat <- merge(participants, result_changes$ability.without[,c('UserID','pre.theta','pos.theta')], by = 'UserID')
 rownames(rdat) <- rdat$UserID
 colnames(rdat) <- c('UserID','NroUSP','Type','CLGroup','CLRole', 'PlayerRole', 'PreSkill',  'PostSkill')
@@ -139,34 +196,6 @@ print(wilcox_analysis(
   , alternative = 'less'
   , ylab = 'Difference in Logits'))
 
-## get meassure changes using unify GPCMs
-pre_dat_unify <- pre_dat
-pos_dat_unify <- pos_dat
-
-pre_dat_unify[,'Ap2'] <- pre_dat[,'Ap2']*12
-pos_dat_unify[,'ApB'] <- pos_dat[,'ApB']*1
-
-pre_dat_unify[,'Ev2'] <- pre_dat[,'Ev2']*6
-pos_dat_unify[,'EvB'] <- pos_dat[,'EvB']*5
-
-pre_dat_unify[,'Ev1'] <- pre_dat[,'Ev1']*1
-pos_dat_unify[,'EvA'] <- pos_dat[,'EvA']*2
-
-pre_dat_unify[,'Un2'] <- pre_dat[,'Un2']*2
-pos_dat_unify[,'UnB'] <- pos_dat[,'UnB']*3
-
-pre_dat_unify[,'An3'] <- pre_dat[,'An3']*7
-pos_dat_unify[,'AnC'] <- pos_dat[,'AnC']*8
-
-# +Re2+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1         +P1s0
-#     +UnA+UnB+ApA+   +ApC+AnC+EvA+EvB+PAs1+PBs2
-result_changes_unify <- GPCM.measure_change(
-  pre_dat = pre_dat_unify, pos_dat = pos_dat_unify, userid = "UserID"
-  , items.pre = c('Re2', 'Un1', 'Un2', 'Ap1', 'Ap2', 'Ap3', 'An3', 'Ev1', 'Cr2')
-  , items.pos = c('UnA', 'UnB', 'ApA', 'ApC', 'AnC', 'EvA', 'EvB', 'CrA', 'CrB')
-  , same_items.pre = c('Un1', 'Un2', 'Ap1', 'Ap3', 'An3', 'Ev1')
-  , same_items.pos = c('UnA', 'UnB', 'ApA', 'ApC', 'AnC', 'EvA')
-  )
 
 ## quick analysis using wilcoxon
 rdat_unify <- merge(participants, result_changes_unify$ability.without[,c('UserID','pre.theta','pos.theta')], by = 'UserID')

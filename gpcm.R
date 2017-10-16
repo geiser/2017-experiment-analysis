@@ -489,7 +489,7 @@ plot_pre_vs_post <- function(x, y, plabels, title = "Pre-test vs. Post-test") {
 ## measuring change using GPCM by stacking and racking data
 GPCM.measure_change <- function(
   pre_dat, pos_dat, items.pre, items.pos, same_items.pre, same_items.pos
-  , userid = "UserID", verify = T, plotting = T, remove_outlier = T) {
+  , userid = "UserID", verify = T, plotting = T, remove_outlier = T, tam_models = NULL) {
   
   library(TAM)
   library(reshape)
@@ -511,10 +511,18 @@ GPCM.measure_change <- function(
   # Stage I: Data Verification
   info_verification <- NULL
   if (verify) {
-    pos_mod1 <- tam.mml.2pl(dat[,items$pos], irtmodel = "GPCM")
+    if (!is.null(tam_models) && !is.null(tam_models$pos_mod1)) {
+      pos_mod1 <- tam_models$pos_mod1
+    } else {
+      pos_mod1 <- tam.mml.2pl(dat[,items$pos], irtmodel = "GPCM")
+    }
     pos_wle1 <- tam.wle(pos_mod1)
     
-    pre_mod1 <- tam.mml.2pl(dat[,items$pre], irtmodel = "GPCM")
+    if (!is.null(tam_models) && !is.null(tam_models$pre_mod1)) {
+      pre_mod1 <- tam_models$pre_mod1
+    } else {
+      pre_mod1 <- tam.mml.2pl(dat[,items$pre], irtmodel = "GPCM")
+    }
     pre_wle1 <- tam.wle(pre_mod1)
     
     pos_tt <- as.data.frame(tam.threshold(pos_mod1))
@@ -563,7 +571,11 @@ GPCM.measure_change <- function(
   }
   
   # get fixing steps (B): loading matrix
-  mod2 <- tam.mml.2pl(resp, irtmodel='GPCM')
+  if (!is.null(tam_models) && !is.null(tam_models$mod2)) {
+    mod2 <- tam_models$mod2
+  } else {
+    mod2 <- tam.mml.2pl(resp, irtmodel='GPCM')
+  }
   
   pos_B2 <- mod2$B[,,][colnames(pos_resp),]
   pos_B2 <- pos_B2[,colnames(pos_B2) == "Cat0" | 
@@ -590,15 +602,23 @@ GPCM.measure_change <- function(
   pre_B2.fixed[,1] <- rep(1:nrow(pre_B2), each = ncol(pre_B2))
   
   # Stage III: Measure person ability changes
-  pos_mod3 <- tam.mml.2pl(pos_resp, irtmodel="GPCM", B.fixed = pos_B2.fixed)
+  if (!is.null(tam_models) && !is.null(tam_models$pos_mod3)) {
+    pos_mod3 <- tam_models$pos_mod3
+  } else {
+    pos_mod3 <- tam.mml.2pl(pos_resp, irtmodel="GPCM", B.fixed = pos_B2.fixed)
+  }
   pos_wle3 <- tam.wle(pos_mod3)
   
-  pre_mod3 <- tam.mml.2pl(pre_resp, irtmodel="GPCM", B.fixed = pre_B2.fixed)
-  xsi.names <- intersect(row.names(pos_mod3$xsi.fixed.estimated)
-                         , row.names(pre_mod3$xsi.fixed.estimated))
-  pos_xsi3.fixed <- pos_mod3$xsi.fixed.estimated[xsi.names,]
-  pre_mod3 <- tam.mml.2pl(pre_resp, irtmodel="GPCM", B.fixed = pre_B2.fixed
-                          , xsi.fixed = pos_xsi3.fixed)
+  if (!is.null(tam_models) && !is.null(tam_models$pre_mod3)) {
+    pre_mod3 <- tam_models$pre_mod3
+  } else {
+    pre_mod3 <- tam.mml.2pl(pre_resp, irtmodel="GPCM", B.fixed = pre_B2.fixed)
+    xsi.names <- intersect(row.names(pos_mod3$xsi.fixed.estimated)
+                           , row.names(pre_mod3$xsi.fixed.estimated))
+    pos_xsi3.fixed <- pos_mod3$xsi.fixed.estimated[xsi.names,]
+    pre_mod3 <- tam.mml.2pl(pre_resp, irtmodel="GPCM", B.fixed = pre_B2.fixed
+                            , xsi.fixed = pos_xsi3.fixed)
+  }
   pre_wle3 <- tam.wle(pre_mod3)
   
   pre_tt3 <- as.data.frame(tam.threshold(pre_mod3))
@@ -632,7 +652,11 @@ GPCM.measure_change <- function(
   # Stage IV: Measure item difficulty changes
   # -> anchored abilities is non-necessary in MML estimation
   # -> MML assumpts an uniform distribution for the ability
-  mod4 <- tam.mml.2pl(pre_resp, irtmodel = "GPCM", B.fixed = pre_B2.fixed)
+  if (!is.null(tam_models) && !is.null(tam_models$mod4)) {
+    mod4 <- tam_models$mod4
+  } else {
+    mod4 <- tam.mml.2pl(pre_resp, irtmodel = "GPCM", B.fixed = pre_B2.fixed)
+  }
   
   tt4 <- as.data.frame(tam.threshold(mod4))
   tt4[,"Item"] <- c(IRT.threshold(mod4, type = "item"))
