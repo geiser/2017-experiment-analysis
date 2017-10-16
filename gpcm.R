@@ -455,8 +455,14 @@ load_and_save_TAMs_to_measure_change <- function(dat, column_names, prefix, url_
 
 ## drawing pre vs post points generating models to measure
 plot_pre_vs_post <- function(x, y, plabels, title = "Pre-test vs. Post-test") {
+  
   library(ggplot2)
   library(ggrepel)
+  
+  idx <- !is.na(x & y)
+  x <- x[idx]
+  y <- y[idx]
+  plabels <- plabels[idx]
   
   gg1 <- data.frame(pre=x, pos=y)
   rownames(gg1) <- plabels

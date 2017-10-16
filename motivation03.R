@@ -15,54 +15,6 @@ library(careless)
 con <- dbConnect(RMySQL::MySQL(), user = "root" , password = "qaz123456"
                  , dbname = "caede741_geiser_moodle", host = "localhost")
 
-participants <- dbGetQuery(con, "
-SELECT u.id as `UserID`
-  , CAST(uid.data AS UNSIGNED) as `Nro USP`
-  , (CASE oj1.name
-      WHEN 'Intervention2' THEN 'ont-gamified'
-      WHEN 'Control2' THEN 'non-gamified'
-      ELSE ''
-    END) AS `Type`
-  , oj2.name AS `Group`
-  , (CASE oj3.name
-      WHEN 'Mestre2' THEN 'Master'
-      WHEN 'Aprendiz2' THEN 'Apprentice'
-      ELSE ''
-    END) AS `CLRole`
-  , (CASE oj4.name
-      WHEN 'Achiever2' THEN 'Yee Achiever'
-      WHEN 'Socializer2' THEN 'Yee Socializer'
-      ELSE ''
-    END) AS `PlayerRole`
-FROM mdl_user u
-INNER JOIN mdl_user_info_data uid ON uid.userid = u.id
-INNER JOIN mdl_user_enrolments ue ON ue.userid = u.id
-INNER JOIN mdl_enrol e ON e.id = ue.enrolid
-INNER JOIN (SELECT gm1.userid, g1.name
-            FROM mdl_groups_members gm1
-            INNER JOIN mdl_groups g1 ON g1.id = gm1.groupid
-            WHERE g1.name IN ('Control2', 'Intervention2')) oj1 ON oj1.userid = u.id
-INNER JOIN (SELECT gm2.userid, g2.name
-            FROM mdl_groups_members gm2
-            INNER JOIN mdl_groups g2 ON g2.id = gm2.groupid
-            INNER JOIN mdl_groupings_groups grg2 ON grg2.groupid = g2.id
-            INNER JOIN mdl_groupings gr2 ON gr2.id = grg2.groupingid
-            WHERE gr2.name IN ('Grouping2')) oj2 ON oj2.userid = u.id
-INNER JOIN (SELECT gm3.userid, g3.name
-            FROM mdl_groups_members gm3
-            INNER JOIN mdl_groups g3 ON g3.id = gm3.groupid
-            INNER JOIN mdl_groupings_groups grg3 ON grg3.groupid = g3.id
-            INNER JOIN mdl_groupings gr3 ON gr3.id = grg3.groupingid
-            WHERE gr3.name IN ('CL Roles2')) oj3 ON oj3.userid = u.id
-LEFT JOIN (SELECT gm4.userid, g4.name
-            FROM mdl_groups_members gm4
-            INNER JOIN mdl_groups g4 ON g4.id = gm4.groupid
-            INNER JOIN mdl_groupings_groups grg4 ON grg4.groupid = g4.id
-            INNER JOIN mdl_groupings gr4 ON gr4.id = grg4.groupingid
-            WHERE gr4.name IN ('CL Player Roles2') AND g4.name IN ('Achiever2', 'Socializer2')) oj4 ON oj4.userid = u.id
-WHERE e.courseid = 8")
-participants <- dplyr::mutate(participants, Group = iconv(participants$Group, from = "latin1", to = "UTF-8"))
-
 dbDisconnect(con)
 
 ## gather data from csv files
