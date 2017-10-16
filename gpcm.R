@@ -256,6 +256,7 @@ test_detect <- function(tam_mod, itemequals = NULL) {
     for (n_col in names(itemequals)) {
       itemcluster[itemcluster %in% itemequals[[n_col]]]  <- n_col
     }
+    cat('\n... itemclusters=(', paste0(itemcluster, collapse = ','), ') ...\n')
   }
   detect_mod <- conf.detect(data = tam_mod$resp, score = wle_mod$theta, itemcluster = itemcluster) # all items are cluster for only one lattent factor
   # evaluate detect value

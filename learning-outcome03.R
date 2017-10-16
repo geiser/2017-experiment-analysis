@@ -49,7 +49,7 @@ colnames(p2a) <- sub('-3', 'c', colnames(p2a))
 p2a <- select(
   p2a, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
   , starts_with('Ap'), starts_with('An'), starts_with('Ev'))
-p2a <- merge(participants, p2a, by.x = 'NroUSP', by.y = 'NUSP')
+p2a <- merge(participants, p2a, by.x = 'Nro USP', by.y = 'NUSP')
 
 colnames(p2b) <- sub('remember', 'Re', colnames(p2b))
 colnames(p2b) <- sub('understand', 'Un', colnames(p2b))
@@ -65,7 +65,7 @@ colnames(p2b) <- sub('-3', '3', colnames(p2b))
 p2b <- select(
   p2b, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
   , starts_with('Ap'), starts_with('An'), starts_with('Ev'))
-p2b <- merge(participants, p2b, by.x = 'NroUSP', by.y = 'NUSP')
+p2b <- merge(participants, p2b, by.x = 'Nro USP', by.y = 'NUSP')
 
 userids <- intersect(p2a$UserID, p2b$UserID)
 
@@ -82,8 +82,9 @@ preTAMs <- load_and_save_TAMs_to_measure_change(
                                , Ev2=c(NA, 'Ev2')
                                , P2=c(NA, 'P2s3', 'P2s2', 'P2s1', 'P2s0')
                                , P3=c(NA, 'P3s3', 'P3s2', 'P3s1', 'P3s0'))
-  #, url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214720&authkey=ABwrjZPet-L6vo0"
-  , prefix =  "LearningOutcome3pre", min_columns = 9)
+  , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214722&authkey=AGHh9rR2mNuBW44"
+  , itemequals = list(Ap2=c('Ap2a','Ap2b'), An3=c('An3a', 'An3b'))
+  , prefix =  "LearningOutcome3pre", min_columns = 5)
 View(preTAMs$information)
 
 ## get pos TAMs
