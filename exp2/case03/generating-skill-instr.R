@@ -15,76 +15,77 @@ vpl_dat <- score_programming_tasks(dat = vpl_dat
   , keys = c("P1","P2","P3","P4","PA","PB","PC","PD","PE","PF","PG","PH"))
 
 ## get participants cvs
-participants <- read_csv('Participant02.csv')
+participants <- read_csv('Participant04.csv')
 
-## get p1a and p1b information (provinha1-a and provinha1-b)
-p1a_part1_dat <- read_excel(
-  "LearningData02.xlsx", sheet = "provinha1a-cond-part1", col_types = "numeric")
-p1a_part1_dat <- select(
-  p1a_part1_dat, starts_with('NUSP')
+## get p3a and p3c information (provinha3a and provinha3c)
+p3a <- read_excel(
+  "LearningData02.xlsx", sheet = "provinha3a-recurs", col_types = "numeric")
+p3a <- select(
+  p3a, starts_with('NUSP')
   , starts_with('remember'), starts_with('understand')
-  , starts_with('apply'), starts_with('evaluate'))
-p1a_part1_dat <- p1a_part1_dat[complete.cases(p1a_part1_dat),]
+  , starts_with('apply'), starts_with('analyse'), starts_with('evaluate'))
+p3a <- p3a[complete.cases(p3a),]
 
-p1b_part1_dat <- read_excel(
-  "LearningData02.xlsx", sheet = "provinha1b-cond-part1", col_types = "numeric")
-p1b_part1_dat <- select(
-  p1b_part1_dat, starts_with('NUSP')
+p3c <- read_excel(
+  "LearningData02.xlsx", sheet = "provinha3c-recurs", col_types = "numeric")
+p3c <- select(
+  p3c, starts_with('NUSP')
   , starts_with('remember'), starts_with('understand')
-  , starts_with('apply'), starts_with('evaluate'))
-p1b_part1_dat <- p1b_part1_dat[complete.cases(p1b_part1_dat),]
+  , starts_with('apply'), starts_with('analyse'), starts_with('evaluate'))
+p3c <- p3c[complete.cases(p3c),]
 
-p1a_part2_dat <- read_excel(
-  "LearningData02.xlsx", sheet = "provinha1a-cond-part2", col_types = "numeric")
-p1a <- merge(p1a_part1_dat, p1a_part2_dat, by='NUSP')
-colnames(p1a) <- sub('remember', 'Re', colnames(p1a))
-colnames(p1a) <- sub('understand', 'Un', colnames(p1a))
-colnames(p1a) <- sub('apply', 'Ap', colnames(p1a))
-colnames(p1a) <- sub('analyse', 'An', colnames(p1a))
-colnames(p1a) <- sub('evaluate', 'Ev', colnames(p1a))
-colnames(p1a) <- sub('-unistructural', '1', colnames(p1a))
-colnames(p1a) <- sub('-multistructural', '2', colnames(p1a))
-colnames(p1a) <- sub('-relational', '3', colnames(p1a))
-p1a <- select(
-  p1a, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
+colnames(p3a) <- sub('remember', 'Re', colnames(p3a))
+colnames(p3a) <- sub('understand', 'Un', colnames(p3a))
+colnames(p3a) <- sub('apply', 'Ap', colnames(p3a))
+colnames(p3a) <- sub('analyse', 'An', colnames(p3a))
+colnames(p3a) <- sub('evaluate', 'Ev', colnames(p3a))
+colnames(p3a) <- sub('-unistructural', '1', colnames(p3a))
+colnames(p3a) <- sub('-multistructural', '2', colnames(p3a))
+colnames(p3a) <- sub('-relational', '3', colnames(p3a))
+colnames(p3a) <- sub('-1', 'a', colnames(p3a))
+colnames(p3a) <- sub('-2', 'b', colnames(p3a))
+colnames(p3a) <- sub('-3', 'c', colnames(p3a))
+p3a <- select(
+  p3a, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
   , starts_with('Ap'), starts_with('An'), starts_with('Ev'))
-p1a <- merge(participants, p1a, by.x = 'NroUSP', by.y = 'NUSP')
+p3a <- merge(participants, p3a, by.x = 'Nro USP', by.y = 'NUSP')
 
-p1b_part2_dat <- read_excel(
-  "LearningData02.xlsx", sheet = "provinha1b-cond-part2", col_types = "numeric")
-p1b <- merge(p1b_part1_dat, p1b_part2_dat, by='NUSP')
-colnames(p1b) <- sub('remember', 'Re', colnames(p1b))
-colnames(p1b) <- sub('understand', 'Un', colnames(p1b))
-colnames(p1b) <- sub('apply', 'Ap', colnames(p1b))
-colnames(p1b) <- sub('analyse', 'An', colnames(p1b))
-colnames(p1b) <- sub('evaluate', 'Ev', colnames(p1b))
-colnames(p1b) <- sub('-unistructural', 'A', colnames(p1b))
-colnames(p1b) <- sub('-multistructural', 'B', colnames(p1b))
-colnames(p1b) <- sub('-relational', 'C', colnames(p1b))
-p1b <- select(
-  p1b, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
+colnames(p3c) <- sub('remember', 'Re', colnames(p3c))
+colnames(p3c) <- sub('understand', 'Un', colnames(p3c))
+colnames(p3c) <- sub('apply', 'Ap', colnames(p3c))
+colnames(p3c) <- sub('analyse', 'An', colnames(p3c))
+colnames(p3c) <- sub('evaluate', 'Ev', colnames(p3c))
+colnames(p3c) <- sub('-unistructural', 'A', colnames(p3c))
+colnames(p3c) <- sub('-multistructural', 'B', colnames(p3c))
+colnames(p3c) <- sub('-relational', 'C', colnames(p3c))
+colnames(p3c) <- sub('-1', '1', colnames(p3c))
+colnames(p3c) <- sub('-2', '2', colnames(p3c))
+colnames(p3c) <- sub('-3', '3', colnames(p3c))
+p3c <- select(
+  p3c, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
   , starts_with('Ap'), starts_with('An'), starts_with('Ev'))
-p1b <- merge(participants, p1b, by.x = 'NroUSP', by.y = 'NUSP')
+p3c <- merge(participants, p3c, by.x = 'Nro USP', by.y = 'NUSP')
 
-userids <- intersect(p1a$UserID, p1b$UserID)
+userids <- intersect(p3c$UserID, p3c$UserID)
 
 ## get pre TAMs
-pre_dat <- merge(p1a, select(vpl_dat, starts_with('UserID'), starts_with('P1')), by='UserID')
+pre_dat <- merge(p3a, select(vpl_dat, starts_with('UserID'), starts_with('P4')), by='UserID')
 rownames(pre_dat) <- pre_dat$UserID
 pre_dat <- pre_dat[pre_dat$UserID %in% userids,]
 
 preTAMs <- load_and_save_TAMs_to_measure_change(
-  pre_dat, column_names = list(P1=c(NA, 'P1s3', 'P1s2', 'P1s1', 'P1s0')
-                               , Re1=c(NA, 'Re1'), Re2=c(NA, 'Re2')
-                               , Un1=c(NA, 'Un1'), Un2=c(NA, 'Un2')
-                               , Ap1=c(NA, 'Ap1'), Ap2=c(NA, 'Ap2'), Ap3=c(NA, 'Ap3')
-                               , An3=c(NA, 'An3')
-                               , Ev1=c(NA, 'Ev1'), Ev2=c(NA, 'Ev2'))
-  , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214720&authkey=ABwrjZPet-L6vo0"
-  , prefix =  "LearningOutcome2pre", min_columns = 9)
+  pre_dat, column_names = list(Re2=c(NA, 'Re2')
+                               , Un2=c(NA, 'Un2')
+                               , Ap1=c(NA, 'Ap1'), Ap3=c(NA, 'Ap3')
+                               , An3a=c(NA, 'An3a'), An3b=c(NA, 'An3b')
+                               , Ev2=c(NA, 'Ev2')
+                               , P4=c(NA, 'P4s3', 'P4s2', 'P4s1', 'P4s0'))
+  #, url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214720&authkey=ABwrjZPet-L6vo0"
+  , itemequals = list(An3=c('An3a', 'An3b'))
+  , prefix =  "LearningOutcome4pre", min_columns = 6)
 View(preTAMs$information)
 
-## get pos TAMs
+## get pos TAMs ???
 pos_dat <- merge(p1b, select(vpl_dat, starts_with('UserID'), starts_with('PA'), starts_with('PB')), by='UserID')
 rownames(pos_dat) <- pos_dat$UserID
 pos_dat <- pos_dat[pos_dat$UserID %in% userids,]
@@ -228,31 +229,5 @@ print(wilcox_analysis(
   , ylab = 'Difference in Logits'))
 
 ##############################################################################
-
-
-write_csv(result_changes$ability.without, path = 'Ability02.csv')
-
-## get information from cvs files to statistic analysis
-ability <- read_csv('Ability02.csv')
-participants <- read_csv('Participant02.csv')
-activities <- read_csv('CLActivity02.csv')
-
-
-
-## test assumptions for parametric test
-test_z <- test_min_size(rdat, between = c('Type', 'CLRole')) 
-if (test_z$fail) {
-  print(test_z$table.frequency)
-  print(test_z$fails_warnings)
-}
-
-
-
-
-+Re2+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1+P1s0
-+UnA+UnB+ApA+ApC+AnC+EvA+EvB+PAs1+PBs2
-
-"Quien es el guionista del debate y GH ?? vender carpetas cansa, es lo peor!!!"
-
 
 

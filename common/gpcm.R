@@ -195,7 +195,7 @@ get_all_TAMs <- function(dat, column_names = NULL, tam_models = NULL, fixed = NU
     fit_mod <- tam.modelfit(tam_mod)
     srmr <- as.numeric(fit_mod$statlist$SRMR)
     pholm <- as.numeric(fit_mod$modelfit.test$p.holm)
-    wle_val <- mean(tam.wle(tam_mod)$WLE.rel)
+    wle_val <- mean(tam.wle(tam_mod)$WLE.rel, na.rm = TRUE)
     
     # p indicates significative error of approximation (MADaQ3)
     # p-holm indicates significative error of approximation (Maximum Chi square)
@@ -217,7 +217,9 @@ get_all_TAMs <- function(dat, column_names = NULL, tam_models = NULL, fixed = NU
     
     # relability adequacy
     rel_v <- FALSE
-    if (wle_val > 0.5 && tam_mod$EAP.rel > 0.5) {
+    if (!is.null(wle_val) && !is.na(wle_val) &&
+        !is.null(tam_mod$EAP.rel) && !is.na(tam_mod$EAP.rel) &&
+        wle_val > 0.5 && tam_mod$EAP.rel > 0.5) {
       rel_v <- TRUE
     }
     rel_fit <- c(rel_fit, rel_v)
@@ -444,6 +446,33 @@ load_and_save_TAMs_to_measure_change <- function(
   }
   
   return(TAMs)
+}
+
+## function to load and save the ability instrument to measure the change
+load_and_save_ability_instrument_to_measure_change <- function(
+  pre_dat, pos_dat, filename, userid
+  , items.pre, items.pos, same_items.pre, same_items.pos) {
+  
+  tam_models <- NULL
+  if (file.exists(filename)) {
+    instrument <- get(load(filename))
+    tam_models <- list(
+      pre_mod1 = instrument$info.verification$pre_mod
+      , pos_mod1 = instrument$info.verification$pos_mod
+      , mod2 = instrument$global.estimation$mod
+      , pre_mod3 = instrument$info.stacking$pre_mod
+      , pos_mod3 = instrument$info.stacking$pos_mod
+      , mod4 = instrument$info.racking$mod)
+  }
+  instrument <- GPCM.measure_change(
+    pre_dat = pre_dat, pos_dat = pos_dat, userid = userid
+    , items.pre = items.pre, items.pos = items.pos
+    , same_items.pre = same_items.pre, same_items.pos = same_items.pos
+    , tam_models = tam_models
+  )
+  if (!file.exists(filename)) save(instrument, file = filename)
+  
+  return(instrument)
 }
 
 ###############################################################################

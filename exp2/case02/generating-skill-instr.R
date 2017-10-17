@@ -65,7 +65,7 @@ colnames(p2b) <- sub('-3', '3', colnames(p2b))
 p2b <- select(
   p2b, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
   , starts_with('Ap'), starts_with('An'), starts_with('Ev'))
-p2b <- merge(participants, p2b, by.x = 'Nro USP', by.y = 'NUSP')
+p2b <- merge(participants, p2b, by.x = 'NroUSP', by.y = 'NUSP')
 
 userids <- intersect(p2a$UserID, p2b$UserID)
 
