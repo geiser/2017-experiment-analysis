@@ -103,10 +103,10 @@ posTAMs <- load_and_save_TAMs_to_measure_change(
                                , PE=c(NA, 'PEs3', 'PEs2', 'PEs1', 'PEs0'))
   #, url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214721&authkey=AONbAbVs_VXG3hs"
   , itemequals = list(ApB=c('ApB1','ApB2'), AnC=c('AnC1', 'AnC2'))
-  , prefix =  "LearningOutcome3pos", min_columns = 5)
+  , prefix =  "LearningOutcome3pos", min_columns = 6)
 View(posTAMs$information)
 
-## get meassure changes using GPCMs
+## get meassure changes using GPCMs ????
 # +Re2+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1         +P1s0
 #     +UnA+UnB+ApA+   +ApC+AnC+EvA+EvB+PAs1+PBs2
 pre_dat[,'Cr2'] <- pre_dat[,'P1s0']
