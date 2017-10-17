@@ -4,6 +4,32 @@ library(readxl)
 library(parallel)
 #options(mc.cores=6)
 
+pre_dat <- as.data.frame(read_csv("data/PreTest.csv"))
+rownames(pre_dat) <- pre_dat$UserID
+pos_dat <- as.data.frame(read_csv("data/PosTest.csv"))
+rownames(pos_dat) <- pos_dat$UserID
+
+## Get TAMs for Basic Analysis
+preTAMs <- load_and_save_TAMs_to_measure_change(
+  pre_dat, column_names = list(Re2=c(NA, 'Re2')
+                               , Un2=c(NA, 'Un2')
+                               , Ap1=c(NA, 'Ap1'), Ap3=c(NA, 'Ap3')
+                               , An3a=c(NA, 'An3a'), An3b=c(NA, 'An3b')
+                               , Ev2=c(NA, 'Ev2')
+                               , P4=c(NA, 'P4s3', 'P4s2', 'P4s1', 'P4s0'))
+  #, url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214720&authkey=ABwrjZPet-L6vo0"
+  , itemequals = list(An3=c('An3a', 'An3b'))
+  , prefix =  "pre", min_columns = 5)
+View(preTAMs$information)
+
+###3 ??
+
+library(readr)
+library(dplyr)
+library(readxl)
+library(parallel)
+#options(mc.cores=6)
+
 ## get vpl data
 vpl_leg <- read_excel("LearningData02.xlsx", sheet = "legend-VPL")
 vpl_dat <- read_excel("LearningData02.xlsx", sheet = "VPLData", col_types = "numeric")
