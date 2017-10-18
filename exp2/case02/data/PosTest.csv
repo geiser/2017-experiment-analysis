@@ -1,4 +1,4 @@
-UserID,NroUSP,Type,Group,CLRole,PlayerRole,ReA,UnC,ApB1,ApB2,AnC1,AnC2,EvB,PCs0,PCs1,PCs2,PCs3,PDs0,PDs1,PDs2,PDs3,PEs0,PEs1,PEs2,PEs3
+UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole,ReA,UnC,ApB1,ApB2,AnC1,AnC2,EvB,PCs0,PCs1,PCs2,PCs3,PDs0,PDs1,PDs2,PDs3,PEs0,PEs1,PEs2,PEs3
 10169.0,10377538.0,non-gamified,Grupo Team 10,Apprentice,NA,60.0,26.0,0.0,7.0,0.0,6.0,36.0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 10170.0,10260351.0,non-gamified,Grupo Team 6,Apprentice,NA,72.0,52.0,0.0,0.0,5.0,12.0,36.0,1.0,2.0,3.0,4.0,NA,NA,NA,NA,NA,NA,NA,NA
 10172.0,10273971.0,ont-gamified,Grupo Koil,Master,Yee Achiever,72.0,52.0,1.0,14.0,18.0,18.0,36.0,1.0,2.0,3.0,4.0,1.0,2.0,3.0,4.0,0.0,0.0,0.0,0.0

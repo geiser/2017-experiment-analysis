@@ -1,4 +1,4 @@
-UserID,NroUSP,Type,Group,CLRole,PlayerRole,ReB,ReA,UnB,UnA,ApB,ApC,ApA,AnC,EvB,EvA,PAs0,PAs1,PAs2,PAs3,PBs0,PBs1,PBs2,PBs3
+UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole,ReB,ReA,UnB,UnA,ApB,ApC,ApA,AnC,EvB,EvA,PAs0,PAs1,PAs2,PAs3,PBs0,PBs1,PBs2,PBs3
 10169.0,10377538.0,ont-gamified,Grupo Hefesto,Master,Yee Achiever,32.0,60.0,3.0,18.0,11.0,3.0,6.0,7.0,8.0,6.0,1.0,2.0,3.0,3.0,1.0,1.0,1.0,1.0
 10170.0,10260351.0,ont-gamified,Grupo Afrodite,Apprentice,Yee Achiever,31.0,60.0,4.0,18.0,11.0,4.0,6.0,14.0,7.0,6.0,NA,NA,NA,NA,NA,NA,NA,NA
 10171.0,698531.0,non-gamified,Grupo  Team 6,Apprentice,NA,40.0,60.0,4.0,18.0,12.0,8.0,6.0,14.0,12.0,6.0,1.0,1.0,2.0,2.0,1.0,1.0,2.0,2.0

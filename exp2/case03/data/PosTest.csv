@@ -1,4 +1,4 @@
-UserID,NroUSP,Type,Group,CLRole,PlayerRole,ReB,UnB,ApC,ApA,AnC1,AnC2,EvB,PFs0,PFs1,PFs2,PFs3,PGs0,PGs1,PGs2,PGs3,PHs0,PHs1,PHs2,PHs3
+UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole,ReB,UnB,ApC,ApA,AnC1,AnC2,EvB,PFs0,PFs1,PFs2,PFs3,PGs0,PGs1,PGs2,PGs3,PHs0,PHs1,PHs2,PHs3
 10169.0,10377538.0,ont-gamified,Resistance,Apprentice,Social Achiever,56.0,65.0,8.0,14.0,6.0,0.0,8.0,1.0,2.0,3.0,3.0,1.0,1.0,2.0,2.0,1.0,2.0,3.0,4.0
 10170.0,10260351.0,w/o-gamified,Grupo11,Apprentice,NA,39.0,51.0,8.0,0.0,7.0,0.0,0.0,1.0,1.0,2.0,2.0,1.0,2.0,3.0,3.0,1.0,1.0,1.0,1.0
 10172.0,10273971.0,w/o-gamified,Grupo5,Apprentice,NA,2.0,78.0,9.0,0.0,6.0,0.0,0.0,1.0,1.0,1.0,2.0,1.0,2.0,2.0,3.0,1.0,2.0,3.0,3.0

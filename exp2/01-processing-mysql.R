@@ -25,7 +25,7 @@ participants <- dbGetQuery(
   WHEN 'Control1' THEN 'non-gamified'
   ELSE ''
   END) AS `Type`
-  , oj2.name AS `Group`
+  , oj2.name AS `CLGroup`
   , (CASE oj3.name
   WHEN 'Mestre1' THEN 'Master'
   WHEN 'Aprendiz1' THEN 'Apprentice'
@@ -63,7 +63,7 @@ participants <- dbGetQuery(
   INNER JOIN mdl_groupings gr4 ON gr4.id = grg4.groupingid
   WHERE gr4.name IN ('CL Player Roles1') AND g4.name IN ('Achiever1', 'Socializer1')) oj4 ON oj4.userid = u.id
   WHERE e.courseid = 8")
-participants <- dplyr::mutate(participants, Group = iconv(participants$Group, from = "latin1", to = "UTF-8"))
+participants <- dplyr::mutate(participants, CLGroup = iconv(participants$CLGroup, from = "latin1", to = "UTF-8"))
 if (!file.exists('case01/data/Participant.csv')) write_csv(participants, path = "case01/data/Participant.csv")
 
 ## Experiment02 - CaseStudy02
@@ -76,7 +76,7 @@ participants <- dbGetQuery(
   WHEN 'Control2' THEN 'non-gamified'
   ELSE ''
   END) AS `Type`
-  , oj2.name AS `Group`
+  , oj2.name AS `CLGroup`
   , (CASE oj3.name
   WHEN 'Mestre2' THEN 'Master'
   WHEN 'Aprendiz2' THEN 'Apprentice'
@@ -114,7 +114,7 @@ participants <- dbGetQuery(
   INNER JOIN mdl_groupings gr4 ON gr4.id = grg4.groupingid
   WHERE gr4.name IN ('CL Player Roles2') AND g4.name IN ('Achiever2', 'Socializer2')) oj4 ON oj4.userid = u.id
   WHERE e.courseid = 8")
-participants <- dplyr::mutate(participants, Group = iconv(participants$Group, from = "latin1", to = "UTF-8"))
+participants <- dplyr::mutate(participants, CLGroup = iconv(participants$CLGroup, from = "latin1", to = "UTF-8"))
 if (!file.exists('case02/data/Participant.csv'))  write_csv(participants, path = "case02/data/Participant.csv")
 
 ## Experiment02 - CaseStudy03
@@ -127,7 +127,7 @@ participants <- dbGetQuery(
   WHEN 'Control3' THEN 'w/o-gamified'
   ELSE ''
   END) AS `Type`
-  , oj2.name AS `Group`
+  , oj2.name AS `CLGroup`
   , (CASE oj3.name
   WHEN 'Mestre3' THEN 'Master'
   WHEN 'Aprendiz3' THEN 'Apprentice'
@@ -174,7 +174,7 @@ participants <- dbGetQuery(
   INNER JOIN mdl_groupings gr5 ON gr5.id = grg5.groupingid
   WHERE g5.name IN ('Socializer3')) oj5 ON oj5.userid = u.id
   WHERE e.courseid = 8")
-participants <- dplyr::mutate(participants, Group = iconv(participants$Group, from = "latin1", to = "UTF-8"))
+participants <- dplyr::mutate(participants, CLGroup = iconv(participants$CLGroup, from = "latin1", to = "UTF-8"))
 participants <- dplyr::mutate(participants, PlayerRole = if_else(
   participants$Achiever == "Yes" & participants$Socializer == "Yes"
   , true = "Social Achiever"
@@ -183,7 +183,7 @@ participants <- dplyr::mutate(participants, PlayerRole = if_else(
                     , false = if_else(participants$Socializer == "Yes"
                                       , true = "Yee Socializer"
                                       , false = ""))))
-participants <- participants[c('UserID', 'NroUSP', 'Type', 'Group', 'CLRole', 'PlayerRole')]
+participants <- participants[c('UserID', 'NroUSP', 'Type', 'CLGroup', 'CLRole', 'PlayerRole')]
 if (!file.exists('case03/data/Participant.csv'))  write_csv(participants, path = "case03/data/Participant.csv")
 
 # close connection
@@ -228,7 +228,7 @@ legend <- dbGetQuery(
   WHEN 407 THEN 'IMMS' WHEN 408 THEN 'IMMS' WHEN 409 THEN 'IMMS' WHEN 410 THEN 'IMMS'
   WHEN 411 THEN 'IMMS' WHEN 412 THEN 'IMMS'
   ELSE ''
-  END) AS `Group`,
+  END) AS `CLGroup`,
   (CASE qqc.id
   WHEN 345 THEN 'Item01' WHEN 346 THEN 'Item02' WHEN 347 THEN 'Item03' WHEN 348 THEN 'Item04'
   WHEN 349 THEN 'Item05' WHEN 350 THEN 'Item06' WHEN 351 THEN 'Item07' WHEN 352 THEN 'Item08'

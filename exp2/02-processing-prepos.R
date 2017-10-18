@@ -3,8 +3,16 @@ library(dplyr)
 library(readxl)
 
 ## functions to calculate greatest common divisor and least common multiple
-GCD <- function(u, v) { ifelse(u %% v != 0, return(GCD(v, (u%%v))), return(v)) }
-LCM <- function(u, v) { return(abs(u*v)/GCD(u, v)) }
+GCD <- function(u, v) {
+  if (u %% v != 0) {
+    return(GCD(v, (u%%v)))
+  } else {
+    return(v)
+  }
+}
+LCM <- function(u, v) {
+  return(abs(u*v)/GCD(u, v))
+}
 
 ## function to get simplified score test
 get_simplified_score_test <- function(dat, col_names = NULL) {

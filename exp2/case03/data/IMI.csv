@@ -1,4 +1,4 @@
-UserID,NroUSP,Type,Group,CLRole,PlayerRole,Item01,Item02,Item03,Item04,Item05,Item06,Item07,Item08,Item09,Item10,Item11,Item12,Item13,Item14,Item15,Item16,Item17,Item18,Item19,Item20,Item21,Item22,Item23,Item24
+UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole,Item01,Item02,Item03,Item04,Item05,Item06,Item07,Item08,Item09,Item10,Item11,Item12,Item13,Item14,Item15,Item16,Item17,Item18,Item19,Item20,Item21,Item22,Item23,Item24
 10169.0,10377538.0,ont-gamified,Resistance,Apprentice,Social Achiever,5.0,7.0,4.0,7.0,2.0,6.0,4.0,7.0,7.0,7.0,7.0,7.0,4.0,5.0,7.0,5.0,2.0,2.0,5.0,2.0,7.0,6.0,1.0,7.0
 10170.0,10260351.0,w/o-gamified,Grupo11,Apprentice,NA,3.0,1.0,3.0,1.0,2.0,1.0,2.0,6.0,4.0,3.0,4.0,3.0,2.0,4.0,6.0,4.0,2.0,1.0,3.0,3.0,4.0,5.0,1.0,4.0
 10171.0,698531.0,ont-gamified,Mafia,Master,Social Achiever,1.0,2.0,2.0,2.0,2.0,1.0,1.0,6.0,6.0,2.0,6.0,5.0,2.0,7.0,7.0,6.0,2.0,2.0,1.0,1.0,7.0,6.0,6.0,5.0
