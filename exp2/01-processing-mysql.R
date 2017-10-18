@@ -1,7 +1,10 @@
-
 wants <- c('readr', 'dplyr', 'RMySQL', 'reshape')
 has <- wants %in% rownames(installed.packages())
 if (any(!has)) install.packages(wants[!has])
+
+##########################################################################
+## Participants for Case01, Case02 and Case03                           ##
+##########################################################################
 
 library(readr)
 library(dplyr)
@@ -11,9 +14,6 @@ library(reshape)
 # open connection
 con <- dbConnect(RMySQL::MySQL(), user = "root" , password = "qaz123456"
                  , dbname = "caede741_geiser_moodle", host = "localhost")
-
-## Pre-processing Participants
-############################################################################
 
 ## Experiment02 - CaseStudy01
 participants <- dbGetQuery(
@@ -64,8 +64,7 @@ participants <- dbGetQuery(
   WHERE gr4.name IN ('CL Player Roles1') AND g4.name IN ('Achiever1', 'Socializer1')) oj4 ON oj4.userid = u.id
   WHERE e.courseid = 8")
 participants <- dplyr::mutate(participants, Group = iconv(participants$Group, from = "latin1", to = "UTF-8"))
-
-write_csv(participants, path = "case01/data/Participant.csv")
+if (!file.exists('case01/data/Participant.csv')) write_csv(participants, path = "case01/data/Participant.csv")
 
 ## Experiment02 - CaseStudy02
 participants <- dbGetQuery(
@@ -116,8 +115,7 @@ participants <- dbGetQuery(
   WHERE gr4.name IN ('CL Player Roles2') AND g4.name IN ('Achiever2', 'Socializer2')) oj4 ON oj4.userid = u.id
   WHERE e.courseid = 8")
 participants <- dplyr::mutate(participants, Group = iconv(participants$Group, from = "latin1", to = "UTF-8"))
-
-write_csv(participants, path = "case02/data/Participant.csv")
+if (!file.exists('case02/data/Participant.csv'))  write_csv(participants, path = "case02/data/Participant.csv")
 
 ## Experiment02 - CaseStudy03
 participants <- dbGetQuery(
@@ -186,14 +184,14 @@ participants <- dplyr::mutate(participants, PlayerRole = if_else(
                                       , true = "Yee Socializer"
                                       , false = ""))))
 participants <- participants[c('UserID', 'NroUSP', 'Type', 'Group', 'CLRole', 'PlayerRole')]
-
-write_csv(participants, path = "case03/data/Participant.csv")
+if (!file.exists('case03/data/Participant.csv'))  write_csv(participants, path = "case03/data/Participant.csv")
 
 # close connection
 dbDisconnect(con)
 
-## Experiment02 - CaseStudy03 (Motivation Questionnaire)
-############################################################################
+##########################################################################
+## Motivation Questionnaire for Case03                                  ##
+##########################################################################
 
 library(readr)
 library(dplyr)
@@ -201,11 +199,12 @@ library(RMySQL)
 library(reshape)
 library(careless)
 
-participant <- read_csv("case03/data/Participant.csv")
-
 # open connection
 con <- dbConnect(RMySQL::MySQL(), user = "root" , password = "qaz123456"
                  , dbname = "caede741_geiser_moodle", host = "localhost")
+
+## Experiment02 - CaseStudy03 (Motivation Questionnaire)
+participant <- read_csv("case03/data/Participant.csv")
 
 legend <- dbGetQuery(
   con,
@@ -257,10 +256,12 @@ legend <- dbGetQuery(
   INNER JOIN `mdl_questionnaire_quest_choice` qqc ON qqc.question_id = qq.id
   WHERE cm.id=549")
 legend <- dplyr::mutate(legend, Content = iconv(legend$Content, from = "latin1", to = "UTF-8"))
-write_csv(legend, path = 'case03/data/QuestLegend.csv')
-legend <- read_csv('case03/data/QuestLegend.csv')
-legend <- legend[complete.cases(legend),]
-write_csv(legend, path = 'case03/data/QuestLegend.csv')
+if (!file.exists('case03/data/MotQuestLegend.csv')) {
+  write_csv(legend, path = 'case03/data/MotQuestLegend.csv')
+  legend <- read_csv('case03/data/MotQuestLegend.csv')
+  legend <- legend[complete.cases(legend),]
+  write_csv(legend, path = 'case03/data/MotQuestLegend.csv')
+}
 
 resp <- dbGetQuery(
   con,
@@ -279,7 +280,7 @@ careless_info <- careless(select(resp, -starts_with("UserID")), append=FALSE)
 resp_wo <- resp[!(careless_info$longString > 24),] # 8,21,34,55
 
 Quest <- merge(participant, resp_wo, by="UserID")
-write_csv(Quest, 'case03/data/Quest.csv')
+if (!file.exists('case03/data/MotQuest.csv')) write_csv(Quest, 'case03/data/MotQuest.csv')
 
 respIMI <- mutate(resp_wo
                   , Item01=0+resp_wo$`345`
@@ -309,7 +310,7 @@ respIMI <- mutate(resp_wo
 )
 respIMI <- select(respIMI, starts_with("UserID"), starts_with("Item"))
 IMI <- merge(participant, respIMI, by="UserID")
-write_csv(IMI, 'case03/data/IMI.csv')
+if (!file.exists('case03/data/IMI.csv')) write_csv(IMI, 'case03/data/IMI.csv')
 
 respIMMS <- mutate(resp_wo
                    , Item01=0+resp_wo$`332`
@@ -340,48 +341,8 @@ respIMMS <- mutate(resp_wo
 )
 respIMMS <- select(respIMMS, starts_with("UserID"), starts_with("Item"))
 IMMS <- merge(participant, respIMMS, by="UserID")
-write_csv(IMMS, 'case03/data/IMMS.csv')
+if (!file.exists('case03/data/IMMS.csv')) write_csv(IMMS, 'case03/data/IMMS.csv')
 
 # close connection
 dbDisconnect(con)
-
-## Experiment02 - CaseStudy03 (Motivation Questionnaire)
-############################################################################ ???
-
-library(readr)
-library(dplyr)
-library(RMySQL)
-library(reshape)
-library(careless)
-
-participant <- read_csv("case03/data/Participant.csv")
-
-# open connection
-con <- dbConnect(RMySQL::MySQL(), user = "root" , password = "qaz123456"
-                 , dbname = "caede741_geiser_moodle", host = "localhost")
-# close connection
-dbDisconnect(con)
-
-############################################################################
-
-
-## gather data from csv files
-activities <- read_csv('2017-CLActivity03.csv')
-
-## combine data for analysis
-datIMI <- merge(
-  select(participants
-         , starts_with("UserID")
-         , starts_with("Type")
-         , starts_with("CLRole")
-         , starts_with("PlayerRole")
-  ),
-  select(activities
-         , starts_with("UserID")
-         , starts_with("ParticipationLevel")
-  ), by = "UserID")
-datIMI <- merge(datIMI, select(respIMI, starts_with("UserID"), starts_with("Item")), by = "UserID")
-
-
-
 

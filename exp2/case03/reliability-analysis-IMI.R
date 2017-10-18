@@ -140,3 +140,4 @@ alpha <- alpha(select(rdatIMI[rdatIMI$Type=="w/o-gamified",]
                       , starts_with("Item19"), starts_with("Item22")
 ), keys = inv_keys)
 cat("Effort/Importance", ">>", "w/o-gamified", "\n"); alpha$total
+

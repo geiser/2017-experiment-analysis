@@ -3,12 +3,12 @@ P1,504.0,515.0,cond,pre,Monitor de Temperatura Virtual,http://localhost/~gcc/moo
 P2,454.0,528.0,loops,pre,Divisores próprios,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=454&less=1493154000&grade=10,NA,NA,NA,NA,NA
 P3,457.0,NA,loops,pre,Máximo comprimento das sequências de números granizo,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=457&less=1493154000&grade=10,NA,NA,NA,NA,NA
 P4,534.0,542.0,recurs,pre,Polinômios de Fibonacci,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=534&less=1495789200&grade=10,NA,NA,NA,NA,NA
-NA,538.0,NA,recurs,pre,Gerador de números da sorte,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=538&less=1495789200&grade=10,NA,NA,NA,NA,Removed
-PA,498.0,NA,cond,pos,TMB - Taxa Metabólica Basal,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=498&grade=10,NA,NA,NA,NA,NA
-PB,515.0,504.0,cond,pos,Calculadora de dieta,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=515&grade=10,NA,NA,NA,NA,NA
-PC,528.0,454.0,loops,pos,Sequências de potências,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=528&grade=10,NA,NA,NA,NA,NA
-PD,524.0,NA,loops,pos,Caixa eletrônico,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=524&grade=10,NA,NA,NA,NA,NA
-PE,478.0,NA,loops,pos,Contagem de semi-primos para o algoritmo RSA,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=478&grade=10,NA,NA,NA,NA,NA
-PF,542.0,534.0,recurs,pos,Planning Poker,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=542&grade=10,NA,NA,NA,NA,NA
-PG,544.0,NA,recurs,pos,Contagem de palindromos,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=544&grade=10,NA,NA,NA,NA,NA
-PH,545.0,NA,recurs,pos,A saída do labirinto,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=545&grade=10,NA,NA,NA,NA,NA
+NA,538.0,NA,recurs,pre,Gerador de números da sorte,NA,NA,NA,NA,NA,Removed
+PA,498.0,NA,cond,pos,TMB - Taxa Metabólica Basal,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=498&less=1493154000&grade=10,NA,NA,NA,NA,NA
+PB,515.0,504.0,cond,pos,Calculadora de dieta,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=515&less=1493154000&grade=10,NA,NA,NA,NA,NA
+PC,528.0,454.0,loops,pos,Sequências de potências,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=528&less=1495789200&grade=10,NA,NA,NA,NA,NA
+PD,524.0,NA,loops,pos,Caixa eletrônico,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=524&less=1495789200&grade=10,NA,NA,NA,NA,NA
+PE,478.0,NA,loops,pos,Contagem de semi-primos para o algoritmo RSA,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=478&less=1495789200&grade=10,NA,NA,NA,NA,NA
+PF,542.0,534.0,recurs,pos,Planning Poker,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=542&less=1499778000&grade=10,NA,NA,NA,NA,NA
+PG,544.0,NA,recurs,pos,Contagem de palindromos,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=544&less=1499778000&grade=10,NA,NA,NA,NA,NA
+PH,545.0,NA,recurs,pos,A saída do labirinto,http://localhost/~gcc/moodle/mod/vpl/editor/report.php?id=545&less=1499778000&grade=10,NA,NA,NA,NA,NA

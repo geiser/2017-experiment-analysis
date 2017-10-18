@@ -2,6 +2,24 @@ library(readr)
 library(dplyr)
 library(readxl)
 
+## functions to calculate greatest common divisor and least common multiple
+GCD <- function(u, v) { ifelse(u %% v != 0, return(GCD(v, (u%%v))), return(v)) }
+LCM <- function(u, v) { return(abs(u*v)/GCD(u, v)) }
+
+## function to get simplified score test
+get_simplified_score_test <- function(dat, col_names = NULL) {
+  s_dat <- dat
+  if (is.null(col_names)) col_names <- colnames(s_dat)
+  n_lcm <- 1
+  for (c_name in col_names) {
+    n_lcm <- LCM(n_lcm, max(s_dat[c_name], na.rm = T))
+  }
+  for (c_name in col_names) {
+    s_dat[,c_name] <- s_dat[,c_name]*(n_lcm/max(s_dat[c_name], na.rm = T))
+  }
+  return(s_dat)
+}
+
 ## function to get information from a programming test based on AMC
 get_programing_amc_test_info <- function(participants, source, sheet, type = 'pre', other_sheet = NULL) {
   
@@ -57,7 +75,9 @@ get_programing_amc_test_info <- function(participants, source, sheet, type = 'pr
   return(acm_test)
 }
 
-###########################################################################
+##########################################################################
+## Information from VPL                                                 ##
+##########################################################################
 
 ## pre-procesing VPL data
 vpl_leg <- read_excel("data/LearningData02.xlsx", sheet = "legend-VPL")
@@ -71,12 +91,13 @@ vpl_dat <- score_programming_tasks(
   , nview_str = 'start', apxt_str = 'exat', def_non_view_score = -1
   , keys = c("P1","P2","P3","P4","PA","PB","PC","PD","PE","PF","PG","PH"))
 
-write_csv(vpl_leg, path = "data/Legend-VPL.csv")
-write_csv(vpl_dat, path = "data/Moodle-VPL.csv")
+if (!file.exists('data/Legend-VPL.csv')) write_csv(vpl_leg, path = "data/Legend-VPL.csv")
+if (!file.exists('data/Moodle-VPL.csv')) write_csv(vpl_dat, path = "data/Moodle-VPL.csv")
 
-###########################################################################
+##########################################################################
+## PreTest and PosTest for Case01                                       ##
+##########################################################################
 
-## CaseStudy01 - geting pre- and post- data for 
 participants <- read_csv('case01/data/Participant.csv')
 pre_dat <- get_programing_amc_test_info(
   participants, source = "data/LearningData02.xlsx", sheet = "provinha1a-cond-part1"
@@ -94,35 +115,28 @@ pos_dat <- merge(pos_dat, select(vpl_dat, starts_with('UserID'), starts_with('PA
 rownames(pos_dat) <- pos_dat$UserID
 pos_dat <- pos_dat[pos_dat$UserID %in% userids,]
 
-pre_dat[,'Cr2'] <- pre_dat[,'P1s0']
-pos_dat[,'CrA'] <- pos_dat[,'PAs1']
-pos_dat[,'CrB'] <- pos_dat[,'PBs2']
+if (!file.exists('case01/data/PreTest.csv')) write_csv(pre_dat, path = 'case01/data/PreTest.csv')
+if (!file.exists('case01/data/PosTest.csv')) write_csv(pos_dat, path = 'case01/data/PosTest.csv')
 
-write_csv(pre_dat, path = "case01/data/PreTest.csv")
-write_csv(pos_dat, path = "case01/data/PosTest.csv")
+## simplified data to have the same scores
+col_names_pre <- c('UserID', colnames(pre_dat)[!colnames(pre_dat) %in% colnames(participants)])
+col_names_pos <- c('UserID', colnames(pos_dat)[!colnames(pos_dat) %in% colnames(participants)])
+simple_dat <- merge(pre_dat[col_names_pre], pos_dat[col_names_pos], by = 'UserID')
 
-pre_dat_unify <- pre_dat
-pos_dat_unify <- pos_dat
+col_names <- union(col_names_pre, col_names_pos)
+col_names <- col_names[!col_names %in% c('UserID')]
+simple_dat <- get_simplified_score_test(simple_dat, col_names)
 
-pre_dat_unify[,'Ap2'] <- pre_dat[,'Ap2']*12
-pos_dat_unify[,'ApB'] <- pos_dat[,'ApB']*1
+simple_pre_dat <- merge(participants, simple_dat[col_names_pre], by = 'UserID')
+simple_pos_dat <- merge(participants, simple_dat[col_names_pos], by = 'UserID')
 
-pre_dat_unify[,'Ev2'] <- pre_dat[,'Ev2']*6
-pos_dat_unify[,'EvB'] <- pos_dat[,'EvB']*5
+if (!file.exists('case01/data/SimplePreTest.csv')) write_csv(simple_pre_dat, path = 'case01/data/SimplePreTest.csv')
+if (!file.exists('case01/data/SimplePosTest.csv')) write_csv(simple_pos_dat, path = 'case01/data/SimplePosTest.csv')
 
-pre_dat_unify[,'Ev1'] <- pre_dat[,'Ev1']*1
-pos_dat_unify[,'EvA'] <- pos_dat[,'EvA']*2
+##########################################################################
+## PreTest and PosTest for Case02                                       ##
+##########################################################################
 
-pre_dat_unify[,'Un2'] <- pre_dat[,'Un2']*2
-pos_dat_unify[,'UnB'] <- pos_dat[,'UnB']*3
-
-pre_dat_unify[,'An3'] <- pre_dat[,'An3']*7
-pos_dat_unify[,'AnC'] <- pos_dat[,'AnC']*8
-
-write_csv(pre_dat_unify, path = "case01/data/PreTestUnify.csv")
-write_csv(pos_dat_unify, path = "case01/data/PosTestUnify.csv")
-
-## CaseStudy02 - geting pre- and post- data for 
 participants <- read_csv('case02/data/Participant.csv')
 pre_dat <- get_programing_amc_test_info(
   participants, source = "data/LearningData02.xlsx", sheet = "provinha2a-loops", type = "pre")
@@ -138,13 +152,31 @@ pos_dat <- merge(pos_dat, select(vpl_dat, starts_with('UserID'), starts_with('PC
 rownames(pos_dat) <- pos_dat$UserID
 pos_dat <- pos_dat[pos_dat$UserID %in% userids,]
 
-write_csv(pre_dat, path = "case02/data/PreTest.csv")
-write_csv(pos_dat, path = "case02/data/PosTest.csv")
+if (!file.exists('case02/data/PreTest.csv')) write_csv(pre_dat, path = 'case02/data/PreTest.csv')
+if (!file.exists('case02/data/PosTest.csv')) write_csv(pos_dat, path = 'case02/data/PosTest.csv')
 
-## CaseStudy03 - geting pre- and post- data for 
+## simplified data to have the same scores
+col_names_pre <- c('UserID', colnames(pre_dat)[!colnames(pre_dat) %in% colnames(participants)])
+col_names_pos <- c('UserID', colnames(pos_dat)[!colnames(pos_dat) %in% colnames(participants)])
+simple_dat <- merge(pre_dat[col_names_pre], pos_dat[col_names_pos], by = 'UserID')
+
+col_names <- union(col_names_pre, col_names_pos)
+col_names <- col_names[!col_names %in% c('UserID')]
+simple_dat <- get_simplified_score_test(simple_dat, col_names)
+
+simple_pre_dat <- merge(participants, simple_dat[col_names_pre], by = 'UserID')
+simple_pos_dat <- merge(participants, simple_dat[col_names_pos], by = 'UserID')
+
+if (!file.exists('case02/data/SimplePreTest.csv')) write_csv(simple_pre_dat, path = 'case02/data/SimplePreTest.csv')
+if (!file.exists('case02/data/SimplePosTest.csv')) write_csv(simple_pos_dat, path = 'case02/data/SimplePosTest.csv')
+
+##########################################################################
+## PreTest and PosTest for Case03                                       ##
+##########################################################################
+
 participants <- read_csv('case03/data/Participant.csv')
 pre_dat <- get_programing_amc_test_info(
-  participants, source = "data/LearningData02.xlsx", sheet = "provinha3c-recurs", type = "pre")
+  participants, source = "data/LearningData02.xlsx", sheet = "provinha3a-recurs", type = "pre")
 pos_dat <- get_programing_amc_test_info(
   participants, source = "data/LearningData02.xlsx", sheet = "provinha3c-recurs", type = "pos")
 userids <- intersect(pre_dat$UserID, pos_dat$UserID)
@@ -157,7 +189,20 @@ pos_dat <- merge(pos_dat, select(vpl_dat, starts_with('UserID'), starts_with('PF
 rownames(pos_dat) <- pos_dat$UserID
 pos_dat <- pos_dat[pos_dat$UserID %in% userids,]
 
-write_csv(pre_dat, path = "case03/data/PreTest.csv")
-write_csv(pos_dat, path = "case03/data/PosTest.csv")
+if (!file.exists('case03/data/PreTest.csv')) write_csv(pre_dat, path = 'case03/data/PreTest.csv')
+if (!file.exists('case03/data/PosTest.csv')) write_csv(pos_dat, path = 'case03/data/PosTest.csv')
 
-###########################################################################
+## simplified data to have the same scores
+col_names_pre <- c('UserID', colnames(pre_dat)[!colnames(pre_dat) %in% colnames(participants)])
+col_names_pos <- c('UserID', colnames(pos_dat)[!colnames(pos_dat) %in% colnames(participants)])
+simple_dat <- merge(pre_dat[col_names_pre], pos_dat[col_names_pos], by = 'UserID')
+
+col_names <- union(col_names_pre, col_names_pos)
+col_names <- col_names[!col_names %in% c('UserID')]
+simple_dat <- get_simplified_score_test(simple_dat, col_names)
+
+simple_pre_dat <- merge(participants, simple_dat[col_names_pre], by = 'UserID')
+simple_pos_dat <- merge(participants, simple_dat[col_names_pos], by = 'UserID')
+
+if (!file.exists('case03/data/SimplePreTest.csv')) write_csv(simple_pre_dat, path = 'case03/data/SimplePreTest.csv')
+if (!file.exists('case03/data/SimplePosTest.csv')) write_csv(simple_pos_dat, path = 'case03/data/SimplePosTest.csv')
