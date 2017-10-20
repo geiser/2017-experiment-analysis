@@ -1,68 +1,4 @@
 
-###############################################################################
-## Functions to analysis motivation and learning outcomes                    ##
-###############################################################################
-
-## Definition of function wilcox_analysis
-wilcox_analysis <- function(x, y, title="", alternative = "two.sided"
-                            , plotting = TRUE, notch = TRUE, sub = NULL, ylab = NULL
-                            , inv.col = FALSE, draw.conf.int = TRUE) {
-  library(coin)
-  
-  x <- factor(x)
-  sdata <- data.frame(x=x, y=y, r=rank(y))
-  
-  # wilcoxon values
-  wt <- wilcox.test(y ~ x, alternative = alternative, conf.int = FALSE)
-  U <- wt$statistic
-  wt <- wilcox_test(y ~ x, distribution="exact", conf.int = FALSE, alternative = alternative)
-  Z <- as.numeric(statistic(wt))
-  pvalue <- pvalue(wt)
-  r <- abs(Z/sqrt(length(x)))
-  
-  # drawing plotting
-  if (plotting == TRUE) {
-    pch1=16; pch2=17
-    pcol1=10; pcol2=4
-    pcol = c("white","lightgrey")
-    if (inv.col == TRUE) {
-      pch1=17; pch2=16
-      pcol1=4; pcol2=10
-      pcol = c("lightgrey","white")
-    }
-    
-    bp <- boxplot(y ~ x, boxwex=0.2, notch=notch, col=pcol, ylab=ylab)
-    title(title, sub = sub)
-    
-    # drawing data as points
-    stripchart(sdata$y[sdata$x==levels(x)[1]], col=8, pch=pch1, add=TRUE, at=0.7, cex=.7, method="jitter", vertical=TRUE)
-    stripchart(sdata$y[sdata$x==levels(x)[2]], col=8, pch=pch2, add=TRUE, at=1.7, cex=.7, method="jitter", vertical=TRUE)
-    
-    # drawing line wilcox conf.interval
-    if (draw.conf.int==TRUE) {
-      wt <- wilcox.test(sdata$y[sdata$x==levels(x)[1]], conf.int=TRUE)
-      points(c(0.7,0.7,0.7), c(wt$conf.int, wt$estimate), pch="-", col=pcol1, cex=c(.9,.9,1.5))
-      lines(c(0.7,0.7), wt$conf.int, col=pcol1)
-      
-      wt <- wilcox.test(sdata$y[sdata$x==levels(x)[2]], conf.int=TRUE)
-      points(c(1.7,1.7,1.7), c(wt$conf.int, wt$estimate), pch="-", col=pcol2, cex=c(.9,.9,1.5))
-      lines(c(1.7,1.7), wt$conf.int, col=pcol2)
-    }
-  }
-  
-  result <- data.frame(
-    "Group" = c(levels(x)[1], levels(x)[2])
-    , "N" = c(length(x[x==levels(x)[1]]), length(x[x==levels(x)[2]]))
-    , "Median" = c(median(sdata$y[sdata$x == levels(x)[1]]), median(sdata$y[sdata$x == levels(x)[2]]))
-    , "Mean Ranks" = c(mean(sdata$r[sdata$x == levels(x)[1]]), mean(sdata$r[sdata$x == levels(x)[2]]))
-    , "Sum Ranks" = c(sum(sdata$r[sdata$x == levels(x)[1]]), sum(sdata$r[sdata$x == levels(x)[2]]))
-    , "U" = c(U, U)
-    , "Z" = c(Z, Z)
-    , "p-value" = c(pvalue, pvalue)
-    , "r" = c(r, r))
-  
-  return(result)
-}
 
 ###############################################################################
 ## Functions to perform a pre-process of data                                ##
@@ -801,39 +737,7 @@ drawing_scatter_plots <- function(mods) {
   }
 }
 
-## main function for performing an statistical analysis
-do_statistical_analysis_for_pre_post_test <- function(
-  data, wid, pre.test, post.test, between, type.test = 'parametric'
-  , plotting = TRUE) {
-  
-  test_size <- test_min_size(data = data, between = between)
-  anova_type <- ifelse(test_size$unbalanced, 3, 2)
-  
-  mods <- get_aov_mods_for_pre_post_test(data, wid, pre.test, post.test, between, type = anova_type)
-  test_p <- test_parametric_assumptions(mods = mods)
-  
-  ##
-  if (!test_p$fail) {
-    
-    test_ph <- test_post_hoc(mods=mods)
-    lsmeans_mods <- get_least_squares_means(mods = mods)
-    
-    if (plotting) {
-      drawing_bars_for_lsmeans(lsmeans_mods$aov)
-      #drawing_interaction_plots_for_lsmeans(lsmeans_mods$aov.sp, c(mods$pre.test, mods$post.test))
-      #drawing_pre_post_plots_for_lsmeans(lsmeans_mods$aocv)
-      #drawing_scatter_plots(mods)
-      #draw_interaction_plots(mods=mods)
-      #draw_mean_boxplots(mods=mods)
-    }
-  }
-  
-  return(list(
-    anova.type = anova_type
-    , lsmeans = lsmeans_mods, test.post.hoc = test_ph
-    , test.assumptions = test_p, test.size = test_size, mods = mods
-  ))
-}
+
 
 ###############################################################################
 

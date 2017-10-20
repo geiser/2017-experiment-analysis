@@ -17,13 +17,17 @@ LCM <- function(u, v) {
 ## function to get simplified score test
 get_simplified_score_test <- function(dat, col_names = NULL) {
   s_dat <- dat
-  if (is.null(col_names)) col_names <- colnames(s_dat)
+  if (is.null(col_names)) {
+    col_names <- colnames(s_dat)
+  }
   n_lcm <- 1
   for (c_name in col_names) {
     n_lcm <- LCM(n_lcm, max(s_dat[c_name], na.rm = T))
   }
+  
   for (c_name in col_names) {
-    s_dat[,c_name] <- s_dat[,c_name]*(n_lcm/max(s_dat[c_name], na.rm = T))
+    #s_dat[,c_name] <- s_dat[,c_name]*(n_lcm/max(s_dat[c_name], na.rm = T))
+    s_dat[,c_name] <- s_dat[,c_name]/max(s_dat[c_name], na.rm = T)
   }
   return(s_dat)
 }
@@ -214,3 +218,4 @@ simple_pos_dat <- merge(participants, simple_dat[col_names_pos], by = 'UserID')
 
 if (!file.exists('case03/data/SimplePreTest.csv')) write_csv(simple_pre_dat, path = 'case03/data/SimplePreTest.csv')
 if (!file.exists('case03/data/SimplePosTest.csv')) write_csv(simple_pos_dat, path = 'case03/data/SimplePosTest.csv')
+
