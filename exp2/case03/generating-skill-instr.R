@@ -4,18 +4,46 @@ library(readxl)
 library(parallel)
 #options(mc.cores=6)
 
-pre_dat <- as.data.frame(read_csv("data/PreTest.csv"))
-rownames(pre_dat) <- pre_dat$UserID
-pos_dat <- as.data.frame(read_csv("data/PosTest.csv"))
-rownames(pos_dat) <- pos_dat$UserID
+aov_dat <- read_excel("report/learning-outcome/AnovaAnalysis.xlsx", sheet = "data", col_types = "numeric")
+userids <- aov_dat$UserID
+
+pre_dat <- as.data.frame(read_csv("data/SourcePreTestWithVPL.csv"))
+pre_dat <- pre_dat[pre_dat$UserID %in% userids,]
+pos_dat <- as.data.frame(read_csv("data/SourcePosTestWithVPL.csv"))
+pos_dat <- pos_dat[pos_dat$UserID %in% userids,]
+
+sdat <- get_stacking_data(
+  pre_dat, pos_dat, 'UserID'
+  , items.pre = c("Re2","Un2","Ap1","Ap3","An3a","An3b","Ev2","P4s0","P4s1","P4s2","P4s3")
+  , items.pos = c("ReB","UnB","ApA","ApC","AnC1","AnC2","EvB","PFs0","PFs1","PFs2","PFs3")
+  , same.items = list(pre = c("Re2","An3a","An3b","Ev2","P4s0","P4s1","P4s2","P4s3"),
+                      pos = c("ReB","AnC1","AnC2","EvB","PFs0","PFs1","PFs2","PFs3"))
+)
+
+## Get TAMs for analysis of pre- and post-test
+resTAMs <- load_and_save_TAMs_to_measure_change(
+  sdat, column_names = list(
+    Re2ReB=c(NA,'Re2ReB')
+    , Un2=c('Un2'), UnB=c('UnB')
+    , Ap1=c('Ap1'), ApA=c('ApA')
+    , Ap3=c('Ap3'), ApC=c('ApC')
+    , An3aAnC1=c(NA,'An3aAnC1'), An3bAnC2=c(NA,'An3bAnC2')
+    , Ev2EvB=c(NA,'Ev2EvB')
+    , P4PF=c(NA, 'P4s0PFs0', 'P4s1PFs1', 'P4s2PFs2', 'P4s3PFs3'))
+  #, url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214720&authkey=ABwrjZPet-L6vo0"
+  , itemequals = list(An3=c('An3aAnC1', 'An3bAnC2'))
+  , prefix =  "case03", min_columns = 7)
+View(preTAMs$information)
+
+### ????
 
 ## Get TAMs for Basic Analysis
 preTAMs <- load_and_save_TAMs_to_measure_change(
   pre_dat, column_names = list(Re2=c(NA, 'Re2')
                                , Un2=c(NA, 'Un2')
-                               , Ap1=c(NA, 'Ap1'), Ap3=c(NA, 'Ap3')
-                               , An3a=c(NA, 'An3a'), An3b=c(NA, 'An3b')
-                               , Ev2=c(NA, 'Ev2')
+                               , Ap1=c('Ap1'), Ap3=c('Ap3')
+                               , An3a=c('An3a'), An3b=c('An3b')
+                               , Ev2=c('Ev2')
                                , P4=c(NA, 'P4s3', 'P4s2', 'P4s1', 'P4s0'))
   #, url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214720&authkey=ABwrjZPet-L6vo0"
   , itemequals = list(An3=c('An3a', 'An3b'))
