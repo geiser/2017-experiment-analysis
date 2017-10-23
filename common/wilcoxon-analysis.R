@@ -58,6 +58,10 @@ get_wilcox_mod <- function(x, y,  alternative = "two.sided") {
   Z <- as.numeric(statistic(wt))
   pvalue <- pvalue(wt)
   r <- abs(Z/sqrt(length(x)))
+  magnitude <- 'none'
+  if (r >= 0.1 && r < 0.3) magnitude <- 'small'
+  if (r >= 0.3 && r < 0.5) magnitude <- 'medium'
+  if (r >= 0.5) magnitude <- 'large'
   
   result <- data.frame(
     "Group" = c(levels(x)[1], levels(x)[2])
@@ -68,7 +72,9 @@ get_wilcox_mod <- function(x, y,  alternative = "two.sided") {
     , "U" = c(U, U)
     , "Z" = c(Z, Z)
     , "p-value" = c(pvalue, pvalue)
-    , "r" = c(r, r))
+    , "r" = c(r, r)
+    , "magnitude" = c(magnitude, magnitude)
+  )
   
   return(list(data = sdata, result = result))
 }
@@ -163,11 +169,6 @@ write_wts_summary_in_wb <- function(set_wt_mods, wb, title = "") {
         xlsx.addLineBreak(sheet, 2)
         xlsx.addHeader(wb, sheet, paste0("Wilcoxon test results for ", iv, " - Alternative hypothesis: greater"), level = 2, startCol = 1)
         xlsx.addTable(wb, sheet, wt_mod$greater$result, startCol = 1, row.names = F)
-      }
-      if (max(wt_mod$two.sided$result$p.value) <= 0.05) {
-        xlsx.addLineBreak(sheet, 2)
-        xlsx.addHeader(wb, sheet, paste0("Wilcoxon test results for ", iv, " - Alternative hypothesis: two.sided"), level = 2, startCol = 1)
-        xlsx.addTable(wb, sheet, wt_mod$two.sided$result, startCol = 1, row.names = F)
       }
     }
   }

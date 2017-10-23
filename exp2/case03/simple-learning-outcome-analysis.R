@@ -14,7 +14,7 @@ dat <- dplyr::mutate(
 rownames(dat) <- dat$UserID
 dat <- dplyr::mutate(dat, `DiffScore` = dat$PostScore-dat$PreScore)
 
-## performn simple parametric analysis
+## perform simple parametric analysis
 set_wt_mods <- get_wilcox_mods(dat, dv = 'DiffScore', iv = 'Type', between = c('Type', 'CLRole'))
 write_wilcoxon_simple_analysis_report(
   set_wt_mods

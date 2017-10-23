@@ -15,66 +15,7 @@ library(plotly)
 ## Anova and Ancova modules for analysis                                     ##
 ###############################################################################
 
-## test of sample size
-test_min_size <- function(data, between, type = 'parametric') {
-  
-  tb_size <- xtabs(as.formula(paste0('~', paste0(between, collapse = '+'))), data = data)
-  n_groups <- prod(dim(tb_size))
-  
-  fail <- FALSE
-  unbalanced <- TRUE
-  codes <- c()
-  descriptions <- c()
-  
-  minimal_size <- 5
-  recomended_size <- ifelse(n_groups > 10, 20, 15)
-  
-  tf_size <- as.data.frame(ftable(tb_size))
-  if (max(tf_size$Freq) == min(tf_size$Freq)) {
-    unbalanced <- FALSE
-  }
-  
-  for (i in 1:nrow(tf_size)) {
-    csize <- tf_size$Freq[i]
-    
-    name_group <- apply(as.vector(within(tf_size, rm('Freq'))[i,]), 1, paste, collapse =':')
-    name_group <- as.character(name_group)
-    
-    if (csize < minimal_size) {
-      fail <- TRUE
-      descriptions <- c(paste0(
-        "min.size must be: ", minimal_size, " and size is: ", csize
-        , " in '", name_group, "'. Min size sample for parametric test isn't satified")
-        , descriptions)
-      codes <- c("FAIL: min.size", codes)
-    } else if (csize < recomended_size) {
-      descriptions <- c(paste0(
-        "size must be: ", recomended_size, " and size is: ", csize
-        , " in '", name_group, "'. Size sample for parametric test isn't recomended")
-        , descriptions)
-      codes <- c("WARN: sample.size", codes)
-      warning('\n'
-              , "... Sample size doesn't looks adequate for parametric tests\n"
-              , "... We recommend the use of non parametric test")
-    } else {
-      warning('\n'
-              , "... According to your sample size, you can perform a parametric test with a non-normal distribution\n"
-              , "... If you don't want to remove non-normal data, you must cite the following references:\n"
-              , "... (1) Lix, L.M., J.C. Keselman, and H.J. Keselman. 1996. "
-              , "Consequences of assumption violations revisited: A quantitative review"
-              , " of alternatives to the one-way analysis of variance F test. Rev. Educ."
-              , " Res. 66: 579-619.\n"
-              , "... (2) Harwell, M.R., E.N. Rubinstein, W.S. Hayes, and C.C. Olds. 1992. "
-              , "Summarizing Monte Carlo results in methodological research: the one- and two-factor "
-              , "fixed effects ANOVA cases. J. Educ. Stat. 17: 315-339.")
-    }
-  }
-  
-  return(list(
-    table.frequency = tf_size , fail = fail, unbalanced = unbalanced
-    , fails_warnings = data.frame("code" = codes, "description" = descriptions)
-    ))
-}
+
 
 ## get formulas for test of anova ancova and anova slip-plot
 get_formulas <- function(dv, wid, cv = NULL, bs = NULL, ws = NULL) {
@@ -581,6 +522,45 @@ draw_mean_boxplots <- function(mods, inv.col = FALSE) {
     }
   }
 }
+
+
+## Function to get aov mods for pre and post-test
+get_aov_mods_for_pre_pos <- function(dat, wid, pre, pos, between, type = 3
+                                     , diff_cname = 'Diff', outcome_cname = 'Score', times = NULL) {
+  library(car) 
+  library(afex)
+  library(stats)
+  
+  if (is.null(times)) times <- c('pre-test', 'post-test')
+  
+  # pre-processing data
+  wdat <- data.frame(factor(dat[[wid]]), dat[[pre]], dat[[pos]])
+  wdat[,diff_cname] <- dat[[pos]] - dat[[pre]]
+  colnames(wdat) <- c(wid, pre, pos, diff_cname)
+  for (cname in c(between)) wdat[,cname] <- factor(dat[[cname]])
+  rownames(wdat) <- wdat[[wid]]
+  
+  af <- as.formula(paste0(diff_cname, " ~ ", paste0(between, collapse = " * ")))
+  mod <- aov(formula = af, data = wdat) 
+  
+  ##
+  ldat <- data.frame(factor(rep(wdat[,wid], 2)), c(wdat[[pre]], wdat[[pos]]),
+                     factor(rep(times, each=nrow(wdat))))
+  colnames(ldat) <- c(wid, outcome_cname, 'Phase')
+  rownames(ldat) <- within(expand.grid('A'=wdat[[wid]], 'B'=c('1','2')), C <- paste(A, B, sep='.'))[['C']]
+  for (cname in between) ldat[,cname] <- factor(rep(wdat[[cname]], 2))
+  
+  ## get modules
+  ezAov1 <- aov_ez(data = wdat, id = wid, dv = diff_cname, between = between
+                   , observed = between[-1], type = type, print.formula = T, factorize = F)
+  ezAov2 <- aov_ez(data = wdat, id = wid, dv = pos, between = between, covariate = pre
+                   , observed = c(between[-1], pre), type = type, print.formula = T, factorize = F)
+  ezAov3 <- aov_ez(data = ldat, id = wid, dv = outcome_cname, between = between
+                   , within = 'Phase', observed = between[-1], type = type, print.formula = T)
+  
+  return(list(mod = mod, aov = ezAov1, aocv = ezAov2, sp = ezAov3, wdat = wdat, ldat = ldat))
+}
+
 
 ## function to draw bars for lsmeans
 drawing_bars_for_lsmeans <- function(lsmeans_mod) {
