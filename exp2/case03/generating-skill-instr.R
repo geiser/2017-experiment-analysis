@@ -32,7 +32,7 @@ resTAMs <- load_and_save_TAMs_to_measure_change(
     , P4PF=c(NA, 'P4s0PFs0', 'P4s1PFs1', 'P4s2PFs2', 'P4s3PFs3'))
   #, url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214720&authkey=ABwrjZPet-L6vo0"
   , itemequals = list(An3=c('An3aAnC1', 'An3bAnC2'))
-  , prefix =  "case03", min_columns = 7)
+  , prefix =  "case03", min_columns = 8)
 View(preTAMs$information)
 
 ### ????
