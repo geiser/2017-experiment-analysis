@@ -8,10 +8,15 @@ has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 
 ## Function to get stacking data
-get_stacking_data <- function(pre_dat, pos_dat, wid, items.pre, items.pos, same.items) {
+get_stacking_info <- function(pre_dat, pos_dat, wid, items.pre, items.pos, same.items) {
   same_items.pre <- same.items[['pre']]
   same_items.pos <- same.items[['pos']]
   rdat <- merge(pre_dat, pos_dat, by = wid)
+  
+  pre.data <- rdat[unique(c(wid, items.pre))]
+  rownames(pre.data) <- rdat[[wid]]
+  pos.data <- rdat[unique(c(wid, items.pos))]
+  rownames(pos.data) <- rdat[[wid]]
   
   res_dat <- data.frame(idx=c(1:(nrow(rdat)*2)))
   for (i in 1:length(same_items.pre)) {
@@ -28,7 +33,7 @@ get_stacking_data <- function(pre_dat, pos_dat, wid, items.pre, items.pos, same.
   }
   res_dat <- res_dat[,-1]
   
-  return(res_dat)
+  return(list(data = res_dat, pre.data = pre.data, pos.data = pos.data))
 }
 
 ###############################################################################
