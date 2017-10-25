@@ -159,6 +159,7 @@ get_all_TAMs <- function(dat, column_names = NULL, tam_models = NULL, fixed = NU
   
   library(TAM)
   
+  numcols <- c()
   p <- c()
   X2 <- c()
   SRMR <- c()
@@ -225,10 +226,12 @@ get_all_TAMs <- function(dat, column_names = NULL, tam_models = NULL, fixed = NU
     name <- c(name, name_model)
     WLE.rel <- c(WLE.rel, wle_val)
     EAP.rel <- c(EAP.rel, tam_mod$EAP.rel)
+    
+    numcols <- c(numcols, length(strsplit(name_model, "[+]")[[1]]))
   }
   
   return(list(misfits.info = misfits_info,
-              information = data.frame(name = name, model_fit = model_fit, srmr_fit = srmr_fit
+              information = data.frame(name = name, numcols = numcols, model_fit = model_fit, srmr_fit = srmr_fit
                                        , everything.fits = everything_fits
                                        , X2 = X2, p_holm = p_holm, p = p, SRMR = SRMR
                                        , rel_fit = rel_fit, WLE.rel = WLE.rel, EAP.rel = EAP.rel)))
