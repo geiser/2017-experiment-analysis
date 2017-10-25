@@ -53,14 +53,14 @@ remove_incorrect_TAMs <- function(tam_models) {
 }
 
 ## get TAM from a name_model using dat
-get_TAM <- function(name_model, dat) {
+get_TAM <- function(name_model, dat, irtmodel="GPCM") {
   library(dplyr)
   #cat('\n... ', name_model,' ...\n')
   column_names <- strsplit(name_model,"[+]")[[1]]
   # select columns for data.frame
   dat_r <- dat[column_names]
   # use tam to obtain the model
-  return(tryCatch(tam.mml.2pl(dat_r, irtmodel="GPCM"), error = function(e) NULL))
+  return(tryCatch(tam.mml(dat_r, irtmodel=irtmodel), error = function(e) NULL))
 }
 
 ## get tams models
