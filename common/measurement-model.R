@@ -1,5 +1,5 @@
 
-wants <- c('TAM', 'sirt', 'lavaan', 'ggrepel', 'parallel', 'reshape', 'ggplot2', 'dplyr', 'readr', 'readxl', 'multcomp')
+wants <- c('TAM', 'sirt', 'lavaan', 'ggrepel', 'parallel', 'reshape', 'psych', 'ggplot2', 'dplyr', 'readr', 'readxl', 'multcomp')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 
@@ -55,7 +55,7 @@ get_TAM <- function(name_model, dat, irtmodel="GPCM") {
 
 ## Function to get TAMs models
 get_TAMs <- function(dat, column_names, tam_models = NULL, fixed = NULL
-                     , min_columns = 3, limit = 100, irtmodel = "GPCM") {
+                     , min_columns = 3, limit = 20, irtmodel = "GPCM") {
   
   library(TAM)
   library(parallel)
@@ -444,7 +444,7 @@ load_and_save_TAMs_to_measure_skill <- function(dat, column_names, prefix, fixed
       curr_length <- length(tam_models)
       tam_models <- get_TAMs(
         dat, column_names = column_names, tam_models = tam_models, fixed = fixed
-        , min_columns = min_columns, limit = 75, irtmodel = irtmodel)
+        , min_columns = min_columns, limit = 20, irtmodel = irtmodel)
       if (curr_length >= length(tam_models)) break
       save(tam_models, file = file_tam_models_str)
     }

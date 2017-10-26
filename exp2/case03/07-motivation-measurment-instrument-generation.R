@@ -16,7 +16,7 @@ sources = list(
                           , Item21IE = c(NA, "Item21IE"), Item24IE = c(NA, "Item24IE"))
     , prefix =  "case03_interest_enjoyment", min_columns = 4
     , fixed = NULL
-    , url_str = NULL
+    , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214730&authkey=ACNtHGzE3m8-6zk"
     , itemequals = NULL
   )
   , "Perceived Choice" = list(
@@ -29,7 +29,7 @@ sources = list(
                           , Item20PC = c(NA, "Item20PC"))
     , prefix =  "case03_perceived_choice", min_columns = 3
     , fixed = NULL
-    , url_str = NULL
+    , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214734&authkey=APtFDd6NxB7aoNo"
     , itemequals = NULL
   )
   , "Pressure/Tension" = list(
@@ -41,7 +41,7 @@ sources = list(
                           , Item06PT = c(NA, "Item06PT"), Item23PT = c(NA, "Item23PT"))
     , prefix =  "case03_pressure_tension", min_columns = 2
     , fixed = NULL
-    , url_str = NULL
+    , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214736&authkey=ABZ1YPbVwbZPfno"
     , itemequals = NULL
   )
   , "Effort/Importance" = list(
@@ -53,7 +53,7 @@ sources = list(
                           , Item19EI = c(NA, "Item19EI"), Item22EI = c(NA, "Item22EI"))
     , prefix =  "case03_effort_importance", min_columns = 2
     , fixed = NULL
-    , url_str = NULL
+    , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214727&authkey=ANqLsKIjd44RKdM"
     , itemequals = NULL
   )
   , "Intrinsic Motivation" = list(
@@ -77,7 +77,7 @@ sources = list(
                           , Item19EI = c(NA, "Item19EI"), Item22EI = c(NA, "Item22EI"))
     , prefix =  "case03_intrinsic_motivation", min_columns = 16
     , fixed = NULL
-    , url_str = NULL
+    , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214739&authkey=AM34xYZHQV7K3DU"
     , itemequals = list(ItemIE=c('Item08IE', 'Item09IE', 'Item11IE', 'Item12IE', 'Item21IE', 'Item24IE')
                         , ItemPC=c('Item03PC','Item05PC', 'Item13PC', 'Item18PC', 'Item20PC')
                         , ItemPT=c('Item02PT', 'Item04PT', 'Item06PT', 'Item23PT')
@@ -93,7 +93,7 @@ sources = list(
                           , Item13A = c(NA, "Item13A"))
     , prefix =  "case03_attention", min_columns = 3
     , fixed = NULL
-    , url_str = NULL
+    , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214725&authkey=AP57z7OeXAyjJAg"
     , itemequals = NULL
   )
   , "Satisfaction" = list(
@@ -105,7 +105,7 @@ sources = list(
                           , Item05S = c(NA, "Item05S"), Item21S = c(NA, "Item21S"))
     , prefix =  "case03_satisfaction", min_columns = 2
     , fixed = NULL
-    , url_str = NULL
+    , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214738&authkey=AHgozRlQl_KiCmE"
     , itemequals = NULL
   )
   , "Level of Motivation" = list(
@@ -121,7 +121,7 @@ sources = list(
                           , Item05S = c(NA, "Item05S"), Item21S = c(NA, "Item21S"))
     , prefix =  "case03_level_of_motivation", min_columns = 7
     , fixed = NULL
-    , url_str = NULL
+    , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214732&authkey=ALNcF69gQAxS2rc"
     , itemequals = list(ItemA=c('Item18A', 'Item20A', 'Item25A', 'Item07A', 'Item13A')
                         , ItemS=c('Item01S','Item02S', 'Item05S', 'Item21S'))
   )
@@ -140,50 +140,12 @@ tam_info_models_map <- lapply(sources, FUN = function(x, data_map) {
   return(tam_info_models)
 }, data_map = data_map)
 
+tam_mod <- load_tam_mod(
+  "Item08IE+Item09IE+Item12IE+Item21IE+Item24IE"
+  , url_str = sources$`Interest/Enjoyment`$url_str
+  , prefix =  "case03_interest_enjoyment")
+
+View(tam_info_models_map$`Intrinsic Motivation`$information)
 
 
-
-
-
-
-View(tam_info_models$information)
-
-
-
-
-
-info_for_TAM_models <- add_info_for_TAM_models(tam_models)
-info_for_TAM_models <- add_unidimensionality_test_info_for_TAM_models(
-  tam_models, information = info_for_TAM_models$information
-  , itemequals = list(ItemIE=c('Item08IE', 'Item09IE','Item11IE', 'Item12IE', 'Item21IE', 'Item24IE')))
-
-
-
-res <- IRT.residuals(tam_models$`Item08IE+Item09IE+Item11IE+Item21IE+Item24IE`)$residuals
-
-expl.detect(tam_models$`Item08IE+Item09IE+Item11IE+Item21IE+Item24IE`)
-
-
-
-all(abs(pca_mod$loadings) > 0.3)
-rownames(pca_mod$loadings)[abs(pca_mod$loadings) < 0.35]
-
-
-
-
-
-sum(abs(as.data.frame(unclass(pca_mod$loadings))) > 0.3)
-
-max(pca_mod$loadings)
-
-resp_filter_TAMs <- filter_by_test_unidimensionality(
-  tam_models = tam_models, information = resp_TAMs$information, itemequals = itemequals)
-
-
-
-misfits_information <- get_misfits_information(tam_models)
-
-save(generated_tam_mods, file="generated_tam_mods.RData")
-
-View(tam.fit(mod)$itemfit)
-
+View(tam_info_models_map$`Interest/Enjoyment`$information)
