@@ -1,5 +1,5 @@
 
-wants <- c('TAM', 'sirt', 'lavaan', 'ggrepel', 'parallel', 'reshape', 'psych', 'ggplot2', 'dplyr', 'readr', 'readxl', 'multcomp')
+wants <- c('TAM', 'sirt', 'lavaan', 'ggrepel', 'parallel', 'RColorBrewer', 'reshape', 'psych', 'ggplot2', 'dplyr', 'readr', 'readxl', 'multcomp')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 
@@ -7,13 +7,13 @@ if(any(!has)) install.packages(wants[!has])
 ## Functions to pre- and post- processing data                            ##
 ############################################################################
 
-## Function to get data from motivation reports
-get_data_map_from_reports <- function(sources) {
+## Function to get data for rating scale model
+get_data_map_for_RSM <- function(sources, min_cat = 1, max_cat = 7) {
   library(readr)
   library(dplyr)
   
   data_map <- mclapply(sources, FUN = function(x) {
-    dat <- read_excel(x$filename, sheet = x$sheed, col_types = "numeric")
+    dat <- read_excel(paste0(x$path, x$filename), sheet = x$sheed, col_types = "numeric")
     rdat <- dat[x$wid]
     for (endwith in x$end.withs) {
       rdat <- merge(
@@ -21,7 +21,7 @@ get_data_map_from_reports <- function(sources) {
         , dplyr::select(dat, starts_with(x$wid), ends_with(endwith)))
     }
     for (inv_key in x$inv.keys) {
-      rdat[inv_key] <- 8-rdat[inv_key]
+      rdat[inv_key] <- (min_cat+max_cat)-rdat[inv_key]
     }
     return(rdat)
   }, mc.allow.recursive = FALSE)
@@ -418,6 +418,23 @@ test_detect <- function(tam_mod, itemequals = NULL) {
 }
 
 
+## load TAM model
+load_tam_mod <- function(name_model, prefix, url_str = NULL) {
+  
+  
+  tam_models <- list()
+  file_tam_models_str <- paste0(prefix, '_tam_models.RData')
+  if (file.exists(file_tam_models_str)) {
+    tam_models <- get(load(file_tam_models_str))
+  } else if (!is.null(url_str)) {
+    url_con <- url(url_str)
+    tam_models <- tryCatch(get(load(url_con)), error = function(e) list())
+    close(url_con)
+  }
+  
+  return(tam_models[[name_model]])
+}
+
 ## load and save TAMs to measure change
 load_and_save_TAMs_to_measure_skill <- function(dat, column_names, prefix, fixed = NULL, url_str = NULL, min_columns = 3, itemequals = NULL, irtmodel = "GPCM") {
   
@@ -457,3 +474,192 @@ load_and_save_TAMs_to_measure_skill <- function(dat, column_names, prefix, fixed
   return(info_tam_models)
 }
 
+############################################################################
+## Functions to write report TAM models                                   ##
+############################################################################
+
+## Function to write global information
+write_tam_global_info_in_wb <- function(mod, wb) {
+  library(r2excel)
+  library(RColorBrewer)
+  
+  sheet <- createSheet(wb, sheetName = 'Global-info')
+  xlsx.addHeader(wb, sheet, "Global information for a measurement model", startCol = 1)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Information', level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, data.frame('Number of items' = mod$nitems
+                                      , 'Deviance' = mod$deviance
+                                      , 'Log Likelihood' = as.numeric(logLik(mod))
+                                      , 'Number of persons' = mod$nstud
+                                      , 'EAP.rel' = mod$EAP.rel
+                                      , 'n theta nodes' = mod$nnodes
+                                      , 'irt.model' = mod$irtmodel), startCol = 1, row.names = F)
+  
+  fit <- tam.modelfit(mod)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Global fit statistic MADaQ3 and test fit', level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, as.data.frame(fit$stat.MADaQ3), startCol = 1, row.names = F)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Test statistic of global fit based on Chi square', level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, as.data.frame(fit$modelfit.test), startCol = 1, row.names = F)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Model fit statistics', level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, t(as.data.frame(fit$fitstat)), startCol = 1, row.names = F)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Chi square tests for every item pairs', level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, as.data.frame(fit$chi2.stat), startCol = 1, row.names = F)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Item residuals', level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, as.data.frame(fit$residuals), startCol = 1, row.names = F)
+  
+  width <- 640
+  if (ncol(mod$resp) > 3) width <- width + 20*(ncol(mod$resp)-3)
+  plotWrightMap <- function () {
+    ncat <- mod$maxK        # number of category parameters
+    I <- ncol(mod$resp)    # number of items
+    itemlevelcolors <- matrix(rep(RColorBrewer::brewer.pal(ncat, "Set2"), I), byrow = TRUE, ncol = ncat)
+    # Wright map
+    IRT.WrightMap(mod, dim.color = brewer.pal(5, "Set1")
+                  , prob.lvl=.625 , thr.sym.col.fg = itemlevelcolors,
+                  thr.sym.col.bg = itemlevelcolors , label.items = colnames( mod$resp) )
+  }
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Wright Map for Item Response Models', level = 2, startCol = 1)
+  xlsx.addPlot(wb, sheet, plotWrightMap, startCol = 1, width = width, height = 640) 
+  
+}
+
+## Function to write estimate items
+write_tam_item_info_in_wb <- function(mod, wb) {
+  library(TAM)
+  
+  sheet <- createSheet(wb, sheetName = 'Estimate-Items')
+  xlsx.addHeader(wb, sheet, "Estimate items information for the measurement model", startCol = 1)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Full Item Information', level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, mod$item, startCol = 1, row.names = F)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Thurstonian Thresholds (category-wise)', level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, as.data.frame(tam.threshold(mod)), startCol = 1, row.names = T)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Thurstonian Thresholds (item-wise)', level = 2, startCol = 1)
+  tt_item <- as.data.frame(unclass(IRT.threshold(mod, type = "item"))); colnames(tt_item) <- "Threshold"
+  xlsx.addTable(wb, sheet, tt_item, startCol = 1, row.names = T)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Item Infit/Outfit Statistic', level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, as.data.frame(tam.fit(mod)$itemfit), startCol = 1, row.names = F)
+ 
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, 'Box plot of expected curves', level = 2, startCol = 1)
+  for (i in 1:ncol(mod$resp)) {
+    plotItem1 <- function() {
+      plot(mod, items = i, export = F)
+    }
+    xlsx.addPlot(wb, sheet, plotItem1, startCol = 1, width = 640, height = 640) 
+    plotItem2 <- function() {
+      plot(mod, items = i, type = "items", export = F)
+    }
+    xlsx.addPlot(wb, sheet, plotItem2, startCol = 1, width = 640, height = 640) 
+  }
+}
+
+## Function to write abilities
+write_tam_abilities_in_wb <- function(mod, wb, userids = NULL) {
+  library(TAM)
+  
+  wmod <- tam.mml.wle(mod)
+  if (is.null(userids)) userids <- mod$pid
+  rdat <- cbind(cbind(data.frame(UserID=userids), mod$resp), 
+                as.data.frame(unclass(wmod)))
+  
+  sheet <- createSheet(wb, sheetName = 'Abilities')
+  xlsx.addTable(wb, sheet, rdat, startCol = 1, row.names = F, columnWidth = 25)
+}
+
+# Function to write person fit
+write_tam_personfit_in_wb <- function(mod, wb, userids = NULL) {
+  library(TAM)
+  library(sirt)
+  
+  wmod <- tam.mml.wle(mod)
+  
+  personfit_df <- sirt::pcm.fit(b = mod$AXsi_[, -1], theta = wmod$theta, dat = mod$resp)$personfit
+  
+  if (is.null(userids)) userids <- mod$pid
+  rdat <- cbind(cbind(data.frame(UserID=userids), mod$resp), personfit_df)
+  
+  sheet <- createSheet(wb, sheetName = 'Person-fit')
+  xlsx.addTable(wb, sheet, rdat, startCol = 1, row.names = F)
+}
+
+## Function to write TAM reports 
+write_tam_report <- function(mod, path, filename, override = F, userids = NULL) {
+  if (!file.exists(paste0(path, filename)) || override) {
+    wb <- createWorkbook(type="xlsx")
+    
+    write_tam_global_info_in_wb(mod, wb)
+    write_tam_item_info_in_wb(mod, wb)
+    write_tam_personfit_in_wb(mod, wb, userids)
+    write_tam_abilities_in_wb(mod, wb, userids)
+    
+    saveWorkbook(wb, paste0(path, filename))
+  }
+}
+
+## Function to write plots of measurement model
+write_measurement_model_plots <- function(mod, path, override = T) {
+  library(r2excel)
+  library(RColorBrewer)
+  
+  # Wright map
+  filename <- paste0(path, '00-wrightmap.png')
+  if (!file.exists(filename) || override) {
+    width <- 640; if (ncol(mod$resp) > 3) width <- width + 20*(ncol(mod$resp)-3)
+    
+    ncat <- mod$maxK        # number of category parameters
+    I <- ncol(mod$resp)    # number of items
+    itemlevelcolors <- matrix(rep(RColorBrewer::brewer.pal(ncat, "Set2"), I), byrow = TRUE, ncol = ncat)
+    
+    png(filename = filename, width = width, height = 640)
+    IRT.WrightMap(mod, dim.color = brewer.pal(5, "Set1")
+                  , prob.lvl=.625 , thr.sym.col.fg = itemlevelcolors,
+                  thr.sym.col.bg = itemlevelcolors , label.items = colnames( mod$resp) )
+    dev.off()
+  }
+  
+  # Item response curves
+  for (i in 1:ncol(mod$resp)) {
+    filename <- paste0(path, '0', i, '-expected-resp-curve.png')
+    if (!file.exists(filename) || override) {
+      png(filename = filename, width = 640, height = 640)
+      plot(mod, items = i, export = F)
+      dev.off()
+    }
+    
+    filename <- paste0(path, '0', i, '-resp-curves-all-items.png')
+    if (!file.exists(filename) || override) {
+      png(filename = filename, width = 640, height = 640)
+      plot(mod, items = i, type = "items", export = F)
+      dev.off()
+    }
+  }
+  
+  # Write thurstonian thresholds
+  filename <- paste0(path, '00-thurstonian-thresholds.png')
+  if (!file.exists(filename) || override) {
+    tt <- as.data.frame(tam.threshold(mod))
+    png(filename = filename, width = 640, height = 640)
+    dotchart(t(tt), pch = 16, main = "Thurstonian Thresholds", cex = 0.5)
+    dev.off()
+  }
+}
