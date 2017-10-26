@@ -62,6 +62,28 @@ sources = list(
     , itemequals = NULL
     , model = "Item01EI+Item14EI+Item19EI"
   )
+<<<<<<< HEAD:exp2/case03/06-motivation-measurement-building.R
+=======
+  #, "Intrinsic Motivation" = list(
+  #  sheed = "data", wid = "UserID", name = "Intrinsic Motivation"
+  #  , filename = "AnovaAnalysis.xlsx"
+  #  , path = "report/motivation/intrinsic-motivation/"
+  #  , start.with = c("Item"), end.withs = c("IE","PC","PT","EI")
+  #  , inv.keys = c("Item05PC", "Item20PC", "Item18PC", "Item13PC", "Item03PC"
+  #                 , "Item02PT",  "Item06PT", "Item04PT", "Item01EI",  "Item19EI")
+  #  , column_names = list(Item08IE = c(NA, "Item08IE"), Item09IE = c(NA, "Item09IE"), Item11IE = c(NA, "Item11IE"), Item12IE = c(NA, "Item12IE"), Item21IE = c(NA, "Item21IE"), Item24IE = c(NA, "Item24IE")
+  #                        , Item03PC = c(NA, "Item03PC"), Item05PC = c(NA, "Item05PC"), Item13PC = c(NA, "Item13PC"), Item18PC = c(NA, "Item18PC"), Item20PC = c(NA, "Item20PC")
+  #                        , Item02PT = c(NA, "Item02PT"), Item04PT = c(NA, "Item04PT"), Item06PT = c(NA, "Item06PT"), Item23PT = c(NA, "Item23PT")
+  #                        , Item01EI = c(NA, "Item01EI"), Item14EI = c(NA, "Item14EI"), Item19EI = c(NA, "Item19EI"), Item22EI = c(NA, "Item22EI"))
+  #  , prefix =  "case03_intrinsic_motivation", min_columns = 16
+  #  , fixed = NULL
+  #  , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214739&authkey=AM34xYZHQV7K3DU"
+  #  , itemequals = list(ItemIE=c('Item08IE', 'Item09IE', 'Item11IE', 'Item12IE', 'Item21IE', 'Item24IE')
+  #                      , ItemPC=c('Item03PC','Item05PC', 'Item13PC', 'Item18PC', 'Item20PC')
+  #                      , ItemPT=c('Item02PT', 'Item04PT', 'Item06PT', 'Item23PT')
+  #                      , ItemEI=c('Item01EI', 'Item14EI', 'Item19EI', 'Item22EI'))
+  #)
+>>>>>>> 448fde23a5316349387269b9cc7b4fae24783b0e:exp2/case03/07-motivation-measurment-instrument-generation.R
   , "Attention" = list(
     sheed = "data", wid = "UserID", name = "Attention"
     , filename = "AnovaAnalysis.xlsx"
@@ -91,6 +113,22 @@ sources = list(
     , itemequals = NULL
     , model = "Item01S+Item02S+Item05S"
   )
+<<<<<<< HEAD:exp2/case03/06-motivation-measurement-building.R
+=======
+  #, "Level of Motivation" = list(
+  #  sheed = "data", wid = "UserID", name = "Level of Motivation"
+  #  , filename = "AnovaAnalysis.xlsx"
+  #  , path = "report/motivation/level-of-motivation/"
+  #  , start.with = c("Item"), end.withs = c("A", "S")
+  #  , inv.keys = c("Item21S")
+  #  , column_names = list(Item18A = c(NA, "Item18A"), Item20A = c(NA, "Item20A"), Item25A = c(NA, "Item25A"), Item07A = c(NA, "Item07A"), Item13A = c(NA, "Item13A")
+  #                        , Item01S = c(NA, "Item01S"), Item02S = c(NA, "Item02S"), Item05S = c(NA, "Item05S"), Item21S = c(NA, "Item21S"))
+  #  , prefix =  "case03_level_of_motivation", min_columns = 7
+  #  , fixed = NULL
+  #  , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214732&authkey=ALNcF69gQAxS2rc"
+  #  , itemequals = list(ItemA=c('Item18A', 'Item20A', 'Item25A', 'Item07A', 'Item13A'), ItemS=c('Item01S','Item02S', 'Item05S', 'Item21S'))
+  #)
+>>>>>>> 448fde23a5316349387269b9cc7b4fae24783b0e:exp2/case03/07-motivation-measurment-instrument-generation.R
 )
 
 data_map <- get_data_map_for_RSM(sources)
@@ -124,13 +162,20 @@ tam_mods <- lapply(sources, FUN = function(x) {
 
 ## write report
 list_abilities <- lapply(sources, FUN = function(x, tam_mods, data_map) {
+<<<<<<< HEAD:exp2/case03/06-motivation-measurement-building.R
   library(TAM)
   
+=======
+>>>>>>> 448fde23a5316349387269b9cc7b4fae24783b0e:exp2/case03/07-motivation-measurment-instrument-generation.R
   mod <- tam_mods[[x$name]]
   userids <- data_map[[x$name]][[x$wid]]
   write_tam_report(mod, x$path, "MeasurementModel.xlsx", FALSE, userids)
   
+<<<<<<< HEAD:exp2/case03/06-motivation-measurement-building.R
   wmod <- tam.wle(mod)
+=======
+  wmod <- tam.mml.wle(mod)
+>>>>>>> 448fde23a5316349387269b9cc7b4fae24783b0e:exp2/case03/07-motivation-measurment-instrument-generation.R
   rdat <- cbind(data.frame(UserID=userids), as.data.frame(unclass(wmod)))
   
   return(rdat)
