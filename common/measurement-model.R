@@ -538,6 +538,7 @@ write_tam_global_info_in_wb <- function(mod, wb) {
 ## Function to write estimate items
 write_tam_item_info_in_wb <- function(mod, wb) {
   library(TAM)
+  library(r2excel)
   
   sheet <- createSheet(wb, sheetName = 'Estimate-Items')
   xlsx.addHeader(wb, sheet, "Estimate items information for the measurement model", startCol = 1)
@@ -576,6 +577,7 @@ write_tam_item_info_in_wb <- function(mod, wb) {
 ## Function to write abilities
 write_tam_abilities_in_wb <- function(mod, wb, userids = NULL) {
   library(TAM)
+  library(r2excel)
   
   wmod <- tam.mml.wle(mod)
   if (is.null(userids)) userids <- mod$pid
@@ -588,6 +590,7 @@ write_tam_abilities_in_wb <- function(mod, wb, userids = NULL) {
 
 # Function to write person fit
 write_tam_personfit_in_wb <- function(mod, wb, userids = NULL) {
+  library(r2excel)
   library(TAM)
   library(sirt)
   
@@ -604,6 +607,8 @@ write_tam_personfit_in_wb <- function(mod, wb, userids = NULL) {
 
 ## Function to write TAM reports 
 write_tam_report <- function(mod, path, filename, override = F, userids = NULL) {
+  library(r2excel)
+  
   if (!file.exists(paste0(path, filename)) || override) {
     wb <- createWorkbook(type="xlsx")
     
