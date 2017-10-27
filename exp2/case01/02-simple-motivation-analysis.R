@@ -79,7 +79,7 @@ for (dv in dvs) {
   if (anova_result$min.sample.size.fail) {
     cat('\n... minimun sample size is not satisfied for the group: ', dv, '\n')
   }
-  if (!anova_result$min.sample.size.fail && anova_result$assumptions.fail) {
+  if (anova_result$assumptions.fail) {
     cat('\n... assumptions fail in normality or equality for the group: ', dv, '\n')
     print(anova_result$test.min.size$error.warning.list)
     if (anova_result$normality.fail) cat('\n... normality fail ...\n')

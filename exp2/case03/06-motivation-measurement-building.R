@@ -24,7 +24,7 @@ sources = list(
     , filename = "AnovaAnalysis.xlsx"
     , path = "report/motivation/perceived-choice/"
     , start.with = c("Item"), end.withs = c("PC")
-    , inv.keys = c()
+    , inv.keys = c("Item03PC", "Item05PC", "Item13PC", "Item18PC", "Item20PC")
     , column_names = list(Item03PC = c(NA, "Item03PC"), Item05PC = c(NA, "Item05PC")
                           , Item13PC = c(NA, "Item13PC"), Item18PC = c(NA, "Item18PC")
                           , Item20PC = c(NA, "Item20PC"))
@@ -32,7 +32,7 @@ sources = list(
     , fixed = NULL
     , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214734&authkey=APtFDd6NxB7aoNo"
     , itemequals = NULL
-    , model = "Item03PC+Item05PC+Item13PC+Item18PC+Item20PC"
+    , model = "Item03PC+Item05PC+Item18PC"
   )
   , "Pressure/Tension" = list(
     sheed = "data", wid = "UserID", name = "Pressure/Tension"
@@ -91,11 +91,39 @@ sources = list(
     , itemequals = NULL
     , model = "Item01S+Item02S+Item05S"
   )
+  , "Intrinsic Motivation" = list(
+    sheed = "data", wid = "UserID", name = "Intrinsic Motivation"
+    , filename = "AnovaAnalysis.xlsx"
+    , path = "report/motivation/intrinsic-motivation/"
+    , start.with = c("Item"), end.withs = c("IE", "PC", "PT", "EI")
+    , inv.keys = c("Item05PC", "Item20PC", "Item18PC", "Item13PC", "Item03PC"
+                   , "Item02PT",  "Item06PT", "Item04PT", "Item01EI",  "Item19EI")
+    , column_names = list()
+    , prefix =  "case03_intrinsic_motivation", min_columns = 18
+    , fixed = c("Item01EI","Item02PT","Item03PC","Item04PT","Item05PC","Item06PT","Item08IE","Item09IE","Item12IE","Item14EI","Item18PC","Item19EI","Item21IE","Item24IE")
+    , url_str = NULL
+    , itemequals = NULL
+    , model = "Item01EI+Item02PT+Item03PC+Item04PT+Item05PC+Item06PT+Item08IE+Item09IE+Item12IE+Item14EI+Item18PC+Item19EI+Item21IE+Item24IE"
+  )
+  , "Level of Motivation" = list(
+    sheed = "data", wid = "UserID", name = "Level of Motivation"
+    , filename = "AnovaAnalysis.xlsx"
+    , path = "report/motivation/level-of-motivation/"
+    , start.with = c("Item"), end.withs = c("A", "S")
+    , inv.keys = c("Item21S")
+    , column_names = list()
+    , prefix =  "case03_level_motivation", min_columns = 8
+    , fixed = c("Item07A","Item13A","Item18A","Item20A","Item25A","Item01S","Item02S","Item05S")
+    , url_str = NULL
+    , itemequals = NULL
+    , model = "Item07A+Item13A+Item18A+Item20A+Item25A+Item01S+Item02S+Item05S"
+  )
 )
 
 data_map <- get_data_map_for_RSM(sources)
 
 tam_info_models_map <- lapply(sources, FUN = function(x, data_map) {
+  if (is.null(x$column_names) || length(x$column_names) < 3) return(NULL)
   tam_info_models <- load_and_save_TAMs_to_measure_skill(
     data_map[[x$name]]
     , column_names = x$column_names
@@ -115,11 +143,11 @@ tam_info_models_map <- lapply(sources, FUN = function(x, data_map) {
 #View(tam_info_models_map$Satisfaction$information)
 
 tam_mods <- lapply(sources, FUN = function(x) {
-  return(load_tam_mod(
+  return(get_TAM(
     x$model
-    , url_str = x$url_str
-    , prefix = x$prefix
-  ))
+    , data_map[[x$name]]
+    , irtmodel = "RSM"
+    , wid = x$wid))
 })
 
 ## write report
@@ -127,57 +155,37 @@ list_abilities <- lapply(sources, FUN = function(x, tam_mods, data_map) {
   library(TAM)
   
   mod <- tam_mods[[x$name]]
-  userids <- data_map[[x$name]][[x$wid]]
-  write_tam_report(mod, x$path, "MeasurementModel.xlsx", FALSE, userids)
+  write_tam_report(mod, x$path, "MeasurementModel.xlsx", FALSE)
   
   wmod <- tam.wle(mod)
-  rdat <- cbind(data.frame(UserID=userids), as.data.frame(unclass(wmod)))
-  
-  return(rdat)
+  return(as.data.frame(unclass(wmod))[c('pid', 'theta', 'error', 'WLE.rel')])
 }, tam_mods = tam_mods, data_map = data_map)
 
 ## write csv
-columns <- c('UserID','PersonScores','theta','error')
 participants <- read_csv('data/Participant.csv')
 
-dat <- merge(participants, list_abilities$`Interest/Enjoyment`[columns], by = "UserID")
+dat <- merge(participants, list_abilities$`Interest/Enjoyment`, by.x = "UserID", by.y = "pid")
 write_csv(dat, 'data/InterestEnjoyment.csv')
 
-dat <- merge(participants, list_abilities$`Perceived Choice`[columns], by = "UserID")
+dat <- merge(participants, list_abilities$`Perceived Choice`, by.x = "UserID", by.y = "pid")
 write_csv(dat, 'data/PerceivedChoice.csv')
 
-dat <- merge(participants, list_abilities$`Pressure/Tension`[columns], by = "UserID")
+dat <- merge(participants, list_abilities$`Pressure/Tension`, by.x = "UserID", by.y = "pid")
 write_csv(dat, 'data/PressureTension.csv')
 
-dat <- merge(participants, list_abilities$`Effort/Importance`[columns], by = "UserID")
+dat <- merge(participants, list_abilities$`Effort/Importance`, by.x = "UserID", by.y = "pid")
 write_csv(dat, 'data/EffortImportance.csv')
 
-dat <- merge(participants, list_abilities$Attention[columns], by = "UserID")
+dat <- merge(participants, list_abilities$Attention, by.x = "UserID", by.y = "pid")
 write_csv(dat, 'data/Attention.csv')
 
-dat <- merge(participants, list_abilities$Satisfaction[columns], by = "UserID")
+dat <- merge(participants, list_abilities$Satisfaction, by.x = "UserID", by.y = "pid")
 write_csv(dat, 'data/Satisfaction.csv')
 
-dat <- merge(participants, list_abilities$`Interest/Enjoyment`[columns], by = "UserID")
-dat <- merge(dat, list_abilities$`Perceived Choice`[columns], by = "UserID", suffixes = c(".IE", ".PC"))
-dat <- merge(dat, list_abilities$`Pressure/Tension`[columns], by = "UserID", suffixes = c(".PC", ".PT"))
-dat <- merge(dat, list_abilities$`Effort/Importance`[columns], by = "UserID", suffixes = c(".PT", ".EI"))
-dat <- dplyr::mutate(
-  dat
-  , PersonScores = (PersonScores.IE+PersonScores.PC-PersonScores.PT+PersonScores.EI)/4
-  , theta = (theta.IE+theta.PC-theta.PT+theta.EI)/4
-  , error = (error.IE+error.PC-error.PT+error.EI)/4
-)
+dat <- merge(participants, list_abilities$`Intrinsic Motivation`, by.x = "UserID", by.y = "pid")
 write_csv(dat, 'data/IntrinsicMotivation.csv')
 
-dat <- merge(participants, list_abilities$Attention[columns], by = "UserID", suffixes = c("", ".A"))
-dat <- merge(dat, list_abilities$Satisfaction[columns], by = "UserID", suffixes = c(".A", ".S"))
-dat <- dplyr::mutate(
-  dat
-  , PersonScores = (PersonScores.A+PersonScores.S)/2
-  , theta = (theta.A+theta.S)/2
-  , error = (error.A+error.S)/2
-)
+dat <- merge(participants, list_abilities$`Level of Motivation`, by.x = "UserID", by.y = "pid")
 write_csv(dat, 'data/LevelMotivation.csv')
 
 ## write plots
@@ -188,6 +196,4 @@ lapply(sources, FUN = function(x, tam_mods) {
     , paste0(x$path, "measurement-model-plots/")
     , override = TRUE)
 }, tam_mods = tam_mods)
-
-
 

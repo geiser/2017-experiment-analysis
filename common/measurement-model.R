@@ -10,21 +10,23 @@ if(any(!has)) install.packages(wants[!has])
 ## Function to get data for rating scale model
 get_data_map_for_RSM <- function(sources, min_cat = 1, max_cat = 7) {
   library(readr)
+  library(readxl)
   library(dplyr)
+  library(xlsx)
   
-  data_map <- mclapply(sources, FUN = function(x) {
-    dat <- read_excel(paste0(x$path, x$filename), sheet = x$sheed, col_types = "numeric")
+  data_map <- lapply(sources, FUN = function(x) {
+    dat <- readxl::read_excel(paste0(x$path, x$filename), sheet = x$sheed, col_types = "numeric")
     rdat <- dat[x$wid]
     for (endwith in x$end.withs) {
-      rdat <- merge(
-        rdat
-        , dplyr::select(dat, starts_with(x$wid), ends_with(endwith)))
+      rdat <- merge(rdat, dplyr::select(dat, starts_with(x$wid), ends_with(endwith)))
     }
+    
     for (inv_key in x$inv.keys) {
       rdat[inv_key] <- (min_cat+max_cat)-rdat[inv_key]
     }
+    
     return(rdat)
-  }, mc.allow.recursive = FALSE)
+  })
   
   return(data_map)
 }
@@ -46,11 +48,12 @@ remove_incorrect_TAMs <- function(tam_models) {
 }
 
 ## Function to get TAM from a name_model using dat
-get_TAM <- function(name_model, dat, irtmodel="GPCM") {
+get_TAM <- function(name_model, dat, irtmodel="GPCM", wid = "UserID") {
   library(dplyr)
   column_names <- strsplit(name_model,"[+]")[[1]]
   dat_r <- dat[column_names] # columns for data.frame
-  return(tryCatch(tam.mml(dat_r, irtmodel=irtmodel), error = function(e) NULL)) # use tam to obtain the model
+  pid = dat[[wid]]
+  return(tryCatch(tam.mml(dat_r, irtmodel=irtmodel, pid = pid), error = function(e) NULL)) # use tam to obtain the model
 }
 
 ## Function to get TAMs models
@@ -575,13 +578,12 @@ write_tam_item_info_in_wb <- function(mod, wb) {
 }
 
 ## Function to write abilities
-write_tam_abilities_in_wb <- function(mod, wb, userids = NULL) {
+write_tam_abilities_in_wb <- function(mod, wb) {
   library(TAM)
   library(r2excel)
   
   wmod <- tam.mml.wle(mod)
-  if (is.null(userids)) userids <- mod$pid
-  rdat <- cbind(cbind(data.frame(UserID=userids), mod$resp), 
+  rdat <- cbind(cbind(data.frame(UserID=mod$pid), mod$resp), 
                 as.data.frame(unclass(wmod)))
   
   sheet <- createSheet(wb, sheetName = 'Abilities')
@@ -589,7 +591,7 @@ write_tam_abilities_in_wb <- function(mod, wb, userids = NULL) {
 }
 
 # Function to write person fit
-write_tam_personfit_in_wb <- function(mod, wb, userids = NULL) {
+write_tam_personfit_in_wb <- function(mod, wb) {
   library(r2excel)
   library(TAM)
   library(sirt)
@@ -597,16 +599,14 @@ write_tam_personfit_in_wb <- function(mod, wb, userids = NULL) {
   wmod <- tam.mml.wle(mod)
   
   personfit_df <- sirt::pcm.fit(b = mod$AXsi_[, -1], theta = wmod$theta, dat = mod$resp)$personfit
-  
-  if (is.null(userids)) userids <- mod$pid
-  rdat <- cbind(cbind(data.frame(UserID=userids), mod$resp), personfit_df)
+  rdat <- cbind(cbind(data.frame(UserID=mod$pid), mod$resp), personfit_df)
   
   sheet <- createSheet(wb, sheetName = 'Person-fit')
   xlsx.addTable(wb, sheet, rdat, startCol = 1, row.names = F)
 }
 
 ## Function to write TAM reports 
-write_tam_report <- function(mod, path, filename, override = F, userids = NULL) {
+write_tam_report <- function(mod, path, filename, override = F) {
   library(r2excel)
   
   if (!file.exists(paste0(path, filename)) || override) {
@@ -614,8 +614,8 @@ write_tam_report <- function(mod, path, filename, override = F, userids = NULL) 
     
     write_tam_global_info_in_wb(mod, wb)
     write_tam_item_info_in_wb(mod, wb)
-    write_tam_personfit_in_wb(mod, wb, userids)
-    write_tam_abilities_in_wb(mod, wb, userids)
+    write_tam_personfit_in_wb(mod, wb)
+    write_tam_abilities_in_wb(mod, wb)
     
     saveWorkbook(wb, paste0(path, filename))
   }
