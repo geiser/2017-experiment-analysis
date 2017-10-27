@@ -4,8 +4,37 @@ has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 
 ############################################################################
-## Functions to pre- and post- processing data                            ##
+## Functions to processing data for building measurment intrument         ##
 ############################################################################
+
+## Function to get stacking data
+get_stacking_data <- function(pre_dat, pos_dat, wid, items.pre, items.pos, same.items) {
+  same_items_pre <- same.items[['pre']]
+  same_items_pos <- same.items[['pos']]
+  rdat <- merge(pre_dat, pos_dat, by = wid)
+  
+  pre_data <- rdat[unique(c(wid, items.pre))]
+  rownames(pre_data) <- rdat[[wid]]
+  pos_data <- rdat[unique(c(wid, items.pos))]
+  rownames(pos_data) <- rdat[[wid]]
+  
+  res_dat <- data.frame(idx=c(1:(nrow(rdat)*2)))
+  for (i in 1:length(same_items_pre)) {
+    pre_cname <- same_items_pre[[i]]
+    pos_cname <- same_items_pos[[i]]
+    cname <- paste0(pre_cname, pos_cname)
+    res_dat[[cname]] <- c(rdat[[pre_cname]], rdat[[pos_cname]])
+  }
+  for (cname in items.pre[!items.pre %in% same_items_pre]) {
+    res_dat[[cname]] <- c(rdat[[cname]], rep(NA,nrow(rdat)))
+  }
+  for (cname in items.pos[!items.pos %in% same_items_pos]) {
+    res_dat[[cname]] <- c(rep(NA,nrow(rdat)), rdat[[cname]])
+  }
+  res_dat <- res_dat[,-1]
+  
+  return(list(resp = res_dat, pre.data = pre_data, pos.data = pos_data))
+}
 
 ## Function to get data for rating scale model
 get_data_map_for_RSM <- function(sources, min_cat = 1, max_cat = 7) {

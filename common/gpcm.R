@@ -7,34 +7,6 @@ wants <- c('TAM', 'sirt', 'lavaan', 'ggrepel', 'parallel', 'reshape', 'ggplot2',
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 
-## Function to get stacking data
-get_stacking_info <- function(pre_dat, pos_dat, wid, items.pre, items.pos, same.items) {
-  same_items.pre <- same.items[['pre']]
-  same_items.pos <- same.items[['pos']]
-  rdat <- merge(pre_dat, pos_dat, by = wid)
-  
-  pre.data <- rdat[unique(c(wid, items.pre))]
-  rownames(pre.data) <- rdat[[wid]]
-  pos.data <- rdat[unique(c(wid, items.pos))]
-  rownames(pos.data) <- rdat[[wid]]
-  
-  res_dat <- data.frame(idx=c(1:(nrow(rdat)*2)))
-  for (i in 1:length(same_items.pre)) {
-    pre_cname <- same_items.pre[[i]]
-    pos_cname <- same_items.pos[[i]]
-    cname <- paste0(pre_cname, pos_cname)
-    res_dat[[cname]] <- c(rdat[[pre_cname]], rdat[[pos_cname]])
-  }
-  for (cname in items.pre[!items.pre %in% same_items.pre]) {
-    res_dat[[cname]] <- c(rdat[[cname]], rep(NA,nrow(rdat)))
-  }
-  for (cname in items.pos[!items.pos %in% same_items.pos]) {
-    res_dat[[cname]] <- c(rep(NA,nrow(rdat)), rdat[[cname]])
-  }
-  res_dat <- res_dat[,-1]
-  
-  return(list(data = res_dat, pre.data = pre.data, pos.data = pos.data))
-}
 
 ###############################################################################
 ## Test Analyse Models (TAMs) for programming tasks as GPCM                  ##
