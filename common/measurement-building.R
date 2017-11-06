@@ -87,7 +87,8 @@ get_TAM <- function(name_model, dat, irtmodel="GPCM", wid = "UserID") {
 
 ## Function to get TAMs models
 get_TAMs <- function(dat, column_names, tam_models = NULL, fixed = NULL
-                     , min_columns = 3, limit = 20, irtmodel = "GPCM") {
+                     , fixed_sets = NULL
+                     , min_columns = 3, limit = 50, irtmodel = "GPCM") {
   
   library(TAM)
   library(parallel)
@@ -120,6 +121,19 @@ get_TAMs <- function(dat, column_names, tam_models = NULL, fixed = NULL
     if (nchar(name_models[[i]]) < 2) next
     if (nchar(name_models[[i]]) - nchar(gsub("[+]", "", name_models[[i]])) < min_columns-1) next
     if (any(names(tam_models) == name_models[i])) next
+    
+    if (!is.null(fixed_sets)) {
+      there_is_one <- FALSE
+      some_pair_match <- FALSE
+      for (name_fix in names(fixed_sets)) {
+        fixed_set <- fixed_sets[[name_fix]]
+        contain_set <- lapply(fixed_set, grep, name_models[[i]])
+        if (any(contain_set > 0, na.rm = T)) there_is_one <- TRUE
+        if (all(contain_set > 0, na.rm = T)) some_pair_match <- TRUE
+      }
+      if (!some_pair_match && there_is_one) next
+    }
+    
     # use tam to obtain the model
     generated_name_models[name_models[[i]]] <- name_models[[i]]
     nro_generated_models <- nro_generated_models + 1
@@ -326,7 +340,14 @@ test_uni_by_pca <- function(tam_mod) {
 add_unidimensionality_test_info_for_TAM_models <- function(tam_models, information = NULL, itemequals = NULL) {
   
   resp_detect_tests <- lapply(tam_models, test_detect, itemequals = itemequals)
-  resp_test_uni_by_pca <- lapply(tam_models, test_uni_by_pca)
+  resp_test_uni_by_pca <- lapply(
+    tam_models, 
+    FUN = function(x) {
+      return(tryCatch(test_uni_by_pca(x)
+                      , error = function(e) list(fail = TRUE)))
+    }
+  )
+  
   # detect filtering
   unidim_test <- c()
   DETECT <- c()
@@ -468,7 +489,9 @@ load_tam_mod <- function(name_model, prefix, url_str = NULL) {
 }
 
 ## load and save TAMs to measure change
-load_and_save_TAMs_to_measure_skill <- function(dat, column_names, prefix, fixed = NULL, url_str = NULL, min_columns = 3, itemequals = NULL, irtmodel = "GPCM") {
+load_and_save_TAMs_to_measure_skill <- function(
+  dat, column_names, prefix, fixed = NULL, fixed_sets = NULL
+  , url_str = NULL, min_columns = 3, itemequals = NULL, irtmodel = "GPCM") {
   
   info_tam_models <- NULL
   file_tam_info_str <- paste0(prefix, '_info_tam_models.RData')
@@ -493,6 +516,7 @@ load_and_save_TAMs_to_measure_skill <- function(dat, column_names, prefix, fixed
       curr_length <- length(tam_models)
       tam_models <- get_TAMs(
         dat, column_names = column_names, tam_models = tam_models, fixed = fixed
+        , fixed_sets = fixed_sets
         , min_columns = min_columns, limit = 20, irtmodel = irtmodel)
       if (curr_length >= length(tam_models)) break
       save(tam_models, file = file_tam_models_str)
