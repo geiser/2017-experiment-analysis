@@ -1009,6 +1009,13 @@ write_measure_change_report <- function(result, path, filename, override = F) {
     xlsx.addTable(wb, sheet5, result$info.racking$mod$item, startCol = 1, row.names = F)
     
     ##
+    
+    write_tam_item_info_in_wb(result$global.estimation$mod, wb, prefix = 'global-')
+    write_tam_item_info_in_wb(result$info.stacking$pre_mod, wb, prefix = 'stacking-pre-')
+    write_tam_item_info_in_wb(result$info.stacking$pos_mod, wb, prefix = 'stacking-pos-')
+    write_tam_item_info_in_wb(result$info.racking$mod, wb, prefix = 'racking-')
+    
+    ##
     saveWorkbook(wb, paste0(path, filename))
   }
 }
@@ -1071,11 +1078,14 @@ write_tam_global_info_in_wb <- function(mod, wb) {
 }
 
 ## Function to write estimate items
-write_tam_item_info_in_wb <- function(mod, wb) {
+write_tam_item_info_in_wb <- function(mod, wb, prefix = NULL) {
   library(TAM)
   library(r2excel)
   
-  sheet <- createSheet(wb, sheetName = 'Estimate-Items')
+  sheetName <- 'Estimate-Items'
+  if (!is.null(prefix)) sheetName <- paste0(prefix, sheetName)
+  
+  sheet <- createSheet(wb, sheetName = sheetName)
   xlsx.addHeader(wb, sheet, "Estimate items information for the measurement model", startCol = 1)
   
   xlsx.addLineBreak(sheet, 2)
