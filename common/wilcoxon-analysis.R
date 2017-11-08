@@ -86,6 +86,8 @@ get_wilcox_mod <- function(x, y,  alternative = "two.sided") {
 ## Function to get wilcox test modules 
 get_wilcox_mods <- function(dat, dv, iv, between) {
   
+  dat <- dat[complete.cases(dat[dv]),]
+  
   result <- list()
   columns <- unique(c(iv, between[!between %in% iv]))
   
