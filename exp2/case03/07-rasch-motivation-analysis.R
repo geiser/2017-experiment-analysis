@@ -50,8 +50,9 @@ dat_map <- lapply(sources, FUN = function(x) {
   
   dat <- as.data.frame(read_csv(x$filename))
   rownames(dat) <- dat$UserID
+  colnames(dat)[7] <- x$name
   
-  rmids <- get_ids_outliers_for_anova(dat, "UserID", "theta", "Type", between = c("Type", "CLRole"))
+  rmids <- get_ids_outliers_for_anova(dat, "UserID", x$name, "Type", between = c("Type", "CLRole"))
   if (!is.null(x$extra_rmids) && length(x$extra_rmids) > 0) {
     rmids <- unique(c(rmids, x$extra_rmids))
   }
@@ -66,7 +67,7 @@ dat_map <- lapply(sources, FUN = function(x) {
 anova_result_mods <- lapply(dat_map, FUN = function(x) {
   
   anova_result <- do_anova(
-    x$data, wid = 'UserID', dv = 'theta', iv = 'Type'
+    x$data, wid = 'UserID', dv = x$name, iv = 'Type'
     , between = c('Type', 'CLRole'), observed = c('CLRole'))
   if (anova_result$min.sample.size.fail) {
     cat('\n... minimun sample size is not satisfied for the group: ', x$name, '\n')
@@ -95,7 +96,7 @@ for (aov_name in names(anova_result_mods)) {
     , ylab = "logits"
     , title = sources[[aov_name]]$name
     , filename = filename
-    , override = FALSE
+    , override = TRUE
   )
   write_anova_plots(
     anova_result

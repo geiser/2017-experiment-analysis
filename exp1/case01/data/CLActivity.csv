@@ -1,40 +1,40 @@
-UserID,Type,Group,CLRole,PlayerRole,ParticipationLevel,NroNecessaryInteractions,(1) Elaborar lista de exercícios,(2) Demonstrar a solução de um problema,(3) Enviar (ou reenviar) a solução do problema,(c) Aceitar a solução como boa,NroSolutionReviewed (Apprentice),NroSolutionReviewed (Master),NroSolutionWithoutReviewed (Apprentice),NroSolutionWithoutReviewed (Master),NroSolutionGoodReview,NroDesiredInteractions,(a) Expressar dúvidas em relação à demonstração,(b) Esclarecer as dúvidas,(d) Notificar os erros existentes na solução,(e) Apresentar dicas ou otra forma de ajuda,(f) Expressar dificuldade em resolver o problema,(g) Explicar como resolver o problema
-10119,ont-gamified,Grupo Zeus,Master,Yee Achiever,complete,7,1,1,0,5,0,7,0,0,0,2,0,0,2,0,0,0
-10139,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,complete,2,0,0,2,0,2,0,0,0,2,1,1,0,0,0,0,0
-10131,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,complete,4,0,0,4,0,4,0,0,0,2,0,0,0,0,0,0,0
-10147,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10157,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,semicomplete,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
-10148,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,complete,2,0,0,2,0,2,0,0,0,2,1,1,0,0,0,0,0
-10141,ont-gamified,Grupo Apolo,Master,Yee Socializer,complete,8,1,1,0,6,0,4,0,0,0,4,0,3,0,1,0,0
-10143,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,semicomplete,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
-10134,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,semicomplete,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
-10121,ont-gamified,Grupo Hades,Master,Yee Achiever,partial,2,1,1,0,0,0,0,0,3,0,0,0,0,0,0,0,0
-10133,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10142,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,partial,3,0,0,3,0,0,0,3,0,0,0,0,0,0,0,0,0
-10127,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10128,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10152,ont-gamified,Grupo Morfeu,Master,Yee Achiever,semicomplete,7,1,1,0,5,0,7,0,1,0,14,0,0,3,11,0,0
-10123,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,complete,4,0,0,4,0,4,0,0,0,3,0,0,0,0,0,0,0
-10137,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,complete,4,0,0,4,0,3,0,1,0,2,0,0,0,0,0,0,0
-10126,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,complete,7,0,0,7,0,5,0,2,0,2,1,0,0,0,0,1,0
-10138,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,semicomplete,5,0,0,5,0,5,0,0,0,1,0,0,0,0,0,0,0
-10151,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10120,ont-gamified,Grupo Hélio,Master,Yee Socializer,semicomplete,5,1,1,0,3,0,10,0,2,0,10,0,0,6,2,0,2
-10146,non-gamified,GroupA,Apprentice,,complete,2,0,0,2,0,2,0,0,0,2,0,0,0,0,0,0,0
-10149,non-gamified,GroupA,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10132,non-gamified,GroupA,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10153,non-gamified,GroupA,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10144,non-gamified,GroupA,Master,,complete,5,1,1,0,3,0,2,0,0,0,0,0,0,0,0,0,0
-10122,non-gamified,GroupB,Apprentice,,complete,3,0,0,3,0,3,0,0,0,3,0,0,0,0,0,0,0
-10145,non-gamified,GroupB,Master,,semicomplete,6,1,1,0,4,0,9,0,2,0,7,0,1,5,1,0,0
-10129,non-gamified,GroupB,Apprentice,,semicomplete,3,0,0,3,0,3,0,0,0,1,0,0,0,0,0,0,0
-10125,non-gamified,GroupB,Apprentice,,partial,3,0,0,3,0,2,0,1,0,0,1,1,0,0,0,0,0
-10135,non-gamified,GroupB,Apprentice,,partial,2,0,0,2,0,1,0,1,0,0,0,0,0,0,0,0,0
-10140,non-gamified,GroupC,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10130,non-gamified,GroupC,Apprentice,,semicomplete,3,0,0,3,0,1,0,2,0,1,0,0,0,0,0,0,0
-10136,non-gamified,GroupC,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10154,non-gamified,GroupC,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10116,non-gamified,GroupC,Master,,semicomplete,3,1,1,0,1,0,1,0,2,0,0,0,0,0,0,0,0
-10160,non-gamified,GroupD,Master,,partial,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10159,non-gamified,GroupD,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10158,non-gamified,GroupD,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+UserID,Type,Group,CLRole,PlayerRole,ParticipationLevel,NroTotalInteractions,NroNecessaryInteractions,(1) Elaborar lista de exercícios,(2) Demonstrar a solução de um problema,(3) Enviar (ou reenviar) a solução do problema,(c) Aceitar a solução como boa,NroSolutionReviewed (Apprentice),NroSolutionReviewed (Master),NroSolutionWithoutReviewed (Apprentice),NroSolutionWithoutReviewed (Master),NroSolutionGoodReview,NroDesiredInteractions,(a) Expressar dúvidas em relação à demonstração,(b) Esclarecer as dúvidas,(d) Notificar os erros existentes na solução,(e) Apresentar dicas ou otra forma de ajuda,(f) Expressar dificuldade em resolver o problema,(g) Explicar como resolver o problema
+10119,ont-gamified,Grupo Zeus,Master,Yee Achiever,complete,9,7,1,1,0,5,0,7,0,0,0,2,0,0,2,0,0,0
+10139,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,complete,3,2,0,0,2,0,2,0,0,0,2,1,1,0,0,0,0,0
+10131,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,complete,4,4,0,0,4,0,4,0,0,0,2,0,0,0,0,0,0,0
+10147,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10157,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,semicomplete,1,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+10148,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,complete,3,2,0,0,2,0,2,0,0,0,2,1,1,0,0,0,0,0
+10141,ont-gamified,Grupo Apolo,Master,Yee Socializer,complete,12,8,1,1,0,6,0,4,0,0,0,4,0,3,0,1,0,0
+10143,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,semicomplete,1,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+10134,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,semicomplete,1,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+10121,ont-gamified,Grupo Hades,Master,Yee Achiever,partial,2,2,1,1,0,0,0,0,0,3,0,0,0,0,0,0,0,0
+10133,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10142,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,partial,3,3,0,0,3,0,0,0,3,0,0,0,0,0,0,0,0,0
+10127,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10128,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10152,ont-gamified,Grupo Morfeu,Master,Yee Achiever,semicomplete,21,7,1,1,0,5,0,7,0,1,0,14,0,0,3,11,0,0
+10123,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,complete,4,4,0,0,4,0,4,0,0,0,3,0,0,0,0,0,0,0
+10137,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,complete,4,4,0,0,4,0,3,0,1,0,2,0,0,0,0,0,0,0
+10126,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,complete,8,7,0,0,7,0,5,0,2,0,2,1,0,0,0,0,1,0
+10138,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,semicomplete,5,5,0,0,5,0,5,0,0,0,1,0,0,0,0,0,0,0
+10151,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10120,ont-gamified,Grupo Hélio,Master,Yee Socializer,semicomplete,15,5,1,1,0,3,0,10,0,2,0,10,0,0,6,2,0,2
+10146,non-gamified,GroupA,Apprentice,,complete,2,2,0,0,2,0,2,0,0,0,2,0,0,0,0,0,0,0
+10149,non-gamified,GroupA,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10132,non-gamified,GroupA,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10153,non-gamified,GroupA,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10144,non-gamified,GroupA,Master,,complete,5,5,1,1,0,3,0,2,0,0,0,0,0,0,0,0,0,0
+10122,non-gamified,GroupB,Apprentice,,complete,3,3,0,0,3,0,3,0,0,0,3,0,0,0,0,0,0,0
+10145,non-gamified,GroupB,Master,,semicomplete,13,6,1,1,0,4,0,9,0,2,0,7,0,1,5,1,0,0
+10129,non-gamified,GroupB,Apprentice,,semicomplete,3,3,0,0,3,0,3,0,0,0,1,0,0,0,0,0,0,0
+10125,non-gamified,GroupB,Apprentice,,partial,4,3,0,0,3,0,2,0,1,0,0,1,1,0,0,0,0,0
+10135,non-gamified,GroupB,Apprentice,,partial,2,2,0,0,2,0,1,0,1,0,0,0,0,0,0,0,0,0
+10140,non-gamified,GroupC,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10130,non-gamified,GroupC,Apprentice,,semicomplete,3,3,0,0,3,0,1,0,2,0,1,0,0,0,0,0,0,0
+10136,non-gamified,GroupC,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10154,non-gamified,GroupC,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10116,non-gamified,GroupC,Master,,semicomplete,3,3,1,1,0,1,0,1,0,2,0,0,0,0,0,0,0,0
+10160,non-gamified,GroupD,Master,,partial,2,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10159,non-gamified,GroupD,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10158,non-gamified,GroupD,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

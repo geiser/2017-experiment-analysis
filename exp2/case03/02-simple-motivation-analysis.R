@@ -112,14 +112,14 @@ for (i in 1:length(dvs)) {
     , ylab = "Score"
     , title = dv
     , filename = filename
-    , override = FALSE
+    , override = TRUE
   )
   write_anova_plots(
     anova_result
     , ylab = "Score"
     , title = dv
     , path = path
-    , override = FALSE
+    , override = TRUE
   )
 }
 

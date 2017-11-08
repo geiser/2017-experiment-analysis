@@ -8,7 +8,7 @@ if(any(!has)) install.packages(wants[!has])
 #############################################################################
 
 ## Function to get ids for anova
-get_ids_outliers_for_anova <- function(dat, wid, dv, iv, between, observed = NULL) {
+get_ids_outliers_for_anova <- function(dat, wid, dv, iv, between, observed = NULL, only.one = F) {
   
   ## wide data and factorize
   wdat <- dat
@@ -48,6 +48,7 @@ get_ids_outliers_for_anova <- function(dat, wid, dv, iv, between, observed = NUL
           if (length(out_y) == 0) break
           
           rm_ids <- unique(c(rm_ids, rdat2[[wid]][rdat2[[dv]] %in% c(out_y)]))
+          if (only.one) break
         }
         
         set_rm_ids <- c(set_rm_ids, rm_ids)
@@ -164,7 +165,8 @@ test_min_size_mod <- function(data, iv, between, observed, type = 'parametric') 
 }
 
 ## Function to get anova mods for parametric test
-do_anova <- function(dat, wid, dv, iv, between, observed = NULL, within = NULL, p_limit = 0.05) {
+do_anova <- function(dat, wid, dv, iv, between, observed = NULL
+                     , within = NULL, p_limit = 0.05, completed = FALSE) {
   library(car)
   library(afex)
   library(dplyr)
@@ -222,10 +224,22 @@ do_anova <- function(dat, wid, dv, iv, between, observed = NULL, within = NULL, 
   ## post-hoc test
   tukey_mod <- TukeyHSD(ezAov$aov)
   
-  means_mod <- lsmeans(ezAov, as.formula(paste0('~', paste0(columns, collapse = '|'))))
-  contrast_mod <- contrast(means_mod, method = 'pairwise')
-  df_lsmeans = as.data.frame(summary(means_mod))
-  df_contrasts = as.data.frame(summary(contrast_mod))
+  df_lsmeans <- list()
+  df_contrasts <- list()
+  
+  for (k in 1:length(columns)) {
+    str_m1 <- paste0(columns[1:k], collapse = ':')
+    str_m2 <- paste0(columns[1:k], collapse = '|')
+    
+    means_mod <- lsmeans(ezAov, as.formula(paste0('~', str_m2)))
+    contrast_mod <- contrast(means_mod, method = 'pairwise')
+    df_lsmean = as.data.frame(summary(means_mod))
+    df_lsmean["Pairs"] = factor(apply(df_lsmean[columns[1:k]], 1, paste, collapse='.'))
+    df_contrast = as.data.frame(summary(contrast_mod))
+    
+    df_lsmeans[[str_m1]] <- df_lsmean
+    df_contrasts[[str_m1]] <- df_contrast
+  }
   
   ## pair using t-test
   t.test_pairs <- list()
@@ -235,7 +249,7 @@ do_anova <- function(dat, wid, dv, iv, between, observed = NULL, within = NULL, 
     comb_columns <- combn(columns, m, simplify = T)
     for (i in 1:ncol(comb_columns)) {
       selected_columns  <- comb_columns[,i] 
-      if (selected_columns[[1]] != iv) next
+      if (!completed && selected_columns[[1]] != iv) next
       cname <- paste0(selected_columns, collapse = ':')
       factors <- factor(apply(wdat[selected_columns], 1, paste, collapse='.'))
       level_pairs <- combn(levels(factors), 2)
@@ -289,7 +303,7 @@ plot_anova_assumptions <- function(result, dv) {
 }
 
 ## Plot function of t.test
-plot_t.test <- function(tt, title="", sub = NULL, ylab = NULL, notch = F, inv.col = F, draw.conf.int = T) {
+plot_t.test <- function(tt, title="", sub = NULL, ylab = NULL, notch = F, inv.col = F, draw.conf.int = T, lsmean = NULL) {
   
   pch <- c(16,17)
   pcol <- c("white","lightgrey")
@@ -309,6 +323,11 @@ plot_t.test <- function(tt, title="", sub = NULL, ylab = NULL, notch = F, inv.co
     for (bx_name in bx$names) {
       ci_lower <- tt$result$CI.lower[tt$result$Group == bx_name]
       ci_upper <- tt$result$CI.upper[tt$result$Group == bx_name]
+      if (!is.null(lsmean)) {
+        ci_lower <- lsmean$lower.CL[lsmean$Pairs == bx_name]
+        ci_upper <- lsmean$upper.CL[lsmean$Pairs == bx_name]
+      }
+      
       points(c(j-0.3, j-0.3, j-0.3), c(ci_lower, (ci_lower+ci_upper)/2, ci_upper), pch="-", col=vcols[[j%%2 + 1]], cex=c(.9,.9,1.5))
       lines(c(j-0.3, j-0.3), c(ci_lower, ci_upper), col=vcols[j%%2 + 1])
       j <- j + 1
@@ -365,13 +384,20 @@ write_anova_plots <- function(anova_result, ylab, title, path, override = T) {
     dev.off()
   }
   
-  ## box plots for the pairs
+  ## box plots for the pairs using lsmeans
   set_tt_mods <- anova_result$t.test.pairs
+  
   for (iv in names(set_tt_mods)) {
     tt_mods <- set_tt_mods[[iv]]
     for (i in 1:length(tt_mods)) {
       tt_mod <- tt_mods[[i]]
       
+      ##
+      pairs_names <- strsplit(names(tt_mods)[[i]], ':')[[1]]
+      lsmean <- anova_result$post.hoc$lsmeans[[iv]][
+        anova_result$post.hoc$lsmeans[[iv]]$Pairs %in% pairs_names,]
+      
+      ##
       filename <- paste0(iv, '_', names(tt_mods)[[i]], ".png")
       filename <- gsub(':', '.', gsub('/', '', filename))
       filename <- paste0(path, filename)
@@ -382,10 +408,10 @@ write_anova_plots <- function(anova_result, ylab, title, path, override = T) {
       
       if (!file.exists(filename) || override) {
         png(filename = filename, width = 640, height = 640)
-        plot_t.test(tt_mod$two.sided, title = title, ylab = ylab)
+        plot_t.test(tt_mod$two.sided, title = title, ylab = ylab, lsmean = lsmean)
         dev.off()
         png(filename = filename_inv, width = 640, height = 640)
-        plot_t.test(tt_mod$two.sided, title = title, ylab = ylab, inv.col = T)
+        plot_t.test(tt_mod$two.sided, title = title, ylab = ylab, inv.col = T, lsmean = lsmean)
         dev.off()
       }
     }
@@ -515,13 +541,20 @@ write_post_hoc_in_wb <- function(anova_result, wb, title = "") {
     xlsx.addTable(wb, sheet, as.data.frame(dframe), startCol = 1, row.names = T)
   }
   
-  xlsx.addLineBreak(sheet, 2)
-  xlsx.addHeader(wb, sheet, paste0("Contrast Matrices for ", title), level = 2, startCol = 1)
-  xlsx.addTable(wb, sheet, anova_result$post.hoc$contrasts, startCol = 1, row.names = F)
+  for (iv in names(anova_result$post.hoc$contrasts)) {
+    df_contrast <- anova_result$post.hoc$contrasts[[iv]]
+    xlsx.addLineBreak(sheet, 2)
+    xlsx.addHeader(wb, sheet, paste0("Contrast Matrices for ", title, ' - ', iv), level = 2, startCol = 1)
+    xlsx.addTable(wb, sheet, df_contrast, startCol = 1, row.names = F)
+  }
   
-  xlsx.addLineBreak(sheet, 2)
-  xlsx.addHeader(wb, sheet, "Least Squares Means and Confidence Intervals", level = 2, startCol = 1)
-  xlsx.addTable(wb, sheet, anova_result$post.hoc$lsmeans, startCol = 1, row.names = F)
+  for (iv in names(anova_result$post.hoc$lsmeans)) {
+    lsmean <- anova_result$post.hoc$lsmeans[[iv]]
+    
+    xlsx.addLineBreak(sheet, 2)
+    xlsx.addHeader(wb, sheet, paste0("Least Squares Means and Confidence Intervals for ", iv), level = 2, startCol = 1)
+    xlsx.addTable(wb, sheet, lsmean, startCol = 1, row.names = F)
+  }
   
   xlsx.addLineBreak(sheet, 2)
   xlsx.addHeader(wb, sheet, "Plots", level = 2, startCol = 1)

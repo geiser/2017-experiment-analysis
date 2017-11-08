@@ -33,13 +33,17 @@ plot_wilcox.test <- function(wt, title="", sub = NULL, ylab = NULL, notch = T, i
   
   # drawing line wilcox conf.interval
   if (draw.conf.int) {
-    wt <- wilcox.test(y[x==levels(x)[1]], conf.int=T)
-    points(c(0.7,0.7,0.7), c(wt$conf.int, wt$estimate), pch="-", col=pcol1, cex=c(.9,.9,1.5))
-    lines(c(0.7,0.7), wt$conf.int, col=pcol1)
+    wt <- tryCatch(wilcox.test(y[x==levels(x)[1]], conf.int=T), error = function(e) NULL)
+    if (!is.null(wt)) {
+      points(c(0.7,0.7,0.7), c(wt$conf.int, wt$estimate), pch="-", col=pcol1, cex=c(.9,.9,1.5))
+      lines(c(0.7,0.7), wt$conf.int, col=pcol1)
+    }
     
-    wt <- wilcox.test(y[x==levels(x)[2]], conf.int=T)
-    points(c(1.7,1.7,1.7), c(wt$conf.int, wt$estimate), pch="-", col=pcol2, cex=c(.9,.9,1.5))
-    lines(c(1.7,1.7), wt$conf.int, col=pcol2)
+    wt <- tryCatch(wilcox.test(y[x==levels(x)[2]], conf.int=T), error = function(e) NULL)
+    if (!is.null(wt)) {
+      points(c(1.7,1.7,1.7), c(wt$conf.int, wt$estimate), pch="-", col=pcol2, cex=c(.9,.9,1.5))
+      lines(c(1.7,1.7), wt$conf.int, col=pcol2)
+    }
   }
 }
 
@@ -175,7 +179,7 @@ write_wts_summary_in_wb <- function(set_wt_mods, wb, title = "") {
 }
 
 ## Function to write wilcoxon analysis
-write_wilcoxon_simple_analysis_report <- function(set_wt_mods, filename, title = "", ylab = "Difference Score", override = T) {
+write_wilcoxon_simple_analysis_report <- function(set_wt_mods, filename, title = "", ylab = "Difference Score", override = T, data = NULL) {
   
   library(r2excel)
   
@@ -187,7 +191,11 @@ write_wilcoxon_simple_analysis_report <- function(set_wt_mods, filename, title =
       for (i in 1:length(wt_mods)) {
         write_wts_in_wb(wt_mods, wb, iv, i, title = title, ylab = ylab)
       }
-    }    
+    }
+    if (!is.null(data)) {
+      sheet <- xlsx::createSheet(wb, sheetName = "data")
+      xlsx.addTable(wb, sheet, data, startCol = 1, row.names = F)
+    }
     saveWorkbook(wb, filename)
   }
 }
