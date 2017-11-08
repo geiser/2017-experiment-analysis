@@ -32,7 +32,7 @@ tam_info_mod <- load_and_save_TAMs_to_measure_skill(
   , prefix = "case03_prepos"
   , fixed = NULL #c("Re2ReB","An3aAnC1","An3bAnC2","Ev2EvB")
   , fixed_sets = list(s1=c("Un2","UnB"), s2=c("Ap1","ApA"), s3=c("Ap3","ApC"))
-  , min_columns = 4, irtmodel = "GPCM")
+  , min_columns = 4, irtmodel = "2PL")
 View(tam_info_mod$information)
 
 pre_tam_info_mod <- load_and_save_TAMs_to_measure_skill(
@@ -46,7 +46,7 @@ pre_tam_info_mod <- load_and_save_TAMs_to_measure_skill(
                       , An=c("An3a", "An3b"), Ev=c("Ev2"))
   , prefix = "case03_pre"
   , fixed = NULL #c("Re2ReB","An3aAnC1","An3bAnC2","Ev2EvB")
-  , min_columns = 4, irtmodel = "GPCM")
+  , min_columns = 4, irtmodel = "2PL")
 View(pre_tam_info_mod$information)
 
 pos_tam_info_mod <- load_and_save_TAMs_to_measure_skill(
@@ -61,26 +61,26 @@ pos_tam_info_mod <- load_and_save_TAMs_to_measure_skill(
                       , An=c("AnC1", "AnC2"), Ev=c("EvB"))
   , prefix = "case03_pos"
   , fixed = NULL #c("Re2ReB","An3aAnC1","An3bAnC2","Ev2EvB")
-  , min_columns = 4, irtmodel = "GPCM")
+  , min_columns = 4, irtmodel = "2PL")
 View(pos_tam_info_mod$information)
 
 
 #View(tam_info_mod$information)
 #View(pre_tam_info_mod$information)
 
-mod <- GPCM.measure_change(
+mod <- TAM.measure_change(
     preData, posData
     , items.pre = c("Re2","Un2","Ap1","Ap3","An3a","An3b","Ev2")
     , items.pos = c("ReB","UnB","ApA","ApC","AnC1","AnC2","EvB")
     , same_items.pre = c("Re2","An3a","An3b","Ev2")
     , same_items.pos = c("ReB","AnC1","AnC2","EvB")
-    , userid = "UserID", verify = T, plotting = T, remove_outlier = T, tam_models = NULL)
+    , userid = "UserID", verify = T, plotting = F, remove_outlier = T, irtmodel = "2PL")
 
 write_measure_change_report(
-  mod, 'report/learning-outcome/', 'MeasurementChangeModel.xlsx', override = F
+  mod, 'report/learning-outcome/', 'MeasurementChangeModel.xlsx', override = T
 )
 
 write_change_measurement_model_plots(
   mod, 'report/learning-outcome/measurement-change-model-plots/', override = T
 )
-
+plot(mod$info.stacking$pre_mod)

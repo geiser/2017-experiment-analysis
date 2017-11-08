@@ -567,10 +567,11 @@ plot_pre_vs_post <- function(x, y, plabels, title = "Pre-test vs. Post-test") {
           ggtitle(title))
 }
 
-## measuring change using GPCM by stacking and racking data
-GPCM.measure_change <- function(
+## measuring change using TAM by stacking and racking data
+TAM.measure_change <- function(
   pre_dat, pos_dat, items.pre, items.pos, same_items.pre, same_items.pos
-  , userid = "UserID", verify = T, plotting = F, remove_outlier = T, tam_models = NULL) {
+  , userid = "UserID", verify = T, plotting = F, remove_outlier = T
+  , tam_models = NULL, irtmodel = "GPCM") {
   
   library(TAM)
   library(reshape)
@@ -595,14 +596,14 @@ GPCM.measure_change <- function(
     if (!is.null(tam_models) && !is.null(tam_models$pos_mod1)) {
       pos_mod1 <- tam_models$pos_mod1
     } else {
-      pos_mod1 <- tam.mml.2pl(dat[,items$pos], irtmodel = "GPCM", pid = dat[[userid]])
+      pos_mod1 <- tam.mml(dat[,items$pos], irtmodel = irtmodel, pid = dat[[userid]])
     }
     pos_wle1 <- tam.wle(pos_mod1)
     
     if (!is.null(tam_models) && !is.null(tam_models$pre_mod1)) {
       pre_mod1 <- tam_models$pre_mod1
     } else {
-      pre_mod1 <- tam.mml.2pl(dat[,items$pre], irtmodel = "GPCM", pid = dat[[userid]])
+      pre_mod1 <- tam.mml(dat[,items$pre], irtmodel = irtmodel, pid = dat[[userid]])
     }
     pre_wle1 <- tam.wle(pre_mod1)
     
@@ -655,7 +656,7 @@ GPCM.measure_change <- function(
   if (!is.null(tam_models) && !is.null(tam_models$mod2)) {
     mod2 <- tam_models$mod2
   } else {
-    mod2 <- tam.mml.2pl(resp, irtmodel='GPCM', pid = dat[[userid]])
+    mod2 <- tam.mml(resp, irtmodel = irtmodel, pid = dat[[userid]])
   }
   
   pos_B2 <- mod2$B[,,][colnames(pos_resp),]
@@ -686,19 +687,19 @@ GPCM.measure_change <- function(
   if (!is.null(tam_models) && !is.null(tam_models$pos_mod3)) {
     pos_mod3 <- tam_models$pos_mod3
   } else {
-    pos_mod3 <- tam.mml.2pl(pos_resp, irtmodel="GPCM", B.fixed = pos_B2.fixed, pid = dat[[userid]])
+    pos_mod3 <- tam.mml(pos_resp, irtmodel = irtmodel, B.fixed = pos_B2.fixed, pid = dat[[userid]])
   }
   pos_wle3 <- tam.wle(pos_mod3)
   
   if (!is.null(tam_models) && !is.null(tam_models$pre_mod3)) {
     pre_mod3 <- tam_models$pre_mod3
   } else {
-    pre_mod3 <- tam.mml.2pl(pre_resp, irtmodel="GPCM", B.fixed = pre_B2.fixed, pid = dat[[userid]])
+    pre_mod3 <- tam.mml(pre_resp, irtmodel = irtmodel, B.fixed = pre_B2.fixed, pid = dat[[userid]])
     xsi.names <- intersect(row.names(pos_mod3$xsi.fixed.estimated)
                            , row.names(pre_mod3$xsi.fixed.estimated))
     pos_xsi3.fixed <- pos_mod3$xsi.fixed.estimated[xsi.names,]
-    pre_mod3 <- tam.mml.2pl(pre_resp, irtmodel="GPCM", B.fixed = pre_B2.fixed
-                            , xsi.fixed = pos_xsi3.fixed, pid = dat[[userid]])
+    pre_mod3 <- tam.mml(pre_resp, irtmodel = irtmodel, B.fixed = pre_B2.fixed
+                        , xsi.fixed = pos_xsi3.fixed, pid = dat[[userid]])
   }
   pre_wle3 <- tam.wle(pre_mod3)
   
@@ -736,7 +737,7 @@ GPCM.measure_change <- function(
   if (!is.null(tam_models) && !is.null(tam_models$mod4)) {
     mod4 <- tam_models$mod4
   } else {
-    mod4 <- tam.mml.2pl(pre_resp, irtmodel = "GPCM", B.fixed = pre_B2.fixed, pid = dat[[userid]])
+    mod4 <- tam.mml(pre_resp, irtmodel = irtmodel, B.fixed = pre_B2.fixed, pid = dat[[userid]])
   }
   
   tt4 <- as.data.frame(tam.threshold(mod4))
