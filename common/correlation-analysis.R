@@ -56,7 +56,8 @@ get_data_for_gobal_corr <- function(corr_mods, participants, wid) {
 }
 
 ## Function to get correlation modules
-get_corr_pair_mods <- function(participants, iv, wid, between, observed = NULL, corr_var, info_src, include.subs = F) {
+get_corr_pair_mods <- function(participants, iv, wid, between, observed = NULL
+                               , corr_var, info_src, include.subs = F, method = "pearson") {
   library(psych)
   
   grid_models <- expand.grid(corr_var)
@@ -88,9 +89,7 @@ get_corr_pair_mods <- function(participants, iv, wid, between, observed = NULL, 
     }
     
     sub_corr_mods[['main']] <- list(
-      data = dat[columns], data.full = dat
-      , mods = list(pearson = corr.test(dat[columns], method = "pearson"),
-                    spearman = corr.test(dat[columns], method = "spearman")))
+      data = dat[columns], data.full = dat, mod = corr.test(dat[columns], method = method))
     
     ## sub - modules
     if (include.subs) {
@@ -106,8 +105,7 @@ get_corr_pair_mods <- function(participants, iv, wid, between, observed = NULL, 
           for (nlevel in levels(factors)) {
             sub_corr_mods[[nlevel]] <- list(
               data = wdat[factors == nlevel,][columns], data.full = wdat[factors == nlevel,]
-              , mods = list(pearson = corr.test(wdat[factors == nlevel,][columns], method = "pearson"),
-                            spearman = corr.test(wdat[factors == nlevel,][columns], method = "spearman")))
+              , mod = corr.test(wdat[factors == nlevel,][columns], method = method), method = method)
           }
         }
       }
@@ -121,7 +119,7 @@ get_corr_pair_mods <- function(participants, iv, wid, between, observed = NULL, 
 
 
 ## Function get matrix mods
-get_corr_matrix_mods <- function(participants, corr_pair_mods, dvs, wid = 'UserID') {
+get_corr_matrix_mods <- function(participants, corr_pair_mods, dvs, wid = 'UserID', method = "pearson") {
   library(psych)
   
   corr_dat <- get_data_for_gobal_corr(corr_pair_mods, participants, wid)
@@ -146,10 +144,10 @@ get_corr_matrix_mods <- function(participants, corr_pair_mods, dvs, wid = 'UserI
       result[[paste0('corr_',i,'_',j)]] <- list(
         filename = filename
         , title = paste0("Correlation of ", part_of_title, sub_main)
-        , mod = list(pearson = corr.test(cdat[columns], method = "pearson"),
-                     spearman = corr.test(cdat[columns], method = "spearman"))
+        , mod = corr.test(cdat[columns], method = method)
         , data = cdat[columns]
         , data.full = cdat
+        , method = method
       )
       
       j <- j+1
@@ -173,25 +171,17 @@ write_corr_chart_plots <- function(corr_mods, path, override = T) {
   
   for (model_name in names(corr_mods)) {
     mods <- corr_mods[[model_name]]
+    
     for (sub_name in names(mods)) {
       corr_mod <- mods[[sub_name]]
       
       file_name <- gsub(':', '.', gsub('/', '', sub_name))
       sub_title <- sub_name; if (sub_name == 'main') sub_title <- ''
       
-      filename <- paste0(path, model_name, file_name, '_pearson.png')
+      filename <- paste0(path, model_name, file_name, '.png')
       if (!file.exists(filename) || override) { 
         png(filename = filename, width = 640, height = 640)
-        chart.Correlation(corr_mod$data, method = "pearson", histogram = T, pch=16
-                          , main=paste0('Correlation ', sub_title,' for '
-                                        , paste0(colnames(corr_mod$data), collapse = ' - ')))
-        dev.off()
-      }
-      
-      filename <- paste0(path, model_name, file_name, '_spearman.png')
-      if (!file.exists(filename) || override) { 
-        png(filename = filename, width = 640, height = 640)
-        chart.Correlation(corr_mod$data, method = "spearman", histogram = T, pch=16
+        chart.Correlation(corr_mod$data, method = corr_mod$method, histogram = T, pch=16
                           , main=paste0('Correlation ', sub_title,' for '
                                         , paste0(colnames(corr_mod$data), collapse = ' - ')))
         dev.off()
@@ -210,28 +200,27 @@ write_corr_matrix_plots <- function(corr_matrix_mods, path, override = T) {
     ##
     col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD", "#4477AA"))
     
-    for (method in c("pearson", "spearman")) {
-      M <- cor(mod$data, method = method)
-      p_mat <- cor.mtest(mod$data, method = method)
-      
-      filename = paste0(path, method, '_', mod$filename)
-      if (!file.exists(filename) || override) { 
-        png(filename = filename, width = 640, height = 640)
-        corrplot(
-          M, method="circle", col=col(200),
-          type="upper", order="original",
-          addCoef.col="black", # Add coefficient of correlation
-          tl.col="black", tl.srt=45, #Text label color and rotation
-          # Combine with significance
-          p.mat = p_mat, sig.level = 0.05, insig = "blank",
-          # hide correlation coefficient on the principal diagonal
-          main = mod$title, # rect.col = black, outline = TRUE,
-          tl.cex=0.75, number.cex = 0.75, cl.cex = 0.65,
-          diag=FALSE 
-        )
-        dev.off()
-      }
+    M <- cor(mod$data, method = mod$method)
+    p_mat <- cor.mtest(mod$data, method = mod$method)
+    
+    filename = paste0(path, mod$filename)
+    if (!file.exists(filename) || override) { 
+      png(filename = filename, width = 640, height = 640)
+      corrplot(
+        M, method="circle", col=col(200),
+        type="upper", order="original",
+        addCoef.col="black", # Add coefficient of correlation
+        tl.col="black", tl.srt=45, #Text label color and rotation
+        # Combine with significance
+        p.mat = p_mat, sig.level = 0.05, insig = "blank",
+        # hide correlation coefficient on the principal diagonal
+        main = mod$title, # rect.col = black, outline = TRUE,
+        tl.cex=0.75, number.cex = 0.75, cl.cex = 0.65,
+        diag=FALSE 
+      )
+      dev.off()
     }
+    
   })
   
 }
@@ -249,12 +238,10 @@ write_corr_matrix_report <- function(corr_matrix_mods, filename, override = T) {
     for (sheetName in names(corr_matrix_mods)) {
       corr_info <- corr_matrix_mods[[sheetName]]
       
-      write_corr_in_wb(corr_info$mod$pearson, wb, title=corr_info$title
-                       , method = "pearson", data = corr_info$data
-                       , data.full = corr_info$data.full, sheetName = paste0(sheetName, '_pearson'))
-      write_corr_in_wb(corr_info$mod$spearman, wb, title=corr_info$title
-                       , method = "spearman", data = corr_info$data
-                       , data.full = corr_info$data.full, sheetName = paste0(sheetName, '_spearman'))
+      write_corr_in_wb(
+        corr_info$mod, wb, title=corr_info$title, method = corr_info$method
+        , data = corr_info$data, data.full = corr_info$data.full
+        , sheetName = paste0(sheetName, '_', corr_info$method))
     }
     saveWorkbook(wb, filename)
   }
@@ -311,15 +298,9 @@ write_corr_mods_in_wb <- function(corr_mods, wb, magnitude = 'non-linear') {
       corr_mod <- mods[[sub_set_name]]
       mtitle <- paste0(paste0(colnames(corr_mod$data), collapse = " - "), " in ", sub_set_name)
       
-      pearson_mag <- get_corr_magnitude(corr_mod$mods$pearson)
-      if (pearson_mag == magnitude) {
-        write_corr_in_wb(corr_mod$mods$pearson, wb, mtitle, magnitude, i, "pearson"
-                         , data = corr_mod$data, data.full = corr_mod$data.full)
-      }
-      
-      spearman_mag <- get_corr_magnitude(corr_mod$mods$spearman)
-      if (spearman_mag == magnitude) {
-        write_corr_in_wb(corr_mod$mods$spearman, wb, mtitle, magnitude, i, "spearman"
+      mag <- get_corr_magnitude(corr_mod$mod)
+      if (mag == magnitude) {
+        write_corr_in_wb(corr_mod$mod, wb, mtitle, magnitude, i, corr_mod$method
                          , data = corr_mod$data, data.full = corr_mod$data.full)
       }
       

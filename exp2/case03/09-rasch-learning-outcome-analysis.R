@@ -18,7 +18,7 @@ dat <- dplyr::mutate(dat, `DiffTheta` = dat$PostTheta-dat$PreTheta)
 #############################################################################
 
 ## remove outliers
-extra_rmids <- c()
+extra_rmids <- c(10203)
 rmids <- get_ids_outliers_for_anova(dat, "UserID", "DiffTheta", "Type", between = c("Type", "CLRole"))
 if (!is.null(extra_rmids) && length(extra_rmids) > 0) {
   rmids <- unique(c(rmids, extra_rmids))
@@ -49,7 +49,7 @@ write_anova_analysis_report(
   , ylab = "logits"
   , title = "Difference of Programming Skill - Recursion"
   , filename = "report/learning-outcome/MeasurementAnovaAnalysis.xlsx"
-  , override = FALSE
+  , override = TRUE
 )
 write_anova_plots(
   anova_result
