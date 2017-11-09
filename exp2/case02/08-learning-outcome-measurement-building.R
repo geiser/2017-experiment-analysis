@@ -61,7 +61,7 @@ if (file.exists('case02_prepos_mod.RData')) {
 }
 
 write_measure_change_report(
-  mod, 'report/learning-outcome/', 'MeasurementChangeModel.xlsx', override = F
+  mod, 'report/learning-outcome/', 'MeasurementChangeModel.xlsx', override = T
 )
 
 write_change_measurement_model_plots(
