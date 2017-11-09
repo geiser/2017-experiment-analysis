@@ -20,17 +20,17 @@ dat <- dplyr::mutate(dat, `DiffTheta` = dat$PostTheta-dat$PreTheta)
 set_wt_mods <- get_wilcox_mods(dat, dv = 'DiffTheta', iv = 'Type', between = c('Type', 'CLRole'))
 write_wilcoxon_simple_analysis_report(
   set_wt_mods
-  , ylab = "nro"
-  , title = "Difference of Programming Skill - Loop"
-  , filename = paste0("report/learning-outcome/MeasurementWilcoxAnalysis.xlsx")
+  , ylab = "logits"
+  , title = "Difference of Programming Skill - Loops"
+  , filename = "report/learning-outcome/MeasurementWilcoxAnalysis.xlsx"
   , override = TRUE
   , data = dat
 )
 write_wilcoxon_plots(
   set_wt_mods
-  , ylab = "nro"
-  , title = "Difference of Programming Skill - Loop"
-  , path = paste0("report/learning-outcome/measurement-wilcox-analysis-plots/")
+  , ylab = "logits"
+  , title = "Difference of Programming Skill - Loops"
+  , path = "report/learning-outcome/measurement-wilcox-analysis-plots/"
   , override = TRUE
 )
 
@@ -65,17 +65,17 @@ if (anova_result$assumptions.fail) {
 }
 
 ## writing report
-#write_anova_analysis_report(
-#  anova_result
-#  , ylab = "logits"
-#  , title = "Difference of Programming Skill - Loops"
-#  , filename = "report/learning-outcome/MeasurementAnovaAnalysis.xlsx"
-#  , override = TRUE
-#)
-#write_anova_plots(
-#  anova_result
-#  , ylab = "logits"
-#  , title = "Difference of Programming Skill - Loops"
-#  , path = "report/learning-outcome/measurement-anova-analysis-plots/"
-#  , override = TRUE
-#)
+write_anova_analysis_report(
+  anova_result
+  , ylab = "logits"
+  , title = "Difference of Programming Skill - Loops"
+  , filename = "report/learning-outcome/MeasurementAnovaAnalysis.xlsx"
+  , override = TRUE
+)
+write_anova_plots(
+  anova_result
+  , ylab = "logits"
+  , title = "Difference of Programming Skill - Loops"
+  , path = "report/learning-outcome/measurement-anova-analysis-plots/"
+  , override = TRUE
+)

@@ -38,6 +38,7 @@ corr_pair_mods <- get_corr_pair_mods(
     )
   , info_src = info_src
   , include.subs = TRUE
+  , method = "spearman"
 )
 
 corr_matrix_mods <- get_corr_matrix_mods(
@@ -57,6 +58,7 @@ corr_matrix_mods <- get_corr_matrix_mods(
       , 'Interest/Enjoyment', 'Perceived Choice', 'Pressure/Tension')
     )
   , wid = "UserID"
+  , method = "spearman"
 )
 
 ## Write report
@@ -84,3 +86,4 @@ write_corr_chart_plots(
   , path =  "report/correlation/simple-corr-chart-plots/"
   , override = TRUE
 )
+
