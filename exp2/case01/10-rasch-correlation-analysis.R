@@ -36,6 +36,7 @@ corr_pair_mods <- get_corr_pair_mods(
   )
   , info_src = info_src
   , include.subs = TRUE
+  , method = "spearman"
 )
 
 corr_matrix_mods <- get_corr_matrix_mods(
@@ -51,6 +52,7 @@ corr_matrix_mods <- get_corr_matrix_mods(
       'NroDesiredInteractions', 'Intrinsic Motivation', 'Interest/Enjoyment', 'Perceived Choice', 'Pressure/Tension')
   )
   , wid = "UserID"
+  , method = "spearman"
 )
 
 ## Write report
