@@ -35,14 +35,14 @@ for (i in 1:length(dvs)) {
     , ylab = "Score"
     , title = dv
     , filename = filename
-    , override = FALSE
+    , override = TRUE
   )
   write_wilcoxon_plots(
     set_wt_mods
     , ylab = "Score"
     , title = dv
     , path = path
-    , override = FALSE
+    , override = TRUE
   )
 }
 
@@ -52,19 +52,34 @@ for (i in 1:length(dvs)) {
 
 rmids <- list()
 rdats <- list()
-extra_rmids <- list('Attention'=c(10198,10204,10209,10223,10242,10231,10189
-                                  ,10220,10175,10184,10169,10190,10240,10227,10224))
+extra_rmids <- list(
+  'Attention'=c(10211,10204,10209,10223 ,10198,10242 ,10169,10231,10175
+                ,10189,10227,10220 ,10184,10190,10240,10224)
+  ,'Level of Motivation'=c(10191,10230
+                           ,10209,10204,10223
+                           ))
+
 ## remove outliers
 for (i in 1:length(dvs)) {
   dv <- dvs[[i]]
-  rmids[[dv]] <- get_ids_outliers_for_anova(
-    dat, 'UserID', dv, iv = 'Type', between = c('Type', 'CLRole'))
+  rmids[[dv]] <- c()
+  
+  rdat <- dat
   if (!is.null(extra_rmids[[dv]]) && length(extra_rmids[[dv]]) > 0) {
-    rmids[[dv]] <- unique(c(rmids[[dv]], extra_rmids[[dv]]))
+    rmids[[dv]] <- extra_rmids[[dv]]
+    rdat <- rdat[!rdat[['UserID']] %in% rmids[[dv]],]
   }
+  
+  outlier_ids <- get_ids_outliers_for_anova(rdat, 'UserID', dv, iv = 'Type', between = c('Type', 'CLRole'))
+  if (!is.null(outlier_ids) && length(outlier_ids) > 0) {
+    rmids[[dv]] <- unique(c(rmids[[dv]], outlier_ids))
+    rdat <- rdat[!rdat[['UserID']] %in% rmids[[dv]],]
+  }
+  
+  rdats[[dv]] <- rdat
   cat('\n...removing ids: ', rmids[[dv]],' from: ', dv, ' ...\n')
-  rdats[[dv]] <- dat[!dat[['UserID']] %in% rmids[[dv]],]
 }
+
 
 for (dv in dvs) {
   anova_result <- do_anova(
@@ -73,12 +88,17 @@ for (dv in dvs) {
   if (anova_result$min.sample.size.fail) {
     cat('\n... minimun sample size is not satisfied for the group: ', dv, '\n')
   }
-  if (!anova_result$min.sample.size.fail && anova_result$assumptions.fail) {
+  if (anova_result$assumptions.fail) {
     cat('\n... assumptions fail in normality or equality for the group: ', dv, '\n')
     print(anova_result$test.min.size$error.warning.list)
-    if (anova_result$normality.fail) cat('\n... normality fail ...\n')
-    if (anova_result$homogeneity.fail) cat('\n... homogeneity fail ...\n')
-    plot_anova_assumptions(anova_result, dv)
+    if (anova_result$normality.fail) {
+      cat('\n... normality fail ...\n')
+      normPlot(rdats[[dv]], dv)
+    }
+    if (anova_result$homogeneity.fail) {
+      cat('\n... homogeneity fail ...\n')
+      plot_anova_assumptions(anova_result, dv)
+    }
   }
 }
 
@@ -98,13 +118,19 @@ for (i in 1:length(dvs)) {
     , ylab = "Score"
     , title = dv
     , filename = filename
-    , override = FALSE
+    , override = TRUE
   )
   write_anova_plots(
     anova_result
     , ylab = "Score"
     , title = dv
     , path = path
-    , override = FALSE
+    , override = TRUE
   )
 }
+
+bx<-boxplot(
+  rdats$`Level of Motivation`$`Level of Motivation`
+  [rdats$`Level of Motivation`$Type=="ont-gamified" &
+   rdats$`Level of Motivation`$CLRole=="Apprentice"])
+rdats$`Level of Motivation`$UserID[rdats$`Level of Motivation`$`Level of Motivation` %in% bx$out]

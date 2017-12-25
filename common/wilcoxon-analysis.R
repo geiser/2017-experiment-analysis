@@ -10,9 +10,10 @@ library(reshape)
 library(r2excel)
 
 ## plot function of wilcox_analysiss
-plot_wilcox.test <- function(wt, title="", sub = NULL, ylab = NULL, notch = T, inv.col = F, draw.conf.int = T) {
+plot_wilcox.test <- function(wt, title="", sub = NULL, ylab = NULL, notch = T
+                             , inv.col = F, draw.conf.int = T, is.rev = F) {
   
-  x <- wt$data$x
+  x <- factor(wt$data$x)
   y <- wt$data$y
   
   pch1=16; pch2=17
@@ -22,6 +23,9 @@ plot_wilcox.test <- function(wt, title="", sub = NULL, ylab = NULL, notch = T, i
     pch1 = 17; pch2 = 16
     pcol1 = 4; pcol2 = 10
     pcol = c("lightgrey", "white")
+  }
+  if (is.rev) {
+    x <- factor(x, levels = rev(levels(x)))
   }
   
   bp <- boxplot(y ~ x, boxwex=0.2, notch=notch, col=pcol, ylab=ylab)
@@ -217,14 +221,39 @@ write_wilcoxon_plots <- function(set_wt_mods, ylab, title, path, override = T) {
       filename_inv <- gsub(':', '.', gsub('/', '', filename_inv))
       filename_inv <- paste0(path, filename_inv)
       
+      filename_rev <- paste0(iv, '_', names(wt_mods)[[i]], "_rev.png")
+      filename_rev <- gsub(':', '.', gsub('/', '', filename_rev))
+      filename_rev <- paste0(path, filename_rev)
+      
+      filename_rev_inv <- paste0(iv, '_', names(wt_mods)[[i]], "_rev_inv.png")
+      filename_rev_inv <- gsub(':', '.', gsub('/', '', filename_rev_inv))
+      filename_rev_inv <- paste0(path, filename_rev_inv)
+      
       if (!file.exists(filename) || override) {
         png(filename = filename, width = 640, height = 640)
         plot_wilcox.test(wt_mod$two.sided, title = title, ylab = ylab)
         dev.off()
+      }
+      
+      if (!file.exists(filename_inv) || override) {  
         png(filename = filename_inv, width = 640, height = 640)
         plot_wilcox.test(wt_mod$two.sided, title = title, ylab = ylab, inv.col = T)
         dev.off()
       }
+      
+      if (!file.exists(filename_rev) || override) {
+        png(filename = filename_rev, width = 640, height = 640)
+        plot_wilcox.test(wt_mod$two.sided, title = title, ylab = ylab, is.rev = T)
+        dev.off()
+      }
+      
+      if (!file.exists(filename_rev_inv) || override) {  
+        png(filename = filename_rev_inv, width = 640, height = 640)
+        plot_wilcox.test(wt_mod$two.sided, title = title, ylab = ylab, is.rev = T, inv.col = T)
+        dev.off()
+      }
+      
     }
   }
 }
+

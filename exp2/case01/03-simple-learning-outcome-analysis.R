@@ -26,14 +26,14 @@ set_wt_mods <- get_wilcox_mods(dat, dv = 'DiffScore', iv = 'Type', between = c('
 write_wilcoxon_simple_analysis_report(
   set_wt_mods
   , ylab = "Difference of Score"
-  , title = "Programming Skill - Conditionals"
+  , title = "Programming Skill - Cond. Structures"
   , filename = "report/learning-outcome/WilcoxAnalysis.xlsx"
-  , override = FALSE
+  , override = TRUE
 )
 write_wilcoxon_plots(
   set_wt_mods
   , ylab = "Difference of Score"
-  , title = "Programming Skill - Conditionals"
+  , title = "Programming Skill - Cond. Structures"
   , path = "report/learning-outcome/wilcox-analysis-plots/"
   , override = TRUE
 )
@@ -43,15 +43,21 @@ write_wilcoxon_plots(
 #############################################################################
 
 rdat <- dat
-extra_rmids <- c(10224,10238)
+extra_rmids <- c(10224,10238 ,10216 ,10222,10179)
 ## remove outliers
-rmids <- get_ids_outliers_for_anova(
-  dat, 'UserID', 'DiffScore', iv = 'Type', between = c('Type', 'CLRole'))
 if (!is.null(extra_rmids) && length(extra_rmids) > 0) {
-  rmids <- unique(c(rmids, extra_rmids))
+  rmids <- extra_rmids
+  rdat <- dat[!dat[['UserID']] %in% rmids,]
+}
+
+outlier_ids <- get_ids_outliers_for_anova(
+  rdat, 'UserID', 'DiffScore', iv = 'Type', between = c('Type', 'CLRole'))
+if (!is.null(outlier_ids) && length(outlier_ids) > 0) {
+  rmids <- c(rmids, outlier_ids)
+  rdat <- dat[!dat[['UserID']] %in% rmids,]
 }
 cat('\n...removing ids: ', rmids,' ...\n')
-rdat <- dat[!dat[['UserID']] %in% rmids,]
+
 
 anova_result <- do_anova(rdat, wid = 'UserID', dv = 'DiffScore', iv = 'Type'
                          , between = c('Type', 'CLRole'), observed = c('CLRole'))
@@ -61,23 +67,32 @@ if (anova_result$min.sample.size.fail) {
 if (!anova_result$min.sample.size.fail && anova_result$assumptions.fail) {
   cat('\n... assumptions fail in normality or equality\n')
   print(anova_result$test.min.size$error.warning.list)
-  if (anova_result$normality.fail) cat('\n... normality fail ...\n')
-  if (anova_result$homogeneity.fail) cat('\n... homogeneity fail ...\n')
-  plot_anova_assumptions(anova_result, 'DiffScore')
+  if (anova_result$normality.fail) {
+    cat('\n... normality fail ...\n')
+    normPlot(rdat, dv = 'DiffScore')
+  }
+  if (anova_result$homogeneity.fail) {
+    cat('\n... homogeneity fail ...\n')
+    plot_anova_assumptions(anova_result, 'DiffScore')
+  }
 }
 
 ## writing report
 write_anova_analysis_report(
   anova_result
   , ylab = "Difference of Score"
-  , title = "Programming Skill - Conditionals"
+  , title = "Programming Skill - Cond. Structures"
   , filename = "report/learning-outcome/AnovaAnalysis.xlsx"
-  , override = FALSE
+  , override = TRUE
 )
 write_anova_plots(
   anova_result
   , ylab = "Difference of Score"
-  , title = "Programming Skill - Conditionals"
+  , title = "Programming Skill - Cond. Structures"
   , path = "report/learning-outcome/anova-analysis-plots/"
   , override = TRUE
 )
+
+#bx<-boxplot(rdat$DiffScore[rdat$Type=="non-gamified" & rdat$CLRole=="Master"])
+#uid <- rdat$UserID[rdat$DiffScore %in% bx$out]
+#rdat[rdat$UserID %in% uid,]

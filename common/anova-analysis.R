@@ -1,5 +1,5 @@
 
-wants <- c('coin', 'sirt', 'lavaan', 'psych', 'reshape', 'dplyr', 'readr', 'effsize')
+wants <- c('coin', 'sirt', 'lavaan', 'psych', 'reshape', 'dplyr', 'readr', 'effsize','pwr')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 
@@ -8,7 +8,7 @@ if(any(!has)) install.packages(wants[!has])
 #############################################################################
 
 ## Function to get ids for anova
-get_ids_outliers_for_anova <- function(dat, wid, dv, iv, between, observed = NULL, only.one = F) {
+get_ids_outliers_for_anova <- function(dat, wid, dv, iv, between, observed = NULL, only.one = T) {
   
   ## wide data and factorize
   wdat <- dat
@@ -288,6 +288,36 @@ do_anova <- function(dat, wid, dv, iv, between, observed = NULL
 ## Functions to draw anova plots                                           ##
 #############################################################################
 
+## plot normality points
+normPlot <- function(rdat, dv, wid="UserID") {
+  library(ggplot2)
+  library(ggrepel)
+  
+  df <- data.frame(name = factor(rdat[[wid]]), x = rdat[[dv]])
+  
+  y <- quantile(rdat[[dv]], c(0.25,0.75))
+  x <- qnorm(c(0.25,0.75))
+  name <- rdat[[wid]]
+  
+  slope <- diff(y)/diff(x)
+  int <- y[1] - slope*x[1]
+  
+  g<-ggplot(df, aes(sample = x)) + stat_qq()
+  df.new<-ggplot_build(g)$data[[1]]
+  df.new$name<-df$name[order(df$x)]
+  
+  print(ggplot(df.new,aes(theoretical,sample,label=name))+geom_point(color = 'black')+#geom_text()+ 
+          geom_abline(intercept=int, slope=slope,linetype = "dotted") + theme_bw() +
+          geom_text_repel(aes(label = name)
+                          , segment.color = '#888888'
+                          , segment.size = 0.25
+                          , arrow = arrow(length = unit(0.005, 'npc'))
+                          , point.padding = unit(0.4, 'lines') # extra padding
+                          , box.padding = unit(0.15, 'lines')
+                          , force = 1 # Strength of the repulsion force.
+                          , size = 3))
+}
+
 ## Function to plot assumptions based on the result of anova
 plot_anova_assumptions <- function(result, dv) {
   mod <- result$plotAov
@@ -303,7 +333,9 @@ plot_anova_assumptions <- function(result, dv) {
 }
 
 ## Plot function of t.test
-plot_t.test <- function(tt, title="", sub = NULL, ylab = NULL, notch = F, inv.col = F, draw.conf.int = T, lsmean = NULL) {
+plot_t.test <- function(
+  tt, title="", sub = NULL, ylab = NULL, notch = F, inv.col = F
+  , draw.conf.int = T, lsmean = NULL, is.rev = F) {
   
   pch <- c(16,17)
   pcol <- c("white","lightgrey")
@@ -312,6 +344,11 @@ plot_t.test <- function(tt, title="", sub = NULL, ylab = NULL, notch = F, inv.co
     pch <- c(17,16)
     pcol <- c("lightgrey","white")
     vcols <- c('red', 'blue')
+  }
+  if (is.rev) {
+    pch <- rev(pch)
+    tt$data$x <- factor(tt$data$x)
+    tt$data$x <- factor(tt$data$x, levels = rev(levels(tt$data$x)))
   }
   
   bx <- boxplot(y ~ x, data=tt$data, boxwex=0.2, col=pcol, notch = notch, ylab=ylab)
@@ -402,18 +439,42 @@ write_anova_plots <- function(anova_result, ylab, title, path, override = T) {
       filename <- gsub(':', '.', gsub('/', '', filename))
       filename <- paste0(path, filename)
       
+      filename_rev <- paste0(iv, '_', names(tt_mods)[[i]], "_rev.png")
+      filename_rev <- gsub(':', '.', gsub('/', '', filename_rev))
+      filename_rev <- paste0(path, filename_rev)
+      
       filename_inv <- paste0(iv, '_', names(tt_mods)[[i]], "_inv.png")
       filename_inv <- gsub(':', '.', gsub('/', '', filename_inv))
       filename_inv <- paste0(path, filename_inv)
+      
+      filename_rev_inv <- paste0(iv, '_', names(tt_mods)[[i]], "_rev_inv.png")
+      filename_rev_inv <- gsub(':', '.', gsub('/', '', filename_rev_inv))
+      filename_rev_inv <- paste0(path, filename_rev_inv)
       
       if (!file.exists(filename) || override) {
         png(filename = filename, width = 640, height = 640)
         plot_t.test(tt_mod$two.sided, title = title, ylab = ylab, lsmean = lsmean)
         dev.off()
+      }
+      
+      if (!file.exists(filename_inv) || override) {
         png(filename = filename_inv, width = 640, height = 640)
         plot_t.test(tt_mod$two.sided, title = title, ylab = ylab, inv.col = T, lsmean = lsmean)
         dev.off()
       }
+      
+      if (!file.exists(filename_rev) || override) {  
+        png(filename = filename_rev, width = 640, height = 640)
+        plot_t.test(tt_mod$two.sided, title = title, ylab = ylab, lsmean = lsmean, is.rev = T)
+        dev.off()
+      }
+      
+      if (!file.exists(filename_rev_inv) || override) {  
+        png(filename = filename_rev_inv, width = 640, height = 640)
+        plot_t.test(tt_mod$two.sided, title = title, ylab = ylab, lsmean = lsmean, inv.col = T, is.rev = T)
+        dev.off()
+      }
+      
     }
   }
 }

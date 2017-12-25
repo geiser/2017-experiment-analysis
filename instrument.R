@@ -1,7 +1,6 @@
 
 pos_csv <- read_csv("PostestData.csv")
-pos_dat <- pos_csv[which(pos_csv$nviewPA>0 | pos_csv$nviewPB>0
-                        | pos_csv$nviewPC>0 | pos_csv$nviewPD>0),]
+pos_dat <- pos_csv[which(pos_csv$nviewPA>0 | pos_csv$nviewPB>0 | pos_csv$nviewPC>0 | pos_csv$nviewPD>0),]
 pos_dat <- score_programming_tasks(pos_dat, keys = c("PA", "PB", "PC", "PD"))
 
 user_ids <- intersect(pre_dat$UserID, pos_dat$UserID)

@@ -8,7 +8,7 @@ library(readr)
 sources <- list(
   "Interest/Enjoyment" = list(
     filename = "data/InterestEnjoyment.csv", name = "Interest/Enjoyment"
-    , extra_rmids = c(), folder = "interest-enjoyment"
+    , extra_rmids = c(10210), folder = "interest-enjoyment"
   )
   , "Perceived Choice" = list(
     filename = "data/PerceivedChoice.csv", name = "Perceived Choice"

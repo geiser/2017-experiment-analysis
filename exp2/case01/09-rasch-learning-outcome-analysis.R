@@ -18,7 +18,7 @@ dat <- dplyr::mutate(dat, `DiffTheta` = dat$PostTheta-dat$PreTheta)
 #############################################################################
 
 ## remove outliers
-extra_rmids <- c()
+extra_rmids <- c(10216,10217)
 rmids <- get_ids_outliers_for_anova(dat, "UserID", "DiffTheta", "Type", between = c("Type", "CLRole"))
 if (!is.null(extra_rmids) && length(extra_rmids) > 0) {
   rmids <- unique(c(rmids, extra_rmids))
@@ -58,3 +58,4 @@ write_anova_plots(
   , path = "report/learning-outcome/measurement-anova-analysis-plots/"
   , override = TRUE
 )
+

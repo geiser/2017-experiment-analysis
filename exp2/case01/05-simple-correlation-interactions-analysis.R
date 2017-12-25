@@ -24,8 +24,9 @@ info_src <- list(
                                , filename = "report/motivation/interest-enjoyment/AnovaAnalysis.xlsx")
   , "PerceivedChoice" = list(sheed = "data", dv = "Perceived Choice", wid = "UserID"
                              , filename = "report/motivation/perceived-choice/AnovaAnalysis.xlsx")
+  
   , "PressureTension" = list(sheed = "data", dv = "Pressure/Tension", wid = "UserID"
-                             , filename = "report/motivation/pressure-tension/AnovaAnalysis.xlsx")
+                             , filename = "report/motivation/pressure-tension/WilcoxAnalysis.xlsx")
 )
 
 corr_pair_mods <- get_corr_pair_mods(

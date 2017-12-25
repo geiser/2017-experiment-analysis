@@ -6,7 +6,7 @@ library(parallel)
 sources = list(
   "Interest/Enjoyment" = list(
     sheed = "data", wid = "UserID", name = "Interest/Enjoyment"
-    , filename = "AnovaAnalysis.xlsx"
+    , filename = "WilcoxAnalysis.xlsx" #"AnovaAnalysis.xlsx"
     , path = "report/motivation/interest-enjoyment/"
     , start.with = c("Item"), end.withs = c("IE")
     , inv.keys = c()
@@ -21,7 +21,7 @@ sources = list(
   )
   , "Perceived Choice" = list(
     sheed = "data", wid = "UserID", name = "Perceived Choice"
-    , filename = "AnovaAnalysis.xlsx"
+    , filename = "WilcoxAnalysis.xlsx" #"AnovaAnalysis.xlsx"
     , path = "report/motivation/perceived-choice/"
     , start.with = c("Item"), end.withs = c("PC")
     , inv.keys = c("Item17PC", "Item15PC", "Item08PC", "Item02PC", "Item06PC", "Item20PC")
@@ -37,7 +37,7 @@ sources = list(
   )
   , "Pressure/Tension" = list(
     sheed = "data", wid = "UserID", name = "Pressure/Tension"
-    , filename = "AnovaAnalysis.xlsx"
+    , filename = "WilcoxAnalysis.xlsx" #"AnovaAnalysis.xlsx"
     , path = "report/motivation/pressure-tension/"
     , start.with = c("Item"), end.withs = c("PT")
     , inv.keys =  c("Item11PT")
@@ -51,7 +51,7 @@ sources = list(
   )
   , "Intrinsic Motivation" = list(
     sheed = "data", wid = "UserID", name = "Intrinsic Motivation"
-    , filename = "AnovaAnalysis.xlsx"
+    , filename = "WilcoxAnalysis.xlsx" #"AnovaAnalysis.xlsx"
     , path = "report/motivation/intrinsic-motivation/"
     , start.with = c("Item"), end.withs = c("IE", "PC", "PT")
     , inv.keys =  c("Item17PC","Item15PC","Item08PC","Item02PC","Item06PC","Item20PC","Item14PT","Item16PT","Item18PT")
@@ -96,7 +96,7 @@ list_abilities <- lapply(sources, FUN = function(x, tam_mods, data_map) {
   library(TAM)
   
   mod <- tam_mods[[x$name]]
-  write_tam_report(mod, x$path, "MeasurementModel.xlsx", FALSE)
+  write_tam_report(mod, x$path, "MeasurementModel.xlsx", TRUE)
   
   wmod <- tam.wle(mod)
   return(as.data.frame(unclass(wmod))[c('pid', 'theta', 'error', 'WLE.rel')])
@@ -126,6 +126,4 @@ lapply(sources, FUN = function(x, tam_mods) {
     , paste0(x$path, "measurement-model-plots/")
     , override = TRUE)
 }, tam_mods = tam_mods)
-
-
 

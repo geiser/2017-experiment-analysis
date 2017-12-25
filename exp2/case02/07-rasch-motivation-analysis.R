@@ -8,14 +8,17 @@ library(readr)
 sources <- list(
   "Attention" = list(
     filename = "data/Attention.csv", name = "Attention"
+    , rm.out = TRUE
     , extra_rmids = c(), folder = "attention"
   )
   , "Satisfaction" = list(
     filename = "data/Satisfaction.csv", name = "Satisfaction"
-    , extra_rmids = c(10209, 10175), folder = "satisfaction" # ,10211,10193,10223
+    , rm.out = TRUE
+    , extra_rmids = c(10209, 10175,10216), folder = "satisfaction" # ,10211,10193,10223
   )
   , "Level of Motivation" = list(
     filename = "data/LevelMotivation.csv", name = "Level of Motivation"
+    , rm.out = TRUE
     , extra_rmids = c(10209, 10175), folder = "level-of-motivation" # 10209,10175
   )
 )
@@ -32,14 +35,22 @@ dat_map <- lapply(sources, FUN = function(x) {
   rownames(dat) <- dat$UserID
   colnames(dat)[7] <- x$name
   
-  rmids <- get_ids_outliers_for_anova(dat, "UserID", "theta", "Type", between = c("Type", "CLRole"))
+  rdat <- dat
+  rmids <- c()
   if (!is.null(x$extra_rmids) && length(x$extra_rmids) > 0) {
-    rmids <- unique(c(rmids, x$extra_rmids))
+    rmids <- x$extra_rmids
+    rdat <- rdat[!rdat[['UserID']] %in% rmids,]
+  }
+  
+  if (x$rm.out) {
+    outlier_ids <- get_ids_outliers_for_anova(rdat, "UserID", x$name, "Type", between = c("Type", "CLRole"))
+    if (!is.null(outlier_ids) && length(outlier_ids) > 0) {
+      rmids <- unique(c(rmids, outlier_ids))
+      rdat <- rdat[!rdat[['UserID']] %in% rmids,]
+    }
   }
   
   cat('\n...removing ids: ', rmids,' from: ', x$name , ' ...\n')
-  rdat <- dat[!dat[['UserID']] %in% rmids,]
-  
   return(list(data = rdat, name = x$name))
 })
 
