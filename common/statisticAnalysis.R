@@ -2,7 +2,7 @@
 wants <- c('coin', 'sirt', 'lavaan', 'psych', 'reshape', 'dplyr', 'readr')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
-
+#devtools::install_github("singmann/afex@master")
 
 ## Function to get aov mods for pre and post-test
 get_aov_mods_for_pre_pos <- function(dat, wid, pre, pos, between, type = 3

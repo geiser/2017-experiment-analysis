@@ -1,4 +1,4 @@
-wants <- c('reshape', 'ggplot2', 'dplyr', 'readr', 'readxl', 'psych', 'corrplot')
+wants <- c('reshape', 'ggplot2', 'dplyr', 'readr', 'readxl', 'psych', 'corrplot', 'PerformanceAnalytics')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 

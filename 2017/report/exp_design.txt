@@ -1,0 +1,10 @@
+Type.of.CL.session	Master	Apprentice
+Study01		
+ont-gamified	11 (15)	11 (15)
+non-gamified	10 (16)	7 (16)
+Study02		
+ont-gamified	7 (8)	10 (16)
+non-gamified	10 (11)	12 (23)
+Study03		
+ont-gamified	9 (10)	13 (17)
+w/o-gamified	6 (11)	11 (21)

@@ -1,7 +1,11 @@
 
-wants <- c('r2excel', 'lavaan', 'reshape', 'psych', 'dplyr', 'readr', 'readxl')
+wants <- c('lavaan', 'xlsx', 'reshape', 'rJava', 'psych', 'dplyr', 'readr', 'readxl', 'Hmisc', 'devtools')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
+#library(devtools)
+#install_github("kassambara/r2excel")
+# FIX for (Mac)OS X Sierra:
+#  sudo ln -f -s $(/usr/libexec/java_home)/lib/server/libjvm.dylib /usr/local/lib
 
 library(dplyr)
 library(readr)
@@ -36,6 +40,42 @@ write_kmo_in_workbook <- function(kmo_mod, wb) {
   xlsx.addTable(wb, sheet, kmo_mod$Image, startCol = 1)
 }
 
+## function to write cfa module as sheet
+write_cfa_in_workbook <- function(cfa_mod, wb) {
+  library(r2excel)
+  
+  sheet <- xlsx::createSheet(wb, sheetName = "CFA")
+  xlsx.addHeader(wb, sheet, "Confirmatory Factor Analysis Using Minimum Residual", startCol = 1)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, "Fit Measures for Model", level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, t(data.frame(fitMeasures(cfa_mod))), startCol = 1, row.names = F)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, "Parameter Estimates", level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, data.frame(parameterEstimates(cfa_mod, standardized = T, fmi = T)), startCol = 1, row.names = F)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, "Standardized Model Parameters (lambda)", level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, data.frame(lavInspect(cfa_mod, "std")$lambda), startCol = 1, row.names = T)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, "Standardized Model Parameters (theta)", level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, data.frame(lavInspect(cfa_mod, "std")$theta), startCol = 1, row.names = T)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, "Standardized Model Parameters (psi)", level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, data.frame(lavInspect(cfa_mod, "std")$psi), startCol = 1, row.names = T)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, "Standardized Model Parameters (nu)", level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, data.frame(lavInspect(cfa_mod, "std")$nu), startCol = 1, row.names = T)
+  
+  xlsx.addLineBreak(sheet, 2)
+  xlsx.addHeader(wb, sheet, "Standardized Model Parameters (alpha)", level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, data.frame(lavInspect(cfa_mod, "std")$alpha), startCol = 1, row.names = T)
+}
+
 ## function to write efa module as sheet
 write_fa_in_workbook <- function(fa_mod, wb) {
   library(r2excel)
@@ -45,15 +85,11 @@ write_fa_in_workbook <- function(fa_mod, wb) {
   
   xlsx.addLineBreak(sheet, 2)
   xlsx.addHeader(wb, sheet, "Standardized loadings", level = 2, startCol = 1)
-  xlsx.addTable(wb, sheet, as.data.frame(unclass(fa_mod$loadings)), startCol = 1, row.names = T)
+  xlsx.addTable(wb, sheet, data.frame(unclass(fa_mod$loadings)), startCol = 1, row.names = T)
   
   xlsx.addLineBreak(sheet, 2)
   xlsx.addHeader(wb, sheet, "Measures of factor score adequacy", level = 2, startCol = 1)
   xlsx.addTable(wb, sheet, data.frame(print(fa_mod)), startCol = 1, row.names = T)
-  
-  xlsx.addLineBreak(sheet, 2)
-  xlsx.addHeader(wb, sheet, "Factor correlation", level = 2, startCol = 1)
-  xlsx.addTable(wb, sheet, data.frame(fa_mod$Phi), startCol = 1, row.names = T)
   
   xlsx.addLineBreak(sheet, 2)
   xlsx.addHeader(wb, sheet, "Item complexity", level = 2, startCol = 1)
@@ -100,4 +136,3 @@ write_alpha_in_workbook <- function(alpha_mod, wb, name, short_name = NULL) {
   xlsx.addTable(wb, sheet, data.frame(alpha_mod$response.freq), startCol = 1, row.names = T)
   
 }
-
