@@ -24,7 +24,7 @@ Material used during the execution phase (at the second week):
 
 Material used during the post-test phase (at the third week):
 
--   Intrinsic Motivation Inventory Questionnaire ([IMI](IMI.pdf))
+-   Intrinsic Motivation Inventory Questionnaire ([IMI.pdf](IMI.pdf))
 
 -   PA-Calculate the Inverse Fibonacci sequence on base *n* and *m* ([PA.pdf](PA.pdf))
 
