@@ -6,11 +6,11 @@ Download all materials from Moodle Backup File ([backup-moodle2-pilot-study.mbz]
 
 Material used during the pre-test phase (at the first week):
 
--   Brazilian-Portuguese Player Profile Questionnaire ([QPJ-BR](QPJ-BR.pdf))
+-   Brazilian-Portuguese Player Profile Questionnaire ([QPJ-BR.pdf](QPJ-BR.pdf))
 
--   [P1-Calculate the proper divisors of a number](P1-Calculate the proper divisors.pdf)
+-   P1-Calculate the proper divisors of a number ([P1.pdf](P1.pdf))
 
--   [P2-Calculate the sum of prime divisors of number](P2-Calculate the sum of prime divisors.pdf)
+-   P2-Calculate the sum of prime divisors of number ([P2.pdf](P2.pdf))
 
 -   [P3-Calculate distance of rebounds for an elastic ball](P3-Calculate distance of rebounds for an elastic ball.pdf)
 
