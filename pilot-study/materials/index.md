@@ -1,7 +1,7 @@
 Materials
 =========
 
-Download all material from [Moodle Backup File](backup-moodle2-pilot-study.mbz) ([backup-moodle2-pilot-study.mbz])
+Download all materials from Moodle Backup File ([backup-moodle2-pilot-study.mbz](backup-moodle2-pilot-study.mbz))
 
 
 During the pre-test phase (at the first week):
