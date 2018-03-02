@@ -1,6 +1,4 @@
-# Fixing Mac OS Sierra MySQL Woes
-
-## MySQL throwing `ERROR 2006 (HY000): MySQL server has gone away`?
+## Fixing `ERROR 2006 (HY000): MySQL server has gone away`?
 
 ```shell
 mysql -u root -p
