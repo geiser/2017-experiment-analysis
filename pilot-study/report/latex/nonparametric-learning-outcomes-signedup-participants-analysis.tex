@@ -1,0 +1,118 @@
+
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\section{Summaries of Nonparametric Statistics Analysis}
+
+%latex.default(result_df, caption = paste("Summary of Scheirer-Ray-Hare results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrr}\caption{Summary of Scheirer-Ray-Hare results } \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+gain.theta&$$&$$&$$&$$&$$\tabularnewline
+gain.theta:Type&$ 1$&$  59.063$&$0.769$&$0.381$&$$\tabularnewline
+gain.theta:CLRole&$ 1$&$ 170.557$&$2.220$&$0.136$&$$\tabularnewline
+gain.theta:Type:CLRole&$ 1$&$  23.332$&$0.304$&$0.582$&$$\tabularnewline
+gain.theta:Residuals&$26$&$1975.048$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{ \scriptsize{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }}\end{flushright} 
+
+
+\section{Summaries of Wilcoxon Data Analysis }
+
+%latex.default(result_wilcoxon_df, caption = paste("Descriptive statistic of the pair wilcoxon analysis",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = T, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables\begin{landscape}{\scriptsize
+\begin{longtable}{r}\caption{Descriptive statistic of the pair wilcoxon analysis } \tabularnewline
+\hline\hline
+\multicolumn{1}{c}{}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{c}{}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+$$\tabularnewline
+\hline
+\end{longtable}}\end{landscape}
+\begin{flushright}{ \tiny{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }}\end{flushright} 
+
+
+%latex.default(result_wilcoxon_df, caption = paste("Full descriptive statistic of the pair wilcoxon analysis",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = T, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables\begin{landscape}{\scriptsize
+\begin{longtable}{llrrrrrrrrl}\caption{Full descriptive statistic of the pair wilcoxon analysis } \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+gain.theta.Type.non-gamified:ont-gamified.less.1&non-gamified&$14$&$4.62$&$17.00$&$238.0$&$133.0$&$ 0.88$&$0.810$&$0.160$&small\tabularnewline
+gain.theta.Type.non-gamified:ont-gamified.less.2&ont-gamified&$16$&$2.09$&$14.19$&$227.0$&$133.0$&$ 0.88$&$0.810$&$0.160$&small\tabularnewline
+gain.theta.Type.non-gamified:ont-gamified.greater.1&non-gamified&$14$&$4.62$&$17.00$&$238.0$&$133.0$&$ 0.88$&$0.196$&$0.160$&small\tabularnewline
+gain.theta.Type.non-gamified:ont-gamified.greater.2&ont-gamified&$16$&$2.09$&$14.19$&$227.0$&$133.0$&$ 0.88$&$0.196$&$0.160$&small\tabularnewline
+gain.theta.Type.non-gamified:ont-gamified.two.sided.1&non-gamified&$14$&$4.62$&$17.00$&$238.0$&$133.0$&$ 0.88$&$0.392$&$0.160$&small\tabularnewline
+gain.theta.Type.non-gamified:ont-gamified.two.sided.2&ont-gamified&$16$&$2.09$&$14.19$&$227.0$&$133.0$&$ 0.88$&$0.392$&$0.160$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:non-gamified.Master.less.1&non-gamified.Apprentice&$11$&$6.77$&$ 8.45$&$ 93.0$&$ 27.0$&$ 1.65$&$0.956$&$0.442$&medium\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:non-gamified.Master.less.2&non-gamified.Master&$ 3$&$1.39$&$ 4.00$&$ 12.0$&$ 27.0$&$ 1.65$&$0.956$&$0.442$&medium\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:non-gamified.Master.greater.1&non-gamified.Apprentice&$11$&$6.77$&$ 8.45$&$ 93.0$&$ 27.0$&$ 1.65$&$0.063$&$0.442$&medium\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:non-gamified.Master.greater.2&non-gamified.Master&$ 3$&$1.39$&$ 4.00$&$ 12.0$&$ 27.0$&$ 1.65$&$0.063$&$0.442$&medium\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:non-gamified.Master.two.sided.1&non-gamified.Apprentice&$11$&$6.77$&$ 8.45$&$ 93.0$&$ 27.0$&$ 1.65$&$0.124$&$0.442$&medium\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:non-gamified.Master.two.sided.2&non-gamified.Master&$ 3$&$1.39$&$ 4.00$&$ 12.0$&$ 27.0$&$ 1.65$&$0.124$&$0.442$&medium\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Apprentice.less.1&non-gamified.Apprentice&$11$&$6.77$&$12.77$&$140.5$&$ 74.5$&$ 0.93$&$0.824$&$0.198$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Apprentice.less.2&ont-gamified.Apprentice&$11$&$2.80$&$10.23$&$112.5$&$ 74.5$&$ 0.93$&$0.824$&$0.198$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Apprentice.greater.1&non-gamified.Apprentice&$11$&$6.77$&$12.77$&$140.5$&$ 74.5$&$ 0.93$&$0.184$&$0.198$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Apprentice.greater.2&ont-gamified.Apprentice&$11$&$2.80$&$10.23$&$112.5$&$ 74.5$&$ 0.93$&$0.184$&$0.198$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Apprentice.two.sided.1&non-gamified.Apprentice&$11$&$6.77$&$12.77$&$140.5$&$ 74.5$&$ 0.93$&$0.368$&$0.198$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Apprentice.two.sided.2&ont-gamified.Apprentice&$11$&$2.80$&$10.23$&$112.5$&$ 74.5$&$ 0.93$&$0.368$&$0.198$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Master.less.1&non-gamified.Apprentice&$11$&$6.77$&$ 9.45$&$104.0$&$ 38.0$&$ 1.20$&$0.884$&$0.300$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Master.less.2&ont-gamified.Master&$ 5$&$0.01$&$ 6.40$&$ 32.0$&$ 38.0$&$ 1.20$&$0.884$&$0.300$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Master.greater.1&non-gamified.Apprentice&$11$&$6.77$&$ 9.45$&$104.0$&$ 38.0$&$ 1.20$&$0.125$&$0.300$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Master.greater.2&ont-gamified.Master&$ 5$&$0.01$&$ 6.40$&$ 32.0$&$ 38.0$&$ 1.20$&$0.125$&$0.300$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Master.two.sided.1&non-gamified.Apprentice&$11$&$6.77$&$ 9.45$&$104.0$&$ 38.0$&$ 1.20$&$0.250$&$0.300$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Apprentice:ont-gamified.Master.two.sided.2&ont-gamified.Master&$ 5$&$0.01$&$ 6.40$&$ 32.0$&$ 38.0$&$ 1.20$&$0.250$&$0.300$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Apprentice.less.1&non-gamified.Master&$ 3$&$1.39$&$ 5.67$&$ 17.0$&$ 11.0$&$-0.86$&$0.214$&$0.229$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Apprentice.less.2&ont-gamified.Apprentice&$11$&$2.80$&$ 8.00$&$ 88.0$&$ 11.0$&$-0.86$&$0.214$&$0.229$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Apprentice.greater.1&non-gamified.Master&$ 3$&$1.39$&$ 5.67$&$ 17.0$&$ 11.0$&$-0.86$&$0.805$&$0.229$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Apprentice.greater.2&ont-gamified.Apprentice&$11$&$2.80$&$ 8.00$&$ 88.0$&$ 11.0$&$-0.86$&$0.805$&$0.229$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Apprentice.two.sided.1&non-gamified.Master&$ 3$&$1.39$&$ 5.67$&$ 17.0$&$ 11.0$&$-0.86$&$0.431$&$0.229$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Apprentice.two.sided.2&ont-gamified.Apprentice&$11$&$2.80$&$ 8.00$&$ 88.0$&$ 11.0$&$-0.86$&$0.431$&$0.229$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Master.less.1&non-gamified.Master&$ 3$&$1.39$&$ 5.17$&$ 15.5$&$  9.5$&$ 0.60$&$0.750$&$0.212$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Master.less.2&ont-gamified.Master&$ 5$&$0.01$&$ 4.10$&$ 20.5$&$  9.5$&$ 0.60$&$0.750$&$0.212$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Master.greater.1&non-gamified.Master&$ 3$&$1.39$&$ 5.17$&$ 15.5$&$  9.5$&$ 0.60$&$0.321$&$0.212$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Master.greater.2&ont-gamified.Master&$ 5$&$0.01$&$ 4.10$&$ 20.5$&$  9.5$&$ 0.60$&$0.321$&$0.212$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Master.two.sided.1&non-gamified.Master&$ 3$&$1.39$&$ 5.17$&$ 15.5$&$  9.5$&$ 0.60$&$0.625$&$0.212$&small\tabularnewline
+gain.theta.Type:CLRole.non-gamified.Master:ont-gamified.Master.two.sided.2&ont-gamified.Master&$ 5$&$0.01$&$ 4.10$&$ 20.5$&$  9.5$&$ 0.60$&$0.625$&$0.212$&small\tabularnewline
+gain.theta.Type:CLRole.ont-gamified.Apprentice:ont-gamified.Master.less.1&ont-gamified.Apprentice&$11$&$2.80$&$ 9.14$&$100.5$&$ 34.5$&$ 0.79$&$0.789$&$0.199$&small\tabularnewline
+gain.theta.Type:CLRole.ont-gamified.Apprentice:ont-gamified.Master.less.2&ont-gamified.Master&$ 5$&$0.01$&$ 7.10$&$ 35.5$&$ 34.5$&$ 0.79$&$0.789$&$0.199$&small\tabularnewline
+gain.theta.Type:CLRole.ont-gamified.Apprentice:ont-gamified.Master.greater.1&ont-gamified.Apprentice&$11$&$2.80$&$ 9.14$&$100.5$&$ 34.5$&$ 0.79$&$0.229$&$0.199$&small\tabularnewline
+gain.theta.Type:CLRole.ont-gamified.Apprentice:ont-gamified.Master.greater.2&ont-gamified.Master&$ 5$&$0.01$&$ 7.10$&$ 35.5$&$ 34.5$&$ 0.79$&$0.229$&$0.199$&small\tabularnewline
+\newpage
+gain.theta.Type:CLRole.ont-gamified.Apprentice:ont-gamified.Master.two.sided.1&ont-gamified.Apprentice&$11$&$2.80$&$ 9.14$&$100.5$&$ 34.5$&$ 0.79$&$0.460$&$0.199$&small\tabularnewline
+gain.theta.Type:CLRole.ont-gamified.Apprentice:ont-gamified.Master.two.sided.2&ont-gamified.Master&$ 5$&$0.01$&$ 7.10$&$ 35.5$&$ 34.5$&$ 0.79$&$0.460$&$0.199$&small\tabularnewline
+\hline
+\end{longtable}}\end{landscape}
+\begin{flushright}{ \tiny{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }}\end{flushright} 
+
+
+\end{document}

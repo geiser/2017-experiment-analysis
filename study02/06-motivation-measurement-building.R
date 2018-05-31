@@ -1,72 +1,80 @@
 library(TAM)
+library(sirt)
+library(plyr)
 library(readxl)
 library(parallel)
 #options(mc.cores=7)
 
 sources = list(
-  "Attention" = list(
-    sheed = "data", wid = "UserID", name = "Attention"
-    , filename = "AnovaAnalysis.xlsx"
-    , path = "report/motivation/attention/"
-    , start.with = c("Item"), end.withs = c("A")
-    , inv.keys = c()
-    , column_names = list(Item01A = c(NA, "Item01A"), Item04A = c(NA, "Item04A")
-                          , Item05A = c(NA, "Item05A"), Item12A = c(NA, "Item12A")
-                          , Item19A = c(NA, "Item19A"), Item20A = c(NA, "Item20A"))
-    , prefix =  "case02_attention", min_columns = 3
-    , fixed = NULL
-    , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214748&authkey=ANcCqM1ILXtB4vQ"
-    , itemequals = NULL
-    , model = "Item05A+Item12A+Item19A+Item20A"
-  )
-  , "Satisfaction" = list(
-    sheed = "data", wid = "UserID", name = "Satisfaction"
-    , filename = "AnovaAnalysis.xlsx"
-    , path = "report/motivation/satisfaction/"
-    , start.with = c("Item"), end.withs = c("S")
-    , inv.keys = c()
-    , column_names = list(Item09S = c(NA, "Item09S"), Item11S = c(NA, "Item11S")
-                          , Item14S = c(NA, "Item14S"), Item24S = c(NA, "Item24S")
-                          , Item25S = c(NA, "Item25S"))
-    , prefix =  "case02_satisfaction", min_columns = 2
-    , fixed = NULL
-    , url_str = "https://onedrive.live.com/download?cid=C5E009CC5BFDE10C&resid=C5E009CC5BFDE10C%214752&authkey=AErkrjFTDtNIH30"
-    , itemequals = NULL
-    , model = "Item11S+Item24S+Item25S"
-  )
-  , "Level of Motivation" = list(
+  "Level of Motivation" = list(
     sheed = "data", wid = "UserID", name = "Level of Motivation"
-    , filename = "AnovaAnalysis.xlsx"
+    , filename = "data/IMMS.csv"
     , path = "report/motivation/level-of-motivation/"
-    , start.with = c("Item"), end.withs = c("A", "S")
-    , inv.keys = c()
-    , column_names = list()
-    , prefix =  "case02_level_motivation", min_columns = 7
+    , start.with = c("Item"), end.withs = c("A", "R", "S")
+    , inv.keys = c("Item15R","Item21R", "Item10R"#, "Item08R"
+                   ) # Item08 degrade the system
+    , column_names = list(Item12A = c("Item12A"), Item19A = c("Item19A")
+                          , Item04A = c("Item04A"), Item20A = c("Item20A")
+                          , Item16A = c("Item16A"), Item01A = c("Item01A")
+                          , Item15R = c("Item15R")
+                          , Item21R = c("Item21R")
+                          , Item10R = c("Item10R")#, Item08R = c("Item08R")
+                          , Item13S = c("Item13S"), Item14S = c("Item14S")
+                          , Item17S = c("Item17S"))
+    , prefix =  "study02_level_motivation", min_columns = 12
     , fixed = NULL
     , url_str = NULL
     , itemequals = NULL
-    , model = "Item05A+Item12A+Item19A+Item20A+Item11S+Item24S+Item25S"
+    , model = "Item12A+Item19A+Item04A+Item20A+Item16A+Item01A+Item15R+Item21R+Item10R+Item13S+Item14S+Item17S"
+  )
+  , "Attention" = list(
+    sheed = "data", wid = "UserID", name = "Attention"
+    , filename = "data/IMMS.csv"
+    , path = "report/motivation/attention/"
+    , start.with = c("Item"), end.withs = c("A")
+    , inv.keys = c()
+    , column_names = list(Item12A = c("Item12A"), Item19A = c("Item19A")
+                          , Item04A = c("Item04A"), Item20A = c("Item20A")
+                          , Item16A = c("Item16A"), Item01A = c("Item01A"))
+    , prefix =  "study02_attention", min_columns = 6
+    , fixed = NULL
+    , url_str = NULL
+    , itemequals = NULL
+    , model = "Item12A+Item19A+Item04A+Item20A+Item16A+Item01A"
+  )
+  , "Relevance" = list(
+    sheed = "data", wid = "UserID", name = "Relevance"
+    , filename = "data/IMMS.csv"
+    , path = "report/motivation/relevance/"
+    , start.with = c("Item"), end.withs = c("R")
+    , inv.keys = c("Item15R", "Item21R", "Item10R", "Item08R")
+    , column_names = list(Item15R = c("Item15R"), Item21R = c("Item21R")
+                          , Item10R = c("Item10R"), Item08R = c("Item08R"))
+    , prefix =  "study02_relevance", min_columns = 4
+    , fixed = NULL
+    , url_str = NULL
+    , itemequals = NULL
+    , model = "Item15R+Item21R+Item10R+Item08R"
+  )
+  , "Satisfaction" = list(
+    sheed = "data", wid = "UserID", name = "Satisfaction"
+    , filename = "data/IMMS.csv"
+    , path = "report/motivation/satisfaction/"
+    , start.with = c("Item"), end.withs = c("S")
+    , inv.keys = c()
+    , column_names = list(Item13S = c("Item13S"), Item14S = c("Item14S")
+                          , Item17S = c("Item17S"))
+    , prefix =  "study02_satisfaction", min_columns = 3
+    , fixed = NULL
+    , url_str = NULL
+    , itemequals = NULL
+    , model = "Item13S+Item14S+Item17S"
   )
 )
 
-data_map <- get_data_map_for_RSM(sources)
+data_map <- get_data_map_for_RSM(sources, min_cat = 1, max_cat = 7)
 
-tam_info_models_map <- lapply(sources, FUN = function(x, data_map) {
-  if (is.null(x$column_names) || length(x$column_names) < 3) return(NULL)
-  tam_info_models <- load_and_save_TAMs_to_measure_skill(
-    data_map[[x$name]]
-    , column_names = x$column_names
-    , url_str = x$url_str
-    , itemequals = x$itemequals
-    , prefix = x$prefix, min_columns = x$min_columns
-    , fixed = x$fixed
-    , irtmodel = "RSM")
-  return(tam_info_models)
-}, data_map = data_map)
-
-#View(tam_info_models_map$Attention$information)
-#View(tam_info_models_map$Satisfaction$information)
-
+#
 tam_mods <- lapply(sources, FUN = function(x) {
   return(get_TAM(
     x$model
@@ -75,29 +83,34 @@ tam_mods <- lapply(sources, FUN = function(x) {
     , wid = x$wid))
 })
 
+# print problematic items
+(problematic_items <- do.call(rbind, lapply(tam_mods, FUN = function(mod) {
+  item_fit <- tam.fit(mod, progress = F)$itemfit
+  item_fit <- as.data.frame(item_fit[item_fit$parameter %in% colnames(mod$resp),])
+  return(item_fit[(item_fit$Outfit > 2 | item_fit$Infit > 2),])
+})))
+
+##################################################################
+## Getting TAM Reports                                          ##
+##################################################################
+
+abilities <- get_abilities(sources, tam_mods)
+
 ## write report
-list_abilities <- lapply(sources, FUN = function(x, tam_mods, data_map) {
+lapply(sources, FUN = function(x) {
   library(TAM)
-  
   mod <- tam_mods[[x$name]]
   write_tam_report(mod, x$path, "MeasurementModel.xlsx", TRUE)
-  
-  wmod <- tam.wle(mod)
-  return(as.data.frame(unclass(wmod))[c('pid', 'theta', 'error', 'WLE.rel')])
-}, tam_mods = tam_mods, data_map = data_map)
+})
 
 ## write csv
-columns <- c('UserID','PersonScores','theta','error')
-participants <- read_csv('data/Participant.csv')
-
-dat <- merge(participants, list_abilities$Attention, by.x = "UserID", by.y = "pid")
-write_csv(dat, 'data/Attention.csv')
-
-dat <- merge(participants, list_abilities$Satisfaction, by.x = "UserID", by.y = "pid")
-write_csv(dat, 'data/Satisfaction.csv')
-
-dat <- merge(participants, list_abilities$`Level of Motivation`, by.x = "UserID", by.y = "pid")
-write_csv(dat, 'data/LevelMotivation.csv')
+participants <- read_csv('data/SignedUpParticipants.csv')
+lapply(sources, FUN = function(x) {
+  ability_df <- abilities[[x$name]]
+  ability_df[["UserID"]] <- rownames(ability_df)
+  dat <- merge(participants, ability_df, by = "UserID")
+  write_csv(dat, paste0('data/', gsub("/", "", gsub(" ", "", x$name)),'.csv'))
+})
 
 ## write plots
 lapply(sources, FUN = function(x, tam_mods) {
@@ -107,3 +120,17 @@ lapply(sources, FUN = function(x, tam_mods) {
     , paste0(x$path, "measurement-model-plots/")
     , override = TRUE)
 }, tam_mods = tam_mods)
+
+
+## latex translated
+rsm_summaries <- get_rsm_summaries_as_dataframe(
+  sources, tam_mods, estimator = "WLSMVS")
+filename <- "report/latex/rsm-level-of-motivation.tex"
+if (!file.exists(filename)) {
+  write_rsm_in_latex(
+    rsm_summaries
+    , in_title = "for measuring the level of motivation of participants in the second empirical study"
+    , filename = filename
+  )
+}
+

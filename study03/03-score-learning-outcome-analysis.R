@@ -18,7 +18,6 @@ dat <- dplyr::mutate(
 rownames(dat) <- dat$UserID
 dat <- dplyr::mutate(dat, `Gain Score` = dat$PostScore-dat$PreScore)
 
-
 info <- list(
   "Gain Score" = list(
     path = "report/learning-outcome/"

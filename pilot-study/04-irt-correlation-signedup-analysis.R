@@ -1,0 +1,80 @@
+library(psych)
+library(readr)
+library(dplyr)
+library(readxl)
+library(PerformanceAnalytics)
+
+participants <- read_csv('data/SignedUpParticipants.csv')
+
+info_src <- list(
+  "gain.theta" = list(
+    sheed = "data", dv = "gain.theta", wid = "UserID"
+    , dv.name = "Gains in Skills/Knowledge"
+    , filename = "report/learning-outcomes/signedup-participants/ParametricAnalysis.xlsx")
+  
+  , "IntrinsicMotivation" = list(
+    sheed = "data", dv = "Intrinsic Motivation", wid = "UserID"
+    , filename = "report/motivation/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx")
+  , "InterestEnjoyment" = list(
+    sheed = "data", dv = "Interest/Enjoyment", wid = "UserID"
+    , filename = "report/motivation/interest-enjoyment/by-Type/ParametricAnalysis.xlsx")
+  , "PerceivedChoice" = list(
+    sheed = "data", dv = "Perceived Choice", wid = "UserID"
+    , filename = "report/motivation/perceived-choice/by-Type/ParametricAnalysis.xlsx")
+  , "PressureTension" = list(
+    sheed = "data", dv = "Pressure/Tension", wid = "UserID"
+    , filename = "report/motivation/pressure-tension/by-Type/ParametricAnalysis.xlsx")
+  , "EffortImportance" = list(
+    sheed = "data", dv = "Effort/Importance", wid = "UserID"
+    , filename = "report/motivation/effort-importance/by-Type/ParametricAnalysis.xlsx")
+)
+
+corr_pair_mods <- get_corr_pair_mods(
+  participants, iv = "Type", wid = "UserID", between = c('Type', 'CLRole')
+  , corr_var = list(
+    dv1=c('gain.theta')
+    , dv2=c('IntrinsicMotivation', 'InterestEnjoyment'
+            , 'PerceivedChoice', 'PressureTension', 'EffortImportance')
+  )
+  , info_src = info_src
+  , include.subs = TRUE
+  , method = "spearman"
+)
+
+corr_matrix_mods <- get_corr_matrix_mods(
+  participants, corr_pair_mods
+  , dvs = list(
+    "Gains in Skills/Knowledge and Motivation" = c(
+      'Gains in Skills/Knowledge', 'Intrinsic Motivation'
+      , 'Interest/Enjoyment', 'Perceived Choice', 'Pressure/Tension', 'Effort/Importance')
+  )
+  , wid = "UserID"
+  , method = "spearman"
+)
+
+## Write report
+write_corr_matrix_report(
+  corr_matrix_mods
+  , filename = "report/correlation/signedup-participants/CorrMatrixAnalysis.xlsx"
+  , override = TRUE
+)
+
+write_corr_pair_report(
+  corr_pair_mods
+  , path = "report/correlation/signedup-participants/"
+  , override = TRUE
+)
+
+## Write plots
+write_corr_matrix_plots(
+  corr_matrix_mods
+  , path = "report/correlation/signedup-participants/corr-matrix-plots/"
+  , override = TRUE
+)
+
+write_corr_chart_plots(
+  corr_pair_mods
+  , path =  "report/correlation/signedup-participants/corr-pairs-plots/"
+  , override = TRUE
+)
+

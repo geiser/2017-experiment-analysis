@@ -1,3 +1,7 @@
+wants <- c('readr', 'dplyr', 'readxl')
+has <- wants %in% rownames(installed.packages())
+if (any(!has)) install.packages(wants[!has])
+
 library(readr)
 library(dplyr)
 library(readxl)
@@ -31,6 +35,64 @@ get_simplified_score_test <- function(dat, col_names = NULL) {
   }
   return(s_dat)
 }
+
+#############################################################################
+
+## function to get information from a programming test based on AMC
+get_amc_test_info <- function(participants, source, sheet, type = 'pre', other_sheet = NULL) {
+  
+  acm_test <- read_excel(source, sheet = sheet, col_types = "numeric")
+  if (is.null(other_sheet)) {
+    acm_test <- select(
+      acm_test, starts_with('NUSP')
+      , starts_with('remember'), starts_with('understand')
+      , starts_with('apply'), starts_with('analyse'), starts_with('evaluate'))
+  } else {
+    acm_test <- select(
+      acm_test, starts_with('NUSP')
+      , starts_with('remember'), starts_with('understand')
+      , starts_with('apply'), starts_with('evaluate'))
+  }
+  acm_test <- acm_test[complete.cases(acm_test),]
+  
+  if (!is.null(other_sheet)) {
+    rsheet <- read_excel(source, sheet = other_sheet, col_types = "numeric")
+    rsheet <- select(rsheet, starts_with('NUSP'), starts_with('analyse'))
+    acm_test <- merge(acm_test, rsheet, by='NUSP')
+  }
+  
+  colnames(acm_test) <- sub('remember', 'Re', colnames(acm_test))
+  colnames(acm_test) <- sub('understand', 'Un', colnames(acm_test))
+  colnames(acm_test) <- sub('apply', 'Ap', colnames(acm_test))
+  colnames(acm_test) <- sub('analyse', 'An', colnames(acm_test))
+  colnames(acm_test) <- sub('evaluate', 'Ev', colnames(acm_test))
+  
+  if (type == 'pre') {
+    colnames(acm_test) <- sub('-unistructural', '1', colnames(acm_test))
+    colnames(acm_test) <- sub('-multistructural', '2', colnames(acm_test))
+    colnames(acm_test) <- sub('-relational', '3', colnames(acm_test))
+    colnames(acm_test) <- sub('-1', 'a', colnames(acm_test))
+    colnames(acm_test) <- sub('-2', 'b', colnames(acm_test))
+    colnames(acm_test) <- sub('-3', 'c', colnames(acm_test))
+  } else {
+    colnames(acm_test) <- sub('-unistructural', 'A', colnames(acm_test))
+    colnames(acm_test) <- sub('-multistructural', 'B', colnames(acm_test))
+    colnames(acm_test) <- sub('-relational', 'C', colnames(acm_test))
+    colnames(acm_test) <- sub('-1', '1', colnames(acm_test))
+    colnames(acm_test) <- sub('-2', '2', colnames(acm_test))
+    colnames(acm_test) <- sub('-3', '3', colnames(acm_test))
+  }
+  
+  acm_test <- select(
+    acm_test, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
+    , starts_with('Ap'), starts_with('An'), starts_with('Ev'))
+  acm_test <- merge(participants, acm_test, by.x = 'NroUSP', by.y = 'NUSP')
+  
+  rownames(acm_test) <- acm_test$UserID
+  
+  return(acm_test)
+}
+
 
 ## score programming tasks
 score_programming_tasks = function(dat, keys, corr_str = 'corr', nview_str = 'nview', apxt_str = 'apxt', def_non_view_score = 0) {
@@ -68,12 +130,12 @@ score_programming_tasks = function(dat, keys, corr_str = 'corr', nview_str = 'nv
 }
 
 ##########################################################################
-## PreTest and PosTest for Case01                                       ##
+## PreTest and PosTest for Pilot-Study                                  ##
 ##########################################################################
 
-participants <- read_csv('case01/data/Participant.csv')
+participants <- read_csv('pilot-study/data/SignedUpParticipants.csv')
 
-pre_dat <- read_excel("data/SourceMoodle-VPL.xlsx", sheet = "PretestData", col_types = "numeric")
+pre_dat <- read_excel("data/PilotStudy-SourceMoodle-VPL.xlsx", sheet = "PretestData", col_types = "numeric")
 pre_dat <- abs(pre_dat)
 pre_dat[is.na(pre_dat)] <- 0
 pre_dat <- pre_dat[,!colnames(pre_dat) %in% c('Type','CLGroup','CLRole','PlayerRole')]
@@ -85,7 +147,7 @@ pre_dat <- score_programming_tasks(
 pre_dat <- merge(participants, pre_dat, by = 'UserID')
 pre_dat <- pre_dat[which(pre_dat$nviewP1>0),]
 
-pos_dat <- read_excel("data/SourceMoodle-VPL.xlsx", sheet = "PostestData", col_types = "numeric")
+pos_dat <- read_excel("data/PilotStudy-SourceMoodle-VPL.xlsx", sheet = "PostestData", col_types = "numeric")
 pos_dat <- abs(pos_dat)
 pos_dat[is.na(pos_dat)] <- 0
 pos_dat <- pos_dat[,!colnames(pos_dat) %in% c('Type','CLGroup','CLRole','PlayerRole')]
@@ -101,6 +163,10 @@ userids <- intersect(pre_dat$UserID, pos_dat$UserID)
 pre_dat <- pre_dat[pre_dat$UserID %in% userids,]
 pos_dat <- pos_dat[pos_dat$UserID %in% userids,]
 
-if (!file.exists('case01/data/SourcePreTestVPL.csv')) write_csv(pre_dat, path = 'case01/data/SourcePreTestVPL.csv')
-if (!file.exists('case01/data/SourcePosTestVPL.csv')) write_csv(pos_dat, path = 'case01/data/SourcePosTestVPL.csv')
+if (!file.exists('pilot-study/data/SourcePreTestVPL.csv')) {
+  write_csv(pre_dat, path = 'pilot-study/data/SourcePreTestVPL.csv')
+}
+if (!file.exists('pilot-study/data/SourcePosTestVPL.csv')) {
+  write_csv(pos_dat, path = 'pilot-study/data/SourcePosTestVPL.csv')
+}
 

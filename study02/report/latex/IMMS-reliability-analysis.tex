@@ -1,0 +1,69 @@
+
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\section{Summaries of Reliability Analysis}
+\subsection{Exploratory and Confirmatory Factor Analysis}
+
+%latex.default(fa_summary_df, caption = paste("Summary of exploratory and confirmatory factor analysis for the",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrr}\caption{Summary of exploratory and confirmatory factor analysis for the adapted Portuguese IMMS} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{MR1}&\multicolumn{1}{c}{MR2}&\multicolumn{1}{c}{MR4}&\multicolumn{1}{c}{MR3}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{MR1}&\multicolumn{1}{c}{MR2}&\multicolumn{1}{c}{MR4}&\multicolumn{1}{c}{MR3}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{fa}
+Item12A&$ 0.887$&$ 0.233$&$-0.177$&$-0.041$\tabularnewline
+Item19A&$ 0.784$&$ 0.069$&$-0.150$&$-0.155$\tabularnewline
+Item04A&$ 0.676$&$ 0.411$&$-0.244$&$-0.111$\tabularnewline
+Item20A&$ 0.799$&$ 0.239$&$-0.134$&$-0.018$\tabularnewline
+Item16A&$ 0.667$&$ 0.394$&$-0.215$&$-0.109$\tabularnewline
+Item01A&$ 0.704$&$ 0.398$&$-0.196$&$-0.018$\tabularnewline
+Item15R&$-0.088$&$-0.659$&$ 0.258$&$ 0.154$\tabularnewline
+Item21R&$-0.384$&$-0.381$&$ 0.835$&$ 0.137$\tabularnewline
+Item10R&$-0.414$&$-0.373$&$ 0.375$&$ 0.171$\tabularnewline
+Item08R&$-0.097$&$-0.196$&$ 0.114$&$ 0.969$\tabularnewline
+Item13S&$ 0.296$&$ 0.844$&$-0.201$&$-0.098$\tabularnewline
+Item14S&$ 0.421$&$ 0.620$&$-0.228$&$-0.238$\tabularnewline
+Item17S&$ 0.439$&$ 0.563$&$ 0.007$&$-0.015$\tabularnewline
+SS loadings&$ 4.231$&$ 2.770$&$ 1.225$&$ 1.127$\tabularnewline
+Cumulative Var&$ 0.325$&$ 0.539$&$ 0.633$&$ 0.720$\tabularnewline
+Proportion Explained&$ 0.452$&$ 0.296$&$ 0.131$&$ 0.120$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{ \scriptsize{ CFI: 0.989; TLI: 0.996; df: 11.506; $chi^2$: 12.137; p-value: 0.394; RMSEA: 0.031 [0, 0.138]; p-value(RMSEA): 1 }}\end{flushright} 
+
+
+\subsection{Reliability Analysis}
+
+%latex.default(rel_summary_df, caption = paste("Result of reliability analysis for the",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrr}\caption{Result of reliability analysis for the adapted Portuguese IMMS} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Global}&\multicolumn{1}{c}{Non.Gamified}&\multicolumn{1}{c}{Ont.Gamified}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Global}&\multicolumn{1}{c}{Non.Gamified}&\multicolumn{1}{c}{Ont.Gamified}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{rel}
+Level of Motivation&$0.930$&$0.932$&$0.926$\tabularnewline
+Attention&$0.930$&$0.935$&$0.915$\tabularnewline
+Relevance&$0.748$&$0.728$&$0.784$\tabularnewline
+Satisfaction&$0.836$&$0.851$&$0.817$\tabularnewline
+\hline
+\end{longtable}}
+
+\end{document}

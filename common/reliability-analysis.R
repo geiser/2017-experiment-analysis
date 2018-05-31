@@ -1,5 +1,5 @@
 
-wants <- c('lavaan', 'xlsx', 'reshape', 'rJava', 'psych', 'dplyr', 'readr', 'readxl', 'Hmisc', 'devtools')
+wants <- c('lavaan', 'xlsx', 'reshape', 'rJava', 'psych', 'dplyr', 'readr', 'readxl', 'Hmisc', 'devtools', 'MVN')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 #library(devtools)
@@ -12,6 +12,28 @@ library(readr)
 library(psych)
 library(lavaan)
 library(r2excel)
+
+## get fit measures as data.frame
+get_fitMeasures <- function(dat, mdl, estimator = "ML", plotFile = NULL) {
+  fit <-  cfa(mdl, data = dat, std.lv = T, estimator = estimator)
+  
+  if (!is.null(plotFile)) {
+    png(filename = plotFile, width = 420, height = 960)
+    semPaths(fit, layout = "tree2", rotation = 2, curvePivot = T, intercepts = F, residuals = F, reorder = T)
+    dev.off()
+  }
+  
+  return(data.frame(
+    "df" = tryCatch(fitMeasures(fit, "df.scaled"), error = function(e) NA)
+    , "chisq" = tryCatch(fitMeasures(fit, "chisq.scaled"), error = function(e) NA)
+    , "AGFI" = tryCatch(fitMeasures(fit, "agfi"), error = function(e) NA)
+    , "TLI" = tryCatch(fitMeasures(fit, "tli.scaled"), error = function(e) NA)
+    , "CFI" = tryCatch(fitMeasures(fit, "cfi.scaled"), error = function(e) NA)
+    , "RMSEA" = tryCatch(fitMeasures(fit, "rmsea.scaled"), error = function(e) NA)
+    , "CI.lwr" = tryCatch(fitMeasures(fit, "rmsea.ci.lower.scaled"), error = function(e) NA)
+    , "CI.upr" = tryCatch(fitMeasures(fit, "rmsea.ci.upper.scaled"), error = function(e) NA)
+  ))
+}
 
 ## function to write kmo module as sheet
 write_kmo_in_workbook <- function(kmo_mod, wb) {

@@ -1,52 +1,52 @@
-"UserID","Type","CLGroup","CLRole","PlayerRole","Item09IE","Item21IE","Item08IE","Item11IE","Item24IE","Item12IE","Item05PC","Item18PC","Item20PC","Item13PC","Item03PC","Item06PT","Item02PT","Item04PT","Item19EI","Item01EI","Item22EI"
-10169,"ont-gamified","Resistance","Apprentice","Social Achiever",7,7,7,7,7,7,2,2,2,4,4,6,7,7,5,5,6
-10170,"w/o-gamified","Grupo11","Apprentice",NA,4,4,6,4,4,3,2,1,3,2,3,1,1,1,3,3,5
-10171,"ont-gamified","Mafia","Master","Social Achiever",6,7,6,6,5,5,2,2,1,2,2,1,2,2,1,1,6
-10172,"w/o-gamified","Grupo5","Apprentice",NA,5,5,7,5,5,4,6,5,5,5,5,5,4,6,5,5,5
-10174,"w/o-gamified","Grupo7","Master",NA,4,4,6,4,6,3,4,3,4,4,4,6,4,5,2,5,4
-10175,"ont-gamified","Warriors","Master","Social Achiever",4,4,4,4,4,4,1,1,1,1,3,1,1,1,1,1,4
-10176,"ont-gamified","Outlaws","Master","Social Achiever",4,4,4,4,4,3,4,5,4,6,4,6,4,6,5,4,4
-10179,"w/o-gamified","Grupo10","Master",NA,3,4,3,2,4,6,6,5,4,5,7,2,1,1,1,2,5
-10181,"w/o-gamified","Grupo2","Apprentice",NA,3,3,2,1,2,2,1,5,3,5,5,5,4,1,4,7,5
-10183,"w/o-gamified","Grupo3","Apprentice",NA,3,3,3,3,2,3,4,3,5,2,4,5,4,4,3,4,4
-10184,"w/o-gamified","Grupo10","Apprentice",NA,4,3,4,4,4,4,5,4,4,3,4,4,4,3,4,4,4
-10185,"w/o-gamified","Grupo9","Apprentice",NA,4,3,6,5,6,5,6,6,3,5,3,5,4,4,3,4,5
-10186,"ont-gamified","Slayers","Apprentice","Social Achiever",4,3,6,6,3,1,4,4,1,4,4,4,5,4,1,1,7
-10188,"ont-gamified","Vandals","Master","Yee Achiever",3,3,4,1,3,4,1,1,1,3,3,1,1,1,3,2,1
-10189,"ont-gamified","Vikings","Apprentice","Social Achiever",2,2,4,1,2,1,5,4,4,5,5,2,1,1,3,1,6
-10190,"w/o-gamified","Grupo4","Apprentice",NA,3,4,3,3,4,2,7,5,4,3,7,6,5,7,5,3,4
-10191,"w/o-gamified","Grupo1","Master",NA,3,2,3,3,2,1,5,4,5,5,5,1,1,1,4,2,4
-10192,"ont-gamified","Attractive Devils","Apprentice","Social Achiever",4,5,4,6,1,4,2,4,4,3,3,4,4,4,5,1,5
-10193,"ont-gamified","Vandals","Apprentice","Yee Achiever",2,1,1,1,2,1,1,1,1,1,1,2,1,1,2,1,2
-10197,"w/o-gamified","Grupo8","Apprentice",NA,3,2,5,5,2,4,3,2,4,4,2,5,3,3,3,3,4
-10198,"ont-gamified","Attractive Devils","Apprentice","Social Achiever",6,3,4,4,2,5,4,6,6,5,1,4,4,4,3,2,6
-10199,"w/o-gamified","Grupo1","Apprentice",NA,3,3,4,4,3,1,5,5,5,3,3,3,4,2,4,4,5
-10200,"ont-gamified","Warriors","Apprentice","Social Achiever",4,5,5,5,5,3,4,2,2,5,3,4,5,5,1,1,6
-10201,"w/o-gamified","Grupo11","Apprentice",NA,5,6,6,5,3,6,3,4,4,3,5,4,3,2,3,3,5
-10202,"ont-gamified","Silly Knights","Apprentice","Social Achiever",3,3,3,3,3,3,2,5,2,2,3,3,3,3,2,2,5
-10203,"ont-gamified","Mercenaries","Apprentice","Social Achiever",5,4,3,4,4,5,1,1,1,1,4,1,2,5,1,1,6
-10204,"w/o-gamified","Grupo6","Apprentice",NA,1,1,1,1,1,1,7,7,7,7,7,7,7,7,1,4,7
-10206,"w/o-gamified","Grupo8","Apprentice",NA,4,5,4,2,4,3,2,2,2,3,3,3,3,2,2,2,5
-10208,"ont-gamified","Mercenaries","Master","Social Achiever",4,4,4,4,4,3,2,4,2,4,4,2,2,2,2,2,4
-10209,"ont-gamified","Mafia","Apprentice","Social Achiever",2,2,2,4,2,2,7,7,7,7,7,1,2,1,3,2,2
-10210,"w/o-gamified","Grupo6","Apprentice",NA,1,1,1,1,1,1,7,7,7,7,7,7,7,7,1,1,7
-10213,"w/o-gamified","Grupo7","Apprentice",NA,3,4,4,7,4,1,7,7,7,7,7,7,1,7,1,1,7
-10214,"ont-gamified","Vikings","Apprentice","Social Achiever",1,1,2,1,1,1,2,7,6,6,6,4,5,1,1,1,7
-10215,"ont-gamified","Vikings","Master","Social Achiever",5,4,5,2,5,3,1,4,1,2,5,1,1,1,4,1,1
-10216,"ont-gamified","Silly Knights","Master","Social Achiever",5,4,4,3,5,7,2,1,3,2,3,1,1,1,2,1,4
-10217,"w/o-gamified","Grupo9","Apprentice",NA,5,5,5,3,4,4,5,4,2,4,4,1,1,1,4,3,2
-10218,"w/o-gamified","Grupo10","Apprentice",NA,4,4,4,4,4,4,5,5,4,4,4,4,4,5,4,4,5
-10219,"w/o-gamified","Grupo3","Master",NA,2,1,1,1,2,4,7,4,7,1,7,1,1,1,7,5,2
-10220,"w/o-gamified","Grupo3","Apprentice",NA,1,4,4,1,4,1,1,4,1,1,1,1,1,1,1,1,7
-10221,"ont-gamified","Warriors","Apprentice","Social Achiever",3,3,3,2,3,2,4,5,6,6,4,6,4,2,3,2,5
-10223,"ont-gamified","Slayers","Master","Social Achiever",5,5,6,4,5,5,4,3,4,4,4,2,4,4,4,4,4
-10224,"ont-gamified","Mercenaries","Apprentice","Social Achiever",4,4,4,4,4,4,5,4,4,4,5,5,4,5,5,4,6
-10226,"w/o-gamified","Grupo4","Apprentice",NA,1,1,4,1,1,1,7,7,7,7,7,7,7,7,7,7,1
-10227,"w/o-gamified","Grupo5","Master",NA,4,3,6,3,5,5,4,3,3,3,4,3,5,4,3,5,3
-10228,"ont-gamified","Resistance","Apprentice","Social Achiever",1,1,2,1,2,1,2,1,2,1,2,2,2,3,1,2,1
-10230,"ont-gamified","Resistance","Master","Social Achiever",4,5,5,4,5,4,4,3,5,3,5,6,5,4,2,3,5
-10231,"w/o-gamified","Grupo9","Master",NA,4,4,4,4,5,6,1,2,2,2,1,1,1,1,4,3,1
-10232,"w/o-gamified","Grupo7","Apprentice",NA,4,4,5,5,5,4,3,4,4,3,3,2,2,2,1,1,6
-10234,"w/o-gamified","Grupo4","Master",NA,2,2,2,1,2,1,6,6,6,7,6,2,4,2,6,6,4
-10237,"ont-gamified","Outlaws","Apprentice","Social Achiever",3,5,3,3,6,4,3,3,4,3,6,4,6,5,4,2,5
-10238,"w/o-gamified","Grupo2","Master",NA,4,4,4,4,4,3,5,5,4,5,7,5,5,5,2,1,5
+UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole,Item22IE,Item09IE,Item12IE,Item24IE,Item21IE,Item01IE,Item17PC,Item15PC,Item06PC,Item02PC,Item08PC,Item16PT,Item14PT,Item18PT,Item11PT,Item13EI,Item03EI,Item07EI,Interest/Enjoyment,Perceived Choice,Pressure/Tension,Effort/Importance,Intrinsic Motivation
+10169,10377538,ont-gamified,Resistance,Apprentice,Social Achiever,7,7,7,7,7,7,2,4,2,4,2,5,5,5,1,5,5,5,7,5.2,5.5,3.6666666666666665,4.591666666666667
+10170,10260351,w/o-gamified,Grupo11,Apprentice,NA,4,4,4,4,6,3,2,3,1,2,3,1,1,1,1,3,4,3,4.166666666666667,5.8,2.5,4.666666666666667,5.033333333333333
+10171,698531,ont-gamified,Mafia,Master,Social Achiever,6,7,5,6,6,5,2,2,2,2,1,2,2,1,6,1,7,1,5.833333333333333,6.2,1.75,7,6.320833333333333
+10172,10273971,w/o-gamified,Grupo5,Apprentice,NA,5,5,5,5,7,4,6,5,5,5,5,5,4,5,5,5,4,5,5.166666666666667,2.8,4.25,3.3333333333333335,3.7625
+10174,10276852,w/o-gamified,Grupo7,Master,NA,4,4,6,4,6,3,4,4,3,4,4,5,4,5,5,5,4,2,4.5,4.2,4.25,4.333333333333333,4.195833333333333
+10175,10310700,ont-gamified,Warriors,Master,Social Achiever,4,4,4,4,4,4,1,3,1,1,1,1,1,1,7,1,4,1,4,6.6,1,6,5.9
+10176,10276949,ont-gamified,Outlaws,Master,Social Achiever,4,4,4,4,4,3,4,4,5,6,4,5,4,5,4,4,4,5,3.8333333333333335,3.4,4.5,3.6666666666666665,3.5999999999999996
+10179,10310759,w/o-gamified,Grupo10,Master,NA,3,4,4,2,3,6,6,7,5,5,4,1,1,2,7,2,6,1,3.6666666666666665,2.6,1.25,6.333333333333333,4.8375
+10181,10276866,w/o-gamified,Grupo2,Apprentice,NA,3,3,2,1,2,2,1,5,5,5,3,1,4,5,4,5,2,4,2.1666666666666665,4.2,3.5,3,3.466666666666667
+10183,10352030,w/o-gamified,Grupo3,Apprentice,NA,3,3,2,3,3,3,4,4,3,2,5,4,4,5,2,4,2,3,2.8333333333333335,4.4,4.75,3.6666666666666665,3.5374999999999996
+10184,10276675,w/o-gamified,Grupo10,Apprentice,NA,4,3,4,4,4,4,5,4,4,3,4,3,4,4,4,4,3,4,3.8333333333333335,4,3.75,3.6666666666666665,3.9375
+10185,10276960,w/o-gamified,Grupo9,Apprentice,NA,4,3,6,5,6,5,6,3,6,5,3,4,4,5,4,4,4,3,4.833333333333333,3.4,4.25,4.333333333333333,4.079166666666667
+10186,10310551,ont-gamified,Slayers,Apprentice,Social Achiever,4,3,3,6,6,1,4,4,4,4,1,4,5,4,1,1,7,1,3.8333333333333335,4.6,5,7,4.608333333333333
+10188,10276995,ont-gamified,Vandals,Master,Yee Achiever,3,3,3,1,4,4,1,3,1,3,1,1,1,1,7,2,4,3,3,6.2,1,5,5.3
+10189,9363926,ont-gamified,Vikings,Apprentice,Social Achiever,2,2,2,1,4,1,5,5,4,5,4,1,1,2,4,1,5,3,2,3.4,2,5.666666666666667,4.266666666666667
+10190,10276907,w/o-gamified,Grupo4,Apprentice,NA,3,4,4,3,3,2,6,7,5,3,4,5,5,5,5,3,4,5,3.1666666666666665,3,4.5,4,3.416666666666666
+10191,10276981,w/o-gamified,Grupo1,Master,NA,3,2,2,3,3,1,5,5,4,5,5,1,1,1,7,2,4,4,2.3333333333333335,3.2,1,4.666666666666667,4.3
+10192,10276682,ont-gamified,Attractive Devils,Apprentice,Social Achiever,4,5,1,6,4,4,2,3,4,3,4,4,4,4,3,1,7,5,4,4.8,4.25,5.666666666666667,4.554166666666667
+10193,10276762,ont-gamified,Vandals,Apprentice,Yee Achiever,2,1,2,1,1,1,1,1,1,1,1,1,1,2,1,1,2,2,1.3333333333333333,7,2.75,5,4.645833333333334
+10197,10276661,w/o-gamified,Grupo8,Apprentice,NA,3,2,2,5,5,4,3,2,2,4,4,3,3,5,5,3,4,3,3.5,5,3.5,4.666666666666667,4.416666666666667
+10198,10310888,ont-gamified,Attractive Devils,Apprentice,Social Achiever,6,3,2,4,4,5,4,1,6,5,6,4,4,4,3,2,6,3,4,3.6,4.25,5.666666666666667,4.254166666666666
+10199,10276737,w/o-gamified,Grupo1,Apprentice,NA,3,3,3,4,4,1,5,3,5,3,5,2,4,3,4,4,4,4,3,3.8,3.25,4,3.8875
+10200,9795272,ont-gamified,Warriors,Apprentice,Social Achiever,4,5,5,5,5,3,4,3,2,5,2,5,5,4,3,1,6,1,4.5,4.8,4.75,6.666666666666667,4.804166666666667
+10201,10276928,w/o-gamified,Grupo11,Apprentice,NA,5,6,3,5,6,6,3,5,4,3,4,2,3,4,5,3,5,3,5.166666666666667,4.2,3,5,4.841666666666667
+10202,10277036,ont-gamified,Silly Knights,Apprentice,Social Achiever,3,3,3,3,3,3,2,3,5,2,2,3,3,3,3,2,5,2,3,5.2,3.5,5.666666666666667,4.591666666666667
+10203,9921470,ont-gamified,Mercenaries,Apprentice,Social Achiever,5,4,4,4,3,5,1,4,1,1,1,5,2,1,3,1,7,1,4.166666666666667,6.4,3.25,7,5.579166666666667
+10204,10310471,w/o-gamified,Grupo6,Apprentice,NA,1,1,1,1,1,1,6,7,7,7,6,5,5,5,1,4,4,1,1,1.4,5.5,5,2.475
+10206,10310721,w/o-gamified,Grupo8,Apprentice,NA,4,5,4,2,4,3,2,3,2,3,2,2,3,3,4,2,5,2,3.6666666666666665,5.6,3,5.666666666666667,4.983333333333333
+10208,10276932,ont-gamified,Mercenaries,Master,Social Achiever,4,4,4,4,4,3,2,4,4,4,2,2,2,2,5,2,5,2,3.8333333333333335,4.8,2.25,5.666666666666667,5.0125
+10209,10262669,ont-gamified,Mafia,Apprentice,Social Achiever,2,2,2,4,2,2,6,7,7,7,6,1,2,1,7,2,3,3,2.3333333333333335,1.4,1.25,4.666666666666667,3.7874999999999996
+10210,10277015,w/o-gamified,Grupo6,Apprentice,NA,1,1,1,1,1,1,6,7,7,7,6,5,5,5,1,1,7,1,1,1.4,5.5,7,2.9749999999999996
+10213,10277040,w/o-gamified,Grupo7,Apprentice,NA,3,4,4,7,4,1,6,7,7,7,6,5,1,5,4,1,7,1,3.8333333333333335,1.4,3.75,7,4.120833333333334
+10214,10277022,ont-gamified,Vikings,Apprentice,Social Achiever,1,1,1,1,2,1,2,6,7,6,6,1,5,4,2,1,7,1,1.1666666666666667,2.6,4,7,3.6916666666666664
+10215,9285227,ont-gamified,Vikings,Master,Social Achiever,5,4,5,2,5,3,1,5,4,2,1,1,1,1,1,1,2,4,4,5.4,2.5,4.333333333333333,4.808333333333334
+10216,10276720,ont-gamified,Silly Knights,Master,Social Achiever,5,4,5,3,4,7,2,3,1,2,3,1,1,1,7,1,4,2,4.666666666666667,5.8,1,5.666666666666667,5.783333333333333
+10217,9805341,w/o-gamified,Grupo9,Apprentice,NA,5,5,4,3,5,4,5,4,4,4,2,1,1,1,7,3,3,4,4.333333333333333,4.2,1,4,4.883333333333333
+10218,9842913,w/o-gamified,Grupo10,Apprentice,NA,4,4,4,4,4,4,5,4,5,4,4,5,4,4,5,4,4,4,4,3.6,4,4,3.9000000000000004
+10219,10276831,w/o-gamified,Grupo3,Master,NA,2,1,2,1,1,4,6,7,4,1,6,1,1,1,7,5,2,6,1.8333333333333333,3.2,1,2.3333333333333335,3.591666666666667
+10220,9760151,w/o-gamified,Grupo3,Apprentice,NA,1,4,4,1,4,1,1,1,4,1,1,1,1,1,7,1,4,1,2.5,6.4,1,6,5.475
+10221,9082496,ont-gamified,Warriors,Apprentice,Social Achiever,3,3,3,2,3,2,4,4,5,6,6,2,4,5,6,2,5,3,2.6666666666666665,3,3.25,5.333333333333333,3.9375
+10223,9795185,ont-gamified,Slayers,Master,Social Achiever,5,5,5,4,6,5,4,4,3,4,4,4,4,2,4,4,5,4,5,4.2,3.5,4.333333333333333,4.508333333333333
+10224,9368772,ont-gamified,Mercenaries,Apprentice,Social Achiever,4,4,4,4,4,4,5,5,4,4,4,5,4,5,3,4,5,5,4,3.6,4.75,4,3.7125000000000004
+10226,10310342,w/o-gamified,Grupo4,Apprentice,NA,1,1,1,1,4,1,6,7,7,7,6,5,5,5,1,5,2,6,1.5,1.4,5.5,2.3333333333333335,1.9333333333333336
+10227,9274382,w/o-gamified,Grupo5,Master,NA,4,3,5,3,6,5,4,4,3,3,3,4,5,3,5,5,4,3,4.333333333333333,4.6,3.75,4,4.295833333333333
+10228,10310492,ont-gamified,Resistance,Apprentice,Social Achiever,1,1,2,1,2,1,2,2,1,1,2,3,2,2,1,2,2,1,1.3333333333333333,6.4,3.5,5,4.308333333333334
+10230,10351992,ont-gamified,Resistance,Master,Social Achiever,4,5,5,4,5,4,4,5,3,3,5,4,5,5,6,3,3,2,4.5,4,4,4.666666666666667,4.291666666666667
+10231,10276911,w/o-gamified,Grupo9,Master,NA,4,4,5,4,4,6,1,1,2,2,2,1,1,1,7,3,2,4,4.5,6.4,1,3.6666666666666665,5.391666666666667
+10232,10276974,w/o-gamified,Grupo7,Apprentice,NA,4,4,5,5,5,4,3,3,4,3,4,2,2,2,3,1,5,1,4.5,4.6,2.75,6.333333333333333,5.170833333333333
+10234,10310676,w/o-gamified,Grupo4,Master,NA,2,2,2,1,2,1,6,6,6,7,6,2,4,2,7,5,2,6,1.6666666666666667,1.8,2.25,2.3333333333333335,2.8875
+10237,10377688,ont-gamified,Outlaws,Apprentice,Social Achiever,3,5,6,3,3,4,3,6,3,3,4,5,5,4,3,2,4,4,4,4.2,4.75,4.666666666666667,4.029166666666667
+10238,10276953,w/o-gamified,Grupo2,Master,NA,4,4,4,4,4,3,5,7,5,5,4,5,5,5,3,1,5,2,3.8333333333333335,2.8,5,6,3.908333333333333

@@ -4,8 +4,8 @@ library(readxl)
 library(parallel)
 #options(mc.cores=7)
 
-preData <- read_csv("data/SourcePreTest.csv")
-posData <- read_csv("data/SourcePosTest.csv")
+preDat <- read_csv("data/SourcePreTest.csv")
+posDat <- read_csv("data/SourcePosTest.csv")
 
 sdat <- get_stacking_data(
   preData, posData, wid = "UserID",

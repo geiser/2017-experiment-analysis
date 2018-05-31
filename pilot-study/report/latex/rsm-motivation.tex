@@ -1,0 +1,336 @@
+
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\title{Summary of Rating Scale Model}
+\maketitle
+\section{Checking Assumptions}
+
+%latex.default(data_df, caption = paste("Goodness of fit statistics related to the test of unidimensionality",     "in the RSM-based instrument", in_title), size = "small",     longtable = T, ctable = F, landscape = F, where = "!htbp",     file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrr}\caption{Goodness of fit statistics related to the test of unidimensionality in the RSM-based instrument for measuring the intrinsic motivation of participants in the pilot study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{chisq}&\multicolumn{1}{c}{AGFI}&\multicolumn{1}{c}{TLI}&\multicolumn{1}{c}{CFI}&\multicolumn{1}{c}{DETECT}&\multicolumn{1}{c}{ASSI}&\multicolumn{1}{c}{RATIO}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{chisq}&\multicolumn{1}{c}{AGFI}&\multicolumn{1}{c}{TLI}&\multicolumn{1}{c}{CFI}&\multicolumn{1}{c}{DETECT}&\multicolumn{1}{c}{ASSI}&\multicolumn{1}{c}{RATIO}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{data}
+Intrinsic Motivation&$8.451$&$19.955$&$0.945$&$0.690$&$0.729$&$ 0.565$&$0.020$&$0.015$\tabularnewline
+Interest/Enjoyment&$2.468$&$ 1.426$&$0.998$&$1.023$&$1.000$&$ 0.716$&$0.067$&$0.049$\tabularnewline
+Perceived Choice&$3.064$&$ 9.713$&$0.978$&$0.711$&$0.788$&$22.998$&$0.200$&$0.714$\tabularnewline
+Pressure/Tension&$1.982$&$ 0.534$&$0.998$&$1.117$&$1.000$&$17.068$&$0.333$&$0.873$\tabularnewline
+Effort/Importance&$0.000$&$ 0.000$&$1.000$&$1.000$&$1.000$&$10.746$&$0.333$&$0.358$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\tiny df: degree of freedom; AGFI: Adjusted Goodness of Fit Index; CFI: Comparative Fit Index; TLI: Tucker-Lewis Index; }\end{flushright}
+
+
+%latex.default(data_df, caption = paste("Item residual correlation statistics",     "related to the test of local independence", "in the RSM-based instrument",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrr}\caption{Item residual correlation statistics related to the test of local independence in the RSM-based instrument for measuring the intrinsic motivation of participants in the pilot study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{max.chisq}&\multicolumn{1}{c}{maxaQ3}&\multicolumn{1}{c}{MADaQ3}&\multicolumn{1}{c}{SRMSR}&\multicolumn{1}{c}{p.value}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{max.chisq}&\multicolumn{1}{c}{maxaQ3}&\multicolumn{1}{c}{MADaQ3}&\multicolumn{1}{c}{SRMSR}&\multicolumn{1}{c}{p.value}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{data}
+Intrinsic Motivation&$106.343$&$0.771$&$0.244$&$0.244$&$0.009$\tabularnewline
+Interest/Enjoyment&$498.445$&$0.353$&$0.157$&$0.083$&$1.000$\tabularnewline
+Perceived Choice&$114.058$&$0.500$&$0.248$&$0.165$&$0.093$\tabularnewline
+Pressure/Tension&$ 36.673$&$0.302$&$0.214$&$0.153$&$0.696$\tabularnewline
+Effort/Importance&$ 38.718$&$0.066$&$0.044$&$0.037$&$1.000$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\tiny aQ3: adjusted correlation of item residuals; maxaQ3: maximum aQ3; MADaQ3: Median Absolute Deviation of aQ3; }\end{flushright}
+
+
+%latex.default(data_df, caption = paste("Test of monotonicity in the RSM-based instrument",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lrrrrrrrrrr}\caption{Test of monotonicity in the RSM-based instrument for measuring the intrinsic motivation of participants in the pilot study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{ItemH}&\multicolumn{1}{c}{ac}&\multicolumn{1}{c}{vi}&\multicolumn{1}{c}{vi/ac}&\multicolumn{1}{c}{maxvi}&\multicolumn{1}{c}{sum}&\multicolumn{1}{c}{sum/ac}&\multicolumn{1}{c}{zmax}&\multicolumn{1}{c}{zsig}&\multicolumn{1}{c}{crit}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{ItemH}&\multicolumn{1}{c}{ac}&\multicolumn{1}{c}{vi}&\multicolumn{1}{c}{vi/ac}&\multicolumn{1}{c}{maxvi}&\multicolumn{1}{c}{sum}&\multicolumn{1}{c}{sum/ac}&\multicolumn{1}{c}{zmax}&\multicolumn{1}{c}{zsig}&\multicolumn{1}{c}{crit}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{data}
+Intrinsic Motivation.Item22IE&$0.50$&$1$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item09IE&$0.45$&$2$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item12IE&$0.52$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item24IE&$0.44$&$4$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item21IE&$0.39$&$4$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item01IE&$0.46$&$4$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item17PC&$0.32$&$5$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item15PC&$0.15$&$6$&$3$&$0.5$&$0.07$&$0.2$&$0.03$&$0$&$0$&$103$\tabularnewline
+Intrinsic Motivation.Item06PC&$0.20$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item02PC&$0.40$&$3$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item08PC&$0.47$&$5$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item16PT&$0.26$&$4$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item14PT&$0.19$&$3$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item18PT&$0.33$&$4$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item11PT&$0.37$&$5$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item13EI&$0.24$&$4$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item03EI&$0.19$&$3$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Intrinsic Motivation.Item07EI&$0.19$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Interest/Enjoyment.Item22IE&$0.85$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Interest/Enjoyment.Item09IE&$0.79$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Interest/Enjoyment.Item12IE&$0.81$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Interest/Enjoyment.Item24IE&$0.77$&$4$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Interest/Enjoyment.Item21IE&$0.72$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Interest/Enjoyment.Item01IE&$0.69$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Perceived Choice.Item17PC&$0.60$&$4$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Perceived Choice.Item15PC&$0.47$&$4$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Perceived Choice.Item06PC&$0.52$&$1$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Perceived Choice.Item02PC&$0.47$&$5$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Perceived Choice.Item08PC&$0.38$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Pressure/Tension.Item16PT&$0.53$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Pressure/Tension.Item14PT&$0.45$&$3$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Pressure/Tension.Item18PT&$0.56$&$4$&$0$&$0.0$&$0.00$&$0.0$&$0.00$&$0$&$0$&$  0$\tabularnewline
+Pressure/Tension.Item11PT&$0.36$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Effort/Importance.Item13EI&$0.46$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Effort/Importance.Item03EI&$0.44$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+Effort/Importance.Item07EI&$0.48$&$0$&$0$&$$&$0.00$&$0.0$&$$&$0$&$0$&$  0$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\tiny vi: numer of violations; vi/ac: proportion of active pairs; maxvi: maximum violations; sum: sum of all violations; zmax: maximum z-value; zsig: number of significant z-values; crit: Critical value }\end{flushright}
+
+
+\section{Estimating Item Parameters}
+
+%latex.default(estimated_params_df, caption = paste("Estimated parameters in the RSM-based instrument",     "for measuring the", lname), size = "scriptsize", longtable = T,     ctable = F, landscape = F, where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lrrrrrrrrrrrrrrrrrr}\caption{Estimated parameters in the RSM-based instrument for measuring the Intrinsic Motivation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{Item01IE}&\multicolumn{1}{c}{Item02PC}&\multicolumn{1}{c}{Item03EI}&\multicolumn{1}{c}{Item06PC}&\multicolumn{1}{c}{Item07EI}&\multicolumn{1}{c}{Item08PC}&\multicolumn{1}{c}{Item09IE}&\multicolumn{1}{c}{Item11PT}&\multicolumn{1}{c}{Item12IE}&\multicolumn{1}{c}{Item13EI}&\multicolumn{1}{c}{Item14PT}&\multicolumn{1}{c}{Item15PC}&\multicolumn{1}{c}{Item16PT}&\multicolumn{1}{c}{Item17PC}&\multicolumn{1}{c}{Item18PT}&\multicolumn{1}{c}{Item21IE}&\multicolumn{1}{c}{Item22IE}&\multicolumn{1}{c}{Item24IE}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{Item01IE}&\multicolumn{1}{c}{Item02PC}&\multicolumn{1}{c}{Item03EI}&\multicolumn{1}{c}{Item06PC}&\multicolumn{1}{c}{Item07EI}&\multicolumn{1}{c}{Item08PC}&\multicolumn{1}{c}{Item09IE}&\multicolumn{1}{c}{Item11PT}&\multicolumn{1}{c}{Item12IE}&\multicolumn{1}{c}{Item13EI}&\multicolumn{1}{c}{Item14PT}&\multicolumn{1}{c}{Item15PC}&\multicolumn{1}{c}{Item16PT}&\multicolumn{1}{c}{Item17PC}&\multicolumn{1}{c}{Item18PT}&\multicolumn{1}{c}{Item21IE}&\multicolumn{1}{c}{Item22IE}&\multicolumn{1}{c}{Item24IE}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{estimated}
+xsi.item&$ 0.279$&$ 0.043$&$-0.662$&$-0.220$&$-0.499$&$-0.414$&$-0.127$&$ 0.028$&$ 0.043$&$-0.534$&$-0.720$&$-0.018$&$-0.499$&$-0.398$&$-0.760$&$-0.173$&$ 0.028$&$ 0.090$\tabularnewline
+B.Cat0&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+B.Cat1&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$\tabularnewline
+B.Cat2&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$\tabularnewline
+B.Cat3&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$\tabularnewline
+B.Cat4&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$\tabularnewline
+B.Cat5&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$\tabularnewline
+B.Cat6&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$\tabularnewline
+AXsi.Cat0&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+AXsi.Cat1&$ 0.083$&$ 0.319$&$ 1.024$&$ 0.582$&$ 0.862$&$ 0.776$&$ 0.489$&$ 0.334$&$ 0.319$&$ 0.897$&$ 1.082$&$ 0.380$&$ 0.862$&$ 0.760$&$ 1.122$&$ 0.535$&$ 0.334$&$ 0.272$\tabularnewline
+AXsi.Cat2&$ 0.279$&$ 0.751$&$ 2.162$&$ 1.278$&$ 1.836$&$ 1.666$&$ 1.091$&$ 0.782$&$ 0.751$&$ 1.906$&$ 2.278$&$ 0.874$&$ 1.836$&$ 1.632$&$ 2.358$&$ 1.184$&$ 0.782$&$ 0.658$\tabularnewline
+AXsi.Cat3&$ 0.547$&$ 1.255$&$ 3.373$&$ 2.046$&$ 2.884$&$ 2.629$&$ 1.765$&$ 1.302$&$ 1.255$&$ 2.989$&$ 3.546$&$ 1.441$&$ 2.884$&$ 2.578$&$ 3.666$&$ 1.905$&$ 1.302$&$ 1.116$\tabularnewline
+AXsi.Cat4&$-0.044$&$ 0.900$&$ 3.723$&$ 1.954$&$ 3.072$&$ 2.731$&$ 1.580$&$ 0.962$&$ 0.900$&$ 3.212$&$ 3.955$&$ 1.147$&$ 3.072$&$ 2.664$&$ 4.115$&$ 1.767$&$ 0.962$&$ 0.714$\tabularnewline
+AXsi.Cat5&$-0.749$&$ 0.430$&$ 3.960$&$ 1.748$&$ 3.145$&$ 2.720$&$ 1.281$&$ 0.508$&$ 0.430$&$ 3.320$&$ 4.249$&$ 0.740$&$ 3.145$&$ 2.635$&$ 4.449$&$ 1.514$&$ 0.508$&$ 0.198$\tabularnewline
+AXsi.Cat6&$-1.676$&$-0.261$&$ 3.975$&$ 1.321$&$ 2.997$&$ 2.487$&$ 0.760$&$-0.167$&$-0.261$&$ 3.207$&$ 4.322$&$ 0.110$&$ 2.997$&$ 2.385$&$ 4.562$&$ 1.040$&$-0.167$&$-0.539$\tabularnewline
+Outfit&$ 0.790$&$ 0.754$&$ 1.090$&$ 1.507$&$ 1.665$&$ 0.749$&$ 0.789$&$ 1.145$&$ 0.769$&$ 1.291$&$ 1.109$&$ 1.437$&$ 0.925$&$ 0.936$&$ 0.981$&$ 0.944$&$ 0.892$&$ 0.938$\tabularnewline
+Infit&$ 0.796$&$ 0.734$&$ 1.131$&$ 1.429$&$ 1.331$&$ 0.745$&$ 0.819$&$ 1.111$&$ 0.780$&$ 1.117$&$ 1.179$&$ 1.353$&$ 0.955$&$ 0.962$&$ 0.995$&$ 1.008$&$ 0.921$&$ 0.951$\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(estimated_params_df, caption = paste("Estimated parameters in the RSM-based instrument",     "for measuring the", lname), size = "scriptsize", longtable = T,     ctable = F, landscape = F, where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lrrrrrr}\caption{Estimated parameters in the RSM-based instrument for measuring the Interest/Enjoyment} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{Item01IE}&\multicolumn{1}{c}{Item09IE}&\multicolumn{1}{c}{Item12IE}&\multicolumn{1}{c}{Item21IE}&\multicolumn{1}{c}{Item22IE}&\multicolumn{1}{c}{Item24IE}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{Item01IE}&\multicolumn{1}{c}{Item09IE}&\multicolumn{1}{c}{Item12IE}&\multicolumn{1}{c}{Item21IE}&\multicolumn{1}{c}{Item22IE}&\multicolumn{1}{c}{Item24IE}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{estimated}
+xsi.item&$ 0.888$&$-0.023$&$ 0.368$&$-0.132$&$ 0.332$&$ 0.472$\tabularnewline
+B.Cat0&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+B.Cat1&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$\tabularnewline
+B.Cat2&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$\tabularnewline
+B.Cat3&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$\tabularnewline
+B.Cat4&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$\tabularnewline
+B.Cat5&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$\tabularnewline
+B.Cat6&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$\tabularnewline
+AXsi.Cat0&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+AXsi.Cat1&$ 0.451$&$ 1.362$&$ 0.971$&$ 1.471$&$ 1.007$&$ 0.867$\tabularnewline
+AXsi.Cat2&$ 0.349$&$ 2.172$&$ 1.390$&$ 2.390$&$ 1.460$&$ 1.180$\tabularnewline
+AXsi.Cat3&$ 0.783$&$ 3.517$&$ 2.345$&$ 3.844$&$ 2.450$&$ 2.030$\tabularnewline
+AXsi.Cat4&$-0.153$&$ 3.493$&$ 1.929$&$ 3.929$&$ 2.070$&$ 1.510$\tabularnewline
+AXsi.Cat5&$-2.115$&$ 2.442$&$ 0.487$&$ 2.987$&$ 0.663$&$-0.037$\tabularnewline
+AXsi.Cat6&$-5.328$&$ 0.140$&$-2.205$&$ 0.794$&$-1.995$&$-2.834$\tabularnewline
+Outfit&$ 1.511$&$ 0.824$&$ 0.774$&$ 1.083$&$ 0.578$&$ 0.857$\tabularnewline
+Infit&$ 1.369$&$ 0.900$&$ 0.820$&$ 1.293$&$ 0.645$&$ 0.984$\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(estimated_params_df, caption = paste("Estimated parameters in the RSM-based instrument",     "for measuring the", lname), size = "scriptsize", longtable = T,     ctable = F, landscape = F, where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lrrrrr}\caption{Estimated parameters in the RSM-based instrument for measuring the Perceived Choice} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{Item02PC}&\multicolumn{1}{c}{Item06PC}&\multicolumn{1}{c}{Item08PC}&\multicolumn{1}{c}{Item15PC}&\multicolumn{1}{c}{Item17PC}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{Item02PC}&\multicolumn{1}{c}{Item06PC}&\multicolumn{1}{c}{Item08PC}&\multicolumn{1}{c}{Item15PC}&\multicolumn{1}{c}{Item17PC}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{estimated}
+xsi.item&$ 0.112$&$-0.237$&$-0.491$&$ 0.030$&$-0.469$\tabularnewline
+B.Cat0&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+B.Cat1&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$\tabularnewline
+B.Cat2&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$\tabularnewline
+B.Cat3&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$\tabularnewline
+B.Cat4&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$\tabularnewline
+B.Cat5&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$&$ 5.000$\tabularnewline
+B.Cat6&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$&$ 6.000$\tabularnewline
+AXsi.Cat0&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+AXsi.Cat1&$ 1.185$&$ 1.534$&$ 1.788$&$ 1.267$&$ 1.766$\tabularnewline
+AXsi.Cat2&$ 0.898$&$ 1.597$&$ 2.104$&$ 1.062$&$ 2.061$\tabularnewline
+AXsi.Cat3&$ 2.082$&$ 3.130$&$ 3.891$&$ 2.328$&$ 3.826$\tabularnewline
+AXsi.Cat4&$ 1.103$&$ 2.500$&$ 3.515$&$ 1.431$&$ 3.428$\tabularnewline
+AXsi.Cat5&$ 0.368$&$ 2.115$&$ 3.383$&$ 0.779$&$ 3.275$\tabularnewline
+AXsi.Cat6&$-0.674$&$ 1.422$&$ 2.944$&$-0.181$&$ 2.814$\tabularnewline
+Outfit&$ 1.063$&$ 0.985$&$ 1.403$&$ 1.056$&$ 0.677$\tabularnewline
+Infit&$ 1.017$&$ 1.009$&$ 1.348$&$ 1.035$&$ 0.683$\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(estimated_params_df, caption = paste("Estimated parameters in the RSM-based instrument",     "for measuring the", lname), size = "scriptsize", longtable = T,     ctable = F, landscape = F, where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lrrrr}\caption{Estimated parameters in the RSM-based instrument for measuring the Pressure/Tension} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{Item11PT}&\multicolumn{1}{c}{Item14PT}&\multicolumn{1}{c}{Item16PT}&\multicolumn{1}{c}{Item18PT}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{Item11PT}&\multicolumn{1}{c}{Item14PT}&\multicolumn{1}{c}{Item16PT}&\multicolumn{1}{c}{Item18PT}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{estimated}
+xsi.item&$-0.036$&$ 0.288$&$-0.054$&$ 0.347$\tabularnewline
+B.Cat0&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+B.Cat1&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$\tabularnewline
+B.Cat2&$ 2.000$&$ 2.000$&$ 2.000$&$ 2.000$\tabularnewline
+B.Cat3&$ 3.000$&$ 3.000$&$ 3.000$&$ 3.000$\tabularnewline
+B.Cat4&$ 4.000$&$ 4.000$&$ 4.000$&$ 4.000$\tabularnewline
+B.Cat5&$ 5.000$&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+B.Cat6&$ 6.000$&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+AXsi.Cat0&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+AXsi.Cat1&$ 1.034$&$ 0.272$&$ 0.614$&$ 0.213$\tabularnewline
+AXsi.Cat2&$ 1.249$&$-0.275$&$ 0.410$&$-0.392$\tabularnewline
+AXsi.Cat3&$ 2.096$&$-0.190$&$ 0.837$&$-0.367$\tabularnewline
+AXsi.Cat4&$ 1.895$&$-1.152$&$ 0.217$&$-1.387$\tabularnewline
+AXsi.Cat5&$ 1.711$&$$&$$&$$\tabularnewline
+AXsi.Cat6&$ 0.216$&$$&$$&$$\tabularnewline
+Outfit&$ 1.387$&$ 1.002$&$ 0.870$&$ 0.825$\tabularnewline
+Infit&$ 1.405$&$ 0.935$&$ 0.847$&$ 0.888$\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(estimated_params_df, caption = paste("Estimated parameters in the RSM-based instrument",     "for measuring the", lname), size = "scriptsize", longtable = T,     ctable = F, landscape = F, where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lrrr}\caption{Estimated parameters in the RSM-based instrument for measuring the Effort/Importance} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{Item03EI}&\multicolumn{1}{c}{Item07EI}&\multicolumn{1}{c}{Item13EI}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{Item03EI}&\multicolumn{1}{c}{Item07EI}&\multicolumn{1}{c}{Item13EI}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{estimated}
+xsi.item&$-1.793$&$-1.571$&$-1.620$\tabularnewline
+B.Cat0&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+B.Cat1&$ 1.000$&$ 1.000$&$ 1.000$\tabularnewline
+B.Cat2&$ 2.000$&$ 2.000$&$ 2.000$\tabularnewline
+B.Cat3&$ 3.000$&$ 3.000$&$ 3.000$\tabularnewline
+B.Cat4&$ 4.000$&$ 4.000$&$ 4.000$\tabularnewline
+B.Cat5&$ 5.000$&$ 5.000$&$ 5.000$\tabularnewline
+B.Cat6&$ 6.000$&$ 6.000$&$ 6.000$\tabularnewline
+AXsi.Cat0&$ 0.000$&$ 0.000$&$ 0.000$\tabularnewline
+AXsi.Cat1&$ 7.416$&$ 7.195$&$ 7.243$\tabularnewline
+AXsi.Cat2&$ 9.886$&$ 9.444$&$ 9.541$\tabularnewline
+AXsi.Cat3&$ 9.821$&$ 9.158$&$ 9.303$\tabularnewline
+AXsi.Cat4&$10.943$&$10.059$&$10.252$\tabularnewline
+AXsi.Cat5&$10.732$&$ 9.626$&$ 9.868$\tabularnewline
+AXsi.Cat6&$10.756$&$ 9.429$&$ 9.719$\tabularnewline
+Outfit&$ 0.999$&$ 1.106$&$ 0.993$\tabularnewline
+Infit&$ 0.980$&$ 1.091$&$ 1.029$\tabularnewline
+\hline
+\end{longtable}}
+
+\section{Latent Trait Estimates}
+
+%latex.default(data_df, caption = paste("Latent trait estimates and person model fit of the RSM-based instrument",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = T, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables\begin{landscape}{\scriptsize
+\begin{longtable}{lrrrrrrrrrrrrrrrrrrrr}\caption{Latent trait estimates and person model fit of the RSM-based instrument for measuring the intrinsic motivation of participants in the pilot study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Intrinsic Motivation.theta}&\multicolumn{1}{c}{Intrinsic Motivation.error}&\multicolumn{1}{c}{Intrinsic Motivation.Outfit}&\multicolumn{1}{c}{Intrinsic Motivation.Infit}&\multicolumn{1}{c}{Interest/Enjoyment.theta}&\multicolumn{1}{c}{Interest/Enjoyment.error}&\multicolumn{1}{c}{Interest/Enjoyment.Outfit}&\multicolumn{1}{c}{Interest/Enjoyment.Infit}&\multicolumn{1}{c}{Perceived Choice.theta}&\multicolumn{1}{c}{Perceived Choice.error}&\multicolumn{1}{c}{Perceived Choice.Outfit}&\multicolumn{1}{c}{Perceived Choice.Infit}&\multicolumn{1}{c}{Pressure/Tension.theta}&\multicolumn{1}{c}{Pressure/Tension.error}&\multicolumn{1}{c}{Pressure/Tension.Outfit}&\multicolumn{1}{c}{Pressure/Tension.Infit}&\multicolumn{1}{c}{Effort/Importance.theta}&\multicolumn{1}{c}{Effort/Importance.error}&\multicolumn{1}{c}{Effort/Importance.Outfit}&\multicolumn{1}{c}{Effort/Importance.Infit}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Intrinsic Motivation.theta}&\multicolumn{1}{c}{Intrinsic Motivation.error}&\multicolumn{1}{c}{Intrinsic Motivation.Outfit}&\multicolumn{1}{c}{Intrinsic Motivation.Infit}&\multicolumn{1}{c}{Interest/Enjoyment.theta}&\multicolumn{1}{c}{Interest/Enjoyment.error}&\multicolumn{1}{c}{Interest/Enjoyment.Outfit}&\multicolumn{1}{c}{Interest/Enjoyment.Infit}&\multicolumn{1}{c}{Perceived Choice.theta}&\multicolumn{1}{c}{Perceived Choice.error}&\multicolumn{1}{c}{Perceived Choice.Outfit}&\multicolumn{1}{c}{Perceived Choice.Infit}&\multicolumn{1}{c}{Pressure/Tension.theta}&\multicolumn{1}{c}{Pressure/Tension.error}&\multicolumn{1}{c}{Pressure/Tension.Outfit}&\multicolumn{1}{c}{Pressure/Tension.Infit}&\multicolumn{1}{c}{Effort/Importance.theta}&\multicolumn{1}{c}{Effort/Importance.error}&\multicolumn{1}{c}{Effort/Importance.Outfit}&\multicolumn{1}{c}{Effort/Importance.Infit}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{data}
+10116&$-0.404$&$0.154$&$0.569$&$0.557$&$-0.114$&$0.340$&$0.991$&$1.063$&$-0.842$&$0.347$&$0.487$&$0.456$&$ 0.207$&$0.387$&$0.482$&$0.499$&$-0.595$&$0.444$&$0.020$&$0.021$\tabularnewline
+10120&$ 0.969$&$0.240$&$0.595$&$0.566$&$ 1.906$&$0.483$&$0.791$&$0.888$&$ 1.372$&$0.492$&$0.530$&$0.588$&$-1.126$&$0.578$&$0.398$&$0.306$&$ 0.694$&$0.577$&$0.864$&$0.879$\tabularnewline
+10121&$ 0.050$&$0.161$&$0.661$&$0.694$&$ 0.399$&$0.382$&$1.481$&$1.713$&$ 0.587$&$0.361$&$0.402$&$0.425$&$ 0.345$&$0.396$&$0.487$&$0.452$&$-0.119$&$0.426$&$0.017$&$0.017$\tabularnewline
+10122&$-0.171$&$0.155$&$1.833$&$1.867$&$-2.052$&$0.572$&$0.878$&$0.690$&$ 1.170$&$0.443$&$0.441$&$0.480$&$-0.488$&$0.420$&$1.565$&$1.940$&$-0.119$&$0.426$&$1.391$&$1.366$\tabularnewline
+10123&$-0.311$&$0.154$&$0.497$&$0.495$&$-0.832$&$0.330$&$0.240$&$0.260$&$ 0.236$&$0.340$&$0.375$&$0.387$&$ 0.207$&$0.387$&$0.821$&$0.793$&$-0.430$&$0.428$&$0.672$&$0.685$\tabularnewline
+10126&$ 0.490$&$0.188$&$0.917$&$0.803$&$ 1.273$&$0.443$&$0.452$&$0.457$&$ 1.170$&$0.443$&$0.156$&$0.122$&$-0.488$&$0.420$&$0.854$&$0.996$&$-0.119$&$0.426$&$1.376$&$1.400$\tabularnewline
+10127&$ 0.183$&$0.167$&$1.085$&$1.042$&$ 1.906$&$0.483$&$0.740$&$0.808$&$ 0.236$&$0.340$&$0.780$&$0.781$&$-0.195$&$0.390$&$0.330$&$0.359$&$-0.779$&$0.473$&$0.434$&$0.443$\tabularnewline
+10128&$-0.521$&$0.155$&$2.364$&$2.405$&$-3.515$&$1.347$&$0.087$&$0.096$&$ 0.587$&$0.361$&$3.270$&$3.014$&$-0.336$&$0.401$&$2.149$&$2.637$&$-2.817$&$1.034$&$0.766$&$0.763$\tabularnewline
+10129&$-0.794$&$0.164$&$0.817$&$0.850$&$-1.785$&$0.486$&$0.427$&$0.471$&$-0.622$&$0.335$&$0.418$&$0.391$&$ 3.173$&$1.487$&$0.122$&$0.133$&$ 0.043$&$0.438$&$1.521$&$1.516$\tabularnewline
+10130&$-0.147$&$0.155$&$0.870$&$0.817$&$ 0.553$&$0.395$&$0.119$&$0.119$&$-0.305$&$0.330$&$0.676$&$0.674$&$ 1.413$&$0.633$&$0.328$&$0.321$&$ 0.694$&$0.577$&$0.282$&$0.288$\tabularnewline
+10131&$ 0.239$&$0.170$&$1.986$&$2.120$&$ 2.400$&$0.530$&$2.083$&$2.163$&$-0.959$&$0.358$&$1.745$&$1.866$&$-0.860$&$0.496$&$0.247$&$0.199$&$ 0.429$&$0.504$&$0.534$&$0.572$\tabularnewline
+10132&$-0.474$&$0.154$&$1.148$&$1.144$&$-3.515$&$1.347$&$0.087$&$0.096$&$-0.199$&$0.330$&$1.129$&$1.136$&$-0.195$&$0.390$&$0.252$&$0.298$&$ 0.221$&$0.462$&$0.454$&$0.421$\tabularnewline
+10134&$-0.666$&$0.159$&$0.281$&$0.298$&$-1.285$&$0.375$&$0.139$&$0.130$&$-0.731$&$0.340$&$0.743$&$0.778$&$ 0.345$&$0.396$&$0.232$&$0.232$&$-0.595$&$0.444$&$0.020$&$0.021$\tabularnewline
+10135&$-0.025$&$0.159$&$1.089$&$1.052$&$ 0.399$&$0.382$&$1.010$&$1.099$&$ 0.349$&$0.345$&$2.289$&$2.180$&$ 0.345$&$0.396$&$0.861$&$0.901$&$-0.274$&$0.422$&$0.757$&$0.757$\tabularnewline
+10136&$-1.021$&$0.178$&$0.958$&$0.997$&$-3.515$&$1.347$&$0.087$&$0.096$&$-1.371$&$0.418$&$0.510$&$0.401$&$ 0.073$&$0.383$&$1.402$&$1.309$&$-1.869$&$0.792$&$0.419$&$0.393$\tabularnewline
+10137&$ 0.969$&$0.240$&$0.854$&$0.798$&$ 1.474$&$0.455$&$0.324$&$0.317$&$ 1.372$&$0.492$&$1.290$&$1.524$&$-2.621$&$1.373$&$0.129$&$0.145$&$ 0.694$&$0.577$&$1.150$&$1.098$\tabularnewline
+10138&$-0.001$&$0.159$&$0.790$&$0.756$&$ 0.553$&$0.395$&$0.711$&$0.716$&$-0.410$&$0.330$&$0.489$&$0.492$&$ 0.345$&$0.396$&$0.297$&$0.304$&$ 1.902$&$1.193$&$0.177$&$0.179$\tabularnewline
+10139&$-0.099$&$0.157$&$1.163$&$1.175$&$-0.223$&$0.334$&$0.920$&$0.888$&$ 0.125$&$0.336$&$2.016$&$2.018$&$-0.488$&$0.420$&$1.866$&$1.854$&$-0.595$&$0.444$&$0.269$&$0.266$\tabularnewline
+10140&$-0.617$&$0.157$&$0.514$&$0.490$&$-1.045$&$0.346$&$0.503$&$0.513$&$-0.199$&$0.330$&$0.115$&$0.115$&$ 0.845$&$0.472$&$1.194$&$1.258$&$-1.004$&$0.524$&$0.275$&$0.277$\tabularnewline
+10141&$-0.218$&$0.154$&$0.484$&$0.470$&$ 0.002$&$0.349$&$0.430$&$0.449$&$-0.410$&$0.330$&$0.483$&$0.485$&$-0.060$&$0.384$&$0.718$&$0.632$&$-0.430$&$0.428$&$0.455$&$0.450$\tabularnewline
+10142&$ 0.076$&$0.162$&$0.798$&$0.791$&$ 0.553$&$0.395$&$0.872$&$0.821$&$-0.305$&$0.330$&$0.364$&$0.365$&$-0.860$&$0.496$&$1.680$&$1.816$&$-0.119$&$0.426$&$0.500$&$0.494$\tabularnewline
+10143&$ 0.102$&$0.163$&$0.125$&$0.127$&$ 0.125$&$0.358$&$0.118$&$0.119$&$ 0.349$&$0.345$&$0.140$&$0.137$&$-0.060$&$0.384$&$0.136$&$0.149$&$ 0.429$&$0.504$&$0.028$&$0.029$\tabularnewline
+10145&$-0.357$&$0.154$&$0.864$&$0.851$&$-0.631$&$0.324$&$0.606$&$0.600$&$-0.842$&$0.347$&$0.785$&$0.731$&$ 0.493$&$0.411$&$0.398$&$0.413$&$ 1.902$&$1.193$&$0.177$&$0.179$\tabularnewline
+10146&$ 0.327$&$0.176$&$0.384$&$0.356$&$ 0.895$&$0.420$&$0.102$&$0.108$&$ 0.349$&$0.345$&$0.135$&$0.136$&$-0.336$&$0.401$&$1.140$&$1.388$&$ 0.694$&$0.577$&$0.282$&$0.288$\tabularnewline
+10148&$ 0.076$&$0.162$&$1.010$&$0.904$&$ 0.257$&$0.370$&$0.588$&$0.542$&$ 0.714$&$0.373$&$0.766$&$0.739$&$ 0.845$&$0.472$&$1.200$&$1.263$&$ 0.694$&$0.577$&$0.301$&$0.323$\tabularnewline
+10149&$-0.716$&$0.161$&$1.830$&$1.804$&$-0.936$&$0.337$&$3.322$&$3.288$&$-1.083$&$0.371$&$2.091$&$1.735$&$ 3.173$&$1.487$&$0.122$&$0.133$&$ 0.221$&$0.462$&$2.008$&$2.064$\tabularnewline
+10152&$ 0.562$&$0.194$&$2.241$&$1.987$&$ 5.221$&$1.494$&$0.080$&$0.089$&$ 0.714$&$0.373$&$0.625$&$0.606$&$-0.195$&$0.390$&$0.201$&$0.184$&$-0.595$&$0.444$&$2.314$&$2.363$\tabularnewline
+10153&$-0.001$&$0.159$&$0.675$&$0.682$&$ 0.553$&$0.395$&$1.292$&$1.194$&$-0.199$&$0.330$&$0.880$&$0.877$&$-0.336$&$0.401$&$0.073$&$0.082$&$-0.274$&$0.422$&$0.853$&$0.854$\tabularnewline
+10154&$-0.741$&$0.162$&$0.489$&$0.499$&$-1.160$&$0.358$&$1.153$&$1.092$&$-1.218$&$0.391$&$0.078$&$0.091$&$ 0.493$&$0.411$&$0.679$&$0.655$&$-0.430$&$0.428$&$0.455$&$0.450$\tabularnewline
+10158&$ 1.160$&$0.269$&$1.112$&$1.220$&$ 3.026$&$0.623$&$0.865$&$0.850$&$ 0.587$&$0.361$&$0.827$&$0.784$&$-2.621$&$1.373$&$0.129$&$0.145$&$ 1.902$&$1.193$&$0.177$&$0.179$\tabularnewline
+\hline
+\end{longtable}}\end{landscape}
+
+\end{document}

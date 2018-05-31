@@ -1,0 +1,31 @@
+
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\section{Summary of Winzorized Responses}
+%latex.default(as.data.frame(dd$get_data()), rowname = NULL, caption = paste("Summary of Winsorized responses",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = T, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables\begin{landscape}{\scriptsize
+\begin{longtable}{llllll}\caption{Summary of Winsorized responses for estimating gains in skills/knowledge based on the stacking of pre-test and post-test data with GPCM  in the pilot empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{c}{@@}&\multicolumn{1}{c}{UserID}&\multicolumn{1}{c}{Type}&\multicolumn{1}{c}{...}&\multicolumn{1}{c}{PlayerRole}&\multicolumn{1}{c}{gain.theta}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{c}{@@}&\multicolumn{1}{c}{UserID}&\multicolumn{1}{c}{Type}&\multicolumn{1}{c}{...}&\multicolumn{1}{c}{PlayerRole}&\multicolumn{1}{c}{gain.theta}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{as.data.frame}
+...&...&...&...&...&...\tabularnewline
+&10139&ont-gamified&...&Yee Achiever&2.7977\tabularnewline
+-\textgreater &10141&ont-gamified&...&Yee Socializer&7.9568-\textgreater 6.6027\tabularnewline
+-\textgreater &10143&ont-gamified&...&Yee Socializer&-3.6118-\textgreater -1.6575\tabularnewline
+&10144&non-gamified&...&&-1.928\tabularnewline
+...&...&...&...&...&...\tabularnewline
+\hline
+\end{longtable}}\end{landscape}
+\end{document}

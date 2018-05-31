@@ -1,58 +1,75 @@
-\section{Summaries of Reliability Analysis}
 
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\section{Summaries of Reliability Analysis}
 \subsection{Exploratory and Confirmatory Factor Analysis}
 
-%latex.default(fa_summary_df, caption = paste("Summary of exploratory and confirmatory factor analysis for the",     in_title), insert.bottom = cfa_summary, rowlabel = "", where = "!htbp",     file = filename, append = T)%
-\begin{table}[!htbp]
-\caption{Summary of exploratory and confirmatory factor analysis for the adapted Portuguese version of IMI questionnaire\label{fa}} 
-\begin{center}
-\begin{tabular}{lrrrr}
+%latex.default(fa_summary_df, caption = paste("Summary of exploratory and confirmatory factor analysis for the",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrr}\caption{Summary of exploratory and confirmatory factor analysis for the adapted Portuguese IMI} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{}&\multicolumn{1}{c}{MR2}&\multicolumn{1}{c}{MR1}&\multicolumn{1}{c}{MR4}&\multicolumn{1}{c}{MR3}\tabularnewline
 \hline
-Item09&$ 0.91$&$-0.18$&$-0.04$&$ 0.04$\tabularnewline
-Item21&$ 0.85$&$-0.20$&$ 0.04$&$-0.09$\tabularnewline
-Item08&$ 0.79$&$-0.15$&$ 0.09$&$ 0.03$\tabularnewline
-Item11&$ 0.78$&$ 0.06$&$ 0.16$&$-0.20$\tabularnewline
-Item24&$ 0.73$&$-0.25$&$ 0.04$&$ 0.00$\tabularnewline
-Item12&$ 0.71$&$-0.21$&$-0.12$&$ 0.17$\tabularnewline
-Item05&$-0.12$&$ 0.80$&$ 0.21$&$ 0.16$\tabularnewline
-Item18&$-0.25$&$ 0.80$&$ 0.22$&$-0.02$\tabularnewline
-Item20&$-0.28$&$ 0.79$&$ 0.22$&$ 0.15$\tabularnewline
-Item13&$-0.13$&$ 0.74$&$ 0.32$&$-0.04$\tabularnewline
-Item03&$-0.19$&$ 0.67$&$ 0.18$&$ 0.11$\tabularnewline
-Item06&$-0.01$&$ 0.37$&$ 0.85$&$ 0.00$\tabularnewline
-Item02&$ 0.00$&$ 0.25$&$ 0.81$&$ 0.11$\tabularnewline
-Item04&$ 0.17$&$ 0.27$&$ 0.80$&$ 0.01$\tabularnewline
-Item19&$ 0.08$&$ 0.23$&$ 0.03$&$ 0.82$\tabularnewline
-Item01&$ 0.02$&$ 0.19$&$ 0.31$&$ 0.74$\tabularnewline
-Item22&$ 0.17$&$ 0.23$&$ 0.35$&$-0.59$\tabularnewline
-SS loadings&$ 4.09$&$ 3.52$&$ 2.58$&$ 1.73$\tabularnewline
-Cumulative Var&$ 0.24$&$ 0.45$&$ 0.60$&$ 0.70$\tabularnewline
-Proportion Explained&$ 0.34$&$ 0.30$&$ 0.22$&$ 0.15$\tabularnewline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
 \hline
-\end{tabular}\end{center}
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{MR2}&\multicolumn{1}{c}{MR1}&\multicolumn{1}{c}{MR4}&\multicolumn{1}{c}{MR3}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{fa}
+Item22IE&$ 0.893$&$-0.195$&$ 0.004$&$ 0.012$\tabularnewline
+Item09IE&$ 0.869$&$-0.164$&$-0.009$&$-0.086$\tabularnewline
+Item12IE&$ 0.750$&$-0.220$&$-0.004$&$ 0.078$\tabularnewline
+Item24IE&$ 0.766$&$ 0.046$&$ 0.198$&$-0.197$\tabularnewline
+Item21IE&$ 0.790$&$-0.135$&$ 0.115$&$ 0.034$\tabularnewline
+Item01IE&$ 0.712$&$-0.198$&$-0.149$&$ 0.136$\tabularnewline
+Item17PC&$-0.046$&$ 0.817$&$ 0.115$&$ 0.202$\tabularnewline
+Item15PC&$-0.193$&$ 0.673$&$ 0.093$&$ 0.082$\tabularnewline
+Item06PC&$-0.265$&$ 0.808$&$ 0.165$&$-0.021$\tabularnewline
+Item02PC&$-0.130$&$ 0.793$&$ 0.221$&$-0.055$\tabularnewline
+Item08PC&$-0.245$&$ 0.788$&$ 0.135$&$ 0.184$\tabularnewline
+Item16PT&$ 0.262$&$ 0.266$&$ 0.775$&$ 0.018$\tabularnewline
+Item14PT&$ 0.071$&$ 0.322$&$ 0.793$&$ 0.140$\tabularnewline
+Item18PT&$ 0.069$&$ 0.393$&$ 0.791$&$ 0.098$\tabularnewline
+Item11PT&$ 0.198$&$ 0.128$&$-0.636$&$ 0.162$\tabularnewline
+Item13EI&$ 0.122$&$ 0.229$&$ 0.216$&$ 0.856$\tabularnewline
+Item03EI&$ 0.305$&$ 0.198$&$ 0.199$&$-0.758$\tabularnewline
+Item07EI&$ 0.092$&$ 0.222$&$ 0.006$&$ 0.687$\tabularnewline
+SS loadings&$ 4.253$&$ 3.681$&$ 2.538$&$ 1.993$\tabularnewline
+Cumulative Var&$ 0.236$&$ 0.441$&$ 0.582$&$ 0.693$\tabularnewline
+Proportion Explained&$ 0.341$&$ 0.295$&$ 0.204$&$ 0.160$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{ \scriptsize{ CFI: NA; TLI: NA; df: 131; $chi^2$: NA; p-value: NA; RMSEA: NA [0, 0]; p-value(RMSEA): 0.863 }}\end{flushright} 
 
-\raggedleft{ \scriptsize{ CFI: 0.917, TLI: 0.901, \\ df: 113, $\chi^2$: 160.835, p-value: 0.002, \\ RMSEA: 0.091 [0.056, 0.122], p-value(RMSEA): 0.03 }} 
-\end{table}
 
 \subsection{Reliability Analysis}
 
-%latex.default(rel_summary_df, caption = paste("Result of reliability analysis for the",     in_title), rowlabel = "", where = "!htbp", file = filename,     append = T)%
-\begin{table}[!htbp]
-\caption{Result of reliability analysis for the adapted Portuguese version of IMI questionnaire\label{rel}} 
-\begin{center}
-\begin{tabular}{lrrr}
+%latex.default(rel_summary_df, caption = paste("Result of reliability analysis for the",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrr}\caption{Result of reliability analysis for the adapted Portuguese IMI} \tabularnewline
 \hline\hline
-\multicolumn{1}{l}{}&\multicolumn{1}{c}{Total}&\multicolumn{1}{c}{Ont.Gamified}&\multicolumn{1}{c}{W.O.Gamified}\tabularnewline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Global}&\multicolumn{1}{c}{Ont.Gamified}&\multicolumn{1}{c}{W.O.Gamified}\tabularnewline
 \hline
-Intrinsic Motivation&$0.86$&$0.77$&$0.89$\tabularnewline
-Interest/Enjoyment&$0.92$&$0.93$&$0.91$\tabularnewline
-Perceived Choice&$0.91$&$0.89$&$0.92$\tabularnewline
-Pressure/Tension&$0.91$&$0.90$&$0.92$\tabularnewline
-Effort/Importance&$0.71$&$0.48$&$0.84$\tabularnewline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
 \hline
-\end{tabular}\end{center}
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Global}&\multicolumn{1}{c}{Ont.Gamified}&\multicolumn{1}{c}{W.O.Gamified}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{rel}
+Intrinsic Motivation&$0.850$&$0.782$&$0.875$\tabularnewline
+Interest/Enjoyment&$0.917$&$0.929$&$0.906$\tabularnewline
+Perceived Choice&$0.905$&$0.883$&$0.908$\tabularnewline
+Pressure/Tension&$0.848$&$0.823$&$0.879$\tabularnewline
+Effort/Importance&$0.783$&$0.580$&$0.878$\tabularnewline
+\hline
+\end{longtable}}
 
-\end{table}
-
+\end{document}

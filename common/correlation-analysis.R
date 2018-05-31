@@ -77,14 +77,22 @@ get_corr_pair_mods <- function(participants, iv, wid, between, observed = NULL
     columns <- c()
     name_mod <- name_models[[i]]
     for (j in 1:length(grid_models[i,])) {
+      
       info <- info_src[[as.character(grid_models[[j]][[i]])]]
-      rdat <- read_excel(info$filename, sheet = info$sheed, col_types = "numeric")
-      if (is.null(dat)) {
-        dat <- rdat[c(info$wid, info$dv)]
-      } else {
-        dat <- merge(dat, rdat[c(info$wid, info$dv)], by.x = by_x, by.y = info$wid)
+      rdat <- read_excel(info$filename, sheet = info$sheed)
+      dv <- info$dv
+      
+      if (!is.null(info$dv.name) && (length(info$dv.name) > 0)) {
+        rdat[[info$dv.name]] <- rdat[[info$dv]]
+        dv <- info$dv.name
       }
-      columns <- c(columns, info$dv)
+      
+      if (is.null(dat)) {
+        dat <- rdat[c(info$wid, dv)]
+      } else {
+        dat <- merge(dat, rdat[c(info$wid, dv)], by.x = by_x, by.y = info$wid)
+      }
+      columns <- c(columns, dv)
       by_x = info$wid
     }
     
@@ -181,9 +189,9 @@ write_corr_chart_plots <- function(corr_mods, path, override = T) {
       filename <- paste0(path, model_name, file_name, '.png')
       if (!file.exists(filename) || override) { 
         png(filename = filename, width = 640, height = 640)
-        chart.Correlation(corr_mod$data, method = corr_mod$method, histogram = T, pch=16
+        try(chart.Correlation(corr_mod$data, method = corr_mod$method, histogram = T, pch=16
                           , main=paste0('Correlation ', sub_title,' for '
-                                        , paste0(colnames(corr_mod$data), collapse = ' - ')))
+                                        , paste0(colnames(corr_mod$data), collapse = ' - '))), silent = T)
         dev.off()
       }
     }

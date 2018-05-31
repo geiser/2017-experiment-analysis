@@ -1,5 +1,5 @@
 
-wants <- c('TAM', 'sirt', 'lavaan', 'ggrepel', 'parallel', 'RColorBrewer', 'reshape', 'psych', 'ggplot2', 'dplyr', 'readr', 'readxl', 'multcomp')
+wants <- c('TAM', 'sirt', 'lavaan', 'ggrepel', 'parallel', 'RColorBrewer', 'reshape', 'psych', 'ggplot2', 'dplyr', 'readr', 'readxl', 'multcomp', 'WrightMap')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 
@@ -37,14 +37,18 @@ get_stacking_data <- function(pre_dat, pos_dat, wid, items.pre, items.pos, same.
 }
 
 ## Function to get data for rating scale model
-get_data_map_for_RSM <- function(sources, min_cat = 1, max_cat = 7) {
+get_data_map_for_RSM <- function(sources, min_cat = 1, max_cat = 7, is.excel.src = F) {
   library(readr)
   library(readxl)
   library(dplyr)
   library(xlsx)
   
   data_map <- lapply(sources, FUN = function(x) {
-    dat <- readxl::read_excel(paste0(x$path, x$filename), sheet = x$sheed, col_types = "numeric")
+    if (is.excel.src) {
+      dat <- readxl::read_excel(x$filename, sheet = x$sheed, col_types = "numeric")
+    } else {
+      dat <- readr::read_csv(x$filename)
+    }
     rdat <- dat[x$wid]
     for (endwith in x$end.withs) {
       rdat <- merge(rdat, dplyr::select(dat, starts_with(x$wid), ends_with(endwith)))
@@ -52,6 +56,13 @@ get_data_map_for_RSM <- function(sources, min_cat = 1, max_cat = 7) {
     
     for (inv_key in x$inv.keys) {
       rdat[inv_key] <- (min_cat+max_cat)-rdat[inv_key]
+    }
+    
+    #
+    for (cname in colnames(rdat)) {
+      if (x$wid != cname) {
+        rdat[cname] <- rdat[cname] - min_cat
+      }
     }
     
     return(rdat)
@@ -293,33 +304,64 @@ add_info_for_TAM_models <- function(tam_models) {
 
 
 ## Function to evaluate the unidimensionality lavaan
-test_lav <- function(tam_mod) {
+test_lav <- function(tam_mod = NULL, estimator = "ML", resp = NULL) {
   
   library(lavaan)
+  if (!is.null(tam_mod)) { resp <- tam_mod$resp }
   
-  cat('\n... test by lavaan: ', paste0(colnames(tam_mod$resp), collapse = '+'),' ...\n')
+  cat('\n... test by lavaan: ', paste0(colnames(resp), collapse = '+'),' ...\n')
   
   # linear CFA with lavaan
-  lavmodel <- paste0("\n Ability =~ ", paste(colnames(tam_mod$resp), collapse = "+"), "\n Ability ~~ 1*Ability \n")
-  lav_mod <- tryCatch(lavaan::sem(lavmodel , data = tam_mod$resp , missing="fiml", std.lv=TRUE), error = function(e) NULL)
+  lavmodel <- paste0("\n Ability =~ ", paste(colnames(resp), collapse = "+"), "\n Ability ~~ 1*Ability \n")
+  lav_mod <- tryCatch(lavaan::sem(lavmodel , data = resp, std.lv=TRUE, estimator = estimator), error = function(e) NULL)
   
   fail <- TRUE
-  lav_cfi_val <- NA
+  lav_df_val <- NA
+  lav_chisq_val <- NA
+  lav_agfi_val <- NA
   lav_tli_val <- NA
+  lav_cfi_val <- NA
+  lav_rmsea_val <- NA
+  lav_rmsea_lwr_val <- NA
+  lav_rmsea_upr_val <- NA
   lav_rmsea_pvalue_val <- NA
   
   if (!is.null(lav_mod) && !is.null(tryCatch(fitMeasures(lav_mod), error = function(e) NULL))) {
     fail <- FALSE
-    lav_cfi_val <- as.numeric(fitMeasures(lav_mod, "cfi"))
+    lav_df_val <- as.numeric(fitMeasures(lav_mod, "df"))
+    lav_chisq_val <- as.numeric(fitMeasures(lav_mod, "chisq"))
+    
+    lav_agfi_val <- as.numeric(fitMeasures(lav_mod, "agfi"))
     lav_tli_val <- as.numeric(fitMeasures(lav_mod, "tli"))
-    lav_rmsea_pvalue_val <- as.numeric(fitMeasures(lav_mod, "rmsea.pvalue"))
+    lav_cfi_val <- as.numeric(fitMeasures(lav_mod, "cfi"))
+    
+    lav_rmsea_val <- tryCatch(as.numeric(fitMeasures(lav_mod, "rmsea")), error = function(e) NA)
+    lav_rmsea_lwr_val <- tryCatch(as.numeric(fitMeasures(lav_mod, "rmsea.ci.lower")), error = function(e) NA)
+    lav_rmsea_upr_val <- tryCatch(as.numeric(fitMeasures(lav_mod, "rmsea.ci.upper")), error = function(e) NA)
+    lav_rmsea_pvalue_val <- tryCatch(as.numeric(fitMeasures(lav_mod, "rmsea.pvalue")), error = function(e) NA)
+    
+    if (estimator %in% c("ULS", "DWLS", "ULSM", "ULSMV", "WLSMVS")) {
+      lav_df_val <- as.numeric(fitMeasures(lav_mod, "df.scaled"))
+      lav_chisq_val <- as.numeric(fitMeasures(lav_mod, "chisq.scaled"))
+      
+      lav_tli_val <- as.numeric(fitMeasures(lav_mod, "tli.scaled"))
+      lav_cfi_val <- as.numeric(fitMeasures(lav_mod, "cfi.scaled"))
+      
+      lav_rmsea_val <- tryCatch(as.numeric(fitMeasures(lav_mod, "rmsea.scaled")), error = function(e) NA)
+      lav_rmsea_lwr_val <- tryCatch(as.numeric(fitMeasures(lav_mod, "rmsea.ci.lower.scaled")), error = function(e) NA)
+      lav_rmsea_upr_val <- tryCatch(as.numeric(fitMeasures(lav_mod, "rmsea.ci.upper.scaled")), error = function(e) NA)
+      lav_rmsea_pvalue_val <- tryCatch(as.numeric(fitMeasures(lav_mod, "rmsea.pvalue.scaled")), error = function(e) NA)
+    }
+    
     if (!is.na(lav_rmsea_pvalue_val) && lav_rmsea_pvalue_val < 0.05) {
       fail <- TRUE
     }
   }
   
   return(list(fail = fail, lav_mod = lav_mod
-              , lav_cfi_val = lav_cfi_val, lav_tli_val = lav_tli_val
+              , lav_df_val = lav_df_val, lav_chisq_val = lav_chisq_val
+              , lav_agfi_val = lav_agfi_val, lav_tli_val = lav_tli_val, lav_cfi_val = lav_cfi_val
+              , lav_rmsea_val = lav_rmsea_val, lav_rmsea_lwr_val = lav_rmsea_lwr_val, lav_rmsea_upr_val = lav_rmsea_upr_val
               , lav_rmsea_pvalue_val = lav_rmsea_pvalue_val))
 }
 
@@ -337,9 +379,9 @@ test_uni_by_pca <- function(tam_mod) {
 }
 
 ## Function to filter non-unidimensional vs unidimensional TAMs
-add_unidimensionality_test_info_for_TAM_models <- function(tam_models, information = NULL, itemequals = NULL) {
+add_unidimensionality_test_info_for_TAM_models <- function(tam_models, information = NULL, itemclusters = NULL, estimator = "ML") {
   
-  resp_detect_tests <- lapply(tam_models, test_detect, itemequals = itemequals)
+  resp_detect_tests <- lapply(tam_models, test_detect, itemclusters = itemclusters)
   resp_test_uni_by_pca <- lapply(
     tam_models, 
     FUN = function(x) {
@@ -375,7 +417,7 @@ add_unidimensionality_test_info_for_TAM_models <- function(tam_models, informati
     detect.infomation <- merge(information, detect.infomation, by = 'name', all.x = TRUE)
   }
   
-  resp_lav_tests <- lapply(tam_models, test_lav)
+  resp_lav_tests <- lapply(tam_models, test_lav, estimator = estimator)
   
   # lavaan filtering
   unidim_lav_test <- c()
@@ -423,29 +465,62 @@ add_unidimensionality_test_info_for_TAM_models <- function(tam_models, informati
   )
 }
 
+## Function to get the itemcluser for DETECT analysis
+get_detect_itemcluster <- function(data, score) {
+  
+  min_detect_value <- Inf
+  # using expl.detect to identify itemclusters
+  try(dev.off())
+  expl_detect_mod <- tryCatch(
+    expl.detect(data
+                , score = score
+                , nclusters = ncol(data)
+                , N.est = nrow(data))
+    , error =  function(e) 
+      expl.detect(data
+                  , score = score
+                  , nclusters = ncol(data)-1
+                  , N.est = nrow(data))
+  )
+  # iterate in all clusters
+  for (j in 2:ncol(expl_detect_mod$itemcluster)) {
+    i_cluster <- c(paste0("I", expl_detect_mod$itemcluster[,j]))
+    detect_mod <- conf.detect(data = data, score = score, itemcluster = i_cluster)
+    detect_val <- min(abs(detect_mod$detect.summary['DETECT',]), na.rm = T)
+    if (detect_val < min_detect_value) {
+      itemcluster <- i_cluster
+      min_detect_value <- detect_val
+    }
+  }
+  return(itemcluster)
+}
+
 ## Function to evaluate the unidimensionality by DETECT
-test_detect <- function(tam_mod, itemequals = NULL) {
+test_detect <- function(tam_mod, itemclusters = NULL, score = NULL) {
   library(sirt)
   
   # polydetect statistic analysis
   cat('\n... test by detect: ', paste0(colnames(tam_mod$resp), collapse = '+'), ' ...\n')
   
-  wle_mod <- tam.wle(tam_mod)
+  if (is.null(score)) { score <- tam.wle(tam_mod)$theta }
   itemcluster <- colnames(tam_mod$resp)
-  if (!is.null(itemequals)) {
-    for (n_col in names(itemequals)) {
-      itemcluster[itemcluster %in% itemequals[[n_col]]]  <- n_col
+  if (!is.null(itemclusters)) {
+    for (n_col in names(itemclusters)) {
+      itemcluster[itemcluster %in% itemclusters[[n_col]]]  <- n_col
     }
+  } else {
+    cat("\n ...", "Using expl.detect analysis to estimate itemcluster", "... \n")
+    itemcluster <- get_detect_itemcluster(tam_mod$resp, score = score)
   }
   
   # all items are cluster for only one lattent factor
-  detect_mod <- conf.detect(data = tam_mod$resp, score = wle_mod$theta, itemcluster = itemcluster)
+  detect_mod <- conf.detect(data = tam_mod$resp, score = score, itemcluster = itemcluster)
   
   # evaluate detect value
   detect <- NA
-  detect_val <- max(abs(detect_mod$detect.summary['DETECT',]), na.rm = T)
-  detect_assi <- max(abs(detect_mod$detect.summary['ASSI',]), na.rm = T)
-  detect_ratio <- max(abs(detect_mod$detect.summary['RATIO',]), na.rm = T)
+  detect_val <- min(abs(detect_mod$detect.summary['DETECT',]), na.rm = T)
+  detect_assi <- min(abs(detect_mod$detect.summary['ASSI',]), na.rm = T)
+  detect_ratio <- min(abs(detect_mod$detect.summary['RATIO',]), na.rm = T)
   
   fail <- FALSE
   if (!is.na(detect_val) && detect_val >= 1) {
@@ -491,7 +566,8 @@ load_tam_mod <- function(name_model, prefix, url_str = NULL) {
 ## load and save TAMs to measure change
 load_and_save_TAMs_to_measure_skill <- function(
   dat, column_names, prefix, fixed = NULL, fixed_sets = NULL
-  , url_str = NULL, min_columns = 3, itemequals = NULL, irtmodel = "GPCM") {
+  , url_str = NULL, min_columns = 3, itemclusters = NULL, irtmodel = "GPCM", estimator = "ML"
+  , tam_mods = NULL) {
   
   info_tam_models <- NULL
   file_tam_info_str <- paste0(prefix, '_info_tam_models.RData')
@@ -508,6 +584,8 @@ load_and_save_TAMs_to_measure_skill <- function(
       url_con <- url(url_str)
       tam_models <- tryCatch(get(load(url_con)), error = function(e) list())
       close(url_con)
+    } else if (!is.null(tam_mods)) {
+      tam_models <- tam_mods
     }
     tam_models <- remove_incorrect_TAMs(tam_models)
     
@@ -523,7 +601,7 @@ load_and_save_TAMs_to_measure_skill <- function(
     }
     info_tam_models <- add_info_for_TAM_models(tam_models)
     info_tam_models <- add_unidimensionality_test_info_for_TAM_models(
-      tam_models, information = info_tam_models$information, itemequals = itemequals)
+      tam_models, information = info_tam_models$information, itemclusters = itemclusters, estimator = estimator)
     save(info_tam_models, file = file_tam_info_str)
   }
   
@@ -568,10 +646,104 @@ plot_pre_vs_post <- function(x, y, plabels, title = "Pre-test vs. Post-test") {
 }
 
 ## measuring change using TAM by stacking and racking data
+TAM.measure_change.verify <- function(pre_dat, pos_dat
+                                      , items.pre, items.pos
+                                      , tam_models = NULL
+                                      , userid = "UserID", irtmodel = "GPCM"
+                                      , plotting = T, pairing = F, folder = NULL) {
+  library(TAM)
+  library(reshape)
+  library(dplyr)
+  
+  items = list(pre=items.pre, pos=items.pos)
+  
+  userids <- intersect(pre_dat[[userid]], pos_dat[[userid]])
+  n <- length(userids)
+  pre_i <- pre_dat[[userid]] %in% userids
+  pos_i <- pos_dat[[userid]] %in% userids
+  
+  dat <- merge(pre_dat[pre_i,][,c(userid, items$pre)],
+               pos_dat[pos_i,][,c(userid, items$pos)], by = userid)
+  
+  if (!is.null(tam_models) && !is.null(tam_models$pos_mod1)) {
+    pos_mod1 <- tam_models$pos_mod1
+  } else {
+    pos_mod1 <- tam.mml(dat[,items$pos], irtmodel = irtmodel, pid = dat[[userid]])
+  }
+  pos_wle1 <- tam.wle(pos_mod1)
+  
+  if (!is.null(tam_models) && !is.null(tam_models$pre_mod1)) {
+    pre_mod1 <- tam_models$pre_mod1
+  } else {
+    pre_mod1 <- tam.mml(dat[,items$pre], irtmodel = irtmodel, pid = dat[[userid]])
+  }
+  pre_wle1 <- tam.wle(pre_mod1)
+  
+  pos_tt <- as.data.frame(tam.threshold(pos_mod1))
+  pre_tt <- as.data.frame(tam.threshold(pre_mod1))
+  tt <- plyr::rbind.fill(pos_tt,pre_tt)
+  tt[,"Item"] <- c(IRT.threshold(pos_mod1, type="item"), IRT.threshold(pre_mod1, type="item"))
+  rownames(tt) <- c(rownames(pos_tt), rownames(pre_tt))
+  
+  
+  if (plotting) {
+    filename <- "verification-thurstonian-thresholds.png"
+    if (!is.null(folder)) png(filename = paste0(folder, filename), width = 640, height = 640)
+    dotchart(t(tt), pch = 16, main = "Verification: Thurstonian Thresholds", cex=0.5)
+    dev.off()
+    
+    filename <- "verification-ability-pre-vs-post.png"
+    if (!is.null(folder)) png(filename = paste0(folder, filename), width = 640, height = 640)
+    plot_pre_vs_post(pre_wle1$theta, pos_wle1$theta, dat[[userid]]
+                     , "Verification: Pre-test vs. Post-test")
+    if (!is.null(folder)) dev.off()
+  }
+  
+  ## plotting pairing
+  if (pairing) {
+    for (i in 1:length(items.pre)) {
+      for (j in 1:length(items.pos)) {
+        pre_tt_val <- tt[items.pre[[i]],"Item"]
+        pos_tt_val <- tt[items.pos[[j]],"Item"]
+        abs_tt_val <- abs(pos_tt_val - pre_tt_val)
+        
+        align_tt <- rbind(tt[items.pos,] - abs_tt_val, tt[items.pre,])
+        if (pos_tt_val < pre_tt_val) {
+          align_tt <- rbind(tt[items.pos,], tt[items.pre,] - abs_tt_val)
+        }
+        
+        
+        pre_c <- c()
+        pos_c <- c()
+        exp_grid <- expand.grid(pre = items.pre[!items.pre %in% items.pre[[i]]]
+                                , pos = items.pos[!items.pos %in% items.pos[[j]]])
+        exp_grid <- rbind(exp_grid, data.frame(pre = items.pre[[i]], pos = items.pos[[j]]))
+        exp_grid <- dplyr::mutate(exp_grid, label = paste0("(", pre,",", pos, ")"))
+        for (k in 1:nrow(exp_grid)) {
+          pre_c <- c(pre_c, align_tt[as.character(exp_grid[["pre"]][k]),][["Item"]])
+          pos_c <- c(pos_c, align_tt[as.character(exp_grid[["pos"]][k]),][["Item"]])
+        }
+        exp_grid <- cbind(exp_grid, "pre.v" = pre_c)
+        exp_grid <- cbind(exp_grid, "pos.v" = pos_c)
+        
+        filename <- paste0("verification-items-pre-vs-post", items.pre[[i]], "-", items.pos[[j]],".png")
+        if (!is.null(folder)) png(filename = paste0(folder, filename), width = 640, height = 640)
+        plot_pre_vs_post(exp_grid$pre.v, exp_grid$pos.v, exp_grid$label
+                         , paste0("Verification: Pre-test vs. Post-test - base pair: (",items.pre[[i]],",",items.pos[[j]],")"))
+        if (!is.null(folder)) dev.off()
+      }
+    }
+  }
+  
+  return(list(tt = data.frame(tt)
+         , pos_mod = pos_mod1, pre_mod = pre_mod1
+         , pos_wle = pos_wle1, pre_wle = pre_wle1))
+}
+
+## measuring change using TAM by stacking and racking data
 TAM.measure_change <- function(
   pre_dat, pos_dat, items.pre, items.pos, same_items.pre, same_items.pos
-  , userid = "UserID", verify = T, plotting = F, remove_outlier = T
-  , tam_models = NULL, irtmodel = "GPCM") {
+  , userid = "UserID", verify = T, plotting = F, tam_models = NULL, irtmodel = "GPCM") {
   
   library(TAM)
   library(reshape)
@@ -593,34 +765,10 @@ TAM.measure_change <- function(
   # Stage I: Data Verification
   info_verification <- NULL
   if (verify) {
-    if (!is.null(tam_models) && !is.null(tam_models$pos_mod1)) {
-      pos_mod1 <- tam_models$pos_mod1
-    } else {
-      pos_mod1 <- tam.mml(dat[,items$pos], irtmodel = irtmodel, pid = dat[[userid]])
-    }
-    pos_wle1 <- tam.wle(pos_mod1)
-    
-    if (!is.null(tam_models) && !is.null(tam_models$pre_mod1)) {
-      pre_mod1 <- tam_models$pre_mod1
-    } else {
-      pre_mod1 <- tam.mml(dat[,items$pre], irtmodel = irtmodel, pid = dat[[userid]])
-    }
-    pre_wle1 <- tam.wle(pre_mod1)
-    
-    pos_tt <- as.data.frame(tam.threshold(pos_mod1))
-    pre_tt <- as.data.frame(tam.threshold(pre_mod1))
-    tt <- plyr::rbind.fill(pos_tt,pre_tt)
-    tt[,"Item"] <- c(IRT.threshold(pos_mod1, type="item"), IRT.threshold(pre_mod1, type="item"))
-    rownames(tt) <- c(rownames(pos_tt), rownames(pre_tt))
-    
-    info.verification <- list(tt = data.frame(tt)
-                              , pos_mod = pos_mod1, pre_mod = pre_mod1
-                              , pos_wle = pos_wle1, pre_wle = pre_wle1)
-    if (plotting) {
-      dotchart(t(tt), pch = 16, main = "Verification: Thurstonian Thresholds", cex=0.5)
-      plot_pre_vs_post(pre_wle1$theta, pos_wle1$theta, dat[[userid]]
-                       , "Verification: Pre-test vs. Post-test")
-    }
+    info_verification <- TAM.measure_change.verify(
+      pre_dat, pos_dat, items.pre, items.pos, tam_models = NULL
+      , userid = userid, irtmodel = irtmodel
+      , plotting = plotting, pairing = F)
   }
   
   # Stage II: Item splitting & steps
@@ -765,30 +913,33 @@ TAM.measure_change <- function(
                      , "Racking: Pre-test vs. Post-test Thurstonian Thresholds")
   }
   
-  r_id <- c(dat[[userid]][dat$pos.sd.error == Inf],
-            dat[[userid]][dat$pre.sd.error == Inf])
-  dat_non <- dat[!(dat[[userid]] %in% unique(r_id)),]
-  if (plotting) {
-    plot_pre_vs_post(dat_non$pre.theta, dat_non$pos.theta, dat_non[[userid]]
-                     , "Pre-test vs. Post-test")
-  }
+  ## Treatment of outliers: Stage V
+  r_id <- c(dat[[userid]][dat$pos.theta %in% boxplot.stats(dat$pos.theta)$out],
+            dat[[userid]][dat$pre.theta %in% boxplot.stats(dat$pre.theta)$out])
+  dat_wo <- dat[!(dat[[userid]] %in% unique(r_id)),]
   
-  if (remove_outlier) {
-    r_id <- c(dat_non[[userid]][dat_non$pos.theta %in% boxplot.stats(dat_non$pos.theta)$out],
-              dat_non[[userid]][dat_non$pre.theta %in% boxplot.stats(dat_non$pre.theta)$out])
-    dat_wo <- dat_non[!(dat_non[[userid]] %in% unique(r_id)),]
-    if (plotting) {
-      plot_pre_vs_post(dat_wo$pre.theta, dat_wo$pos.theta, dat_wo[[userid]]
-                       , "Pre-test vs. Post-test (Without Outliers)")
-    }
+  library(robustHD)
+  dat_wisor <- dat
+  dat_wisor$pre.theta <- robustHD::winsorize(dat$pre.theta)
+  dat_wisor$pos.theta <- robustHD::winsorize(dat$pos.theta)
+  
+  if (plotting) {
+    plot_pre_vs_post(dat$pre.theta, dat$pos.theta, dat[[userid]]
+                     , "Pre-test vs. Post-test: Latent Trait Estimates")
+    plot_pre_vs_post(dat_wo$pre.theta, dat_wo$pos.theta, dat_wo[[userid]]
+                     , "Pre-test vs. Post-test: Latent Trait Estimates (Without Outliers)")
+    plot_pre_vs_post(dat_wisor$pre.theta, dat_wisor$pos.theta, dat_wisor[[userid]]
+                     , "Pre-test vs. Post-test: Latent Trait Estimates (Winsorized)")
   }
   
   return(list(
-    ability.without = dat_wo, info.verification = info.verification
+    ability.without.outliers = list("rm.outlieres" = dat_wo, "winsor.outliers" = dat_wisor)
+    , info.verification = info_verification
     , xsi = info.stacking$xsi, tt = info.stacking$tt, B = data.frame(mod2$B[,,])
     , global.estimation = list(mod = mod2, B = data.frame(mod2$B[,,]))
     , info.stacking = info.stacking, info.racking = info.racking
-    , ability = dat_non, ability.all = dat))
+    , ability = dat
+    ))
 }
 
 ############################################################################
@@ -805,15 +956,29 @@ write_change_measurement_model_plots <- function(mod, path, override = T) {
   filename <- paste0(path, '00-ability-pre-vs-post.png')
   if (!file.exists(filename) || override) {
     png(filename = filename, width = 640, height = 640)
-    plot_pre_vs_post(mod$ability$pre.theta, mod$ability$pos.theta, mod$ability$UserID, "Pre-test vs. Post-test")
+    plot_pre_vs_post(mod$ability$pre.theta
+                     , mod$ability$pos.theta
+                     , mod$ability$UserID
+                     , "Pre-test vs. Post-test")
     dev.off()
   }
   
-  ## ability without outliers pre-vs-post
   filename <- paste0(path, '00-ability-without-outliers-pre-vs-post.png')
   if (!file.exists(filename) || override) {
     png(filename = filename, width = 640, height = 640)
-    plot_pre_vs_post(mod$ability.without$pre.theta, mod$ability.without$pos.theta, mod$ability.without$UserID, "Pre-test vs. Post-test (Without Outliers)")
+    plot_pre_vs_post(mod$ability.without.outliers$rm.outlieres$pre.theta
+                     , mod$ability.without.outliers$rm.outlieres$pos.theta
+                     , mod$ability.without.outliers$rm.outlieres$UserID
+                     , "Pre-test vs. Post-test: Latent Trait Estimates (Without Outliers)")
+    dev.off()
+  }
+  
+  filename <- paste0(path, '00-ability-winsorized-pre-vs-post.png')
+  if (!file.exists(filename) || override) {
+    png(filename = filename, width = 640, height = 640)
+    plot_pre_vs_post(mod$ability.without.outliers$winsor.outliers$pre.theta
+                     , mod$ability.without.outliers$winsor.outliers$pos.theta
+                     , mod$ability.without.outliers$winsor.outliers$UserID, "Pre-test vs. Post-test: Latent Trait Estimates (Winsorized)")
     dev.off()
   }
   
@@ -888,64 +1053,58 @@ write_measure_change_report <- function(result, path, filename, override = F) {
     wb <- createWorkbook(type='xlsx')
     
     ## write ability estimates (with outliers)
-    ability_estimates_wo <- result$ability
-    ability_estimates_all <- result$ability.all
+    ability_estimates <- result$ability
+    ability_estimates_rm_ouliers <- result$ability.without.outliers$rm.outlieres
+    ability_estimates_winsorized <- result$ability.without.outliers$winsor.outliers
     
     personfit_df <- sirt::pcm.fit(b = result$info.stacking$pre_mod$AXsi_[, -1]
                                   , theta = result$info.stacking$pre_wle$theta
                                   , dat = result$info.stacking$pre_mod$resp)$personfit
     personfit_df <- personfit_df[, -which(names(personfit_df) %in% 'person')]
     colnames(personfit_df) <- c('pre.outfit','pre.outfit.t','pre.infit','pre.infit.t')
-    ability_estimates_all <- cbind(ability_estimates_all, personfit_df)
+    personfit_df[["UserID"]] <- ability_estimates$UserID
     
-    personfit_df <- sirt::pcm.fit(b = result$info.stacking$pos_mod$AXsi_[, -1]
-                                  , theta = result$info.stacking$pos_wle$theta
-                                  , dat = result$info.stacking$pos_mod$resp)$personfit
-    personfit_df <- personfit_df[, -which(names(personfit_df) %in% 'person')]
-    colnames(personfit_df) <- c('pos.outfit','pos.outfit.t','pos.infit','pos.infit.t')
-    ability_estimates_all <- cbind(ability_estimates_all, personfit_df)
     
-    rownames(ability_estimates_all) <- ability_estimates_all$UserID
+    ability_estimates <- merge(ability_estimates, personfit_df)
+    rownames(ability_estimates) <- ability_estimates$UserID
     
-    ## write ability estimates (without inf)
-    ability_estimates <- ability_estimates_all[which(ability_estimates_all$UserID %in% result$ability$UserID),]
+    ability_estimates_rm_ouliers <- merge(ability_estimates_rm_ouliers, personfit_df)
+    rownames(ability_estimates_rm_ouliers) <- ability_estimates_rm_ouliers$UserID
     
-    sheet0 <- createSheet(wb, sheetName = 'Ability Estimates')
-    xlsx.addTable(wb, sheet0, ability_estimates, startCol = 1, row.names = F, columnWidth = 16)
+    ability_estimates_winsorized <- merge(ability_estimates_winsorized, personfit_df)
+    rownames(ability_estimates_winsorized) <- ability_estimates_winsorized$UserID
     
-    ## write ability estimates (all)
-    sheet1 <- createSheet(wb, sheetName = 'Ability Estimates (all)')
-    xlsx.addTable(wb, sheet1, ability_estimates_all, startCol = 1, row.names = F, columnWidth = 16)
+    ## write ability estimates
+    sheet1 <- createSheet(wb, sheetName = 'Ability Estimates')
+    xlsx.addTable(wb, sheet1, ability_estimates, startCol = 1, row.names = F, columnWidth = 16)
     
-    ## write ability estimates (with-out outliers)
-    ability_estimates <- ability_estimates_all[which(ability_estimates_all$UserID %in% result$ability.without$UserID),]
+    ## write ability estimates (without outliers)
+    sheet1 <- createSheet(wb, sheetName = 'Ability Estimates (without outliers)')
+    xlsx.addTable(wb, sheet1, ability_estimates_rm_ouliers, startCol = 1, row.names = F, columnWidth = 16)
     
-    sheet2 <- createSheet(wb, sheetName = 'Ability Estimates (wo outliers)')
-    xlsx.addTable(wb, sheet2, ability_estimates, startCol = 1, row.names = F, columnWidth = 16)
+    ## write ability estimates (winsorized outliers)
+    sheet2 <- createSheet(wb, sheetName = 'Ability Estimates (winsorized)')
+    xlsx.addTable(wb, sheet2, ability_estimates_winsorized, startCol = 1, row.names = F, columnWidth = 16)
     
     ## write ability estimates statistics
     sheet3 <- createSheet(wb, sheetName = 'Ability Estimates (statistics)')
-    pre_wle_info_df <- data.frame(unclass(summary(result$info.stacking$pre_wle))
-                                  , check.names = F, stringsAsFactors = F)
     pre_wle_info_df <- data.frame(
-      'pre PersonScores' = pre_wle_info_df$` PersonScores`
-      , 'pre theta' = pre_wle_info_df$`    theta`
-      , 'pre error' = pre_wle_info_df$`    error`
-      , 'pre N.items' = result$info.stacking$pre_wle$N.items[[1]]
-      , 'pre ScoreMax' = result$info.stacking$pre_wle$PersonMax[[1]]
-      , 'pre WLE.rel'= result$info.stacking$pre_wle$WLE.rel[[1]])
+      'pre.pid' = result$info.stacking$pre_wle$pid
+      , 'pre.theta' = result$info.stacking$pre_wle$theta
+      , 'pre.error' = result$info.stacking$pre_wle$error
+      , 'pre.N.items' = result$info.stacking$pre_wle$N.items
+      , 'pre.Score' = result$info.stacking$pre_wle$PersonScores
+      , 'pre.WLE.rel'= result$info.stacking$pre_wle$WLE.rel)
     xlsx.addTable(wb, sheet3, pre_wle_info_df, startCol = 1, row.names = F, columnWidth = 16)
     
     xlsx.addLineBreak(sheet3, 2)
-    pos_wle_info_df <- data.frame(unclass(summary(result$info.stacking$pos_wle))
-                                  , check.names = F, stringsAsFactors = F)
     pos_wle_info_df <- data.frame(
-      'pos PersonScores' = pos_wle_info_df$` PersonScores`
-      , 'pos theta' = pos_wle_info_df$`    theta`
-      , 'pos error' = pos_wle_info_df$`    error`
-      , 'pos N.items' = result$info.stacking$pos_wle$N.items[[1]]
-      , 'pos ScoreMax' = result$info.stacking$pos_wle$PersonMax[[1]]
-      , 'pos WLE.rel' = result$info.stacking$pos_wle$WLE.rel[[1]])
+      'pos.pid' = result$info.stacking$pos_wle$pid
+      , 'pos.theta' = result$info.stacking$pos_wle$theta
+      , 'pos.error' = result$info.stacking$pos_wle$error
+      , 'pos.N.items' = result$info.stacking$pos_wle$N.items
+      , 'pos.Score' = result$info.stacking$pos_wle$PersonScores
+      , 'pos.WLE.rel'= result$info.stacking$pos_wle$WLE.rel)
     xlsx.addTable(wb, sheet3, pos_wle_info_df, startCol = 1, row.names = F, columnWidth = 16)
     
     ## write item estimates
@@ -1124,7 +1283,7 @@ write_tam_abilities_in_wb <- function(mod, wb) {
   library(TAM)
   library(r2excel)
   
-  wmod <- tam.mml.wle(mod)
+  wmod <- tam.wle(mod)
   rdat <- cbind(cbind(data.frame(UserID=mod$pid), mod$resp), 
                 as.data.frame(unclass(wmod)))
   
@@ -1138,7 +1297,7 @@ write_tam_personfit_in_wb <- function(mod, wb) {
   library(TAM)
   library(sirt)
   
-  wmod <- tam.mml.wle(mod)
+  wmod <- tam.wle(mod)
   
   personfit_df <- sirt::pcm.fit(b = mod$AXsi_[, -1], theta = wmod$theta, dat = mod$resp)$personfit
   rdat <- cbind(cbind(data.frame(UserID=mod$pid), mod$resp), personfit_df)
@@ -1210,3 +1369,137 @@ write_measurement_model_plots <- function(mod, path, override = T) {
     dev.off()
   }
 }
+
+### Function to obtain summary
+get_rsm_summaries_as_dataframe <- function(sources, tam_mods, estimator = "ML", scores = list()) {
+  library(mokken)
+  
+  test_unidimensionality_df <- do.call(rbind, lapply(sources, FUN = function(src){
+    mod <- tam_mods[[src$name]]
+    lavaan_fit <- test_lav(mod, estimator = estimator)
+    detect_fit <- test_detect(mod, score = scores[[src$name]])
+    
+    return(data.frame(
+      "df" = tryCatch(lavaan_fit$lav_df_val, error = function(e) NA)
+      , "chisq" = tryCatch(lavaan_fit$lav_chisq_val, error = function(e) NA)
+      , "AGFI" = tryCatch(lavaan_fit$lav_agfi_val, error = function(e) NA)
+      , "TLI" = tryCatch(lavaan_fit$lav_tli_val, error = function(e) NA)
+      , "CFI" = tryCatch(lavaan_fit$lav_cfi_val, error = function(e) NA)
+      #, "p_RMSEA" = tryCatch(lavaan_fit$lav_rmsea_pvalue_val, error = function(e) NA)
+      , "DETECT" = tryCatch(detect_fit$detect_val, error = function(e) NA)
+      , "ASSI" = tryCatch(detect_fit$detect_assi, error = function(e) NA)
+      , "RATIO" = tryCatch(detect_fit$detect_ratio, error = function(e) NA)
+    ))
+  }))
+  
+  test_local_independence_df <- do.call(rbind, lapply(sources, FUN = function(src){
+    mod <- tam_mods[[src$name]]
+    fit <- tam.modelfit(mod)
+    return(data.frame(
+      "max.chisq" = fit$modelfit.test$maxX2
+      , "maxaQ3" = fit$stat.MADaQ3$maxaQ3
+      , "MADaQ3" = fit$stat.MADaQ3$MADaQ3
+      , "SRMSR" = as.list(fit$fitstat)$SRMSR
+      , "p.value" = fit$stat.MADaQ3$p
+    ))
+  }))
+  
+  test_monotonicity_df <- do.call(rbind, lapply(sources, FUN = function(src){
+    mod <- tam_mods[[src$name]]
+    monotonicity_mod <- NULL
+    resp <- mod$resp[complete.cases(mod$resp),]
+    monotonicity_mod <- tryCatch(
+      check.monotonicity(resp)
+      , error = function(e) check.monotonicity(resp, minsize = nrow(resp)/2)
+    )
+    return(as.data.frame(summary(monotonicity_mod)))
+  }))
+  
+  estimated_params_list <- lapply(sources, FUN = function(src){
+    mod <- tam_mods[[src$name]]
+    
+    outfit_infit_df <- tam.fit(mod, progress = F)$itemfit
+    if (mod$irtmodel == "RSM") {
+      outfit_infit_df <- as.data.frame(
+        outfit_infit_df[outfit_infit_df$parameter %in% colnames(mod$resp),])
+    } else if (mod$irtmodel == "GPCM") {
+      item_names <- outfit_infit_df$parameter
+      for (k in 1:(mod$maxK-1)) {
+        item_names <- gsub(paste0("_Cat",k), "", item_names)
+      }
+      
+      cparameter <- c()
+      cmaxoutfit <- c()
+      cmaxinfit <- c()
+      for (citem in colnames(mod$resp)) {
+        cparameter <- c(cparameter, citem)
+        cmaxinfit <- c(cmaxinfit, max(outfit_infit_df$Infit[item_names %in% citem], na.rm = T))
+        cmaxoutfit <- c(cmaxoutfit, max(outfit_infit_df$Outfit[item_names %in% citem], na.rm = T))
+      }
+      
+      outfit_infit_df <- data.frame(
+        parameter = cparameter, max.Outfit = cmaxoutfit, max.Infit = cmaxinfit
+      )
+    }
+    outfit_infit_df <- dplyr::select(
+      outfit_infit_df, starts_with("parameter"), ends_with("fit"))
+    
+    item_df <- as.data.frame(mod$AXsi)
+    colnames(item_df) <- paste0("AXsi.Cat", seq(0, ncol(mod$AXsi)-1))
+    
+    item_b_df <- as.data.frame(mod$B)
+    colnames(item_b_df) <- paste0("B.", colnames(item_b_df))
+    
+    item_df <- cbind(item_b_df, item_df)
+    item_df <- cbind(dplyr::select(
+      as.data.frame(mod$item)
+      , starts_with("item")
+      , starts_with("xsi.item")), item_df)
+    colnames(item_df) <- gsub(".Dim01", "", colnames(item_df))
+    
+    item_df <- merge(item_df, outfit_infit_df, by.x = "item", by.y = "parameter")
+    rownames(item_df) <- item_df$item
+    item_df <- dplyr::select(item_df, -starts_with("item"))
+    return(t(item_df))
+  })
+  
+  person_ability_df <- do.call(cbind, get_abilities(
+    sources, tam_mods, columns = c("theta", "error","Outfit", "Infit")))
+  
+  return(list(
+    test_unidimensionality = test_unidimensionality_df
+    , test_local_independence = test_local_independence_df
+    , test_monotonicity = test_monotonicity_df
+    , estimated_params = estimated_params_list
+    , person_ability = person_ability_df
+    ))
+}
+
+### Function to obtain summary as gpcm
+get_gpcm_summaries_as_dataframe <- function(tam_mods, estimator = "ML") {
+  sources <- lapply(names(tam_mods), FUN = function(x) return(list(name = x)))
+  names(sources) <- names(tam_mods)
+  return(get_rsm_summaries_as_dataframe(sources, tam_mods, estimator = estimator))
+}
+
+## function to get abilities
+get_abilities <- function(sources, tam_mods, columns = NULL) {
+  return(lapply(sources, FUN = function(src){
+    mod <- tam_mods[[src$name]]
+    
+    wmod <- tam.wle(mod)
+    personfit_df <- sirt::pcm.fit(b = mod$AXsi_[, -1], theta = wmod$theta, dat = mod$resp)$personfit
+    
+    result_df <- as.data.frame(wmod)[,c("pid","PersonScores","theta","error")]
+    result_df <- cbind(result_df, personfit_df[,c("outfit","infit")])
+    colnames(result_df) <- c("UserID", "Score", "theta", "error", "Outfit", "Infit")
+    rownames(result_df) <- result_df$UserID
+    
+    if (!is.null(columns)) {
+      result_df <- result_df[,columns]
+    }
+    
+    return(dplyr::select(result_df, -starts_with("UserID")))
+  }))
+}
+

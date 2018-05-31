@@ -15,9 +15,11 @@ UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole
 10200,9795272,non-gamified,Grupo Team 4,Apprentice,NA
 10201,10276928,non-gamified,Grupo Team 10,Master,NA
 10202,10277036,ont-gamified,Grupo Paldira,Apprentice,Yee Achiever
+10204,10310471,non-gamified,Grupo Team 5,Master,NA
 10206,10310721,non-gamified,Grupo Team 9,Master,NA
 10208,10276932,ont-gamified,Grupo Yeka,Master,Yee Socializer
 10209,10262669,non-gamified,Grupo Team 1,Master,NA
+10210,10277015,ont-gamified,Grupo Losvakai,Apprentice,Yee Achiever
 10211,9311643,ont-gamified,Grupo Razorg,Master,Yee Achiever
 10213,10277040,non-gamified,Grupo Team 8,Master,NA
 10214,10277022,ont-gamified,Grupo Koil,Apprentice,Yee Achiever
@@ -26,6 +28,7 @@ UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole
 10230,10351992,ont-gamified,Grupo Koil,Apprentice,Yee Achiever
 10231,10276911,non-gamified,Grupo Team 4,Master,NA
 10237,10377688,ont-gamified,Grupo Ellaru,Apprentice,Yee Socializer
+10238,10276953,ont-gamified,Grupo Belos,Apprentice,Yee Socializer
 10218,9842913,non-gamified,Grupo Team 10,Apprentice,NA
 10171,698531,ont-gamified,Grupo Losvakai,Master,Yee Achiever
 10217,9805341,ont-gamified,Grupo Belos,Master,Yee Socializer
@@ -35,6 +38,7 @@ UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole
 10216,10276720,ont-gamified,Grupo Ellaru,Master,Yee Socializer
 10178,8656201,non-gamified,Grupo Team 11,Apprentice,NA
 10176,10276949,non-gamified,Grupo Team 9,Apprentice,NA
+10240,10276654,non-gamified,Grupo Team 8,Apprentice,NA
 10188,10276995,ont-gamified,Grupo Paldira,Master,Yee Achiever
 10192,10276682,ont-gamified,Grupo Yeka,Apprentice,Yee Socializer
 10232,10276974,non-gamified,Grupo Team 3,Apprentice,NA

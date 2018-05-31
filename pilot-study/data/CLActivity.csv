@@ -8,12 +8,12 @@ UserID,Type,Group,CLRole,PlayerRole,ParticipationLevel,NroTotalInteractions,NroN
 10141,ont-gamified,Grupo Apolo,Master,Yee Socializer,complete,12,8,1,1,0,6,0,4,0,0,0,4,0,3,0,1,0,0
 10143,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,semicomplete,1,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
 10134,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,semicomplete,1,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
-10121,ont-gamified,Grupo Hades,Master,Yee Achiever,none,2,2,1,1,0,0,0,0,0,3,0,0,0,0,0,0,0,0
+10121,ont-gamified,Grupo Hades,Master,Yee Achiever,incomplete,2,2,1,1,0,0,0,0,0,3,0,0,0,0,0,0,0,0
 10133,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 10142,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,incomplete,3,3,0,0,3,0,0,0,3,0,0,0,0,0,0,0,0,0
 10127,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 10128,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10152,ont-gamified,Grupo Morfeu,Master,Yee Achiever,semicomplete,21,7,1,1,0,5,0,7,0,1,0,14,0,0,3,11,0,0
+10152,ont-gamified,Grupo Morfeu,Master,Yee Achiever,complete,21,7,1,1,0,5,0,7,0,1,0,14,0,0,3,11,0,0
 10123,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,complete,4,4,0,0,4,0,4,0,0,0,3,0,0,0,0,0,0,0
 10137,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,complete,4,4,0,0,4,0,3,0,1,0,2,0,0,0,0,0,0,0
 10126,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,complete,8,7,0,0,7,0,5,0,2,0,2,1,0,0,0,0,1,0
@@ -35,6 +35,6 @@ UserID,Type,Group,CLRole,PlayerRole,ParticipationLevel,NroTotalInteractions,NroN
 10136,non-gamified,GroupC,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 10154,non-gamified,GroupC,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 10116,non-gamified,GroupC,Master,,semicomplete,3,3,1,1,0,1,0,1,0,2,0,0,0,0,0,0,0,0
-10160,non-gamified,GroupD,Master,,none,2,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10160,non-gamified,GroupD,Master,,incomplete,2,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 10159,non-gamified,GroupD,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 10158,non-gamified,GroupD,Apprentice,,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

@@ -1,247 +1,138 @@
-wants <- c('readr', 'dplyr', 'RMySQL', 'reshape')
-has <- wants %in% rownames(installed.packages())
-if (any(!has)) install.packages(wants[!has])
-
-library(dplyr)
 library(readr)
+library(dplyr)
 library(psych)
 library(lavaan)
-library(r2excel)
+library(ggraph)
+library(semPlot)
 
-## read data
-datIMI <- read_csv("data/SourceIMI.csv")
+library(MVN)
+library(daff)
+library(robustHD)
 
-## validating sampling adequacy
-print(kmo_mod <- KMO(cor(select(datIMI, starts_with("Item")))))
-print(kmo_mod <- KMO(cor(select(datIMI, starts_with("Item"), -starts_with("Item04")))))
+sdat <- read_csv('../data/IMI.csv')
+sdat <- sdat[which(sdat$Study == 'first'),]
+sdat$Study <- NULL
 
-datIMI <- select(datIMI, starts_with("UserID"), starts_with("Type")
-                 , starts_with("CLGroup"), starts_with("CLRole"), starts_with("PlayerRole")
-                 , starts_with("Item"), -starts_with("Item04"))
+participants <- read_csv('data/SignedUpParticipants.csv')
+sdat <- merge(participants, sdat, by = 'UserID')
 
-## factorial analysis with nfactor=4
-(fa_mod <- fa(select(datIMI, starts_with("Item")), nfactors = 4))
+############################################################################
+## Check Assumptions to Reliability Analysis                              ##
+############################################################################
 
-(fa_mod <- fa(select(datIMI, starts_with("Item")
-                     , -starts_with("Item07")
-                     , -starts_with("Item13")), nfactors = 4))
+png(filename = "report/reliability-analysis/univariate-histogram.png", width = 840, height = 840)
+(mvn_mod <- mvn(select(sdat, starts_with("Item")), multivariateOutlierMethod = "adj", univariatePlot = "histogram", showOutliers = T))
+dev.off()
 
+estimator_cfa <- "WLSMVS" # for non-normal and ordinal data
 
-(fa_mod <- fa(select(datIMI, starts_with("Item")
-                     , -starts_with("Item07")
-                     , -starts_with("Item13")
-                     , -starts_with("Item02")), nfactors = 4))
+## kmo factor adequacy
+(kmo_mod <- KMO(cor(select(sdat, starts_with("Item")))))
 
+## factorial analysis
+(fa_mod <- fa(select( 
+  sdat
+  , starts_with("Item22"), starts_with("Item09"), starts_with("Item12"), starts_with("Item24"), starts_with("Item21"), starts_with("Item01")
+  , starts_with("Item17"), starts_with("Item15"), starts_with("Item06"), starts_with("Item02"), starts_with("Item08")
+  , starts_with("Item16"), starts_with("Item14"), starts_with("Item18"), starts_with("Item11")
+  , starts_with("Item13"), starts_with("Item03"), starts_with("Item07")
+), nfactors = 4, rotate = "varimax"))
 
-(fa_mod <- fa(select(datIMI, starts_with("Item")
-                     , -starts_with("Item07")
-                     , -starts_with("Item13")
-                     , -starts_with("Item02")
-                     , -starts_with("Item17")
-                     , -starts_with("Item21")), nfactors = 4))
-
-
-(fa_mod <- fa(select(datIMI, starts_with("Item")
-                     , -starts_with("Item07")
-                     , -starts_with("Item13")
-                     , -starts_with("Item02")
-                     , -starts_with("Item17")
-                     , -starts_with("Item21")
-                     , -starts_with("Item23")), nfactors = 4))
-
-
-(fa_mod <- fa(select(datIMI, starts_with("Item")
-          , -starts_with("Item03")
-          , -starts_with("Item05")
-          , -starts_with("Item04")
-          , -starts_with("Item07")
-          , -starts_with("Item13")
-          , -starts_with("Item19")), nfactors = 4))##
-
-## confirmatory factorial analysis with nfactor=4
-model <- '
-f1 =~ Item02+Item06+Item08+Item15+Item17+Item20
-f2 =~ Item10+Item11+Item14+Item16+Item18
-f3 =~ Item01+Item09+Item12+Item24
-f4 =~ Item21+Item22+Item23
+## validating models where orthogonal means no correlation between factors
+second_mdl <- '
+IE =~ Item22IE + Item09IE + Item12IE + Item24IE + Item21IE + Item01IE
+PC =~ Item17PC + Item15PC + Item06PC + Item02PC + Item08PC
+PT =~ Item16PT + Item14PT + Item18PT + Item11PT
+EI =~ Item13EI + Item03EI + Item07EI
+IM =~ NA*IE + PC + PT + EI
+IM ~~ 1*IM
 '
-fit <- cfa(model, data=datIMI, group = "Type", std.lv=TRUE, missing="fiml")
-summary(fit, fit.measures=TRUE, standardized=TRUE)
-fitMeasures(fit)
-factanal(~Item02+Item06+Item08+Item15+Item17+Item20
-         +Item10+Item11+Item14+Item16+Item18
-         +Item01+Item09+Item12+Item24
-         +Item21+Item22+Item23
-         , factors=4, data=datIMI)
 
-model <- '
-f1 =~ Item02+Item06+Item08+Item15+Item17+Item20
-f2 =~ Item11+Item14+Item16+Item18
-f3 =~ Item01+Item09+Item12+Item24
-f4 =~ Item22
-'
-fit <- cfa(model, data=datIMI, group = "Type", std.lv=TRUE, missing="fiml")
-summary(fit, fit.measures=TRUE, standardized=TRUE)
-fitMeasures(fit)
-factanal(~Item02+Item06+Item08+Item15+Item17+Item20
-         +Item11+Item14+Item16+Item18
-         +Item01+Item09+Item12+Item24
-         +Item22
-         , factors=4, data=datIMI)
-
-## factorial analysis with nfactor=3
-(fa_mod <- fa(select(datIMI, starts_with("Item")), nfactors = 3))
-
-(fa_mod <- fa(select(datIMI, starts_with("Item")
-                     , -starts_with("Item04")
-                     , -starts_with("Item07")
-                     , -starts_with("Item13")), nfactors = 3))
-
-(fa_mod <- fa(select(datIMI, starts_with("Item")
-                     , -starts_with("Item03")
-                     , -starts_with("Item10")
-                     , -starts_with("Item04")
-                     , -starts_with("Item07")
-                     , -starts_with("Item13")), nfactors = 3))
-
-
-
-## confirmatory factorial analysis with nfactor=3
-model <- '
-f1 =~ Item02+Item05+Item06+Item08+Item15+Item17+Item19+Item20+Item23
-f2 =~ Item01+Item09+Item12+Item21+Item22+Item24
-f3 =~ Item11+Item14+Item16+Item18
-'
-fit <- cfa(model, data=datIMI, group = "Type", std.lv=TRUE, missing="fiml")
-summary(fit, fit.measures=TRUE, standardized=TRUE)
-fitMeasures(fit)
-factanal(~Item02+Item05+Item06+Item08+Item15+Item17+Item19+Item20+Item23
-         +Item01+Item09+Item12+Item21+Item22+Item24
-         +Item11+Item14+Item16+Item18
-         , factors=3, data=datIMI)
-
-model <- '
-f1 =~ Item02+Item05+Item06+Item08+Item15+Item17+Item20+Item23
-f2 =~ Item01+Item09+Item12+Item21+Item22+Item24
-f3 =~ Item11+Item14+Item16+Item18
-'
-fit <- cfa(model, data=datIMI, group = "Type", std.lv=TRUE, missing="fiml")
-summary(fit, fit.measures=TRUE, standardized=TRUE)
-fitMeasures(fit)
-factanal(~ Item02+Item05+Item06+Item08+Item15+Item17+Item20+Item23
-         +Item01+Item09+Item12+Item21+Item22+Item24
-         +Item11+Item14+Item16+Item18
-         , factors=3, data=datIMI)
-
-(fa_mod <- fa(select(datIMI, starts_with("Item")
-                     , -starts_with("Item19")
-                     , -starts_with("Item03")
-                     , -starts_with("Item10")
-                     , -starts_with("Item04")
-                     , -starts_with("Item07")
-                     , -starts_with("Item13")), nfactors = 3))
+# select second-order model to measure intrinsic motivation
+(cfa_mod <- cfa(second_mdl, data = sdat, std.lv = T, estimator = estimator_cfa))
 
 ############################################################################
 ## Reliability Analysis Using Cronbach's alpha                            ##
 ############################################################################
 
-rdatIMI <- select(
-  datIMI, starts_with("UserID"), starts_with("NroUSP"), starts_with("Type")
-  , starts_with("CLGroup"), starts_with("CLRole"), starts_with("PlayerRole"))
+inv_keys <- c("Item17PC", "Item15PC", "Item06PC", "Item02PC", "Item08PC"
+              , "Item16PT", "Item14PT", "Item18PT"
+              , "Item13EI", "Item07EI")
+(alpha_mod <- psych::alpha(select(sdat, starts_with("Item")), keys = inv_keys))
 
-rdatIMI["Item01IE"] <- datIMI["Item01"]
-rdatIMI["Item09IE"] <- datIMI["Item09"]
-rdatIMI["Item12IE"] <- datIMI["Item12"]
-rdatIMI["Item21IE"] <- datIMI["Item21"]
-rdatIMI["Item22IE"] <- datIMI["Item22"]
-rdatIMI["Item24IE"] <- datIMI["Item24"]
+rdat <- sdat # non-one item needs to be removed
+if (!file.exists('data/IMI.csv')) {
+  write_csv(rdat, path = 'data/IMI.csv')
+}
 
-rdatIMI["Item02PC"] <- datIMI["Item02"]
-rdatIMI["Item05PC"] <- datIMI["Item05"]
-rdatIMI["Item06PC"] <- datIMI["Item06"]
-rdatIMI["Item08PC"] <- datIMI["Item08"]
-rdatIMI["Item15PC"] <- datIMI["Item15"]
-rdatIMI["Item17PC"] <- datIMI["Item17"]
-rdatIMI["Item20PC"] <- datIMI["Item20"]
-rdatIMI["Item23PC"] <- datIMI["Item23"]
-
-rdatIMI["Item11PT"] <- datIMI["Item11"]
-rdatIMI["Item14PT"] <- datIMI["Item14"]
-rdatIMI["Item16PT"] <- datIMI["Item16"]
-rdatIMI["Item18PT"] <- datIMI["Item18"]
-
-if (!file.exists('data/IMI.csv')) write_csv(rdatIMI, path = 'data/IMI.csv')
-
-alpha_mods <- list()
-
-inv_keys <- c("Item17PC", "Item15PC", "Item08PC", "Item02PC", "Item06PC", "Item20PC", "Item16PT",  "Item14PT",  "Item18PT")
-## Intrinsic Motivation
-alpha_mod <- alpha(select(rdatIMI, starts_with("Item")), keys = inv_keys)
-cat("\n... Intrinsic Motivation", " ...\n"); summary(alpha_mod)
-alpha_non_mod <- alpha(select(rdatIMI[rdatIMI$Type=="non-gamified",], starts_with("Item")), keys = inv_keys)
-cat("\n... Intrinsic Motivation", " >> ", "non-gamified", " ...\n"); summary(alpha_non_mod)
-alpha_ont_mod <- alpha(select(rdatIMI[rdatIMI$Type=="ont-gamified",], starts_with("Item")), keys = inv_keys)
-cat("\n... Intrinsic Motivation", " >> ", "ont-gamified", " ...\n"); summary(alpha_ont_mod)
-
-alpha_mods[["IM"]] <- list(all = alpha_mod, non = alpha_non_mod, ont = alpha_ont_mod)
-
-inv_keys <- c()
-## Interest/Enjoyment
-alpha_mod <- alpha(select(rdatIMI, ends_with("IE")))
-cat("\n... Interest/Enjoyment", " ...\n"); summary(alpha_mod)
-alpha_non_mod <- alpha(select(rdatIMI[rdatIMI$Type=="non-gamified",], ends_with("IE")))
-cat("\n... Interest/Enjoyment", " >> ", "non-gamified", " ...\n"); summary(alpha_non_mod)
-alpha_ont_mod <- alpha(select(rdatIMI[rdatIMI$Type=="ont-gamified",], ends_with("IE")))
-cat("\n... Interest/Enjoyment", " >> ", "ont-gamified", " ...\n"); summary(alpha_ont_mod)
-
-alpha_mods[["IE"]] <- list(all = alpha_mod, non = alpha_non_mod, ont = alpha_ont_mod)
-
-inv_keys <- c("Item17PC", "Item15PC", "Item08PC", "Item02PC", "Item06PC", "Item20PC")
-## Perceived Choice
-alpha_mod <- alpha(select(rdatIMI, ends_with("PC")), keys = inv_keys)
-cat("\n... Perceived Choice", " ...\n"); summary(alpha_mod)
-alpha_non_mod <- alpha(select(rdatIMI[rdatIMI$Type=="non-gamified",], ends_with("PC")), keys = inv_keys)
-cat("\n... Perceived Choice", " >> ", "non-gamified", " ...\n"); summary(alpha_non_mod)
-alpha_ont_mod <- alpha(select(rdatIMI[rdatIMI$Type=="ont-gamified",], ends_with("PC")), keys = inv_keys)
-cat("\n... Perceived Choice", " >> ", "ont-gamified", " ...\n"); summary(alpha_ont_mod)
-
-alpha_mods[["PC"]] <- list(all = alpha_mod, non = alpha_non_mod, ont = alpha_ont_mod)
-
-inv_keys <- c("Item11PT")
-## Pressure/Tension
-alpha_mod <- alpha(select(rdatIMI, ends_with("PT")), keys = inv_keys)
-cat("\n... Pressure/Tension", " ...\n"); summary(alpha_mod)
-alpha_non_mod <- alpha(select(rdatIMI[rdatIMI$Type=="non-gamified",], ends_with("PT")), keys = inv_keys)
-cat("\n... Pressure/Tension", " >> ", "non-gamified", " ...\n"); summary(alpha_non_mod)
-alpha_ont_mod <- alpha(select(rdatIMI[rdatIMI$Type=="ont-gamified",], ends_with("PT")), keys = inv_keys)
-cat("\n... Pressure/Tension", " >> ", "ont-gamified", " ...\n"); summary(alpha_ont_mod)
-
-alpha_mods[["PT"]] <- list(all = alpha_mod, non = alpha_non_mod, ont = alpha_ont_mod)
+# calculating alphas
+alpha_mods <- lapply(
+  list(
+    "IM" = list(
+      id = "IM",
+      dat = select(rdat, starts_with("Type"), starts_with("Item")),
+      lbl = "Intrinsic Motivation",
+      inv_keys = c("Item17PC", "Item15PC", "Item06PC", "Item02PC", "Item08PC"
+                   , "Item16PT", "Item14PT", "Item18PT"
+                   , "Item13EI", "Item07EI")),
+    "IE" = list(
+      id = "IE",
+      dat = select(rdat, starts_with("Type"), ends_with("IE")),
+      lbl = "Interest/Enjoyment",
+      inv_keys = c()),
+    "PC" = list(
+      id = "PC",
+      dat = select(rdat, starts_with("Type"), ends_with("PC")),
+      lbl = "Perceived Choice",
+      inv_keys = c()),
+    "PT" = list(
+      id = "PT",
+      dat = select(rdat, starts_with("Type"), ends_with("PT")),
+      lbl = "Pressure/Tension",
+      inv_keys = c("Item11PT")),
+    "EI" = list(
+      id = "EI",
+      dat = select(rdat, starts_with("Type"), ends_with("EI")),
+      lbl = "Effort/Importance",
+      inv_keys = c("Item13EI", "Item07EI"))
+  )
+  , FUN = function(x) {
+    alpha_mod <- psych::alpha(select(x$dat, starts_with("Item")), keys = x$inv_keys, check.keys=T)
+    
+    alpha_non_mod <- psych::alpha(select(x$dat[x$dat$Type=="non-gamified",], starts_with("Item")), keys = x$inv_keys)
+    alpha_ont_mod <- psych::alpha(select(x$dat[x$dat$Type=="ont-gamified",], starts_with("Item")), keys = x$inv_keys)
+    
+    cat("\n... ", x$lbl, " ...\n"); summary(alpha_mod)
+    cat("\n... ", x$lbl," >> ", "non-gamified", " ...\n"); summary(alpha_non_mod)
+    cat("\n... ", x$lbl," >> ", "ont-gamified", " ...\n"); summary(alpha_ont_mod)
+    
+    return(list(id = x$id, lbl = x$lbl, all = alpha_mod, non = alpha_non_mod, ont = alpha_ont_mod))
+  })
 
 ## Write results in an Excel Workbook
-if (!file.exists("report/RelAnalysisIMI.xlsx")) {
-  filename <- "report/RelAnalysisIMI.xlsx"
+filename <- "report/reliability-analysis/IMI.xlsx"
+if (!file.exists(filename)) {
   wb <- createWorkbook(type="xlsx")
   
   write_kmo_in_workbook(kmo_mod, wb)
   write_fa_in_workbook(fa_mod, wb)
-  
-  write_alpha_in_workbook(alpha_mods$IM$all, wb, "Intrinsic Motivation", "IM")
-  write_alpha_in_workbook(alpha_mods$IM$non, wb, "Intrinsic Motivation in Non-Gamified CL Sessions", "IM non-gamified")
-  write_alpha_in_workbook(alpha_mods$IM$ont, wb, "Intrinsic Motivation in Gamified CL Sessions Using Ontologies", "IM ont-gamified")
-  
-  write_alpha_in_workbook(alpha_mods$IE$all, wb, "Interest/Enjoyment", "IE")
-  write_alpha_in_workbook(alpha_mods$IE$non, wb, "Interest/Enjoyment in Non-Gamified CL Sessions", "IE non-gamified")
-  write_alpha_in_workbook(alpha_mods$IE$ont, wb, "Interest/Enjoyment in Gamified CL Sessions Using Ontologies", "IE ont-gamified")
-  
-  write_alpha_in_workbook(alpha_mods$PC$all, wb, "Perceived Choice", "PC")
-  write_alpha_in_workbook(alpha_mods$PC$non, wb, "Perceived Choice in Non-Gamified CL Sessions", "PC non-gamified")
-  write_alpha_in_workbook(alpha_mods$PC$ont, wb, "Perceived Choice in Gamified CL Sessions Using Ontologies", "PC ont-gamified")
-  
-  write_alpha_in_workbook(alpha_mods$PT$all, wb, "Pressure/Tension", "PT")
-  write_alpha_in_workbook(alpha_mods$PT$non, wb, "Pressure/Tension in Non-Gamified CL Sessions", "PT non-gamified")
-  write_alpha_in_workbook(alpha_mods$PT$ont, wb, "Pressure/Tension in Gamified CL Sessions Using Ontologies", "PT ont-gamified")
+  lapply(alpha_mods, FUN = function(mod){
+    write_alpha_in_workbook(mod$all, wb, mod$lbl, mod$id)
+    write_alpha_in_workbook(mod$non, wb, paste(mod$lbl, "in Non-Gamified CL Sessions"), paste(mod$id, "non-gamified"))
+    write_alpha_in_workbook(mod$ont, wb, paste(mod$lbl, "in Ont-Gamified CL Sessions"), paste(mod$id, "ont-gamified"))
+  })
   
   xlsx::saveWorkbook(wb, filename)
 }
 
+# Export summaries in latex format
+filename <- "report/latex/IMI-reliability-analysis.tex"
+if (!file.exists(filename)) {
+  write_rel_analysis_in_latex(
+    fa_mod, cfa_mod, alpha_mods
+    , in_title = "adapted Portuguese IMI"
+    , filename = filename
+    , key_labels = list('Global'='all', 'Non-Gamified'='non','Ont-Gamified'='ont')
+    , robust = T
+  )
+}

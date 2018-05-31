@@ -1,0 +1,62 @@
+
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\section{Summaries of Parametric Statistics Analysis for the latent trait estimates of Interest/Enjoyment in the first empirical study}
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrr}\caption{Summary of two-way ANOVA results  for the latent trait estimates of Interest/Enjoyment in the first empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$ 0.421$&$ 1$&$0.419$&$0.520$&$$\tabularnewline
+Type.Type&$ 0.946$&$ 1$&$0.942$&$0.336$&$$\tabularnewline
+Type.CLRole&$ 0.268$&$ 1$&$0.267$&$0.607$&$$\tabularnewline
+Type.Type:CLRole&$ 2.003$&$ 1$&$1.993$&$0.164$&$$\tabularnewline
+Type.Residuals&$52.258$&$52$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\raggedleft{ \scriptsize{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }} 
+
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = T,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables\begin{landscape}{\small
+\begin{longtable}{lrrrrrrrrrrrrr}\caption{Descriptive statistics and Tukey post-hoc test results  for the latent trait estimates of Interest/Enjoyment in the first empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.non-gamified&$28$&$-0.217$&$-0.217$&$0.189$&$52$&$-0.597$&$0.163$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified&$28$&$ 0.062$&$ 0.043$&$0.190$&$52$&$-0.338$&$0.424$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified - ont-gamified&$56$&$-0.279$&$-0.260$&$0.268$&$$&$-0.816$&$0.259$&$-0.970$&$0.336$&$0.303$&$-0.274$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice&$14$&$-0.097$&$-0.097$&$0.268$&$52$&$-0.635$&$0.441$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Apprentice&$13$&$-0.215$&$-0.215$&$0.278$&$52$&$-0.773$&$0.343$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice - ont-gamified.Apprentice&$27$&$ 0.118$&$ 0.118$&$0.386$&$$&$-0.906$&$1.143$&$ 0.307$&$0.760$&$0.990$&$ 0.106$&$$&$$\tabularnewline
+Type.non-gamified.Master&$14$&$-0.337$&$-0.337$&$0.268$&$52$&$-0.875$&$0.201$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Master&$15$&$ 0.302$&$ 0.302$&$0.259$&$52$&$-0.217$&$0.821$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Master - ont-gamified.Master&$29$&$-0.639$&$-0.639$&$0.373$&$$&$-1.628$&$0.350$&$-1.715$&$0.092$&$0.326$&$-0.678$&$$&$$\tabularnewline
+\hline
+\end{longtable}}\end{landscape}
+\raggedleft{ \scriptsize{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }} 
+
+
+\end{document}

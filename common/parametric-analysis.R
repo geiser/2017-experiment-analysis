@@ -12,6 +12,82 @@ library(afex)
 #############################################################################
 
 ## Function to get ids for anova
+get_winsorized_values <- function(
+  dat, wid, dv, iv, between, observed = NULL, only.first.level = T) {
+  
+  ## wide data and factorize
+  wdat <- dat
+  columns <- base::unique(c(iv, between, observed))
+  for (cname in columns) {
+    if (class(wdat[[cname]]) != "numeric") {
+      wdat[[cname]] <- factor(wdat[[cname]])
+    }
+  }
+  rownames(wdat) <- wdat[[wid]]
+  
+  columns <- unique(c(iv, columns[!columns %in% iv]))
+  for (m in 1:length(columns)) {
+    comb_columns <- combn(columns, m, simplify = T)
+    
+    for (i in 1:ncol(comb_columns)) {
+      selected_columns  <- comb_columns[,i]
+      if (selected_columns[[1]] != iv) next
+      
+      cname <- paste0(selected_columns, collapse = ':')
+      factors <- factor(apply(wdat[selected_columns], 1, paste, collapse='.'))
+      level_pairs <- combn(levels(factors), 2)
+      
+      for (j in 1:ncol(level_pairs)) {
+        level_pair <- level_pairs[,j]
+        rdat2 <- wdat[factors %in% level_pair,]
+        
+        repeat {
+          y <- rdat2[[dv]]
+          x <- factors[factors %in% level_pair]
+          
+          out_x1 <- x[x == level_pair[[1]]]
+          out_x2 <- x[x == level_pair[[2]]]
+          
+          if (length(out_x1) < 3 || length(out_x2) < 3) break
+          
+          out_yA <- y[x == level_pair[[1]]]
+          out_yB <- y[x == level_pair[[2]]]
+          
+          out_y1 <- robustHD::winsorize(y[x == level_pair[[1]]])
+          out_y2 <- robustHD::winsorize(y[x == level_pair[[2]]])
+          
+          if (any(is.na(out_y1)) || any(is.na(out_y2))) break
+          
+          idx1 <- round(out_yA,3) != round(out_y1,3)
+          idx2 <- round(out_yB,3) != round(out_y2,3)
+          
+          #
+          wids1 <- attributes(out_x1[idx1])$names
+          wids2 <- attributes(out_x2[idx2])$names
+          if (length(wids1) > 0) {
+            for (k in 1:length(wids1)) {
+              wid1 <- wids1[[k]]
+              wdat[wid1,dv] <- out_y1[idx1][[k]]
+            }
+          }
+          if (length(wids2) > 0) {
+            for (k in 1:length(wids2)) {
+              wid2 <- wids2[[k]]
+              wdat[wid2,dv] <- out_y2[idx2][[k]]
+            }
+          }
+          
+          if (only.first.level) break
+        }
+      }
+    }
+  }
+  
+  return(wdat)
+}
+
+
+## Function to get ids for anova
 get_ids_outliers <- function(
   dat, wid, dv, iv, between, observed = NULL, only.first.level = T) {
   
@@ -86,7 +162,7 @@ get_t.test_mod <- function(x, y, alternative = "two.sided") {
   std_deviation <- c(sd(sdata$y[sdata$x == levels(x)[1]]), sd(sdata$y[sdata$x == levels(x)[2]]))
   sems <- std_deviation/sqrt(numbers)
   
-  effectsize_mod <- cohen.d(sdata$y[sdata$x == levels(x)[1]], sdata$y[sdata$x == levels(x)[2]], hedges.correction = T)
+  effectsize_mod <- effsize::cohen.d(sdata$y[sdata$x == levels(x)[1]], sdata$y[sdata$x == levels(x)[2]], hedges.correction = T)
   magnitudes <- c(as.character(effectsize_mod$magnitude), as.character(effectsize_mod$magnitude))
   
   result <- data.frame(
@@ -171,7 +247,8 @@ test_min_size_mod <- function(data, iv, between, observed, type = 'parametric') 
 
 ## Function to perform the parametric test
 do_parametric_test <- function(dat, wid, dv, iv, between, observed = NULL
-                               , within = NULL, p_limit = 0.05, completed = F) {
+                               , within = NULL, p_limit = 0.05, completed = F
+                               , cstratify = NULL) {
   library(car)
   library(afex)
   library(dplyr)
@@ -215,6 +292,28 @@ do_parametric_test <- function(dat, wid, dv, iv, between, observed = NULL
     descriptions <- c(descriptions, 'Null hypothesis of Shapiro test rejected')
     error_warning_list <- c(error_warning_list, 'The null hypothesis "H0: sample is normality distributed" has been rejected - The sample is not normal')
     codes <- c(codes, "FAIL: Shapiro")
+    
+    ## stratify
+    if (!is.null(cstratify) && length(cstratify) > 0) {
+      normality.fail <- FALSE
+      normality.fail <- any(sapply(cstratify, FUN = function(sname) {
+        norm.fails <- sapply(levels(wdat[[sname]]), FUN = function(svalue) {
+          tdat <- wdat[wdat[[sname]] == svalue,]
+          tezAov <- aov_ez(data = tdat, id = wid, dv = dv
+                           , between = between[!between %in% sname]
+                           , within = within[!within %in% sname]
+                           , observed = observed[!observed %in% sname]
+                           , type = type, print.formula = T, factorize = F)
+          return(shapiro.test(tezAov$aov$residuals)$p.value <= p_limit)
+        })
+        return(any(norm.fails))
+      }))
+      if (normality.fail) {
+        descriptions <- c(descriptions, '(Stratify) Null hypothesis of Shapiro test rejected')
+        error_warning_list <- c(error_warning_list, '(Stratify) The null hypothesis "H0: sample is normality distributed" has been rejected - The sample is not normal')
+        codes <- c(codes, "(Stratify) FAIL: Shapiro")
+      }
+    }
   }
   
   homogeneity.fail <- FALSE
@@ -225,10 +324,30 @@ do_parametric_test <- function(dat, wid, dv, iv, between, observed = NULL
     descriptions <- c(descriptions, "Null hypothesis of Levene's Test rejected")
     error_warning_list <- c(error_warning_list, 'The null hypothesis "H0: homogeneity of variance" has been rejected - There is a difference between the variances of sample')
     codes <- c(codes, "FAIL: Levene's")
+    
+    ## stratify
+    if (!is.null(cstratify) && length(cstratify) > 0) {
+      homogeneity.fail <- FALSE
+      homogeneity.fail <- any(sapply(cstratify, FUN = function(sname) {
+        homo.fails <- sapply(levels(wdat[[sname]]), FUN = function(svalue) {
+          tdat <- wdat[wdat[[sname]] == svalue,]
+          tformula_aov <- as.formula(
+            paste(paste0('`',dv,'`'), "~", paste(c(between[!between %in% sname], within[!within %in% sname]), collapse = "*"),
+                  if (length(within) > 0) paste0("+Error(", wid, "/(", paste(within[!within %in% sname], collapse = "*"), "))") else NULL))
+          return(leveneTest(tformula_aov, data = tdat)$`Pr(>F)`[[1]] <= p_limit)
+        })
+        return(any(homo.fails))
+      }))
+      if (homogeneity.fail) {
+        descriptions <- c(descriptions, "(Stratify) Null hypothesis of Levene's Test rejected")
+        error_warning_list <- c(error_warning_list, '(Stratify) The null hypothesis "H0: homogeneity of variance" has been rejected - There is a difference between the variances of sample')
+        codes <- c(codes, "(Stratify) FAIL: Levene's")
+      }
+    }
   }
   
   ## post-hoc test
-  tukey_mod <- TukeyHSD(ezAov$aov)
+  tukey_mod <- TukeyHSD(ezAov$aov, ordered = T)
   
   df_lsmeans <- list()
   df_contrasts <- list()
@@ -254,7 +373,7 @@ do_parametric_test <- function(dat, wid, dv, iv, between, observed = NULL
   for (m in 1:length(columns)) {
     comb_columns <- combn(columns, m, simplify = T)
     for (i in 1:ncol(comb_columns)) {
-      selected_columns  <- comb_columns[,i] 
+      selected_columns  <- comb_columns[,i]
       if (!completed && selected_columns[[1]] != iv) next
       cname <- paste0(selected_columns, collapse = ':')
       factors <- factor(apply(wdat[selected_columns], 1, paste, collapse='.'))
@@ -721,3 +840,91 @@ write_parametric_test_report <- function(
   }
 }
 
+##
+winsorize_two_by_two_design <- function(
+  participants, sdat_map, list_dvs, wid = "UserID", ivs_list = list(
+    iv1 = list(iv = "Type", values = c("non-gamified", "ont-gamified"))
+    , iv2 = list(iv = "CLRole", values = c("Master", "Apprentice")))) {
+  library(MVN)
+  library(daff)
+  library(robustHD)
+  
+  library(readr)
+  library(dplyr)
+  
+  
+  wdat_map <- lapply(list_dvs, FUN = function(dv) {
+    wdat <- sdat_map[[dv]]
+    winsorize_dv <- robustHD::winsorize(wdat[[dv]])
+    if (all(!is.na(winsorize_dv))) {
+      wdat[[dv]] <- winsorize_dv
+    }
+    wdat$theta <- wdat[[dv]]
+    return(wdat)
+  })
+  
+  wdat_map <- lapply(list_dvs, FUN = function(dv) {
+    return(do.call(rbind, lapply(
+      list(
+        "iv1_1" = list(
+          p1 = list(iv = ivs_list$iv1$iv, value = ivs_list$iv1$values[[1]])),
+        "iv1_2" = list(
+          p1 = list(iv = ivs_list$iv1$iv, value = ivs_list$iv1$values[[2]]))
+      )
+      , FUN = function(params) {
+        wdat <- wdat_map[[dv]]
+        idx <- (wdat[[params$p1$iv]] == params$p1$value)
+        wdat <- wdat[idx,]
+        winsorize_dv <- robustHD::winsorize(wdat[[dv]])
+        if (all(!is.na(winsorize_dv))) {
+          wdat[[dv]] <- winsorize_dv
+        }
+        wdat$theta <- wdat[[dv]]
+        return(wdat)
+      }
+    )))
+  })
+  
+  wdat_map <- lapply(list_dvs, FUN = function(dv) {
+    return(do.call(rbind, lapply(
+      list(
+        "iv1_1_iv2_1" = list(
+          p1 = list(iv = ivs_list$iv1$iv, value = ivs_list$iv1$values[[1]]),
+          p2 = list(iv = ivs_list$iv2$iv, value = ivs_list$iv2$values[[1]])),
+        "iv1_1_iv2_2" = list(
+          p1 = list(iv = ivs_list$iv1$iv, value = ivs_list$iv1$values[[1]]),
+          p2 = list(iv = ivs_list$iv2$iv, value = ivs_list$iv2$values[[2]])),
+        "iv1_2_iv2_1" = list(
+          p1 = list(iv = ivs_list$iv1$iv, value = ivs_list$iv1$values[[2]]),
+          p2 = list(iv = ivs_list$iv2$iv, value = ivs_list$iv2$values[[1]])),
+        "iv2_2_iv2_2" = list(
+          p1 = list(iv = ivs_list$iv1$iv, value = ivs_list$iv1$values[[2]]),
+          p2 = list(iv = ivs_list$iv2$iv, value = ivs_list$iv2$values[[2]]))
+      )
+      , FUN = function(params) {
+        wdat <- wdat_map[[dv]]
+        idx <- (wdat[[params$p1$iv]] == params$p1$value
+                & wdat[[params$p2$iv]] == params$p2$value)
+        wdat <- wdat[idx,]
+        winsorize_dv <- robustHD::winsorize(wdat[[dv]])
+        if (all(!is.na(winsorize_dv))) {
+          wdat[[dv]] <- winsorize_dv
+        }
+        wdat$theta <- wdat[[dv]]
+        return(wdat)
+      }
+    )))
+  })
+  
+  ##
+  sdat <- participants
+  wdat <- participants
+  for (dv in names(list_dvs)) {
+    sdat <- merge(sdat, sdat_map[[dv]][,c(wid, dv)], by = wid)
+    wdat <- merge(wdat, wdat_map[[dv]][,c(wid, dv)], by = wid)
+  }
+  rownames(sdat) <- sdat[[wid]]
+  rownames(wdat) <- wdat[[wid]]
+  
+  return(list(sdat = sdat, wdat = wdat, diff_dat = diff_data(sdat, wdat)))
+}

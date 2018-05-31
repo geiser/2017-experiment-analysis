@@ -1,0 +1,36 @@
+
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\section{Summary of Carless Responses}
+%latex.default(as.data.frame(dd$get_data()), rowname = NULL, caption = paste("Summary of careless responses",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{llllllll}\caption{Summary of careless responses in the IMMS data collected over the third empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{c}{@@}&\multicolumn{1}{c}{UserID}&\multicolumn{1}{c}{Item01}&\multicolumn{1}{c}{Item02}&\multicolumn{1}{c}{Item03}&\multicolumn{1}{c}{Item04}&\multicolumn{1}{c}{Item06}&\multicolumn{1}{c}{...}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{c}{@@}&\multicolumn{1}{c}{UserID}&\multicolumn{1}{c}{Item01}&\multicolumn{1}{c}{Item02}&\multicolumn{1}{c}{Item03}&\multicolumn{1}{c}{Item04}&\multicolumn{1}{c}{Item06}&\multicolumn{1}{c}{...}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{as.data.frame}
+...&...&...&...&...&...&...&...\tabularnewline
+&10193&1&1&1&2&1&...\tabularnewline
+---&10196&4&4&4&4&4&...\tabularnewline
+&10197&7&5&3&7&5&...\tabularnewline
+...&...&...&...&...&...&...&...\tabularnewline
+&10210&1&1&1&1&1&...\tabularnewline
+---&10211&4&4&4&4&4&...\tabularnewline
+&10213&5&7&7&5&7&...\tabularnewline
+...&...&...&...&...&...&...&...\tabularnewline
+&10238&4&5&5&4&5&...\tabularnewline
+---&10240&4&4&4&4&4&...\tabularnewline
+\hline
+\end{longtable}}
+\end{document}

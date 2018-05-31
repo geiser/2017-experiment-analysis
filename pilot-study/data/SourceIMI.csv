@@ -1,31 +1,31 @@
 UserID,Type,CLGroup,CLRole,PlayerRole,Item01,Item02,Item03,Item04,Item05,Item06,Item07,Item08,Item09,Item10,Item11,Item12,Item13,Item14,Item15,Item16,Item17,Item18,Item19,Item20,Item21,Item22,Item23,Item24
-10116.0,non-gamified,GroupC,Master,NA,3.0,7.0,4.0,4.0,2.0,6.0,4.0,4.0,4.0,3.0,2.0,2.0,4.0,2.0,5.0,4.0,4.0,2.0,1.0,5.0,4.0,4.0,2.0,6.0
-10120.0,ont-gamified,Grupo Hélio,Master,Yee Socializer,7.0,3.0,7.0,7.0,6.0,2.0,1.0,1.0,6.0,4.0,6.0,5.0,3.0,2.0,1.0,1.0,1.0,1.0,5.0,4.0,6.0,6.0,6.0,5.0
-10121.0,ont-gamified,Grupo Hades,Master,Yee Achiever,1.0,2.0,5.0,5.0,2.0,2.0,3.0,2.0,6.0,5.0,3.0,6.0,3.0,3.0,4.0,5.0,3.0,2.0,2.0,2.0,5.0,5.0,5.0,4.0
-10122.0,non-gamified,GroupB,Apprentice,NA,2.0,3.0,3.0,5.0,3.0,2.0,2.0,2.0,1.0,1.0,2.0,2.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
-10123.0,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,2.0,5.0,3.0,4.0,3.0,2.0,3.0,3.0,2.0,3.0,4.0,3.0,3.0,4.0,3.0,2.0,3.0,4.0,4.0,5.0,3.0,3.0,4.0,3.0
-10126.0,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,5.0,2.0,5.0,7.0,6.0,2.0,5.0,1.0,6.0,6.0,3.0,6.0,1.0,2.0,2.0,1.0,2.0,1.0,2.0,2.0,6.0,5.0,5.0,4.0
-10127.0,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,4.0,2.0,5.0,7.0,6.0,3.0,5.0,4.0,6.0,3.0,5.0,6.0,6.0,2.0,3.0,4.0,4.0,2.0,4.0,1.0,6.0,7.0,4.0,6.0
-10128.0,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,1.0,4.0,1.0,1.0,7.0,1.0,7.0,7.0,1.0,1.0,1.0,1.0,7.0,1.0,1.0,1.0,1.0,1.0,7.0,7.0,1.0,1.0,1.0,1.0
-10129.0,non-gamified,GroupB,Apprentice,NA,1.0,7.0,7.0,4.0,2.0,4.0,2.0,4.0,2.0,5.0,1.0,1.0,5.0,7.0,5.0,5.0,4.0,7.0,4.0,2.0,3.0,1.0,1.0,1.0
-10130.0,non-gamified,GroupC,Apprentice,NA,4.0,3.0,6.0,5.0,4.0,5.0,2.0,5.0,5.0,6.0,2.0,4.0,1.0,4.0,4.0,5.0,4.0,5.0,5.0,3.0,5.0,5.0,3.0,5.0
-10131.0,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,4.0,5.0,6.0,7.0,4.0,7.0,1.0,2.0,5.0,6.0,6.0,7.0,3.0,1.0,7.0,2.0,7.0,2.0,7.0,1.0,7.0,7.0,1.0,7.0
-10132.0,non-gamified,GroupA,Apprentice,NA,1.0,7.0,7.0,6.0,4.0,4.0,3.0,4.0,1.0,6.0,3.0,1.0,3.0,2.0,3.0,2.0,2.0,2.0,7.0,7.0,1.0,1.0,2.0,1.0
-10134.0,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,2.0,6.0,4.0,4.0,3.0,3.0,4.0,6.0,2.0,4.0,2.0,2.0,4.0,3.0,5.0,3.0,5.0,3.0,4.0,4.0,2.0,2.0,2.0,2.0
-10135.0,non-gamified,GroupB,Apprentice,NA,5.0,4.0,5.0,7.0,7.0,1.0,5.0,6.0,5.0,7.0,5.0,5.0,2.0,4.0,2.0,4.0,2.0,4.0,2.0,2.0,5.0,5.0,6.0,2.0
-10136.0,non-gamified,GroupC,Apprentice,NA,1.0,7.0,3.0,1.0,1.0,6.0,6.0,7.0,1.0,4.0,4.0,1.0,5.0,1.0,5.0,3.0,7.0,7.0,4.0,6.0,1.0,1.0,1.0,1.0
-10137.0,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,5.0,1.0,5.0,4.0,5.0,1.0,1.0,1.0,5.0,5.0,7.0,6.0,1.0,1.0,4.0,1.0,1.0,1.0,3.0,1.0,6.0,5.0,4.0,6.0
-10138.0,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,3.0,4.0,7.0,7.0,4.0,6.0,1.0,3.0,6.0,7.0,3.0,6.0,1.0,4.0,5.0,4.0,4.0,2.0,4.0,2.0,5.0,4.0,3.0,4.0
-10139.0,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,1.0,4.0,5.0,7.0,7.0,4.0,5.0,1.0,6.0,5.0,7.0,3.0,4.0,4.0,7.0,3.0,1.0,1.0,1.0,1.0,5.0,3.0,4.0,4.0
-10140.0,non-gamified,GroupC,Apprentice,NA,1.0,4.0,3.0,2.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,1.0,5.0,6.0,4.0,4.0,4.0,5.0,4.0,5.0,4.0,2.0,1.0,2.0
-10141.0,ont-gamified,Grupo Apolo,Master,Yee Socializer,2.0,4.0,5.0,4.0,4.0,6.0,3.0,4.0,5.0,4.0,4.0,3.0,5.0,4.0,4.0,3.0,4.0,1.0,5.0,3.0,5.0,5.0,5.0,4.0
-10142.0,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,4.0,6.0,4.0,7.0,1.0,3.0,3.0,4.0,6.0,4.0,7.0,4.0,2.0,1.0,4.0,4.0,4.0,1.0,5.0,2.0,4.0,4.0,1.0,6.0
-10143.0,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,4.0,4.0,6.0,6.0,5.0,3.0,2.0,2.0,4.0,5.0,3.0,4.0,2.0,2.0,4.0,3.0,2.0,2.0,2.0,2.0,5.0,4.0,4.0,4.0
-10145.0,non-gamified,GroupB,Master,NA,1.0,7.0,7.0,4.0,1.0,4.0,1.0,4.0,4.0,7.0,4.0,4.0,1.0,4.0,7.0,4.0,4.0,4.0,4.0,7.0,3.0,2.0,1.0,4.0
-10146.0,non-gamified,GroupA,Apprentice,NA,5.0,3.0,6.0,6.0,6.0,3.0,2.0,2.0,5.0,6.0,7.0,5.0,1.0,3.0,4.0,3.0,3.0,3.0,3.0,3.0,5.0,5.0,5.0,5.0
-10148.0,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,4.0,3.0,6.0,4.0,4.0,1.0,1.0,1.0,4.0,6.0,2.0,4.0,2.0,2.0,4.0,5.0,3.0,5.0,4.0,1.0,6.0,5.0,2.0,3.0
-10149.0,non-gamified,GroupA,Apprentice,NA,4.0,3.0,7.0,1.0,1.0,7.0,5.0,7.0,1.0,7.0,1.0,1.0,1.0,7.0,6.0,7.0,6.0,5.0,7.0,7.0,7.0,1.0,1.0,1.0
-10152.0,ont-gamified,Grupo Morfeu,Master,Yee Achiever,7.0,3.0,7.0,6.0,7.0,4.0,7.0,1.0,7.0,5.0,4.0,7.0,5.0,3.0,2.0,2.0,2.0,2.0,7.0,2.0,7.0,7.0,7.0,7.0
-10153.0,non-gamified,GroupA,Apprentice,NA,5.0,4.0,5.0,5.0,7.0,3.0,2.0,2.0,5.0,4.0,4.0,5.0,5.0,2.0,6.0,2.0,5.0,2.0,4.0,4.0,3.0,6.0,5.0,4.0
-10154.0,non-gamified,GroupC,Apprentice,NA,3.0,6.0,5.0,4.0,2.0,6.0,3.0,5.0,4.0,4.0,2.0,2.0,5.0,2.0,6.0,6.0,6.0,3.0,4.0,7.0,1.0,1.0,2.0,2.0
-10158.0,non-gamified,GroupD,Apprentice,NA,7.0,3.0,7.0,7.0,4.0,4.0,1.0,1.0,6.0,2.0,7.0,7.0,1.0,1.0,4.0,1.0,1.0,1.0,2.0,2.0,6.0,7.0,4.0,6.0
+10116,non-gamified,GroupC,Master,NA,3,7,4,4,2,6,4,4,4,3,2,2,4,2,5,4,4,2,1,5,4,4,2,6
+10120,ont-gamified,Grupo Hélio,Master,Yee Socializer,7,3,7,7,6,2,1,1,6,4,6,5,3,2,1,1,1,1,5,4,6,6,6,5
+10121,ont-gamified,Grupo Hades,Master,Yee Achiever,1,2,5,5,2,2,3,2,6,5,3,6,3,3,4,5,3,2,2,2,5,5,5,4
+10122,non-gamified,GroupB,Apprentice,NA,2,3,3,5,3,2,2,2,1,1,2,2,2,1,1,1,1,1,1,1,1,1,1,1
+10123,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,2,5,3,4,3,2,3,3,2,3,4,3,3,4,3,2,3,4,4,5,3,3,4,3
+10126,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,5,2,5,7,6,2,5,1,6,6,3,6,1,2,2,1,2,1,2,2,6,5,5,4
+10127,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,4,2,5,7,6,3,5,4,6,3,5,6,6,2,3,4,4,2,4,1,6,7,4,6
+10128,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,1,4,1,1,7,1,7,7,1,1,1,1,7,1,1,1,1,1,7,7,1,1,1,1
+10129,non-gamified,GroupB,Apprentice,NA,1,7,7,4,2,4,2,4,2,5,1,1,5,7,5,5,4,7,4,2,3,1,1,1
+10130,non-gamified,GroupC,Apprentice,NA,4,3,6,5,4,5,2,5,5,6,2,4,1,4,4,5,4,5,5,3,5,5,3,5
+10131,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,4,5,6,7,4,7,1,2,5,6,6,7,3,1,7,2,7,2,7,1,7,7,1,7
+10132,non-gamified,GroupA,Apprentice,NA,1,7,7,6,4,4,3,4,1,6,3,1,3,2,3,2,2,2,7,7,1,1,2,1
+10134,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,2,6,4,4,3,3,4,6,2,4,2,2,4,3,5,3,5,3,4,4,2,2,2,2
+10135,non-gamified,GroupB,Apprentice,NA,5,4,5,7,7,1,5,6,5,7,5,5,2,4,2,4,2,4,2,2,5,5,6,2
+10136,non-gamified,GroupC,Apprentice,NA,1,7,3,1,1,6,6,7,1,4,4,1,5,1,5,3,7,7,4,6,1,1,1,1
+10137,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever,5,1,5,4,5,1,1,1,5,5,7,6,1,1,4,1,1,1,3,1,6,5,4,6
+10138,ont-gamified,Grupo Hélio,Apprentice,Yee Socializer,3,4,7,7,4,6,1,3,6,7,3,6,1,4,5,4,4,2,4,2,5,4,3,4
+10139,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever,1,4,5,7,7,4,5,1,6,5,7,3,4,4,7,3,1,1,1,1,5,3,4,4
+10140,non-gamified,GroupC,Apprentice,NA,1,4,3,2,4,4,4,4,4,4,4,1,5,6,4,4,4,5,4,5,4,2,1,2
+10141,ont-gamified,Grupo Apolo,Master,Yee Socializer,2,4,5,4,4,6,3,4,5,4,4,3,5,4,4,3,4,1,5,3,5,5,5,4
+10142,ont-gamified,Grupo Hades,Apprentice,Yee Achiever,4,6,4,7,1,3,3,4,6,4,7,4,2,1,4,4,4,1,5,2,4,4,1,6
+10143,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,4,4,6,6,5,3,2,2,4,5,3,4,2,2,4,3,2,2,2,2,5,4,4,4
+10145,non-gamified,GroupB,Master,NA,1,7,7,4,1,4,1,4,4,7,4,4,1,4,7,4,4,4,4,7,3,2,1,4
+10146,non-gamified,GroupA,Apprentice,NA,5,3,6,6,6,3,2,2,5,6,7,5,1,3,4,3,3,3,3,3,5,5,5,5
+10148,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer,4,3,6,4,4,1,1,1,4,6,2,4,2,2,4,5,3,5,4,1,6,5,2,3
+10149,non-gamified,GroupA,Apprentice,NA,4,3,7,1,1,7,5,7,1,7,1,1,1,7,6,7,6,5,7,7,7,1,1,1
+10152,ont-gamified,Grupo Morfeu,Master,Yee Achiever,7,3,7,6,7,4,7,1,7,5,4,7,5,3,2,2,2,2,7,2,7,7,7,7
+10153,non-gamified,GroupA,Apprentice,NA,5,4,5,5,7,3,2,2,5,4,4,5,5,2,6,2,5,2,4,4,3,6,5,4
+10154,non-gamified,GroupC,Apprentice,NA,3,6,5,4,2,6,3,5,4,4,2,2,5,2,6,6,6,3,4,7,1,1,2,2
+10158,non-gamified,GroupD,Apprentice,NA,7,3,7,7,4,4,1,1,6,2,7,7,1,1,4,1,1,1,2,2,6,7,4,6

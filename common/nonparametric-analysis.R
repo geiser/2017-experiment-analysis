@@ -142,9 +142,20 @@ do_nonparametric_test <- function(dat, wid, dv, iv, between, observed = NULL
   dv_tmp <- gsub('\\W', '', dv) # temporal name for dependent variable
   wdat[[dv_tmp]] <- wdat[[dv]]
   
-  # get_Scheirer Ray Hare test module
+  mod <- NULL
+  post_hoc <- NULL
   formula_str <- paste(dv_tmp, "~", paste(columns, collapse = "+"))
-  sch_mod <- scheirerRayHare(formula = as.formula(formula_str), data = wdat)
+  if (length(columns) == 1) {
+    # get_Scheirer Kruskal
+    mod <- kruskal.test(as.formula(formula_str), data = wdat)
+    mod_df <- as.data.frame(list(`chi-square` = mod$statistic
+                                 , df = mod$parameter
+                                 , `p.value` = mod$p.value))
+  } else if (length(columns) == 2) {
+    # get_Scheirer Ray Hare test module
+    mod <- scheirerRayHare(formula = as.formula(formula_str), data = wdat)
+    mod_df <- as.data.frame(mod)
+  }
   
   # Post.hoc Dunn test
   dunn_mods <- list()
@@ -161,13 +172,15 @@ do_nonparametric_test <- function(dat, wid, dv, iv, between, observed = NULL
       dunn_mods[[cname]] <- dunnTest(x = wdat[[dv_tmp]], g = factors, method = "bonferroni")
     }
   }
+  post_hoc <- list(mods = dunn_mods)
   
-  wdat <- wdat[ , !(names(wdat) %in% c(dv_tmp))]
-  
+  if (dv_tmp != dv) {
+    wdat <- wdat[ , !(names(wdat) %in% c(dv_tmp))]
+  }
   set_wt_mods <- get_wilcox_mods(dat, dv = dv, iv = iv, between = between)
   
-  return(list(data = wdat, sch = sch_mod, formula.str = formula_str
-              , post.hoc = list(mods = dunn_mods), wilcox.pairs = set_wt_mods))
+  return(list(data = wdat, mod = mod, mod.df = mod_df, formula.str = formula_str
+              , post.hoc = post_hoc, wilcox.pairs = set_wt_mods))
 }
 
 ##############################################################
@@ -209,7 +222,7 @@ write_wts_in_wb <- function(wt_mods, wb, iv, i, title = "", ylab = "Score", ylim
   
   xlsx.addLineBreak(sheet, 2)
   xlsx.addHeader(wb, sheet, "Wilcoxon data", level = 2, startCol = 1)
-  xlsx.addTable(wb, sheet, wt_mod$dat, startCol = 1, row.names = F)
+  xlsx.addTable(wb, sheet, as.data.frame(wt_mod$dat), startCol = 1, row.names = F)
 }
 
 ## Function to write summary of set wt mods
@@ -285,12 +298,12 @@ write_sch_summary_in_wb <- function(n_result, wb, title = "") {
   
   library(r2excel)
   
-  sheet <- xlsx::createSheet(wb, sheetName = "SRH test")
-  xlsx.addHeader(wb, sheet, paste0("Summary of Scheirer Ray Hare test for ", title), startCol = 1)
+  sheet <- xlsx::createSheet(wb, sheetName = "NonParametricTest")
+  xlsx.addHeader(wb, sheet, paste0("Summary of ", n_result$mod$method, " for ", title), startCol = 1)
   
   xlsx.addLineBreak(sheet, 2)
-  xlsx.addHeader(wb, sheet, paste0("Scheirer Table: ", n_result$formula.str), level = 2, startCol = 1)
-  xlsx.addTable(wb, sheet, as.data.frame(n_result$sch), startCol = 1, row.names = T)
+  xlsx.addHeader(wb, sheet, paste0(n_result$mod$method," Table: ", n_result$formula.str), level = 2, startCol = 1)
+  xlsx.addTable(wb, sheet, as.data.frame(n_result$mod.df), startCol = 1, row.names = T)
   
   xlsx.addLineBreak(sheet, 2)
   xlsx.addHeader(wb, sheet, "Post-hoc Multiple test", level = 2, startCol = 1)
@@ -320,7 +333,7 @@ write_nonparametric_test_report <- function(n_result, filename, title = "", ylab
     if (is.null(data)) data <- n_result$data
     
     sheet <- xlsx::createSheet(wb, sheetName = "data")
-    xlsx.addTable(wb, sheet, data, startCol = 1, row.names = F)
+    xlsx.addTable(wb, sheet, as.data.frame(data), startCol = 1, row.names = F)
     
     ##
     saveWorkbook(wb, filename)
