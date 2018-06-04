@@ -340,7 +340,7 @@ test_lav <- function(tam_mod = NULL, estimator = "ML", resp = NULL) {
     lav_rmsea_upr_val <- tryCatch(as.numeric(fitMeasures(lav_mod, "rmsea.ci.upper")), error = function(e) NA)
     lav_rmsea_pvalue_val <- tryCatch(as.numeric(fitMeasures(lav_mod, "rmsea.pvalue")), error = function(e) NA)
     
-    if (estimator %in% c("ULS", "DWLS", "ULSM", "ULSMV", "WLSMVS")) {
+    if (estimator %in% c("MLR","ULS", "DWLS", "ULSM", "ULSMV", "WLSMVS")) {
       lav_df_val <- as.numeric(fitMeasures(lav_mod, "df.scaled"))
       lav_chisq_val <- as.numeric(fitMeasures(lav_mod, "chisq.scaled"))
       

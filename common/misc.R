@@ -64,3 +64,58 @@ score_programming_tasks = function(dat, keys, corr_str = 'corr', nview_str = 'nv
   return(dat)
 }
 
+## function to get information from a programming test based on AMC
+get_amc_test_info <- function(participants, source, sheet, type = 'pre', other_sheet = NULL) {
+  
+  acm_test <- read_excel(source, sheet = sheet, col_types = "numeric")
+  if (is.null(other_sheet)) {
+    acm_test <- select(
+      acm_test, starts_with('NUSP')
+      , starts_with('remember'), starts_with('understand')
+      , starts_with('apply'), starts_with('analyse'), starts_with('evaluate'))
+  } else {
+    acm_test <- select(
+      acm_test, starts_with('NUSP')
+      , starts_with('remember'), starts_with('understand')
+      , starts_with('apply'), starts_with('evaluate'))
+  }
+  acm_test <- acm_test[complete.cases(acm_test),]
+  
+  if (!is.null(other_sheet)) {
+    rsheet <- read_excel(source, sheet = other_sheet, col_types = "numeric")
+    rsheet <- select(rsheet, starts_with('NUSP'), starts_with('analyse'))
+    acm_test <- merge(acm_test, rsheet, by='NUSP')
+  }
+  
+  colnames(acm_test) <- sub('remember', 'Re', colnames(acm_test))
+  colnames(acm_test) <- sub('understand', 'Un', colnames(acm_test))
+  colnames(acm_test) <- sub('apply', 'Ap', colnames(acm_test))
+  colnames(acm_test) <- sub('analyse', 'An', colnames(acm_test))
+  colnames(acm_test) <- sub('evaluate', 'Ev', colnames(acm_test))
+  
+  if (type == 'pre') {
+    colnames(acm_test) <- sub('-unistructural', '1', colnames(acm_test))
+    colnames(acm_test) <- sub('-multistructural', '2', colnames(acm_test))
+    colnames(acm_test) <- sub('-relational', '3', colnames(acm_test))
+    colnames(acm_test) <- sub('-1', 'a', colnames(acm_test))
+    colnames(acm_test) <- sub('-2', 'b', colnames(acm_test))
+    colnames(acm_test) <- sub('-3', 'c', colnames(acm_test))
+  } else {
+    colnames(acm_test) <- sub('-unistructural', 'A', colnames(acm_test))
+    colnames(acm_test) <- sub('-multistructural', 'B', colnames(acm_test))
+    colnames(acm_test) <- sub('-relational', 'C', colnames(acm_test))
+    colnames(acm_test) <- sub('-1', '1', colnames(acm_test))
+    colnames(acm_test) <- sub('-2', '2', colnames(acm_test))
+    colnames(acm_test) <- sub('-3', '3', colnames(acm_test))
+  }
+  
+  acm_test <- select(
+    acm_test, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
+    , starts_with('Ap'), starts_with('An'), starts_with('Ev'))
+  acm_test <- merge(participants, acm_test, by.x = 'NroUSP', by.y = 'NUSP')
+  
+  rownames(acm_test) <- acm_test$UserID
+  
+  return(acm_test)
+}
+
