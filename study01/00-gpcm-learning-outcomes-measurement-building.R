@@ -4,7 +4,7 @@ library(plyr)
 library(readr)
 library(readxl)
 library(parallel)
-#options(mc.cores=7)
+options(mc.cores=7)
 
 participants <- read_csv('data/SignedUpParticipants.csv')
 pre_dat <- merge(read_csv('data/PreAMC.csv')
@@ -18,50 +18,51 @@ pos_dat <- merge(read_csv('data/PosAMC.csv')
 
 pre_tam_info_models <- load_and_save_TAMs_to_measure_skill(
   pre_dat
-  , column_names = list(Re1=c(NA,"Re1"), Re2=c(NA,"Re2"), Un1=c(NA,"Un1"), Un2=c(NA,"Un2")
-                       , Ap1=c(NA,"Ap1"), Ap2=c(NA,"Ap2"), Ap3=c(NA,"Ap3")
-                       , An3=c(NA,"An3")
-                       , Ev1=c(NA,"Ev1"), Ev2=c(NA,"Ev2")
-                       , P1=c(NA,"P1s0","P1s1","P1s2","P1s3"))
+  , column_names = list(Re1=c(NA,"Re1"), Re2=c(NA,"Re2"), Un1=c("Un1"), Un2=c("Un2")
+                       , Ap1=c("Ap1"), Ap2=c("Ap2"), Ap3=c("Ap3")
+                       , An3=c("An3")
+                       , Ev1=c(NA,"Ev1"), Ev2=c("Ev2")
+                       , P1=c(NA,"P1s0","P1s1","P1s2","P1s3")
+                       )
   , url_str = NULL
   , itemclusters = NULL
   , prefix = "first_study_pre"
-  , min_columns = 8, fixed = NULL
+  , min_columns = 7, fixed = NULL
   , estimator = "MLR"
   , irtmodel = "GPCM")
 pre_info <- pre_tam_info_models$information
-#t(pre_info[pre_info$model_fit
-#           & pre_info$everything.fits
-#           & pre_info$unidim_lav_test
-#           ,])
-#pre_mdl_strs <- c("Re2+Un2+Ap1+Ap3+An3a+An3b+Ev2"
-#                  , "Re2+Un2+Ap3+An3a+An3b+Ev2", "Un2+Ap1+Ap3+An3a+An3b+Ev2")
+t(pre_info[pre_info$model_fit
+           & pre_info$everything.fits
+           & pre_info$unidim_lav_test
+           & pre_info$lav_CFI > 0.9
+           ,])
+pre_mdl_strs <- c("Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1+Ev2+P1s2", "Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1+Ev2+P1s3"
+                  , "Un1+Un2+Ap1+Ap2+Ap3+An3+Ev2+P1s3", "Un1+Un2+Ap1+Ap2+Ap3+An3+Ev2+P1s2", "Un1+Un2+Ap1+Ap2+Ap3+An3+Ev1+Ev2", "Re1+Un1+Un2+Ap1+Ap2+Ap3+An3+Ev2")
 
 ##
 pos_tam_info_models <- load_and_save_TAMs_to_measure_skill(
   pos_dat
-  , column_names = list(ReA=c(NA,"ReA"), ReB=c(NA,"ReB"), UnA=c(NA,"UnA"), UnB=c(NA,"UnB")
-                       , ApA=c(NA,"ApA"), ApB=c(NA,"ApB"), ApC=c(NA,"ApC")
-                       , AnC=c(NA,"AnC")
-                       , AnC2=c(NA,"AnC2")
+  , column_names = list(ReA=c("ReA"), ReB=c("ReB"), UnA=c(NA,"UnA"), UnB=c(NA,"UnB")
+                       , ApA=c(NA,"ApA"), ApB=c(NA,"ApB"), ApC=c("ApC")
+                       , AnC=c("AnC")
                        , EvA=c(NA,"EvA"), EvB=c(NA,"EvB")
                        , PA=c(NA,"PAs0","PAs1","PAs2","PAs3")
-                       , PB=c(NA,"PBs0","PBs1","PBs2","PBs3"))
+                       , PB=c(NA,"PBs0","PBs1","PBs2","PBs3")
+                       )
   , url_str = NULL
   , itemclusters = NULL
   , prefix = "first_study_pos"
-  , min_columns = 8, fixed = NULL
+  , min_columns = 6, fixed = NULL
   , estimator = "MLR"
   , irtmodel = "GPCM")
 pos_info <- pos_tam_info_models$information
-#t(pos_info[pos_info$model_fit
-#           & pos_info$everything.fits
-#           & pos_info$unidim_test
-#           & pos_info$rel_fit
-#           & pos_info$numcols >= 4
-#           ,])
-#pos_mdl_strs <- c("Re2+Un2+Ap1+Ap3+An3a+An3b+Ev2"
-#                  , "Re2+Un2+Ap3+An3a+An3b+Ev2", "Un2+Ap1+Ap3+An3a+An3b+Ev2")
+t(pos_info[pos_info$model_fit
+           & pos_info$everything.fits
+           & pos_info$unidim_lav_test
+           & pos_info$lav_CFI > 0.9
+           ,])
+pos_mdl_strs <- c("ReB+UnA+UnB+ApA+ApB+ApC+EvA+PAs3", "ReA+ReB+UnA+UnB+ApB+ApC+EvA+PAs2"
+                  , "ReA+ReB+UnB+ApA+ApB+ApC+PAs3", "ReA+UnA+ApB+ApC+EvA+EvB+PAs1", "ReA+ReB+UnA+UnB+ApC+AnC+EvA")
 
 ##################################################################
 ## Checking Assumptions in each model                           ##

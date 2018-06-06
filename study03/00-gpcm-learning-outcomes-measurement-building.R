@@ -4,7 +4,7 @@ library(plyr)
 library(readr)
 library(readxl)
 library(parallel)
-#options(mc.cores=7)
+options(mc.cores=7)
 
 participants <- read_csv('data/SignedUpParticipants.csv')
 pre_dat <- merge(read_csv('data/PreAMC.csv')
@@ -19,49 +19,51 @@ pos_dat <- merge(read_csv('data/PosAMC.csv')
 pre_tam_info_models <- load_and_save_TAMs_to_measure_skill(
   pre_dat
   , column_names = list(Re2=c(NA,"Re2"), Un2=c(NA,"Un2")
-                       , Ap1=c(NA,"Ap1"), Ap3=c(NA,"Ap3")
-                       , An3a=c(NA,"An3a"), An3b=c(NA,"An3b")
-                       , Ev2=c(NA,"Ev2")
-                       , P4=c(NA,"P4s0","P4s1","P4s2","P4s3"))
+                       , Ap1=c("Ap1"), Ap3=c(NA,"Ap3")
+                       , An3a=c(NA,"An3a"), An3b=c("An3b")
+                       , Ev2=c("Ev2")
+                       , P4=c(NA,"P4s0","P4s1","P4s2","P4s3")
+                       )
   , url_str = NULL
   , itemclusters = NULL
   , prefix = "third_study_pre"
-  , min_columns = 6, fixed = NULL
+  , min_columns = 5, fixed = NULL
   , estimator = "MLR"
   , irtmodel = "GPCM")
 pre_info <- pre_tam_info_models$information
-#t(pre_info[pre_info$model_fit
-#           & pre_info$everything.fits
-#           & pre_info$unidim_lav_test
-#           ,])
-#pre_mdl_strs <- c("Re2+Un2+Ap1+Ap3+An3a+An3b+Ev2"
-#                  , "Re2+Un2+Ap3+An3a+An3b+Ev2", "Un2+Ap1+Ap3+An3a+An3b+Ev2")
+t(pre_info[pre_info$model_fit
+           & pre_info$everything.fits
+           & pre_info$unidim_lav_test
+           & pre_info$lav_CFI > 0.9
+           ,])
+pre_mdl_strs <- c("Un2+Ap1+Ap3+An3a+An3b+Ev2"
+                  ,"Ap1+Ap3+An3a+An3b+Ev2","Re2+Ap1+Ap3+An3b+Ev2","Un2+Ap1+Ap3+An3b+Ev2")
 
 ##
 pos_tam_info_models <- load_and_save_TAMs_to_measure_skill(
   pos_dat
-  , column_names = list(ReB=c(NA,"ReB"), UnB=c(NA,"UnB")
-                       , ApA=c(NA,"ApA"), ApC=c(NA,"ApC")
-                       , AnC1=c(NA,"AnC1"), AnC2=c(NA,"AnC2")
-                       , EvB=c(NA,"EvB")
+  , column_names = list(ReB=c("ReB"), UnB=c(NA,"UnB")
+                       , ApA=c("ApA"), ApC=c("ApC")
+                       , AnC1=c(NA,"AnC1"), AnC2=c("AnC2")
+                       , EvB=c("EvB")
                        , PF=c(NA,"PFs0","PFs1","PFs2","PFs3")
                        , PG=c(NA,"PGs0","PGs1","PGs2","PGs3")
-                       , PH=c(NA,"PHs0","PHs1","PHs2","PHs3"))
+                       , PH=c(NA,"PHs0","PHs1","PHs2","PHs3")
+                       )
   , url_str = NULL
   , itemclusters = NULL
   , prefix = "third_study_pos"
-  , min_columns = 6, fixed = NULL #c("ReB","UnB","ApA","ApC","AnC1","AnC2","EvB")
+  , min_columns = 5, fixed = NULL #c("ReB","ApA","ApC","AnC1","AnC2","EvB") #  ReB+UnB+ApA+ApC+AnC2+EvB
   , estimator = "MLR"
   , irtmodel = "GPCM")
 pos_info <- pos_tam_info_models$information
-#t(pos_info[pos_info$model_fit
-#           & pos_info$everything.fits
-#           & pos_info$unidim_test
-#           & pos_info$rel_fit
-#           & pos_info$numcols >= 4
-#           ,])
-#pos_mdl_strs <- c("Re2+Un2+Ap1+Ap3+An3a+An3b+Ev2"
-#                  , "Re2+Un2+Ap3+An3a+An3b+Ev2", "Un2+Ap1+Ap3+An3a+An3b+Ev2")
+t(pos_info[pos_info$model_fit
+           & pos_info$everything.fits
+           & pos_info$unidim_lav_test
+           & pos_info$lav_CFI > 0.9
+           ,])
+pos_mdl_strs <- c("ReB+UnB+ApA+ApC+AnC2+EvB+PFs3+PGs2"
+                  , "ReB+ApA+ApC+AnC1+AnC2+EvB+PGs3", "ReB+ApA+ApC+AnC2+EvB+PFs1+PGs1", "ReB+UnB+ApA+ApC+AnC2+EvB+PGs3")
 
 ##################################################################
 ## Checking Assumptions in each model                           ##
