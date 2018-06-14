@@ -2,6 +2,7 @@ UserID,Type,CLGroup,CLRole,PlayerRole
 10116,non-gamified,GroupC,Master,NA
 10119,ont-gamified,Grupo Zeus,Master,Yee Achiever
 10120,ont-gamified,Grupo Hélio,Master,Yee Socializer
+10121,ont-gamified,Grupo Hades,Master,Yee Achiever
 10122,non-gamified,GroupB,Apprentice,NA
 10123,ont-gamified,Grupo Morfeu,Apprentice,Yee Achiever
 10125,non-gamified,GroupB,Apprentice,NA
@@ -23,3 +24,4 @@ UserID,Type,CLGroup,CLRole,PlayerRole
 10148,ont-gamified,Grupo Apolo,Apprentice,Yee Socializer
 10152,ont-gamified,Grupo Morfeu,Master,Yee Achiever
 10157,ont-gamified,Grupo Zeus,Apprentice,Yee Achiever
+10160,non-gamified,GroupD,Master,NA
