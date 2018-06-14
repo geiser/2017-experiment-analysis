@@ -60,7 +60,7 @@ pos_tam_info_models <- load_and_save_TAMs_to_measure_skill(
   , url_str = NULL
   , itemclusters = NULL
   , prefix = "second_study_pos"
-  , min_columns = 5, fixed = NULL
+  , min_columns = 4, fixed = NULL
   , estimator = "MLR"
   , irtmodel = "GPCM")
 pos_info <- pos_tam_info_models$information
@@ -70,10 +70,14 @@ t(pos_info[pos_info$model_fit
            & pos_info$lav_CFI > 0.9
            ,])
 pos_mdl_strs <- list()
-pos_mdl_strs[[1]] <- c("UnC","ApB1","ApB2","AnC1","AnC2")
-pos_mdl_strs[[2]] <- c("UnC","ApB1","AnC1","AnC2")
-pos_mdl_strs[[3]] <- c("ApB2","AnC1","AnC2","EvB")
-pos_mdl_strs[[4]] <- c("UnC","ApB2","AnC1","AnC2")
+pos_mdl_strs[[1]] <- c("ApB1","ApB2","AnC2","EvB","PCs2","PDs1")
+pos_mdl_strs[[2]] <- c("UnC","ApB1","ApB2","AnC2","PCs3","PDs1")
+pos_mdl_strs[[3]] <- c("ApB1","ApB2","AnC2","EvB","PCs3","PDs2")
+pos_mdl_strs[[4]] <- c("ApB1","ApB2","AnC2","EvB","PCs1","PDs3")
+pos_mdl_strs[[5]] <- c("UnC","ApB1","ApB2","AnC2","PCs2","PDs1")
+pos_mdl_strs[[6]] <- c("UnC","ApB1","ApB2","AnC1","AnC2")
+pos_mdl_strs[[7]] <- c("ApB1","ApB2","AnC2","EvB","PDs2")
+
 
 ##################################################################
 ## Checking Assumptions in each model                           ##
