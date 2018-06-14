@@ -1,4 +1,5 @@
 UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole
+10169,10377538,ont-gamified,Resistance,Apprentice,Social Achiever
 10170,10260351,w/o-gamified,Grupo11,Apprentice,NA
 10175,10310700,ont-gamified,Warriors,Master,Social Achiever
 10179,10310759,w/o-gamified,Grupo10,Master,NA
@@ -21,8 +22,13 @@ UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole
 10211,9311643,ont-gamified,Attractive Devils,Master,Social Achiever
 10213,10277040,w/o-gamified,Grupo7,Apprentice,NA
 10214,10277022,ont-gamified,Vikings,Apprentice,Social Achiever
+10215,9285227,ont-gamified,Vikings,Master,Social Achiever
 10219,10276831,w/o-gamified,Grupo3,Master,NA
+10220,9760151,w/o-gamified,Grupo3,Apprentice,NA
 10223,9795185,ont-gamified,Slayers,Master,Social Achiever
+10224,9368772,ont-gamified,Mercenaries,Apprentice,Social Achiever
+10227,9274382,w/o-gamified,Grupo5,Master,NA
+10228,10310492,ont-gamified,Resistance,Apprentice,Social Achiever
 10230,10351992,ont-gamified,Resistance,Master,Social Achiever
 10231,10276911,w/o-gamified,Grupo9,Master,NA
 10237,10377688,ont-gamified,Outlaws,Apprentice,Social Achiever
@@ -32,9 +38,13 @@ UserID,NroUSP,Type,CLGroup,CLRole,PlayerRole
 10174,10276852,w/o-gamified,Grupo7,Master,NA
 10203,9921470,ont-gamified,Mercenaries,Apprentice,Social Achiever
 10198,10310888,ont-gamified,Attractive Devils,Apprentice,Social Achiever
+10221,9082496,ont-gamified,Warriors,Apprentice,Social Achiever
 10216,10276720,ont-gamified,Silly Knights,Master,Social Achiever
 10178,8656201,ont-gamified,Outlaws,Apprentice,Social Achiever
 10176,10276949,ont-gamified,Outlaws,Master,Social Achiever
+10212,9065750,w/o-gamified,Grupo8,Master,NA
+10199,10276737,w/o-gamified,Grupo1,Apprentice,NA
 10188,10276995,ont-gamified,Vandals,Master,Yee Achiever
 10192,10276682,ont-gamified,Attractive Devils,Apprentice,Social Achiever
 10232,10276974,w/o-gamified,Grupo7,Apprentice,NA
+10248,9755822,w/o-gamified,Grupo1,Apprentice,NA

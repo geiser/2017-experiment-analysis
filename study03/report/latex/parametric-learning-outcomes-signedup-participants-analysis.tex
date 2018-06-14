@@ -1,0 +1,62 @@
+
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\section{Summaries of Parametric Statistics Analysisfor the gains in skills/knowledge estimates in the third empirical study}
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrl}\caption{Summary of two-way ANOVA results for the gains in skills/knowledge estimates in the third empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$0.011$&$ 1$&$2.046$&$0.159$&\tabularnewline
+Type.Type&$0.039$&$ 1$&$7.066$&$0.011$&*\tabularnewline
+Type.CLRole&$0.038$&$ 1$&$6.848$&$0.012$&*\tabularnewline
+Type.Type:CLRole&$0.000$&$ 1$&$0.060$&$0.808$&\tabularnewline
+Type.Residuals&$0.248$&$45$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\raggedleft{ \scriptsize{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }} 
+
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = T,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables\begin{landscape}{\small
+\begin{longtable}{lrrrrrrrrrrrll}\caption{Descriptive statistics and Tukey post-hoc test results for the gains in skills/knowledge estimates in the third empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.ont-gamified&$23$&$ 0.028$&$ 0.014$&$0.017$&$45$&$-0.019$&$ 0.048$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified&$26$&$-0.035$&$-0.048$&$0.016$&$45$&$-0.081$&$-0.015$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified - w/o-gamified&$49$&$ 0.063$&$ 0.063$&$0.024$&$$&$ 0.020$&$ 0.106$&$2.658$&$0.011$&$0.005$&$0.792$&**&medium\tabularnewline
+Type.ont-gamified.Apprentice&$16$&$ 0.048$&$ 0.048$&$0.019$&$45$&$ 0.011$&$ 0.085$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified.Apprentice&$19$&$-0.020$&$-0.020$&$0.017$&$45$&$-0.055$&$ 0.014$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified.Apprentice - w/o-gamified.Apprentice&$35$&$ 0.068$&$ 0.068$&$0.025$&$$&$ 0.001$&$ 0.136$&$2.708$&$0.010$&$0.045$&$0.993$&*&large\tabularnewline
+Type.ont-gamified.Master&$ 7$&$-0.019$&$-0.019$&$0.028$&$45$&$-0.076$&$ 0.037$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified.Master&$ 7$&$-0.076$&$-0.076$&$0.028$&$45$&$-0.133$&$-0.019$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified.Master - w/o-gamified.Master&$14$&$ 0.057$&$ 0.057$&$0.040$&$$&$-0.049$&$ 0.163$&$1.429$&$0.160$&$0.488$&$0.583$&&\tabularnewline
+\hline
+\end{longtable}}\end{landscape}
+\raggedleft{ \scriptsize{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }} 
+
+
+\end{document}

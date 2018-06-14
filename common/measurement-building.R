@@ -1,5 +1,5 @@
 
-wants <- c('TAM', 'sirt', 'lavaan', 'ggrepel', 'parallel', 'RColorBrewer', 'reshape', 'psych', 'ggplot2', 'dplyr', 'readr', 'readxl', 'multcomp', 'WrightMap')
+wants <- c('TAM', 'sirt', 'lavaan', 'ggrepel', 'rowr', 'parallel', 'RColorBrewer', 'reshape', 'psych', 'ggplot2', 'dplyr', 'readr', 'readxl', 'multcomp', 'WrightMap')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 
@@ -657,35 +657,32 @@ TAM.measure_change.verify <- function(pre_dat, pos_dat
   
   items = list(pre=items.pre, pos=items.pos)
   
-  userids <- intersect(pre_dat[[userid]], pos_dat[[userid]])
-  n <- length(userids)
-  pre_i <- pre_dat[[userid]] %in% userids
-  pos_i <- pos_dat[[userid]] %in% userids
-  
-  dat <- merge(pre_dat[pre_i,][,c(userid, items$pre)],
-               pos_dat[pos_i,][,c(userid, items$pos)], by = userid)
-  
   if (!is.null(tam_models) && !is.null(tam_models$pos_mod1)) {
     pos_mod1 <- tam_models$pos_mod1
   } else {
-    pos_mod1 <- tam.mml(dat[,items$pos], irtmodel = irtmodel, pid = dat[[userid]])
+    pos_mod1 <- tam.mml(pos_dat[,items$pos], irtmodel = irtmodel, pid = pos_dat[[userid]])
   }
   pos_wle1 <- tam.wle(pos_mod1)
   
   if (!is.null(tam_models) && !is.null(tam_models$pre_mod1)) {
     pre_mod1 <- tam_models$pre_mod1
   } else {
-    pre_mod1 <- tam.mml(dat[,items$pre], irtmodel = irtmodel, pid = dat[[userid]])
+    pre_mod1 <- tam.mml(pre_dat[,items$pre], irtmodel = irtmodel, pid = pre_dat[[userid]])
   }
   pre_wle1 <- tam.wle(pre_mod1)
   
+  # thurstonian thresholds
   pos_tt <- as.data.frame(tam.threshold(pos_mod1))
   pre_tt <- as.data.frame(tam.threshold(pre_mod1))
   tt <- plyr::rbind.fill(pos_tt,pre_tt)
   tt[,"Item"] <- c(IRT.threshold(pos_mod1, type="item"), IRT.threshold(pre_mod1, type="item"))
   rownames(tt) <- c(rownames(pos_tt), rownames(pre_tt))
   
+  # get data from results
+  dat <- merge(as.data.frame(pre_wle1), as.data.frame(pos_wle1)
+               , by = "pid", suffixes = c(".pre", ".pos"))
   
+  #
   if (plotting) {
     filename <- "verification-thurstonian-thresholds.png"
     if (!is.null(folder)) png(filename = paste0(folder, filename), width = 640, height = 640)
@@ -694,7 +691,7 @@ TAM.measure_change.verify <- function(pre_dat, pos_dat
     
     filename <- "verification-ability-pre-vs-post.png"
     if (!is.null(folder)) png(filename = paste0(folder, filename), width = 640, height = 640)
-    plot_pre_vs_post(pre_wle1$theta, pos_wle1$theta, dat[[userid]]
+    plot_pre_vs_post(dat$theta.pre, dat$theta.pos, dat$pid
                      , "Verification: Pre-test vs. Post-test")
     if (!is.null(folder)) dev.off()
   }
@@ -993,10 +990,11 @@ write_change_measurement_model_plots <- function(mod, path, override = T) {
   ## verification pre_vs_post
   filename <- paste0(path, '01-verification-pre-vs-post-data.png')
   if (!file.exists(filename) || override) {
+    tdat <- merge(as.data.frame(mod$info.verification$pre_wle)
+                  , as.data.frame(mod$info.verification$pos_wle)
+                  , by = 'pid', suffixes = c('.pre','.pos'))
     png(filename = filename, width = 640, height = 640)
-    plot_pre_vs_post(mod$info.verification$pre_wle$theta
-                     , mod$info.verification$pos_wle$theta
-                     , mod$info.verification$pre_wle$pid
+    plot_pre_vs_post(tdat$theta.pre, tdat$theta.pos, tdat$pid
                      , "Verification: Pre-test vs. Post-test")
     dev.off()
   }
@@ -1463,8 +1461,20 @@ get_rsm_summaries_as_dataframe <- function(sources, tam_mods, estimator = "ML", 
     return(t(item_df))
   })
   
-  person_ability_df <- do.call(cbind, get_abilities(
-    sources, tam_mods, columns = c("theta", "error","Outfit", "Infit")))
+  map_abilities <- get_abilities(sources, tam_mods, columns = c("theta", "error","Outfit", "Infit"))
+  person_ability_df <- data.frame("UserID" = unique(c(lapply(tam_mods, FUN = function(md){ return(md$pid) }), recursive=T, use.names = F)))
+  for (cname in names(map_abilities)) {
+    tmp_person_ability_df <- map_abilities[[cname]]
+    tmp_person_ability_df[["UserID"]] <- rownames(tmp_person_ability_df)
+    person_ability_df <- merge(person_ability_df, tmp_person_ability_df, by = "UserID")
+  }
+  colnames(person_ability_df) <- c(
+    "UserID",
+    paste(rep(names(map_abilities), each = 4)
+          , rep(c("theta", "error","Outfit", "Infit"), times = length(map_abilities))
+          , sep = "."))
+  rownames(person_ability_df) <- person_ability_df$UserID
+  person_ability_df <- person_ability_df[,-1]
   
   return(list(
     test_unidimensionality = test_unidimensionality_df

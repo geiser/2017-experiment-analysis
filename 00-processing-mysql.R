@@ -86,26 +86,26 @@ print(design_summary_df <- data.frame(
   , 'Master' = c(
     NA
     , paste0(
-      nrow(subset(ep01, Type == "ont-gamified" & CLRole == "Master"))
-      , " (",
       nrow(subset(a01, Type == "ont-gamified" & CLRole == "Master"))
+      , " (",
+      nrow(subset(ep01, Type == "ont-gamified" & CLRole == "Master"))
       , ")")
     , paste0(
-      nrow(subset(ep01, Type == "non-gamified" & CLRole == "Master"))
-      , " (",
       nrow(subset(a01, Type == "non-gamified" & CLRole == "Master"))
+      , " (",
+      nrow(subset(ep01, Type == "non-gamified" & CLRole == "Master"))
       , ")"))
   , 'Apprentice' = c(
     NA
     , paste0(
-      nrow(subset(ep01, Type == "ont-gamified" & CLRole == "Apprentice"))
-      , " (",
       nrow(subset(a01, Type == "ont-gamified" & CLRole == "Apprentice"))
+      , " (",
+      nrow(subset(ep01, Type == "ont-gamified" & CLRole == "Apprentice"))
       , ")")
     , paste0(
-      nrow(subset(ep01, Type == "non-gamified" & CLRole == "Apprentice"))
-      , " (",
       nrow(subset(a01, Type == "non-gamified" & CLRole == "Apprentice"))
+      , " (",
+      nrow(subset(ep01, Type == "non-gamified" & CLRole == "Apprentice"))
       , ")")
   )
 ))
@@ -407,55 +407,73 @@ if (!file.exists('study01/data/EffectiveParticipants.csv'))  {
 }
 
 # effective participants for the study 02
-a01 <- read_csv('study01/data/CLActivity.csv')
 a02 <- read_csv('study02/data/CLActivity.csv')
-
-userids01 <- subset(a01, a01$ParticipationLevel != "none")$UserID
-userids02 <- subset(a02, a02$ParticipationLevel != "none")$UserID
-userids <- intersect(userids01, userids02)
-
-p01 <- read_csv('study01/data/SignedUpParticipants.csv')
+userids <- subset(a02, a02$ParticipationLevel != "none")$UserID # participated
 p02 <- read_csv('study02/data/SignedUpParticipants.csv')
-
-userids01ont <- intersect(userids, subset(p01,  Type == "ont-gamified")$UserID)
-userids01non <- intersect(userids, subset(p01,  Type == "non-gamified")$UserID)
-userids02ont <- intersect(userids, subset(p02,  Type == "ont-gamified")$UserID)
-userids02non <- intersect(userids, subset(p02,  Type == "non-gamified")$UserID)
-
-userids <- union(intersect(userids01non, userids02ont), # effective users
-                 intersect(userids01ont, userids02non))
-
 p02 <- p02[p02$UserID %in% userids,]
 if (!file.exists('study02/data/EffectiveParticipants.csv'))  {
   write_csv(p02, path = "study02/data/EffectiveParticipants.csv")
 }
 
 # effective participants for the study 03
-a01 <- read_csv('study01/data/CLActivity.csv')
-a02 <- read_csv('study02/data/CLActivity.csv')
 a03 <- read_csv('study03/data/CLActivity.csv')
-
-userids01 <- subset(a01, a01$ParticipationLevel != "none")$UserID
-userids02 <- subset(a02, a02$ParticipationLevel != "none")$UserID
-userids03 <- subset(a03, a03$ParticipationLevel != "none")$UserID
-userids <- intersect(intersect(userids01, userids02), userids03)
-
-p01 <- read_csv('study01/data/SignedUpParticipants.csv')
-p02 <- read_csv('study02/data/SignedUpParticipants.csv')
+userids <- subset(a03, a03$ParticipationLevel != "none")$UserID # participated
 p03 <- read_csv('study03/data/SignedUpParticipants.csv')
-
-userids01ont <- intersect(userids, subset(p01,  Type == "ont-gamified")$UserID)
-userids01non <- intersect(userids, subset(p01,  Type == "non-gamified")$UserID)
-userids02ont <- intersect(userids, subset(p02,  Type == "ont-gamified")$UserID)
-userids02non <- intersect(userids, subset(p02,  Type == "non-gamified")$UserID)
-
-userids <- union(intersect(userids01non, userids02ont), # effective users
-                 intersect(userids01ont, userids02non))
-
 p03 <- p03[p03$UserID %in% userids,]
 if (!file.exists('study03/data/EffectiveParticipants.csv'))  {
   write_csv(p03, path = "study03/data/EffectiveParticipants.csv")
 }
+
+# effective participants for the study 02
+#a01 <- read_csv('study01/data/CLActivity.csv')
+#a02 <- read_csv('study02/data/CLActivity.csv')
+
+#userids01 <- subset(a01, a01$ParticipationLevel != "none")$UserID
+#userids02 <- subset(a02, a02$ParticipationLevel != "none")$UserID
+#userids <- intersect(userids01, userids02)
+
+#p01 <- read_csv('study01/data/SignedUpParticipants.csv')
+#p02 <- read_csv('study02/data/SignedUpParticipants.csv')
+
+#userids01ont <- intersect(userids, subset(p01,  Type == "ont-gamified")$UserID)
+#userids01non <- intersect(userids, subset(p01,  Type == "non-gamified")$UserID)
+#userids02ont <- intersect(userids, subset(p02,  Type == "ont-gamified")$UserID)
+#userids02non <- intersect(userids, subset(p02,  Type == "non-gamified")$UserID)
+
+#userids <- union(intersect(userids01non, userids02ont), # effective users
+#                 intersect(userids01ont, userids02non))
+
+#p02 <- p02[p02$UserID %in% userids,]
+#if (!file.exists('study02/data/EffectiveParticipants.csv'))  {
+#  write_csv(p02, path = "study02/data/EffectiveParticipants.csv")
+#}
+
+# effective participants for the study 03
+#a01 <- read_csv('study01/data/CLActivity.csv')
+#a02 <- read_csv('study02/data/CLActivity.csv')
+#a03 <- read_csv('study03/data/CLActivity.csv')
+
+#userids01 <- subset(a01, a01$ParticipationLevel != "none")$UserID
+#userids02 <- subset(a02, a02$ParticipationLevel != "none")$UserID
+#userids03 <- subset(a03, a03$ParticipationLevel != "none")$UserID
+#userids <- intersect(intersect(userids01, userids02), userids03)
+
+#p01 <- read_csv('study01/data/SignedUpParticipants.csv')
+#p02 <- read_csv('study02/data/SignedUpParticipants.csv')
+#p03 <- read_csv('study03/data/SignedUpParticipants.csv')
+
+#userids01ont <- intersect(userids, subset(p01,  Type == "ont-gamified")$UserID)
+#userids01non <- intersect(userids, subset(p01,  Type == "non-gamified")$UserID)
+#userids02ont <- intersect(userids, subset(p02,  Type == "ont-gamified")$UserID)
+#userids02non <- intersect(userids, subset(p02,  Type == "non-gamified")$UserID)
+
+#userids <- union(intersect(userids01non, userids02ont), # effective users
+#                 intersect(userids01ont, userids02non))
+
+#p03 <- p03[p03$UserID %in% userids,]
+#if (!file.exists('study03/data/EffectiveParticipants.csv'))  {
+#  write_csv(p03, path = "study03/data/EffectiveParticipants.csv")
+#}
 
 # print design_summary
 ep01 <- read_csv('study01/data/EffectiveParticipants.csv')
@@ -469,70 +487,70 @@ print(design_summary_df <- data.frame(
   , 'Master' = c(
     NA
     , paste0(
-      nrow(subset(ep01, Type == "ont-gamified" & CLRole == "Master"))
-      , " (",
       nrow(subset(a01, Type == "ont-gamified" & CLRole == "Master"))
+      , " (",
+      nrow(subset(ep01, Type == "ont-gamified" & CLRole == "Master"))
       , ")")
     , paste0(
-      nrow(subset(ep01, Type == "non-gamified" & CLRole == "Master"))
-      , " (",
       nrow(subset(a01, Type == "non-gamified" & CLRole == "Master"))
+      , " (",
+      nrow(subset(ep01, Type == "non-gamified" & CLRole == "Master"))
       , ")")
     , NA
     , paste0(
-      nrow(subset(ep02, Type == "ont-gamified" & CLRole == "Master"))
-      , " (",
       nrow(subset(a02, Type == "ont-gamified" & CLRole == "Master"))
+      , " (",
+      nrow(subset(ep02, Type == "ont-gamified" & CLRole == "Master"))
       , ")")
     , paste0(
-      nrow(subset(ep02, Type == "non-gamified" & CLRole == "Master"))
-      , " (",
       nrow(subset(a02, Type == "non-gamified" & CLRole == "Master"))
+      , " (",
+      nrow(subset(ep02, Type == "non-gamified" & CLRole == "Master"))
       , ")")
     , NA
     , paste0(
-      nrow(subset(ep03, Type == "ont-gamified" & CLRole == "Master"))
-      , " (",
       nrow(subset(a03, Type == "ont-gamified" & CLRole == "Master"))
+      , " (",
+      nrow(subset(ep03, Type == "ont-gamified" & CLRole == "Master"))
       , ")")
     , paste0(
-      nrow(subset(ep03, Type == "w/o-gamified" & CLRole == "Master"))
-      , " (",
       nrow(subset(a03, Type == "w/o-gamified" & CLRole == "Master"))
+      , " (",
+      nrow(subset(ep03, Type == "w/o-gamified" & CLRole == "Master"))
       , ")"))
   , 'Apprentice' = c(
     NA
     , paste0(
-      nrow(subset(ep01, Type == "ont-gamified" & CLRole == "Apprentice"))
-      , " (",
       nrow(subset(a01, Type == "ont-gamified" & CLRole == "Apprentice"))
+      , " (",
+      nrow(subset(ep01, Type == "ont-gamified" & CLRole == "Apprentice"))
       , ")")
     , paste0(
-      nrow(subset(ep01, Type == "non-gamified" & CLRole == "Apprentice"))
-      , " (",
       nrow(subset(a01, Type == "non-gamified" & CLRole == "Apprentice"))
+      , " (",
+      nrow(subset(ep01, Type == "non-gamified" & CLRole == "Apprentice"))
       , ")")
     , NA
     , paste0(
-      nrow(subset(ep02, Type == "ont-gamified" & CLRole == "Apprentice"))
-      , " (",
       nrow(subset(a02, Type == "ont-gamified" & CLRole == "Apprentice"))
+      , " (",
+      nrow(subset(ep02, Type == "ont-gamified" & CLRole == "Apprentice"))
       , ")")
     , paste0(
-      nrow(subset(ep02, Type == "non-gamified" & CLRole == "Apprentice"))
-      , " (",
       nrow(subset(a02, Type == "non-gamified" & CLRole == "Apprentice"))
+      , " (",
+      nrow(subset(ep02, Type == "non-gamified" & CLRole == "Apprentice"))
       , ")")
     , NA
     , paste0(
-      nrow(subset(ep03, Type == "ont-gamified" & CLRole == "Apprentice"))
-      , " (",
       nrow(subset(a03, Type == "ont-gamified" & CLRole == "Apprentice"))
+      , " (",
+      nrow(subset(ep03, Type == "ont-gamified" & CLRole == "Apprentice"))
       , ")")
     , paste0(
-      nrow(subset(ep03, Type == "w/o-gamified" & CLRole == "Apprentice"))
-      , " (",
       nrow(subset(a03, Type == "w/o-gamified" & CLRole == "Apprentice"))
+      , " (",
+      nrow(subset(ep03, Type == "w/o-gamified" & CLRole == "Apprentice"))
       , ")")
   )
 ))
