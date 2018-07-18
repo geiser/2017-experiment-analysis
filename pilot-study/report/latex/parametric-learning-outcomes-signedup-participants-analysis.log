@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  30 MAY 2018 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 JUL 2018 09:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -289,22 +289,22 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (123.33209pt too wide) in alignment at lines 36--40
+Overfull \hbox (130.99525pt too wide) in alignment at lines 36--40
  [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (123.33209pt too wide) in alignment at lines 40--44
+Overfull \hbox (130.99525pt too wide) in alignment at lines 40--44
  [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (123.33209pt too wide) in alignment at lines 44--46
+Overfull \hbox (130.99525pt too wide) in alignment at lines 44--46
  [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (123.33209pt too wide) in alignment at lines 46--58
+Overfull \hbox (130.99525pt too wide) in alignment at lines 46--58
  [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
@@ -329,7 +329,7 @@ exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
 Output written on parametric-learning-outcomes-signedup-participants-analysis.p
-df (3 pages, 66843 bytes).
+df (3 pages, 66826 bytes).
 PDF statistics:
  38 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream

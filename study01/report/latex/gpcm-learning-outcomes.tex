@@ -1,0 +1,331 @@
+
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\title{Summary of Generalized Partial Credit Model}
+\maketitle
+\section{Checking Assumptions}
+
+%latex.default(data_df, caption = paste0("Goodness of fit statistics related to the test of unidimensionality",     "in the ", irt.short.name, "-based instrument ", in_title),     size = "small", longtable = T, ctable = F, landscape = F,     where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrr}\caption{Goodness of fit statistics related to the test of unidimensionalityin the GPCM-based instrument for measuring gains in the skills and knowledge of participants in the first empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{chisq}&\multicolumn{1}{c}{AGFI}&\multicolumn{1}{c}{TLI}&\multicolumn{1}{c}{CFI}&\multicolumn{1}{c}{DETECT}&\multicolumn{1}{c}{ASSI}&\multicolumn{1}{c}{RATIO}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{chisq}&\multicolumn{1}{c}{AGFI}&\multicolumn{1}{c}{TLI}&\multicolumn{1}{c}{CFI}&\multicolumn{1}{c}{DETECT}&\multicolumn{1}{c}{ASSI}&\multicolumn{1}{c}{RATIO}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{data}
+Pre-test&$27$&$27.576$&$0.969$&$0.981$&$0.986$&$33.264$&$0.056$&$0.508$\tabularnewline
+Post-test&$14$&$16.087$&$0.997$&$0.875$&$0.917$&$27.559$&$0.333$&$0.528$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\tiny df: degree of freedom; AGFI: Adjusted Goodness of Fit Index; CFI: Comparative Fit Index; TLI: Tucker-Lewis Index; }\end{flushright}
+
+
+%latex.default(data_df, caption = paste0("Item residual correlation statistics",     "related to the test of local independence", "in the ", irt.short.name,     "-based instrument ", in_title), size = "small", longtable = T,     ctable = F, landscape = F, where = "!htbp", file = filename,     append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrr}\caption{Item residual correlation statisticsrelated to the test of local independencein the GPCM-based instrument for measuring gains in the skills and knowledge of participants in the first empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{max.chisq}&\multicolumn{1}{c}{maxaQ3}&\multicolumn{1}{c}{MADaQ3}&\multicolumn{1}{c}{SRMSR}&\multicolumn{1}{c}{p.value}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{max.chisq}&\multicolumn{1}{c}{maxaQ3}&\multicolumn{1}{c}{MADaQ3}&\multicolumn{1}{c}{SRMSR}&\multicolumn{1}{c}{p.value}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{data}
+Pre-test&$51.415$&$0.370$&$0.126$&$0.251$&$0.176$\tabularnewline
+Post-test&$90.705$&$0.326$&$0.125$&$0.166$&$0.345$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\tiny aQ3: adjusted correlation of item residuals; maxaQ3: maximum aQ3; MADaQ3: Median Absolute Deviation of aQ3; }\end{flushright}
+
+
+%latex.default(data_df, caption = paste0("Test of monotonicity in the ",     irt.short.name, "-based instrument ", in_title), size = "scriptsize",     longtable = T, ctable = F, landscape = F, where = "!htbp",     file = filename, append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lrrrrrrrrrr}\caption{Test of monotonicity in the GPCM-based instrument for measuring gains in the skills and knowledge of participants in the first empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{ItemH}&\multicolumn{1}{c}{ac}&\multicolumn{1}{c}{vi}&\multicolumn{1}{c}{vi/ac}&\multicolumn{1}{c}{maxvi}&\multicolumn{1}{c}{sum}&\multicolumn{1}{c}{sum/ac}&\multicolumn{1}{c}{zmax}&\multicolumn{1}{c}{zsig}&\multicolumn{1}{c}{crit}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{data}&\multicolumn{1}{c}{ItemH}&\multicolumn{1}{c}{ac}&\multicolumn{1}{c}{vi}&\multicolumn{1}{c}{vi/ac}&\multicolumn{1}{c}{maxvi}&\multicolumn{1}{c}{sum}&\multicolumn{1}{c}{sum/ac}&\multicolumn{1}{c}{zmax}&\multicolumn{1}{c}{zsig}&\multicolumn{1}{c}{crit}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{data}
+Pre-test.Un1&$ 0.19$&$ 6$&$0$&$  0$&$0$&$0$&$  0$&$0$&$0$&$0$\tabularnewline
+Pre-test.Un2&$ 0.36$&$ 3$&$0$&$  0$&$0$&$0$&$  0$&$0$&$0$&$0$\tabularnewline
+Pre-test.Ap1&$ 0.43$&$ 0$&$0$&$$&$0$&$0$&$$&$0$&$0$&$0$\tabularnewline
+Pre-test.Ap2&$ 0.30$&$ 1$&$0$&$  0$&$0$&$0$&$  0$&$0$&$0$&$0$\tabularnewline
+Pre-test.Ap3&$ 0.43$&$ 4$&$0$&$  0$&$0$&$0$&$  0$&$0$&$0$&$0$\tabularnewline
+Pre-test.An3&$ 0.36$&$ 9$&$0$&$  0$&$0$&$0$&$  0$&$0$&$0$&$0$\tabularnewline
+Pre-test.Ev1&$ 0.39$&$12$&$0$&$  0$&$0$&$0$&$  0$&$0$&$0$&$0$\tabularnewline
+Pre-test.Ev2&$ 0.10$&$10$&$0$&$  0$&$0$&$0$&$  0$&$0$&$0$&$0$\tabularnewline
+Pre-test.P1s2&$ 0.33$&$ 2$&$0$&$  0$&$0$&$0$&$  0$&$0$&$0$&$0$\tabularnewline
+Post-test.ReB&$ 0.24$&$ 0$&$0$&$$&$0$&$0$&$$&$0$&$0$&$0$\tabularnewline
+Post-test.UnB&$ 0.05$&$ 0$&$0$&$$&$0$&$0$&$$&$0$&$0$&$0$\tabularnewline
+Post-test.ApB&$ 0.14$&$ 0$&$0$&$$&$0$&$0$&$$&$0$&$0$&$0$\tabularnewline
+Post-test.ApC&$ 0.14$&$ 0$&$0$&$$&$0$&$0$&$$&$0$&$0$&$0$\tabularnewline
+Post-test.AnC&$ 0.47$&$ 0$&$0$&$$&$0$&$0$&$$&$0$&$0$&$0$\tabularnewline
+Post-test.EvA&$ 0.28$&$ 0$&$0$&$$&$0$&$0$&$$&$0$&$0$&$0$\tabularnewline
+Post-test.PAs3&$-0.12$&$ 0$&$0$&$$&$0$&$0$&$$&$0$&$0$&$0$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\tiny vi: numer of violations; vi/ac: proportion of active pairs; maxvi: maximum violations; sum: sum of all violations; zmax: maximum z-value; zsig: number of significant z-values; crit: Critical value }\end{flushright}
+
+
+\section{Estimating Item Parameters}
+
+%latex.default(estimated_params_df, caption = paste0("Estimated parameters in the ",     irt.short.name, "-based instrument", " for measuring the ",     lname), size = "scriptsize", longtable = T, ctable = F, landscape = F,     where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lrrrrrrrrr}\caption{Estimated parameters in the GPCM-based instrument for measuring the Pre-test} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{An3}&\multicolumn{1}{c}{Ap1}&\multicolumn{1}{c}{Ap2}&\multicolumn{1}{c}{Ap3}&\multicolumn{1}{c}{Ev1}&\multicolumn{1}{c}{Ev2}&\multicolumn{1}{c}{P1s2}&\multicolumn{1}{c}{Un1}&\multicolumn{1}{c}{Un2}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{An3}&\multicolumn{1}{c}{Ap1}&\multicolumn{1}{c}{Ap2}&\multicolumn{1}{c}{Ap3}&\multicolumn{1}{c}{Ev1}&\multicolumn{1}{c}{Ev2}&\multicolumn{1}{c}{P1s2}&\multicolumn{1}{c}{Un1}&\multicolumn{1}{c}{Un2}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{estimated}
+xsi.item&$-0.224$&$-0.662$&$-0.573$&$-0.196$&$-0.177$&$-0.054$&$-12.260$&$ -6.086$&$-0.093$\tabularnewline
+B.Cat0&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$  0.000$&$  0.000$&$ 0.000$\tabularnewline
+B.Cat1&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$  1.000$&$  1.000$&$ 1.000$\tabularnewline
+B.Cat2&$ 2.000$&$ 2.000$&$ 0.000$&$ 2.000$&$ 2.000$&$ 2.000$&$  2.000$&$  2.000$&$ 2.000$\tabularnewline
+B.Cat3&$ 3.000$&$ 3.000$&$ 0.000$&$ 3.000$&$ 3.000$&$ 3.000$&$  3.000$&$  3.000$&$ 3.000$\tabularnewline
+B.Cat4&$ 4.000$&$ 4.000$&$ 0.000$&$ 4.000$&$ 4.000$&$ 4.000$&$  0.000$&$  4.000$&$ 4.000$\tabularnewline
+B.Cat5&$ 5.000$&$ 5.000$&$ 0.000$&$ 5.000$&$ 5.000$&$ 5.000$&$  0.000$&$  5.000$&$ 5.000$\tabularnewline
+B.Cat6&$ 6.000$&$ 6.000$&$ 0.000$&$ 6.000$&$ 6.000$&$ 6.000$&$  0.000$&$  6.000$&$ 6.000$\tabularnewline
+B.Cat7&$ 7.000$&$ 0.000$&$ 0.000$&$ 7.000$&$ 7.000$&$ 7.000$&$  0.000$&$  7.000$&$ 0.000$\tabularnewline
+B.Cat8&$ 8.000$&$ 0.000$&$ 0.000$&$ 8.000$&$ 8.000$&$ 8.000$&$  0.000$&$  8.000$&$ 0.000$\tabularnewline
+B.Cat9&$ 9.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 9.000$&$ 9.000$&$  0.000$&$  9.000$&$ 0.000$\tabularnewline
+B.Cat10&$10.000$&$ 0.000$&$ 0.000$&$ 0.000$&$10.000$&$10.000$&$  0.000$&$ 10.000$&$ 0.000$\tabularnewline
+B.Cat11&$11.000$&$ 0.000$&$ 0.000$&$ 0.000$&$11.000$&$ 0.000$&$  0.000$&$ 11.000$&$ 0.000$\tabularnewline
+B.Cat12&$12.000$&$ 0.000$&$ 0.000$&$ 0.000$&$12.000$&$ 0.000$&$  0.000$&$ 12.000$&$ 0.000$\tabularnewline
+B.Cat13&$13.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 13.000$&$ 0.000$\tabularnewline
+B.Cat14&$14.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 14.000$&$ 0.000$\tabularnewline
+B.Cat15&$15.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 15.000$&$ 0.000$\tabularnewline
+B.Cat16&$16.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 16.000$&$ 0.000$\tabularnewline
+B.Cat17&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 17.000$&$ 0.000$\tabularnewline
+B.Cat18&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 18.000$&$ 0.000$\tabularnewline
+AXsi.Cat0&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$ 0.000$&$  0.000$&$  0.000$&$ 0.000$\tabularnewline
+AXsi.Cat1&$-7.050$&$-5.831$&$ 0.573$&$-7.073$&$-5.761$&$-7.447$&$ 36.897$&$  7.836$&$-2.079$\tabularnewline
+AXsi.Cat2&$-8.618$&$ 1.387$&$$&$-6.930$&$-5.680$&$-8.616$&$ 36.897$&$ 17.905$&$-1.386$\tabularnewline
+AXsi.Cat3&$-8.489$&$ 1.096$&$$&$ 0.587$&$-0.523$&$-7.518$&$ 36.779$&$ 31.574$&$ 1.417$\tabularnewline
+AXsi.Cat4&$-7.076$&$-4.816$&$$&$ 1.526$&$-5.619$&$-0.337$&$$&$ 45.698$&$-1.386$\tabularnewline
+AXsi.Cat5&$ 0.000$&$-4.747$&$$&$-6.317$&$-7.055$&$-0.075$&$$&$ 67.220$&$-2.079$\tabularnewline
+AXsi.Cat6&$ 0.001$&$ 3.970$&$$&$-7.534$&$-7.059$&$-7.256$&$$&$108.163$&$ 0.560$\tabularnewline
+AXsi.Cat7&$ 1.387$&$$&$$&$-6.345$&$-5.544$&$-8.887$&$$&$100.994$&$$\tabularnewline
+AXsi.Cat8&$ 1.097$&$$&$$&$ 1.568$&$ 0.782$&$-8.856$&$$&$ 99.267$&$$\tabularnewline
+AXsi.Cat9&$-5.125$&$$&$$&$$&$-4.940$&$-7.238$&$$&$ 99.338$&$$\tabularnewline
+AXsi.Cat10&$-6.509$&$$&$$&$$&$-6.290$&$ 0.539$&$$&$101.019$&$$\tabularnewline
+AXsi.Cat11&$-6.499$&$$&$$&$$&$-4.913$&$$&$$&$109.081$&$$\tabularnewline
+AXsi.Cat12&$-5.251$&$$&$$&$$&$ 2.124$&$$&$$&$110.243$&$$\tabularnewline
+AXsi.Cat13&$-0.007$&$$&$$&$$&$$&$$&$$&$103.017$&$$\tabularnewline
+AXsi.Cat14&$ 1.099$&$$&$$&$$&$$&$$&$$&$101.713$&$$\tabularnewline
+AXsi.Cat15&$ 2.197$&$$&$$&$$&$$&$$&$$&$102.736$&$$\tabularnewline
+AXsi.Cat16&$ 3.584$&$$&$$&$$&$$&$$&$$&$107.459$&$$\tabularnewline
+AXsi.Cat17&$$&$$&$$&$$&$$&$$&$$&$110.838$&$$\tabularnewline
+AXsi.Cat18&$$&$$&$$&$$&$$&$$&$$&$109.550$&$$\tabularnewline
+max.Outfit&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$  1.000$&$  1.001$&$ 1.000$\tabularnewline
+\newpage
+max.Infit&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$ 1.000$&$  1.000$&$  1.001$&$ 1.000$\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(estimated_params_df, caption = paste0("Estimated parameters in the ",     irt.short.name, "-based instrument", " for measuring the ",     lname), size = "scriptsize", longtable = T, ctable = F, landscape = F,     where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lrrrrrrr}\caption{Estimated parameters in the GPCM-based instrument for measuring the Post-test} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{AnC}&\multicolumn{1}{c}{ApB}&\multicolumn{1}{c}{ApC}&\multicolumn{1}{c}{EvA}&\multicolumn{1}{c}{PAs3}&\multicolumn{1}{c}{ReB}&\multicolumn{1}{c}{UnB}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{estimated}&\multicolumn{1}{c}{AnC}&\multicolumn{1}{c}{ApB}&\multicolumn{1}{c}{ApC}&\multicolumn{1}{c}{EvA}&\multicolumn{1}{c}{PAs3}&\multicolumn{1}{c}{ReB}&\multicolumn{1}{c}{UnB}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{estimated}
+xsi.item&$-0.264$&$-40.922$&$-0.412$&$-0.659$&$-26.881$&$ -7.149$&$-0.415$\tabularnewline
+B.Cat0&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$  0.000$&$ 0.000$\tabularnewline
+B.Cat1&$ 1.000$&$  1.000$&$ 1.000$&$ 1.000$&$  1.000$&$  1.000$&$ 1.000$\tabularnewline
+B.Cat2&$ 2.000$&$  2.000$&$ 2.000$&$ 2.000$&$  2.000$&$  2.000$&$ 2.000$\tabularnewline
+B.Cat3&$ 3.000$&$  3.000$&$ 3.000$&$ 3.000$&$  3.000$&$  3.000$&$ 3.000$\tabularnewline
+B.Cat4&$ 4.000$&$  4.000$&$ 4.000$&$ 4.000$&$  4.000$&$  4.000$&$ 4.000$\tabularnewline
+B.Cat5&$ 5.000$&$  5.000$&$ 5.000$&$ 5.000$&$  0.000$&$  5.000$&$ 0.000$\tabularnewline
+B.Cat6&$ 6.000$&$  6.000$&$ 6.000$&$ 6.000$&$  0.000$&$  6.000$&$ 0.000$\tabularnewline
+B.Cat7&$ 7.000$&$  7.000$&$ 7.000$&$ 0.000$&$  0.000$&$  7.000$&$ 0.000$\tabularnewline
+B.Cat8&$ 8.000$&$  8.000$&$ 8.000$&$ 0.000$&$  0.000$&$  8.000$&$ 0.000$\tabularnewline
+B.Cat9&$ 9.000$&$  9.000$&$ 0.000$&$ 0.000$&$  0.000$&$  9.000$&$ 0.000$\tabularnewline
+B.Cat10&$10.000$&$ 10.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 10.000$&$ 0.000$\tabularnewline
+B.Cat11&$11.000$&$ 11.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 11.000$&$ 0.000$\tabularnewline
+B.Cat12&$12.000$&$ 12.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 12.000$&$ 0.000$\tabularnewline
+B.Cat13&$13.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 13.000$&$ 0.000$\tabularnewline
+B.Cat14&$14.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 14.000$&$ 0.000$\tabularnewline
+B.Cat15&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 15.000$&$ 0.000$\tabularnewline
+B.Cat16&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 16.000$&$ 0.000$\tabularnewline
+B.Cat17&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 17.000$&$ 0.000$\tabularnewline
+B.Cat18&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 18.000$&$ 0.000$\tabularnewline
+B.Cat19&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 19.000$&$ 0.000$\tabularnewline
+B.Cat20&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 20.000$&$ 0.000$\tabularnewline
+B.Cat21&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 21.000$&$ 0.000$\tabularnewline
+B.Cat22&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 22.000$&$ 0.000$\tabularnewline
+B.Cat23&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 23.000$&$ 0.000$\tabularnewline
+B.Cat24&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 24.000$&$ 0.000$\tabularnewline
+B.Cat25&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 25.000$&$ 0.000$\tabularnewline
+B.Cat26&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 26.000$&$ 0.000$\tabularnewline
+B.Cat27&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 27.000$&$ 0.000$\tabularnewline
+B.Cat28&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 28.000$&$ 0.000$\tabularnewline
+B.Cat29&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 29.000$&$ 0.000$\tabularnewline
+B.Cat30&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 30.000$&$ 0.000$\tabularnewline
+B.Cat31&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 31.000$&$ 0.000$\tabularnewline
+B.Cat32&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 32.000$&$ 0.000$\tabularnewline
+B.Cat33&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 33.000$&$ 0.000$\tabularnewline
+B.Cat34&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 34.000$&$ 0.000$\tabularnewline
+B.Cat35&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 35.000$&$ 0.000$\tabularnewline
+B.Cat36&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 36.000$&$ 0.000$\tabularnewline
+B.Cat37&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 37.000$&$ 0.000$\tabularnewline
+B.Cat38&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 38.000$&$ 0.000$\tabularnewline
+\newpage
+B.Cat39&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 39.000$&$ 0.000$\tabularnewline
+B.Cat40&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$ 40.000$&$ 0.000$\tabularnewline
+AXsi.Cat0&$ 0.000$&$  0.000$&$ 0.000$&$ 0.000$&$  0.000$&$  0.000$&$ 0.000$\tabularnewline
+AXsi.Cat1&$-6.026$&$ 63.868$&$-6.583$&$-5.856$&$107.842$&$  9.246$&$-6.877$\tabularnewline
+AXsi.Cat2&$-7.906$&$127.595$&$-6.455$&$ 1.386$&$107.523$&$ 18.531$&$-7.055$\tabularnewline
+AXsi.Cat3&$-8.366$&$191.328$&$ 2.080$&$-5.439$&$107.390$&$ 27.833$&$-0.135$\tabularnewline
+AXsi.Cat4&$-7.959$&$258.331$&$ 3.044$&$-6.371$&$107.523$&$ 37.145$&$ 1.658$\tabularnewline
+AXsi.Cat5&$-6.265$&$329.662$&$-4.344$&$-5.216$&$$&$ 46.459$&$$\tabularnewline
+AXsi.Cat6&$ 1.104$&$402.199$&$-5.207$&$ 3.951$&$$&$ 55.736$&$$\tabularnewline
+AXsi.Cat7&$-0.006$&$487.428$&$-4.150$&$$&$$&$ 64.998$&$$\tabularnewline
+AXsi.Cat8&$-4.810$&$488.815$&$ 3.295$&$$&$$&$ 74.299$&$$\tabularnewline
+AXsi.Cat9&$-6.196$&$488.527$&$$&$$&$$&$ 83.592$&$$\tabularnewline
+AXsi.Cat10&$-6.451$&$487.428$&$$&$$&$$&$ 93.532$&$$\tabularnewline
+AXsi.Cat11&$-6.376$&$489.731$&$$&$$&$$&$103.808$&$$\tabularnewline
+AXsi.Cat12&$-4.726$&$491.066$&$$&$$&$$&$114.022$&$$\tabularnewline
+AXsi.Cat13&$ 2.491$&$$&$$&$$&$$&$124.364$&$$\tabularnewline
+AXsi.Cat14&$ 3.696$&$$&$$&$$&$$&$136.479$&$$\tabularnewline
+AXsi.Cat15&$$&$$&$$&$$&$$&$146.873$&$$\tabularnewline
+AXsi.Cat16&$$&$$&$$&$$&$$&$159.515$&$$\tabularnewline
+AXsi.Cat17&$$&$$&$$&$$&$$&$171.435$&$$\tabularnewline
+AXsi.Cat18&$$&$$&$$&$$&$$&$182.746$&$$\tabularnewline
+AXsi.Cat19&$$&$$&$$&$$&$$&$196.735$&$$\tabularnewline
+AXsi.Cat20&$$&$$&$$&$$&$$&$217.437$&$$\tabularnewline
+AXsi.Cat21&$$&$$&$$&$$&$$&$241.704$&$$\tabularnewline
+AXsi.Cat22&$$&$$&$$&$$&$$&$282.662$&$$\tabularnewline
+AXsi.Cat23&$$&$$&$$&$$&$$&$282.649$&$$\tabularnewline
+AXsi.Cat24&$$&$$&$$&$$&$$&$281.939$&$$\tabularnewline
+AXsi.Cat25&$$&$$&$$&$$&$$&$277.050$&$$\tabularnewline
+AXsi.Cat26&$$&$$&$$&$$&$$&$275.453$&$$\tabularnewline
+AXsi.Cat27&$$&$$&$$&$$&$$&$274.899$&$$\tabularnewline
+AXsi.Cat28&$$&$$&$$&$$&$$&$274.735$&$$\tabularnewline
+AXsi.Cat29&$$&$$&$$&$$&$$&$275.542$&$$\tabularnewline
+AXsi.Cat30&$$&$$&$$&$$&$$&$277.779$&$$\tabularnewline
+AXsi.Cat31&$$&$$&$$&$$&$$&$283.146$&$$\tabularnewline
+AXsi.Cat32&$$&$$&$$&$$&$$&$284.024$&$$\tabularnewline
+AXsi.Cat33&$$&$$&$$&$$&$$&$278.717$&$$\tabularnewline
+AXsi.Cat34&$$&$$&$$&$$&$$&$276.796$&$$\tabularnewline
+AXsi.Cat35&$$&$$&$$&$$&$$&$276.101$&$$\tabularnewline
+AXsi.Cat36&$$&$$&$$&$$&$$&$275.699$&$$\tabularnewline
+AXsi.Cat37&$$&$$&$$&$$&$$&$276.319$&$$\tabularnewline
+\newpage
+AXsi.Cat38&$$&$$&$$&$$&$$&$278.569$&$$\tabularnewline
+AXsi.Cat39&$$&$$&$$&$$&$$&$282.075$&$$\tabularnewline
+AXsi.Cat40&$$&$$&$$&$$&$$&$285.947$&$$\tabularnewline
+max.Outfit&$ 1.007$&$  1.000$&$ 1.000$&$ 1.000$&$  1.000$&$  0.000$&$ 1.000$\tabularnewline
+max.Infit&$ 1.007$&$  1.000$&$ 1.000$&$ 1.000$&$  1.000$&$  0.000$&$ 1.000$\tabularnewline
+\hline
+\end{longtable}}
+
+\section{Latent Trait Estimates}
+
+%latex.default(data_df, caption = paste0("Latent trait estimates and person model fit of the ",     irt.short.name, "-based instrument ", in_title), size = "scriptsize",     longtable = T, ctable = F, landscape = T, rowlabel = "",     where = "!htbp", file = filename, append = T)%
+\setlongtables\begin{landscape}{\scriptsize
+\begin{longtable}{lrrrrrrrr}\caption{Latent trait estimates and person model fit of the GPCM-based instrument for measuring gains in the skills and knowledge of participants in the first empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Pre-test.theta}&\multicolumn{1}{c}{Pre-test.error}&\multicolumn{1}{c}{Pre-test.Outfit}&\multicolumn{1}{c}{Pre-test.Infit}&\multicolumn{1}{c}{Post-test.theta}&\multicolumn{1}{c}{Post-test.error}&\multicolumn{1}{c}{Post-test.Outfit}&\multicolumn{1}{c}{Post-test.Infit}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Pre-test.theta}&\multicolumn{1}{c}{Pre-test.error}&\multicolumn{1}{c}{Pre-test.Outfit}&\multicolumn{1}{c}{Pre-test.Infit}&\multicolumn{1}{c}{Post-test.theta}&\multicolumn{1}{c}{Post-test.error}&\multicolumn{1}{c}{Post-test.Outfit}&\multicolumn{1}{c}{Post-test.Infit}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{data}
+10169&$-0.039$&$0.116$&$1.010$&$1.069$&$-0.181$&$0.103$&$0.285$&$0.243$\tabularnewline
+10170&$-0.063$&$0.112$&$1.271$&$0.855$&$-0.121$&$0.108$&$0.182$&$0.121$\tabularnewline
+10171&$-0.170$&$0.100$&$0.913$&$0.843$&$ 0.235$&$0.300$&$0.172$&$0.222$\tabularnewline
+10174&$-0.063$&$0.112$&$0.403$&$0.547$&$-0.207$&$0.105$&$0.445$&$0.651$\tabularnewline
+10175&$ 0.335$&$0.240$&$0.219$&$0.242$&$ 0.016$&$0.160$&$0.267$&$0.256$\tabularnewline
+10176&$-0.084$&$0.108$&$0.596$&$0.238$&$-0.065$&$0.121$&$1.125$&$0.571$\tabularnewline
+10178&$-0.397$&$0.126$&$2.367$&$1.774$&$-0.105$&$0.110$&$0.511$&$0.189$\tabularnewline
+10179&$ 0.034$&$0.133$&$0.658$&$0.957$&$ 0.322$&$0.387$&$0.114$&$0.171$\tabularnewline
+10181&$ 0.034$&$0.133$&$0.270$&$0.271$&$-0.074$&$0.119$&$1.015$&$0.462$\tabularnewline
+10183&$-0.170$&$0.100$&$1.014$&$1.003$&$-0.076$&$0.117$&$0.625$&$0.533$\tabularnewline
+10184&$ 0.115$&$0.154$&$0.637$&$0.510$&$ 0.048$&$0.179$&$1.462$&$0.704$\tabularnewline
+10185&$-0.012$&$0.122$&$0.859$&$1.235$&$ 0.134$&$0.245$&$0.210$&$0.243$\tabularnewline
+10186&$ 0.002$&$0.125$&$0.857$&$0.868$&$ 0.322$&$0.387$&$0.114$&$0.171$\tabularnewline
+10187&$-0.115$&$0.104$&$0.706$&$0.760$&$-0.105$&$0.110$&$0.511$&$0.189$\tabularnewline
+10188&$ 0.277$&$0.211$&$1.107$&$1.299$&$ 0.844$&$0.727$&$0.114$&$0.249$\tabularnewline
+10189&$ 0.234$&$0.195$&$0.429$&$0.302$&$-0.007$&$0.147$&$1.102$&$0.540$\tabularnewline
+10190&$-0.215$&$0.100$&$0.730$&$0.636$&$-0.007$&$0.147$&$1.090$&$0.557$\tabularnewline
+10191&$ 0.281$&$0.216$&$0.455$&$0.578$&$ 0.322$&$0.387$&$0.114$&$0.171$\tabularnewline
+10192&$-0.105$&$0.105$&$0.492$&$0.428$&$-0.025$&$0.138$&$0.423$&$0.331$\tabularnewline
+10193&$ 0.035$&$0.132$&$0.884$&$0.986$&$ 0.016$&$0.160$&$1.381$&$0.617$\tabularnewline
+10195&$-0.085$&$0.108$&$0.437$&$0.629$&$-0.123$&$0.107$&$0.645$&$1.053$\tabularnewline
+10196&$-0.095$&$0.107$&$0.355$&$0.278$&$ 0.104$&$0.216$&$0.428$&$0.337$\tabularnewline
+10197&$ 0.052$&$0.138$&$0.942$&$0.530$&$-0.025$&$0.138$&$0.423$&$0.331$\tabularnewline
+10198&$-0.205$&$0.100$&$0.456$&$0.257$&$-0.040$&$0.131$&$0.391$&$0.354$\tabularnewline
+10199&$-0.026$&$0.119$&$1.178$&$0.578$&$-0.025$&$0.138$&$1.337$&$0.582$\tabularnewline
+10200&$ 0.115$&$0.154$&$0.657$&$0.440$&$-0.076$&$0.117$&$0.545$&$0.294$\tabularnewline
+10201&$ 0.140$&$0.162$&$0.883$&$0.774$&$-0.040$&$0.131$&$0.391$&$0.354$\tabularnewline
+10202&$-0.124$&$0.103$&$0.637$&$0.872$&$-0.074$&$0.119$&$1.017$&$0.560$\tabularnewline
+10203&$-0.040$&$0.134$&$0.785$&$0.444$&$-0.635$&$0.211$&$0.168$&$0.153$\tabularnewline
+10204&$ 0.335$&$0.240$&$1.075$&$0.693$&$-0.040$&$0.131$&$0.403$&$0.335$\tabularnewline
+10206&$ 0.140$&$0.162$&$0.559$&$0.742$&$-0.053$&$0.126$&$1.354$&$0.629$\tabularnewline
+10208&$-0.116$&$0.104$&$0.873$&$0.564$&$-0.025$&$0.138$&$0.423$&$0.331$\tabularnewline
+10209&$-0.026$&$0.119$&$0.702$&$0.738$&$ 0.322$&$0.387$&$0.114$&$0.171$\tabularnewline
+10210&$-0.084$&$0.108$&$1.296$&$0.899$&$-0.138$&$0.105$&$0.425$&$0.108$\tabularnewline
+10212&$ 0.404$&$0.273$&$0.298$&$0.362$&$-0.172$&$0.103$&$0.384$&$0.513$\tabularnewline
+10213&$ 0.200$&$0.184$&$0.584$&$0.883$&$ 0.235$&$0.300$&$0.172$&$0.222$\tabularnewline
+10214&$ 0.140$&$0.164$&$0.629$&$0.756$&$-0.007$&$0.147$&$1.130$&$0.548$\tabularnewline
+10215&$-0.038$&$0.116$&$0.264$&$0.311$&$ 0.048$&$0.179$&$0.440$&$0.313$\tabularnewline
+10216&$-0.026$&$0.119$&$0.490$&$0.655$&$ 0.844$&$0.727$&$0.114$&$0.249$\tabularnewline
+10217&$-0.025$&$0.119$&$0.792$&$0.816$&$ 0.235$&$0.300$&$0.172$&$0.222$\tabularnewline
+\newpage
+10218&$ 0.019$&$0.128$&$0.765$&$0.414$&$-0.086$&$0.114$&$0.686$&$0.293$\tabularnewline
+10219&$-0.039$&$0.116$&$1.280$&$1.535$&$-0.021$&$0.142$&$0.408$&$0.382$\tabularnewline
+10220&$ 0.034$&$0.133$&$0.403$&$0.217$&$-0.002$&$0.152$&$1.267$&$0.573$\tabularnewline
+10221&$-0.116$&$0.104$&$1.133$&$0.643$&$-0.189$&$0.104$&$1.693$&$0.575$\tabularnewline
+10222&$ 0.052$&$0.138$&$0.752$&$0.484$&$-0.180$&$0.103$&$0.416$&$0.600$\tabularnewline
+10223&$ 0.002$&$0.125$&$0.751$&$0.795$&$ 0.134$&$0.245$&$0.210$&$0.245$\tabularnewline
+10224&$-0.196$&$0.100$&$0.810$&$0.797$&$-0.156$&$0.103$&$0.720$&$0.958$\tabularnewline
+10226&$ 0.199$&$0.182$&$0.321$&$0.511$&$ 0.322$&$0.387$&$0.114$&$0.171$\tabularnewline
+10227&$-0.161$&$0.100$&$0.381$&$0.324$&$-0.121$&$0.108$&$2.351$&$0.526$\tabularnewline
+10230&$ 0.200$&$0.184$&$0.988$&$0.772$&$-0.121$&$0.108$&$0.117$&$0.089$\tabularnewline
+10231&$-0.096$&$0.107$&$1.160$&$0.923$&$ 0.048$&$0.179$&$0.490$&$0.325$\tabularnewline
+10232&$ 0.052$&$0.138$&$1.198$&$1.570$&$-0.065$&$0.121$&$1.010$&$0.813$\tabularnewline
+10233&$-0.085$&$0.108$&$0.804$&$0.612$&$-0.037$&$0.134$&$0.359$&$0.394$\tabularnewline
+10234&$ 0.140$&$0.164$&$0.681$&$0.703$&$-0.138$&$0.105$&$1.278$&$1.260$\tabularnewline
+10237&$ 0.154$&$0.177$&$0.366$&$0.513$&$-0.074$&$0.119$&$0.917$&$1.057$\tabularnewline
+10238&$ 0.052$&$0.138$&$0.279$&$0.290$&$-0.037$&$0.134$&$0.215$&$0.296$\tabularnewline
+10240&$-0.310$&$0.109$&$2.264$&$2.377$&$-0.040$&$0.131$&$1.168$&$0.595$\tabularnewline
+\hline
+\end{longtable}}\end{landscape}
+
+\end{document}

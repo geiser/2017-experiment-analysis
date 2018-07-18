@@ -151,7 +151,7 @@ get_corr_matrix_mods <- function(participants, corr_pair_mods, dvs, wid = 'UserI
       
       result[[paste0('corr_',i,'_',j)]] <- list(
         filename = filename
-        , title = paste0("Correlation of ", part_of_title, sub_main)
+        , title = paste0(part_of_title, sub_main)
         , mod = corr.test(cdat[columns], method = method)
         , data = cdat[columns]
         , data.full = cdat
@@ -220,9 +220,9 @@ write_corr_matrix_plots <- function(corr_matrix_mods, path, override = T) {
         addCoef.col="black", # Add coefficient of correlation
         tl.col="black", tl.srt=45, #Text label color and rotation
         # Combine with significance
-        p.mat = p_mat, sig.level = 0.05, insig = "blank",
+        p.mat = p_mat, sig.level = 0.05, insig = "blank", mar = c(0, 0, 1, 0),
         # hide correlation coefficient on the principal diagonal
-        main = mod$title, # rect.col = black, outline = TRUE,
+        title = paste("Correlation of", mod$title), # rect.col = black, outline = TRUE,
         tl.cex=0.75, number.cex = 0.75, cl.cex = 0.65,
         diag=FALSE 
       )

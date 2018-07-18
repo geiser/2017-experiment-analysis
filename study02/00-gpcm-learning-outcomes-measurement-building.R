@@ -4,7 +4,7 @@ library(plyr)
 library(readr)
 library(readxl)
 library(parallel)
-options(mc.cores=7)
+#options(mc.cores=7)
 
 participants <- read_csv('data/SignedUpParticipants.csv')
 pre_dat <- merge(read_csv('data/PreAMC.csv')
@@ -39,11 +39,11 @@ t(pre_info[pre_info$model_fit
            & pre_info$lav_CFI > 0.9
            ,])
 pre_mdl_strs <- list()
-pre_mdl_strs[[1]] <- c("Un3","Ap2a","Ap2b","An3a","An3b","P2s3")
-pre_mdl_strs[[2]] <- c("Un3","Ap2a","Ap2b","An3a","An3b","P2s2")
-pre_mdl_strs[[3]] <- c("Un3","Ap2a","Ap2b","An3b","P2s2","P3s1")
-pre_mdl_strs[[4]] <- c("Un3","Ap2a","Ap2b","An3b","P2s2","P3s3")
-pre_mdl_strs[[5]] <- c("Un3","Ap2a","Ap2b","An3b","P2s2","P3s2")
+pre_mdl_strs[[1]] <- c("Un3","Ap2a","Ap2b","An3a","An3b","P2s1")
+pre_mdl_strs[[2]] <- c("Un3","Ap2a","Ap2b","An3b","P2s2")
+pre_mdl_strs[[3]] <- c("Ap2a","Ap2b","An3a","An3b","P2s2")
+pre_mdl_strs[[4]] <- c("Ap2b","An3a","An3b","P2s2","P3s1")
+pre_mdl_strs[[5]] <- c("Un3","Ap2a","Ap2b","An3b","P2s1")
 
 ##
 pos_tam_info_models <- load_and_save_TAMs_to_measure_skill(
@@ -70,14 +70,13 @@ t(pos_info[pos_info$model_fit
            & pos_info$lav_CFI > 0.9
            ,])
 pos_mdl_strs <- list()
-pos_mdl_strs[[1]] <- c("ApB1","ApB2","AnC2","EvB","PCs2","PDs1")
-pos_mdl_strs[[2]] <- c("UnC","ApB1","ApB2","AnC2","PCs3","PDs1")
-pos_mdl_strs[[3]] <- c("ApB1","ApB2","AnC2","EvB","PCs3","PDs2")
-pos_mdl_strs[[4]] <- c("ApB1","ApB2","AnC2","EvB","PCs1","PDs3")
-pos_mdl_strs[[5]] <- c("UnC","ApB1","ApB2","AnC2","PCs2","PDs1")
-pos_mdl_strs[[6]] <- c("UnC","ApB1","ApB2","AnC1","AnC2")
-pos_mdl_strs[[7]] <- c("ApB1","ApB2","AnC2","EvB","PDs2")
-
+pos_mdl_strs[[1]] <- c("ApB1","ApB2","AnC1","AnC2","PCs3")
+pos_mdl_strs[[2]] <- c("ApB1","ApB2","AnC2","PCs2")
+pos_mdl_strs[[3]] <- c("ApB1","ApB2","AnC2","PCs1")
+pos_mdl_strs[[4]] <- c("ApB1","ApB2","AnC2","PCs3")
+pos_mdl_strs[[5]] <- c("ApB1","ApB2","AnC1","AnC2")
+pos_mdl_strs[[6]] <- c("ApB1","ApB2","AnC1","PCs2")
+pos_mdl_strs[[7]] <- c("ApB1","ApB2","AnC1","PCs3")
 
 
 ##################################################################
@@ -112,7 +111,7 @@ filename <- "report/latex/gpcm-learning-outcomes.tex"
 if (!file.exists(filename)) {
   write_gpcm_in_latex(
     gpcm_summaries
-    , in_title = "for measuring gains in the skills and knowledge of participants in the second empirical study"
+    , in_title = "for measuring gains in the skill/knowledge of participants in the second empirical study"
     , filename = filename
   )
 }
@@ -125,8 +124,8 @@ mod <- TAM.measure_change(
   pre_dat, pos_dat
   , items.pre = pre_mdl_strs[[1]]
   , items.pos = pos_mdl_strs[[1]]
-  , same_items.pre = c("Ap2a","ApB1")
-  , same_items.pos = c("Ap2b","ApB2")
+  , same_items.pre = c("Ap2a","Ap2b")
+  , same_items.pos = c("ApB1","ApB2")
   , userid = "UserID"
   , verify = T, plotting = T, irtmodel = "GPCM")
 
@@ -139,5 +138,5 @@ write_measure_change_report(
   , filename = 'MeasurementChangeModel.xlsx', override = T
 )
 
-#write_csv(dplyr::mutate(mod$ability, gain.theta = pos.theta-pre.theta), 'data/GainSkillsKnowledge.csv')
+write_csv(dplyr::mutate(mod$ability, gain.theta = pos.theta-pre.theta), 'data/GainSkillsKnowledge.csv')
 

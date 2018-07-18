@@ -1,0 +1,55 @@
+
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\section{Summary of Winzorized Responses}
+%latex.default(as.data.frame(dd$get_data()), rowname = NULL, caption = paste("Summary of Winsorized responses",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = T, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables\begin{landscape}{\scriptsize
+\begin{longtable}{llllll}\caption{Summary of Winsorized responses for estimating gains in skill/knowledge based on the stacking of pre-test and post-test data with GPCM  in the second empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{c}{@@}&\multicolumn{1}{c}{UserID}&\multicolumn{1}{c}{NroUSP}&\multicolumn{1}{c}{...}&\multicolumn{1}{c}{PlayerRole}&\multicolumn{1}{c}{gain.theta}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{c}{@@}&\multicolumn{1}{c}{UserID}&\multicolumn{1}{c}{NroUSP}&\multicolumn{1}{c}{...}&\multicolumn{1}{c}{PlayerRole}&\multicolumn{1}{c}{gain.theta}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{as.data.frame}
+&10170&10260351&...&&-0.1095\tabularnewline
+-\textgreater &10172&10273971&...&Yee Achiever&0.3605-\textgreater 0.2866\tabularnewline
+&10174&10276852&...&&-0.0018\tabularnewline
+-\textgreater &10175&10310700&...&&0.143-\textgreater 0.1094\tabularnewline
+&10176&10276949&...&&-0.0377\tabularnewline
+...&...&...&...&...&...\tabularnewline
+&10187&9790781&...&Yee Achiever&-0.0441\tabularnewline
+-\textgreater &10188&10276995&...&Yee Achiever&-0.361-\textgreater -0.2447\tabularnewline
+&10189&9363926&...&&-0.0486\tabularnewline
+...&...&...&...&...&...\tabularnewline
+&10197&10276661&...&&-0.0384\tabularnewline
+-\textgreater &10198&10310888&...&&0.3623-\textgreater 0.1918\tabularnewline
+&10200&9795272&...&&-0.1286\tabularnewline
+...&...&...&...&...&...\tabularnewline
+&10202&10277036&...&Yee Achiever&0.0381\tabularnewline
+-\textgreater &10203&9921470&...&Yee Achiever&-0.3551-\textgreater -0.1888\tabularnewline
+&10204&10310471&...&&-0.0143\tabularnewline
+...&...&...&...&...&...\tabularnewline
+&10214&10277022&...&Yee Achiever&-0.0494\tabularnewline
+-\textgreater &10215&9285227&...&&0.2479-\textgreater 0.1918\tabularnewline
+-\textgreater &10217&9805341&...&Yee Socializer&-0.3384-\textgreater -0.2447\tabularnewline
+-\textgreater &10218&9842913&...&&-0.6768-\textgreater -0.1778\tabularnewline
+&10219&10276831&...&Yee Achiever&0.1189\tabularnewline
+-\textgreater &10220&9760151&...&&0.2817-\textgreater 0.1918\tabularnewline
+&10224&9368772&...&&-0.0393\tabularnewline
+...&...&...&...&...&...\tabularnewline
+&10232&10276974&...&&0.0911\tabularnewline
+-\textgreater &10237&10377688&...&Yee Socializer&0.325-\textgreater 0.2866\tabularnewline
+&10238&10276953&...&Yee Socializer&0.0589\tabularnewline
+...&...&...&...&...&...\tabularnewline
+\hline
+\end{longtable}}\end{landscape}
+\end{document}

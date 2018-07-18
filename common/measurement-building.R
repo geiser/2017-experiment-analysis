@@ -704,11 +704,15 @@ TAM.measure_change.verify <- function(pre_dat, pos_dat
         pos_tt_val <- tt[items.pos[[j]],"Item"]
         abs_tt_val <- abs(pos_tt_val - pre_tt_val)
         
+        if (is.null(pre_tt_val) | is.null(pos_tt_val) |
+            is.na(pre_tt_val) | is.na(pos_tt_val)) {
+          next
+        }
+        
         align_tt <- rbind(tt[items.pos,] - abs_tt_val, tt[items.pre,])
         if (pos_tt_val < pre_tt_val) {
           align_tt <- rbind(tt[items.pos,], tt[items.pre,] - abs_tt_val)
         }
-        
         
         pre_c <- c()
         pos_c <- c()
@@ -788,11 +792,19 @@ TAM.measure_change <- function(
   
   # get pre- and post-test responses
   pos_resp <- subset(resp, select = j_labels)[(n+1):(n*2),]
+  if (length(j_labels) == 1) {
+    pos_resp <- data.frame(pos_resp)
+    colnames(pos_resp) <- j_labels
+  }
   for (cname in items$pos[!(items$pos %in% same_items$pos)]) {
     pos_resp[[cname]] <- resp[[cname]][(n+1):(n*2)]
   }
   
   pre_resp <- subset(resp, select = j_labels)[1:n,]
+  if (length(j_labels) == 1) {
+    pre_resp <- data.frame(pre_resp)
+    colnames(pre_resp) <- j_labels
+  }
   for (cname in items$pre[!(items$pre %in% same_items$pre)]) {
     pre_resp[[cname]] <- resp[[cname]][1:n]
   }

@@ -10,7 +10,7 @@ dat <- read_csv('data/GainSkillsKnowledge.csv')
 dat <- merge(participants, dat[,c("UserID","pre.theta","pos.theta","gain.theta")])
 
 folder <- 'effective-participants'
-title <- "Gains in Skills/Knowledge - Recursion"
+title <- "Gains in Skill/Knowledge - Recursion"
 dir.create(paste0("report/learning-outcomes/", folder), showWarnings = F)
 
 list_dvs <- as.list(c("gain.theta"))
@@ -105,7 +105,7 @@ write_nonparam_statistics_analysis_in_latex(
 write_winsorized_in_latex(
   winsor_mod$diff_dat
   , filename = paste0("report/latex/wisorized-learning-outcomes",folder,".tex")
-  , in_title = paste("for estimating gains in skills/knowledge based on"
+  , in_title = paste("for estimating gains in skill/knowledge based on"
                      ,"the stacking of pre-test and post-test data with GPCM "
                      ,"in the third empirical study")
 )
@@ -114,6 +114,6 @@ write_param_statistics_analysis_in_latex(
   parametric_results = list("Type" = result)
   , ivs = c("Type")
   , filename = paste0("report/latex/parametric-learning-outcomes-", folder, "-analysis.tex")
-  , in_title = paste("for the gains in skills/knowledge estimates in the third empirical study")
+  , in_title = paste("for the gains in skill/knowledge estimates in the third empirical study")
 )
 

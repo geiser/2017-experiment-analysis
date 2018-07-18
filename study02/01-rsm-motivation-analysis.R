@@ -196,3 +196,4 @@ lapply(list_dvs, function(dv) {
     , in_title = paste0(" for the latent trait estimates of ", dv, " in the second empirical study")
   )
 })
+

@@ -733,3 +733,48 @@ write_gpcm_in_latex <- function(gpcm_summaries, filename, in_title = NULL, appen
                                  , irt.name = "Generalized Partial Credit Model", irt.short.name = "GPCM")
 }
 
+## Write summary of correlation matrix_mods
+write_summary_corr_matrix_mods_in_latex <- function(corr_matrix_mods, filename, in_title = NULL, append = F) {
+  library(Hmisc)
+  write("", file = filename, append = append)
+  if (!append) {
+    write(paste("\\documentclass[6pt]{article}"
+                ,"\\usepackage{longtable}"
+                ,"\\usepackage{rotating}"
+                ,"\\usepackage{lscape}"
+                ,"\\usepackage{ctable}"
+                ,"\\begin{document}", sep = "\n")
+          , file = filename, append = T)
+    write(paste0("\\title{Summary of Correlation Analysis}"), file = filename, append = T)
+    write("\\maketitle", file = filename, append = T)
+  }
+  
+  ##
+  lapply(corr_matrix_mods, FUN = function(mod) {
+    write(paste0("\\section{",mod$title,"}"), file = filename, append = T)
+    write("", file = filename, append = T)
+    
+    M <- cor(mod$data, method = mod$method)
+    p_mat <- cor.mtest(mod$data, method = mod$method)
+    
+    latex(
+      round(M, 4)
+      , caption = paste("Correlation matrix", "of", mod$title, in_title)
+      , size = "small", longtable = T, ctable=F, landscape = T
+      , insert.bottom = paste("method: ", mod$method)
+      , where='!htbp', file = filename, append = T)
+    write("", file = filename, append = T)
+    
+    latex(
+      round(p_mat, 4)
+      , caption = paste("Correlation matrix with p-values", "of", mod$title, in_title)
+      , size = "small", longtable = T, ctable=F, landscape = T
+      , insert.bottom = paste("method: ", mod$method)
+      , where='!htbp', file = filename, append = T)
+    write("", file = filename, append = T)
+  })
+  
+  if (!append) {
+    write("\\end{document}", file = filename, append = T)
+  }
+}

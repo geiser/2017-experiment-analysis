@@ -1,0 +1,62 @@
+
+\documentclass[6pt]{article}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{ctable}
+\begin{document}
+\section{Summaries of Parametric Statistics Analysisfor the gains in skill/knowledge estimates in the first empirical study}
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrl}\caption{Summary of two-way ANOVA results for the gains in skill/knowledge estimates in the first empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$9.866$&$ 1$&$291.364$&$0.000$&\tabularnewline
+Type.Type&$0.031$&$ 1$&$  0.927$&$0.340$&\tabularnewline
+Type.CLRole&$1.321$&$ 1$&$ 39.020$&$0.000$&**\tabularnewline
+Type.Type:CLRole&$0.002$&$ 1$&$  0.067$&$0.796$&\tabularnewline
+Type.Residuals&$1.693$&$50$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\raggedleft{ \scriptsize{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }} 
+
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = T,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables\begin{landscape}{\small
+\begin{longtable}{lrrrrrrrrrrrrr}\caption{Descriptive statistics and Tukey post-hoc test results for the gains in skill/knowledge estimates in the first empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.non-gamified&$24$&$ 0.419$&$ 0.407$&$0.038$&$50$&$ 0.331$&$0.482$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified&$30$&$ 0.455$&$ 0.455$&$0.034$&$50$&$ 0.388$&$0.523$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified - ont-gamified&$54$&$-0.036$&$-0.049$&$0.050$&$$&$-0.137$&$0.065$&$-0.963$&$0.340$&$0.478$&$-0.147$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice&$13$&$ 0.558$&$ 0.558$&$0.051$&$50$&$ 0.455$&$0.660$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Apprentice&$15$&$ 0.620$&$ 0.620$&$0.048$&$50$&$ 0.524$&$0.715$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice - ont-gamified.Apprentice&$28$&$-0.062$&$-0.062$&$0.070$&$$&$-0.247$&$0.124$&$-0.885$&$0.380$&$0.813$&$-0.376$&$$&$$\tabularnewline
+Type.non-gamified.Master&$11$&$ 0.255$&$ 0.255$&$0.055$&$50$&$ 0.144$&$0.367$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Master&$15$&$ 0.291$&$ 0.291$&$0.048$&$50$&$ 0.196$&$0.386$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Master - ont-gamified.Master&$26$&$-0.036$&$-0.036$&$0.073$&$$&$-0.230$&$0.159$&$-0.486$&$0.629$&$0.962$&$-0.166$&$$&$$\tabularnewline
+\hline
+\end{longtable}}\end{landscape}
+\raggedleft{ \scriptsize{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }} 
+
+
+\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  30 MAY 2018 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 JUL 2018 08:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -290,40 +290,58 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (171.03616pt too wide) in alignment at lines 38--42
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (171.03616pt too wide) in alignment at lines 42--46
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (171.03616pt too wide) in alignment at lines 46--48
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 50.
+
+Overfull \hbox (171.03616pt too wide) in alignment at lines 48--57
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
 
 [2
 
 ] [3
 
 ]
-Overfull \hbox (200.09042pt too wide) in alignment at lines 58--62
+Overfull \hbox (200.09042pt too wide) in alignment at lines 63--67
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (200.09042pt too wide) in alignment at lines 62--66
+Overfull \hbox (200.09042pt too wide) in alignment at lines 67--71
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (200.09042pt too wide) in alignment at lines 66--68
+Overfull \hbox (200.09042pt too wide) in alignment at lines 71--73
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (200.09042pt too wide) in alignment at lines 68--90
+Overfull \hbox (200.09042pt too wide) in alignment at lines 73--95
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (200.09042pt too wide) in alignment at lines 90--110
+Overfull \hbox (200.09042pt too wide) in alignment at lines 95--115
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (200.09042pt too wide) in alignment at lines 110--114
+Overfull \hbox (200.09042pt too wide) in alignment at lines 115--119
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
@@ -340,7 +358,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3044 strings out of 492995
  41958 string characters out of 6132704
- 138500 words of memory out of 5000000
+ 138658 words of memory out of 5000000
  6557 multiletter control sequences out of 15000+600000
  6762 words of font info for 24 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -355,7 +373,7 @@ cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
 Output written on nonparametric-learning-outcomes-signedup-participants-analysi
-s.pdf (7 pages, 99908 bytes).
+s.pdf (7 pages, 100612 bytes).
 PDF statistics:
  64 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream

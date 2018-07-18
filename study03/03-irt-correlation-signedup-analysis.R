@@ -9,7 +9,7 @@ participants <- read_csv('data/SignedUpParticipants.csv')
 info_src <- list(
   "gain.theta" = list(
     sheed = "data", dv = "gain.theta", wid = "UserID"
-    , dv.name = "Gains in Skills/Knowledge"
+    , dv.name = "Gains in Skill/Knowledge"
     , filename = "report/learning-outcomes/signedup-participants/ParametricAnalysis.xlsx")
   
   , "IntrinsicMotivation" = list(
@@ -58,8 +58,9 @@ corr_pair_mods <- get_corr_pair_mods(
 corr_matrix_mods <- get_corr_matrix_mods(
   participants, corr_pair_mods
   , dvs = list(
-    "Gains in Skills/Knowledge and Motivation" = c(
-      'Gains in Skills/Knowledge', 'Intrinsic Motivation'
+    "Gains in Skill/Knowledge and Motivation" = c(
+      'Gains in Skill/Knowledge'
+      , 'Intrinsic Motivation'
       , 'Interest/Enjoyment', 'Perceived Choice', 'Pressure/Tension', 'Effort/Importance'
       , 'Level of Motivation'
       , 'Attention', 'Relevance', 'Satisfaction')
@@ -92,5 +93,14 @@ write_corr_chart_plots(
   corr_pair_mods
   , path =  "report/correlation/signedup-participants/corr-pairs-plots/"
   , override = TRUE
+)
+
+#############################################################################
+## Translate latex resume                                                  ##
+#############################################################################
+write_summary_corr_matrix_mods_in_latex(
+  corr_matrix_mods
+  , filename = paste0("report/latex/correlation-signedup-analysis.tex")
+  , in_title = paste0("between motivation factors and in the third empirical study")
 )
 

@@ -26,12 +26,15 @@ pre_tam_info_models <- load_and_save_TAMs_to_measure_skill(
 pre_info <- pre_tam_info_models$information
 t(pre_info[pre_info$model_fit
            & pre_info$everything.fits
-           & pre_info$unidim_test
            & pre_info$unidim_lav_test
-           & pre_info$uni.by.pca
-           & !is.na(pre_info$lav_rmsea_pvalue)
+           & pre_info$lav_CFI > 0.9
            ,])
-pre_mdl_strs <- c("P1s0+P2s0+P3s2+P4s0","P1s0+P2s0+P3s3+P4s0")
+pre_mdl_strs <- list()
+pre_mdl_strs[[1]] <- c("P1s0","P2s0","P3s2","P4s0")
+pre_mdl_strs[[2]] <- c("P1s0","P2s0","P3s3","P4s0")
+pre_mdl_strs[[3]] <- c("P1s0","P2s1","P3s3","P4s0")
+pre_mdl_strs[[4]] <- c("P1s0","P2s0","P3s2","P4s2")
+pre_mdl_strs[[5]] <- c("P1s0","P2s0","P3s3","P4s2")
 
 ##
 pos_tam_info_models <- load_and_save_TAMs_to_measure_skill(
@@ -49,26 +52,29 @@ pos_tam_info_models <- load_and_save_TAMs_to_measure_skill(
 pos_info <- pos_tam_info_models$information
 t(pos_info[pos_info$model_fit
            & pos_info$everything.fits
-           & pos_info$unidim_test
-           & pos_info$rel_fit
-           & pos_info$numcols >= 4
+           & pos_info$unidim_lav_test
+           & pos_info$lav_CFI > 0.9
            ,])
-pos_mdl_strs <- c("PAs0+PBs0+PCs0+PDs2", "PAs0+PBs0+PCs0+PDs3")
+pos_mdl_strs <- list()
+pos_mdl_strs[[1]] <- c("PAs2","PBs3","PCs0","PDs0")
+pos_mdl_strs[[2]] <- c("PAs2","PBs2","PCs0","PDs0")
+pos_mdl_strs[[3]] <- c("PAs3","PBs2","PCs0","PDs0")
+pos_mdl_strs[[4]] <- c("PAs3","PBs3","PCs0","PDs2")
 
 ##################################################################
 ## Checking Assumptions in each model                           ##
 ##################################################################
 
-pre_dat <- read_csv("data/PreGuttmanVPL.csv")[,c("UserID","P1s0","P2s0","P3s2","P4s0")]
-pos_dat <- read_csv("data/PosGuttmanVPL.csv")[,c("UserID","PAs0","PBs0","PCs0","PDs2")]
+pre_dat <- read_csv("data/PreGuttmanVPL.csv")
+pos_dat <- read_csv("data/PosGuttmanVPL.csv")
 
 verify_mod <- TAM.measure_change.verify(
   pre_dat, pos_dat
-  , items.pre = c("P1s0","P2s0","P3s2","P4s0")
-  , items.pos = c("PAs0","PBs0","PCs0","PDs2")
+  , items.pre = pre_mdl_strs[[1]]
+  , items.pos = pos_mdl_strs[[1]]
   , userid = "UserID", irtmodel = "GPCM"
   , plotting = T, pairing = T
-  , folder = "report/learning-outcome/measure-change-model-plots/"
+  , folder = "report/learning-outcomes/measure-change-model-plots/"
 )
 
 # print problematic items
@@ -86,7 +92,7 @@ filename <- "report/latex/gpcm-learning-outcomes.tex"
 if (!file.exists(filename)) {
   write_gpcm_in_latex(
     gpcm_summaries
-    , in_title = "for measuring gains in the skills and knowledge of participants in the pilot empirical study"
+    , in_title = "for measuring gains in the skill/knowledge of participants in the pilot empirical study"
     , filename = filename
   )
 }
@@ -97,19 +103,19 @@ if (!file.exists(filename)) {
 
 mod <- TAM.measure_change(
   pre_dat, pos_dat
-  , items.pre = c("P1s0","P2s0","P3s2","P4s0")
-  , items.pos = c("PAs0","PBs0","PCs0","PDs2")
-  , same_items.pre = c("P1s0","P2s0")
-  , same_items.pos = c("PAs0","PBs0")
+  , items.pre = pre_mdl_strs[[1]]
+  , items.pos = pos_mdl_strs[[1]]
+  , same_items.pre = c("P3s2","P4s0")
+  , same_items.pos = c("PAs2","PCs0")
   , userid = "UserID"
   , verify = T, plotting = T, irtmodel = "GPCM")
 
 write_change_measurement_model_plots(
-  mod, path = 'report/learning-outcome/measure-change-model-plots/', override = T
+  mod, path = 'report/learning-outcomes/measure-change-model-plots/', override = T
 )
 
 write_measure_change_report(
-  mod, path = 'report/learning-outcome/'
+  mod, path = 'report/learning-outcomes/'
   , filename = 'MeasurementChangeModel.xlsx', override = T
 )
 
