@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  18 JUL 2018 13:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  18 JUL 2018 14:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**correlation-signedup-analysis.tex
-(./correlation-signedup-analysis.tex
+**correlation-effective-analysis.tex
+(./correlation-effective-analysis.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -198,7 +198,7 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 LaTeX Warning: Unused global option(s):
     [6pt].
 
-(./correlation-signedup-analysis.aux
+(./correlation-effective-analysis.aux
 
 LaTeX Warning: Label `round' multiply defined.
 
@@ -251,7 +251,7 @@ LaTeX Warning: Label `round' multiply defined.
 LaTeX Warning: Label `round' multiply defined.
 
 )
-\openout1 = `correlation-signedup-analysis.aux'.
+\openout1 = `correlation-effective-analysis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
@@ -761,19 +761,19 @@ Overfull \hbox (366.93124pt too wide) in alignment at lines 517--530
 [27
 
 
-] (./correlation-signedup-analysis.aux)
+] (./correlation-effective-analysis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  3070 strings out of 492995
- 41869 string characters out of 6132704
+ 41878 string characters out of 6132704
  128429 words of memory out of 5000000
  6579 multiletter control sequences out of 15000+600000
  8537 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,6n,53p,817b,255s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,6n,53p,818b,255s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
@@ -781,7 +781,7 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
 l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on correlation-signedup-analysis.pdf (27 pages, 106372 bytes).
+Output written on correlation-effective-analysis.pdf (27 pages, 106339 bytes).
 PDF statistics:
  119 PDF objects out of 1000 (max. 8388607)
  82 compressed objects within 1 object stream
