@@ -1,0 +1,60 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the second study for signed up students }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrr}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the second study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+gain.theta.(Intercept)&$0.018$&$ 1$&$0.955$&$0.334$&$$&$$&$$&$$&$$&$$\tabularnewline
+gain.theta.Type&$0.026$&$ 1$&$1.343$&$0.253$&$$&$ 1$&$   6.294$&$0.032$&$0.858$&$$\tabularnewline
+gain.theta.CLRole&$0.051$&$ 1$&$2.679$&$0.109$&$$&$ 1$&$  21.855$&$0.112$&$0.738$&$$\tabularnewline
+gain.theta.Type:CLRole&$0.049$&$ 1$&$2.540$&$0.118$&$$&$ 1$&$  55.127$&$0.281$&$0.596$&$$\tabularnewline
+gain.theta.Residuals&$0.824$&$43$&$$&$$&$$&$44$&$9128.724$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{r}\caption{Summary of Pair wilcoxon in the second study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{c}{}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{c}{}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+$$\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

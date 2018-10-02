@@ -32,6 +32,7 @@ plot_wilcox.test <- function(
     x <- factor(x)
   } else x <- factor(x, levels = levels)
   
+  par(cex.main=2.5, cex.lab=1.25, cex.sub=2.25, cex.axis=2.25)
   bp <- boxplot(y ~ x, boxwex=0.2, notch=notch, col=pcol, ylab=ylab, ylim = ylim)
   title(title, sub = sub)
   

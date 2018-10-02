@@ -1,0 +1,76 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the second study for signed up students }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrr}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the second study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Attention.(Intercept)&$ 0.028$&$ 1$&$0.018$&$0.893$&$$&$$&$$&$$&$$&$$\tabularnewline
+Attention.Type&$ 1.605$&$ 1$&$1.031$&$0.314$&$$&$ 1$&$  628.049$&$2.209$&$0.137$&$$\tabularnewline
+Attention.CLRole&$ 0.006$&$ 1$&$0.004$&$0.951$&$$&$ 1$&$   12.385$&$0.044$&$0.835$&$$\tabularnewline
+Attention.Type:CLRole&$ 2.002$&$ 1$&$1.286$&$0.262$&$$&$ 1$&$  311.029$&$1.094$&$0.296$&$$\tabularnewline
+Attention.Residuals&$84.055$&$54$&$$&$$&$$&$54$&$15253.537$&$$&$$&$$\tabularnewline
+Relevance.(Intercept)&$ 0.002$&$ 1$&$0.005$&$0.946$&$$&$$&$$&$$&$$&$$\tabularnewline
+Relevance.Type&$ 0.057$&$ 1$&$0.116$&$0.735$&$$&$ 1$&$  122.415$&$0.432$&$0.511$&$$\tabularnewline
+Relevance.CLRole&$ 0.153$&$ 1$&$0.310$&$0.580$&$$&$ 1$&$  184.844$&$0.652$&$0.419$&$$\tabularnewline
+Relevance.Type:CLRole&$ 0.016$&$ 1$&$0.033$&$0.856$&$$&$ 1$&$   18.694$&$0.066$&$0.797$&$$\tabularnewline
+Relevance.Residuals&$26.662$&$54$&$$&$$&$$&$54$&$15832.047$&$$&$$&$$\tabularnewline
+Satisfaction.(Intercept)&$ 0.002$&$ 1$&$0.001$&$0.969$&$$&$$&$$&$$&$$&$$\tabularnewline
+Satisfaction.Type&$ 0.084$&$ 1$&$0.056$&$0.814$&$$&$ 1$&$   39.253$&$0.139$&$0.710$&$$\tabularnewline
+Satisfaction.CLRole&$ 0.325$&$ 1$&$0.216$&$0.644$&$$&$ 1$&$   16.986$&$0.060$&$0.806$&$$\tabularnewline
+Satisfaction.Type:CLRole&$ 1.311$&$ 1$&$0.871$&$0.355$&$$&$ 1$&$  190.331$&$0.672$&$0.412$&$$\tabularnewline
+Satisfaction.Residuals&$79.806$&$53$&$$&$$&$$&$54$&$15885.931$&$$&$$&$$\tabularnewline
+Level of Motivation.(Intercept)&$ 0.003$&$ 1$&$0.005$&$0.947$&$$&$$&$$&$$&$$&$$\tabularnewline
+Level of Motivation.Type&$ 0.261$&$ 1$&$0.345$&$0.559$&$$&$ 1$&$  207.265$&$0.728$&$0.394$&$$\tabularnewline
+Level of Motivation.CLRole&$ 0.011$&$ 1$&$0.015$&$0.903$&$$&$ 1$&$   39.526$&$0.139$&$0.710$&$$\tabularnewline
+Level of Motivation.Type:CLRole&$ 0.770$&$ 1$&$1.022$&$0.317$&$$&$ 1$&$  259.282$&$0.910$&$0.340$&$$\tabularnewline
+Level of Motivation.Residuals&$40.727$&$54$&$$&$$&$$&$54$&$15731.927$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{llrrrrrrrrl}\caption{Summary of Pair wilcoxon in the second study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Attention.Type:CLRole.less.1&non-gamified.Apprentice&$23$&$-0.70$&$17.35$&$399$&$123$&$-1.75$&$0.041$&$0.279$&small\tabularnewline
+Attention.Type:CLRole.less.2&ont-gamified.Apprentice&$16$&$ 0.26$&$23.81$&$381$&$123$&$-1.75$&$0.041$&$0.279$&small\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

@@ -1,0 +1,144 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the third study for students with effective participation }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrlrrrrl}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the third study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Interest/Enjoyment.(Intercept)&$ 3.369$&$ 1$&$ 3.153$&$0.084$&&$$&$$&$$&$$&\tabularnewline
+Interest/Enjoyment.Type&$ 0.123$&$ 1$&$ 0.115$&$0.736$&&$ 1$&$   6.035$&$0.039$&$0.844$&\tabularnewline
+Interest/Enjoyment.CLRole&$ 1.028$&$ 1$&$ 0.962$&$0.333$&&$ 1$&$ 288.400$&$1.844$&$0.175$&\tabularnewline
+Interest/Enjoyment.Type:CLRole&$ 3.593$&$ 1$&$ 3.363$&$0.074$&&$ 1$&$ 363.625$&$2.325$&$0.127$&\tabularnewline
+Interest/Enjoyment.Residuals&$41.669$&$39$&$$&$$&&$39$&$5911.439$&$$&$$&\tabularnewline
+Perceived Choice.(Intercept)&$ 2.864$&$ 1$&$ 2.531$&$0.120$&&$$&$$&$$&$$&\tabularnewline
+Perceived Choice.Type&$ 2.969$&$ 1$&$ 2.623$&$0.113$&&$ 1$&$ 208.305$&$1.326$&$0.249$&\tabularnewline
+Perceived Choice.CLRole&$ 0.156$&$ 1$&$ 0.138$&$0.713$&&$ 1$&$  34.106$&$0.217$&$0.641$&\tabularnewline
+Perceived Choice.Type:CLRole&$ 1.983$&$ 1$&$ 1.752$&$0.193$&&$ 1$&$ 281.433$&$1.792$&$0.181$&\tabularnewline
+Perceived Choice.Residuals&$44.141$&$39$&$$&$$&&$39$&$6071.656$&$$&$$&\tabularnewline
+Pressure/Tension.(Intercept)&$ 2.277$&$ 1$&$ 4.613$&$0.038$&&$$&$$&$$&$$&\tabularnewline
+Pressure/Tension.Type&$ 0.602$&$ 1$&$ 1.219$&$0.276$&&$ 1$&$ 226.410$&$1.450$&$0.228$&\tabularnewline
+Pressure/Tension.CLRole&$ 6.261$&$ 1$&$12.684$&$0.001$&**&$ 1$&$1088.221$&$6.970$&$0.008$&**\tabularnewline
+Pressure/Tension.Type:CLRole&$ 0.086$&$ 1$&$ 0.175$&$0.678$&&$ 1$&$  64.669$&$0.414$&$0.520$&\tabularnewline
+Pressure/Tension.Residuals&$19.252$&$39$&$$&$$&&$39$&$5177.700$&$$&$$&\tabularnewline
+Effort/Importance.(Intercept)&$ 0.022$&$ 1$&$ 0.027$&$0.870$&&$$&$$&$$&$$&\tabularnewline
+Effort/Importance.Type&$ 4.437$&$ 1$&$ 5.339$&$0.026$&*&$ 1$&$ 673.313$&$4.327$&$0.038$&*\tabularnewline
+Effort/Importance.CLRole&$ 1.787$&$ 1$&$ 2.150$&$0.151$&&$ 1$&$ 198.997$&$1.279$&$0.258$&\tabularnewline
+Effort/Importance.Type:CLRole&$ 0.025$&$ 1$&$ 0.030$&$0.864$&&$ 1$&$   7.613$&$0.049$&$0.825$&\tabularnewline
+Effort/Importance.Residuals&$32.411$&$39$&$$&$$&&$39$&$5655.578$&$$&$$&\tabularnewline
+Intrinsic Motivation.(Intercept)&$ 2.145$&$ 1$&$ 7.510$&$0.009$&&$$&$$&$$&$$&\tabularnewline
+Intrinsic Motivation.Type&$ 0.469$&$ 1$&$ 1.644$&$0.207$&&$ 1$&$  49.884$&$0.316$&$0.574$&\tabularnewline
+Intrinsic Motivation.CLRole&$ 0.438$&$ 1$&$ 1.534$&$0.223$&&$ 1$&$ 284.759$&$1.806$&$0.179$&\tabularnewline
+Intrinsic Motivation.Type:CLRole&$ 0.808$&$ 1$&$ 2.831$&$0.100$&&$ 1$&$ 353.033$&$2.239$&$0.135$&\tabularnewline
+Intrinsic Motivation.Residuals&$11.137$&$39$&$$&$$&&$39$&$5934.325$&$$&$$&\tabularnewline
+Attention.(Intercept)&$ 0.257$&$ 1$&$ 0.183$&$0.671$&&$$&$$&$$&$$&\tabularnewline
+Attention.Type&$ 0.246$&$ 1$&$ 0.175$&$0.678$&&$ 1$&$  94.855$&$0.577$&$0.448$&\tabularnewline
+Attention.CLRole&$ 0.115$&$ 1$&$ 0.082$&$0.776$&&$ 1$&$  12.076$&$0.073$&$0.786$&\tabularnewline
+Attention.Type:CLRole&$ 0.452$&$ 1$&$ 0.321$&$0.574$&&$ 1$&$  51.842$&$0.315$&$0.574$&\tabularnewline
+Attention.Residuals&$54.859$&$39$&$$&$$&&$40$&$6911.728$&$$&$$&\tabularnewline
+Relevance.(Intercept)&$ 0.373$&$ 1$&$ 0.909$&$0.346$&&$$&$$&$$&$$&\tabularnewline
+Relevance.Type&$ 0.940$&$ 1$&$ 2.294$&$0.138$&&$ 1$&$  38.928$&$0.238$&$0.626$&\tabularnewline
+Relevance.CLRole&$ 0.226$&$ 1$&$ 0.551$&$0.462$&&$ 1$&$ 101.179$&$0.619$&$0.431$&\tabularnewline
+Relevance.Type:CLRole&$ 1.928$&$ 1$&$ 4.705$&$0.036$&*&$ 1$&$ 607.952$&$3.720$&$0.054$&\tabularnewline
+Relevance.Residuals&$15.981$&$39$&$$&$$&&$40$&$6279.441$&$$&$$&\tabularnewline
+Satisfaction.(Intercept)&$ 2.568$&$ 1$&$ 1.077$&$0.306$&&$$&$$&$$&$$&\tabularnewline
+Satisfaction.Type&$ 0.081$&$ 1$&$ 0.034$&$0.855$&&$ 1$&$   3.914$&$0.024$&$0.877$&\tabularnewline
+Satisfaction.CLRole&$ 2.104$&$ 1$&$ 0.883$&$0.353$&&$ 1$&$ 105.183$&$0.642$&$0.423$&\tabularnewline
+Satisfaction.Type:CLRole&$ 0.137$&$ 1$&$ 0.057$&$0.812$&&$ 1$&$  19.588$&$0.120$&$0.730$&\tabularnewline
+Satisfaction.Residuals&$92.944$&$39$&$$&$$&&$40$&$6918.816$&$$&$$&\tabularnewline
+\newpage
+Level of Motivation.(Intercept)&$ 0.393$&$ 1$&$ 1.132$&$0.294$&&$$&$$&$$&$$&\tabularnewline
+Level of Motivation.Type&$ 0.001$&$ 1$&$ 0.004$&$0.951$&&$ 1$&$   9.263$&$0.056$&$0.813$&\tabularnewline
+Level of Motivation.CLRole&$ 0.002$&$ 1$&$ 0.007$&$0.934$&&$ 1$&$   6.394$&$0.039$&$0.844$&\tabularnewline
+Level of Motivation.Type:CLRole&$ 0.130$&$ 1$&$ 0.376$&$0.543$&&$ 1$&$ 120.045$&$0.729$&$0.393$&\tabularnewline
+Level of Motivation.Residuals&$13.527$&$39$&$$&$$&&$40$&$6946.798$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Tukey post-hoc",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrll}\caption{Summary of Tukey post-hoc in the third study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Effort/Importance:ont-gamified - w/o-gamified&$43$&$0.642$&$0.684$&$0.296$&$$&$0.076$&$1.208$&$2.311$&$0.026$&$0.027$&$0.69$&*&medium\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{llrrrrrrrrl}\caption{Summary of Pair wilcoxon in the third study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Interest/Enjoyment.Type:CLRole.less.1&ont-gamified.Apprentice&$15$&$ 0.31$&$10.53$&$158.0$&$ 38.0$&$-1.78$&$0.039$&$0.362$&medium\tabularnewline
+Interest/Enjoyment.Type:CLRole.less.2&ont-gamified.Master&$ 9$&$ 0.51$&$15.78$&$142.0$&$ 38.0$&$-1.78$&$0.039$&$0.362$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.greater.1&ont-gamified.Apprentice&$15$&$ 0.35$&$15.10$&$226.5$&$106.5$&$ 2.33$&$0.009$&$0.476$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.greater.2&ont-gamified.Master&$ 9$&$-0.46$&$ 8.17$&$ 73.5$&$106.5$&$ 2.33$&$0.009$&$0.476$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.1&ont-gamified.Apprentice&$15$&$ 0.35$&$15.10$&$226.5$&$106.5$&$ 2.33$&$0.018$&$0.476$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.2&ont-gamified.Master&$ 9$&$-0.46$&$ 8.17$&$ 73.5$&$106.5$&$ 2.33$&$0.018$&$0.476$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.greater.11&ont-gamified.Apprentice&$15$&$ 0.35$&$12.90$&$193.5$&$ 73.5$&$ 2.23$&$0.012$&$0.487$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.greater.21&w/o-gamified.Master&$ 6$&$-1.60$&$ 6.25$&$ 37.5$&$ 73.5$&$ 2.23$&$0.012$&$0.487$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.11&ont-gamified.Apprentice&$15$&$ 0.35$&$12.90$&$193.5$&$ 73.5$&$ 2.23$&$0.024$&$0.487$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.21&w/o-gamified.Master&$ 6$&$-1.60$&$ 6.25$&$ 37.5$&$ 73.5$&$ 2.23$&$0.024$&$0.487$&medium\tabularnewline
+Effort/Importance.Type.greater.1&ont-gamified&$24$&$ 0.40$&$25.52$&$612.5$&$312.5$&$ 2.08$&$0.019$&$0.317$&medium\tabularnewline
+Effort/Importance.Type.greater.2&w/o-gamified&$19$&$-0.48$&$17.55$&$333.5$&$312.5$&$ 2.08$&$0.019$&$0.317$&medium\tabularnewline
+Effort/Importance.Type.two.sided.1&ont-gamified&$24$&$ 0.40$&$25.52$&$612.5$&$312.5$&$ 2.08$&$0.037$&$0.317$&medium\tabularnewline
+Effort/Importance.Type.two.sided.2&w/o-gamified&$19$&$-0.48$&$17.55$&$333.5$&$312.5$&$ 2.08$&$0.037$&$0.317$&medium\tabularnewline
+Effort/Importance.Type:CLRole.greater.1&ont-gamified.Apprentice&$15$&$ 0.52$&$12.80$&$192.0$&$ 72.0$&$ 2.12$&$0.017$&$0.462$&medium\tabularnewline
+Effort/Importance.Type:CLRole.greater.2&w/o-gamified.Master&$ 6$&$-0.62$&$ 6.50$&$ 39.0$&$ 72.0$&$ 2.12$&$0.017$&$0.462$&medium\tabularnewline
+Effort/Importance.Type:CLRole.two.sided.1&ont-gamified.Apprentice&$15$&$ 0.52$&$12.80$&$192.0$&$ 72.0$&$ 2.12$&$0.033$&$0.462$&medium\tabularnewline
+Effort/Importance.Type:CLRole.two.sided.2&w/o-gamified.Master&$ 6$&$-0.62$&$ 6.50$&$ 39.0$&$ 72.0$&$ 2.12$&$0.033$&$0.462$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.less.1&ont-gamified.Apprentice&$15$&$ 0.03$&$10.40$&$156.0$&$ 36.0$&$-1.88$&$0.032$&$0.383$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.less.2&ont-gamified.Master&$ 9$&$ 0.46$&$16.00$&$144.0$&$ 36.0$&$-1.88$&$0.032$&$0.383$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.greater.1&ont-gamified.Master&$ 9$&$ 0.46$&$ 9.67$&$ 87.0$&$ 42.0$&$ 1.77$&$0.044$&$0.456$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.greater.2&w/o-gamified.Master&$ 6$&$ 0.07$&$ 5.50$&$ 33.0$&$ 42.0$&$ 1.77$&$0.044$&$0.456$&medium\tabularnewline
+Relevance.Type:CLRole.less.1&ont-gamified.Apprentice&$16$&$-0.08$&$11.03$&$176.5$&$ 40.5$&$-1.79$&$0.038$&$0.358$&medium\tabularnewline
+Relevance.Type:CLRole.less.2&ont-gamified.Master&$ 9$&$ 0.87$&$16.50$&$148.5$&$ 40.5$&$-1.79$&$0.038$&$0.358$&medium\tabularnewline
+Relevance.Type:CLRole.greater.1&ont-gamified.Master&$ 9$&$ 0.87$&$ 9.61$&$ 86.5$&$ 41.5$&$ 1.72$&$0.045$&$0.445$&medium\tabularnewline
+Relevance.Type:CLRole.greater.2&w/o-gamified.Master&$ 6$&$-0.16$&$ 5.58$&$ 33.5$&$ 41.5$&$ 1.72$&$0.045$&$0.445$&medium\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

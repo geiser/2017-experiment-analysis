@@ -1,6 +1,6 @@
 
-wants <- c('coin', 'sirt', 'lavaan', 'psych', 'reshape', 'dplyr'
-           , 'readr', 'effsize','pwr', 'afex', 'ez',  'r2excel')
+wants <- c('coin', 'sirt', 'lavaan', 'psych', 'nloptr', 'reshape', 'dplyr'
+           , 'readr', 'effsize','pwr', 'afex', 'lme4', 'ez', 'r2excel')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])
 #devtools::install_github("singmann/afex@master")
@@ -356,8 +356,8 @@ do_parametric_test <- function(dat, wid, dv, iv, between, observed = NULL
     str_m1 <- paste0(columns[1:k], collapse = ':')
     str_m2 <- paste0(columns[1:k], collapse = '|')
     
-    means_mod <- lsmeans(ezAov, as.formula(paste0('~', str_m2)))
-    contrast_mod <- contrast(means_mod, method = 'pairwise')
+    means_mod <- lsmeans::lsmeans(ezAov$aov, as.formula(paste0('~', str_m2)))
+    contrast_mod <- lsmeans::contrast(means_mod, method = 'pairwise')
     df_lsmean = as.data.frame(summary(means_mod))
     df_lsmean["Pairs"] = factor(apply(df_lsmean[columns[1:k]], 1, paste, collapse='.'))
     df_contrast = as.data.frame(summary(contrast_mod))
@@ -474,6 +474,7 @@ plot_t.test <- function(
     tt$data$x <- factor(tt$data$x)
   } else tt$data$x <- factor(tt$data$x, levels = levels)
 
+  par(cex.main=2, cex.lab=1.25, cex.sub=1.75, cex.axis=1.75)
   bx <- boxplot(y ~ x, data=tt$data, boxwex=0.2, col=pcol, notch = notch, ylab=ylab, ylim = ylim)
   
   title(title, sub = sub)

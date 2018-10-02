@@ -281,18 +281,19 @@ write_param_statistics_analysis_in_latex <- function(
   library(Hmisc)
   write("", file = filename, append = append)
   if (!append) {
-    write(paste("\\documentclass[6pt]{article}"
+    write(paste("\\documentclass[6pt,a4paper]{article}"
+                ,"\\usepackage[a4paper,margin=0.54cm]{geometry}"
                 ,"\\usepackage{longtable}"
                 ,"\\usepackage{rotating}"
-                ,"\\usepackage{lscape}"
+                ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
+                ,paste("\\title{Summary of parametric statistics analysis",in_title,"}")
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
+    write("", file = filename, append = T)
+    write("\\maketitle", file = filename, append = T)
+    write("", file = filename, append = T)
   }
-  
-  write(paste0("\\section{Summaries of Parametric Statistics Analysis"
-               , in_title, "}"), file = filename, append = T)
-  write("", file = filename, append = T)
   
   list_ivs <- as.list(ivs)
   names(list_ivs) <- ivs
@@ -311,16 +312,15 @@ write_param_statistics_analysis_in_latex <- function(
   }))
   
   ##
+  write("", file = filename, append = T)
   latex(result_df
         , caption = paste("Summary of two-way ANOVA results", in_title)
         #, insert.bottom = 
         , size = "small", longtable = T, ctable=F, landscape = F
         , rowlabel = "", where='!htbp', file = filename, append = T)
-  write(paste0(
-    c("\\raggedleft{", "\\scriptsize{"
-      , "Signif. codes: ", "0 ``**'' 0.01 ``*'' 0.05"
-      , "}}", "\n"), collapse = " "), file = filename, append = T)
-  write("", file = filename, append = T)
+  write(paste0("\\begin{flushright}{"
+               ,"\\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}"
+               ,"}\\end{flushright}", "", sep = "\n"), file = filename, append = T)
   
   ##
   post_hoc_df <- do.call(rbind, lapply(list_ivs, FUN = function(iv) {
@@ -329,30 +329,33 @@ write_param_statistics_analysis_in_latex <- function(
     return(result_df)
   }))
   
+  write("", file = filename, append = T)
+  write("\\begin{landscape}", file = filename, append = T)
+  
+  write("", file = filename, append = T)
   latex(post_hoc_df
         , caption = paste("Descriptive statistics and Tukey post-hoc test results", in_title)
-        #, insert.bottom = 
-        , size = "small", longtable = T, ctable=F, landscape = T
+        , size = "small", longtable = T, ctable=F, landscape = F
         , rowlabel = "", where='!htbp', file = filename, append = T)
-  write(paste0(
-    c("\\raggedleft{", "\\scriptsize{"
-      , "Signif. codes: ", "0 ``**'' 0.01 ``*'' 0.05"
-      , "}}", "\n"), collapse = " "), file = filename, append = T)
+  
   write("", file = filename, append = T)
+  write("\\end{landscape}", file = filename, append = T)
   
   if (!append) {
+    write("", file = filename, append = T)
     write("\\end{document}", file = filename, append = T)
   }
 }
 
-get_wilcoxon_pairs_df <- function(list_dvs, nonparametric_results, all.pairs = F) {
-  result_wilcoxon_df <- do.call(rbind, lapply(list_dvs, FUN = function(dv) {
-    n_result <- nonparametric_results[[dv]]
+get_wilcoxon_pairs_df <- function(list_ivs, nonparametric_results, all.pairs = F) {
+  result_wilcoxon_df <- do.call(rbind, lapply(names(list_ivs), FUN = function(iv) {
+    n_result <- nonparametric_results[[iv]]
     
     set_wilcox_mods_df <- do.call(rbind, lapply(
       n_result$wilcox.pairs, FUN = function(wilcox_mods){
         wilcox_mods_df <- do.call(rbind, lapply(
-          wilcox_mods, FUN = function(mods) {
+          names(wilcox_mods), FUN = function(wname) {
+            mods <- wilcox_mods[[wname]]
             mods$dat <- NULL
             mods_df <- do.call(rbind, lapply(
               mods, FUN = function(mod) {
@@ -390,18 +393,19 @@ write_nonparam_statistics_analysis_in_latex <- function(
   library(Hmisc)
   write("", file = filename, append = append)
   if (!append) {
-    write(paste("\\documentclass[6pt]{article}"
+    write(paste("\\documentclass[6pt,a4paper]{article}"
+                ,"\\usepackage[a4paper,margin=0.54cm]{geometry}"
                 ,"\\usepackage{longtable}"
                 ,"\\usepackage{rotating}"
-                ,"\\usepackage{lscape}"
+                ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
+                ,paste("\\title{Summary of nonparametric statistics analysis",in_title,"}")
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
+    write("", file = filename, append = T)
+    write("\\maketitle", file = filename, append = T)
+    write("", file = filename, append = T)
   }
-  
-  write(paste0("\\section{Summaries of Nonparametric Statistics Analysis"
-               , in_title, "}"), file = filename, append = T)
-  write("", file = filename, append = T)
   
   ##
   result_df <- do.call(rbind, lapply(dvs, FUN = function(dv) {
@@ -425,105 +429,157 @@ write_nonparam_statistics_analysis_in_latex <- function(
   })))
   
   ##
+  write("", file = filename, append = T)
   latex(result_df
         , caption = paste("Summary of Scheirer-Ray-Hare results", in_title)
         , size = "small", longtable = T, ctable=F, landscape = F
         , rowlabel = "", where='!htbp', file = filename, append = T)
-  write(paste0(c("\\begin{flushright}{", "\\scriptsize{"
-                 , "Signif. codes: ", "0 ``**'' 0.01 ``*'' 0.05"
-                 , "}}\\end{flushright}", "\n"), collapse = " "), file = filename, append = T)
-  write("", file = filename, append = T)
-  
-  
-  write(paste0("\\section{Summaries of Wilcoxon Data Analysis "
-               , in_title, "}"), file = filename, append = T)
-  write("", file = filename, append = T)
+  write(paste0("\\begin{flushright}{"
+               ,"\\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}"
+               ,"}\\end{flushright}", "", sep = "\n"), file = filename, append = T)
   
   ## wilcoxon dataframe test
   list_dvs <- as.list(dvs)
   names(list_dvs) <- dvs
   
   result_wilcoxon_df <- get_wilcoxon_pairs_df(list_dvs, nonparametric_results, all.pairs = F)
-  latex(result_wilcoxon_df
+  if (length(result_wilcoxon_df) > 0 && nrow(result_wilcoxon_df) > 0){
+    write("", file = filename, append = T)
+    latex(result_wilcoxon_df
         , caption = paste("Descriptive statistic of the pair wilcoxon analysis", in_title)
-        , size = "scriptsize", longtable = T, ctable=F, landscape = T
+        , size = "scriptsize", longtable = T, ctable=F, landscape = F
         , rowlabel = "", where='!htbp', file = filename, append = T)
-  write(paste0(c("\\begin{flushright}{", "\\tiny{"
-                 , "Signif. codes: ", "0 ``**'' 0.01 ``*'' 0.05"
-                 , "}}\\end{flushright}", "\n"), collapse = " "), file = filename, append = T)
-  write("", file = filename, append = T)
+  }
+  
   
   result_wilcoxon_df <- get_wilcoxon_pairs_df(list_dvs, nonparametric_results, all.pairs = T)
-  latex(result_wilcoxon_df
+  if (length(result_wilcoxon_df) > 0 && nrow(result_wilcoxon_df) > 0) {
+    write("", file = filename, append = T)
+    latex(result_wilcoxon_df
         , caption = paste("Full descriptive statistic of the pair wilcoxon analysis", in_title)
-        , size = "scriptsize", longtable = T, ctable=F, landscape = T
+        , size = "scriptsize", longtable = T, ctable=F, landscape = F
         , rowlabel = "", where='!htbp', file = filename, append = T)
-  write(paste0(c("\\begin{flushright}{", "\\tiny{"
-                 , "Signif. codes: ", "0 ``**'' 0.01 ``*'' 0.05"
-                 , "}}\\end{flushright}", "\n"), collapse = " "), file = filename, append = T)
-  write("", file = filename, append = T)
+  }
+  
   ##
   
   if (!append) {
+    write("", file = filename, append = T)
     write("\\end{document}", file = filename, append = T)
   }
 }
 
 
 write_param_and_nonparam_statistics_analysis_in_latex  <- function(
-  parametric_results, nonparametric_results, dvs, filename, in_title = NULL, append = F) {
+  all_parametric_results, all_nonparametric_results, list_info, filename, in_title = NULL, append = F) {
   
   library(Hmisc)
-  
-  write(paste0("\\section{Summaries of Parametric and Nonparametric Statistics Analysis"
-               , in_title, "}"), file = filename, append = append)
-  write("", file = filename, append = T)
+  write("", file = filename, append = append)
+  if (!append) {
+    write(paste("\\documentclass[6pt,a4paper]{article}"
+                ,"\\usepackage[a4paper,margin=0.54cm]{geometry}"
+                ,"\\usepackage{longtable}"
+                ,"\\usepackage{rotating}"
+                ,"\\usepackage{pdflscape}"
+                ,"\\usepackage{ctable}"
+                ,paste("\\title{Statistical Analysis",in_title,"}")
+                ,"\\begin{document}", sep = "\n")
+          , file = filename, append = T)
+    write("", file = filename, append = T)
+    write("\\maketitle", file = filename, append = T)
+    write("", file = filename, append = T)
+  }
   
   ##
-  result_df <- do.call(rbind, lapply(dvs, FUN = function(dv) {
-    p_result <- parametric_results[[dv]]
-    n_result <- nonparametric_results[[dv]]
+  result_df <- do.call(rbind, lapply(list_info, FUN = function(info) {
+    parametric_results <- all_parametric_results[[info$dv]]
+    nonparametric_results <- all_nonparametric_results[[info$dv]]
     
-    aov_df <- round(p_result$ezAov$Anova, 3)
-    sch_df <- rbind(c(NA), round(n_result$sch, 3))
+    result_df <- do.call(rbind, lapply(names(info$info), FUN = function(iv) {
+      p_result <- parametric_results[[iv]]
+      n_result <- nonparametric_results[[iv]]
+      
+      aov_df <- round(p_result$ezAov$Anova, 3)
+      sch_df <- rbind(c(NA), round(n_result$mod.df, 3))
+      
+      Sig <- sapply(aov_df$`Pr(>F)`, FUN = function(x) {
+        return(ifelse(x > 0.05, NA, ifelse(x >0.01, '*', '**')))
+      })
+      Sig[[1]] <- NA
+      aov_sch_df <- cbind(aov_df, Sig)
+      
+      Sig <- sapply(sch_df$p.value, FUN = function(x) {
+        return(ifelse(x > 0.05, NA, ifelse(x >0.01, '*', '**')))
+      })
+      Sig[[1]] <- NA
+      aov_sch_df <- cbind(aov_sch_df, sch_df)
+      aov_sch_df <- cbind(aov_sch_df, Sig)
+      
+      return(aov_sch_df)
+    }))
     
-    Sig <- sapply(aov_df$`Pr(>F)`, FUN = function(x) {
-      return(ifelse(x > 0.05, NA, ifelse(x >0.01, '*', '**')))
-    })
-    Sig[[1]] <- NA
-    aov_sch_df <- cbind(aov_df, Sig)
-    
-    Sig <- sapply(sch_df$p.value, FUN = function(x) {
-      return(ifelse(x > 0.05, NA, ifelse(x >0.01, '*', '**')))
-    })
-    Sig[[1]] <- NA
-    aov_sch_df <- cbind(aov_sch_df, sch_df)
-    aov_sch_df <- cbind(aov_sch_df, Sig)
-    
-    aov_sch_df <- rbind(c(NA), aov_sch_df)
-    return(aov_sch_df)
+    return(result_df)
   }))
-  rownames(result_df) <- NULL
   
-  rownames(result_df) <- c(unlist(lapply(dvs, FUN = function(dv) {
-    p_result <- parametric_results[[dv]]
-    return(c(dv, paste(dv, rownames(p_result$ezAov$Anova), sep = ":")))
-  })))
+  write("", file = filename, append = T)
+  latex(result_df
+        , caption = paste("Two-way ANOVA and Scheirer-Ray-Hare", in_title)
+        , size = "small", longtable = T, ctable=F, landscape = F
+        , rowlabel = "", where='!htbp', file = filename, append = T)
+  write(paste0("\\begin{flushright}{"
+               ,"\\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}"
+               ,"}\\end{flushright}", "", sep = "\n"), file = filename, append = T)
+  
+  write("", file = filename, append = T)
+  write("\\begin{landscape}", file = filename, append = T)
   
   ##
-  latex(result_df
-        , caption = paste("Summary of two-way ANOVA and Scheirer-Ray-Hare results", in_title)
-        , size = "small", longtable = T, ctable=F, landscape = T
-        , rowlabel = "", where='!htbp', file = filename, append = T)
-  write(paste0(c("\\begin{flushright}{", "\\scriptsize{"
-                 , "Signif. codes: ", "0 ``**'' 0.01 ``*'' 0.05"
-                 , "}}\\end{flushright}", "\n"), collapse = " "), file = filename, append = T)
-  write("", file = filename, append = T)
+  result_df <- do.call(rbind, lapply(list_info, FUN = function(info) {
+    parametric_results <- all_parametric_results[[info$dv]]
+    result_df <- do.call(rbind, lapply(names(info$info), FUN = function(iv) {
+      p_result <- parametric_results[[iv]]
+      ph_df <- get_descritive_and_post_hoc_dataframe(p_result)
+      ph_df <- ph_df[!is.na(ph_df$p.ajd) & ph_df$p.ajd <= 0.05,]
+      return(ph_df)
+    }))
+    result_df <- cbind(result_df, tname = rownames(result_df))
+    return(result_df)
+  }))
+  if (length(result_df) > 0 && nrow(result_df) > 0) {
+    rownames(result_df) <- paste0(rownames(result_df), ':',result_df$tname)
+    result_df <- result_df[,!names(result_df) %in% c("tname")]
   
-  write_param_statistics_analysis_in_latex(
-    parametric_results, dvs, filename, in_title = in_title, append = T)
-  write_nonparam_statistics_analysis_in_latex(
-    nonparametric_results, dvs, filename, in_title = in_title, append = T)
+    write("", file = filename, append = T)
+    latex(result_df
+        , caption = paste("Summary of Tukey post-hoc", in_title)
+        , size = "small", longtable = T, ctable=F, landscape = F
+        , rowlabel = "", where='!htbp', file = filename, append = T)
+  }
+  
+  ##
+  result_df <- do.call(rbind, lapply(list_info, FUN = function(info) {
+    nonparametric_results <- all_nonparametric_results[[info$dv]]
+    
+    list_ivs <- as.list(names(info$info))
+    names(list_ivs) <- names(info$info)
+    result_df <- get_wilcoxon_pairs_df(list_ivs, nonparametric_results, all.pairs = F)
+    return(result_df)
+  }))
+  
+  write("", file = filename, append = T)
+  latex(result_df
+        , caption = paste("Summary of Pair wilcoxon", in_title)
+        , size = "small", longtable = T, ctable=F, landscape = F
+        , rowlabel = "", where='!htbp', file = filename, append = T)
+  
+  write("", file = filename, append = T)
+  write("\\end{landscape}", file = filename, append = T)
+  
+  ##
+  if (!append) {
+    write("", file = filename, append = T)
+    write("\\end{document}", file = filename, append = T)
+  }
 }
 
 ## Summary of careless responses 
@@ -531,26 +587,37 @@ write_careless_in_latex <- function(dd, filename, in_title = NULL, append = F) {
   library(Hmisc)
   write("", file = filename, append = append)
   if (!append) {
-    write(paste("\\documentclass[6pt]{article}"
+    write(paste("\\documentclass[6pt,a4paper]{article}"
+                ,"\\usepackage[a4paper,margin=0.54cm]{geometry}"
                 ,"\\usepackage{longtable}"
                 ,"\\usepackage{rotating}"
-                ,"\\usepackage{lscape}"
+                ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
+                ,paste("\\title{Summary of carless responses",in_title,"}")
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
-    write("\\section{Summary of Carless Responses}", file = filename, append = T)
+    write("", file = filename, append = T)
+    write("\\maketitle", file = filename, append = T)
+    write("", file = filename, append = T)
   }
+  
+  write("", file = filename, append = T)
+  write("\\begin{landscape}", file = filename, append = T)
   
   if (!is.null(dd$get_data()) && length(dd$get_data()) > 0) {
-  latex(
-    as.data.frame(dd$get_data())
-    , rowname = NULL
-    , caption = paste("Summary of careless responses", in_title)
-    , size = "small", longtable = T, ctable=F, landscape = F
-    , rowlabel = "", where='!htbp', file = filename, append = T)
+    latex(
+      as.data.frame(dd$get_data())
+      , rowname = NULL
+      , caption = paste("Summary of careless responses", in_title)
+      , size = "scriptsize", longtable = T, ctable=F, landscape = F
+      , rowlabel = "", where='!htbp', file = filename, append = T)
   }
   
+  write("", file = filename, append = T)
+  write("\\end{landscape}", file = filename, append = T)
+  
   if (!append) {
+    write("", file = filename, append = T)
     write("\\end{document}", file = filename, append = T)
   }
 }
@@ -561,26 +628,38 @@ write_winsorized_in_latex <- function(dd, filename, in_title = NULL, append = F)
   library(Hmisc)
   write("", file = filename, append = append)
   if (!append) {
-    write(paste("\\documentclass[6pt]{article}"
+    write(paste("\\documentclass[6pt,a4paper]{article}"
+                ,"\\usepackage[a4paper,margin=0.54cm]{geometry}"
                 ,"\\usepackage{longtable}"
                 ,"\\usepackage{rotating}"
-                ,"\\usepackage{lscape}"
+                ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
+                ,paste("\\title{Summary of winsorized responses",in_title,"}")
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
-    write("\\section{Summary of Winzorized Responses}", file = filename, append = T)
+    write("", file = filename, append = T)
+    write("\\maketitle", file = filename, append = T)
+    write("", file = filename, append = T)
   }
   
+  write("", file = filename, append = T)
+  write("\\begin{landscape}", file = filename, append = T)
+  
   if (!is.null(dd$get_data()) && length(dd$get_data()) > 0) {
+    write("", file = filename, append = T)
     latex(
       as.data.frame(dd$get_data())
       , rowname = NULL
       , caption = paste("Summary of Winsorized responses", in_title)
-      , size = "scriptsize", longtable = T, ctable=F, landscape = T
+      , size = "scriptsize", longtable = T, ctable=F, landscape = F
       , rowlabel = "", where='!htbp', file = filename, append = T)
   }
   
+  write("", file = filename, append = T)
+  write("\\end{landscape}", file = filename, append = T)
+  
   if (!append) {
+    write("", file = filename, append = T)
     write("\\end{document}", file = filename, append = T)
   }
 }
@@ -738,18 +817,23 @@ write_summary_corr_matrix_mods_in_latex <- function(corr_matrix_mods, filename, 
   library(Hmisc)
   write("", file = filename, append = append)
   if (!append) {
-    write(paste("\\documentclass[6pt]{article}"
+    write(paste("\\documentclass[6pt,a4paper]{article}"
+                ,"\\usepackage[a4paper,margin=0.54cm]{geometry}"
                 ,"\\usepackage{longtable}"
                 ,"\\usepackage{rotating}"
-                ,"\\usepackage{lscape}"
+                ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
+                ,paste("\\title{Summary of correlation analysis",in_title,"}")
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
-    write(paste0("\\title{Summary of Correlation Analysis}"), file = filename, append = T)
+    write("", file = filename, append = T)
     write("\\maketitle", file = filename, append = T)
+    write("", file = filename, append = T)
   }
   
+  
   ##
+  write("", file = filename, append = T)
   lapply(corr_matrix_mods, FUN = function(mod) {
     write(paste0("\\section{",mod$title,"}"), file = filename, append = T)
     write("", file = filename, append = T)
@@ -760,7 +844,7 @@ write_summary_corr_matrix_mods_in_latex <- function(corr_matrix_mods, filename, 
     latex(
       round(M, 4)
       , caption = paste("Correlation matrix", "of", mod$title, in_title)
-      , size = "small", longtable = T, ctable=F, landscape = T
+      , size = "scriptsize", longtable = T, ctable=F, landscape = F
       , insert.bottom = paste("method: ", mod$method)
       , where='!htbp', file = filename, append = T)
     write("", file = filename, append = T)
@@ -768,7 +852,7 @@ write_summary_corr_matrix_mods_in_latex <- function(corr_matrix_mods, filename, 
     latex(
       round(p_mat, 4)
       , caption = paste("Correlation matrix with p-values", "of", mod$title, in_title)
-      , size = "small", longtable = T, ctable=F, landscape = T
+      , size = "scriptsize", longtable = T, ctable=F, landscape = F
       , insert.bottom = paste("method: ", mod$method)
       , where='!htbp', file = filename, append = T)
     write("", file = filename, append = T)

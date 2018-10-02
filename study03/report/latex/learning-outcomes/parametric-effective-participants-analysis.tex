@@ -1,0 +1,68 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of parametric statistics analysis for the gains in skill/knowledge estimates in the third empirical study }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrl}\caption{Summary of two-way ANOVA results for the gains in skill/knowledge estimates in the third empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$0.026$&$ 1$&$5.277$&$0.028$&\tabularnewline
+Type.Type&$0.029$&$ 1$&$5.837$&$0.021$&*\tabularnewline
+Type.CLRole&$0.044$&$ 1$&$9.001$&$0.005$&**\tabularnewline
+Type.Type:CLRole&$0.003$&$ 1$&$0.711$&$0.405$&\tabularnewline
+Type.Residuals&$0.177$&$36$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrll}\caption{Descriptive statistics and Tukey post-hoc test results for the gains in skill/knowledge estimates in the third empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.ont-gamified&$22$&$ 0.023$&$ 0.001$&$0.017$&$36$&$-0.033$&$ 0.035$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified&$18$&$-0.048$&$-0.057$&$0.018$&$36$&$-0.093$&$-0.022$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified - w/o-gamified&$40$&$ 0.071$&$ 0.059$&$0.024$&$$&$ 0.026$&$ 0.116$&$2.416$&$0.021$&$0.003$&$0.904$&**&large\tabularnewline
+Type.ont-gamified.Apprentice&$16$&$ 0.048$&$ 0.048$&$0.018$&$36$&$ 0.013$&$ 0.084$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified.Apprentice&$12$&$-0.031$&$-0.031$&$0.020$&$36$&$-0.072$&$ 0.010$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified.Apprentice - w/o-gamified.Apprentice&$28$&$ 0.079$&$ 0.079$&$0.027$&$$&$ 0.007$&$ 0.151$&$2.954$&$0.006$&$0.027$&$1.160$&*&large\tabularnewline
+Type.ont-gamified.Master&$ 6$&$-0.045$&$-0.045$&$0.029$&$36$&$-0.103$&$ 0.013$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified.Master&$ 6$&$-0.083$&$-0.083$&$0.029$&$36$&$-0.141$&$-0.025$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified.Master - w/o-gamified.Master&$12$&$ 0.038$&$ 0.038$&$0.040$&$$&$-0.071$&$ 0.147$&$0.943$&$0.352$&$0.782$&$0.444$&&\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

@@ -14,19 +14,19 @@ info_src <- list(
   
   , "IntrinsicMotivation" = list(
     sheed = "data", dv = "Intrinsic Motivation", wid = "UserID"
-    , filename = "report/motivation/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx")
+    , filename = "report/motivation/signedup-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx")
   , "InterestEnjoyment" = list(
     sheed = "data", dv = "Interest/Enjoyment", wid = "UserID"
-    , filename = "report/motivation/interest-enjoyment/by-Type/ParametricAnalysis.xlsx")
+    , filename = "report/motivation/signedup-participants/interest-enjoyment/by-Type/ParametricAnalysis.xlsx")
   , "PerceivedChoice" = list(
     sheed = "data", dv = "Perceived Choice", wid = "UserID"
-    , filename = "report/motivation/perceived-choice/by-Type/ParametricAnalysis.xlsx")
+    , filename = "report/motivation/signedup-participants/perceived-choice/by-Type/ParametricAnalysis.xlsx")
   , "PressureTension" = list(
     sheed = "data", dv = "Pressure/Tension", wid = "UserID"
-    , filename = "report/motivation/pressure-tension/by-Type/ParametricAnalysis.xlsx")
+    , filename = "report/motivation/signedup-participants/pressure-tension/by-Type/ParametricAnalysis.xlsx")
   , "EffortImportance" = list(
     sheed = "data", dv = "Effort/Importance", wid = "UserID"
-    , filename = "report/motivation/effort-importance/by-Type/ParametricAnalysis.xlsx")
+    , filename = "report/motivation/signedup-participants/effort-importance/by-Type/ParametricAnalysis.xlsx")
 )
 
 corr_pair_mods <- get_corr_pair_mods(
@@ -74,8 +74,13 @@ write_corr_matrix_plots(
 
 write_corr_chart_plots(
   corr_pair_mods
-  , path =  "report/correlation/signedup-participants/corr-pairs-plots/"
+  , path =  "report/correlation/signedup-participants/corr-chart-plots/"
   , override = TRUE
+)
+
+write_scatter_plots(
+  corr_pair_mods, override = T
+  , path = "report/correlation/signedup-participants/corr-scatter-plots/"
 )
 
 #############################################################################
@@ -83,7 +88,7 @@ write_corr_chart_plots(
 #############################################################################
 write_summary_corr_matrix_mods_in_latex(
   corr_matrix_mods
-  , filename = paste0("report/latex/correlation-signedup-analysis.tex")
+  , filename = "report/latex/correlation-signedup-analysis.tex"
   , in_title = paste("between participants' motivation and learning outcomes"
                      ,"in the first empirical study")
 )

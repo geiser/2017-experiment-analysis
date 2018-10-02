@@ -14,16 +14,16 @@ info_src <- list(
   
   , "LevelofMotivation" = list(
     sheed = "data", dv = "Level of Motivation", wid = "UserID"
-    , filename = "report/motivation/level-of-motivation/by-Type/ParametricAnalysis.xlsx")
+    , filename = "report/motivation/signedup-participants/level-of-motivation/by-Type/ParametricAnalysis.xlsx")
   , "Attention" = list(
     sheed = "data", dv = "Attention", wid = "UserID"
-    , filename = "report/motivation/attention/by-Type/ParametricAnalysis.xlsx")
+    , filename = "report/motivation/signedup-participants/attention/by-Type/ParametricAnalysis.xlsx")
   , "Relevance" = list(
     sheed = "data", dv = "Relevance", wid = "UserID"
-    , filename = "report/motivation/relevance/by-Type/ParametricAnalysis.xlsx")
+    , filename = "report/motivation/signedup-participants/relevance/by-Type/ParametricAnalysis.xlsx")
   , "Satisfaction" = list(
     sheed = "data", dv = "Satisfaction", wid = "UserID"
-    , filename = "report/motivation/satisfaction/by-Type/ParametricAnalysis.xlsx")
+    , filename = "report/motivation/signedup-participants/satisfaction/by-Type/ParametricAnalysis.xlsx")
 )
 
 corr_pair_mods <- get_corr_pair_mods(
@@ -72,7 +72,13 @@ write_corr_matrix_plots(
 
 write_corr_chart_plots(
   corr_pair_mods
-  , path =  "report/correlation/signedup-participants/corr-pairs-plots/"
+  , path =  "report/correlation/signedup-participants/corr-chart-plots/"
+  , override = TRUE
+)
+
+write_scatter_plots(
+  corr_pair_mods
+  , path =  "report/correlation/signedup-participants/corr-scatter-plots/"
   , override = TRUE
 )
 
@@ -84,3 +90,4 @@ write_summary_corr_matrix_mods_in_latex(
   , filename = paste0("report/latex/correlation-signedup-analysis.tex")
   , in_title = paste0("between motivation factors and in the second empirical study")
 )
+

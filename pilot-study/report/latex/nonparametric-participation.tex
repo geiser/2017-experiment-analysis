@@ -1,11 +1,15 @@
 
-\documentclass[6pt]{article}
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
 \usepackage{longtable}
 \usepackage{rotating}
-\usepackage{lscape}
+\usepackage{pdflscape}
 \usepackage{ctable}
+\title{Summary of nonparametric statistics analysis  }
 \begin{document}
-\section{Summaries of Nonparametric Statistics Analysis}
+
+\maketitle
+
 
 %latex.default(result_df, caption = paste("Summary of Scheirer-Ray-Hare results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
 \setlongtables{\small
@@ -31,13 +35,11 @@ PctWithoutParticipation&$$&$$&$$&\tabularnewline
 PctWithoutParticipation:&$4.667$&$ 1$&$0.031$&*\tabularnewline
 \hline
 \end{longtable}}
-\begin{flushright}{ \scriptsize{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }}\end{flushright} 
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
 
 
-\section{Summaries of Wilcoxon Data Analysis }
-
-%latex.default(result_wilcoxon_df, caption = paste("Descriptive statistic of the pair wilcoxon analysis",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = T, rowlabel = "", where = "!htbp", file = filename,     append = T)%
-\setlongtables\begin{landscape}{\scriptsize
+%latex.default(result_wilcoxon_df, caption = paste("Descriptive statistic of the pair wilcoxon analysis",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{llrrrrrrrrl}\caption{Descriptive statistic of the pair wilcoxon analysis } \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
@@ -50,19 +52,17 @@ PctWithoutParticipation:&$4.667$&$ 1$&$0.031$&*\tabularnewline
 \hline
 \endfoot
 \label{result}
-PctHavingParticipation.Type.non-gamified:ont-gamified.less.1&non-gamified&$6$&$0.40$&$5.25$&$31.5$&$10.5$&$-1.78$&$0.035$&$0.477$&medium\tabularnewline
-PctHavingParticipation.Type.non-gamified:ont-gamified.less.2&ont-gamified&$8$&$0.50$&$9.19$&$73.5$&$10.5$&$-1.78$&$0.035$&$0.477$&medium\tabularnewline
-PctIncompleteParticipation.Type.non-gamified:ont-gamified.greater.1&non-gamified&$5$&$0.60$&$7.20$&$36.0$&$21.0$&$ 1.79$&$0.048$&$0.567$&large\tabularnewline
-PctIncompleteParticipation.Type.non-gamified:ont-gamified.greater.2&ont-gamified&$5$&$0.25$&$3.80$&$19.0$&$21.0$&$ 1.79$&$0.048$&$0.567$&large\tabularnewline
-PctWithoutParticipation.Type.non-gamified:ont-gamified.greater.1&non-gamified&$3$&$0.60$&$6.00$&$18.0$&$12.0$&$ 2.16$&$0.029$&$0.816$&large\tabularnewline
-PctWithoutParticipation.Type.non-gamified:ont-gamified.greater.2&ont-gamified&$4$&$0.25$&$2.50$&$10.0$&$12.0$&$ 2.16$&$0.029$&$0.816$&large\tabularnewline
+Type.less.1&non-gamified&$6$&$0.40$&$5.25$&$31.5$&$10.5$&$-1.78$&$0.035$&$0.477$&medium\tabularnewline
+Type.less.2&ont-gamified&$8$&$0.50$&$9.19$&$73.5$&$10.5$&$-1.78$&$0.035$&$0.477$&medium\tabularnewline
+Type.greater.1&non-gamified&$5$&$0.60$&$7.20$&$36.0$&$21.0$&$ 1.79$&$0.048$&$0.567$&large\tabularnewline
+Type.greater.2&ont-gamified&$5$&$0.25$&$3.80$&$19.0$&$21.0$&$ 1.79$&$0.048$&$0.567$&large\tabularnewline
+Type.greater.11&non-gamified&$3$&$0.60$&$6.00$&$18.0$&$12.0$&$ 2.16$&$0.029$&$0.816$&large\tabularnewline
+Type.greater.21&ont-gamified&$4$&$0.25$&$2.50$&$10.0$&$12.0$&$ 2.16$&$0.029$&$0.816$&large\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
-\begin{flushright}{ \tiny{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }}\end{flushright} 
+\end{longtable}}
 
-
-%latex.default(result_wilcoxon_df, caption = paste("Full descriptive statistic of the pair wilcoxon analysis",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = T, rowlabel = "", where = "!htbp", file = filename,     append = T)%
-\setlongtables\begin{landscape}{\scriptsize
+%latex.default(result_wilcoxon_df, caption = paste("Full descriptive statistic of the pair wilcoxon analysis",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{llrrrrrrrrl}\caption{Full descriptive statistic of the pair wilcoxon analysis } \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
@@ -75,33 +75,31 @@ PctWithoutParticipation.Type.non-gamified:ont-gamified.greater.2&ont-gamified&$4
 \hline
 \endfoot
 \label{result}
-PctHavingParticipation.Type.non-gamified:ont-gamified.less.1&non-gamified&$6$&$0.40$&$5.25$&$31.5$&$10.5$&$-1.78$&$0.035$&$0.477$&medium\tabularnewline
-PctHavingParticipation.Type.non-gamified:ont-gamified.less.2&ont-gamified&$8$&$0.50$&$9.19$&$73.5$&$10.5$&$-1.78$&$0.035$&$0.477$&medium\tabularnewline
-PctHavingParticipation.Type.non-gamified:ont-gamified.greater.1&non-gamified&$6$&$0.40$&$5.25$&$31.5$&$10.5$&$-1.78$&$0.966$&$0.477$&medium\tabularnewline
-PctHavingParticipation.Type.non-gamified:ont-gamified.greater.2&ont-gamified&$8$&$0.50$&$9.19$&$73.5$&$10.5$&$-1.78$&$0.966$&$0.477$&medium\tabularnewline
-PctHavingParticipation.Type.non-gamified:ont-gamified.two.sided.1&non-gamified&$6$&$0.40$&$5.25$&$31.5$&$10.5$&$-1.78$&$0.078$&$0.477$&medium\tabularnewline
-PctHavingParticipation.Type.non-gamified:ont-gamified.two.sided.2&ont-gamified&$8$&$0.50$&$9.19$&$73.5$&$10.5$&$-1.78$&$0.078$&$0.477$&medium\tabularnewline
-PctAdequateParticipation.Type.non-gamified:ont-gamified.less.1&non-gamified&$4$&$0.40$&$4.12$&$16.5$&$ 6.5$&$-1.45$&$0.082$&$0.436$&medium\tabularnewline
-PctAdequateParticipation.Type.non-gamified:ont-gamified.less.2&ont-gamified&$7$&$0.50$&$7.07$&$49.5$&$ 6.5$&$-1.45$&$0.082$&$0.436$&medium\tabularnewline
-PctAdequateParticipation.Type.non-gamified:ont-gamified.greater.1&non-gamified&$4$&$0.40$&$4.12$&$16.5$&$ 6.5$&$-1.45$&$0.924$&$0.436$&medium\tabularnewline
-PctAdequateParticipation.Type.non-gamified:ont-gamified.greater.2&ont-gamified&$7$&$0.50$&$7.07$&$49.5$&$ 6.5$&$-1.45$&$0.924$&$0.436$&medium\tabularnewline
-PctAdequateParticipation.Type.non-gamified:ont-gamified.two.sided.1&non-gamified&$4$&$0.40$&$4.12$&$16.5$&$ 6.5$&$-1.45$&$0.161$&$0.436$&medium\tabularnewline
-PctAdequateParticipation.Type.non-gamified:ont-gamified.two.sided.2&ont-gamified&$7$&$0.50$&$7.07$&$49.5$&$ 6.5$&$-1.45$&$0.161$&$0.436$&medium\tabularnewline
-PctIncompleteParticipation.Type.non-gamified:ont-gamified.less.1&non-gamified&$5$&$0.60$&$7.20$&$36.0$&$21.0$&$ 1.79$&$0.972$&$0.567$&large\tabularnewline
-PctIncompleteParticipation.Type.non-gamified:ont-gamified.less.2&ont-gamified&$5$&$0.25$&$3.80$&$19.0$&$21.0$&$ 1.79$&$0.972$&$0.567$&large\tabularnewline
-PctIncompleteParticipation.Type.non-gamified:ont-gamified.greater.1&non-gamified&$5$&$0.60$&$7.20$&$36.0$&$21.0$&$ 1.79$&$0.048$&$0.567$&large\tabularnewline
-PctIncompleteParticipation.Type.non-gamified:ont-gamified.greater.2&ont-gamified&$5$&$0.25$&$3.80$&$19.0$&$21.0$&$ 1.79$&$0.048$&$0.567$&large\tabularnewline
-PctIncompleteParticipation.Type.non-gamified:ont-gamified.two.sided.1&non-gamified&$5$&$0.60$&$7.20$&$36.0$&$21.0$&$ 1.79$&$0.095$&$0.567$&large\tabularnewline
-PctIncompleteParticipation.Type.non-gamified:ont-gamified.two.sided.2&ont-gamified&$5$&$0.25$&$3.80$&$19.0$&$21.0$&$ 1.79$&$0.095$&$0.567$&large\tabularnewline
-PctWithoutParticipation.Type.non-gamified:ont-gamified.less.1&non-gamified&$3$&$0.60$&$6.00$&$18.0$&$12.0$&$ 2.16$&$1.000$&$0.816$&large\tabularnewline
-PctWithoutParticipation.Type.non-gamified:ont-gamified.less.2&ont-gamified&$4$&$0.25$&$2.50$&$10.0$&$12.0$&$ 2.16$&$1.000$&$0.816$&large\tabularnewline
-PctWithoutParticipation.Type.non-gamified:ont-gamified.greater.1&non-gamified&$3$&$0.60$&$6.00$&$18.0$&$12.0$&$ 2.16$&$0.029$&$0.816$&large\tabularnewline
-PctWithoutParticipation.Type.non-gamified:ont-gamified.greater.2&ont-gamified&$4$&$0.25$&$2.50$&$10.0$&$12.0$&$ 2.16$&$0.029$&$0.816$&large\tabularnewline
-PctWithoutParticipation.Type.non-gamified:ont-gamified.two.sided.1&non-gamified&$3$&$0.60$&$6.00$&$18.0$&$12.0$&$ 2.16$&$0.057$&$0.816$&large\tabularnewline
-PctWithoutParticipation.Type.non-gamified:ont-gamified.two.sided.2&ont-gamified&$4$&$0.25$&$2.50$&$10.0$&$12.0$&$ 2.16$&$0.057$&$0.816$&large\tabularnewline
+Type.less.1&non-gamified&$6$&$0.40$&$5.25$&$31.5$&$10.5$&$-1.78$&$0.035$&$0.477$&medium\tabularnewline
+Type.less.2&ont-gamified&$8$&$0.50$&$9.19$&$73.5$&$10.5$&$-1.78$&$0.035$&$0.477$&medium\tabularnewline
+Type.greater.1&non-gamified&$6$&$0.40$&$5.25$&$31.5$&$10.5$&$-1.78$&$0.966$&$0.477$&medium\tabularnewline
+Type.greater.2&ont-gamified&$8$&$0.50$&$9.19$&$73.5$&$10.5$&$-1.78$&$0.966$&$0.477$&medium\tabularnewline
+Type.two.sided.1&non-gamified&$6$&$0.40$&$5.25$&$31.5$&$10.5$&$-1.78$&$0.078$&$0.477$&medium\tabularnewline
+Type.two.sided.2&ont-gamified&$8$&$0.50$&$9.19$&$73.5$&$10.5$&$-1.78$&$0.078$&$0.477$&medium\tabularnewline
+Type.less.11&non-gamified&$4$&$0.40$&$4.12$&$16.5$&$ 6.5$&$-1.45$&$0.082$&$0.436$&medium\tabularnewline
+Type.less.21&ont-gamified&$7$&$0.50$&$7.07$&$49.5$&$ 6.5$&$-1.45$&$0.082$&$0.436$&medium\tabularnewline
+Type.greater.11&non-gamified&$4$&$0.40$&$4.12$&$16.5$&$ 6.5$&$-1.45$&$0.924$&$0.436$&medium\tabularnewline
+Type.greater.21&ont-gamified&$7$&$0.50$&$7.07$&$49.5$&$ 6.5$&$-1.45$&$0.924$&$0.436$&medium\tabularnewline
+Type.two.sided.11&non-gamified&$4$&$0.40$&$4.12$&$16.5$&$ 6.5$&$-1.45$&$0.161$&$0.436$&medium\tabularnewline
+Type.two.sided.21&ont-gamified&$7$&$0.50$&$7.07$&$49.5$&$ 6.5$&$-1.45$&$0.161$&$0.436$&medium\tabularnewline
+Type.less.12&non-gamified&$5$&$0.60$&$7.20$&$36.0$&$21.0$&$ 1.79$&$0.972$&$0.567$&large\tabularnewline
+Type.less.22&ont-gamified&$5$&$0.25$&$3.80$&$19.0$&$21.0$&$ 1.79$&$0.972$&$0.567$&large\tabularnewline
+Type.greater.12&non-gamified&$5$&$0.60$&$7.20$&$36.0$&$21.0$&$ 1.79$&$0.048$&$0.567$&large\tabularnewline
+Type.greater.22&ont-gamified&$5$&$0.25$&$3.80$&$19.0$&$21.0$&$ 1.79$&$0.048$&$0.567$&large\tabularnewline
+Type.two.sided.12&non-gamified&$5$&$0.60$&$7.20$&$36.0$&$21.0$&$ 1.79$&$0.095$&$0.567$&large\tabularnewline
+Type.two.sided.22&ont-gamified&$5$&$0.25$&$3.80$&$19.0$&$21.0$&$ 1.79$&$0.095$&$0.567$&large\tabularnewline
+Type.less.13&non-gamified&$3$&$0.60$&$6.00$&$18.0$&$12.0$&$ 2.16$&$1.000$&$0.816$&large\tabularnewline
+Type.less.23&ont-gamified&$4$&$0.25$&$2.50$&$10.0$&$12.0$&$ 2.16$&$1.000$&$0.816$&large\tabularnewline
+Type.greater.13&non-gamified&$3$&$0.60$&$6.00$&$18.0$&$12.0$&$ 2.16$&$0.029$&$0.816$&large\tabularnewline
+Type.greater.23&ont-gamified&$4$&$0.25$&$2.50$&$10.0$&$12.0$&$ 2.16$&$0.029$&$0.816$&large\tabularnewline
+Type.two.sided.13&non-gamified&$3$&$0.60$&$6.00$&$18.0$&$12.0$&$ 2.16$&$0.057$&$0.816$&large\tabularnewline
+Type.two.sided.23&ont-gamified&$4$&$0.25$&$2.50$&$10.0$&$12.0$&$ 2.16$&$0.057$&$0.816$&large\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
-\begin{flushright}{ \tiny{ Signif. codes:  0 ``**'' 0.01 ``*'' 0.05 }}\end{flushright} 
-
+\end{longtable}}
 
 \end{document}

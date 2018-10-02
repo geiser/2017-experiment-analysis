@@ -1,0 +1,92 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the third study for signed up students }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrlrrrrl}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the third study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+gain.theta.(Intercept)&$0.011$&$ 1$&$2.046$&$0.159$&&$$&$$&$$&$$&\tabularnewline
+gain.theta.Type&$0.039$&$ 1$&$7.066$&$0.011$&*&$ 1$&$1290.572$&$6.321$&$0.012$&*\tabularnewline
+gain.theta.CLRole&$0.038$&$ 1$&$6.848$&$0.012$&*&$ 1$&$1029.892$&$5.045$&$0.025$&*\tabularnewline
+gain.theta.Type:CLRole&$0.000$&$ 1$&$0.060$&$0.808$&&$ 1$&$   3.010$&$0.015$&$0.903$&\tabularnewline
+gain.theta.Residuals&$0.248$&$45$&$$&$$&&$45$&$7476.026$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Tukey post-hoc",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrll}\caption{Summary of Tukey post-hoc in the third study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+ont-gamified - w/o-gamified&$49$&$0.063$&$0.063$&$0.024$&$$&$0.020$&$0.106$&$2.658$&$0.011$&$0.005$&$0.792$&**&medium\tabularnewline
+ont-gamified.Apprentice - w/o-gamified.Apprentice&$35$&$0.068$&$0.068$&$0.025$&$$&$0.001$&$0.136$&$2.708$&$0.010$&$0.045$&$0.993$&*&large\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{llrrrrrrrrl}\caption{Summary of Pair wilcoxon in the third study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+gain.theta.Type.greater.1&ont-gamified&$23$&$ 0.04$&$30.46$&$700.5$&$424.5$&$2.51$&$0.006$&$0.359$&medium\tabularnewline
+gain.theta.Type.greater.2&w/o-gamified&$26$&$-0.04$&$20.17$&$524.5$&$424.5$&$2.51$&$0.006$&$0.359$&medium\tabularnewline
+gain.theta.Type.two.sided.1&ont-gamified&$23$&$ 0.04$&$30.46$&$700.5$&$424.5$&$2.51$&$0.011$&$0.359$&medium\tabularnewline
+gain.theta.Type.two.sided.2&w/o-gamified&$26$&$-0.04$&$20.17$&$524.5$&$424.5$&$2.51$&$0.011$&$0.359$&medium\tabularnewline
+gain.theta.Type:CLRole.greater.1&ont-gamified.Apprentice&$16$&$ 0.07$&$22.84$&$365.5$&$229.5$&$2.57$&$0.005$&$0.434$&medium\tabularnewline
+gain.theta.Type:CLRole.greater.2&w/o-gamified.Apprentice&$19$&$-0.03$&$13.92$&$264.5$&$229.5$&$2.57$&$0.005$&$0.434$&medium\tabularnewline
+gain.theta.Type:CLRole.two.sided.1&ont-gamified.Apprentice&$16$&$ 0.07$&$22.84$&$365.5$&$229.5$&$2.57$&$0.009$&$0.434$&medium\tabularnewline
+gain.theta.Type:CLRole.two.sided.2&w/o-gamified.Apprentice&$19$&$-0.03$&$13.92$&$264.5$&$229.5$&$2.57$&$0.009$&$0.434$&medium\tabularnewline
+gain.theta.Type:CLRole.greater.11&ont-gamified.Apprentice&$16$&$ 0.07$&$14.69$&$235.0$&$ 99.0$&$2.87$&$0.001$&$0.599$&large\tabularnewline
+gain.theta.Type:CLRole.greater.21&w/o-gamified.Master&$ 7$&$-0.07$&$ 5.86$&$ 41.0$&$ 99.0$&$2.87$&$0.001$&$0.599$&large\tabularnewline
+gain.theta.Type:CLRole.two.sided.11&ont-gamified.Apprentice&$16$&$ 0.07$&$14.69$&$235.0$&$ 99.0$&$2.87$&$0.003$&$0.599$&large\tabularnewline
+gain.theta.Type:CLRole.two.sided.21&w/o-gamified.Master&$ 7$&$-0.07$&$ 5.86$&$ 41.0$&$ 99.0$&$2.87$&$0.003$&$0.599$&large\tabularnewline
+gain.theta.Type:CLRole.greater.12&w/o-gamified.Apprentice&$19$&$-0.03$&$15.21$&$289.0$&$ 99.0$&$1.88$&$0.032$&$0.368$&medium\tabularnewline
+gain.theta.Type:CLRole.greater.22&w/o-gamified.Master&$ 7$&$-0.07$&$ 8.86$&$ 62.0$&$ 99.0$&$1.88$&$0.032$&$0.368$&medium\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

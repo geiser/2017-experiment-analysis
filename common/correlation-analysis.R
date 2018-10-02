@@ -97,7 +97,11 @@ get_corr_pair_mods <- function(participants, iv, wid, between, observed = NULL
     }
     
     sub_corr_mods[['main']] <- list(
-      data = dat[columns], data.full = dat, mod = corr.test(dat[columns], method = method))
+      data = dat[columns]
+      , wid = wid
+      , data.full = dat
+      , mod = corr.test(dat[columns], method = method)
+      , method = method)
     
     ## sub - modules
     if (include.subs) {
@@ -112,8 +116,11 @@ get_corr_pair_mods <- function(participants, iv, wid, between, observed = NULL
           factors <- factor(apply(wdat[selected_factor_columns], 1, paste, collapse='.'))
           for (nlevel in levels(factors)) {
             sub_corr_mods[[nlevel]] <- list(
-              data = wdat[factors == nlevel,][columns], data.full = wdat[factors == nlevel,]
-              , mod = corr.test(wdat[factors == nlevel,][columns], method = method), method = method)
+              data = wdat[factors == nlevel,][columns]
+              , wid = wid
+              , data.full = wdat[factors == nlevel,]
+              , mod = corr.test(wdat[factors == nlevel,][columns], method = method)
+              , method = method)
           }
         }
       }
@@ -172,9 +179,81 @@ get_corr_matrix_mods <- function(participants, corr_pair_mods, dvs, wid = 'UserI
 ###############################################################################
 
 ## Function to write plots of pair charts
+write_scatter_plots <- function(corr_mods, path, override = T) {
+  
+  library(psych)
+  library(ggpubr)
+  
+  for (model_name in names(corr_mods)) {
+    mods <- corr_mods[[model_name]]
+    
+    for (sub_name in names(mods)) {
+      corr_mod <- mods[[sub_name]]
+      
+      file_name <- gsub(':', '.', gsub('/', '', sub_name))
+      sub_title <- sub_name; if (sub_name == 'main') sub_title <- ''
+      
+      cdat <- corr_mod$data.full
+      rownames(cdat) <- corr_mod$data.full[[corr_mod$wid]]
+      cdat <- cdat[,colnames(corr_mod$data)]
+      dvs <- colnames(cdat)
+      colnames(cdat) <- gsub(' ', '', gsub('/', '', colnames(cdat)))
+      
+      filename <- paste0(path, model_name, file_name, '.png')
+      if (!file.exists(filename) || override) {
+        png(filename = filename, width = 640, height = 640)
+        p <- ggscatter(cdat, x = colnames(cdat)[[1]], y = colnames(cdat)[[2]]
+                       , add = "reg.line", conf.int = T, cor.coef = T
+                       , cor.method = corr_mod$method
+                       , xlab = dvs[[1]]
+                       , ylab = dvs[[2]]
+                       , subtitle = sub_title
+                       , cor.coef.size = 8
+                       , font.label = c(14, "bold", "red")
+        )
+        print(p +
+                font("title", size = 22)+
+                font("subtitle", size = 20)+
+                font("caption", size = 20)+
+                font("xlab", size = 20)+
+                font("ylab", size = 20)+
+                font("xy.text", size = 20))
+        dev.off()
+      }
+      
+      filename <- paste0(path, model_name, file_name, '_rev.png')
+      if (!file.exists(filename) || override) {
+        png(filename = filename, width = 640, height = 640)
+        
+        p <- ggscatter(cdat, x = colnames(cdat)[[2]], y = colnames(cdat)[[1]]
+                  , add = "reg.line", conf.int = T, cor.coef = T
+                  , cor.method = corr_mod$method
+                  , xlab = dvs[[2]]
+                  , ylab = dvs[[1]]
+                  , subtitle = sub_title
+                  , cor.coef.size = 8
+                  , font.label = c(14, "bold", "red")
+        )
+        print(p +
+                font("title", size = 22)+
+                font("subtitle", size = 20)+
+                font("caption", size = 20)+
+                font("xlab", size = 20)+
+                font("ylab", size = 20)+
+                font("xy.text", size = 20))
+        dev.off()
+      }
+      
+    }
+    
+  }
+}
+
+## Function to write plots of pair charts
 write_corr_chart_plots <- function(corr_mods, path, override = T) {
   
   library(psych)
+  library(ggpubr)
   library(PerformanceAnalytics)
   
   for (model_name in names(corr_mods)) {
@@ -195,7 +274,6 @@ write_corr_chart_plots <- function(corr_mods, path, override = T) {
         dev.off()
       }
     }
-    
   }
 }
 

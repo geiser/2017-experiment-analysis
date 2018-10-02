@@ -1,0 +1,63 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the pilot study for students with effective participation }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrlrrrrl}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the pilot study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+gain.theta.(Intercept)&$126.330$&$ 1$&$35.770$&$0.000$&&$$&$$&$$&$$&\tabularnewline
+gain.theta.Type&$  3.087$&$ 1$&$ 0.874$&$0.363$&&$ 1$&$  1.817$&$0.047$&$0.828$&\tabularnewline
+gain.theta.CLRole&$ 42.192$&$ 1$&$11.947$&$0.003$&**&$ 1$&$207.161$&$5.388$&$0.020$&*\tabularnewline
+gain.theta.Type:CLRole&$  0.427$&$ 1$&$ 0.121$&$0.732$&&$ 1$&$  2.621$&$0.068$&$0.794$&\tabularnewline
+gain.theta.Residuals&$ 60.040$&$17$&$$&$$&&$17$&$557.400$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{llrrrrrrrrl}\caption{Summary of Pair wilcoxon in the pilot study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+gain.theta.Type:CLRole.greater.1&non-gamified.Apprentice&$5$&$3.21$&$6$&$30$&$15$&$2.24$&$0.018$&$0.791$&large\tabularnewline
+gain.theta.Type:CLRole.greater.2&non-gamified.Master&$3$&$0.88$&$2$&$ 6$&$15$&$2.24$&$0.018$&$0.791$&large\tabularnewline
+gain.theta.Type:CLRole.two.sided.1&non-gamified.Apprentice&$5$&$3.21$&$6$&$30$&$15$&$2.24$&$0.036$&$0.791$&large\tabularnewline
+gain.theta.Type:CLRole.two.sided.2&non-gamified.Master&$3$&$0.88$&$2$&$ 6$&$15$&$2.24$&$0.036$&$0.791$&large\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

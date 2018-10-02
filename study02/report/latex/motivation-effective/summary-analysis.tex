@@ -1,0 +1,75 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the second study for students with effective participation }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrr}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the second study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Attention.(Intercept)&$ 0.045$&$ 1$&$0.030$&$0.863$&$$&$$&$$&$$&$$&$$\tabularnewline
+Attention.Type&$ 1.701$&$ 1$&$1.127$&$0.294$&$$&$ 1$&$  425.506$&$1.933$&$0.164$&$$\tabularnewline
+Attention.CLRole&$ 0.090$&$ 1$&$0.060$&$0.808$&$$&$ 1$&$    4.153$&$0.019$&$0.891$&$$\tabularnewline
+Attention.Type:CLRole&$ 2.094$&$ 1$&$1.388$&$0.245$&$$&$ 1$&$  255.507$&$1.161$&$0.281$&$$\tabularnewline
+Attention.Residuals&$70.928$&$47$&$$&$$&$$&$47$&$10321.834$&$$&$$&$$\tabularnewline
+Relevance.(Intercept)&$ 0.118$&$ 1$&$0.240$&$0.627$&$$&$$&$$&$$&$$&$$\tabularnewline
+Relevance.Type&$ 0.055$&$ 1$&$0.111$&$0.740$&$$&$ 1$&$  104.914$&$0.477$&$0.490$&$$\tabularnewline
+Relevance.CLRole&$ 0.007$&$ 1$&$0.013$&$0.908$&$$&$ 1$&$   22.802$&$0.104$&$0.747$&$$\tabularnewline
+Relevance.Type:CLRole&$ 0.016$&$ 1$&$0.033$&$0.857$&$$&$ 1$&$   28.383$&$0.129$&$0.719$&$$\tabularnewline
+Relevance.Residuals&$23.041$&$47$&$$&$$&$$&$47$&$10831.401$&$$&$$&$$\tabularnewline
+Satisfaction.(Intercept)&$ 0.613$&$ 1$&$0.478$&$0.493$&$$&$$&$$&$$&$$&$$\tabularnewline
+Satisfaction.Type&$ 0.059$&$ 1$&$0.046$&$0.831$&$$&$ 1$&$   23.395$&$0.107$&$0.744$&$$\tabularnewline
+Satisfaction.CLRole&$ 0.078$&$ 1$&$0.061$&$0.807$&$$&$ 1$&$   36.149$&$0.165$&$0.685$&$$\tabularnewline
+Satisfaction.Type:CLRole&$ 1.298$&$ 1$&$1.012$&$0.320$&$$&$ 1$&$  205.662$&$0.939$&$0.332$&$$\tabularnewline
+Satisfaction.Residuals&$59.018$&$46$&$$&$$&$$&$47$&$10682.794$&$$&$$&$$\tabularnewline
+Level of Motivation.(Intercept)&$ 0.236$&$ 1$&$0.338$&$0.564$&$$&$$&$$&$$&$$&$$\tabularnewline
+Level of Motivation.Type&$ 0.330$&$ 1$&$0.472$&$0.495$&$$&$ 1$&$  171.295$&$0.776$&$0.378$&$$\tabularnewline
+Level of Motivation.CLRole&$ 0.107$&$ 1$&$0.153$&$0.697$&$$&$ 1$&$    2.231$&$0.010$&$0.920$&$$\tabularnewline
+Level of Motivation.Type:CLRole&$ 0.863$&$ 1$&$1.235$&$0.272$&$$&$ 1$&$  278.265$&$1.261$&$0.262$&$$\tabularnewline
+Level of Motivation.Residuals&$32.849$&$47$&$$&$$&$$&$47$&$10584.709$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{r}\caption{Summary of Pair wilcoxon in the second study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{c}{}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{c}{}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+$$\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

@@ -1,0 +1,87 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the pilot study for students with effective participation }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrl}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the pilot study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Interest/Enjoyment.(Intercept)&$ 0.991$&$ 1$&$0.673$&$0.423$&$$&$$&$$&$$&$$&\tabularnewline
+Interest/Enjoyment.Type&$ 6.247$&$ 1$&$4.243$&$0.055$&$$&$ 1$&$ 90.054$&$2.347$&$0.126$&\tabularnewline
+Interest/Enjoyment.CLRole&$ 0.873$&$ 1$&$0.593$&$0.452$&$$&$ 1$&$  7.058$&$0.184$&$0.668$&\tabularnewline
+Interest/Enjoyment.Type:CLRole&$ 0.782$&$ 1$&$0.531$&$0.476$&$$&$ 1$&$ 37.501$&$0.977$&$0.323$&\tabularnewline
+Interest/Enjoyment.Residuals&$25.028$&$17$&$$&$$&$$&$17$&$632.888$&$$&$$&\tabularnewline
+Perceived Choice.(Intercept)&$ 0.004$&$ 1$&$0.008$&$0.929$&$$&$$&$$&$$&$$&\tabularnewline
+Perceived Choice.Type&$ 1.804$&$ 1$&$3.419$&$0.082$&$$&$ 1$&$ 42.000$&$1.098$&$0.295$&\tabularnewline
+Perceived Choice.CLRole&$ 0.367$&$ 1$&$0.696$&$0.416$&$$&$ 1$&$  1.458$&$0.038$&$0.845$&\tabularnewline
+Perceived Choice.Type:CLRole&$ 1.976$&$ 1$&$3.745$&$0.070$&$$&$ 1$&$155.429$&$4.064$&$0.044$&*\tabularnewline
+Perceived Choice.Residuals&$ 8.968$&$17$&$$&$$&$$&$17$&$566.113$&$$&$$&\tabularnewline
+Pressure/Tension.(Intercept)&$ 0.077$&$ 1$&$0.174$&$0.682$&$$&$$&$$&$$&$$&\tabularnewline
+Pressure/Tension.Type&$ 1.293$&$ 1$&$2.920$&$0.106$&$$&$ 1$&$123.429$&$3.242$&$0.072$&\tabularnewline
+Pressure/Tension.CLRole&$ 0.000$&$ 1$&$0.000$&$0.996$&$$&$ 1$&$  0.525$&$0.014$&$0.907$&\tabularnewline
+Pressure/Tension.Type:CLRole&$ 0.002$&$ 1$&$0.005$&$0.947$&$$&$ 1$&$  1.371$&$0.036$&$0.849$&\tabularnewline
+Pressure/Tension.Residuals&$ 7.526$&$17$&$$&$$&$$&$17$&$636.175$&$$&$$&\tabularnewline
+Effort/Importance.(Intercept)&$ 0.286$&$ 1$&$0.706$&$0.412$&$$&$$&$$&$$&$$&\tabularnewline
+Effort/Importance.Type&$ 0.306$&$ 1$&$0.756$&$0.397$&$$&$ 1$&$ 15.482$&$0.414$&$0.520$&\tabularnewline
+Effort/Importance.CLRole&$ 0.040$&$ 1$&$0.098$&$0.758$&$$&$ 1$&$ 16.858$&$0.450$&$0.502$&\tabularnewline
+Effort/Importance.Type:CLRole&$ 0.227$&$ 1$&$0.560$&$0.464$&$$&$ 1$&$  2.072$&$0.055$&$0.814$&\tabularnewline
+Effort/Importance.Residuals&$ 6.876$&$17$&$$&$$&$$&$17$&$714.087$&$$&$$&\tabularnewline
+Intrinsic Motivation.(Intercept)&$ 0.227$&$ 1$&$0.550$&$0.469$&$$&$$&$$&$$&$$&\tabularnewline
+Intrinsic Motivation.Type&$ 1.751$&$ 1$&$4.233$&$0.055$&$$&$ 1$&$133.929$&$3.479$&$0.062$&\tabularnewline
+Intrinsic Motivation.CLRole&$ 0.119$&$ 1$&$0.287$&$0.599$&$$&$ 1$&$  0.233$&$0.006$&$0.938$&\tabularnewline
+Intrinsic Motivation.Type:CLRole&$ 0.150$&$ 1$&$0.362$&$0.555$&$$&$ 1$&$ 10.688$&$0.278$&$0.598$&\tabularnewline
+Intrinsic Motivation.Residuals&$ 7.031$&$17$&$$&$$&$$&$17$&$625.150$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{llrrrrrrrrl}\caption{Summary of Pair wilcoxon in the pilot study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Perceived Choice.Type:CLRole.greater.1&non-gamified.Apprentice&$ 5$&$ 0.35$&$ 5.00$&$ 25$&$10$&$ 1.97$&$0.048$&$0.745$&large\tabularnewline
+Perceived Choice.Type:CLRole.greater.2&non-gamified.Master&$ 2$&$-0.84$&$ 1.50$&$  3$&$10$&$ 1.97$&$0.048$&$0.745$&large\tabularnewline
+Perceived Choice.Type:CLRole.two.sided.1&non-gamified.Apprentice&$ 5$&$ 0.35$&$ 5.00$&$ 25$&$10$&$ 1.97$&$0.048$&$0.745$&large\tabularnewline
+Perceived Choice.Type:CLRole.two.sided.2&non-gamified.Master&$ 2$&$-0.84$&$ 1.50$&$  3$&$10$&$ 1.97$&$0.048$&$0.745$&large\tabularnewline
+Pressure/Tension.Type.greater.1&non-gamified&$ 7$&$ 0.35$&$14.43$&$101$&$73$&$ 1.80$&$0.038$&$0.393$&medium\tabularnewline
+Pressure/Tension.Type.greater.2&ont-gamified&$14$&$-0.13$&$ 9.29$&$130$&$73$&$ 1.80$&$0.038$&$0.393$&medium\tabularnewline
+Intrinsic Motivation.Type.less.1&non-gamified&$ 7$&$-0.12$&$ 7.43$&$ 52$&$24$&$-1.87$&$0.033$&$0.407$&medium\tabularnewline
+Intrinsic Motivation.Type.less.2&ont-gamified&$14$&$ 0.24$&$12.79$&$179$&$24$&$-1.87$&$0.033$&$0.407$&medium\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

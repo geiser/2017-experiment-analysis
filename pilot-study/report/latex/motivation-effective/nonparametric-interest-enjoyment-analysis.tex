@@ -1,0 +1,98 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of nonparametric statistics analysis  for the latent trait estimates of Interest/Enjoyment in the pilot study for students with effective participation }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of Scheirer-Ray-Hare results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrr}\caption{Summary of Scheirer-Ray-Hare results  for the latent trait estimates of Interest/Enjoyment in the pilot study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type&$$&$$&$$&$$&$$\tabularnewline
+Type:Type&$ 1$&$ 90.054$&$2.347$&$0.126$&$$\tabularnewline
+Type:CLRole&$ 1$&$  7.058$&$0.184$&$0.668$&$$\tabularnewline
+Type:Type:CLRole&$ 1$&$ 37.501$&$0.977$&$0.323$&$$\tabularnewline
+Type:Residuals&$17$&$632.888$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+%latex.default(result_wilcoxon_df, caption = paste("Full descriptive statistic of the pair wilcoxon analysis",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{llrrrrrrrrl}\caption{Full descriptive statistic of the pair wilcoxon analysis  for the latent trait estimates of Interest/Enjoyment in the pilot study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.less.1&non-gamified&$ 7$&$-0.11$&$ 8.07$&$ 56.5$&$28.5$&$-1.53$&$0.066$&$0.334$&medium\tabularnewline
+Type.less.2&ont-gamified&$14$&$ 0.48$&$12.46$&$174.5$&$28.5$&$-1.53$&$0.066$&$0.334$&medium\tabularnewline
+Type.greater.1&non-gamified&$ 7$&$-0.11$&$ 8.07$&$ 56.5$&$28.5$&$-1.53$&$0.938$&$0.334$&medium\tabularnewline
+Type.greater.2&ont-gamified&$14$&$ 0.48$&$12.46$&$174.5$&$28.5$&$-1.53$&$0.938$&$0.334$&medium\tabularnewline
+Type.two.sided.1&non-gamified&$ 7$&$-0.11$&$ 8.07$&$ 56.5$&$28.5$&$-1.53$&$0.132$&$0.334$&medium\tabularnewline
+Type.two.sided.2&ont-gamified&$14$&$ 0.48$&$12.46$&$174.5$&$28.5$&$-1.53$&$0.132$&$0.334$&medium\tabularnewline
+Type:CLRole.less.1&non-gamified.Apprentice&$ 5$&$ 0.40$&$ 4.20$&$ 21.0$&$ 6.0$&$ 0.39$&$0.714$&$0.146$&small\tabularnewline
+Type:CLRole.less.2&non-gamified.Master&$ 2$&$-0.37$&$ 3.50$&$  7.0$&$ 6.0$&$ 0.39$&$0.714$&$0.146$&small\tabularnewline
+Type:CLRole.greater.1&non-gamified.Apprentice&$ 5$&$ 0.40$&$ 4.20$&$ 21.0$&$ 6.0$&$ 0.39$&$0.429$&$0.146$&small\tabularnewline
+Type:CLRole.greater.2&non-gamified.Master&$ 2$&$-0.37$&$ 3.50$&$  7.0$&$ 6.0$&$ 0.39$&$0.429$&$0.146$&small\tabularnewline
+Type:CLRole.two.sided.1&non-gamified.Apprentice&$ 5$&$ 0.40$&$ 4.20$&$ 21.0$&$ 6.0$&$ 0.39$&$0.857$&$0.146$&small\tabularnewline
+Type:CLRole.two.sided.2&non-gamified.Master&$ 2$&$-0.37$&$ 3.50$&$  7.0$&$ 6.0$&$ 0.39$&$0.857$&$0.146$&small\tabularnewline
+Type:CLRole.less.11&non-gamified.Apprentice&$ 5$&$ 0.40$&$ 6.60$&$ 33.0$&$18.0$&$-0.86$&$0.219$&$0.222$&small\tabularnewline
+Type:CLRole.less.21&ont-gamified.Apprentice&$10$&$ 0.40$&$ 8.70$&$ 87.0$&$18.0$&$-0.86$&$0.219$&$0.222$&small\tabularnewline
+Type:CLRole.greater.11&non-gamified.Apprentice&$ 5$&$ 0.40$&$ 6.60$&$ 33.0$&$18.0$&$-0.86$&$0.815$&$0.222$&small\tabularnewline
+Type:CLRole.greater.21&ont-gamified.Apprentice&$10$&$ 0.40$&$ 8.70$&$ 87.0$&$18.0$&$-0.86$&$0.815$&$0.222$&small\tabularnewline
+Type:CLRole.two.sided.11&non-gamified.Apprentice&$ 5$&$ 0.40$&$ 6.60$&$ 33.0$&$18.0$&$-0.86$&$0.437$&$0.222$&small\tabularnewline
+Type:CLRole.two.sided.21&ont-gamified.Apprentice&$10$&$ 0.40$&$ 8.70$&$ 87.0$&$18.0$&$-0.86$&$0.437$&$0.222$&small\tabularnewline
+Type:CLRole.less.12&non-gamified.Apprentice&$ 5$&$ 0.40$&$ 4.10$&$ 20.5$&$ 5.5$&$-1.11$&$0.151$&$0.369$&medium\tabularnewline
+Type:CLRole.less.22&ont-gamified.Master&$ 4$&$ 1.15$&$ 6.12$&$ 24.5$&$ 5.5$&$-1.11$&$0.151$&$0.369$&medium\tabularnewline
+Type:CLRole.greater.12&non-gamified.Apprentice&$ 5$&$ 0.40$&$ 4.10$&$ 20.5$&$ 5.5$&$-1.11$&$0.865$&$0.369$&medium\tabularnewline
+Type:CLRole.greater.22&ont-gamified.Master&$ 4$&$ 1.15$&$ 6.12$&$ 24.5$&$ 5.5$&$-1.11$&$0.865$&$0.369$&medium\tabularnewline
+Type:CLRole.two.sided.12&non-gamified.Apprentice&$ 5$&$ 0.40$&$ 4.10$&$ 20.5$&$ 5.5$&$-1.11$&$0.317$&$0.369$&medium\tabularnewline
+Type:CLRole.two.sided.22&ont-gamified.Master&$ 4$&$ 1.15$&$ 6.12$&$ 24.5$&$ 5.5$&$-1.11$&$0.317$&$0.369$&medium\tabularnewline
+Type:CLRole.less.13&non-gamified.Master&$ 2$&$-0.37$&$ 4.00$&$  8.0$&$ 5.0$&$-1.08$&$0.182$&$0.311$&medium\tabularnewline
+Type:CLRole.less.23&ont-gamified.Apprentice&$10$&$ 0.40$&$ 7.00$&$ 70.0$&$ 5.0$&$-1.08$&$0.182$&$0.311$&medium\tabularnewline
+Type:CLRole.greater.13&non-gamified.Master&$ 2$&$-0.37$&$ 4.00$&$  8.0$&$ 5.0$&$-1.08$&$0.864$&$0.311$&medium\tabularnewline
+Type:CLRole.greater.23&ont-gamified.Apprentice&$10$&$ 0.40$&$ 7.00$&$ 70.0$&$ 5.0$&$-1.08$&$0.864$&$0.311$&medium\tabularnewline
+Type:CLRole.two.sided.13&non-gamified.Master&$ 2$&$-0.37$&$ 4.00$&$  8.0$&$ 5.0$&$-1.08$&$0.364$&$0.311$&medium\tabularnewline
+Type:CLRole.two.sided.23&ont-gamified.Apprentice&$10$&$ 0.40$&$ 7.00$&$ 70.0$&$ 5.0$&$-1.08$&$0.364$&$0.311$&medium\tabularnewline
+Type:CLRole.less.14&non-gamified.Master&$ 2$&$-0.37$&$ 1.50$&$  3.0$&$ 0.0$&$-1.85$&$0.067$&$0.756$&large\tabularnewline
+Type:CLRole.less.24&ont-gamified.Master&$ 4$&$ 1.15$&$ 4.50$&$ 18.0$&$ 0.0$&$-1.85$&$0.067$&$0.756$&large\tabularnewline
+Type:CLRole.greater.14&non-gamified.Master&$ 2$&$-0.37$&$ 1.50$&$  3.0$&$ 0.0$&$-1.85$&$1.000$&$0.756$&large\tabularnewline
+Type:CLRole.greater.24&ont-gamified.Master&$ 4$&$ 1.15$&$ 4.50$&$ 18.0$&$ 0.0$&$-1.85$&$1.000$&$0.756$&large\tabularnewline
+Type:CLRole.two.sided.14&non-gamified.Master&$ 2$&$-0.37$&$ 1.50$&$  3.0$&$ 0.0$&$-1.85$&$0.133$&$0.756$&large\tabularnewline
+Type:CLRole.two.sided.24&ont-gamified.Master&$ 4$&$ 1.15$&$ 4.50$&$ 18.0$&$ 0.0$&$-1.85$&$0.133$&$0.756$&large\tabularnewline
+Type:CLRole.less.15&ont-gamified.Apprentice&$10$&$ 0.40$&$ 6.80$&$ 68.0$&$13.0$&$-0.99$&$0.177$&$0.265$&small\tabularnewline
+Type:CLRole.less.25&ont-gamified.Master&$ 4$&$ 1.15$&$ 9.25$&$ 37.0$&$13.0$&$-0.99$&$0.177$&$0.265$&small\tabularnewline
+Type:CLRole.greater.15&ont-gamified.Apprentice&$10$&$ 0.40$&$ 6.80$&$ 68.0$&$13.0$&$-0.99$&$0.839$&$0.265$&small\tabularnewline
+Type:CLRole.greater.25&ont-gamified.Master&$ 4$&$ 1.15$&$ 9.25$&$ 37.0$&$13.0$&$-0.99$&$0.839$&$0.265$&small\tabularnewline
+\newpage
+Type:CLRole.two.sided.15&ont-gamified.Apprentice&$10$&$ 0.40$&$ 6.80$&$ 68.0$&$13.0$&$-0.99$&$0.357$&$0.265$&small\tabularnewline
+Type:CLRole.two.sided.25&ont-gamified.Master&$ 4$&$ 1.15$&$ 9.25$&$ 37.0$&$13.0$&$-0.99$&$0.357$&$0.265$&small\tabularnewline
+\hline
+\end{longtable}}
+
+\end{document}

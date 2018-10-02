@@ -1,0 +1,68 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of parametric statistics analysis  for the latent trait estimates of Intrinsic Motivation in the first study for signed up students }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrl}\caption{Summary of two-way ANOVA results  for the latent trait estimates of Intrinsic Motivation in the first study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$ 0.579$&$ 1$&$1.520$&$0.223$&\tabularnewline
+Type.Type&$ 3.087$&$ 1$&$8.103$&$0.006$&**\tabularnewline
+Type.CLRole&$ 0.064$&$ 1$&$0.168$&$0.683$&\tabularnewline
+Type.Type:CLRole&$ 0.020$&$ 1$&$0.053$&$0.819$&\tabularnewline
+Type.Residuals&$21.333$&$56$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrll}\caption{Descriptive statistics and Tukey post-hoc test results  for the latent trait estimates of Intrinsic Motivation in the first study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.non-gamified&$30$&$-0.329$&$-0.325$&$0.113$&$56$&$-0.552$&$-0.099$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified&$30$&$ 0.129$&$ 0.129$&$0.113$&$56$&$-0.097$&$ 0.354$&$$&$$&$$&$$&&\tabularnewline
+Type.non-gamified - ont-gamified&$60$&$-0.458$&$-0.454$&$0.160$&$$&$-0.777$&$-0.138$&$-2.847$&$0.006$&$0.006$&$-0.743$&**&medium\tabularnewline
+Type.non-gamified.Apprentice&$14$&$-0.274$&$-0.274$&$0.165$&$56$&$-0.605$&$ 0.056$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified.Apprentice&$15$&$ 0.143$&$ 0.143$&$0.159$&$56$&$-0.176$&$ 0.462$&$$&$$&$$&$$&&\tabularnewline
+Type.non-gamified.Apprentice - ont-gamified.Apprentice&$29$&$-0.418$&$-0.418$&$0.229$&$$&$-1.025$&$ 0.190$&$-1.820$&$0.074$&$0.275$&$-0.583$&&\tabularnewline
+Type.non-gamified.Master&$16$&$-0.376$&$-0.376$&$0.154$&$56$&$-0.686$&$-0.067$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified.Master&$15$&$ 0.114$&$ 0.114$&$0.159$&$56$&$-0.205$&$ 0.434$&$$&$$&$$&$$&&\tabularnewline
+Type.non-gamified.Master - ont-gamified.Master&$31$&$-0.491$&$-0.491$&$0.222$&$$&$-1.078$&$ 0.097$&$-2.212$&$0.031$&$0.132$&$-0.896$&&\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

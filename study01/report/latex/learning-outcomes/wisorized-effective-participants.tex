@@ -1,0 +1,48 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of winsorized responses for gain estimates of skill/knowledge based on the stacking of pre- and post-test data with GPCM in the first empirical study }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(as.data.frame(dd$get_data()), rowname = NULL, caption = paste("Summary of Winsorized responses",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{llllll}\caption{Summary of Winsorized responses for gain estimates of skill/knowledge based on the stacking of pre- and post-test data with GPCM in the first empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{c}{@@}&\multicolumn{1}{c}{UserID}&\multicolumn{1}{c}{NroUSP}&\multicolumn{1}{c}{...}&\multicolumn{1}{c}{PlayerRole}&\multicolumn{1}{c}{gain.theta}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{c}{@@}&\multicolumn{1}{c}{UserID}&\multicolumn{1}{c}{NroUSP}&\multicolumn{1}{c}{...}&\multicolumn{1}{c}{PlayerRole}&\multicolumn{1}{c}{gain.theta}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{as.data.frame}
+...&...&...&...&...&...\tabularnewline
+&10170&10260351&...&Yee Achiever&0.4436\tabularnewline
+-\textgreater &10171&698531&...&&0.9504-\textgreater 0.7981\tabularnewline
+&10174&10276852&...&Yee Achiever&0.3586\tabularnewline
+-\textgreater &10175&10310700&...&Yee Socializer&-0.0915-\textgreater -0.025\tabularnewline
+&10176&10276949&...&Yee Achiever&0.5311\tabularnewline
+...&...&...&...&...&...\tabularnewline
+&10202&10277036&...&&0.581\tabularnewline
+-\textgreater &10203&9921470&...&&-0.136-\textgreater 0.3192\tabularnewline
+-\textgreater &10204&10310471&...&Yee Achiever&-0.1474-\textgreater -0.025\tabularnewline
+&10206&10310721&...&Yee Achiever&0.1604\tabularnewline
+...&...&...&...&...&...\tabularnewline
+&10214&10277022&...&&0.2054\tabularnewline
+-\textgreater &10216&10276720&...&&1.3461-\textgreater 0.9414\tabularnewline
+&10217&9805341&...&&0.7333\tabularnewline
+...&...&...&...&...&...\tabularnewline
+\hline
+\end{longtable}}
+
+
+\end{document}

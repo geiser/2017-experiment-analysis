@@ -1,0 +1,68 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of parametric statistics analysis  for the latent trait estimates of Attention in the second study for signed up students }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrr}\caption{Summary of two-way ANOVA results  for the latent trait estimates of Attention in the second study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$ 0.028$&$ 1$&$0.018$&$0.893$&$$\tabularnewline
+Type.Type&$ 1.605$&$ 1$&$1.031$&$0.314$&$$\tabularnewline
+Type.CLRole&$ 0.006$&$ 1$&$0.004$&$0.951$&$$\tabularnewline
+Type.Type:CLRole&$ 2.002$&$ 1$&$1.286$&$0.262$&$$\tabularnewline
+Type.Residuals&$84.055$&$54$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrrr}\caption{Descriptive statistics and Tukey post-hoc test results  for the latent trait estimates of Attention in the second study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.non-gamified&$34$&$-0.278$&$-0.204$&$0.229$&$54$&$-0.662$&$0.255$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified&$24$&$ 0.219$&$ 0.156$&$0.270$&$54$&$-0.386$&$0.697$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified - ont-gamified&$58$&$-0.497$&$-0.359$&$0.354$&$$&$-1.164$&$0.170$&$-1.015$&$0.314$&$0.141$&$-0.396$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice&$23$&$-0.415$&$-0.415$&$0.260$&$54$&$-0.937$&$0.106$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Apprentice&$16$&$ 0.346$&$ 0.346$&$0.312$&$54$&$-0.280$&$0.971$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice - ont-gamified.Apprentice&$39$&$-0.761$&$-0.761$&$0.406$&$$&$-1.837$&$0.316$&$-1.873$&$0.066$&$0.252$&$-0.601$&$$&$$\tabularnewline
+Type.non-gamified.Master&$11$&$ 0.008$&$ 0.008$&$0.376$&$54$&$-0.746$&$0.762$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Master&$ 8$&$-0.034$&$-0.034$&$0.441$&$54$&$-0.918$&$0.850$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Master - ont-gamified.Master&$19$&$ 0.042$&$ 0.042$&$0.580$&$$&$-1.495$&$1.579$&$ 0.072$&$0.943$&$1.000$&$ 0.032$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

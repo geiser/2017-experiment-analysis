@@ -37,6 +37,15 @@ write_nonparametric_test_report(
   , levels = c('non-gamified','ont-gamified')
 )
 
+## translate to latex
+write_nonparam_statistics_analysis_in_latex(
+  nonparametric_results = list("gain.theta" = nonparam_result)
+  , dvs = list_dvs
+  , filename = paste0("report/latex/learning-outcomes/nonparametric-",folder,"-analysis.tex")
+  , in_title = paste("for Gain in Skill/Knowledge as the latent trait estimates"
+                     , "in the first study for signed up students")
+)
+
 #############################################################################
 ## Parametric Statistic Analysis                                           ##
 #############################################################################
@@ -93,27 +102,31 @@ write_parametric_test_report(
   , levels = c('non-gamified','ont-gamified')
 )
 
-#############################################################################
-## Translate latex resume                                                  ##
-#############################################################################
-write_nonparam_statistics_analysis_in_latex(
-  filename = paste0("report/latex/nonparametric-learning-outcomes-",folder,"-analysis.tex")
-  , nonparametric_results = list("gain.theta" = nonparam_result)
-  , dvs = list_dvs
-)
-
+## translate to latex
 write_winsorized_in_latex(
   winsor_mod$diff_dat
-  , filename = paste0("report/latex/wisorized-learning-outcomes",folder,".tex")
-  , in_title = paste("for estimating gains in skill/knowledge based on"
-                     ,"the stacking of pre-test and post-test data with GPCM "
+  , filename = paste0("report/latex/learning-outcomes/wisorized-",folder,".tex")
+  , in_title = paste("for gain estimates of skill/knowledge based on"
+                     ,"the stacking of pre- and post-test data with GPCM"
                      ,"in the first empirical study")
 )
 
 write_param_statistics_analysis_in_latex(
   parametric_results = list("Type" = result)
   , ivs = c("Type")
-  , filename = paste0("report/latex/parametric-learning-outcomes-", folder, "-analysis.tex")
+  , filename = paste0("report/latex/learning-outcomes/parametric-", folder, "-analysis.tex")
   , in_title = paste("for the gains in skill/knowledge estimates in the first empirical study")
 )
+
+#############################################################################
+## Global summary                                                          ##
+#############################################################################
+write_param_and_nonparam_statistics_analysis_in_latex(
+  all_parametric_results = list("gain.theta" = list("Type" = result))
+  , all_nonparametric_results = list("gain.theta" = list("Type" = nonparam_result))
+  , list_info = list("gain.theta"=list("ivs"="Type", "dv"="gain.theta"
+                                       , "info" = list("Type"="Type")))
+  , filename = paste0("report/latex/learning-outcomes/",folder,"-summary-analysis.tex")
+  , in_title = "in the first study for signed up students")
+
 

@@ -1,16 +1,20 @@
 
-\documentclass[6pt]{article}
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
 \usepackage{longtable}
 \usepackage{rotating}
-\usepackage{lscape}
+\usepackage{pdflscape}
 \usepackage{ctable}
+\title{Summary of correlation analysis between participants' motivation and learning outcomes in the first empirical study }
 \begin{document}
-\title{Summary of Correlation Analysis}
+
 \maketitle
+
+
 \section{Gains in Skill/Knowledge and Motivation}
 
-%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix of Gains in Skill/Knowledge and Motivation between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -24,17 +28,17 @@
 \multicolumn{7}{p{\linewidth}}{method:  spearman}\tabularnewline
 \endfoot
 \label{round}
-Gains in Skill/Knowledge&$ 1.0000$&$-0.0160$&$-0.1688$&$-0.1010$&$-0.0342$&$0.1882$\tabularnewline
-Intrinsic Motivation&$-0.0160$&$ 1.0000$&$ 0.7575$&$ 0.6856$&$-0.4746$&$0.3150$\tabularnewline
-Interest/Enjoyment&$-0.1688$&$ 0.7575$&$ 1.0000$&$ 0.4622$&$-0.2527$&$0.1101$\tabularnewline
-Perceived Choice&$-0.1010$&$ 0.6856$&$ 0.4622$&$ 1.0000$&$-0.1757$&$0.0138$\tabularnewline
-Pressure/Tension&$-0.0342$&$-0.4746$&$-0.2527$&$-0.1757$&$ 1.0000$&$0.2684$\tabularnewline
-Effort/Importance&$ 0.1882$&$ 0.3150$&$ 0.1101$&$ 0.0138$&$ 0.2684$&$1.0000$\tabularnewline
+Gains in Skill/Knowledge&$ 1.0000$&$-0.0508$&$-0.2039$&$-0.1007$&$ 0.0030$&$0.1992$\tabularnewline
+Intrinsic Motivation&$-0.0508$&$ 1.0000$&$ 0.7666$&$ 0.6814$&$-0.4823$&$0.2973$\tabularnewline
+Interest/Enjoyment&$-0.2039$&$ 0.7666$&$ 1.0000$&$ 0.4537$&$-0.2752$&$0.0919$\tabularnewline
+Perceived Choice&$-0.1007$&$ 0.6814$&$ 0.4537$&$ 1.0000$&$-0.1699$&$0.0238$\tabularnewline
+Pressure/Tension&$ 0.0030$&$-0.4823$&$-0.2752$&$-0.1699$&$ 1.0000$&$0.2793$\tabularnewline
+Effort/Importance&$ 0.1992$&$ 0.2973$&$ 0.0919$&$ 0.0238$&$ 0.2793$&$1.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
-%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix with p-values of Gains in Skill/Knowledge and Motivation between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -48,19 +52,19 @@ Effort/Importance&$ 0.1882$&$ 0.3150$&$ 0.1101$&$ 0.0138$&$ 0.2684$&$1.0000$\tab
 \multicolumn{7}{p{\linewidth}}{method:  spearman}\tabularnewline
 \endfoot
 \label{round}
-Gains in Skill/Knowledge&$0.0000$&$0.9179$&$0.2734$&$0.5140$&$0.8254$&$0.2212$\tabularnewline
-Intrinsic Motivation&$0.9179$&$0.0000$&$0.0000$&$0.0000$&$0.0011$&$0.0373$\tabularnewline
-Interest/Enjoyment&$0.2734$&$0.0000$&$0.0000$&$0.0016$&$0.0979$&$0.4768$\tabularnewline
-Perceived Choice&$0.5140$&$0.0000$&$0.0016$&$0.0000$&$0.2539$&$0.9290$\tabularnewline
-Pressure/Tension&$0.8254$&$0.0011$&$0.0979$&$0.2539$&$0.0000$&$0.0781$\tabularnewline
-Effort/Importance&$0.2212$&$0.0373$&$0.4768$&$0.9290$&$0.0781$&$0.0000$\tabularnewline
+Gains in Skill/Knowledge&$0.0000$&$0.7404$&$0.1790$&$0.5105$&$0.9844$&$0.1895$\tabularnewline
+Intrinsic Motivation&$0.7404$&$0.0000$&$0.0000$&$0.0000$&$0.0008$&$0.0473$\tabularnewline
+Interest/Enjoyment&$0.1790$&$0.0000$&$0.0000$&$0.0017$&$0.0673$&$0.5481$\tabularnewline
+Perceived Choice&$0.5105$&$0.0000$&$0.0017$&$0.0000$&$0.2644$&$0.8767$\tabularnewline
+Pressure/Tension&$0.9844$&$0.0008$&$0.0673$&$0.2644$&$0.0000$&$0.0632$\tabularnewline
+Effort/Importance&$0.1895$&$0.0473$&$0.5481$&$0.8767$&$0.0632$&$0.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
 \section{Gains in Skill/Knowledge and Motivation for the group non-gamified}
 
-%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix of Gains in Skill/Knowledge and Motivation for the group non-gamified between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -81,10 +85,10 @@ Perceived Choice&$0.1912$&$ 0.8186$&$ 0.4807$&$ 1.0000$&$-0.6142$&$0.0254$\tabul
 Pressure/Tension&$0.0052$&$-0.4635$&$-0.1594$&$-0.6142$&$ 1.0000$&$0.5172$\tabularnewline
 Effort/Importance&$0.4230$&$ 0.3110$&$ 0.2560$&$ 0.0254$&$ 0.5172$&$1.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
-%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix with p-values of Gains in Skill/Knowledge and Motivation for the group non-gamified between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -105,12 +109,12 @@ Perceived Choice&$0.4472$&$0.0000$&$0.0434$&$0.0000$&$0.0067$&$0.9202$\tabularne
 Pressure/Tension&$0.9837$&$0.0527$&$0.5277$&$0.0067$&$0.0000$&$0.0279$\tabularnewline
 Effort/Importance&$0.0803$&$0.2090$&$0.3052$&$0.9202$&$0.0279$&$0.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
 \section{Gains in Skill/Knowledge and Motivation for the group ont-gamified}
 
-%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix of Gains in Skill/Knowledge and Motivation for the group ont-gamified between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -124,17 +128,17 @@ Effort/Importance&$0.0803$&$0.2090$&$0.3052$&$0.9202$&$0.0279$&$0.0000$\tabularn
 \multicolumn{7}{p{\linewidth}}{method:  spearman}\tabularnewline
 \endfoot
 \label{round}
-Gains in Skill/Knowledge&$ 1.0000$&$-0.1621$&$-0.3131$&$-0.2139$&$-0.0644$&$ 0.0658$\tabularnewline
-Intrinsic Motivation&$-0.1621$&$ 1.0000$&$ 0.7294$&$ 0.5215$&$-0.5086$&$ 0.3399$\tabularnewline
-Interest/Enjoyment&$-0.3131$&$ 0.7294$&$ 1.0000$&$ 0.3776$&$-0.3877$&$-0.0121$\tabularnewline
-Perceived Choice&$-0.2139$&$ 0.5215$&$ 0.3776$&$ 1.0000$&$ 0.0817$&$-0.0936$\tabularnewline
-Pressure/Tension&$-0.0644$&$-0.5086$&$-0.3877$&$ 0.0817$&$ 1.0000$&$ 0.1384$\tabularnewline
-Effort/Importance&$ 0.0658$&$ 0.3399$&$-0.0121$&$-0.0936$&$ 0.1384$&$ 1.0000$\tabularnewline
+Gains in Skill/Knowledge&$ 1.0000$&$-0.2000$&$-0.3458$&$-0.2030$&$-0.0222$&$ 0.0858$\tabularnewline
+Intrinsic Motivation&$-0.2000$&$ 1.0000$&$ 0.7448$&$ 0.5214$&$-0.5216$&$ 0.2976$\tabularnewline
+Interest/Enjoyment&$-0.3458$&$ 0.7448$&$ 1.0000$&$ 0.3570$&$-0.4095$&$-0.0396$\tabularnewline
+Perceived Choice&$-0.2030$&$ 0.5214$&$ 0.3570$&$ 1.0000$&$ 0.0830$&$-0.0702$\tabularnewline
+Pressure/Tension&$-0.0222$&$-0.5216$&$-0.4095$&$ 0.0830$&$ 1.0000$&$ 0.1657$\tabularnewline
+Effort/Importance&$ 0.0858$&$ 0.2976$&$-0.0396$&$-0.0702$&$ 0.1657$&$ 1.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
-%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix with p-values of Gains in Skill/Knowledge and Motivation for the group ont-gamified between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -148,19 +152,19 @@ Effort/Importance&$ 0.0658$&$ 0.3399$&$-0.0121$&$-0.0936$&$ 0.1384$&$ 1.0000$\ta
 \multicolumn{7}{p{\linewidth}}{method:  spearman}\tabularnewline
 \endfoot
 \label{round}
-Gains in Skill/Knowledge&$0.0000$&$0.4288$&$0.1193$&$0.2942$&$0.7546$&$0.7493$\tabularnewline
-Intrinsic Motivation&$0.4288$&$0.0000$&$0.0000$&$0.0063$&$0.0080$&$0.0894$\tabularnewline
-Interest/Enjoyment&$0.1193$&$0.0000$&$0.0000$&$0.0572$&$0.0503$&$0.9531$\tabularnewline
-Perceived Choice&$0.2942$&$0.0063$&$0.0572$&$0.0000$&$0.6915$&$0.6493$\tabularnewline
-Pressure/Tension&$0.7546$&$0.0080$&$0.0503$&$0.6915$&$0.0000$&$0.5001$\tabularnewline
-Effort/Importance&$0.7493$&$0.0894$&$0.9531$&$0.6493$&$0.5001$&$0.0000$\tabularnewline
+Gains in Skill/Knowledge&$0.0000$&$0.3172$&$0.0773$&$0.3098$&$0.9127$&$0.6703$\tabularnewline
+Intrinsic Motivation&$0.3172$&$0.0000$&$0.0000$&$0.0053$&$0.0053$&$0.1317$\tabularnewline
+Interest/Enjoyment&$0.0773$&$0.0000$&$0.0000$&$0.0675$&$0.0339$&$0.8446$\tabularnewline
+Perceived Choice&$0.3098$&$0.0053$&$0.0675$&$0.0000$&$0.6808$&$0.7278$\tabularnewline
+Pressure/Tension&$0.9127$&$0.0053$&$0.0339$&$0.6808$&$0.0000$&$0.4089$\tabularnewline
+Effort/Importance&$0.6703$&$0.1317$&$0.8446$&$0.7278$&$0.4089$&$0.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
 \section{Gains in Skill/Knowledge and Motivation for the group Apprentice}
 
-%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix of Gains in Skill/Knowledge and Motivation for the group Apprentice between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -174,17 +178,17 @@ Effort/Importance&$0.7493$&$0.0894$&$0.9531$&$0.6493$&$0.5001$&$0.0000$\tabularn
 \multicolumn{7}{p{\linewidth}}{method:  spearman}\tabularnewline
 \endfoot
 \label{round}
-Gains in Skill/Knowledge&$ 1.0000$&$-0.0966$&$-0.0028$&$-0.1809$&$-0.0805$&$ 0.2699$\tabularnewline
-Intrinsic Motivation&$-0.0966$&$ 1.0000$&$ 0.8146$&$ 0.7724$&$-0.4195$&$ 0.2977$\tabularnewline
-Interest/Enjoyment&$-0.0028$&$ 0.8146$&$ 1.0000$&$ 0.6442$&$-0.1451$&$ 0.1175$\tabularnewline
-Perceived Choice&$-0.1809$&$ 0.7724$&$ 0.6442$&$ 1.0000$&$-0.2301$&$-0.0205$\tabularnewline
-Pressure/Tension&$-0.0805$&$-0.4195$&$-0.1451$&$-0.2301$&$ 1.0000$&$ 0.0825$\tabularnewline
-Effort/Importance&$ 0.2699$&$ 0.2977$&$ 0.1175$&$-0.0205$&$ 0.0825$&$ 1.0000$\tabularnewline
+Gains in Skill/Knowledge&$ 1.0000$&$-0.1571$&$-0.1013$&$-0.1525$&$ 0.0092$&$ 0.3175$\tabularnewline
+Intrinsic Motivation&$-0.1571$&$ 1.0000$&$ 0.8190$&$ 0.7564$&$-0.4295$&$ 0.2524$\tabularnewline
+Interest/Enjoyment&$-0.1013$&$ 0.8190$&$ 1.0000$&$ 0.6094$&$-0.1920$&$ 0.0632$\tabularnewline
+Perceived Choice&$-0.1525$&$ 0.7564$&$ 0.6094$&$ 1.0000$&$-0.1960$&$-0.0112$\tabularnewline
+Pressure/Tension&$ 0.0092$&$-0.4295$&$-0.1920$&$-0.1960$&$ 1.0000$&$ 0.1239$\tabularnewline
+Effort/Importance&$ 0.3175$&$ 0.2524$&$ 0.0632$&$-0.0112$&$ 0.1239$&$ 1.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
-%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix with p-values of Gains in Skill/Knowledge and Motivation for the group Apprentice between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -198,19 +202,19 @@ Effort/Importance&$ 0.2699$&$ 0.2977$&$ 0.1175$&$-0.0205$&$ 0.0825$&$ 1.0000$\ta
 \multicolumn{7}{p{\linewidth}}{method:  spearman}\tabularnewline
 \endfoot
 \label{round}
-Gains in Skill/Knowledge&$0.0000$&$0.6682$&$0.9900$&$0.4203$&$0.7216$&$0.2245$\tabularnewline
-Intrinsic Motivation&$0.6682$&$0.0000$&$0.0000$&$0.0000$&$0.0520$&$0.1784$\tabularnewline
-Interest/Enjoyment&$0.9900$&$0.0000$&$0.0000$&$0.0012$&$0.5193$&$0.6026$\tabularnewline
-Perceived Choice&$0.4203$&$0.0000$&$0.0012$&$0.0000$&$0.3030$&$0.9279$\tabularnewline
-Pressure/Tension&$0.7216$&$0.0520$&$0.5193$&$0.3030$&$0.0000$&$0.7151$\tabularnewline
-Effort/Importance&$0.2245$&$0.1784$&$0.6026$&$0.9279$&$0.7151$&$0.0000$\tabularnewline
+Gains in Skill/Knowledge&$0.0000$&$0.4723$&$0.6455$&$0.4873$&$0.9668$&$0.1398$\tabularnewline
+Intrinsic Motivation&$0.4723$&$0.0000$&$0.0000$&$0.0000$&$0.0408$&$0.2452$\tabularnewline
+Interest/Enjoyment&$0.6455$&$0.0000$&$0.0000$&$0.0020$&$0.3801$&$0.7746$\tabularnewline
+Perceived Choice&$0.4873$&$0.0000$&$0.0020$&$0.0000$&$0.3701$&$0.9595$\tabularnewline
+Pressure/Tension&$0.9668$&$0.0408$&$0.3801$&$0.3701$&$0.0000$&$0.5733$\tabularnewline
+Effort/Importance&$0.1398$&$0.2452$&$0.7746$&$0.9595$&$0.5733$&$0.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
 \section{Gains in Skill/Knowledge and Motivation for the group Master}
 
-%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix of Gains in Skill/Knowledge and Motivation for the group Master between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -231,10 +235,10 @@ Perceived Choice&$-0.1628$&$ 0.5926$&$ 0.3066$&$ 1.0000$&$-0.0235$&$ 0.1647$\tab
 Pressure/Tension&$-0.0560$&$-0.4853$&$-0.3686$&$-0.0235$&$ 1.0000$&$ 0.4441$\tabularnewline
 Effort/Importance&$-0.0465$&$ 0.3009$&$ 0.1228$&$ 0.1647$&$ 0.4441$&$ 1.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
-%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix with p-values of Gains in Skill/Knowledge and Motivation for the group Master between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -255,12 +259,12 @@ Perceived Choice&$0.4691$&$0.0037$&$0.1651$&$0.0000$&$0.9174$&$0.4638$\tabularne
 Pressure/Tension&$0.8044$&$0.0220$&$0.0914$&$0.9174$&$0.0000$&$0.0384$\tabularnewline
 Effort/Importance&$0.8373$&$0.1735$&$0.5863$&$0.4638$&$0.0384$&$0.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
 \section{Gains in Skill/Knowledge and Motivation for the group non-gamified.Apprentice}
 
-%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix of Gains in Skill/Knowledge and Motivation for the group non-gamified.Apprentice between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -281,10 +285,10 @@ Perceived Choice&$-0.0671$&$ 0.7500$&$ 0.5432$&$ 1.0000$&$-0.6892$&$-0.2277$\tab
 Pressure/Tension&$-0.1223$&$-0.5627$&$-0.4768$&$-0.6892$&$ 1.0000$&$ 0.5648$\tabularnewline
 Effort/Importance&$ 0.1529$&$ 0.0917$&$ 0.0991$&$-0.2277$&$ 0.5648$&$ 1.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
-%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix with p-values of Gains in Skill/Knowledge and Motivation for the group non-gamified.Apprentice between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -305,12 +309,12 @@ Perceived Choice&$0.8539$&$0.0125$&$0.1046$&$0.0000$&$0.0275$&$0.5269$\tabularne
 Pressure/Tension&$0.7364$&$0.0904$&$0.1635$&$0.0275$&$0.0000$&$0.0889$\tabularnewline
 Effort/Importance&$0.6732$&$0.8010$&$0.7854$&$0.5269$&$0.0889$&$0.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
 \section{Gains in Skill/Knowledge and Motivation for the group non-gamified.Master}
 
-%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix of Gains in Skill/Knowledge and Motivation for the group non-gamified.Master between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -331,10 +335,10 @@ Perceived Choice&$0.2857$&$ 0.8095$&$ 0.5524$&$ 1.0000$&$-0.6795$&$0.3615$\tabul
 Pressure/Tension&$0.0988$&$-0.5436$&$-0.2612$&$-0.6795$&$ 1.0000$&$0.1375$\tabularnewline
 Effort/Importance&$0.7470$&$ 0.6386$&$ 0.4286$&$ 0.3615$&$ 0.1375$&$1.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
-%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix with p-values of Gains in Skill/Knowledge and Motivation for the group non-gamified.Master between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -355,12 +359,12 @@ Perceived Choice&$0.5008$&$0.0218$&$0.1557$&$0.0000$&$0.0638$&$0.3790$\tabularne
 Pressure/Tension&$0.8159$&$0.1638$&$0.5321$&$0.0638$&$0.0000$&$0.7453$\tabularnewline
 Effort/Importance&$0.0332$&$0.0883$&$0.2893$&$0.3790$&$0.7453$&$0.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
 \section{Gains in Skill/Knowledge and Motivation for the group ont-gamified.Apprentice}
 
-%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix of Gains in Skill/Knowledge and Motivation for the group ont-gamified.Apprentice between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -374,17 +378,17 @@ Effort/Importance&$0.0332$&$0.0883$&$0.2893$&$0.3790$&$0.7453$&$0.0000$\tabularn
 \multicolumn{7}{p{\linewidth}}{method:  spearman}\tabularnewline
 \endfoot
 \label{round}
-Gains in Skill/Knowledge&$ 1.0000$&$-0.4545$&$-0.3328$&$-0.3761$&$ 0.2628$&$ 0.2420$\tabularnewline
-Intrinsic Motivation&$-0.4545$&$ 1.0000$&$ 0.7531$&$ 0.7346$&$-0.3003$&$ 0.5090$\tabularnewline
-Interest/Enjoyment&$-0.3328$&$ 0.7531$&$ 1.0000$&$ 0.7342$&$-0.1003$&$ 0.1587$\tabularnewline
-Perceived Choice&$-0.3761$&$ 0.7346$&$ 0.7342$&$ 1.0000$&$ 0.1950$&$ 0.0734$\tabularnewline
-Pressure/Tension&$ 0.2628$&$-0.3003$&$-0.1003$&$ 0.1950$&$ 1.0000$&$-0.1146$\tabularnewline
-Effort/Importance&$ 0.2420$&$ 0.5090$&$ 0.1587$&$ 0.0734$&$-0.1146$&$ 1.0000$\tabularnewline
+Gains in Skill/Knowledge&$ 1.0000$&$-0.5110$&$-0.4319$&$-0.2826$&$ 0.3194$&$ 0.3152$\tabularnewline
+Intrinsic Motivation&$-0.5110$&$ 1.0000$&$ 0.7730$&$ 0.6925$&$-0.3530$&$ 0.3850$\tabularnewline
+Interest/Enjoyment&$-0.4319$&$ 0.7730$&$ 1.0000$&$ 0.6380$&$-0.1734$&$ 0.0740$\tabularnewline
+Perceived Choice&$-0.2826$&$ 0.6925$&$ 0.6380$&$ 1.0000$&$ 0.2356$&$ 0.0844$\tabularnewline
+Pressure/Tension&$ 0.3194$&$-0.3530$&$-0.1734$&$ 0.2356$&$ 1.0000$&$-0.0598$\tabularnewline
+Effort/Importance&$ 0.3152$&$ 0.3850$&$ 0.0740$&$ 0.0844$&$-0.0598$&$ 1.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
-%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix with p-values of Gains in Skill/Knowledge and Motivation for the group ont-gamified.Apprentice between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -398,19 +402,19 @@ Effort/Importance&$ 0.2420$&$ 0.5090$&$ 0.1587$&$ 0.0734$&$-0.1146$&$ 1.0000$\ta
 \multicolumn{7}{p{\linewidth}}{method:  spearman}\tabularnewline
 \endfoot
 \label{round}
-Gains in Skill/Knowledge&$0.0000$&$0.1404$&$0.2906$&$0.2282$&$0.4093$&$0.4485$\tabularnewline
-Intrinsic Motivation&$0.1404$&$0.0000$&$0.0047$&$0.0065$&$0.3429$&$0.0910$\tabularnewline
-Interest/Enjoyment&$0.2906$&$0.0047$&$0.0000$&$0.0066$&$0.7565$&$0.6223$\tabularnewline
-Perceived Choice&$0.2282$&$0.0065$&$0.0066$&$0.0000$&$0.5437$&$0.8208$\tabularnewline
-Pressure/Tension&$0.4093$&$0.3429$&$0.7565$&$0.5437$&$0.0000$&$0.7228$\tabularnewline
-Effort/Importance&$0.4485$&$0.0910$&$0.6223$&$0.8208$&$0.7228$&$0.0000$\tabularnewline
+Gains in Skill/Knowledge&$0.0000$&$0.0776$&$0.1405$&$0.3496$&$0.2874$&$0.2941$\tabularnewline
+Intrinsic Motivation&$0.0776$&$0.0000$&$0.0019$&$0.0087$&$0.2367$&$0.1940$\tabularnewline
+Interest/Enjoyment&$0.1405$&$0.0019$&$0.0000$&$0.0190$&$0.5710$&$0.8101$\tabularnewline
+Perceived Choice&$0.3496$&$0.0087$&$0.0190$&$0.0000$&$0.4383$&$0.7840$\tabularnewline
+Pressure/Tension&$0.2874$&$0.2367$&$0.5710$&$0.4383$&$0.0000$&$0.8463$\tabularnewline
+Effort/Importance&$0.2941$&$0.1940$&$0.8101$&$0.7840$&$0.8463$&$0.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
 \section{Gains in Skill/Knowledge and Motivation for the group ont-gamified.Master}
 
-%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(M, 4), caption = paste("Correlation matrix",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix of Gains in Skill/Knowledge and Motivation for the group ont-gamified.Master between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -431,10 +435,10 @@ Perceived Choice&$-0.2947$&$ 0.4007$&$ 0.0999$&$ 1.0000$&$ 0.0850$&$-0.1511$\tab
 Pressure/Tension&$-0.0536$&$-0.6496$&$-0.7116$&$ 0.0850$&$ 1.0000$&$ 0.3596$\tabularnewline
 Effort/Importance&$-0.2905$&$ 0.1441$&$-0.0524$&$-0.1511$&$ 0.3596$&$ 1.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
-%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "small", longtable = T,     ctable = F, landscape = T, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
-\setlongtables\begin{landscape}{\small
+%latex.default(round(p_mat, 4), caption = paste("Correlation matrix with p-values",     "of", mod$title, in_title), size = "scriptsize", longtable = T,     ctable = F, landscape = F, insert.bottom = paste("method: ",         mod$method), where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
 \begin{longtable}{lrrrrrr}\caption{Correlation matrix with p-values of Gains in Skill/Knowledge and Motivation for the group ont-gamified.Master between participants' motivation and learning outcomes in the first empirical study} \tabularnewline
 \hline\hline
 \multicolumn{1}{l}{round}&\multicolumn{1}{c}{Gains in Skill/Knowledge}&\multicolumn{1}{c}{Intrinsic Motivation}&\multicolumn{1}{c}{Interest/Enjoyment}&\multicolumn{1}{c}{Perceived Choice}&\multicolumn{1}{c}{Pressure/Tension}&\multicolumn{1}{c}{Effort/Importance}\tabularnewline
@@ -455,6 +459,6 @@ Perceived Choice&$0.3064$&$0.1557$&$0.7340$&$0.0000$&$0.7726$&$0.6061$\tabularne
 Pressure/Tension&$0.8557$&$0.0119$&$0.0043$&$0.7726$&$0.0000$&$0.2067$\tabularnewline
 Effort/Importance&$0.3137$&$0.6230$&$0.8588$&$0.6061$&$0.2067$&$0.0000$\tabularnewline
 \hline
-\end{longtable}}\end{landscape}
+\end{longtable}}
 
 \end{document}

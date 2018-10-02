@@ -1,0 +1,179 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the third study for signed up students }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrlrrrrl}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the third study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Interest/Enjoyment.(Intercept)&$  0.836$&$ 1$&$ 0.610$&$0.439$&&$$&$$&$$&$$&\tabularnewline
+Interest/Enjoyment.Type&$  2.149$&$ 1$&$ 1.568$&$0.217$&&$ 1$&$  116.659$&$0.531$&$0.466$&\tabularnewline
+Interest/Enjoyment.CLRole&$  2.230$&$ 1$&$ 1.627$&$0.208$&&$ 1$&$  398.500$&$1.813$&$0.178$&\tabularnewline
+Interest/Enjoyment.Type:CLRole&$  2.804$&$ 1$&$ 2.046$&$0.159$&&$ 1$&$  413.063$&$1.879$&$0.170$&\tabularnewline
+Interest/Enjoyment.Residuals&$ 64.426$&$47$&$$&$$&&$47$&$10060.778$&$$&$$&\tabularnewline
+Perceived Choice.(Intercept)&$  0.160$&$ 1$&$ 0.120$&$0.731$&&$$&$$&$$&$$&\tabularnewline
+Perceived Choice.Type&$ 11.013$&$ 1$&$ 8.236$&$0.006$&**&$ 1$&$ 1229.745$&$5.587$&$0.018$&*\tabularnewline
+Perceived Choice.CLRole&$  0.465$&$ 1$&$ 0.348$&$0.558$&&$ 1$&$   58.513$&$0.266$&$0.606$&\tabularnewline
+Perceived Choice.Type:CLRole&$  1.641$&$ 1$&$ 1.227$&$0.274$&&$ 1$&$  274.660$&$1.248$&$0.264$&\tabularnewline
+Perceived Choice.Residuals&$ 62.848$&$47$&$$&$$&&$47$&$ 9442.582$&$$&$$&\tabularnewline
+Pressure/Tension.(Intercept)&$  0.869$&$ 1$&$ 1.690$&$0.200$&&$$&$$&$$&$$&\tabularnewline
+Pressure/Tension.Type&$  0.018$&$ 1$&$ 0.035$&$0.853$&&$ 1$&$    0.492$&$0.002$&$0.962$&\tabularnewline
+Pressure/Tension.CLRole&$  8.430$&$ 1$&$16.389$&$0.000$&**&$ 1$&$ 1711.859$&$7.804$&$0.005$&**\tabularnewline
+Pressure/Tension.Type:CLRole&$  0.020$&$ 1$&$ 0.039$&$0.845$&&$ 1$&$   40.610$&$0.185$&$0.667$&\tabularnewline
+Pressure/Tension.Residuals&$ 24.175$&$47$&$$&$$&&$47$&$ 9215.539$&$$&$$&\tabularnewline
+Effort/Importance.(Intercept)&$  0.331$&$ 1$&$ 0.328$&$0.570$&&$$&$$&$$&$$&\tabularnewline
+Effort/Importance.Type&$  7.319$&$ 1$&$ 7.258$&$0.010$&**&$ 1$&$ 1289.481$&$5.893$&$0.015$&*\tabularnewline
+Effort/Importance.CLRole&$  1.290$&$ 1$&$ 1.279$&$0.264$&&$ 1$&$  149.901$&$0.685$&$0.408$&\tabularnewline
+Effort/Importance.Type:CLRole&$  0.022$&$ 1$&$ 0.022$&$0.883$&&$ 1$&$    2.171$&$0.010$&$0.921$&\tabularnewline
+Effort/Importance.Residuals&$ 47.391$&$47$&$$&$$&&$47$&$ 9498.447$&$$&$$&\tabularnewline
+Intrinsic Motivation.(Intercept)&$  0.561$&$ 1$&$ 1.508$&$0.226$&&$$&$$&$$&$$&\tabularnewline
+Intrinsic Motivation.Type&$  2.533$&$ 1$&$ 6.812$&$0.012$&*&$ 1$&$  918.000$&$4.154$&$0.042$&*\tabularnewline
+Intrinsic Motivation.CLRole&$  1.031$&$ 1$&$ 2.772$&$0.103$&&$ 1$&$  404.833$&$1.832$&$0.176$&\tabularnewline
+Intrinsic Motivation.Type:CLRole&$  0.468$&$ 1$&$ 1.258$&$0.268$&&$ 1$&$  273.961$&$1.240$&$0.266$&\tabularnewline
+Intrinsic Motivation.Residuals&$ 17.481$&$47$&$$&$$&&$47$&$ 9453.205$&$$&$$&\tabularnewline
+Attention.(Intercept)&$  0.032$&$ 1$&$ 0.022$&$0.882$&&$$&$$&$$&$$&\tabularnewline
+Attention.Type&$  0.028$&$ 1$&$ 0.020$&$0.889$&&$ 1$&$   33.973$&$0.148$&$0.700$&\tabularnewline
+Attention.CLRole&$  0.365$&$ 1$&$ 0.254$&$0.617$&&$ 1$&$   22.023$&$0.096$&$0.756$&\tabularnewline
+Attention.Type:CLRole&$  0.246$&$ 1$&$ 0.171$&$0.681$&&$ 1$&$   46.860$&$0.205$&$0.651$&\tabularnewline
+Attention.Residuals&$ 67.644$&$47$&$$&$$&&$48$&$11577.143$&$$&$$&\tabularnewline
+Relevance.(Intercept)&$  0.222$&$ 1$&$ 0.505$&$0.481$&&$$&$$&$$&$$&\tabularnewline
+Relevance.Type&$  1.559$&$ 1$&$ 3.541$&$0.066$&&$ 1$&$  310.633$&$1.365$&$0.243$&\tabularnewline
+Relevance.CLRole&$  1.299$&$ 1$&$ 2.950$&$0.092$&&$ 1$&$  467.303$&$2.053$&$0.152$&\tabularnewline
+Relevance.Type:CLRole&$  0.791$&$ 1$&$ 1.797$&$0.187$&&$ 1$&$  280.216$&$1.231$&$0.267$&\tabularnewline
+Relevance.Residuals&$ 20.698$&$47$&$$&$$&&$48$&$10548.849$&$$&$$&\tabularnewline
+Satisfaction.(Intercept)&$  0.002$&$ 1$&$ 0.001$&$0.976$&&$$&$$&$$&$$&\tabularnewline
+Satisfaction.Type&$  4.424$&$ 1$&$ 1.661$&$0.204$&&$ 1$&$  268.166$&$1.173$&$0.279$&\tabularnewline
+Satisfaction.CLRole&$  1.741$&$ 1$&$ 0.654$&$0.423$&&$ 1$&$   88.555$&$0.387$&$0.534$&\tabularnewline
+Satisfaction.Type:CLRole&$  0.438$&$ 1$&$ 0.165$&$0.687$&&$ 1$&$   26.457$&$0.116$&$0.734$&\tabularnewline
+Satisfaction.Residuals&$125.193$&$47$&$$&$$&&$48$&$11271.822$&$$&$$&\tabularnewline
+\newpage
+Level of Motivation.(Intercept)&$  0.093$&$ 1$&$ 0.272$&$0.604$&&$$&$$&$$&$$&\tabularnewline
+Level of Motivation.Type&$  0.175$&$ 1$&$ 0.513$&$0.477$&&$ 1$&$   69.333$&$0.302$&$0.582$&\tabularnewline
+Level of Motivation.CLRole&$  0.056$&$ 1$&$ 0.164$&$0.688$&&$ 1$&$   55.265$&$0.241$&$0.623$&\tabularnewline
+Level of Motivation.Type:CLRole&$  0.045$&$ 1$&$ 0.131$&$0.719$&&$ 1$&$   79.156$&$0.345$&$0.557$&\tabularnewline
+Level of Motivation.Residuals&$ 15.976$&$47$&$$&$$&&$48$&$11490.246$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Tukey post-hoc",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrll}\caption{Summary of Tukey post-hoc in the third study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Perceived Choice:ont-gamified - w/o-gamified&$51$&$0.880$&$0.989$&$0.345$&$$&$0.227$&$1.532$&$2.870$&$0.006$&$0.009$&$0.752$&**&medium\tabularnewline
+Effort/Importance:ont-gamified - w/o-gamified&$51$&$0.794$&$0.806$&$0.299$&$$&$0.228$&$1.361$&$2.694$&$0.010$&$0.007$&$0.785$&**&medium\tabularnewline
+Intrinsic Motivation:ont-gamified - w/o-gamified&$51$&$0.431$&$0.474$&$0.182$&$$&$0.087$&$0.775$&$2.610$&$0.012$&$0.015$&$0.682$&*&medium\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{llrrrrrrrrl}\caption{Summary of Pair wilcoxon in the third study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Interest/Enjoyment.Type:CLRole.less.1&ont-gamified.Apprentice&$15$&$ 0.31$&$10.53$&$158.0$&$ 38.0$&$-1.78$&$0.039$&$0.362$&medium\tabularnewline
+Interest/Enjoyment.Type:CLRole.less.2&ont-gamified.Master&$ 9$&$ 0.51$&$15.78$&$142.0$&$ 38.0$&$-1.78$&$0.039$&$0.362$&medium\tabularnewline
+Interest/Enjoyment.Type:CLRole.greater.1&ont-gamified.Master&$ 9$&$ 0.51$&$18.44$&$166.0$&$121.0$&$ 1.75$&$0.041$&$0.331$&medium\tabularnewline
+Interest/Enjoyment.Type:CLRole.greater.2&w/o-gamified.Apprentice&$19$&$ 0.11$&$12.63$&$240.0$&$121.0$&$ 1.75$&$0.041$&$0.331$&medium\tabularnewline
+Perceived Choice.Type.greater.1&ont-gamified&$24$&$ 0.53$&$31.21$&$749.0$&$449.0$&$ 2.36$&$0.009$&$0.331$&medium\tabularnewline
+Perceived Choice.Type.greater.2&w/o-gamified&$27$&$-0.23$&$21.37$&$577.0$&$449.0$&$ 2.36$&$0.009$&$0.331$&medium\tabularnewline
+Perceived Choice.Type.two.sided.1&ont-gamified&$24$&$ 0.53$&$31.21$&$749.0$&$449.0$&$ 2.36$&$0.017$&$0.331$&medium\tabularnewline
+Perceived Choice.Type.two.sided.2&w/o-gamified&$27$&$-0.23$&$21.37$&$577.0$&$449.0$&$ 2.36$&$0.017$&$0.331$&medium\tabularnewline
+Perceived Choice.Type:CLRole.greater.1&ont-gamified.Master&$ 9$&$ 0.95$&$19.56$&$176.0$&$131.0$&$ 2.25$&$0.012$&$0.424$&medium\tabularnewline
+Perceived Choice.Type:CLRole.greater.2&w/o-gamified.Apprentice&$19$&$-0.07$&$12.11$&$230.0$&$131.0$&$ 2.25$&$0.012$&$0.424$&medium\tabularnewline
+Perceived Choice.Type:CLRole.two.sided.1&ont-gamified.Master&$ 9$&$ 0.95$&$19.56$&$176.0$&$131.0$&$ 2.25$&$0.023$&$0.424$&medium\tabularnewline
+Perceived Choice.Type:CLRole.two.sided.2&w/o-gamified.Apprentice&$19$&$-0.07$&$12.11$&$230.0$&$131.0$&$ 2.25$&$0.023$&$0.424$&medium\tabularnewline
+Perceived Choice.Type:CLRole.greater.11&ont-gamified.Master&$ 9$&$ 0.95$&$11.50$&$103.5$&$ 58.5$&$ 2.17$&$0.015$&$0.526$&large\tabularnewline
+Perceived Choice.Type:CLRole.greater.21&w/o-gamified.Master&$ 8$&$-0.74$&$ 6.19$&$ 49.5$&$ 58.5$&$ 2.17$&$0.015$&$0.526$&large\tabularnewline
+Perceived Choice.Type:CLRole.two.sided.11&ont-gamified.Master&$ 9$&$ 0.95$&$11.50$&$103.5$&$ 58.5$&$ 2.17$&$0.029$&$0.526$&large\tabularnewline
+Perceived Choice.Type:CLRole.two.sided.21&w/o-gamified.Master&$ 8$&$-0.74$&$ 6.19$&$ 49.5$&$ 58.5$&$ 2.17$&$0.029$&$0.526$&large\tabularnewline
+Pressure/Tension.Type:CLRole.greater.1&ont-gamified.Apprentice&$15$&$ 0.35$&$15.10$&$226.5$&$106.5$&$ 2.33$&$0.009$&$0.476$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.greater.2&ont-gamified.Master&$ 9$&$-0.46$&$ 8.17$&$ 73.5$&$106.5$&$ 2.33$&$0.009$&$0.476$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.1&ont-gamified.Apprentice&$15$&$ 0.35$&$15.10$&$226.5$&$106.5$&$ 2.33$&$0.018$&$0.476$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.2&ont-gamified.Master&$ 9$&$-0.46$&$ 8.17$&$ 73.5$&$106.5$&$ 2.33$&$0.018$&$0.476$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.greater.11&ont-gamified.Apprentice&$15$&$ 0.35$&$13.87$&$208.0$&$ 88.0$&$ 1.81$&$0.036$&$0.378$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.greater.21&w/o-gamified.Master&$ 8$&$-0.85$&$ 8.50$&$ 68.0$&$ 88.0$&$ 1.81$&$0.036$&$0.378$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.less.1&ont-gamified.Master&$ 9$&$-0.46$&$ 9.83$&$ 88.5$&$ 43.5$&$-2.08$&$0.019$&$0.392$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.less.2&w/o-gamified.Apprentice&$19$&$ 0.22$&$16.71$&$317.5$&$ 43.5$&$-2.08$&$0.019$&$0.392$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.11&ont-gamified.Master&$ 9$&$-0.46$&$ 9.83$&$ 88.5$&$ 43.5$&$-2.08$&$0.037$&$0.392$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.21&w/o-gamified.Apprentice&$19$&$ 0.22$&$16.71$&$317.5$&$ 43.5$&$-2.08$&$0.037$&$0.392$&medium\tabularnewline
+Effort/Importance.Type.greater.1&ont-gamified&$24$&$ 0.40$&$31.33$&$752.0$&$452.0$&$ 2.43$&$0.007$&$0.340$&medium\tabularnewline
+Effort/Importance.Type.greater.2&w/o-gamified&$27$&$-0.48$&$21.26$&$574.0$&$452.0$&$ 2.43$&$0.007$&$0.340$&medium\tabularnewline
+Effort/Importance.Type.two.sided.1&ont-gamified&$24$&$ 0.40$&$31.33$&$752.0$&$452.0$&$ 2.43$&$0.014$&$0.340$&medium\tabularnewline
+Effort/Importance.Type.two.sided.2&w/o-gamified&$27$&$-0.48$&$21.26$&$574.0$&$452.0$&$ 2.43$&$0.014$&$0.340$&medium\tabularnewline
+Effort/Importance.Type:CLRole.greater.1&ont-gamified.Apprentice&$15$&$ 0.52$&$21.47$&$322.0$&$202.0$&$ 2.08$&$0.019$&$0.356$&medium\tabularnewline
+Effort/Importance.Type:CLRole.greater.2&w/o-gamified.Apprentice&$19$&$-0.48$&$14.37$&$273.0$&$202.0$&$ 2.08$&$0.019$&$0.356$&medium\tabularnewline
+Effort/Importance.Type:CLRole.two.sided.1&ont-gamified.Apprentice&$15$&$ 0.52$&$21.47$&$322.0$&$202.0$&$ 2.08$&$0.037$&$0.356$&medium\tabularnewline
+Effort/Importance.Type:CLRole.two.sided.2&w/o-gamified.Apprentice&$19$&$-0.48$&$14.37$&$273.0$&$202.0$&$ 2.08$&$0.037$&$0.356$&medium\tabularnewline
+Effort/Importance.Type:CLRole.greater.11&ont-gamified.Apprentice&$15$&$ 0.52$&$14.07$&$211.0$&$ 91.0$&$ 2.01$&$0.022$&$0.420$&medium\tabularnewline
+Effort/Importance.Type:CLRole.greater.21&w/o-gamified.Master&$ 8$&$-0.62$&$ 8.12$&$ 65.0$&$ 91.0$&$ 2.01$&$0.022$&$0.420$&medium\tabularnewline
+Effort/Importance.Type:CLRole.two.sided.11&ont-gamified.Apprentice&$15$&$ 0.52$&$14.07$&$211.0$&$ 91.0$&$ 2.01$&$0.044$&$0.420$&medium\tabularnewline
+Effort/Importance.Type:CLRole.two.sided.21&w/o-gamified.Master&$ 8$&$-0.62$&$ 8.12$&$ 65.0$&$ 91.0$&$ 2.01$&$0.044$&$0.420$&medium\tabularnewline
+Intrinsic Motivation.Type.greater.1&ont-gamified&$24$&$ 0.28$&$30.50$&$732.0$&$432.0$&$ 2.04$&$0.021$&$0.285$&small\tabularnewline
+Intrinsic Motivation.Type.greater.2&w/o-gamified&$27$&$-0.08$&$22.00$&$594.0$&$432.0$&$ 2.04$&$0.021$&$0.285$&small\tabularnewline
+\newpage
+Intrinsic Motivation.Type.two.sided.1&ont-gamified&$24$&$ 0.28$&$30.50$&$732.0$&$432.0$&$ 2.04$&$0.042$&$0.285$&small\tabularnewline
+Intrinsic Motivation.Type.two.sided.2&w/o-gamified&$27$&$-0.08$&$22.00$&$594.0$&$432.0$&$ 2.04$&$0.042$&$0.285$&small\tabularnewline
+Intrinsic Motivation.Type:CLRole.less.1&ont-gamified.Apprentice&$15$&$ 0.03$&$10.40$&$156.0$&$ 36.0$&$-1.88$&$0.032$&$0.383$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.less.2&ont-gamified.Master&$ 9$&$ 0.46$&$16.00$&$144.0$&$ 36.0$&$-1.88$&$0.032$&$0.383$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.greater.1&ont-gamified.Master&$ 9$&$ 0.46$&$19.78$&$178.0$&$133.0$&$ 2.34$&$0.009$&$0.442$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.greater.2&w/o-gamified.Apprentice&$19$&$-0.25$&$12.00$&$228.0$&$133.0$&$ 2.34$&$0.009$&$0.442$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.two.sided.1&ont-gamified.Master&$ 9$&$ 0.46$&$19.78$&$178.0$&$133.0$&$ 2.34$&$0.019$&$0.442$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.two.sided.2&w/o-gamified.Apprentice&$19$&$-0.25$&$12.00$&$228.0$&$133.0$&$ 2.34$&$0.019$&$0.442$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.greater.11&ont-gamified.Master&$ 9$&$ 0.46$&$11.56$&$104.0$&$ 59.0$&$ 2.21$&$0.014$&$0.537$&large\tabularnewline
+Intrinsic Motivation.Type:CLRole.greater.21&w/o-gamified.Master&$ 8$&$ 0.01$&$ 6.12$&$ 49.0$&$ 59.0$&$ 2.21$&$0.014$&$0.537$&large\tabularnewline
+Intrinsic Motivation.Type:CLRole.two.sided.11&ont-gamified.Master&$ 9$&$ 0.46$&$11.56$&$104.0$&$ 59.0$&$ 2.21$&$0.027$&$0.537$&large\tabularnewline
+Intrinsic Motivation.Type:CLRole.two.sided.21&w/o-gamified.Master&$ 8$&$ 0.01$&$ 6.12$&$ 49.0$&$ 59.0$&$ 2.21$&$0.027$&$0.537$&large\tabularnewline
+Relevance.Type:CLRole.less.1&ont-gamified.Apprentice&$16$&$-0.08$&$11.03$&$176.5$&$ 40.5$&$-1.79$&$0.038$&$0.358$&medium\tabularnewline
+Relevance.Type:CLRole.less.2&ont-gamified.Master&$ 9$&$ 0.87$&$16.50$&$148.5$&$ 40.5$&$-1.79$&$0.038$&$0.358$&medium\tabularnewline
+Relevance.Type:CLRole.greater.1&ont-gamified.Master&$ 9$&$ 0.87$&$18.83$&$169.5$&$124.5$&$ 1.93$&$0.027$&$0.364$&medium\tabularnewline
+Relevance.Type:CLRole.greater.2&w/o-gamified.Apprentice&$19$&$-0.08$&$12.45$&$236.5$&$124.5$&$ 1.93$&$0.027$&$0.364$&medium\tabularnewline
+Relevance.Type:CLRole.greater.11&ont-gamified.Master&$ 9$&$ 0.87$&$10.94$&$ 98.5$&$ 53.5$&$ 1.69$&$0.048$&$0.411$&medium\tabularnewline
+Relevance.Type:CLRole.greater.21&w/o-gamified.Master&$ 8$&$-0.08$&$ 6.81$&$ 54.5$&$ 53.5$&$ 1.69$&$0.048$&$0.411$&medium\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

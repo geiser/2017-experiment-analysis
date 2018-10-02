@@ -1,3 +1,6 @@
+wants <- c('car', 'afex', 'stats', 'dplyr', 'readr', 'r2excel', 'Hmisc')
+has   <- wants %in% rownames(installed.packages())
+if(any(!has)) install.packages(wants[!has])
 
 library(car)
 library(afex)
@@ -5,6 +8,7 @@ library(stats)
 library(dplyr)
 library(readr)
 library(Hmisc)
+library(r2excel)
 
 ############################################################################
 ## Getting Percentages of Participation Analysis                          ##
@@ -58,25 +62,25 @@ sources <- list(
   "PctHavingParticipation" = list(
     dv = "PctHavingParticipation"
     , dat = having_participation_dat
-    , title = "Pct of Students Having Participation"
+    , title = "Pct Having Participation"
     , folder = "having-participation"
   )
   , "PctAdequateParticipation" = list(
     dv = "PctAdequateParticipation"
     , dat = adequate_participation_dat
-    , title = "Pct of Students Having Adequate Participation"
+    , title = "Pct Having Adequate Participation"
     , folder = "adequate-participation"
   )
   , "PctIncompleteParticipation" = list(
     dv = "PctIncompleteParticipation"
     , dat = incomplete_participation_dat
-    , title = "Pct of Students Having Incomplete Participation"
+    , title = "Pct Having Incomplete Participation"
     , folder = "incomplete-participation"
   )
   , "PctWithoutParticipation" = list(
     dv = "PctWithoutParticipation"
     , dat = without_participation_dat
-    , title = "Pct of Students Without Participation"
+    , title = "Pct Without Participation"
     , folder = "without-participation"
   )
 )

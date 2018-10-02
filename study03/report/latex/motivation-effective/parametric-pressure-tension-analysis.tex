@@ -1,0 +1,68 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of parametric statistics analysis  for the latent trait estimates of Pressure/Tension in the third study for students with effective participation }
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrl}\caption{Summary of two-way ANOVA results  for the latent trait estimates of Pressure/Tension in the third study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$ 2.277$&$ 1$&$ 4.613$&$0.038$&\tabularnewline
+Type.Type&$ 0.602$&$ 1$&$ 1.219$&$0.276$&\tabularnewline
+Type.CLRole&$ 6.261$&$ 1$&$12.684$&$0.001$&**\tabularnewline
+Type.Type:CLRole&$ 0.086$&$ 1$&$ 0.175$&$0.678$&\tabularnewline
+Type.Residuals&$19.252$&$39$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrrr}\caption{Descriptive statistics and Tukey post-hoc test results  for the latent trait estimates of Pressure/Tension in the third study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.ont-gamified&$24$&$-0.006$&$-0.119$&$0.148$&$39$&$-0.419$&$ 0.181$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.w/o-gamified&$19$&$-0.239$&$-0.371$&$0.173$&$39$&$-0.721$&$-0.020$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified - w/o-gamified&$43$&$ 0.233$&$ 0.252$&$0.228$&$$&$-0.203$&$ 0.670$&$1.104$&$0.276$&$0.286$&$0.287$&$$&$$\tabularnewline
+Type.ont-gamified.Apprentice&$15$&$ 0.335$&$ 0.335$&$0.181$&$39$&$-0.032$&$ 0.702$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.w/o-gamified.Apprentice&$13$&$-0.012$&$-0.012$&$0.195$&$39$&$-0.406$&$ 0.382$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Apprentice - w/o-gamified.Apprentice&$28$&$ 0.347$&$ 0.347$&$0.266$&$$&$-0.367$&$ 1.061$&$1.304$&$0.200$&$0.566$&$0.531$&$$&$$\tabularnewline
+Type.ont-gamified.Master&$ 9$&$-0.573$&$-0.573$&$0.234$&$39$&$-1.046$&$-0.099$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.w/o-gamified.Master&$ 6$&$-0.729$&$-0.729$&$0.287$&$39$&$-1.309$&$-0.149$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Master - w/o-gamified.Master&$15$&$ 0.156$&$ 0.156$&$0.370$&$$&$-0.837$&$ 1.150$&$0.423$&$0.675$&$0.974$&$0.179$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}
