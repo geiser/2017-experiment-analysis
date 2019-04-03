@@ -1,3 +1,27 @@
+## total score from guttman table
+total_score_from_guttman <- function(dat, col_id="UserID", col_score = "score", from_cols = NULL) {
+  if (is.null(from_cols)) {
+    from_cols <- colnames(dat)[!colnames(dat) %in% c(col_id)]
+  }
+  dat <- dat[, c(col_id, from_cols)]
+  result <- dat[!complete.cases(dat),]
+  to_add <- c()
+  for (i in 1:nrow(result)) {
+    for (j in 1:ncol(result)) {
+      if (is.na(result[[i,j]]) && !is.na(result[[i,j-1]])) {
+        if (all(is.na(result[i,j:ncol(result)]))) {
+          to_add <- c(to_add, i)
+        }
+        break;
+      }
+    }
+  }
+  result <- rbind(dat[complete.cases(dat),], result[to_add,])
+  result[is.na(result)] <- 0
+  result[[col_score]] <- rowSums(result[,c(-1)])
+  return(result)
+}
+
 
 ## functions to calculate greatest common divisor and least common multiple
 GCD <- function(u, v) {
@@ -9,6 +33,15 @@ GCD <- function(u, v) {
 }
 LCM <- function(u, v) {
   return(abs(u*v)/GCD(u, v))
+}
+
+## function to round only numeric values in dataframe
+round_df <- function(df, digits) {
+  nums <- vapply(df, is.numeric, FUN.VALUE = logical(1))
+  
+  df[,nums] <- round(df[,nums], digits = digits)
+  
+  (df)
 }
 
 ## function to get simplified score test

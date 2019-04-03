@@ -110,6 +110,7 @@ write_kruskal_statistics_analysis_in_latex <- function(
                 ,"\\usepackage{rotating}"
                 ,"\\usepackage{lscape}"
                 ,"\\usepackage{ctable}"
+                , "\\date{}" 
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
   }
@@ -214,6 +215,7 @@ write_rel_analysis_in_latex <- function(
                 ,"\\usepackage{rotating}"
                 ,"\\usepackage{lscape}"
                 ,"\\usepackage{ctable}"
+                , "\\date{}" 
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
     write("\\section{Summaries of Reliability Analysis}", file = filename, append = T)
@@ -288,6 +290,7 @@ write_param_statistics_analysis_in_latex <- function(
                 ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
                 ,paste("\\title{Summary of parametric statistics analysis",in_title,"}")
+                , "\\date{}" 
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
     write("", file = filename, append = T)
@@ -400,6 +403,7 @@ write_nonparam_statistics_analysis_in_latex <- function(
                 ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
                 ,paste("\\title{Summary of nonparametric statistics analysis",in_title,"}")
+                , "\\date{}" 
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
     write("", file = filename, append = T)
@@ -471,7 +475,7 @@ write_nonparam_statistics_analysis_in_latex <- function(
 
 
 write_param_and_nonparam_statistics_analysis_in_latex  <- function(
-  all_parametric_results, all_nonparametric_results, list_info, filename, in_title = NULL, append = F) {
+  all_parametric_results, all_nonparametric_results, list_info, filename, in_title = NULL, append = F, mvn_mod = NULL, min_size_tests = F) {
   
   library(Hmisc)
   write("", file = filename, append = append)
@@ -483,6 +487,7 @@ write_param_and_nonparam_statistics_analysis_in_latex  <- function(
                 ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
                 ,paste("\\title{Statistical Analysis",in_title,"}")
+                , "\\date{}" 
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
     write("", file = filename, append = T)
@@ -576,6 +581,53 @@ write_param_and_nonparam_statistics_analysis_in_latex  <- function(
   write("\\end{landscape}", file = filename, append = T)
   
   ##
+  if (!is.null(mvn_mod)) {
+    write("", file = filename, append = T)
+    write("\\section{Descriptive Statistics and Assumptions for Parametric Tests}", file = filename, append = T)
+    
+    latex(round_df(mvn_mod$Descriptives, 3)
+          , caption = paste("Descriptive statistics", in_title)
+          , size = "small", longtable = T, ctable=F, landscape = F
+          , rowlabel = "", where='!htbp', file = filename, append = T)
+    
+    if (is.data.frame(mvn_mod$multivariateNormality)) {
+      latex(round_df(mvn_mod$multivariateNormality, 3)
+          , caption = paste("Multivariate normality test", in_title)
+          , size = "small", longtable = T, ctable=F, landscape = F
+          , rowlabel = "", where='!htbp', file = filename, append = T)
+    }
+    
+    latex(round_df(mvn_mod$univariateNormality, 3)
+          , caption = paste("Univariate normality test", in_title)
+          , size = "small", longtable = T, ctable=F, landscape = F
+          , rowlabel = "", where='!htbp', file = filename, append = T)
+  }
+  
+  ##
+  if (min_size_tests) {
+    write("\\begin{landscape}", file = filename, append = T)
+    test_min_size_summary <- do.call(rbind, lapply(list_info, FUN = function(info) {
+      p_results <- all_parametric_results[[info$dv]]
+      do.call(rbind, lapply(p_results, function(p_result) {
+        return(p_result$test.min.size$fails.warnings)
+      }))
+    }))
+    latex(test_min_size_summary
+          , caption = paste("Notes to be taken into account about sample size", in_title)
+          , size = "scriptsize", longtable = T, ctable=F, landscape = F
+          , rowlabel = "", where='!htbp', file = filename, append = T)
+    write("", file = filename, append = T)
+    write("Recent studies carried out through simulations have indicated that ANOVA is reliable even when the data are non-normally distributed and the sample size is greater thatn 15 observations for each group.", file = filename, append = T)
+    write("This size value is based on the Reference:", file = filename, append = T)
+    write("Rana, R. K., Singhal, R., \\& Dua, P. (2016). Deciphering the dilemma of parametric and nonparametric tests. Journal of the Practice of Cardiovascular Sciences, 2(2), 95.", file = filename, append = T)
+    write("", file = filename, append = T)
+    write("The sample size to carried out any parametric and non-parametric analysis is 5, and it was established using common sense.", file = filename, append = T)
+    write("The warning and fails indicated in this section should be taking into account when a paper or report will be elaborated.", file = filename, append = T)
+    write("\\end{landscape}", file = filename, append = T)
+    write("", file = filename, append = T)
+  }
+  
+  ##
   if (!append) {
     write("", file = filename, append = T)
     write("\\end{document}", file = filename, append = T)
@@ -594,6 +646,7 @@ write_careless_in_latex <- function(dd, filename, in_title = NULL, append = F) {
                 ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
                 ,paste("\\title{Summary of carless responses",in_title,"}")
+                , "\\date{}" 
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
     write("", file = filename, append = T)
@@ -634,7 +687,8 @@ write_winsorized_in_latex <- function(dd, filename, in_title = NULL, append = F)
                 ,"\\usepackage{rotating}"
                 ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
-                ,paste("\\title{Summary of winsorized responses",in_title,"}")
+                , paste("\\title{Summary of winsorized responses",in_title,"}")
+                , "\\date{}" 
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
     write("", file = filename, append = T)
@@ -674,7 +728,9 @@ write_cfa_model_fits_in_latex <- function(fitMeasures_df, filename, in_title = N
                 ,"\\usepackage{rotating}"
                 ,"\\usepackage{lscape}"
                 ,"\\usepackage{ctable}"
+                , "\\date{}" 
                 ,"\\begin{document}", sep = "\n")
+                
           , file = filename, append = T)
     write("\\section{Goodness of Fit Statistics}", file = filename, append = T)
   }
@@ -707,6 +763,7 @@ write_rsm_in_latex <- function(rsm_summaries, filename, in_title = NULL, append 
                 ,"\\usepackage{rotating}"
                 ,"\\usepackage{lscape}"
                 ,"\\usepackage{ctable}"
+                , "\\date{}" 
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
     write(paste0("\\title{Summary of ",irt.name,"}"), file = filename, append = T)
@@ -824,6 +881,7 @@ write_summary_corr_matrix_mods_in_latex <- function(corr_matrix_mods, filename, 
                 ,"\\usepackage{pdflscape}"
                 ,"\\usepackage{ctable}"
                 ,paste("\\title{Summary of correlation analysis",in_title,"}")
+                , "\\date{}" 
                 ,"\\begin{document}", sep = "\n")
           , file = filename, append = T)
     write("", file = filename, append = T)

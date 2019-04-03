@@ -1,0 +1,69 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of parametric statistics analysis  for Interest/Enjoyment score in the pilot study for students with effective participation }
+\date{}
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrr}\caption{Summary of two-way ANOVA results  for Interest/Enjoyment score in the pilot study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$278.842$&$ 1$&$201.754$&$0.000$&$$\tabularnewline
+Type.Type&$  4.597$&$ 1$&$  3.326$&$0.086$&$$\tabularnewline
+Type.CLRole&$  0.134$&$ 1$&$  0.097$&$0.760$&$$\tabularnewline
+Type.Type:CLRole&$  2.505$&$ 1$&$  1.812$&$0.196$&$$\tabularnewline
+Type.Residuals&$ 23.496$&$17$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrrr}\caption{Descriptive statistics and Tukey post-hoc test results  for Interest/Enjoyment score in the pilot study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.non-gamified&$ 7$&$ 3.862$&$ 3.728$&$0.492$&$17$&$ 2.691$&$4.766$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified&$14$&$ 4.613$&$ 4.827$&$0.348$&$17$&$ 4.093$&$5.561$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified - ont-gamified&$21$&$-0.751$&$-1.099$&$0.602$&$$&$-1.899$&$0.397$&$-1.824$&$0.086$&$0.185$&$-0.606$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice&$ 5$&$ 4.040$&$ 4.040$&$0.526$&$17$&$ 2.931$&$5.150$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Apprentice&$10$&$ 4.328$&$ 4.328$&$0.372$&$17$&$ 3.544$&$5.112$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice - ont-gamified.Apprentice&$15$&$-0.288$&$-0.288$&$0.644$&$$&$-2.118$&$1.543$&$-0.447$&$0.661$&$0.969$&$-0.232$&$$&$$\tabularnewline
+Type.non-gamified.Master&$ 2$&$ 3.417$&$ 3.417$&$0.831$&$17$&$ 1.663$&$5.171$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Master&$ 4$&$ 5.326$&$ 5.326$&$0.588$&$17$&$ 4.086$&$6.566$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Master - ont-gamified.Master&$ 6$&$-1.909$&$-1.909$&$1.018$&$$&$-4.803$&$0.985$&$-1.875$&$0.078$&$0.275$&$-1.274$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

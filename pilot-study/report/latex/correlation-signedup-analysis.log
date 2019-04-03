@@ -374,41 +374,7 @@ Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 11.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 11.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 11.
-
-
-LaTeX Warning: No \author given.
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 18--22
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 22--26
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 26--29
+Package pdftexcmds Info: \pdfdhbox (12.0pt too wide) in alignment at lines 26--29
  [] [] [] [] [] [] [] 
  []
 
@@ -417,18 +383,41 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 31.
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 29--38
+Overfull \hbox (80.91841pt too wide) in alignment at lines 29--38
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 42--46
- [] [] [] [] [] [] [] 
- []
+Package longtable Warning: Column widths have changed
+(longtable)                in table 1 on input line 38.
 
+./correlation-signedup-analysis.tex:41: Undefined control sequence.
+l.41 \setlongtables{\script
+                           
+? 
+./correlation-signedup-analysis.tex:41: Emergency stop.
+l.41 \setlongtables{\script
+                           
+End of file on the terminal!
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 46--50
- [] [] [] [] [] [] [] 
+ 
+Here is how much of TeX's memory you used:
+ 3502 strings out of 492649
+ 48488 string characters out of 6129622
+ 134136 words of memory out of 5000000
+ 7333 multiletter control sequences out of 15000+600000
+ 7629 words of font info for 27 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,6n,53p,801b,221s stack positions out of 5000i,500n,10000p,200000b,80000s
+./correlation-signedup-analysis.tex:41:  ==> Fatal error occurred, no output PD
+F file produced!
+7348 multiletter control sequences out of 15000+600000
+ 7280 words of font info for 26 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,6n,53p,925b,183s stack positions out of 5000i,500n,10000p,200000b,80000s
+./correlation-signedup-analysis.tex:16:  ==> Fatal error occurred, no output PD
+F file produced!
+[] [] [] 
  []
 
 
@@ -559,210 +548,174 @@ Overfull \hbox (17.90648pt too wide) in alignment at lines 200--203
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 203--212
+Overfull \hbox (s 145--149
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 218--222
+Overfull \hbox (58.12457pt too wide) in alignment at lines 149--152
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 222--226
+Overfull \hbox (144.33307pt too wide) in alignment at lines 152--161
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 226--229
+Package longtable Warning: Column widths have changed
+(longtable)                in table 6 on input line 161.
+
+./correlation-signedup-analysis.tex:166: Undefined control sequence.
+l.166 \setlongtables{\script
+                            
+? 
+
+Overfull \hbox (58.12457pt too wide) in alignment at lines 167--171
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 229--238
+Overfull \hbox (58.12457pt too wide) in alignment at lines 171--175
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 242--246
+Overfull \hbox (58.12457pt too wide) in alignment at lines 175--178
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 246--250
+Overfull \hbox (144.33307pt too wide) in alignment at lines 178--187
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 250--253
+Package longtable Warning: Column widths have changed
+(longtable)                in table 7 on input line 187.
+
+./correlation-signedup-analysis.tex:190: Undefined control sequence.
+l.190 \setlongtables{\script
+                            
+? 
+
+Underfull \hbox (badness 4752) in paragraph at lines 191--191
+[]\OT1/cmr/m/n/10 Table 8: Cor-re-la-tion ma-trix with p-values of Gains in
+ []
+
+
+Overfull \hbox (58.12457pt too wide) in alignment at lines 191--195
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 253--262
+Overfull \hbox (58.12457pt too wide) in alignment at lines 195--199
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.17664pt too wide) in paragraph at lines 264--264
-[]\OT1/cmr/bx/n/14.4 Gains in Skill/Knowledge and Mo-ti-va-tion for the group n
-on-gamified.Apprentice 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 268--272
+Overfull \hbox (58.12457pt too wide) in alignment at lines 199--202
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 272--276
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 276--279
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 279--288
+Overfull \hbox (144.33307pt too wide) in alignment at lines 202--211
  [] [] [] [] [] [] [] 
  []
 
 [2]
-Overfull \hbox (17.90648pt too wide) in alignment at lines 292--296
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 8 on input line 211.
+
+./correlation-signedup-analysis.tex:216: Undefined control sequence.
+l.216 \setlongtables{\script
+                            
+? 
+
+Overfull \hbox (58.12457pt too wide) in alignment at lines 217--221
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 296--300
+Overfull \hbox (58.12457pt too wide) in alignment at lines 221--225
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 300--303
+Overfull \hbox (58.12457pt too wide) in alignment at lines 225--228
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 303--312
+Overfull \hbox (144.33307pt too wide) in alignment at lines 228--237
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 318--322
+Package longtable Warning: Column widths have changed
+(longtable)                in table 9 on input line 237.
+
+./correlation-signedup-analysis.tex:240: Undefined control sequence.
+l.240 \setlongtables{\script
+                            
+? 
+
+Underfull \hbox (badness 3557) in paragraph at lines 241--241
+[]\OT1/cmr/m/n/10 Table 10: Cor-re-la-tion ma-trix with p-values of Gains in
+ []
+
+
+Overfull \hbox (58.12457pt too wide) in alignment at lines 241--245
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 322--326
+Overfull \hbox (58.12457pt too wide) in alignment at lines 245--249
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 326--329
+Overfull \hbox (58.12457pt too wide) in alignment at lines 249--252
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 329--338
+Overfull \hbox (144.33307pt too wide) in alignment at lines 252--261
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 342--346
- [] [] [] [] [] [] [] 
+Package longtable Warning: Column widths have changed
+(longtable)                in table 10 on input line 261.
+
+
+Overfull \hbox (17.17664pt too wide) in paragraph at lines 263--263
+[]\OT1/cmr/bx/n/14.4 Gains in Skill/Knowledge and Mo-ti-va-tion for the group n
+on-gamified.Apprentice 
  []
 
+./correlation-signedup-analysis.tex:266: Undefined control sequence.
+l.266 \setlongtables{\script
+                            
+? 
+./correlation-signedup-analysis.tex:266: Emergency stop.
+l.266 \setlongtables{\script
+                            
+End of file on the terminal!
 
-Overfull \hbox (17.90648pt too wide) in alignment at lines 346--350
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 350--353
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 353--362
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (14.02663pt too wide) in paragraph at lines 364--364
-[]\OT1/cmr/bx/n/14.4 Gains in Skill/Knowledge and Mo-ti-va-tion for the group o
-nt-gamified.Apprentice 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 368--372
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 372--376
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 376--379
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 379--388
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 392--396
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 396--400
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 400--403
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 403--412
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 418--422
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 422--426
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 426--429
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 429--438
- [] [] [] [] [] [] [] 
- []
-
-[3]
-Overfull \hbox (17.90648pt too wide) in alignment at lines 442--446
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.90648pt too wide) in alignment at lines 446--450
- [] [] [] [] [] [] [] 
+ 
+Here is how much of TeX's memory you used:
+ 3513 strings out of 492649
+ 48580 string characters out of 6129622
+ 152138 words of memory out of 5000000
+ 7342 multiletter control sequences out of 15000+600000
+ 7626 words of font info for 27 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,6n,53p,925b,212s stack positions out of 5000i,500n,10000p,200000b,80000s
+./correlation-signedup-analysis.tex:266:  ==> Fatal error occurred, no output P
+DF file produced!
+[] [] [] [] 
  []
 
 

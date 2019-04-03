@@ -1,0 +1,69 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of parametric statistics analysis  for Pressure/Tension score in the pilot study for students with effective participation }
+\date{}
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrr}\caption{Summary of two-way ANOVA results  for Pressure/Tension score in the pilot study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$160.823$&$ 1$&$126.884$&$0.000$&$$\tabularnewline
+Type.Type&$  3.790$&$ 1$&$  2.990$&$0.102$&$$\tabularnewline
+Type.CLRole&$  0.000$&$ 1$&$  0.000$&$0.996$&$$\tabularnewline
+Type.Type:CLRole&$  0.000$&$ 1$&$  0.000$&$0.996$&$$\tabularnewline
+Type.Residuals&$ 21.547$&$17$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrrr}\caption{Descriptive statistics and Tukey post-hoc test results  for Pressure/Tension score in the pilot study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.non-gamified&$ 7$&$3.746$&$3.747$&$0.471$&$17$&$ 2.754$&$4.741$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified&$14$&$2.750$&$2.750$&$0.333$&$17$&$ 2.047$&$3.453$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified - ont-gamified&$21$&$0.996$&$0.997$&$0.577$&$$&$-0.103$&$2.096$&$1.729$&$0.102$&$0.073$&$0.898$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice&$ 5$&$3.745$&$3.745$&$0.503$&$17$&$ 2.683$&$4.807$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Apprentice&$10$&$2.750$&$2.750$&$0.356$&$17$&$ 1.999$&$3.501$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice - ont-gamified.Apprentice&$15$&$0.995$&$0.995$&$0.617$&$$&$-0.758$&$2.748$&$1.613$&$0.125$&$0.398$&$0.779$&$$&$$\tabularnewline
+Type.non-gamified.Master&$ 2$&$3.750$&$3.750$&$0.796$&$17$&$ 2.070$&$5.430$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Master&$ 4$&$2.750$&$2.750$&$0.563$&$17$&$ 1.562$&$3.938$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Master - ont-gamified.Master&$ 6$&$1.000$&$1.000$&$0.975$&$$&$-1.771$&$3.771$&$1.026$&$0.319$&$0.737$&$0.965$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

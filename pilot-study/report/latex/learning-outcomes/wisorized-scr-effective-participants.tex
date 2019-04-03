@@ -1,0 +1,52 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of winsorized responses for the differences of scores in the pilot empirical study }
+\date{}
+\begin{document}
+
+\maketitle
+
+
+\begin{landscape}
+
+%latex.default(as.data.frame(dd$get_data()), rowname = NULL, caption = paste("Summary of Winsorized responses",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{llllll}\caption{Summary of Winsorized responses for the differences of scores in the pilot empirical study} \tabularnewline
+\hline\hline
+\multicolumn{1}{c}{@@}&\multicolumn{1}{c}{UserID}&\multicolumn{1}{c}{Type}&\multicolumn{1}{c}{...}&\multicolumn{1}{c}{PlayerRole}&\multicolumn{1}{c}{difScore}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{c}{@@}&\multicolumn{1}{c}{UserID}&\multicolumn{1}{c}{Type}&\multicolumn{1}{c}{...}&\multicolumn{1}{c}{PlayerRole}&\multicolumn{1}{c}{difScore}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{as.data.frame}
+...&...&...&...&...&...\tabularnewline
+&10119&ont-gamified&...&Yee Achiever&0\tabularnewline
+-\textgreater &10120&ont-gamified&...&Yee Socializer&-6-\textgreater -5.8956\tabularnewline
+&10121&ont-gamified&...&Yee Achiever&-3\tabularnewline
+&10122&non-gamified&...&&1\tabularnewline
+-\textgreater &10126&ont-gamified&...&Yee Socializer&-3-\textgreater -0.4304\tabularnewline
+&10129&non-gamified&...&&5\tabularnewline
+...&...&...&...&...&...\tabularnewline
+&10139&ont-gamified&...&Yee Achiever&6\tabularnewline
+-\textgreater &10141&ont-gamified&...&Yee Socializer&10-\textgreater 5.586\tabularnewline
+-\textgreater &10143&ont-gamified&...&Yee Socializer&-6-\textgreater -0.4304\tabularnewline
+&10144&non-gamified&...&&2\tabularnewline
+-\textgreater &10145&non-gamified&...&&-3-\textgreater -0.9652\tabularnewline
+&10146&non-gamified&...&&6\tabularnewline
+&10148&ont-gamified&...&Yee Socializer&11\tabularnewline
+-\textgreater &10152&ont-gamified&...&Yee Achiever&-7-\textgreater -5.8956\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

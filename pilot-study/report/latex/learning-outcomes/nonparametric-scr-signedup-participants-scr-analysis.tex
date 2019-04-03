@@ -1,0 +1,118 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of nonparametric statistics analysis for Differences of Scores in the pilot study for signed-up students }
+\date{}
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of Scheirer-Ray-Hare results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrr}\caption{Summary of Scheirer-Ray-Hare results for Differences of Scores in the pilot study for signed-up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+difScore&$$&$$&$$&$$&$$\tabularnewline
+difScore:Type&$ 1$&$ 164.062$&$2.126$&$0.145$&$$\tabularnewline
+difScore:CLRole&$ 1$&$ 283.938$&$3.680$&$0.055$&$$\tabularnewline
+difScore:Type:CLRole&$ 1$&$   8.761$&$0.114$&$0.736$&$$\tabularnewline
+difScore:Residuals&$26$&$1780.739$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+%latex.default(result_wilcoxon_df, caption = paste("Descriptive statistic of the pair wilcoxon analysis",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{llrrrrrrrrl}\caption{Descriptive statistic of the pair wilcoxon analysis for Differences of Scores in the pilot study for signed-up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type:CLRole.greater.1&non-gamified.Apprentice&$11$&$ 6$&$10.05$&$110.5$&$44.5$&$1.93$&$0.027$&$0.483$&medium\tabularnewline
+Type:CLRole.greater.2&ont-gamified.Master&$ 5$&$-3$&$ 5.10$&$ 25.5$&$44.5$&$1.93$&$0.027$&$0.483$&medium\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(result_wilcoxon_df, caption = paste("Full descriptive statistic of the pair wilcoxon analysis",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{llrrrrrrrrl}\caption{Full descriptive statistic of the pair wilcoxon analysis for Differences of Scores in the pilot study for signed-up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.less.1&non-gamified&$14$&$ 4.5$&$18.00$&$252.0$&$147.0$&$ 1.46$&$0.928$&$0.266$&small\tabularnewline
+Type.less.2&ont-gamified&$16$&$ 0.5$&$13.31$&$213.0$&$147.0$&$ 1.46$&$0.928$&$0.266$&small\tabularnewline
+Type.greater.1&non-gamified&$14$&$ 4.5$&$18.00$&$252.0$&$147.0$&$ 1.46$&$0.075$&$0.266$&small\tabularnewline
+Type.greater.2&ont-gamified&$16$&$ 0.5$&$13.31$&$213.0$&$147.0$&$ 1.46$&$0.075$&$0.266$&small\tabularnewline
+Type.two.sided.1&non-gamified&$14$&$ 4.5$&$18.00$&$252.0$&$147.0$&$ 1.46$&$0.150$&$0.266$&small\tabularnewline
+Type.two.sided.2&ont-gamified&$16$&$ 0.5$&$13.31$&$213.0$&$147.0$&$ 1.46$&$0.150$&$0.266$&small\tabularnewline
+Type:CLRole.less.1&non-gamified.Apprentice&$11$&$ 6.0$&$ 8.45$&$ 93.0$&$ 27.0$&$ 1.64$&$0.951$&$0.438$&medium\tabularnewline
+Type:CLRole.less.2&non-gamified.Master&$ 3$&$ 2.0$&$ 4.00$&$ 12.0$&$ 27.0$&$ 1.64$&$0.951$&$0.438$&medium\tabularnewline
+Type:CLRole.greater.1&non-gamified.Apprentice&$11$&$ 6.0$&$ 8.45$&$ 93.0$&$ 27.0$&$ 1.64$&$0.058$&$0.438$&medium\tabularnewline
+Type:CLRole.greater.2&non-gamified.Master&$ 3$&$ 2.0$&$ 4.00$&$ 12.0$&$ 27.0$&$ 1.64$&$0.058$&$0.438$&medium\tabularnewline
+Type:CLRole.two.sided.1&non-gamified.Apprentice&$11$&$ 6.0$&$ 8.45$&$ 93.0$&$ 27.0$&$ 1.64$&$0.115$&$0.438$&medium\tabularnewline
+Type:CLRole.two.sided.2&non-gamified.Master&$ 3$&$ 2.0$&$ 4.00$&$ 12.0$&$ 27.0$&$ 1.64$&$0.115$&$0.438$&medium\tabularnewline
+Type:CLRole.less.11&non-gamified.Apprentice&$11$&$ 6.0$&$13.32$&$146.5$&$ 80.5$&$ 1.32$&$0.907$&$0.281$&small\tabularnewline
+Type:CLRole.less.21&ont-gamified.Apprentice&$11$&$ 4.0$&$ 9.68$&$106.5$&$ 80.5$&$ 1.32$&$0.907$&$0.281$&small\tabularnewline
+Type:CLRole.greater.11&non-gamified.Apprentice&$11$&$ 6.0$&$13.32$&$146.5$&$ 80.5$&$ 1.32$&$0.099$&$0.281$&small\tabularnewline
+Type:CLRole.greater.21&ont-gamified.Apprentice&$11$&$ 4.0$&$ 9.68$&$106.5$&$ 80.5$&$ 1.32$&$0.099$&$0.281$&small\tabularnewline
+Type:CLRole.two.sided.11&non-gamified.Apprentice&$11$&$ 6.0$&$13.32$&$146.5$&$ 80.5$&$ 1.32$&$0.199$&$0.281$&small\tabularnewline
+Type:CLRole.two.sided.21&ont-gamified.Apprentice&$11$&$ 4.0$&$ 9.68$&$106.5$&$ 80.5$&$ 1.32$&$0.199$&$0.281$&small\tabularnewline
+Type:CLRole.less.12&non-gamified.Apprentice&$11$&$ 6.0$&$10.05$&$110.5$&$ 44.5$&$ 1.93$&$0.975$&$0.483$&medium\tabularnewline
+Type:CLRole.less.22&ont-gamified.Master&$ 5$&$-3.0$&$ 5.10$&$ 25.5$&$ 44.5$&$ 1.93$&$0.975$&$0.483$&medium\tabularnewline
+Type:CLRole.greater.12&non-gamified.Apprentice&$11$&$ 6.0$&$10.05$&$110.5$&$ 44.5$&$ 1.93$&$0.027$&$0.483$&medium\tabularnewline
+Type:CLRole.greater.22&ont-gamified.Master&$ 5$&$-3.0$&$ 5.10$&$ 25.5$&$ 44.5$&$ 1.93$&$0.027$&$0.483$&medium\tabularnewline
+Type:CLRole.two.sided.12&non-gamified.Apprentice&$11$&$ 6.0$&$10.05$&$110.5$&$ 44.5$&$ 1.93$&$0.054$&$0.483$&medium\tabularnewline
+Type:CLRole.two.sided.22&ont-gamified.Master&$ 5$&$-3.0$&$ 5.10$&$ 25.5$&$ 44.5$&$ 1.93$&$0.054$&$0.483$&medium\tabularnewline
+Type:CLRole.less.13&non-gamified.Master&$ 3$&$ 2.0$&$ 5.83$&$ 17.5$&$ 11.5$&$-0.78$&$0.242$&$0.209$&small\tabularnewline
+Type:CLRole.less.23&ont-gamified.Apprentice&$11$&$ 4.0$&$ 7.95$&$ 87.5$&$ 11.5$&$-0.78$&$0.242$&$0.209$&small\tabularnewline
+Type:CLRole.greater.13&non-gamified.Master&$ 3$&$ 2.0$&$ 5.83$&$ 17.5$&$ 11.5$&$-0.78$&$0.786$&$0.209$&small\tabularnewline
+Type:CLRole.greater.23&ont-gamified.Apprentice&$11$&$ 4.0$&$ 7.95$&$ 87.5$&$ 11.5$&$-0.78$&$0.786$&$0.209$&small\tabularnewline
+Type:CLRole.two.sided.13&non-gamified.Master&$ 3$&$ 2.0$&$ 5.83$&$ 17.5$&$ 11.5$&$-0.78$&$0.484$&$0.209$&small\tabularnewline
+Type:CLRole.two.sided.23&ont-gamified.Apprentice&$11$&$ 4.0$&$ 7.95$&$ 87.5$&$ 11.5$&$-0.78$&$0.484$&$0.209$&small\tabularnewline
+Type:CLRole.less.14&non-gamified.Master&$ 3$&$ 2.0$&$ 5.50$&$ 16.5$&$ 10.5$&$ 0.90$&$0.839$&$0.318$&medium\tabularnewline
+Type:CLRole.less.24&ont-gamified.Master&$ 5$&$-3.0$&$ 3.90$&$ 19.5$&$ 10.5$&$ 0.90$&$0.839$&$0.318$&medium\tabularnewline
+Type:CLRole.greater.14&non-gamified.Master&$ 3$&$ 2.0$&$ 5.50$&$ 16.5$&$ 10.5$&$ 0.90$&$0.232$&$0.318$&medium\tabularnewline
+Type:CLRole.greater.24&ont-gamified.Master&$ 5$&$-3.0$&$ 3.90$&$ 19.5$&$ 10.5$&$ 0.90$&$0.232$&$0.318$&medium\tabularnewline
+Type:CLRole.two.sided.14&non-gamified.Master&$ 3$&$ 2.0$&$ 5.50$&$ 16.5$&$ 10.5$&$ 0.90$&$0.464$&$0.318$&medium\tabularnewline
+Type:CLRole.two.sided.24&ont-gamified.Master&$ 5$&$-3.0$&$ 3.90$&$ 19.5$&$ 10.5$&$ 0.90$&$0.464$&$0.318$&medium\tabularnewline
+Type:CLRole.less.15&ont-gamified.Apprentice&$11$&$ 4.0$&$ 9.55$&$105.0$&$ 39.0$&$ 1.31$&$0.906$&$0.326$&medium\tabularnewline
+Type:CLRole.less.25&ont-gamified.Master&$ 5$&$-3.0$&$ 6.20$&$ 31.0$&$ 39.0$&$ 1.31$&$0.906$&$0.326$&medium\tabularnewline
+Type:CLRole.greater.15&ont-gamified.Apprentice&$11$&$ 4.0$&$ 9.55$&$105.0$&$ 39.0$&$ 1.31$&$0.107$&$0.326$&medium\tabularnewline
+Type:CLRole.greater.25&ont-gamified.Master&$ 5$&$-3.0$&$ 6.20$&$ 31.0$&$ 39.0$&$ 1.31$&$0.107$&$0.326$&medium\tabularnewline
+\newpage
+Type:CLRole.two.sided.15&ont-gamified.Apprentice&$11$&$ 4.0$&$ 9.55$&$105.0$&$ 39.0$&$ 1.31$&$0.210$&$0.326$&medium\tabularnewline
+Type:CLRole.two.sided.25&ont-gamified.Master&$ 5$&$-3.0$&$ 6.20$&$ 31.0$&$ 39.0$&$ 1.31$&$0.210$&$0.326$&medium\tabularnewline
+\hline
+\end{longtable}}
+
+\end{document}
