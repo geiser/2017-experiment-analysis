@@ -293,27 +293,27 @@ do_parametric_test <- function(dat, wid, dv, iv, between, observed = NULL
     error_warning_list <- c(error_warning_list, 'The null hypothesis "H0: sample is normality distributed" has been rejected - The sample is not normal')
     codes <- c(codes, "FAIL: Shapiro")
     
-    ## stratify
-    if (!is.null(cstratify) && length(cstratify) > 0) {
-      normality.fail <- FALSE
-      normality.fail <- any(sapply(cstratify, FUN = function(sname) {
-        norm.fails <- sapply(levels(wdat[[sname]]), FUN = function(svalue) {
-          tdat <- wdat[wdat[[sname]] == svalue,]
-          tezAov <- aov_ez(data = tdat, id = wid, dv = dv
-                           , between = between[!between %in% sname]
-                           , within = within[!within %in% sname]
-                           , observed = observed[!observed %in% sname]
-                           , type = type, print.formula = T, factorize = F)
-          return(shapiro.test(tezAov$aov$residuals)$p.value <= p_limit)
-        })
-        return(any(norm.fails))
-      }))
-      if (normality.fail) {
-        descriptions <- c(descriptions, '(Stratify) Null hypothesis of Shapiro test rejected')
-        error_warning_list <- c(error_warning_list, '(Stratify) The null hypothesis "H0: sample is normality distributed" has been rejected - The sample is not normal')
-        codes <- c(codes, "(Stratify) FAIL: Shapiro")
-      }
-    }
+    ## stratify not necessary if we are using residuals
+    # if (!is.null(cstratify) && length(cstratify) > 0) {
+    #  normality.fail <- FALSE
+    #  normality.fail <- any(sapply(cstratify, FUN = function(sname) {
+    #    norm.fails <- sapply(levels(wdat[[sname]]), FUN = function(svalue) {
+    #      tdat <- wdat[wdat[[sname]] == svalue,]
+    #      tezAov <- aov_ez(data = tdat, id = wid, dv = dv
+    #                       , between = between[!between %in% sname]
+    #                       , within = within[!within %in% sname]
+    #                       , observed = observed[!observed %in% sname]
+    #                       , type = type, print.formula = T, factorize = F)
+    #      return(shapiro.test(tezAov$aov$residuals)$p.value <= p_limit)
+    #    })
+    #    return(any(norm.fails))
+    #  }))
+    #  if (normality.fail) {
+    #    descriptions <- c(descriptions, '(Stratify) Null hypothesis of Shapiro test rejected')
+    #    error_warning_list <- c(error_warning_list, '(Stratify) The null hypothesis "H0: sample is normality distributed" has been rejected - The sample is not normal')
+    #    codes <- c(codes, "(Stratify) FAIL: Shapiro")
+    #  }
+    #}
   }
   
   homogeneity.fail <- FALSE
@@ -326,24 +326,24 @@ do_parametric_test <- function(dat, wid, dv, iv, between, observed = NULL
     codes <- c(codes, "FAIL: Levene's")
     
     ## stratify
-    if (!is.null(cstratify) && length(cstratify) > 0) {
-      homogeneity.fail <- FALSE
-      homogeneity.fail <- any(sapply(cstratify, FUN = function(sname) {
-        homo.fails <- sapply(levels(wdat[[sname]]), FUN = function(svalue) {
-          tdat <- wdat[wdat[[sname]] == svalue,]
-          tformula_aov <- as.formula(
-            paste(paste0('`',dv,'`'), "~", paste(c(between[!between %in% sname], within[!within %in% sname]), collapse = "*"),
-                  if (length(within) > 0) paste0("+Error(", wid, "/(", paste(within[!within %in% sname], collapse = "*"), "))") else NULL))
-          return(leveneTest(tformula_aov, data = tdat)$`Pr(>F)`[[1]] <= p_limit)
-        })
-        return(any(homo.fails))
-      }))
-      if (homogeneity.fail) {
-        descriptions <- c(descriptions, "(Stratify) Null hypothesis of Levene's Test rejected")
-        error_warning_list <- c(error_warning_list, '(Stratify) The null hypothesis "H0: homogeneity of variance" has been rejected - There is a difference between the variances of sample')
-        codes <- c(codes, "(Stratify) FAIL: Levene's")
-      }
-    }
+    #if (!is.null(cstratify) && length(cstratify) > 0) {
+    #  homogeneity.fail <- FALSE
+    #  homogeneity.fail <- any(sapply(cstratify, FUN = function(sname) {
+    #    homo.fails <- sapply(levels(wdat[[sname]]), FUN = function(svalue) {
+    #      tdat <- wdat[wdat[[sname]] == svalue,]
+    #      tformula_aov <- as.formula(
+    #        paste(paste0('`',dv,'`'), "~", paste(c(between[!between %in% sname], within[!within %in% sname]), collapse = "*"),
+    #              if (length(within) > 0) paste0("+Error(", wid, "/(", paste(within[!within %in% sname], collapse = "*"), "))") else NULL))
+    #      return(leveneTest(tformula_aov, data = tdat)$`Pr(>F)`[[1]] <= p_limit)
+    #    })
+    #    return(any(homo.fails))
+    #  }))
+    #  if (homogeneity.fail) {
+    #    descriptions <- c(descriptions, "(Stratify) Null hypothesis of Levene's Test rejected")
+    #    error_warning_list <- c(error_warning_list, '(Stratify) The null hypothesis "H0: homogeneity of variance" has been rejected - There is a difference between the variances of sample')
+    #    codes <- c(codes, "(Stratify) FAIL: Levene's")
+    #  }
+    #}
   }
   
   ## post-hoc test
@@ -412,6 +412,12 @@ do_parametric_test <- function(dat, wid, dv, iv, between, observed = NULL
 #############################################################################
 ## Functions to draw plots                                                 ##
 #############################################################################
+
+pnormPlot <- function(presult){
+  adat = data.frame("ID" = names(presult$plotAov$residuals)
+                    , "res" = as.vector(presult$plotAov$residuals))
+  normPlot(adat, "res", "ID")
+}
 
 ## plot normality points
 normPlot <- function(rdat, dv, wid="UserID") {

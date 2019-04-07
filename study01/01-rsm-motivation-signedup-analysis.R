@@ -126,7 +126,7 @@ winsor_mod <- winsorize_two_by_two_design(participants, sdat_map, list_dvs, ivs_
 ))
 
 render_diff(winsor_mod$diff_dat)
-(mvn_mod <- mvn(winsor_mod$wdat[,dvs], univariatePlot = "box", univariateTest = "SW"))
+(mvn_mod <- mvn(winsor_mod$wdat[,dvs], univariatePlot = "box", univariateTest = "AD"))
 
 # print possible problems
 (person_infit_outfit_problems <- lapply(list_dvs, FUN = function(dv){
