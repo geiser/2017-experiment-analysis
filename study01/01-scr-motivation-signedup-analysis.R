@@ -341,7 +341,7 @@ lapply(list_dvs, function(dv) {
 all_parametric_results <- lapply(list_dvs, function(dv) {
   info <- list_info[[dv]]$info
   
-  dir.create(paste0("report/motivation/src-signedup-participants/", sources[[dv]]$folder), showWarnings = F)
+  dir.create(paste0("report/motivation/scr-signedup-participants/", sources[[dv]]$folder), showWarnings = F)
   
   parametric_results <- lapply(info, FUN = function(x) {
     cat("\n .... processing: ", x$title, " ....\n")
@@ -395,7 +395,7 @@ lapply(list_dvs, function(dv) {
 #############################################################################
 write_param_and_nonparam_statistics_analysis_in_latex(
   all_parametric_results, all_nonparametric_results, list_info
-  , filename = "report/latex/motivation-signedup/summary-src-analysis.tex"
+  , filename = "report/latex/motivation-signedup/summary-scr-analysis.tex"
   , in_title = "in the first study for signed up students"
   , min_size_tests = T)
 
