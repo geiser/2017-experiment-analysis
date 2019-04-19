@@ -309,22 +309,9 @@ repeat {
 
 
 #
-skip_stop <- c()#"Pressure/Tension")
+skip_stop <- c("Pressure/Tension")
 extra_rmids <- list(
-  "Pressure/Tension" = c(
-    10230,10292
-    ,10192,10222,10212
-    ,10186,10183
-    ,10220,10203
-    ,10178
-    ,10233
-    ,10176
-    ,10171
-    ,10190
-    ,10224
-    ,10208
-    ,10175
-                         )
+  "Pressure/Tension" = c()
 )
 
 # Validate Assumptions
@@ -354,7 +341,7 @@ lapply(list_dvs, function(dv) {
 all_parametric_results <- lapply(list_dvs, function(dv) {
   info <- list_info[[dv]]$info
   
-  dir.create(paste0("report/motivation/signedup-participants/", sources[[dv]]$folder), showWarnings = F)
+  dir.create(paste0("report/motivation/src-signedup-participants/", sources[[dv]]$folder), showWarnings = F)
   
   parametric_results <- lapply(info, FUN = function(x) {
     cat("\n .... processing: ", x$title, " ....\n")
@@ -372,14 +359,14 @@ all_parametric_results <- lapply(list_dvs, function(dv) {
     
     result <- do_parametric_test(sdat, wid = "UserID", dv = dv, iv = x$iv, between = c(x$iv, "CLRole"), cstratify = c("CLRole"))
     write_plots_for_parametric_test(
-      result, ylab = "logit", title = x$title
+      result, ylab = "score", title = x$title
       , path = path, override = T
-      , ylim = NULL, levels = c('non-gamified','ont-gamified')
+      , ylim = c(1,7), levels = c('non-gamified','ont-gamified')
     )
     write_parametric_test_report(
-      result, ylab = "logit", title = x$title
+      result, ylab = "score", title = x$title
       , filename = filename, override = T
-      , ylim = NULL, levels = c('non-gamified','ont-gamified')
+      , ylim = c(1,7), levels = c('non-gamified','ont-gamified')
     )
     return(result)
   })
@@ -388,10 +375,8 @@ all_parametric_results <- lapply(list_dvs, function(dv) {
 ## translate to latex
 write_winsorized_in_latex(
   winsor_mod$diff_dat
-  , filename = "report/latex/motivation-signedup/wisorized-intrinsic-motivation.tex"
-  , in_title = paste("for the latent trait estimates by",
-                     "the RSM-based instrument for measuring"
-                     ,"intrinsic motivation in the first study", "for signed up students")
+  , filename = "report/latex/motivation-signedup/wisorized-scr-intrinsic-motivation.tex"
+  , in_title = paste("for intrinsic motivation score in the first study for signed-up students")
 )
 
 lapply(list_dvs, function(dv) {
@@ -400,9 +385,8 @@ lapply(list_dvs, function(dv) {
   ##
   write_param_statistics_analysis_in_latex(
     parametric_results, ivs = names(info)
-    , filename = paste0("report/latex/motivation-signedup/parametric-", sources[[dv]]$folder, "-analysis.tex")
-    , in_title = paste0(" for the latent trait estimates of ", dv, " in the first study "
-                        , "for signed up students")
+    , filename = paste0("report/latex/motivation-signedup/parametric-", sources[[dv]]$folder, "-scr-analysis.tex")
+    , in_title = paste0(" for ", dv, " score in the first study for signed-up students")
   )
 })
 
@@ -411,6 +395,7 @@ lapply(list_dvs, function(dv) {
 #############################################################################
 write_param_and_nonparam_statistics_analysis_in_latex(
   all_parametric_results, all_nonparametric_results, list_info
-  , filename = "report/latex/motivation-signedup/summary-analysis.tex"
-  , in_title = "in the first study for signed up students")
+  , filename = "report/latex/motivation-signedup/summary-src-analysis.tex"
+  , in_title = "in the first study for signed up students"
+  , min_size_tests = T)
 
