@@ -11,7 +11,9 @@ All materials used in the empirical study are available at ([materials](material
 
 
 Validation of IMI
-=====
+=================
+
+Summary of ()
 
 For the global sample gathered through all empirical studies:
 
@@ -23,10 +25,68 @@ Folder with the Psychometric validation of IMI ([validation-IMI/](../report/vali
 
 
 
-
-
 For the sample gathered in the first empirical study
 
 -  CFA analysis and a reliability test of the adapted Portuguese IMI ([IMI-reliability-analysis.pdf](report/latex/IMI-reliability-analysis.pdf) or [IMI.xlsx](report/reliability-analysis/IMI.xlsx))
 
--  
+
+
+Finding Significant Differences on Students' Motivation
+=======================================================
+
+Based on the mean scores across all the items:
+
+
+For all students (signed-up students):
+
+-  Summary of Nonparametric and Parametric tests ([summary-src-analysis.pdf](report/latex/motivation-signedup/summary-src-analysis.pdf))
+
+-  Nonparametric tests of Intrinsic Motivation ([nonparametric-intrinsic-motivation-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-intrinsic-motivation-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/intrinsic-motivation/by-Type/NonParametricAnalysis.xlsx))
+-  Parametric tests of Intrinsic Motivation ([parametric-intrinsic-motivation-scr-analysis.pdf](report/latex/motivation-signedup/parametric-intrinsic-motivation-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx) with normality test)
+
+-  Nonparametric tests of Interest/Enjoyment ([nonparametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-interest-enjoyment-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/interest-enjoyment/by-Type/NonParametricAnalysis.xlsx))
+-  Parametric tests of Interest/Enjoyment ([parametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-signedup/parametric-interest-enjoyment-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/interest-enjoyment/by-Type/ParametricAnalysis.xlsx) with normality test)
+
+-  Nonparametric tests of Perceived Choice ([nonparametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-perceived-choice-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/perceived-choice/by-Type/NonParametricAnalysis.xlsx))
+-  Parametric tests of Perceived Choice ([parametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-signedup/parametric-perceived-choice-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/perceived-choice/by-Type/ParametricAnalysis.xlsx) with normality test)
+
+-  Nonparametric tests of Pressure/Tension ([nonparametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-pressure-tension-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/pressure-tension/by-Type/NonParametricAnalysis.xlsx))
+-  Parametric tests of Pressure/Tension ([parametric-pressure-tension-scr-analysis.pdf](report/latex/motivation-signedup/parametric-pressure-tension-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/pressure-tension/by-Type/ParametricAnalysis.xlsx) with normality test)
+
+-  Nonparametric tests of Effort/Importance ([nonparametric-effort-importance-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-effort-importance-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/effort-importance/by-Type/NonParametricAnalysis.xlsx))
+-  Parametric tests of Effort/Importance ([parametric-effort-importance-scr-analysis.pdf](report/latex/motivation-signedup/parametric-effort-importance-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/effort-importance/by-Type/ParametricAnalysis.xlsx) with normality test)
+
+For students with effective participation (effective students):
+
+-  Summary of Nonparametric and Parametric tests ([summary-src-analysis.pdf](report/latex/motivation-effective/summary-src-analysis.pdf))
+
+-  Nonparametric tests of Intrinsic Motivation ([nonparametric-intrinsic-motivation-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-intrinsic-motivation-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/intrinsic-motivation/by-Type/NonParametricAnalysis.xlsx))
+-  Parametric tests of Intrinsic Motivation ([parametric-intrinsic-motivation-scr-analysis.pdf](report/latex/motivation-effective/parametric-intrinsic-motivation-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx) with normality test)
+
+-  Nonparametric tests of Interest/Enjoyment ([nonparametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-interest-enjoyment-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/interest-enjoyment/by-Type/NonParametricAnalysis.xlsx))
+-  Parametric tests of Interest/Enjoyment ([parametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-effective/parametric-interest-enjoyment-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/interest-enjoyment/by-Type/ParametricAnalysis.xlsx) with normality test)
+
+-  Nonparametric tests of Perceived Choice ([nonparametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-perceived-choice-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/perceived-choice/by-Type/NonParametricAnalysis.xlsx))
+-  Parametric tests of Perceived Choice ([parametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-effective/parametric-perceived-choice-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/perceived-choice/by-Type/ParametricAnalysis.xlsx) with normality test)
+
+-  Nonparametric tests of Pressure/Tension ([nonparametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-pressure-tension-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/pressure-tension/by-Type/NonParametricAnalysis.xlsx))
+-  Parametric tests of Pressure/Tension ([parametric-pressure-tension-scr-analysis.pdf](report/latex/motivation-effective/parametric-pressure-tension-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/pressure-tension/by-Type/ParametricAnalysis.xlsx) with normality test)
+
+-  Nonparametric tests of Effort/Importance ([nonparametric-effort-importance-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-effort-importance-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/effort-importance/by-Type/NonParametricAnalysis.xlsx))
+-  Parametric tests of Effort/Importance ([parametric-effort-importance-scr-analysis.pdf](report/latex/motivation-effective/parametric-effort-importance-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/effort-importance/by-Type/ParametricAnalysis.xlsx) with normality test)
+
+
+Based on the estimates of IRT-models:
+
+
+
+Finding Significant Differences on Learning Outcomes
+=======================================================
+
+
+
+
+
+
+
+
