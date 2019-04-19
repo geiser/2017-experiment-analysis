@@ -14,6 +14,8 @@ library(afex)
 library(dplyr)
 library(stats)
 library(ez)
+library(parallel)
+#options(mc.cores=16)
 
 participants <- read_csv('data/SignedUpParticipants.csv')
 
@@ -242,7 +244,7 @@ generate_file_aov_assumptions <- function(
         nindex <- paste0(c(tindex[j,]), collapse = "+")
         generated_names[[nindex]] <- nindex
       }
-      result <- do.call(rbind, lapply(generated_names, get_aov_assumption, dat=dat
+      result <- do.call(rbind, mclapply(generated_names, get_aov_assumption, dat=dat
                                       , wid=wid, dv=dv, iv=iv, between = between))
       save(result, file = file_aov_assumptions_str)
       
@@ -263,10 +265,10 @@ generate_file_aov_assumptions <- function(
   }
 }
 
-
-ilist <- as.list(c(nrow(dat):30))
-names(ilist) <- c(nrow(dat):30)
-lapply(ilist, generate_file_aov_assumptions, dat
+options(mc.cores=4)
+ilist <- as.list(c(nrow(dat):50))
+names(ilist) <- c(nrow(dat):50)
+mclapply(ilist, generate_file_aov_assumptions, dat
        , wid="UserID", dv="Pressure/Tension", iv="Type", between = c("Type","CLRole")
        , path = "data/pressure-tension"
        , pos_file_aov_assumptions_str = "aov_assumptions.RData")

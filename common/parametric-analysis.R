@@ -935,3 +935,4 @@ winsorize_two_by_two_design <- function(
   
   return(list(sdat = sdat, wdat = wdat, diff_dat = diff_data(sdat, wdat)))
 }
+
