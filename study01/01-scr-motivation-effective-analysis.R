@@ -130,12 +130,6 @@ render_diff(winsor_mod$diff_dat)
 (mvn_mod <- mvn(winsor_mod$wdat[,dvs], univariatePlot = "box", univariateTest = "SW"))
 
 
-dat = winsor_mod$wdat
-
-
-
-
-
 generated_names <- list()
 
 min=30
@@ -308,7 +302,7 @@ repeat {
 
 
 #
-skip_stop <- c("Pressure/Tension")
+skip_stop <- c()#"Pressure/Tension")
 extra_rmids <- list(
   "Pressure/Tension" = c()
 )

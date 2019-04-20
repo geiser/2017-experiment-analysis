@@ -601,11 +601,24 @@ write_param_and_nonparam_statistics_analysis_in_latex  <- function(
           , caption = paste("Univariate normality test", in_title)
           , size = "small", longtable = T, ctable=F, landscape = F
           , rowlabel = "", where='!htbp', file = filename, append = T)
+  } else {
+    write("", file = filename, append = T)
+    write("\\section{Assumptions for Parametric Tests}", file = filename, append = T)
+    
+    
+    latex(round_df(do.call(rbind, lapply(all_parametric_results, function(p_results) {
+      return(do.call(rbind, lapply(p_results, function(p_result) {
+        return(data.frame(normality.fail = p_result$normality.fail, W = p_result$shapiro$statistic, p.value = p_result$shapiro$p.value))
+      })))
+    })), 3)
+      , caption = paste("Univariate normality test", in_title)
+      , size = "scriptsize", longtable = T, ctable=F, landscape = F
+      , rowlabel = "", where='!htbp', file = filename, append = T)
   }
   
   ##
   if (min_size_tests) {
-    write("\\begin{landscape}", file = filename, append = T)
+    write("", file = filename, append = T)
     test_min_size_summary <- do.call(rbind, lapply(list_info, FUN = function(info) {
       p_results <- all_parametric_results[[info$dv]]
       do.call(rbind, lapply(p_results, function(p_result) {
@@ -623,7 +636,7 @@ write_param_and_nonparam_statistics_analysis_in_latex  <- function(
     write("", file = filename, append = T)
     write("The sample size to carried out any parametric and non-parametric analysis is 5, and it was established using common sense.", file = filename, append = T)
     write("The warning and fails indicated in this section should be taking into account when a paper or report will be elaborated.", file = filename, append = T)
-    write("\\end{landscape}", file = filename, append = T)
+    write("", file = filename, append = T)
     write("", file = filename, append = T)
   }
   

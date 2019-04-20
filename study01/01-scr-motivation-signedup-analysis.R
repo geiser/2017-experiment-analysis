@@ -130,191 +130,53 @@ winsor_mod <- winsorize_two_by_two_design(participants, sdat_map, list_dvs, ivs_
 render_diff(winsor_mod$diff_dat)
 (mvn_mod <- mvn(winsor_mod$wdat[,dvs], univariatePlot = "box", univariateTest = "SW"))
 
-
-dat = winsor_mod$wdat
-
-
-
-
-
-generated_names <- list()
-
-min=30
-
-#nrow(dat)
-dat=winsor_mod$wdat
-
-
-
-get_aov_assumption <- function(name, dat, wid, dv, iv, between, observed = NULL
-                               , within = NULL, p_limit = 0.05) {
-  
-  library(car)
-  library(afex)
-  library(dplyr)
-  library(stats)
-  library(ez)
-  
-  ## get wide data
-  row_positions <- as.numeric(strsplit(name,"[+]")[[1]])
-  wdat <- dat[c(row_positions),]
-  columns <- base::unique(c(iv, between, observed))
-  for (cname in columns) {
-    if (class(wdat[[cname]]) != "numeric") {
-      wdat[[cname]] <- factor(wdat[[cname]])
-    }
-  }
-  rownames(wdat) <- wdat[[wid]]
-  
-  # get module of test mimimun size
-  tms_mod <- test_min_size_mod(wdat, iv, between, observed, type = 'parametric')
-  if (tms_mod$balanced) type <- 2 else type <- 3
-  
-  # validate normality
-  ezAov <- aov_ez(data = wdat, id = wid, dv = dv, between = between, within = within
-                  , observed = observed, type = type, print.formula = F, factorize = F)
-  normality.fail <- F
-  shapiro_mod <- shapiro.test(ezAov$aov$residuals) # normality
-  shapiro_pvalue <- shapiro_mod$p.value
-  if (shapiro_pvalue <= p_limit) {
-    normality.fail <- T
-  }
-  
-  ## get aov and formula
-  formula_str <- paste(paste0('`',dv,'`'), "~", paste(c(between, within), collapse = "*"),
-                       if (length(within) > 0) paste0("+Error(", wid, "/(", paste(within, collapse = "*"), "))") else NULL)
-  formula_aov <- as.formula(formula_str)
-  
-  ## homogeneity test
-  homogeneity.fail <- F
-  levene_mod <- leveneTest(formula_aov, data = wdat) # homogeneity
-  levene_pvalue <- levene_mod$`Pr(>F)`[[1]]
-  if (levene_pvalue <= p_limit) {
-    homogeneity.fail <- T
-  }
-  
-  df.homogeneity.fail <- sapply(base::unique(c(iv, between, observed)), function(x) {
-    levene_mod <- leveneTest(as.formula(paste0('`',dv,'`', " ~ ", x)), data = wdat)
-    levene_pvalue <- levene_mod$`Pr(>F)`[[1]]
-    return(levene_pvalue <= p_limit)
-  })
-  names(df.homogeneity.fail) <- paste0("homogeneity.fail.",names(df.homogeneity.fail))
-  
-  return (data.frame(name = name, normality.fail = normality.fail, homogeneity.fail = homogeneity.fail, as.list(df.homogeneity.fail)))
-}
-
-generate_file_aov_assumptions <- function(
-  i, dat
-  , wid="UserID", dv="Pressure/Tension", iv="Type", between = c("Type","CLRole")
-  , path = "data/pressure-tension"
-  , pos_file_aov_assumptions_str = "aov_assumptions.RData") {
-  
-  if (!file.exists(paste0(path,"/","f_",i,"_",pos_file_aov_assumptions_str))) {
-    
-    low <- 1
-    limit <- RcppAlgos::comboCount(nrow(dat), i)
-    
-    repeat {
-      upp <- low + 1999
-      if (upp > limit) { upp <- limit }
-      
-      #
-      cat("\n", "Generating: ", i, " from ", low, " to ", upp, " until to ", limit,"\n")
-      file_aov_assumptions_str <- paste0(path,"/",'f_',i,'_',low,'_',upp,'_',pos_file_aov_assumptions_str)
-      if (file.exists(file_aov_assumptions_str)) {
-        low <- low + 2000
-        if (low >= limit) {
-          df_assumptions <- do.call(
-            rbind
-            , lapply(Sys.glob(paste0(path,"/","f_",i,"_*_",pos_file_aov_assumptions_str))
-                     , function(file_name) {
-                       return(get(load(file_name)))
-                     }))
-          save(df_assumptions, file = paste0(path,"/","f_",i,"_",pos_file_aov_assumptions_str))
-          file.remove(Sys.glob(paste0(path,"/","f_",i,"_*_",pos_file_aov_assumptions_str)))
-          break;
-        }
-        next;
-      }
-      
-      #
-      generated_names <- list()
-      tindex <- RcppAlgos::comboGeneral(nrow(dat), i, lower = low, upper = upp)
-      for (j in 1:nrow(tindex)) {
-        nindex <- paste0(c(tindex[j,]), collapse = "+")
-        generated_names[[nindex]] <- nindex
-      }
-      result <- do.call(rbind, mclapply(generated_names, get_aov_assumption, dat=dat
-                                      , wid=wid, dv=dv, iv=iv, between = between))
-      save(result, file = file_aov_assumptions_str)
-      
-      #
-      if (upp >= limit) {
-        df_assumptions <- do.call(
-          rbind
-          , lapply(Sys.glob(paste0(path,"/","f_",i,"_*_",pos_file_aov_assumptions_str))
-                   , function(file_name) {
-                     return(get(load(file_name)))
-                   }))
-        save(df_assumptions, file = paste0(path,"/","f_",i,"_",pos_file_aov_assumptions_str))
-        file.remove(Sys.glob(paste0(path,"/","f_",i,"_*_",pos_file_aov_assumptions_str)))
-        break;
-      }
-      low <- low + 2000
-    }
-  }
-}
-
-options(mc.cores=4)
-ilist <- as.list(c(nrow(dat):50))
-names(ilist) <- c(nrow(dat):50)
-mclapply(ilist, generate_file_aov_assumptions, dat
-       , wid="UserID", dv="Pressure/Tension", iv="Type", between = c("Type","CLRole")
-       , path = "data/pressure-tension"
-       , pos_file_aov_assumptions_str = "aov_assumptions.RData")
-
-
-
-
-for (i in nrow(dat):min) {
-  
-}
-
-k <- 55
-
-df_assumptions <- do.call(
-  rbind
-  , lapply(Sys.glob(paste0("f_",k,"_*_",pre_file_aov_assumptions_str))
-           , function(file_name) {
-             return(get(load(file_name)))
-           }))
-
-View()
-
-
-
-
-
-
-
-repeat {
-  curr_length <- length(tam_models)
-  tam_models <- get_TAMs(
-    dat, column_names = column_names, tam_models = tam_models, fixed = fixed
-    , fixed_sets = fixed_sets
-    , min_columns = min_columns, limit = 20, irtmodel = irtmodel)
-  if (curr_length >= length(tam_models)) break
-  save(tam_models, file = file_tam_models_str)
-}
-
-
 #
+skip_stop <- c()
+extra_rmids <- list()
+
+# Validate Assumptions - fail Pressure/Tension
+lapply(list_dvs, function(dv) {
+  info <- list_info[[dv]]$info
+  lapply(info, FUN = function(x) {
+    sdat <- winsor_mod$wdat
+    if (!is.null(extra_rmids[[dv]]) && length(extra_rmids[[dv]]) > 0) {
+      cat('\n... removing ids c(', extra_rmids[[dv]], ') from: ', dv, ' by ', x$iv, '\n')
+      sdat <- sdat[!sdat$UserID %in% extra_rmids[[dv]],]
+    }
+    
+    result <- do_parametric_test(sdat, wid = 'UserID', dv = dv, iv = x$iv, between = c(x$iv, "CLRole"), cstratify = c("CLRole"))
+    cat('\n... checking assumptions for: ', dv, ' by ', x$iv, '\n')
+    print(result$test.min.size$error.warning.list)
+    if (result$normality.fail) cat('\n... normality fail ...\n')
+    if (result$homogeneity.fail) cat('\n... homogeneity fail ...\n')
+    if (result$assumptions.fail) {
+      plot_assumptions_for_parametric_test(result, x$dv)
+      if (result$normality.fail) pnormPlot(result)
+      stopifnot(dv %in% skip_stop)
+    }
+  })
+})
+
+# finding solution for Pressure/Tension
+df_assumptions <- get_dataframe_assumptions(
+  dat = winsor_mod$wdat, from=55
+  , wid="UserID", dv="Pressure/Tension", iv="Type", between = c("Type","CLRole")
+  , path = "data/pressure-tension", generate = T)
+(normality_df <- df_assumptions[df_assumptions$normality.fail != T,])
+
+df_assumptions <- get_dataframe_assumptions(
+  dat = dplyr::mutate(winsor_mod$wdat, "log.Pressure/Tension" = log(winsor_mod$wdat$`Pressure/Tension`))
+  , from = 55, wid="UserID", dv="log.Pressure/Tension", iv="Type", between = c("Type","CLRole")
+  , path = "data/log-pressure-tension", generate = T)
+(normality_df <- df_assumptions[df_assumptions$normality.fail != T,])
+
+# non-normal data in dv=Pressure/Tension 
 skip_stop <- c("Pressure/Tension")
 extra_rmids <- list(
   "Pressure/Tension" = c()
 )
 
-# Validate Assumptions
+# Validating Normality again but skiping Pressure/Tension
 lapply(list_dvs, function(dv) {
   info <- list_info[[dv]]$info
   lapply(info, FUN = function(x) {
