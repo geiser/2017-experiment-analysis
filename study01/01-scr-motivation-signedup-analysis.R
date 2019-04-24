@@ -159,15 +159,16 @@ lapply(list_dvs, function(dv) {
 
 # finding solution for Pressure/Tension
 df_assumptions <- get_dataframe_assumptions(
-  dat = winsor_mod$wdat, from=55
+  dat = winsor_mod$wdat, from = 56
   , wid="UserID", dv="Pressure/Tension", iv="Type", between = c("Type","CLRole")
-  , path = "data/pressure-tension", generate = T)
+  , path = "data/scr-signedup-pressure-tension", generate = F)
 (normality_df <- df_assumptions[df_assumptions$normality.fail != T,])
 
 df_assumptions <- get_dataframe_assumptions(
   dat = dplyr::mutate(winsor_mod$wdat, "log.Pressure/Tension" = log(winsor_mod$wdat$`Pressure/Tension`))
-  , from = 55, wid="UserID", dv="log.Pressure/Tension", iv="Type", between = c("Type","CLRole")
-  , path = "data/log-pressure-tension", generate = T)
+  , from = 57
+  , wid="UserID", dv="log.Pressure/Tension", iv="Type", between = c("Type","CLRole")
+  , path = "data/log-scr-signedup-pressure-tension", generate = F)
 (normality_df <- df_assumptions[df_assumptions$normality.fail != T,])
 
 # non-normal data in dv=Pressure/Tension 

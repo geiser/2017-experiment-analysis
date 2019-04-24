@@ -154,7 +154,7 @@ get_dataframe_assumptions <- function(dat, dv, iv, between, path, from=nrow(dat)
       options(mc.cores=mc.cores)
       mclapply(ilist, generate_file_aov_assumptions, dat
                , wid=wid, dv=dv, iv=iv, between = between, path = path
-               , pos_file_aov_assumptions_str = pos_file_aov_assumptions_str)
+               , pos_file_aov_assumptions_str = pos_file_aov_assumptions_str, mc.cores = mc.cores)
     } else {
       lapply(ilist, generate_file_aov_assumptions, dat
              , wid=wid, dv=dv, iv=iv, between = between, path = path
