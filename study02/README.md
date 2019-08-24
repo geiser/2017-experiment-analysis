@@ -9,7 +9,7 @@ Comparing ontology-based gamified CL sessions (ont-gamified) against non-gamifie
 All materials used in the empirical study are available at ([materials](materials/))
 
 
-# Validation of IMI
+# Validation of IMMS
 
 Validation Procedure of Motivation Surveys ([validation-motivation-surveys.pdf](../report/validation-motivation-surveys.pdf) - the results of validation is also summarized in this file) 
 
