@@ -1,7 +1,7 @@
 Materials
 =========
 
-Download all materials from Moodle Backup File ([backup-moodle2-study01.mbz](backup-moodle2-study01.mbz))
+Ont-gamified CL sessions as Moodle Backup File ([backup-moodle2-study01.mbz](backup-moodle2-study01.mbz))
 
 
 -   Brazilian-Portuguese Player Profile Questionnaire ([QPJ-BR.pdf](QPJ-BR.pdf))
