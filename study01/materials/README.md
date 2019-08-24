@@ -1,9 +1,6 @@
 Materials
 =========
 
-Ont-gamified CL sessions as Moodle Backup File ([backup-moodle2-study01.mbz](backup-moodle2-study01.mbz))
-
-
 -   Brazilian-Portuguese Player Profile Questionnaire ([QPJ-BR.pdf](QPJ-BR.pdf))
 
 -   Intrinsic Motivation Inventory Questionnaire ([IMI.pdf](IMI.pdf))
@@ -20,7 +17,7 @@ Material used during the pre-test phase:
 Material used during the execution phase:
 
 -   Description of CL Activity ([CLActivity.pdf](CLActivity.pdf))
-
+-   Ont-gamified CL sessions as Moodle Backup File ([backup-moodle2-study01.mbz](backup-moodle2-study01.mbz))
 
 Material used during the post-test phase:
 
