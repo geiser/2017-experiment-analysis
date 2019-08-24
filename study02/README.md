@@ -20,7 +20,7 @@ Validation Procedure of Motivation Surveys ([validation-motivation-surveys.pdf](
 
 ## Validation for the sample gathered in the second empirical study
 
-* CFA analysis and a reliability test of the adapted Portuguese IMI ([IMI-reliability-analysis.pdf](report/latex/IMI-reliability-analysis.pdf) or [IMI.xlsx](report/reliability-analysis/IMI.xlsx))
+* CFA analysis and a reliability test of the adapted Portuguese IMMS ([IMMS-reliability-analysis.pdf](report/latex/IMMS-reliability-analysis.pdf) or [IMMS.xlsx](report/reliability-analysis/IMMS.xlsx))
 
 
 # Significant Differences on Students' Motivation
