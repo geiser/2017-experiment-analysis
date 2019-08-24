@@ -15,8 +15,8 @@ Validation Procedure of Motivation Surveys ([validation-motivation-surveys.pdf](
 
 ## Validation for the global sample gathered through all empirical studies:
 
-* Goodness of fit statistics of factorial structure for the adapted Portuguese IMI ([cfa-model-fit.pdf](../report/validation-IMI/cfa-model-fit.pdf))
-* CFA analysis and a reliability test of the adapted Portuguese IMI ([reliability-analysis.pdf](../report/validation-IMI/reliability-analysis.pdf) or [RelAnalysis.xlsx](../report/validation-IMI/RelAnalysis.xlsx))
+* Goodness of fit statistics of factorial structure for the adapted Portuguese IMMS ([cfa-model-fit.pdf](../report/validation-IMMS/cfa-model-fit.pdf))
+* CFA analysis and a reliability test of the adapted Portuguese IMMS ([reliability-analysis.pdf](../report/validation-IMMS/reliability-analysis.pdf) or [RelAnalysis.xlsx](../report/validation-IMMS/RelAnalysis.xlsx))
 
 ## Validation for the sample gathered in the second empirical study
 
