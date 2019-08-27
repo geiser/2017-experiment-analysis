@@ -1,5 +1,9 @@
+wants <- c('libcoin')
+has   <- wants %in% rownames(installed.packages())
+if(any(!has)) install.packages(wants[!has])
 
-wants <- c('coin', 'sirt', 'lavaan', 'psych', 'nloptr', 'reshape', 'dplyr'
+
+wants <- c('usethis', 'httr', 'coin', 'sirt', 'lavaan', 'psych', 'nloptr', 'reshape', 'dplyr'
            , 'readr', 'effsize','pwr', 'afex', 'lme4', 'ez', 'r2excel')
 has   <- wants %in% rownames(installed.packages())
 if(any(!has)) install.packages(wants[!has])

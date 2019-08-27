@@ -1,0 +1,133 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the second study for signed up students }
+\date{}
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrr}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the second study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Attention.(Intercept)&$ 833.895$&$ 1$&$519.022$&$0.000$&$$&$$&$$&$$&$$&$$\tabularnewline
+Attention.Type&$   2.156$&$ 1$&$  1.342$&$0.252$&$$&$ 1$&$  628.049$&$2.209$&$0.137$&$$\tabularnewline
+Attention.CLRole&$   0.066$&$ 1$&$  0.041$&$0.840$&$$&$ 1$&$   12.385$&$0.044$&$0.835$&$$\tabularnewline
+Attention.Type:CLRole&$   1.648$&$ 1$&$  1.026$&$0.316$&$$&$ 1$&$  311.029$&$1.094$&$0.296$&$$\tabularnewline
+Attention.Residuals&$  86.760$&$54$&$$&$$&$$&$54$&$15253.537$&$$&$$&$$\tabularnewline
+Relevance.(Intercept)&$1205.347$&$ 1$&$807.220$&$0.000$&$$&$$&$$&$$&$$&$$\tabularnewline
+Relevance.Type&$   0.419$&$ 1$&$  0.281$&$0.598$&$$&$ 1$&$  122.415$&$0.432$&$0.511$&$$\tabularnewline
+Relevance.CLRole&$   1.148$&$ 1$&$  0.769$&$0.384$&$$&$ 1$&$  184.844$&$0.652$&$0.419$&$$\tabularnewline
+Relevance.Type:CLRole&$   0.185$&$ 1$&$  0.124$&$0.726$&$$&$ 1$&$   18.694$&$0.066$&$0.797$&$$\tabularnewline
+Relevance.Residuals&$  80.633$&$54$&$$&$$&$$&$54$&$15832.047$&$$&$$&$$\tabularnewline
+Satisfaction.(Intercept)&$ 901.289$&$ 1$&$541.353$&$0.000$&$$&$$&$$&$$&$$&$$\tabularnewline
+Satisfaction.Type&$   0.001$&$ 1$&$  0.001$&$0.979$&$$&$ 1$&$   39.253$&$0.139$&$0.710$&$$\tabularnewline
+Satisfaction.CLRole&$   0.420$&$ 1$&$  0.252$&$0.618$&$$&$ 1$&$   16.986$&$0.060$&$0.806$&$$\tabularnewline
+Satisfaction.Type:CLRole&$   1.299$&$ 1$&$  0.780$&$0.381$&$$&$ 1$&$  190.331$&$0.672$&$0.412$&$$\tabularnewline
+Satisfaction.Residuals&$  86.574$&$52$&$$&$$&$$&$54$&$15885.931$&$$&$$&$$\tabularnewline
+Level of Motivation.(Intercept)&$ 971.682$&$ 1$&$706.131$&$0.000$&$$&$$&$$&$$&$$&$$\tabularnewline
+Level of Motivation.Type&$   0.802$&$ 1$&$  0.582$&$0.449$&$$&$ 1$&$  247.424$&$0.869$&$0.351$&$$\tabularnewline
+Level of Motivation.CLRole&$   0.138$&$ 1$&$  0.101$&$0.752$&$$&$ 1$&$   82.286$&$0.289$&$0.591$&$$\tabularnewline
+Level of Motivation.Type:CLRole&$   1.008$&$ 1$&$  0.732$&$0.396$&$$&$ 1$&$  188.551$&$0.662$&$0.416$&$$\tabularnewline
+Level of Motivation.Residuals&$  74.308$&$54$&$$&$$&$$&$54$&$15712.740$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{llrrrrrrrrl}\caption{Summary of Pair wilcoxon in the second study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Attention.Type:CLRole.less.1&non-gamified.Apprentice&$23$&$3.50$&$17.35$&$399$&$123$&$-1.75$&$0.041$&$0.279$&small\tabularnewline
+Attention.Type:CLRole.less.2&ont-gamified.Apprentice&$16$&$4.42$&$23.81$&$381$&$123$&$-1.75$&$0.041$&$0.279$&small\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\section{Assumptions for Parametric Tests}
+%latex.default(round_df(do.call(rbind, lapply(all_parametric_results,     function(p_results) {        return(do.call(rbind, lapply(p_results, function(p_result) {            return(data.frame(normality.fail = p_result$normality.fail,                 W = p_result$shapiro$statistic, p.value = p_result$shapiro$p.value))        })))    })), 3), caption = paste("Univariate normality test", in_title),     size = "scriptsize", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{llrr}\caption{Univariate normality test in the second study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{normality.fail}&\multicolumn{1}{c}{W}&\multicolumn{1}{c}{p.value}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{normality.fail}&\multicolumn{1}{c}{W}&\multicolumn{1}{c}{p.value}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{round}
+Attention&FALSE&$0.980$&$0.464$\tabularnewline
+Relevance&FALSE&$0.966$&$0.102$\tabularnewline
+Satisfaction&FALSE&$0.961$&$0.068$\tabularnewline
+Level of Motivation&FALSE&$0.980$&$0.436$\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(test_min_size_summary, caption = paste("Notes to be taken into account about sample size",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lll}\caption{Notes to be taken into account about sample size in the second study for signed up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{code}&\multicolumn{1}{c}{description}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{code}&\multicolumn{1}{c}{description}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{test}
+Attention.Type.1&WARN: sample.size&current size is 11 and recommended size is 15 for the group: 'non-gamified:Master'.\tabularnewline
+Attention.Type.2&WARN: sample.size&current size is 8 and recommended size is 15 for the group: 'ont-gamified:Master'.\tabularnewline
+Relevance.Type.1&WARN: sample.size&current size is 11 and recommended size is 15 for the group: 'non-gamified:Master'.\tabularnewline
+Relevance.Type.2&WARN: sample.size&current size is 8 and recommended size is 15 for the group: 'ont-gamified:Master'.\tabularnewline
+Satisfaction.Type.1&WARN: sample.size&current size is 11 and recommended size is 15 for the group: 'non-gamified:Master'.\tabularnewline
+Satisfaction.Type.2&WARN: sample.size&current size is 8 and recommended size is 15 for the group: 'ont-gamified:Master'.\tabularnewline
+Level of Motivation.Type.1&WARN: sample.size&current size is 11 and recommended size is 15 for the group: 'non-gamified:Master'.\tabularnewline
+Level of Motivation.Type.2&WARN: sample.size&current size is 8 and recommended size is 15 for the group: 'ont-gamified:Master'.\tabularnewline
+\hline
+\end{longtable}}
+
+Recent studies carried out through simulations have indicated that ANOVA is reliable even when the data are non-normally distributed and the sample size is greater thatn 15 observations for each group.
+This size value is based on the Reference:
+Rana, R. K., Singhal, R., \& Dua, P. (2016). Deciphering the dilemma of parametric and nonparametric tests. Journal of the Practice of Cardiovascular Sciences, 2(2), 95.
+
+The sample size to carried out any parametric and non-parametric analysis is 5, and it was established using common sense.
+The warning and fails indicated in this section should be taking into account when a paper or report will be elaborated.
+
+
+
+\end{document}

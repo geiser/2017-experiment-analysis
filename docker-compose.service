@@ -1,0 +1,19 @@
+[Unit]
+Description=%i service of phd-thesis-evaluation with docker-compose
+
+[Service]
+Restart=always
+WorkingDirectory=/home/gcc/phd-thesis-evaluation
+# Remove old containers, pull images and build containers
+ExecStartPre=/usr/local/bin/docker-compose -p phd-thesis-evaluation down -v
+ExecStartPre=/usr/local/bin/docker-compose -p phd-thesis-evaluation pull %i
+ExecStartPre=/usr/local/bin/docker-compose -p phd-thesis-evaluation build --force-rm %i
+# Compose up
+ExecStart=/usr/local/bin/docker-compose -p phd-thesis-evaluation up --no-build %i
+# Compose down and restart
+ExecStop=/usr/local/bin/docker-compose -p phd-thesis-evaluation down -v
+ExecReload=/usr/local/bin/docker-compose -p phd-thesis-evaluation restart %i
+
+[Install]
+WantedBy=multi-user.target
+
