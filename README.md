@@ -10,7 +10,7 @@
 * [second empirical study](study02/)
 * [third empirical study](study03/)
 
-## Scripts in this folders
+## Scripts in this folder: `/`
  
 
  * R script to extract information from Moodle platform ([00-processing-mysql.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-mysql.R))
@@ -28,4 +28,8 @@
      - Participants with effective participation in the second empirical study. _Result_: [EffectiveParticipants.csv](study02/data/EffectiveParticipants.csv)
      - Participants with effective participation in the third empirical study. _Result_: [EffectiveParticipants.csv](study03/data/EffectiveParticipants.csv)
    - Experiment designs for the first, second and third empirical studies (lines 427-508). _Result_: [exp_design.csv](report/exp_design.csv)
+   - Information from the web-based version of the IMI and IMMS questionnaires - third empirical study (lines 510-620).
+     - Legend of items. _Result_: [SourceMotLegend.csv](study03/data/SourceMotLegend.csv) - [more info...](pilot-study/data/)
+     - Responses from the IMI questionnaire. _Result_: [SourceIMIWithCareless.csv](study03/data/SourceIMIWithCareless.csv) - [more info...](study03/data/)
+     - Responses from the IMMS questionnaire. _Result_: [SourceIMMSWithCareless.csv](study03/data/SourceIMMSWithCareless.csv) - [more info...](study03/data/)
   
