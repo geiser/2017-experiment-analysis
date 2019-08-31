@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.8.3)  30 AUG 2019 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.8.3)  31 AUG 2019 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -352,7 +352,7 @@ Overfull \hbox (68.5803pt too wide) in alignment at lines 53--58
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 114.
+(Font)              <7> on input line 112.
 [3
 
 ]
@@ -365,7 +365,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3529 strings out of 492982
  49190 string characters out of 6134897
- 148698 words of memory out of 5000000
+ 147698 words of memory out of 5000000
  7030 multiletter control sequences out of 15000+600000
  8886 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -379,7 +379,7 @@ onts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy9.pfb>
 Output written on /home/gcc/phd-thesis-evaluation/study03/report/latex/learning
--outcomes/scr-effective-participants-summary-analysis.pdf (3 pages, 103831 byte
+-outcomes/scr-effective-participants-summary-analysis.pdf (3 pages, 104230 byte
 s).
 PDF statistics:
  46 PDF objects out of 1000 (max. 8388607)
