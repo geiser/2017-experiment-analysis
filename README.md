@@ -10,7 +10,7 @@
 * [second empirical study](study02/)
 * [third empirical study](study03/)
 
-## Scripts in this folder: `/`
+## Scripts in this folder - path: [/](https://github.com/geiser/phd-thesis-evaluation/)
  
 
  * R script to extract information from Moodle platform ([00-processing-mysql.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-mysql.R))
@@ -32,4 +32,15 @@
      - _Result_: Legend of items: [SourceMotLegend.csv](study03/data/SourceMotLegend.csv) ([more info...](study03/data/))
      - _Result_: Responses from the IMI questionnaire: [SourceIMIWithCareless.csv](study03/data/SourceIMIWithCareless.csv) ([more info ...](study03/data/))
      - _Result_: Responses from the IMMS questionnaire: [SourceIMMSWithCareless.csv](study03/data/SourceIMMSWithCareless.csv) ([more info ...](study03/data/))
-  
+
+* R script to extract information from responses of multiple-choice knowledge questionnaires ([00-processing-amc.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-amc.R)) <br/> Such questionnaires were built using the AMC (Auto-Multiple-Choice) software - [https://www.auto-multiple-choice.net](https://www.auto-multiple-choice.net) 
+   - Getting data to measure the skill/knowledge of participants in the first empirical study (lines 10-45)
+     - _Result_: [SignedUpParticipants.csv](pilot-study/data/SignedUpParticipants.csv) ([more info ...](pilot-study/data/))
+   - Getting data to measure the skill/knowledge of participants in the second empirical study (lines 46-80)
+   - Getting data to measure the skill/knowledge of participants in the third empirical study (lines 82-115)
+     - _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3a*. Responses obtained throughout the pretest phase and scored using the GPCM-based rule: [PreAMC.csv](study03/data/PreAMC.csv) ([more info ...](study03/data))
+     - _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3c*. Responses obtained throughout the posttest phase and scored using the GPCM-based rule: [PosAMC.csv](study03/data/PosAMC.csv) ([more info ...](study03/data))
+     - _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3a*. Responses obtained throughout the pretest phase and scored using the teacher's rule: [PreAMCscr.csv](study03/data/PreAMCscr.csv) ([more info ...](study03/data))
+     - _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3c*. Responses obtained throughout the posttest phase and scored using the teacher's rule: [PosAMCscr.csv](study03/data/PosAMCscr.csv) ([more info ...](study03/data))
+     
+   
