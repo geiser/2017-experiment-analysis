@@ -650,8 +650,8 @@ plot_t.test <- function(
     tt$data$x <- factor(tt$data$x)
   } else tt$data$x <- factor(tt$data$x, levels = levels)
 
-  par(cex.main=2, cex.lab=1.25, cex.sub=1.75, cex.axis=1.75)
-  bx <- boxplot(y ~ x, data=tt$data, boxwex=0.2, col=pcol, notch = notch, ylab=ylab, ylim = ylim)
+  par(cex.main=1.5, cex.lab=1, cex.sub=1.25, cex.axis=1.25)
+  bx <- boxplot(y ~ x, data=tt$data, boxwex=0.2, col=pcol, notch = notch, ylab=ylab, ylim = ylim, xlab = NULL)
   
   title(title, sub = sub)
   stripchart(y ~ x, data=tt$data, cex=0.75, pch=pch, col=8, add=T, at = seq(from=0.7, by=1, length.out = length(bx$names)), method = 'jitter', vertical=T)

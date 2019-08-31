@@ -1,0 +1,69 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of parametric statistics analysis for the differences of scores in the third empirical study for students with effective participation }
+\date{}
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrl}\caption{Summary of two-way ANOVA results for the differences of scores in the third empirical study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$  1.938$&$ 1$&$ 0.281$&$0.599$&\tabularnewline
+Type.Type&$ 92.005$&$ 1$&$13.340$&$0.001$&**\tabularnewline
+Type.CLRole&$ 45.461$&$ 1$&$ 6.592$&$0.014$&*\tabularnewline
+Type.Type:CLRole&$  0.013$&$ 1$&$ 0.002$&$0.965$&\tabularnewline
+Type.Residuals&$255.178$&$37$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrll}\caption{Descriptive statistics and Tukey post-hoc test results for the differences of scores in the third empirical study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.ont-gamified&$23$&$ 1.821$&$ 1.383$&$0.595$&$37$&$ 0.178$&$ 2.589$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified&$18$&$-1.467$&$-1.853$&$0.657$&$37$&$-3.183$&$-0.523$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified - w/o-gamified&$41$&$ 3.288$&$ 3.236$&$0.886$&$$&$ 1.614$&$ 4.963$&$3.652$&$0.001$&$0.000$&$1.161$&**&large\tabularnewline
+Type.ont-gamified.Apprentice&$16$&$ 2.501$&$ 2.501$&$0.657$&$37$&$ 1.171$&$ 3.832$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified.Apprentice&$12$&$-0.696$&$-0.696$&$0.758$&$37$&$-2.232$&$ 0.840$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified.Apprentice - w/o-gamified.Apprentice&$28$&$ 3.197$&$ 3.197$&$1.003$&$$&$ 0.500$&$ 5.895$&$3.188$&$0.003$&$0.015$&$1.114$&*&large\tabularnewline
+Type.ont-gamified.Master&$ 7$&$ 0.265$&$ 0.265$&$0.993$&$37$&$-1.746$&$ 2.277$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified.Master&$ 6$&$-3.010$&$-3.010$&$1.072$&$37$&$-5.182$&$-0.838$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified.Master - w/o-gamified.Master&$13$&$ 3.275$&$ 3.275$&$1.461$&$$&$-0.655$&$ 7.205$&$2.242$&$0.031$&$0.131$&$1.385$&&\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

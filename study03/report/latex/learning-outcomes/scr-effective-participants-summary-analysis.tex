@@ -1,0 +1,145 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the third study for students with effective participation }
+\date{}
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrlrrrrl}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the third study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+difScore.(Intercept)&$  1.938$&$ 1$&$ 0.281$&$0.599$&&$$&$$&$$&$$&\tabularnewline
+difScore.Type&$ 92.005$&$ 1$&$13.340$&$0.001$&**&$ 1$&$1449.954$&$10.104$&$0.001$&**\tabularnewline
+difScore.CLRole&$ 45.461$&$ 1$&$ 6.592$&$0.014$&*&$ 1$&$ 730.485$&$ 5.090$&$0.024$&*\tabularnewline
+difScore.Type:CLRole&$  0.013$&$ 1$&$ 0.002$&$0.965$&&$ 1$&$   5.159$&$ 0.036$&$0.850$&\tabularnewline
+difScore.Residuals&$255.178$&$37$&$$&$$&&$37$&$3554.402$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Tukey post-hoc",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrll}\caption{Summary of Tukey post-hoc in the third study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+difScore.ont-gamified - w/o-gamified:ont-gamified - w/o-gamified&$41$&$3.288$&$3.236$&$0.886$&$$&$1.614$&$4.963$&$3.652$&$0.001$&$0.000$&$1.161$&**&large\tabularnewline
+difScore.ont-gamified.Apprentice - w/o-gamified.Apprentice:ont-gamified.Apprentice - w/o-gamified.Apprentice&$28$&$3.197$&$3.197$&$1.003$&$$&$0.500$&$5.895$&$3.188$&$0.003$&$0.015$&$1.114$&*&large\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{llrrrrrrrrl}\caption{Summary of Pair wilcoxon in the third study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+difScore.Type.greater.1&ont-gamified&$23$&$ 2.24$&$26.26$&$604$&$328$&$3.18$&$0.001$&$0.496$&medium\tabularnewline
+difScore.Type.greater.2&w/o-gamified&$18$&$-1.15$&$14.28$&$257$&$328$&$3.18$&$0.001$&$0.496$&medium\tabularnewline
+difScore.Type.two.sided.1&ont-gamified&$23$&$ 2.24$&$26.26$&$604$&$328$&$3.18$&$0.001$&$0.496$&medium\tabularnewline
+difScore.Type.two.sided.2&w/o-gamified&$18$&$-1.15$&$14.28$&$257$&$328$&$3.18$&$0.001$&$0.496$&medium\tabularnewline
+difScore.Type:CLRole.greater.1&ont-gamified.Apprentice&$16$&$ 2.58$&$18.12$&$290$&$154$&$2.69$&$0.003$&$0.509$&large\tabularnewline
+difScore.Type:CLRole.greater.2&w/o-gamified.Apprentice&$12$&$-0.60$&$ 9.67$&$116$&$154$&$2.69$&$0.003$&$0.509$&large\tabularnewline
+difScore.Type:CLRole.two.sided.1&ont-gamified.Apprentice&$16$&$ 2.58$&$18.12$&$290$&$154$&$2.69$&$0.006$&$0.509$&large\tabularnewline
+difScore.Type:CLRole.two.sided.2&w/o-gamified.Apprentice&$12$&$-0.60$&$ 9.67$&$116$&$154$&$2.69$&$0.006$&$0.509$&large\tabularnewline
+difScore.Type:CLRole.greater.11&ont-gamified.Apprentice&$16$&$ 2.58$&$14.19$&$227$&$ 91$&$3.17$&$0.000$&$0.676$&large\tabularnewline
+difScore.Type:CLRole.greater.21&w/o-gamified.Master&$ 6$&$-3.31$&$ 4.33$&$ 26$&$ 91$&$3.17$&$0.000$&$0.676$&large\tabularnewline
+difScore.Type:CLRole.two.sided.11&ont-gamified.Apprentice&$16$&$ 2.58$&$14.19$&$227$&$ 91$&$3.17$&$0.001$&$0.676$&large\tabularnewline
+difScore.Type:CLRole.two.sided.21&w/o-gamified.Master&$ 6$&$-3.31$&$ 4.33$&$ 26$&$ 91$&$3.17$&$0.001$&$0.676$&large\tabularnewline
+difScore.Type:CLRole.greater.12&ont-gamified.Master&$ 7$&$ 1.06$&$ 9.29$&$ 65$&$ 37$&$2.29$&$0.011$&$0.634$&large\tabularnewline
+difScore.Type:CLRole.greater.22&w/o-gamified.Master&$ 6$&$-3.31$&$ 4.33$&$ 26$&$ 37$&$2.29$&$0.011$&$0.634$&large\tabularnewline
+difScore.Type:CLRole.two.sided.12&ont-gamified.Master&$ 7$&$ 1.06$&$ 9.29$&$ 65$&$ 37$&$2.29$&$0.022$&$0.634$&large\tabularnewline
+difScore.Type:CLRole.two.sided.22&w/o-gamified.Master&$ 6$&$-3.31$&$ 4.33$&$ 26$&$ 37$&$2.29$&$0.022$&$0.634$&large\tabularnewline
+difScore.Type:CLRole.greater.13&w/o-gamified.Apprentice&$12$&$-0.60$&$11.25$&$135$&$ 57$&$1.97$&$0.026$&$0.464$&medium\tabularnewline
+difScore.Type:CLRole.greater.23&w/o-gamified.Master&$ 6$&$-3.31$&$ 6.00$&$ 36$&$ 57$&$1.97$&$0.026$&$0.464$&medium\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\section{Assumptions for Parametric Tests}
+%latex.default(round_df(do.call(rbind, lapply(all_parametric_results,     function(p_results) {        return(do.call(rbind, lapply(p_results, function(p_result) {            return(data.frame(normality.fail = p_result$normality.fail,                 W = p_result$shapiro$statistic, p.value = p_result$shapiro$p.value))        })))    })), 3), caption = paste("Univariate normality test", in_title),     size = "scriptsize", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{llrr}\caption{Univariate normality test in the third study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{normality.fail}&\multicolumn{1}{c}{W}&\multicolumn{1}{c}{p.value}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{normality.fail}&\multicolumn{1}{c}{W}&\multicolumn{1}{c}{p.value}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{round}
+difScore&FALSE&$0.985$&$0.85$\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(test_min_size_summary, caption = paste("Notes to be taken into account about sample size",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lll}\caption{Notes to be taken into account about sample size in the third study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{code}&\multicolumn{1}{c}{description}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{code}&\multicolumn{1}{c}{description}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{test}
+difScore.Type.1&WARN: sample.size&current size is 12 and recommended size is 15 for the group: 'w/o-gamified:Apprentice'.\tabularnewline
+difScore.Type.2&WARN: sample.size&current size is 7 and recommended size is 15 for the group: 'ont-gamified:Master'.\tabularnewline
+difScore.Type.3&WARN: sample.size&current size is 6 and recommended size is 15 for the group: 'w/o-gamified:Master'.\tabularnewline
+\hline
+\end{longtable}}
+
+Recent studies carried out through simulations have indicated that ANOVA is reliable even when the data are non-normally distributed and the sample size is greater thatn 15 observations for each group.
+This size value is based on the Reference:
+Rana, R. K., Singhal, R., \& Dua, P. (2016). Deciphering the dilemma of parametric and nonparametric tests. Journal of the Practice of Cardiovascular Sciences, 2(2), 95.
+
+The sample size to carried out any parametric and non-parametric analysis is 5, and it was established using common sense.
+The warning and fails indicated in this section should be taking into account when a paper or report will be elaborated.
+
+
+
+\end{document}

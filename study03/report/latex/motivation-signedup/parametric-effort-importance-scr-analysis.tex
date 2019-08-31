@@ -1,0 +1,69 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of parametric statistics analysis  for Effort/Importance score in the third study for signed-up students }
+\date{}
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrl}\caption{Summary of two-way ANOVA results  for Effort/Importance score in the third study for signed-up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$1059.967$&$ 1$&$781.266$&$0.000$&\tabularnewline
+Type.Type&$  10.200$&$ 1$&$  7.518$&$0.009$&**\tabularnewline
+Type.CLRole&$   1.362$&$ 1$&$  1.004$&$0.322$&\tabularnewline
+Type.Type:CLRole&$   0.004$&$ 1$&$  0.003$&$0.960$&\tabularnewline
+Type.Residuals&$  63.766$&$47$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrll}\caption{Descriptive statistics and Tukey post-hoc test results  for Effort/Importance score in the third study for signed-up students} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.ont-gamified&$24$&$5.374$&$5.328$&$0.246$&$47$&$ 4.834$&$5.822$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified&$27$&$4.444$&$4.376$&$0.245$&$47$&$ 3.883$&$4.870$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified - w/o-gamified&$51$&$0.930$&$0.952$&$0.347$&$$&$ 0.273$&$1.588$&$2.742$&$0.009$&$0.007$&$0.795$&**&medium\tabularnewline
+Type.ont-gamified.Apprentice&$15$&$5.511$&$5.511$&$0.301$&$47$&$ 4.906$&$6.116$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified.Apprentice&$19$&$4.541$&$4.541$&$0.267$&$47$&$ 4.004$&$5.079$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified.Apprentice - w/o-gamified.Apprentice&$34$&$0.970$&$0.970$&$0.402$&$$&$-0.102$&$2.041$&$2.410$&$0.020$&$0.089$&$0.843$&&\tabularnewline
+Type.ont-gamified.Master&$ 9$&$5.146$&$5.146$&$0.388$&$47$&$ 4.364$&$5.927$&$$&$$&$$&$$&&\tabularnewline
+Type.w/o-gamified.Master&$ 8$&$4.211$&$4.211$&$0.412$&$47$&$ 3.383$&$5.040$&$$&$$&$$&$$&&\tabularnewline
+Type.ont-gamified.Master - w/o-gamified.Master&$17$&$0.934$&$0.934$&$0.566$&$$&$-0.573$&$2.442$&$1.651$&$0.105$&$0.361$&$0.710$&&\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

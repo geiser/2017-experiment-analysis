@@ -291,7 +291,7 @@ write_corr_matrix_plots <- function(corr_matrix_mods, path, override = T) {
     
     filename = paste0(path, mod$filename)
     if (!file.exists(filename) || override) { 
-      png(filename = filename, width = 640, height = 640)
+      png(filename = filename, width = 800, height = 800)
       corrplot(
         M, method="circle", col=col(200),
         type="upper", order="original",

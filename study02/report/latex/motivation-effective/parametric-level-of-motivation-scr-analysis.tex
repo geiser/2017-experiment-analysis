@@ -1,0 +1,69 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Summary of parametric statistics analysis  for Level of Motivation score in the second study for students with effective participation }
+\date{}
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Summary of two-way ANOVA results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrr}\caption{Summary of two-way ANOVA results  for Level of Motivation score in the second study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Type.(Intercept)&$940.880$&$ 1$&$735.491$&$0.000$&$$\tabularnewline
+Type.Type&$  0.925$&$ 1$&$  0.723$&$0.399$&$$\tabularnewline
+Type.CLRole&$  0.051$&$ 1$&$  0.040$&$0.843$&$$\tabularnewline
+Type.Type:CLRole&$  1.138$&$ 1$&$  0.889$&$0.350$&$$\tabularnewline
+Type.Residuals&$ 60.125$&$47$&$$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(post_hoc_df, caption = paste("Descriptive statistics and Tukey post-hoc test results",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrrr}\caption{Descriptive statistics and Tukey post-hoc test results  for Level of Motivation score in the second study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{post}
+Type.non-gamified&$30$&$ 4.333$&$ 4.366$&$0.214$&$47$&$ 3.935$&$4.797$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified&$21$&$ 4.694$&$ 4.649$&$0.254$&$47$&$ 4.137$&$5.160$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified - ont-gamified&$51$&$-0.361$&$-0.283$&$0.332$&$$&$-1.008$&$0.287$&$-0.850$&$0.399$&$0.268$&$-0.318$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice&$19$&$ 4.242$&$ 4.242$&$0.259$&$47$&$ 3.720$&$4.764$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Apprentice&$13$&$ 4.838$&$ 4.838$&$0.314$&$47$&$ 4.207$&$5.469$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Apprentice - ont-gamified.Apprentice&$32$&$-0.596$&$-0.596$&$0.407$&$$&$-1.680$&$0.488$&$-1.464$&$0.150$&$0.467$&$-0.520$&$$&$$\tabularnewline
+Type.non-gamified.Master&$11$&$ 4.490$&$ 4.490$&$0.341$&$47$&$ 3.803$&$5.176$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.ont-gamified.Master&$ 8$&$ 4.459$&$ 4.459$&$0.400$&$47$&$ 3.654$&$5.263$&$$&$$&$$&$$&$$&$$\tabularnewline
+Type.non-gamified.Master - ont-gamified.Master&$19$&$ 0.031$&$ 0.031$&$0.526$&$$&$-1.369$&$1.431$&$ 0.059$&$0.954$&$1.000$&$ 0.025$&$$&$$\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\end{document}

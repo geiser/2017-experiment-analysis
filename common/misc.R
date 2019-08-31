@@ -6,13 +6,15 @@ total_score_from_guttman <- function(dat, col_id="UserID", col_score = "score", 
   dat <- dat[, c(col_id, from_cols)]
   result <- dat[!complete.cases(dat),]
   to_add <- c()
-  for (i in 1:nrow(result)) {
-    for (j in 1:ncol(result)) {
-      if (is.na(result[[i,j]]) && !is.na(result[[i,j-1]])) {
-        if (all(is.na(result[i,j:ncol(result)]))) {
-          to_add <- c(to_add, i)
+  if (length(from_cols) > 1){
+    for (i in 1:nrow(result)) {
+      for (j in 1:ncol(result)) {
+        if (is.na(result[[i,j]]) && !is.na(result[[i,j-1]])) {
+          if (all(is.na(result[i,j:ncol(result)]))) {
+            to_add <- c(to_add, i)
+          }
+          break;
         }
-        break;
       }
     }
   }
@@ -98,25 +100,29 @@ score_programming_tasks = function(dat, keys, corr_str = 'corr', nview_str = 'nv
 }
 
 ## function to get information from a programming test based on AMC
-get_amc_test_info <- function(participants, source, sheet, type = 'pre', other_sheet = NULL) {
+get_amc_test_info <- function(participants, source, sheet, type = 'pre', other_sheet = NULL, extra_fields = c()) {
   
   acm_test <- read_excel(source, sheet = sheet, col_types = "numeric")
+  acm_test <- acm_test[!is.na(acm_test[['NUSP']]) & !is.na(acm_test[['score']]) & !is.na(acm_test[['max']]),]
+  
   if (is.null(other_sheet)) {
-    acm_test <- select(
+    acm_test <- merge(select(
       acm_test, starts_with('NUSP')
       , starts_with('remember'), starts_with('understand')
       , starts_with('apply'), starts_with('analyse'), starts_with('evaluate'))
+      , acm_test[,c('NUSP',extra_fields)])
   } else {
-    acm_test <- select(
+    acm_test <- merge(select(
       acm_test, starts_with('NUSP')
       , starts_with('remember'), starts_with('understand')
       , starts_with('apply'), starts_with('evaluate'))
+      , acm_test[,c('NUSP',extra_fields)])
   }
-  acm_test <- acm_test[complete.cases(acm_test),]
   
   if (!is.null(other_sheet)) {
     rsheet <- read_excel(source, sheet = other_sheet, col_types = "numeric")
-    rsheet <- select(rsheet, starts_with('NUSP'), starts_with('analyse'))
+    rsheet <- merge(select(rsheet, starts_with('NUSP'), starts_with('analyse'))
+                    , rsheet[,c('NUSP', extra_fields)])
     acm_test <- merge(acm_test, rsheet, by='NUSP')
   }
   
@@ -142,13 +148,24 @@ get_amc_test_info <- function(participants, source, sheet, type = 'pre', other_s
     colnames(acm_test) <- sub('-3', '3', colnames(acm_test))
   }
   
-  acm_test <- select(
+  to_return <- select(
     acm_test, starts_with('NUSP'), starts_with('Re'), starts_with('Un')
     , starts_with('Ap'), starts_with('An'), starts_with('Ev'))
-  acm_test <- merge(participants, acm_test, by.x = 'NroUSP', by.y = 'NUSP')
+  if (!is.null(other_sheet)) {
+    for (cname in extra_fields) {
+      x <- acm_test[[paste0(cname,'.x')]]
+      y <- acm_test[[paste0(cname,'.y')]]
+      x[is.na(x)] <- 0; y[is.na(y)] <- 0
+      to_return[[cname]] <- x+y
+    }
+  } else {
+    if (length(extra_fields)>0) to_return <- merge(to_return, acm_test[,c('NUSP', extra_fields)])
+  }
   
-  rownames(acm_test) <- acm_test$UserID
+  to_return <- merge(participants, to_return, by.x = 'NroUSP', by.y = 'NUSP')
   
-  return(acm_test)
+  rownames(to_return) <- to_return$UserID
+  
+  return(to_return)
 }
 

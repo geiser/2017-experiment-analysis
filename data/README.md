@@ -1,3 +1,8 @@
+
+## 
+
+
+
 ## Fixing `ERROR 2006 (HY000): MySQL server has gone away`?
 
 ```shell
@@ -12,3 +17,6 @@ and add to `/etc/my.cnf`:
 ```
 # /etc/my.cnf
 max_allowed_packet=128M
+
+
+

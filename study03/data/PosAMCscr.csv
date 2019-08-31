@@ -1,0 +1,51 @@
+NroUSP,UserID,Type,CLGroup,CLRole,PlayerRole,ReB,UnB,ApC,ApA,AnC1,AnC2,EvB,score
+8656201,10178,ont-gamified,Outlaws,Apprentice,Social Achiever,0.86,0.5,0,0,1.67,0.33,0.25,3.61
+9082496,10221,ont-gamified,Warriors,Apprentice,Social Achiever,0.14,1.5,0,0,0,0.67,0,2.31
+9274382,10227,w/o-gamified,Grupo5,Master,NA,0,2.5,NA,0,0,0,0,2.5
+9285227,10215,ont-gamified,Vikings,Master,Social Achiever,0,3,0,1.5,1,0,0,5.5
+9363926,10189,ont-gamified,Vikings,Apprentice,Social Achiever,0,2.75,0,NA,0,0,1,3.75
+9760151,10220,w/o-gamified,Grupo3,Apprentice,NA,0.43,1.25,0,0,0,2,0.5,4.18
+9790781,10187,ont-gamified,Mafia,Apprentice,Social Achiever,1,0.5,0,0,0.33,0.33,0,2.17
+9795185,10223,ont-gamified,Slayers,Master,Social Achiever,0,2,0,0.5,2,1.33,0.38,6.21
+9795272,10200,ont-gamified,Warriors,Apprentice,Social Achiever,0.71,3,0.75,0,0,0.67,0,5.13
+9805341,10217,w/o-gamified,Grupo9,Apprentice,NA,1,3,0.25,1.5,2,0.67,0.13,8.54
+9842913,10218,w/o-gamified,Grupo10,Apprentice,NA,1,3,0,0,0,0,0,4
+9921470,10203,ont-gamified,Mercenaries,Apprentice,Social Achiever,0,1.5,0,0.5,NA,0,NA,2
+10260351,10170,w/o-gamified,Grupo11,Apprentice,NA,0.57,1.75,0.75,0,1,0,0,4.07
+10262669,10209,ont-gamified,Mafia,Apprentice,Social Achiever,1,2.5,2,1.5,2,0.67,0.38,10.04
+10273971,10172,w/o-gamified,Grupo5,Apprentice,NA,0,3,1,0,0.67,0,0,4.67
+10276654,10240,w/o-gamified,Grupo5,Apprentice,NA,0.14,1.75,0,0.5,2,0,0,4.39
+10276661,10197,w/o-gamified,Grupo8,Apprentice,NA,0,3,2,0,0,0,0.38,5.38
+10276675,10184,w/o-gamified,Grupo10,Apprentice,NA,1,NA,NA,NA,NA,NA,NA,1
+10276682,10192,ont-gamified,Attractive Devils,Apprentice,Social Achiever,0.71,3,2,1.5,0,0.67,1,8.88
+10276720,10216,ont-gamified,Silly Knights,Master,Social Achiever,1,2.5,0,0.5,2,2,0,8
+10276737,10199,w/o-gamified,Grupo1,Apprentice,NA,1,2.5,NA,0,1.33,0,NA,4.83
+10276762,10193,ont-gamified,Vandals,Apprentice,Yee Achiever,0,2.5,0,1.5,0,1.33,0.5,5.83
+10276831,10219,w/o-gamified,Grupo3,Master,NA,0.57,1.5,0.75,1.5,0,0,0,4.32
+10276852,10174,w/o-gamified,Grupo7,Master,NA,0.43,1.75,0,0,0,1.33,0,3.51
+10276866,10181,w/o-gamified,Grupo2,Apprentice,NA,1,2.5,0,1.5,1,0,0,6
+10276907,10190,w/o-gamified,Grupo4,Apprentice,NA,0,2,0,0.5,0,1,0,3.5
+10276911,10231,w/o-gamified,Grupo9,Master,NA,0.43,3,0,1.5,2,0,1,7.93
+10276928,10201,w/o-gamified,Grupo11,Apprentice,NA,0.29,2.5,0.75,0,2,0,0,5.54
+10276949,10176,ont-gamified,Outlaws,Master,Social Achiever,0,2,0.75,0.5,2,0,0,5.25
+10276953,10238,w/o-gamified,Grupo2,Master,NA,0.43,2.25,0,0,2,0.67,0,5.35
+10276960,10185,w/o-gamified,Grupo9,Apprentice,NA,1,NA,NA,NA,NA,NA,NA,1
+10276974,10232,w/o-gamified,Grupo7,Apprentice,NA,0.14,3,0.75,0.5,0.33,0,0,4.73
+10276981,10191,w/o-gamified,Grupo1,Master,NA,0.43,2.75,0,0,0,0.67,0.38,4.22
+10276995,10188,ont-gamified,Vandals,Master,Yee Achiever,1,2.5,2,1.5,0,0.67,1,8.67
+10277015,10210,w/o-gamified,Grupo6,Apprentice,NA,0.71,2.25,2,0,0.67,0.67,0,6.3
+10277022,10214,ont-gamified,Vikings,Apprentice,Social Achiever,0,2,0.75,1.5,2,1.33,0,7.58
+10277036,10202,ont-gamified,Silly Knights,Apprentice,Social Achiever,1,2.25,2,0.5,2,0.67,0,8.42
+10277040,10213,w/o-gamified,Grupo7,Apprentice,NA,1,3,0,0,0,0.33,0.38,4.71
+10310342,10226,w/o-gamified,Grupo4,Apprentice,NA,1,1.5,0,NA,1,1,NA,4.5
+10310471,10204,w/o-gamified,Grupo6,Apprentice,NA,1,2,0.75,0,0,2,0,5.75
+10310492,10228,ont-gamified,Resistance,Apprentice,Social Achiever,0,1.5,0,0.5,1,0,0,3
+10310551,10186,ont-gamified,Slayers,Apprentice,Social Achiever,0.43,2,0.25,1,0,0.67,0.38,4.72
+10310700,10175,ont-gamified,Warriors,Master,Social Achiever,1,3,2,1.5,2,0,1,10.5
+10310721,10206,w/o-gamified,Grupo8,Apprentice,NA,0.43,2.75,0.5,0.5,2,0.67,0,6.85
+10310759,10179,w/o-gamified,Grupo10,Master,NA,0.86,2,0,0.5,0,0.67,0,4.02
+10310888,10198,ont-gamified,Attractive Devils,Apprentice,Social Achiever,0.71,2.25,0.75,1.5,1,0.67,0,6.88
+10351992,10230,ont-gamified,Resistance,Master,Social Achiever,0,1.5,0.75,0,0,NA,0.38,2.63
+10352030,10183,w/o-gamified,Grupo3,Apprentice,NA,0.43,2.5,0,0,0.67,0.67,0,4.26
+10377538,10169,ont-gamified,Resistance,Apprentice,Social Achiever,1,2.5,0.75,1.5,0.67,0,0.38,6.79
+10377688,10237,ont-gamified,Outlaws,Apprentice,Social Achiever,1,1,0.75,0,0.67,0,0.38,3.79

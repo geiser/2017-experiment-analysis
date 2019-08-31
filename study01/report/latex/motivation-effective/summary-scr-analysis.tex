@@ -1,0 +1,197 @@
+
+\documentclass[6pt,a4paper]{article}
+\usepackage[a4paper,margin=0.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{ctable}
+\title{Statistical Analysis in the first study for students with effective participation }
+\date{}
+\begin{document}
+
+\maketitle
+
+
+%latex.default(result_df, caption = paste("Two-way ANOVA and Scheirer-Ray-Hare",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrlrrrrl}\caption{Two-way ANOVA and Scheirer-Ray-Hare in the first study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}&\multicolumn{1}{c}{Sig}&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{H}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{Sig}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Interest/Enjoyment.(Intercept)&$1074.072$&$ 1$&$ 878.586$&$0.000$&&$$&$$&$$&$$&\tabularnewline
+Interest/Enjoyment.Type&$   1.773$&$ 1$&$   1.450$&$0.235$&&$ 1$&$ 362.143$&$1.860$&$0.173$&\tabularnewline
+Interest/Enjoyment.CLRole&$   0.621$&$ 1$&$   0.508$&$0.480$&&$ 1$&$  50.021$&$0.257$&$0.612$&\tabularnewline
+Interest/Enjoyment.Type:CLRole&$   3.008$&$ 1$&$   2.461$&$0.124$&&$ 1$&$ 439.215$&$2.256$&$0.133$&\tabularnewline
+Interest/Enjoyment.Residuals&$  53.790$&$44$&$$&$$&&$44$&$8300.621$&$$&$$&\tabularnewline
+Perceived Choice.(Intercept)&$1278.228$&$ 1$&$ 936.834$&$0.000$&&$$&$$&$$&$$&\tabularnewline
+Perceived Choice.Type&$   5.835$&$ 1$&$   4.277$&$0.045$&*&$ 1$&$ 420.000$&$2.153$&$0.142$&\tabularnewline
+Perceived Choice.CLRole&$   0.009$&$ 1$&$   0.006$&$0.937$&&$ 1$&$   0.187$&$0.001$&$0.975$&\tabularnewline
+Perceived Choice.Type:CLRole&$   0.009$&$ 1$&$   0.006$&$0.937$&&$ 1$&$  22.634$&$0.116$&$0.733$&\tabularnewline
+Perceived Choice.Residuals&$  60.034$&$44$&$$&$$&&$44$&$8726.179$&$$&$$&\tabularnewline
+Pressure/Tension.(Intercept)&$ 102.718$&$ 1$&$ 402.928$&$0.000$&&$$&$$&$$&$$&\tabularnewline
+Pressure/Tension.Type&$   0.701$&$ 1$&$   2.752$&$0.105$&&$ 1$&$ 197.486$&$1.069$&$0.301$&\tabularnewline
+Pressure/Tension.CLRole&$   0.066$&$ 1$&$   0.258$&$0.614$&&$ 1$&$ 114.083$&$0.618$&$0.432$&\tabularnewline
+Pressure/Tension.Type:CLRole&$   1.940$&$ 1$&$   7.609$&$0.009$&**&$ 1$&$1034.002$&$5.599$&$0.018$&*\tabularnewline
+Pressure/Tension.Residuals&$  10.197$&$40$&$$&$$&&$44$&$7333.929$&$$&$$&\tabularnewline
+Effort/Importance.(Intercept)&$1450.796$&$ 1$&$1585.308$&$0.000$&&$$&$$&$$&$$&\tabularnewline
+Effort/Importance.Type&$   3.117$&$ 1$&$   3.406$&$0.072$&&$ 1$&$ 438.193$&$2.263$&$0.132$&\tabularnewline
+Effort/Importance.CLRole&$   4.836$&$ 1$&$   5.284$&$0.026$&*&$ 1$&$ 623.521$&$3.221$&$0.073$&\tabularnewline
+Effort/Importance.Type:CLRole&$   2.415$&$ 1$&$   2.639$&$0.111$&&$ 1$&$ 312.872$&$1.616$&$0.204$&\tabularnewline
+Effort/Importance.Residuals&$  40.267$&$44$&$$&$$&&$44$&$7724.414$&$$&$$&\tabularnewline
+Intrinsic Motivation.(Intercept)&$1359.102$&$ 1$&$2860.746$&$0.000$&&$$&$$&$$&$$&\tabularnewline
+Intrinsic Motivation.Type&$   2.288$&$ 1$&$   4.816$&$0.034$&*&$ 1$&$ 678.943$&$3.464$&$0.063$&\tabularnewline
+Intrinsic Motivation.CLRole&$   0.238$&$ 1$&$   0.501$&$0.483$&&$ 1$&$  96.333$&$0.491$&$0.483$&\tabularnewline
+Intrinsic Motivation.Type:CLRole&$   0.075$&$ 1$&$   0.157$&$0.694$&&$ 1$&$  60.952$&$0.311$&$0.577$&\tabularnewline
+Intrinsic Motivation.Residuals&$  20.904$&$44$&$$&$$&&$44$&$8375.771$&$$&$$&\tabularnewline
+\hline
+\end{longtable}}
+\begin{flushright}{\scriptsize{Signif. codes: 0 ``**'' 0.01 ``*'' 0.05}}\end{flushright}
+
+
+\begin{landscape}
+
+%latex.default(result_df, caption = paste("Summary of Tukey post-hoc",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{lrrrrrrrrrrrll}\caption{Summary of Tukey post-hoc in the first study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{mean}&\multicolumn{1}{c}{lsmean}&\multicolumn{1}{c}{SE}&\multicolumn{1}{c}{df}&\multicolumn{1}{c}{lwr.CI}&\multicolumn{1}{c}{upr.CI}&\multicolumn{1}{c}{t.ratio}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{p.ajd}&\multicolumn{1}{c}{g}&\multicolumn{1}{c}{sig}&\multicolumn{1}{c}{mag}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Perceived Choice:non-gamified - ont-gamified&$48$&$-0.707$&$-0.707$&$0.342$&$$&$-1.396$&$-0.018$&$-2.068$&$0.045$&$0.045$&$-0.609$&*&medium\tabularnewline
+Pressure/Tension:non-gamified.Apprentice - ont-gamified.Apprentice&$22$&$ 0.680$&$ 0.680$&$0.216$&$$&$ 0.100$&$ 1.259$&$ 3.143$&$0.003$&$0.016$&$ 1.236$&*&large\tabularnewline
+Intrinsic Motivation:non-gamified - ont-gamified&$48$&$-0.443$&$-0.443$&$0.202$&$$&$-0.850$&$-0.036$&$-2.195$&$0.034$&$0.034$&$-0.642$&*&medium\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(result_df, caption = paste("Summary of Pair wilcoxon",     in_title), size = "small", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\small
+\begin{longtable}{llrrrrrrrrl}\caption{Summary of Pair wilcoxon in the first study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{N}&\multicolumn{1}{c}{Median}&\multicolumn{1}{c}{Mean.Ranks}&\multicolumn{1}{c}{Sum.Ranks}&\multicolumn{1}{c}{U}&\multicolumn{1}{c}{Z}&\multicolumn{1}{c}{p.value}&\multicolumn{1}{c}{r}&\multicolumn{1}{c}{magnitude}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{result}
+Interest/Enjoyment.Type:CLRole.less.1&non-gamified.Master&$10$&$3.83$&$ 9.20$&$ 92.0$&$ 37.0$&$-1.94$&$0.026$&$0.396$&medium\tabularnewline
+Interest/Enjoyment.Type:CLRole.less.2&ont-gamified.Master&$14$&$5.17$&$14.86$&$208.0$&$ 37.0$&$-1.94$&$0.026$&$0.396$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.greater.1&non-gamified.Apprentice&$10$&$2.00$&$16.15$&$161.5$&$106.5$&$ 2.29$&$0.011$&$0.467$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.greater.2&ont-gamified.Apprentice&$14$&$1.00$&$ 9.89$&$138.5$&$106.5$&$ 2.29$&$0.011$&$0.467$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.1&non-gamified.Apprentice&$10$&$2.00$&$16.15$&$161.5$&$106.5$&$ 2.29$&$0.021$&$0.467$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.2&ont-gamified.Apprentice&$14$&$1.00$&$ 9.89$&$138.5$&$106.5$&$ 2.29$&$0.021$&$0.467$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.less.1&ont-gamified.Apprentice&$14$&$1.00$&$11.29$&$158.0$&$ 53.0$&$-2.18$&$0.014$&$0.413$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.less.2&ont-gamified.Master&$14$&$2.00$&$17.71$&$248.0$&$ 53.0$&$-2.18$&$0.014$&$0.413$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.11&ont-gamified.Apprentice&$14$&$1.00$&$11.29$&$158.0$&$ 53.0$&$-2.18$&$0.027$&$0.413$&medium\tabularnewline
+Pressure/Tension.Type:CLRole.two.sided.21&ont-gamified.Master&$14$&$2.00$&$17.71$&$248.0$&$ 53.0$&$-2.18$&$0.027$&$0.413$&medium\tabularnewline
+Effort/Importance.Type:CLRole.greater.1&non-gamified.Apprentice&$10$&$5.83$&$13.30$&$133.0$&$ 78.0$&$ 2.13$&$0.017$&$0.476$&medium\tabularnewline
+Effort/Importance.Type:CLRole.greater.2&non-gamified.Master&$10$&$4.50$&$ 7.70$&$ 77.0$&$ 78.0$&$ 2.13$&$0.017$&$0.476$&medium\tabularnewline
+Effort/Importance.Type:CLRole.two.sided.1&non-gamified.Apprentice&$10$&$5.83$&$13.30$&$133.0$&$ 78.0$&$ 2.13$&$0.035$&$0.476$&medium\tabularnewline
+Effort/Importance.Type:CLRole.two.sided.2&non-gamified.Master&$10$&$4.50$&$ 7.70$&$ 77.0$&$ 78.0$&$ 2.13$&$0.035$&$0.476$&medium\tabularnewline
+Effort/Importance.Type:CLRole.less.1&non-gamified.Master&$10$&$4.50$&$ 8.40$&$ 84.0$&$ 29.0$&$-2.42$&$0.007$&$0.493$&medium\tabularnewline
+Effort/Importance.Type:CLRole.less.2&ont-gamified.Apprentice&$14$&$6.00$&$15.43$&$216.0$&$ 29.0$&$-2.42$&$0.007$&$0.493$&medium\tabularnewline
+Effort/Importance.Type:CLRole.two.sided.11&non-gamified.Master&$10$&$4.50$&$ 8.40$&$ 84.0$&$ 29.0$&$-2.42$&$0.014$&$0.493$&medium\tabularnewline
+Effort/Importance.Type:CLRole.two.sided.21&ont-gamified.Apprentice&$14$&$6.00$&$15.43$&$216.0$&$ 29.0$&$-2.42$&$0.014$&$0.493$&medium\tabularnewline
+Effort/Importance.Type:CLRole.less.11&non-gamified.Master&$10$&$4.50$&$ 9.20$&$ 92.0$&$ 37.0$&$-1.94$&$0.026$&$0.396$&medium\tabularnewline
+Effort/Importance.Type:CLRole.less.21&ont-gamified.Master&$14$&$6.00$&$14.86$&$208.0$&$ 37.0$&$-1.94$&$0.026$&$0.396$&medium\tabularnewline
+Intrinsic Motivation.Type.less.1&non-gamified&$20$&$5.20$&$20.05$&$401.0$&$191.0$&$-1.86$&$0.032$&$0.269$&small\tabularnewline
+Intrinsic Motivation.Type.less.2&ont-gamified&$28$&$5.63$&$27.68$&$775.0$&$191.0$&$-1.86$&$0.032$&$0.269$&small\tabularnewline
+Intrinsic Motivation.Type:CLRole.less.1&non-gamified.Master&$10$&$4.96$&$ 9.40$&$ 94.0$&$ 39.0$&$-1.82$&$0.037$&$0.371$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.less.2&ont-gamified.Apprentice&$14$&$5.72$&$14.71$&$206.0$&$ 39.0$&$-1.82$&$0.037$&$0.371$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.less.11&non-gamified.Master&$10$&$4.96$&$ 9.00$&$ 90.0$&$ 35.0$&$-2.05$&$0.021$&$0.418$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.less.21&ont-gamified.Master&$14$&$5.52$&$15.00$&$210.0$&$ 35.0$&$-2.05$&$0.021$&$0.418$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.two.sided.1&non-gamified.Master&$10$&$4.96$&$ 9.00$&$ 90.0$&$ 35.0$&$-2.05$&$0.042$&$0.418$&medium\tabularnewline
+Intrinsic Motivation.Type:CLRole.two.sided.2&ont-gamified.Master&$14$&$5.52$&$15.00$&$210.0$&$ 35.0$&$-2.05$&$0.042$&$0.418$&medium\tabularnewline
+\hline
+\end{longtable}}
+
+\end{landscape}
+
+\section{Assumptions for Parametric Tests}
+%latex.default(round_df(do.call(rbind, lapply(all_parametric_results,     function(p_results) {        return(do.call(rbind, lapply(p_results, function(p_result) {            return(data.frame(normality.fail = p_result$normality.fail,                 W = p_result$shapiro$statistic, p.value = p_result$shapiro$p.value))        })))    })), 3), caption = paste("Univariate normality test", in_title),     size = "scriptsize", longtable = T, ctable = F, landscape = F,     rowlabel = "", where = "!htbp", file = filename, append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{llrr}\caption{Univariate normality test in the first study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{normality.fail}&\multicolumn{1}{c}{W}&\multicolumn{1}{c}{p.value}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{normality.fail}&\multicolumn{1}{c}{W}&\multicolumn{1}{c}{p.value}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{round}
+Interest/Enjoyment&FALSE&$0.953$&$0.052$\tabularnewline
+Perceived Choice&FALSE&$0.968$&$0.203$\tabularnewline
+Pressure/Tension&FALSE&$0.951$&$0.061$\tabularnewline
+Effort/Importance&FALSE&$0.982$&$0.644$\tabularnewline
+Intrinsic Motivation&FALSE&$0.975$&$0.396$\tabularnewline
+\hline
+\end{longtable}}
+
+%latex.default(test_min_size_summary, caption = paste("Notes to be taken into account about sample size",     in_title), size = "scriptsize", longtable = T, ctable = F,     landscape = F, rowlabel = "", where = "!htbp", file = filename,     append = T)%
+\setlongtables{\scriptsize
+\begin{longtable}{lll}\caption{Notes to be taken into account about sample size in the first study for students with effective participation} \tabularnewline
+\hline\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{code}&\multicolumn{1}{c}{description}\tabularnewline
+\hline
+\endfirsthead\caption[]{\em (continued)} \tabularnewline
+\hline
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{code}&\multicolumn{1}{c}{description}\tabularnewline
+\hline
+\endhead
+\hline
+\endfoot
+\label{test}
+Interest/Enjoyment.Type.1&WARN: sample.size&current size is 10 and recommended size is 15 for the group: 'non-gamified:Apprentice'.\tabularnewline
+Interest/Enjoyment.Type.2&WARN: sample.size&current size is 14 and recommended size is 15 for the group: 'ont-gamified:Apprentice'.\tabularnewline
+Interest/Enjoyment.Type.3&WARN: sample.size&current size is 10 and recommended size is 15 for the group: 'non-gamified:Master'.\tabularnewline
+Interest/Enjoyment.Type.4&WARN: sample.size&current size is 14 and recommended size is 15 for the group: 'ont-gamified:Master'.\tabularnewline
+Perceived Choice.Type.1&WARN: sample.size&current size is 10 and recommended size is 15 for the group: 'non-gamified:Apprentice'.\tabularnewline
+Perceived Choice.Type.2&WARN: sample.size&current size is 14 and recommended size is 15 for the group: 'ont-gamified:Apprentice'.\tabularnewline
+Perceived Choice.Type.3&WARN: sample.size&current size is 10 and recommended size is 15 for the group: 'non-gamified:Master'.\tabularnewline
+Perceived Choice.Type.4&WARN: sample.size&current size is 14 and recommended size is 15 for the group: 'ont-gamified:Master'.\tabularnewline
+Pressure/Tension.Type.1&WARN: sample.size&current size is 10 and recommended size is 15 for the group: 'non-gamified:Apprentice'.\tabularnewline
+Pressure/Tension.Type.2&WARN: sample.size&current size is 12 and recommended size is 15 for the group: 'ont-gamified:Apprentice'.\tabularnewline
+Pressure/Tension.Type.3&WARN: sample.size&current size is 9 and recommended size is 15 for the group: 'non-gamified:Master'.\tabularnewline
+Pressure/Tension.Type.4&WARN: sample.size&current size is 13 and recommended size is 15 for the group: 'ont-gamified:Master'.\tabularnewline
+Effort/Importance.Type.1&WARN: sample.size&current size is 10 and recommended size is 15 for the group: 'non-gamified:Apprentice'.\tabularnewline
+Effort/Importance.Type.2&WARN: sample.size&current size is 14 and recommended size is 15 for the group: 'ont-gamified:Apprentice'.\tabularnewline
+Effort/Importance.Type.3&WARN: sample.size&current size is 10 and recommended size is 15 for the group: 'non-gamified:Master'.\tabularnewline
+Effort/Importance.Type.4&WARN: sample.size&current size is 14 and recommended size is 15 for the group: 'ont-gamified:Master'.\tabularnewline
+Intrinsic Motivation.Type.1&WARN: sample.size&current size is 10 and recommended size is 15 for the group: 'non-gamified:Apprentice'.\tabularnewline
+Intrinsic Motivation.Type.2&WARN: sample.size&current size is 14 and recommended size is 15 for the group: 'ont-gamified:Apprentice'.\tabularnewline
+Intrinsic Motivation.Type.3&WARN: sample.size&current size is 10 and recommended size is 15 for the group: 'non-gamified:Master'.\tabularnewline
+Intrinsic Motivation.Type.4&WARN: sample.size&current size is 14 and recommended size is 15 for the group: 'ont-gamified:Master'.\tabularnewline
+\hline
+\end{longtable}}
+
+Recent studies carried out through simulations have indicated that ANOVA is reliable even when the data are non-normally distributed and the sample size is greater thatn 15 observations for each group.
+This size value is based on the Reference:
+Rana, R. K., Singhal, R., \& Dua, P. (2016). Deciphering the dilemma of parametric and nonparametric tests. Journal of the Practice of Cardiovascular Sciences, 2(2), 95.
+
+The sample size to carried out any parametric and non-parametric analysis is 5, and it was established using common sense.
+The warning and fails indicated in this section should be taking into account when a paper or report will be elaborated.
+
+
+
+\end{document}

@@ -107,7 +107,7 @@ lapply(list_dvs, function(dv) {
   write_nonparam_statistics_analysis_in_latex(
     nonparametric_results, dvs = names(info)
     , filename = paste0("report/latex/motivation-signedup/nonparametric-", sources[[dv]]$folder, "-scr-analysis.tex")
-    , in_title = paste0(" for the scores of ", dv, " in the second study for signed up students")
+    , in_title = paste0(" for the scores of ", dv, " in the second study for signed-up students")
   )
 })
 
@@ -154,7 +154,7 @@ lapply(list_dvs, function(dv) {
 df_assumptions <- get_dataframe_assumptions(
   dat = winsor_mod$wdat, from = 56
   , wid="UserID", dv="Satisfaction", iv="Type", between = c("Type","CLRole")
-  , path = "data/scr-signedup-satisfaction", generate = T
+  , path = "data/scr-signedup-satisfaction", generate = F
   , mc.cores = 16)
 (normality_df <- df_assumptions[df_assumptions$normality.fail != T,])
 (winsor_mod$wdat[c(48,52),])
@@ -247,6 +247,6 @@ lapply(list_dvs, function(dv) {
 write_param_and_nonparam_statistics_analysis_in_latex(
   all_parametric_results, all_nonparametric_results, list_info
   , filename = "report/latex/motivation-signedup/summary-scr-analysis.tex"
-  , in_title = "in the second study for signed up students"
+  , in_title = "in the second study for signed-up students"
   , min_size_tests = T)
 
