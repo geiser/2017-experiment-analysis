@@ -14,5 +14,5 @@
  
 
  * R script to extract information of participants from Moodle platform ([00-processing-mysql.R](00-processing-mysql.R))
-   - List of all participants in the pilot-study (lines 15-70) --> [SignedUpParticipants.csv](pilot-study/data/SignedUpParticipants.csv)
+   - List of all participants in the pilot-study (lines 15-70) -> [SignedUpParticipants.csv](pilot-study/data/SignedUpParticipants.csv)
    - 
