@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.8.3)  31 AUG 2019 06:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.8.3)  31 AUG 2019 11:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -362,12 +362,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Warning: No \author given.
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 19--23
+Overfull \hbox (12.0pt too wide) in alignment at lines 19--23
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 23--27
+Overfull \hbox (12.0pt too wide) in alignment at lines 23--27
  [] [] [] [] [] [] [] 
  []
 
@@ -386,16 +386,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 30--39
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 1 on input line 39.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 43--47
+Overfull \hbox (12.0pt too wide) in alignment at lines 43--47
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 47--51
+Overfull \hbox (12.0pt too wide) in alignment at lines 47--51
  [] [] [] [] [] [] [] 
  []
 
@@ -410,16 +406,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 54--63
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 2 on input line 63.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 69--73
+Overfull \hbox (12.0pt too wide) in alignment at lines 69--73
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 73--77
+Overfull \hbox (12.0pt too wide) in alignment at lines 73--77
  [] [] [] [] [] [] [] 
  []
 
@@ -434,16 +426,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 80--89
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 3 on input line 89.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 93--97
+Overfull \hbox (12.0pt too wide) in alignment at lines 93--97
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 97--101
+Overfull \hbox (12.0pt too wide) in alignment at lines 97--101
  [] [] [] [] [] [] [] 
  []
 
@@ -458,16 +446,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 104--113
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 4 on input line 113.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 119--123
+Overfull \hbox (12.0pt too wide) in alignment at lines 119--123
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 123--127
+Overfull \hbox (12.0pt too wide) in alignment at lines 123--127
  [] [] [] [] [] [] [] 
  []
 
@@ -482,16 +466,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 130--139
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 5 on input line 139.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 143--147
+Overfull \hbox (12.0pt too wide) in alignment at lines 143--147
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 147--151
+Overfull \hbox (12.0pt too wide) in alignment at lines 147--151
  [] [] [] [] [] [] [] 
  []
 
@@ -508,17 +488,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 154--163
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 6 on input line 163.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 169--173
+Overfull \hbox (12.0pt too wide) in alignment at lines 169--173
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 173--177
+Overfull \hbox (12.0pt too wide) in alignment at lines 173--177
  [] [] [] [] [] [] [] 
  []
 
@@ -533,16 +508,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 180--189
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 7 on input line 189.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 193--197
+Overfull \hbox (12.0pt too wide) in alignment at lines 193--197
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 197--201
+Overfull \hbox (12.0pt too wide) in alignment at lines 197--201
  [] [] [] [] [] [] [] 
  []
 
@@ -557,16 +528,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 204--213
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 8 on input line 213.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 219--223
+Overfull \hbox (12.0pt too wide) in alignment at lines 219--223
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 223--227
+Overfull \hbox (12.0pt too wide) in alignment at lines 223--227
  [] [] [] [] [] [] [] 
  []
 
@@ -581,16 +548,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 230--239
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 9 on input line 239.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 243--247
+Overfull \hbox (12.0pt too wide) in alignment at lines 243--247
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 247--251
+Overfull \hbox (12.0pt too wide) in alignment at lines 247--251
  [] [] [] [] [] [] [] 
  []
 
@@ -605,16 +568,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 254--263
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 10 on input line 263.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 269--273
+Overfull \hbox (12.0pt too wide) in alignment at lines 269--273
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 273--277
+Overfull \hbox (12.0pt too wide) in alignment at lines 273--277
  [] [] [] [] [] [] [] 
  []
 
@@ -629,16 +588,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 280--289
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 11 on input line 289.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 293--297
+Overfull \hbox (12.0pt too wide) in alignment at lines 293--297
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 297--301
+Overfull \hbox (12.0pt too wide) in alignment at lines 297--301
  [] [] [] [] [] [] [] 
  []
 
@@ -653,17 +608,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 304--313
  []
 
 [2]
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 12 on input line 313.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 319--323
+Overfull \hbox (12.0pt too wide) in alignment at lines 319--323
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 323--327
+Overfull \hbox (12.0pt too wide) in alignment at lines 323--327
  [] [] [] [] [] [] [] 
  []
 
@@ -678,16 +628,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 330--339
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 13 on input line 339.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 343--347
+Overfull \hbox (12.0pt too wide) in alignment at lines 343--347
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 347--351
+Overfull \hbox (12.0pt too wide) in alignment at lines 347--351
  [] [] [] [] [] [] [] 
  []
 
@@ -702,16 +648,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 354--363
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 14 on input line 363.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 369--373
+Overfull \hbox (12.0pt too wide) in alignment at lines 369--373
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 373--377
+Overfull \hbox (12.0pt too wide) in alignment at lines 373--377
  [] [] [] [] [] [] [] 
  []
 
@@ -726,16 +668,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 380--389
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 15 on input line 389.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 393--397
+Overfull \hbox (12.0pt too wide) in alignment at lines 393--397
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 397--401
+Overfull \hbox (12.0pt too wide) in alignment at lines 397--401
  [] [] [] [] [] [] [] 
  []
 
@@ -750,16 +688,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 404--413
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 16 on input line 413.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 419--423
+Overfull \hbox (12.0pt too wide) in alignment at lines 419--423
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 423--427
+Overfull \hbox (12.0pt too wide) in alignment at lines 423--427
  [] [] [] [] [] [] [] 
  []
 
@@ -774,16 +708,12 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 430--439
  []
 
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 17 on input line 439.
-
-
-Overfull \hbox (61.45999pt too wide) in alignment at lines 443--447
+Overfull \hbox (12.0pt too wide) in alignment at lines 443--447
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (61.45999pt too wide) in alignment at lines 447--451
+Overfull \hbox (12.0pt too wide) in alignment at lines 447--451
  [] [] [] [] [] [] [] 
  []
 
@@ -797,15 +727,7 @@ Overfull \hbox (12.0pt too wide) in alignment at lines 454--463
  [] [] [] [] [] [] [] 
  []
 
-[3]
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 18 on input line 463.
-
-
-Package longtable Warning: Table widths have changed. Rerun LaTeX.
-
-[4]
+[3] [4]
 (/home/gcc/phd-thesis-evaluation/study01/report/latex/correlation-scr-signedup-
 analysis.aux)
 
@@ -815,7 +737,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3515 strings out of 492982
  48627 string characters out of 6134897
- 157031 words of memory out of 5000000
+ 157049 words of memory out of 5000000
  7023 multiletter control sequences out of 15000+600000
  7629 words of font info for 27 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -827,7 +749,7 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmsy7.pfb>
 Output written on /home/gcc/phd-thesis-evaluation/study01/report/latex/correlat
-ion-scr-signedup-analysis.pdf (4 pages, 73783 bytes).
+ion-scr-signedup-analysis.pdf (4 pages, 73644 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream
