@@ -13,7 +13,7 @@
 ## Scripts in this folders
  
 
- * R script to extract information from Moodle platform ([00-processing-mysql.R](../blob/master/00-processing-mysql.R))
+ * R script to extract information from Moodle platform ([00-processing-mysql.R](../../blob/master/00-processing-mysql.R))
    - List of all participants in the pilot study (lines 15-70). _Result_: [SignedUpParticipants.csv](pilot-study/data/SignedUpParticipants.csv)
    - List of participants with effective participation in the pilot study (lines 72-80). _Result_: [EffectiveParticipants.csv](pilot-study/data/EffectiveParticipants.csv)
    - Experiment design for the pilot study (lines 81-114). _Result_: [pilot_design.csv](report/pilot_design.csv)
