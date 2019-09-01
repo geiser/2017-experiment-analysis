@@ -43,7 +43,7 @@ The results obtained by the execution of this R script are:
 * Information from the IMI and IMMS questionnaires - third empirical study (lines 510-620)<br/>
   _File_ (legend): [SourceMotLegend.csv](study03/data/SourceMotLegend.csv) ([more info...](study03/data/))<br/>
   _File_ (responses from the IMI questionnaire): [SourceIMIWithCareless.csv](study03/data/SourceIMIWithCareless.csv) ([more info ...](study03/data/))<br/>
-   _File_ (responses from the IMMS questionnaire): [SourceIMMSWithCareless.csv](study03/data/SourceIMMSWithCareless.csv) ([more info ...](study03/data/))
+  _File_ (responses from the IMMS questionnaire): [SourceIMMSWithCareless.csv](study03/data/SourceIMMSWithCareless.csv) ([more info ...](study03/data/))
 
 
 ### R script to extract information from AMC questionnaires ([00-processing-amc.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-amc.R)).
@@ -52,25 +52,30 @@ R script to extract information from responses of AMC (Auto-Multiple-Choice) que
 
 The results obtained by the execution of this R script are:
 
-* Getting data to measure skill/knowledge in the first empirical study (lines 10-45)
-  - Responses from the multiple-choice knowledge questionnaire of conditional structures *p1a*. Responses obtained throughout the pretest phase and scored using the GPCM-based rule.<br/>
-    _File_: [PreAMC.csv](study01/data/PreAMC.csv) ([more info ...](study01/data))
-  - Responses from the multiple-choice knowledge questionnaire of conditional structures *p1b*. Responses obtained throughout the posttest phase and scored using the GPCM-based rule.<br/>
-    _File_: [PosAMC.csv](study01/data/PosAMC.csv) ([more info ...](study01/data))]
-  - Responses from the multiple-choice knowledge questionnaire of conditional structures *p2a*. Responses obtained throughout the pretest phase and scored using the teacher's rule.<br/>
-    _Result_: [PreAMCscr.csv](study01/data/PreAMCscr.csv) ([more info ...](study01/data))
-  - Responses from the multiple-choice knowledge questionnaire of conditional structures *p2b*. Responses obtained throughout the posttest phase and scored using the teacher's rule.<br/>
-    _Result_: [PosAMCscr.csv](study01/data/PosAMCscr.csv) ([more info ...](study01/data))
- - Getting data to measure the skill/knowledge of participants in the second empirical study (lines 46-80)<br/>
-   _Result_: Responses from the multiple-choice knowledge questionnaire of loop structures *p2a*. Responses obtained throughout the pretest phase and scored using the GPCM-based rule: [PreAMC.csv](study02/data/PreAMC.csv) ([more info ...](study02/data))<br/>
-   _Result_: Responses from the multiple-choice knowledge questionnaire of loop structures *p2b*. Responses obtained throughout the posttest phase and scored using the GPCM-based rule: [PosAMC.csv](study02/data/PosAMC.csv) ([more info ...](study02/data))<br/>
-   _Result_: Responses from the multiple-choice knowledge questionnaire of loop structures *p2a*. Responses obtained throughout the pretest phase and scored using the teacher's rule: [PreAMCscr.csv](study02/data/PreAMCscr.csv) ([more info ...](study02/data))
-     - _Result_: Responses from the multiple-choice knowledge questionnaire of loop structures *p2b*. Responses obtained throughout the posttest phase and scored using the teacher's rule: [PosAMCscr.csv](study02/data/PosAMCscr.csv) ([more info ...](study02/data))
- - Getting data to measure the skill/knowledge of participants in the third empirical study (lines 82-115)<br/>
-   _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3a*. Responses obtained throughout the pretest phase and scored using the GPCM-based rule: [PreAMC.csv](study03/data/PreAMC.csv) ([more info ...](study03/data))<br/>
-   _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3c*. Responses obtained throughout the posttest phase and scored using the GPCM-based rule: [PosAMC.csv](study03/data/PosAMC.csv) ([more info ...](study03/data))
-     - _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3a*. Responses obtained throughout the pretest phase and scored using the teacher's rule: [PreAMCscr.csv](study03/data/PreAMCscr.csv) ([more info ...](study03/data))
-     - _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3c*. Responses obtained throughout the posttest phase and scored using the teacher's rule: [PosAMCscr.csv](study03/data/PosAMCscr.csv) ([more info ...](study03/data))
+* Data with responses from the multiple-choice knowledge questionnaire of conditional structures *p1a*. Responses obtained throughout the *pretest* phase of the *first* empirical study and scored using the *GPCM-based rule*.<br/>
+  _File_: [PreAMC.csv](study01/data/PreAMC.csv) ([more info ...](study01/data))
+* Data with responses from the multiple-choice knowledge questionnaire of conditional structures *p1b*. Responses obtained throughout the *posttest* phase of the *first* empirical study and scored using the *GPCM-based rule*.<br/>
+  _File_: [PosAMC.csv](study01/data/PosAMC.csv) ([more info ...](study01/data))]
+* Data with responses from the multiple-choice knowledge questionnaire of conditional structures *p2a*. Responses obtained throughout the *pretest* phase of the *first* empirical study and scored using the *teacher's rule*.<br/>
+  _File_: [PreAMCscr.csv](study01/data/PreAMCscr.csv) ([more info ...](study01/data))
+* Data with responses from the multiple-choice knowledge questionnaire of conditional structures *p2b*. Responses obtained throughout the *posttest* phase of the *first* empirical study and scored using the *teacher's rule*.<br/>
+  _File_: [PosAMCscr.csv](study01/data/PosAMCscr.csv) ([more info ...](study01/data))
+* Data with responses from the multiple-choice knowledge questionnaire of loop structures *p2a*. Responses obtained throughout the *pretest* phase of thr *second* empirical study and scored using the *GPCM-based rule*.<br/>
+  _File_: [PreAMC.csv](study02/data/PreAMC.csv) ([more info ...](study02/data))
+* Data with responses from the multiple-choice knowledge questionnaire of loop structures *p2b*. Responses obtained throughout the *posttest* phase of the *second* empirical study and scored using the *GPCM-based rule*.<br/>
+  _File_: [PosAMC.csv](study02/data/PosAMC.csv) ([more info ...](study02/data))
+* Data with responses from the multiple-choice knowledge questionnaire of loop structures *p2a*. Responses obtained throughout the *pretest* phase of the *second* empirical study and and scored using the *teacher's rule*.<br/>
+  _File_: [PreAMCscr.csv](study02/data/PreAMCscr.csv) ([more info ...](study02/data))
+* Data with responses from the multiple-choice knowledge questionnaire of loop structures *p2b*. Responses obtained throughout the *posttest* phase of the *second* empirical study and scored using the *teacher's rule*.<br/>
+  _File_: [PosAMCscr.csv](study02/data/PosAMCscr.csv) ([more info ...](study02/data))
+* Data with responses from the multiple-choice knowledge questionnaire of recursion *p3a*. Responses obtained throughout the *pretest* phase of the *third* empirical study and scored using the *GPCM-based rule*.<br/>
+  _File_: [PreAMC.csv](study03/data/PreAMC.csv) ([more info ...](study03/data))
+* Data with responses from the multiple-choice knowledge questionnaire of recursion *p3c*. Responses obtained throughout the *posttest* phase of the *third* empirical study and scored using the *GPCM-based rule*.<br/>
+  _File_: [PosAMC.csv](study03/data/PosAMC.csv) ([more info ...](study03/data))
+* Data with responses from the multiple-choice knowledge questionnaire of recursion *p3a*. Responses obtained throughout the *pretest* phase of the *third* empirical study and scored using the *teacher's rule*.<br/>
+  _File_: [PreAMCscr.csv](study03/data/PreAMCscr.csv) ([more info ...](study03/data))
+* Data with responses from the multiple-choice knowledge questionnaire of recursion *p3c*. Responses obtained throughout the *posttest* phase of the *third* empirical study and scored using the *teacher's rule*.<br/>
+  _File_: [PosAMCscr.csv](study03/data/PosAMCscr.csv) ([more info ...](study03/data))
 
 
 ### R script to extract information related to the VPL Moodle plugin ([00-processing-vpl.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-vpl.R))
