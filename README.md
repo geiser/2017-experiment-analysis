@@ -12,43 +12,51 @@
 
 ## Scripts in this folder - path: [/](https://github.com/geiser/phd-thesis-evaluation/)
 
-### R script to extract information from Moodle platform ([00-processing-mysql.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-mysql.R))
+
+### R script to extract information from the Moodle platform ([00-processing-mysql.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-mysql.R))
+
+R script to extract information from the MySQL database of the Moodle platform. 
+
+The results obtained by the execution of this R script are:
 
 * List of all students as participants in the pilot empirical study (lines 15-70)<br/>
-  _Result_: [SignedUpParticipants.csv](pilot-study/data/SignedUpParticipants.csv) ([more info ...](pilot-study/data/))
+  _File_: [SignedUpParticipants.csv](pilot-study/data/SignedUpParticipants.csv) ([more info ...](pilot-study/data/))
 * List of students with effective participation in the pilot empirical study (lines 72-80)<br/>
-  _Result_: [EffectiveParticipants.csv](pilot-study/data/EffectiveParticipants.csv) ([more info ...](pilot-study/data/))
+  _File_: [EffectiveParticipants.csv](pilot-study/data/EffectiveParticipants.csv) ([more info ...](pilot-study/data/))
 * Experiment design for the pilot empirical study (lines 81-114)<br/>
-  _Result_: [pilot_design.csv](report/pilot_design.csv) ([more info ...](report/))
+  _File_: [pilot_design.csv](report/pilot_design.csv) ([more info ...](report/))
 * Information from the IMI questionnaire - pilot empirical study (lines 120-205)<br/>
-  _Result_: Legend: [SourceIMILegend.csv](pilot-study/data/SourceIMILegend.csv) ([more info ...](pilot-study/data/))<br/>
-  _Result_: Responses: [SourceIMIWithCareless.csv](pilot-study/data/SourceIMIWithCareless.csv) ([more info ...](pilot-study/data/))
+  _File_ (legend): [SourceIMILegend.csv](pilot-study/data/SourceIMILegend.csv) ([more info ...](pilot-study/data/))<br/>
+  _File_ (responses): [SourceIMIWithCareless.csv](pilot-study/data/SourceIMIWithCareless.csv) ([more info ...](pilot-study/data/))
 * List of all students as participants in the first empirical study (lines 210-272)<br/>
-  _Result_: [SignedUpParticipants.csv](study01/data/SignedUpParticipants.csv) ([more info ...](study01/data/))
+  _File_: [SignedUpParticipants.csv](study01/data/SignedUpParticipants.csv) ([more info ...](study01/data/))
 * List of all students as participants in the second empirical study (lines 273-325)<br/>
-  _Result_: [SignedUpParticipants.csv](study02/data/SignedUpParticipants.csv) ([more info ...](study02/data/))
+  _File_: [SignedUpParticipants.csv](study02/data/SignedUpParticipants.csv) ([more info ...](study02/data/))
 * List of all students as participants in the third empirical study (lines 326-395)<br/>
-  _Result_: [SignedUpParticipants.csv](study03/data/SignedUpParticipants.csv) ([more info ...](study03/data/))
+  _File_: [SignedUpParticipants.csv](study03/data/SignedUpParticipants.csv) ([more info ...](study03/data/))
 * List of students with effective participation in the full-scale empirical studies (400-425)<br/>
-  _Result_: Students of the first empirical study: [EffectiveParticipants.csv](study01/data/EffectiveParticipants.csv) ([more info ...](study01/data/))<br/>
-  _Result_: Students of the second empirical study: [EffectiveParticipants.csv](study02/data/EffectiveParticipants.csv) ([more info ...](study02/data/))<br/>
-  _Result_: Students of the third empirical study: [EffectiveParticipants.csv](study03/data/EffectiveParticipants.csv) ([more info ...](study03/data/))
+  _File_ (first empirical study): [EffectiveParticipants.csv](study01/data/EffectiveParticipants.csv) ([more info ...](study01/data/))<br/>
+  _File_ (second empirical sudy): [EffectiveParticipants.csv](study02/data/EffectiveParticipants.csv) ([more info ...](study02/data/))<br/>
+  _File_ (third empirical study): [EffectiveParticipants.csv](study03/data/EffectiveParticipants.csv) ([more info ...](study03/data/))
 * Experiment designs for the full-scale empirical studies (lines 427-508)<br/>
-  _Result_: [exp_design.csv](report/exp_design.csv) ([more info ...](report/))
-  - Information from the IMI and IMMS questionnaires - third empirical study (lines 510-620)<br/>
-    _Result_: Legend: [SourceMotLegend.csv](study03/data/SourceMotLegend.csv) ([more info...](study03/data/))<br/>
-    _Result_: Responses of the IMI questionnaire: [SourceIMIWithCareless.csv](study03/data/SourceIMIWithCareless.csv) ([more info ...](study03/data/))<br/>
-   _Result_: Responses of the IMMS questionnaire: [SourceIMMSWithCareless.csv](study03/data/SourceIMMSWithCareless.csv) ([more info ...](stbrudy03/data/))
+  _File_: [exp_design.csv](report/exp_design.csv) ([more info ...](report/))
+* Information from the IMI and IMMS questionnaires - third empirical study (lines 510-620)<br/>
+  _File_ (legend): [SourceMotLegend.csv](study03/data/SourceMotLegend.csv) ([more info...](study03/data/))<br/>
+  _File_ (responses from the IMI questionnaire): [SourceIMIWithCareless.csv](study03/data/SourceIMIWithCareless.csv) ([more info ...](study03/data/))<br/>
+   _File_ (responses from the IMMS questionnaire): [SourceIMMSWithCareless.csv](study03/data/SourceIMMSWithCareless.csv) ([more info ...](study03/data/))
 
-#### R script to extract information from responses of multiple-choice knowledge questionnaires ([00-processing-amc.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-amc.R)).
 
-Such questionnaires were built using the AMC (Auto-Multiple-Choice) software - [https://www.auto-multiple-choice.net](https://www.auto-multiple-choice.net) 
+### R script to extract information from AMC questionnaires ([00-processing-amc.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-amc.R)).
+
+R script to extract information from responses of AMC (Auto-Multiple-Choice) questionnaires. Such questionnaires were built to measure the skill/knowledge of students throughout the empirical studies, and they were built using the AMC (Auto-Multiple-Choice) software - [https://www.auto-multiple-choice.net](https://www.auto-multiple-choice.net).
+
+The results obtained by the execution of this R script are:
 
 * Getting data to measure skill/knowledge in the first empirical study (lines 10-45)
   - Responses from the multiple-choice knowledge questionnaire of conditional structures *p1a*. Responses obtained throughout the pretest phase and scored using the GPCM-based rule.<br/>
-    _Result_: [PreAMC.csv](study01/data/PreAMC.csv) ([more info ...](study01/data))
+    _File_: [PreAMC.csv](study01/data/PreAMC.csv) ([more info ...](study01/data))
   - Responses from the multiple-choice knowledge questionnaire of conditional structures *p1b*. Responses obtained throughout the posttest phase and scored using the GPCM-based rule.<br/>
-    _Result_: [PosAMC.csv](study01/data/PosAMC.csv) ([more info ...](study01/data))]
+    _File_: [PosAMC.csv](study01/data/PosAMC.csv) ([more info ...](study01/data))]
   - Responses from the multiple-choice knowledge questionnaire of conditional structures *p2a*. Responses obtained throughout the pretest phase and scored using the teacher's rule.<br/>
     _Result_: [PreAMCscr.csv](study01/data/PreAMCscr.csv) ([more info ...](study01/data))
   - Responses from the multiple-choice knowledge questionnaire of conditional structures *p2b*. Responses obtained throughout the posttest phase and scored using the teacher's rule.<br/>
@@ -80,10 +88,25 @@ R script to extract information from the adapted version of VPL (Virtual-Program
 
 R script to remove careless responses on the data gathered by the IMI and IMMS questionnaires. A careless response is defined as a response in which the length of uninterrupted identical values for the items is greater than half of the items in the questionnaire.
 
-The results obtained by the execution of the R script are:
+The results obtained by the execution of this R script are:
 
-* Careless responses identified on the IMI questionnaire with data gathered throughout pilot empirical study
-  _File_: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf)
+* Careless responses identified on the IMI questionnaire with data gathered throughout the pilot empirical study.<br/>
+  _File_: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf) ([more info ...](pilot-study/data))
+* Responses of the IMI questionnaire with data gathered throughout the pilot empirical study and without careless responses.<br/>
+  _File_: [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
+
+* Careless responses identified on the IMI questionnaire with data gathered throughout the first empirical study.<br/>
+  _File_: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf) ([more info ...](pilot-study/data))
+* Responses of the IMI questionnaire with data gathered throughout the first empirical study and without careless responses.<br/>
+  _File_: [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
+
+* Careless responses identified on the IMI questionnaire with data gathered throughout pilot empirical study<br/>
+  _File_: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf) ([more info ...](pilot-study/data))
+* Responses of the IMI questionnaire with data gathered throughout pilot empirical study and without careless responses<br/>
+  _File_: [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
+
+* Careless responses identified on the IMI questionnaire with data gathered throughout pilot empirical study<br/>
+  _File_: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf) ([more info ...](pilot-study/data))
 * Responses of the IMI questionnaire with data gathered throughout pilot empirical study and without careless responses<br/>
   _File_: [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
 
@@ -104,12 +127,12 @@ The results obtained by the execution of the R script are:
 
 R script to winsorize extreme responses from the data gathered through the IMI and IMMS questionnaires. Extreme responses correspond to answers given by participants who have tendency to indicate extreme lower and upper values in questionnaires. Such responses are outliers that affect the assumptions for parametric tests, but that can't simply removed to satisfy these assumptions. To reduce the impact of extreme values, they should be shrunk to the border of the main part of the data through the winsorization method.
 
-The results obtained by the execution of the R script are: 
+The results obtained by the execution of this R script are: 
 
 * Extreme responses identified on the IMI questionnaire.<br/>
-  _File_: [winsorized-IMI.pdf](report/latex/winsorized-IMI.pdf)
+  _File_: [winsorized-IMI.pdf](report/latex/winsorized-IMI.pdf) ([more info ...](report/latex))
 * Extreme responses identified on the IMMS questionnaire.<br/>
-  _File_: [winsorized-IMMS.pdf](report/latex/winsorized-IMMS.pdf)
+  _File_: [winsorized-IMMS.pdf](report/latex/winsorized-IMMS.pdf) ([more info ...](report/latex))
 * Data with winsorized responses to validate the IMI questionnaire.<br/>
   _File_: [WinsorizedIMI.csv](data/WinsorizedIMI.csv) ([more info ...](data))
 * Data with winsorized responses to validate the IMMS questionnaire.<br/>
@@ -118,9 +141,9 @@ The results obtained by the execution of the R script are:
 
 ### R script to validate the IMI questionnaire ([03-validating-IMI.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/03-validating-IMI.R))
 
-Validation of the adapted Portuguese IMI questionnaire through the exploratory/confirmatory factorial analysis and the reliability test.
+R script to validate the adapted Portuguese IMI questionnaire through the exploratory/confirmatory factorial analysis and the reliability test.
 
-The results obtained by the execution of the R script are:
+The results obtained by the execution of this R script are:
 
 * Validation of univariate distribution for each items.<br/>
   _File_: [univariate-histogram.png](report/validation-IMI/univariate-histogram.png) ([more info ...](report/validation-IMI))
