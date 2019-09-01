@@ -281,7 +281,7 @@ score(QuX) = (NBC/NB - NMC/NM) * w(QuX)
 ### File: [PosAMCscr.csv](PosAMCscr.csv)
 
 CSV-file with information from the programming problem tasks solved by the students throughout the *posttest* phase, and scored using a rule defined by the teacher of course.
-- On-line visualization: [PosAMC.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/data/PosAMCscr.csv)
+- On-line visualization: [PosAMCscr.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/data/PosAMCscr.csv)
 - R script used to generate this file: [00-processing-amc.R](../../00-processing-amc.R) ([more info](../../)) 
 
 | Column | Description |
