@@ -239,10 +239,81 @@ These estimates were calculated through the building process of RSM-based instru
 ### File: [PreGuttmanVPL.csv](PreGuttmanVPL.csv)
 
 CSV-file with information from the programming problem tasks solved by the students throughout the *pretest* phase, and scored with Guttman-based rules detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf) (pages 342-343).
+- On-line visualization: [PreGuttmanVPL.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/PreGuttmanVPL.csv)
+- R script used to generate this file: [00-processing-vpl.R](../../00-processing-vpl.R) ([more info](../../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical studies |
+| PXs0 | Guttman-based score for the programming problem task with identification *PX* and rule *s0*. |
+| PXs1 | Guttman-based score for the programming problem task with identification *PX* and rule *s1*. |
+| PXs2 | Guttman-based score for the programming problem task with identification *PX* and rule *s2*. |
+| PXs3 | Guttman-based score for the programming problem task with identification *PX* and rule *s3*. |
+
+#### Guttman-structure scoring rules
+
+rule *s0*: _score_(_Q_)
+   - *0*: when the solution is incorrect (Q=0), and the solving time is irrelevant
+   - *1*: when the solution is correct (Q=1), and the solving time is irrelevant
+
+rule *s1*: _score_(_Q x T50_)
+ - (0,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
+ - (1,0) = *1*: when the solution is correct (Q=1) and the solving time is greater than the median (*t*>T55)
+ - (1,1) = *2*: when the solution is correct (Q=1) and the solving time is less than the median (*t*<T50)
+
+rule *s2*: _score_(_Q x T66 x T33_)
+ - (0,x,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
+ - (1,0,x) = *1*: when the solution is correct (Q=1) and the solving time is greater than 66-th percentile (*t*>T66)
+ - (1,1,0) = *2*: when the solution is correct (Q=1) and the solving time is greater than 33-th percentile (*t*>T33)
+ - (1,1,1) = *3*: when the solution is correct (Q=1) and the solving time is less than 33-th percentile (*t*<T33)
+
+
+rule *s3*: _score_(_Q x T75 x T50 x T25_)
+ - (0,x,x,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
+ - (1,0,x,x) = *1*: when the solution is correct (Q=1) and the solving time is greater than 75-th percentile (*t*>T75)
+ - (1,1,0,x) = *2*: when the solution is correct (Q=1) and the solving time is greater than the median (*t*>T50)
+ - (1,1,1,0) = *3*: when the solution is correct (Q=1) and the solving time is greater than 25-th percentile (*t*>T25)
+ - (1,1,1,1) = *4*: when the solution is correct (Q=1) and the solving time is less than 25-th percentile (*t*<T25)
+
 
 ### File: [PosGuttmanVPL.csv](PosGuttmanVPL.csv)
 
-CSV-file with information from the programming problem tasks solved by the students throughout the *pretest* phase, and scored with Guttman-based rules detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf) (pages 342-343).
+CSV-file with information from the programming problem tasks solved by the students throughout the *posttest* phase, and scored with Guttman-based rules detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf) (pages 342-343).
+- On-line visualization: [PosGuttmanVPL.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/PosGuttmanVPL.csv)
+- R script used to generate this file: [00-processing-vpl.R](../../00-processing-vpl.R) ([more info](../../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical studies |
+| PXs0 | Guttman-based score for the programming problem task with identification *PX* and rule *s0*. |
+| PXs1 | Guttman-based score for the programming problem task with identification *PX* and rule *s1*. |
+| PXs2 | Guttman-based score for the programming problem task with identification *PX* and rule *s2*. |
+| PXs3 | Guttman-based score for the programming problem task with identification *PX* and rule *s3*. |
+
+#### Guttman-structure scoring rules
+
+rule *s0*: _score_(_Q_)
+   - *0*: when the solution is incorrect (Q=0), and the solving time is irrelevant
+   - *1*: when the solution is correct (Q=1), and the solving time is irrelevant
+
+rule *s1*: _score_(_Q x T50_)
+ - (0,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
+ - (1,0) = *1*: when the solution is correct (Q=1) and the solving time is greater than the median (*t*>T55)
+ - (1,1) = *2*: when the solution is correct (Q=1) and the solving time is less than the median (*t*<T50)
+
+rule *s2*: _score_(_Q x T66 x T33_)
+ - (0,x,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
+ - (1,0,x) = *1*: when the solution is correct (Q=1) and the solving time is greater than 66-th percentile (*t*>T66)
+ - (1,1,0) = *2*: when the solution is correct (Q=1) and the solving time is greater than 33-th percentile (*t*>T33)
+ - (1,1,1) = *3*: when the solution is correct (Q=1) and the solving time is less than 33-th percentile (*t*<T33)
+
+
+rule *s3*: _score_(_Q x T75 x T50 x T25_)
+ - (0,x,x,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
+ - (1,0,x,x) = *1*: when the solution is correct (Q=1) and the solving time is greater than 75-th percentile (*t*>T75)
+ - (1,1,0,x) = *2*: when the solution is correct (Q=1) and the solving time is greater than the median (*t*>T50)
+ - (1,1,1,0) = *3*: when the solution is correct (Q=1) and the solving time is greater than 25-th percentile (*t*>T25)
+ - (1,1,1,1) = *4*: when the solution is correct (Q=1) and the solving time is less than 25-th percentile (*t*<T25)
 
 
 ### File: [GainSkillsKnowledge.csv](GainSkillsKnowledge.csv)
