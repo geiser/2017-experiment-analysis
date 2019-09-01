@@ -2,7 +2,7 @@
 
 ### File: [CLActivity.csv](CLActivity.csv)
 
-CSV-file with information related to the execution of CL sessions in the pilot empirical study.
+CSV-file with information related to the execution of CL sessions.
 - On-line visualization: [CLActivity.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/CLActivity.csv)
 
 | Column | Description |
@@ -32,7 +32,7 @@ The possible values for the column *ParticipationLevel* are:
 
 ### File: [SignedUpParticipants.csv](SignedUpParticipants.csv)
 
-CSV-file with the list of all students enrolled as participants in the pilot empirical study.
+CSV-file with the list of all students enrolled as participants.
 - On-line visualization: [SignedUpParticipants.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SignedUpParticipants.csv)
 - R script used to generate this file: [00-processing-mysql.R](../../00-processing-mysql.R) ([more info](../../)) 
 
@@ -46,7 +46,7 @@ CSV-file with the list of all students enrolled as participants in the pilot emp
 
 ### File: [EffectiveParticipants.csv](EffectiveParticipants.csv)
 
-CSV-file with the list of students with *effective* participation in the pilot empirical study.
+CSV-file with the list of students with *effective* participation.
 - On-line visualization: [EffectiveParticipants.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/EffectiveParticipants.csv)
 - R script used to generate this file: [00-processing-mysql.R](../../00-processing-mysql.R) ([more info](../../)) 
 
@@ -67,7 +67,7 @@ semicomplete or incomplete participation level in the CL session.
 
 ### File: [SourceIMILegend.csv](SourceIMILegend.csv)
 
-CSV-file with the legend of IMI questionnaire applied in pilot empirical study.
+CSV-file with the legend of IMI questionnaire.
 - On-line visualization: [SourceIMILegend.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMILegend.csv)
 - R script used to generate this file: [00-processing-mysql.R](../../00-processing-mysql.R) ([more info](../../)) 
 
@@ -81,7 +81,7 @@ CSV-file with the legend of IMI questionnaire applied in pilot empirical study.
 
 ### File: [SourceIMIWithCareless.csv](SourceIMIWithCareless.csv)
 
-CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
+CSV-file with responses of the IMI questionnaire.
 These responses included careless responses.
 - On-line visualization: [SourceIMIWithCareless.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMIWithCareless.csv)
 - R script used to generate this file: [00-processing-mysql.R](../../00-processing-mysql.R) ([more info](../../)) 
@@ -94,8 +94,7 @@ These responses included careless responses.
 
 ### File: [SourceIMI.csv](SourceIMI.csv)
 
-CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
-Careless responses removed from the data through the process detailed in the file: [outliers-motivation-surveys.pdf](../../report/outliers-motivation-surveys.pdf)
+CSV-file with responses of the IMI questionnaire, and careless responses removed from the data through the process detailed in the file: [outliers-motivation-surveys.pdf](../../report/outliers-motivation-surveys.pdf)
 - On-line visualization: [SourceIMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMI.csv)
 - R script used to generate this file: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R) ([more info](../../)) 
 
@@ -111,8 +110,7 @@ Careless responses removed from the data through the process detailed in the fil
 
 ### File: [IMI.csv](IMI.csv)
 
-CSV-file with the validated responses gathered throughout the pilot empirical study.
-These response only included items validated through the factorial analysis and reliability test detailed in the file: [validation-motivation-surveys.pdf](../../report/validation-motivation-surveys.pdf)
+CSV-file with the validated responses through the factorial analysis and reliability test detailed in the file: [validation-motivation-surveys.pdf](../../report/validation-motivation-surveys.pdf)
 - On-line visualization: [IMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/IMI.csv)
 - R script used to generate this file: [00-reliability-analysis-IMI.R](../00-reliability-analysis-IMI.R) ([more info](../)) 
 
@@ -133,7 +131,7 @@ These response only included items validated through the factorial analysis and 
 
 ### File: [InterestEnjoyment.csv](InterestEnjoyment.csv)
 
-CSV-file with the IRT-based estimates of Interest Enjoyment for the students on pilot empirical study.
+CSV-file with the IRT-based estimates of Interest/Enjoyment.
 These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
 - On-line visualization: [InterestEnjoyment.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/InterestEnjoyment.csv)
 - R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
@@ -154,7 +152,7 @@ These estimates were calculated through the building process of RSM-based instru
 
 ### File: [PerceivedChoice.csv](PerceivedChoice.csv)
 
-CSV-file with the IRT-based estimates of Perceived Choice for the students on pilot empirical study.
+CSV-file with the IRT-based estimates of Perceived Choice.
 These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
 - On-line visualization: [PerceivedChoice.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/PerceivedChoice.csv)
 - R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
@@ -175,7 +173,7 @@ These estimates were calculated through the building process of RSM-based instru
 
 ### File: [PressureTension.csv](PressureTension.csv)
 
-CSV-file with the IRT-based estimates of Pressure/Tension for the students on pilot empirical study.
+CSV-file with the IRT-based estimates of Pressure/Tension.
 These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
 - On-line visualization: [PressureTension.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/PressureTension.csv)
 - R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
@@ -196,7 +194,7 @@ These estimates were calculated through the building process of RSM-based instru
 
 ### File: [EffortImportance.csv](EffortImportance.csv)
 
-CSV-file with the IRT-based estimates of Effort/Importance for the students on pilot empirical study.
+CSV-file with the IRT-based estimates of Effort/Importance.
 These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
 - On-line visualization: [EffortImportance.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/EffortImportance.csv)
 - R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
@@ -217,7 +215,7 @@ These estimates were calculated through the building process of RSM-based instru
 
 ### File: [IntrinsicMotivation.csv](IntrinsicMotivation.csv)
 
-CSV-file with the IRT-based estimates of Intrinsic Motivation for the students on pilot empirical study.
+CSV-file with the IRT-based estimates of Intrinsic Motivation.
 These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
 - On-line visualization: [IntrinsicMotivation.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/IntrinsicMotivation.csv)
 - R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
@@ -234,4 +232,23 @@ These estimates were calculated through the building process of RSM-based instru
 | error | Standard error for the estimate of the latent trait *theta* |
 | Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
 | Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
+
+
+## Data Related to the Learning Outcomes 
+
+### File: [PreGuttmanVPL.csv](PreGuttmanVPL.csv)
+
+CSV-file with information from the programming problem tasks solved by the students throughout the *pretest* phase, and scored with Guttman-based rules detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf) (pages 342-343).
+
+### File: [PosGuttmanVPL.csv](PosGuttmanVPL.csv)
+
+CSV-file with information from the programming problem tasks solved by the students throughout the *pretest* phase, and scored with Guttman-based rules detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf) (pages 342-343).
+
+
+### File: [GainSkillsKnowledge.csv](GainSkillsKnowledge.csv)
+
+CSV-file with the IRT-based estimates of Skill/Knowledge gains.
+These estimates were calculated through the stacking process based on the General Partial Credit Model (GPCM) detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+
+
 
