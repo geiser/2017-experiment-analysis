@@ -236,6 +236,146 @@ These estimates were calculated through the building process of RSM-based instru
 
 ## Data Related to the Learning Outcomes 
 
+### File: [PreAMCscr.csv](PreAMCscr.csv)
+
+CSV-file with information from the programming problem tasks solved by the students throughout the *pretest* phase, and scored using a rule defined by the teacher of course.
+- On-line visualization: [PreAMCscr.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/data/PreAMCscr.csv)
+- R script used to generate this file: [00-processing-amc.R](../../00-processing-amc.R) ([more info](../../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical studies |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| *QuX* | Teacher-based score for the AMC question with identification *QuX* |
+| score | Score calculated as the sum of scores obtained in all the questions |
+
+Columns with name of *QuX* can have values `Qu = {Re, Un, Ap, An, Ev}` and `X = {1, 2, 3}` to represent questions classified according to the Bloom and SOLO taxonomies. `Qu = Re: Remember level`, `Qu = Un: Understand level`, `Qu = Ap: Apply level`, `Qu = An: Analysing level`, `Qu = Ev: Evaluation level`, `X = 1: unistructural level`, `X = 2: multistructural level`, and `X = 3: relational level`. (more information of these taxonomies in [https://dl.acm.org/citation.cfm?id=1379265](https://dl.acm.org/citation.cfm?id=1379265) and in [https://doi.org/10.1145/2676723.2677311](https://doi.org/10.1145/2676723.2677311))
+
+#### Teacher-based scoring rules for the columns *QuX*
+
+```
+score(QuX) = (NBC/NB - NMC/NM) * w(QuX)
+```
+
+* *NB*: is the number of correct responses to the question.
+* *NBC*: is the count of correct responses which have been checked.
+* *NM*: is the number of wrong responses to the question.
+* *NMC*: is the count of wrong responses which have been checked.
+* *w*(*QuX*): is the weight for the question (*QuX*) whose value is defined by the teacher according to the level of difficulty infered by him/her. These weights are the followings:
+  - `w(Re1) = 0.6` for the question with remember-unistructural level
+  - `w(Re2) = 0.7` for the question with remember-multistructural level
+  - `w(Un1) = 0.8` for the question with understand-unistructural level
+  - `w(Un2) = 0.9` for the question with understand-multistructural level
+  - `w(Ap1) = 1.0` for the question with apply-unistructural level
+  - `w(Ap2) = 1.0` for the question with apply-multistructural level
+  - `w(Ap3) = 1.1` for the question with apply-relational level
+  - `w(An3) = 1.2` for the question with analyse-relational level
+  - `w(Ev1) = 1.3` for the question with evaluate-unistructural level
+  - `w(Ev2) = 1.4` for the question with evaluate-unistructural level
+
+
+### File: [PosAMCscr.csv](PosAMCscr.csv)
+
+CSV-file with information from the programming problem tasks solved by the students throughout the *posttest* phase, and scored using a rule defined by the teacher of course.
+- On-line visualization: [PosAMC.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/data/PosAMCscr.csv)
+- R script used to generate this file: [00-processing-amc.R](../../00-processing-amc.R) ([more info](../../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical studies |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| *QuX* | Teacher-based score for the AMC question with identification *QuX* |
+| score | Score calculated as the sum of scores obtained in all the questions |
+
+Columns with name of *QuX* can have values `Qu = {Re, Un, Ap, An, Ev}` and `X = {1, 2, 3}` to represent questions classified according to the Bloom and SOLO taxonomies. `Qu = Re: Remember level`, `Qu = Un: Understand level`, `Qu = Ap: Apply level`, `Qu = An: Analysing level`, `Qu = Ev: Evaluation level`, `X = A: unistructural level`, `X = B: multistructural level`, and `X = C: relational level`. (more information of these taxonomies in [https://dl.acm.org/citation.cfm?id=1379265](https://dl.acm.org/citation.cfm?id=1379265) and in [https://doi.org/10.1145/2676723.2677311](https://doi.org/10.1145/2676723.2677311))
+
+#### Teacher-based scoring rules for the columns *QuX*
+
+```
+score(QuX) = (NBC/NB - NMC/NM) * w(QuX)
+```
+
+* *NB*: is the number of correct responses to the question.
+* *NBC*: is the count of correct responses which have been checked.
+* *NM*: is the number of wrong responses to the question.
+* *NMC*: is the count of wrong responses which have been checked.
+* *w*(*QuX*): is the weight for the question (*QuX*) whose value is defined by the teacher according to the level of difficulty infered by him/her. These weights are the followings:
+  - `w(ReA) = 0.6` for the question with remember-unistructural level
+  - `w(ReB) = 0.7` for the question with remember-multistructural level
+  - `w(UnA) = 0.8` for the question with understand-unistructural level
+  - `w(UnB) = 0.9` for the question with understand-multistructural level
+  - `w(ApA) = 1.0` for the question with apply-unistructural level
+  - `w(ApB) = 1.0` for the question with apply-multistructural level
+  - `w(ApC) = 1.1` for the question with apply-relational level
+  - `w(AnC) = 1.2` for the question with analyse-relational level
+  - `w(EvA) = 1.3` for the question with evaluate-unistructural level
+  - `w(EvB) = 1.4` for the question with evaluate-unistructural level
+
+
+### File: [PreAMC.csv](PreAMC.csv)
+
+CSV-file with information from the programming problem tasks solved by the students throughout the *pretest* phase, and scored using the GPCM-based rule detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf) (page 342).
+- On-line visualization: [PreAMC.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/data/PreAMC.csv)
+- R script used to generate this file: [00-processing-amc.R](../../00-processing-amc.R) ([more info](../../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical studies |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| *QuX* | GPCM-based score for the AMC question with identification *QuX* |
+
+Columns with name of *QuX* can have values `Qu = {Re, Un, Ap, An, Ev}` and `X = {1, 2, 3}` to represent questions classified according to the Bloom and SOLO taxonomies. `Qu = Re: Remember level`, `Qu = Un: Understand level`, `Qu = Ap: Apply level`, `Qu = An: Analysing level`, `Qu = Ev: Evaluation level`, `X = 1: unistructural level`, `X = 2: multistructural level`, and `X = 3: relational level`. (more information of these taxonomies in [https://dl.acm.org/citation.cfm?id=1379265](https://dl.acm.org/citation.cfm?id=1379265) and in [https://doi.org/10.1145/2676723.2677311](https://doi.org/10.1145/2676723.2677311))
+
+#### GPCM-based scoring rules for the columns *QuX*
+
+Let *NBC* be the number of correct responses which have been checked in the question *QuX*, *NM* be the number of wrong responses; and *NMC* be the number of wrong responses which have been checked in the question *QuX*; then, the GPCM-scoring rule for a n-th question in the multiple choice questionnaire is given by:
+
+```
+score(n) = 0 ; if NBC = 0 
+score(n) = (NBC * (NM+1)) - NMC; otherwise
+``` 
+
+
+### File: [PosAMC.csv](PosAMC.csv)
+
+CSV-file with information from the programming problem tasks solved by the students throughout the *posttest* phase, and scored using the GPCM-based rule detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf) (page 342).
+- On-line visualization: [PosAMC.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/data/PosAMC.csv)
+- R script used to generate this file: [00-processing-amc.R](../../00-processing-amc.R) ([more info](../../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical studies |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| *QuX* | GPCM-based score for the AMC question with identification *QuX* |
+
+Columns with name of *QuX* can have values `Qu = {Re, Un, Ap, An, Ev}` and `X = {1, 2, 3}` to represent questions classified according to the Bloom and SOLO taxonomies. `Qu = Re: Remember level`, `Qu = Un: Understand level`, `Qu = Ap: Apply level`, `Qu = An: Analysing level`, `Qu = Ev: Evaluation level`, `X = A: unistructural level`, `X = B: multistructural level`, and `X = C: relational level`. (more information of these taxonomies in [https://dl.acm.org/citation.cfm?id=1379265](https://dl.acm.org/citation.cfm?id=1379265) and in [https://doi.org/10.1145/2676723.2677311](https://doi.org/10.1145/2676723.2677311))
+
+#### GPCM-based scoring rules for the columns *QuX*
+
+Let *NBC* be the number of correct responses which have been checked in the question *QuX*, *NM* be the number of wrong responses; and *NMC* be the number of wrong responses which have been checked in the question *QuX*; then, the GPCM-scoring rule for a n-th question in the multiple choice questionnaire is given by:
+
+```
+score(n) = 0 ; if NBC = 0 
+score(n) = (NBC * (NM+1)) - NMC; otherwise
+``` 
+
+
 ### File: [PreGuttmanVPL.csv](PreGuttmanVPL.csv)
 
 CSV-file with information from the programming problem tasks solved by the students throughout the *pretest* phase, and scored with Guttman-based rules detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf) (pages 342-343).
@@ -345,9 +485,7 @@ Let *NBC* be the number of correct responses which have been checked in the ques
 ```
 score(n) = 0 ; if NBC = 0 
 score(n) = (NBC * (NM+1)) - NMC; otherwise
-```
-
-  
+```  
 
 #### Guttman-structure scoring rules for the columns *PXsY*
 
