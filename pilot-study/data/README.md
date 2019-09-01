@@ -138,4 +138,16 @@ These estimates were calculated through the building process of RSM-based instru
 - On-line visualization: [PressureTension.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/PressureTension.csv)
 - R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
 
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| Score | Score calculated as the sum of the items in each record |
+| theta | Estimate of the latent trait in logit scale |
+| error | Standard error for the estimate of the latent trait *theta* |
+| Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
+| Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
 
