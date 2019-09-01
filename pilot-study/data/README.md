@@ -119,11 +119,11 @@ These response were winsorized, and they only included validated items through t
 | CLRole | The CL role assigned for the student with *UserID* |
 | PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
 | ItemX | Value from a 7 point Likert scale for the item with identification *ItemX* |
-| Interest/Enjoyment | Mean of values in the items related to the Interest/Enjoyment. This v is calculate as `(Item22IE + Item09IE + Item12IE + Item24IE + Item21IE +  Item01IE)/6` |
-| Perceived Choice | Mean of values in the items related to the *Perceived Choice*. This value is calculate as `(40-(Item17PC + Item15PC + Item06PC + Item02PC + Item08PC))/5` |
-| Pressure/Tension | Mean of values in the items related to the *Pressure/Tension*. This value is calculate as `(Item16PT + Item14PT + Item18PT + 8-Item11PT)/4` |
-| Effort/Importance | Mean of values in the items related to the *Effort/Importance*. This value is calculate as `(Item03EI + 16-(Item13EI + Item07EI))/3` |
-| Intrinsic Motivation | Mean of values in the items related to the *Intrinsic Motivation*. This value is calculate as `(Interest/Enjoyment + Perceived Choice + Effort/Importance + 8-Pressure/Tension)/4` |
+| Interest/Enjoyment | Mean of values in the items related to the Interest/Enjoyment. This v is calculate as `IE = (Item22IE + Item09IE + Item12IE + Item24IE + Item21IE +  Item01IE)/6` |
+| Perceived Choice | Mean of values in the items related to the *Perceived Choice*. This value is calculate as `PC = (40-(Item17PC + Item15PC + Item06PC + Item02PC + Item08PC))/5` |
+| Pressure/Tension | Mean of values in the items related to the *Pressure/Tension*. This value is calculate as `PT = (Item16PT + Item14PT + Item18PT + 8-Item11PT)/4` |
+| Effort/Importance | Mean of values in the items related to the *Effort/Importance*. This value is calculate as `EI = (Item03EI + 16-(Item13EI + Item07EI))/3` |
+| Intrinsic Motivation | Mean of values in the items related to the *Intrinsic Motivation*. This value is calculate as `IM = (IE + PC + EI + 8-PT)/4` |
 
 
 
