@@ -6,6 +6,8 @@ library(readr)
 library(dplyr)
 library(readxl)
 
+source('common/misc.R')
+
 ##########################################################################
 ## PreTest and PosTest for Pilot-Study                                  ##
 ##########################################################################

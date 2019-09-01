@@ -2,6 +2,8 @@ wants <- c('MVN', 'robustHD', 'daff', 'plyr', 'readr')
 has <- wants %in% rownames(installed.packages())
 if (any(!has)) install.packages(wants[!has])
 
+source('common/latex-translator.R')
+
 library(MVN)
 library(daff)
 library(plyr)

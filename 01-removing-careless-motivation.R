@@ -5,6 +5,8 @@ if (!any(rownames(installed.packages()) %in% c('careless'))) {
   devtools::install_github('ryentes/careless')
 }
 
+source('common/latex-translator.R')
+
 library(daff)
 library(readr)
 library(dplyr)
