@@ -60,7 +60,7 @@
    - _Result_ from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules: [PreGuttmanVPL.csv](study03/data/PreGuttmanVPL.csv) ([more info ...](study03/data))
    - _Result_ from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules: [PosGuttmanVPL.csv](study03/data/PosGuttmanVPL.csv) ([more info ...](study03/data))
 
-* R script to remove careless responses on the data gathered through the IMI and IMMS questionnaires ([01-removing-careless-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/01-removing-careless-motivation.R))
+* R script to remove careless responses on the data gathered through the IMI and IMMS questionnaires ([01-removing-careless-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/01-removing-careless-motivation.R)) <br/> A careless response is defined as a response in which the length of uninterrupted identical values for the items is greater than half of the items in the questionnaire.
   - In reference to the pilot empirical study,
     - _Result_: Responses of IMI questionnaire without careless responses : [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
     - _Result_: Careless responses identified on the data gathered from IMI questionnaire: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf)
