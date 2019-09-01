@@ -85,10 +85,44 @@ These responses included careless responses.
 | ItemX | Value for the 7 point Likert scale with the identification *ItemX*  |
 
 
+### File: [SourceIMMSWithCareless.csv](SourceIMMSWithCareless.csv)
+
+CSV-file with responses of the IMMS questionnaire.
+These responses included careless responses.
+- On-line visualization: [SourceIMMSWithCareless.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/data/SourceIMMSWithCareless.csv)
+- R script used to generate this file: [00-processing-mysql.R](../../00-processing-mysql.R) ([more info](../../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Gamified | Type of CL session in which the student with *UserID* participated in the empirical study |
+| Group | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| ItemX | Value for the 7 point Likert scale with the identification *ItemX*  |
+
+
 ### File: [SourceIMI.csv](SourceIMI.csv)
 
 CSV-file with responses of the IMI questionnaire, and careless responses removed from the data through the process detailed in the file: [outliers-motivation-surveys.pdf](../../report/outliers-motivation-surveys.pdf)
 - On-line visualization: [SourceIMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/data/SourceIMI.csv)
+- R script used to generate this file: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R) ([more info](../../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| ItemX | Value from a 7 point Likert scale for the item with identification *ItemX* |
+
+
+### File: [SourceIMMS.csv](SourceIMMS.csv)
+
+CSV-file with responses of the IMMS questionnaire, and careless responses removed from the data through the process detailed in the file: [outliers-motivation-surveys.pdf](../../report/outliers-motivation-surveys.pdf)
+- On-line visualization: [SourceIMMS.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/data/SourceIMMS.csv)
 - R script used to generate this file: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R) ([more info](../../)) 
 
 | Column | Description |
@@ -122,6 +156,29 @@ CSV-file with the validated responses through the factorial analysis and reliabi
 | Pressure/Tension | Mean of values in the items related to the *Pressure/Tension*. This value is calculate as `PT = (Item16PT + Item14PT + Item18PT + 8-Item11PT)/4` |
 | Effort/Importance | Mean of values in the items related to the *Effort/Importance*. This value is calculate as `EI = (Item03EI + 16-(Item13EI + Item07EI))/3` |
 | Intrinsic Motivation | Mean of values in the items related to the *Intrinsic Motivation*. This value is calculate as `IM = (IE + PC + EI + 8-PT)/4` |
+
+
+### File: [IMMS.csv](IMMS.csv)
+
+CSV-file with the validated responses through the factorial analysis and reliability test detailed in the file: [validation-motivation-surveys.pdf](../../report/validation-motivation-surveys.pdf)
+- On-line visualization: [IMMS.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/data/IMMS.csv)
+- R script used to generate this file: [00-reliability-analysis-IMMS.R](../00-reliability-analysis-IMMS.R) ([more info](../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| ItemX | Value from a 7 point Likert scale for the item with identification *ItemX* |
+| Attention | Mean of values in the items related to the *Attention*. This v is calculate as `A = (Item12A + Item19A + Item04A + Item20A + Item16A + Item01A)/6` |
+| Relevance | Mean of values in the items related to the *Relevance*. This value is calculate as `R = (32 - (Item15R + Item21R + Item10R + Item08R))/4` |
+| Satisfaction | Mean of values in the items related to the *Satisfaction*. This value is calculate as `S = (Item13S + Item14S + Item17S)/3` |
+| Level of Motivation| Mean of values in the items related to the *Level of Motivation*. This value is calculate as `LoM = (A + R + S)/3` |
+
+
 
 
 ### File: [InterestEnjoyment.csv](InterestEnjoyment.csv)
@@ -232,6 +289,97 @@ These estimates were calculated through the building process of RSM-based instru
 | error | Standard error for the estimate of the latent trait *theta* |
 | Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
 | Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
+
+
+
+
+### File: [Attention.csv](Attention.csv)
+
+CSV-file with the IRT-based estimates of Attention.
+These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+- On-line visualization: [Attention.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/data/Attention.csv)
+- R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| Score | Score calculated as the sum of the items in each record |
+| theta | Estimate of the latent trait in logit scale |
+| error | Standard error for the estimate of the latent trait *theta* |
+| Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
+| Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
+
+
+### File: [Relevance.csv](Relevance.csv)
+
+CSV-file with the IRT-based estimates of Relevance.
+These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+- On-line visualization: [Relevance.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/data/Relevance.csv)
+- R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| Score | Score calculated as the sum of the items in each record |
+| theta | Estimate of the latent trait in logit scale |
+| error | Standard error for the estimate of the latent trait *theta* |
+| Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
+| Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
+
+
+### File: [Satisfaction.csv](Satisfaction.csv)
+
+CSV-file with the IRT-based estimates of Satisfaction.
+These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+- On-line visualization: [Satisfaction.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/data/Satisfaction.csv)
+- R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| Score | Score calculated as the sum of the items in each record |
+| theta | Estimate of the latent trait in logit scale |
+| error | Standard error for the estimate of the latent trait *theta* |
+| Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
+| Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
+
+
+### File: [LevelofMotivation.csv](LevelofMotivation.csv)
+
+CSV-file with the IRT-based estimates of Level of Motivation.
+These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+- On-line visualization: [LevelofMotivation.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/data/LevelofMotivation.csv)
+- R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| Score | Score calculated as the sum of the items in each record |
+| theta | Estimate of the latent trait in logit scale |
+| error | Standard error for the estimate of the latent trait *theta* |
+| Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
+| Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
+
 
 
 ## Data Related to the Learning Outcomes 
