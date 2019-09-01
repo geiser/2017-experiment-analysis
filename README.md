@@ -50,4 +50,12 @@
      - _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3a*. Responses obtained throughout the pretest phase and scored using the teacher's rule: [PreAMCscr.csv](study03/data/PreAMCscr.csv) ([more info ...](study03/data))
      - _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3c*. Responses obtained throughout the posttest phase and scored using the teacher's rule: [PosAMCscr.csv](study03/data/PosAMCscr.csv) ([more info ...](study03/data))
      
-   
+* R script to extract information from the adapted version of VPL (Virtual-Programming-Lab) Moodle plugin ([00-processing-vpl.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-vpl.R)) <br/> Such adapted version with code recording log can be downloaad from: [https://github.com/geiser/moodle-mod_vpl](https://github.com/geiser/moodle-mod_vpl/) 
+   - _Result_ from programming problem tasks obtained throughout the pretest phase of pilot empirical study, and scored with Guttman-based rules: [PreGuttmanVPL.csv](pilot-study/data/PreGuttmanVPL.csv) ([more info ...](pilot-study/data))
+   - _Result_ from programming problem tasks obtained throughout the pretest phase of pilot empirical study, and scored with Guttman-based rules: [PosGuttmanVPL.csv](pilot-study/data/PosGuttmanVPL.csv) ([more info ...](pilot-study/data))
+   - _Result_ from programming problem tasks obtained throughout the pretest phase of first empirical study, and scored with Guttman-based rules: [PreGuttmanVPL.csv](study01/data/PreGuttmanVPL.csv) ([more info ...](study01/data))
+   - _Result_ from programming problem tasks obtained throughout the pretest phase of first empirical study, and scored with Guttman-based rules: [PosGuttmanVPL.csv](study01/data/PosGuttmanVPL.csv) ([more info ...](study01/data))
+   - _Result_ from programming problem tasks obtained throughout the pretest phase of second empirical study, and scored with Guttman-based rules: [PreGuttmanVPL.csv](study02/data/PreGuttmanVPL.csv) ([more info ...](study02/data))
+   - _Result_ from programming problem tasks obtained throughout the pretest phase of second empirical study, and scored with Guttman-based rules: [PosGuttmanVPL.csv](study02/data/PosGuttmanVPL.csv) ([more info ...](study02/data))
+   - _Result_ from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules: [PreGuttmanVPL.csv](study03/data/PreGuttmanVPL.csv) ([more info ...](study03/data))
+   - _Result_ from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules: [PosGuttmanVPL.csv](study03/data/PosGuttmanVPL.csv) ([more info ...](study03/data))
