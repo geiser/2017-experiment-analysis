@@ -81,3 +81,10 @@
   - _Result_: Winsorized responses to validate the IMI questionnaire: [WinsorizedIMI.csv](data/WinsorizedIMI.csv) ([more info ...](data))
   - _Result_: Extreme responses on the IMMS questionnaire: [winsorized-IMMS.pdf](report/latex/winsorized-IMMS.pdf)
   - _Result_: Winsorized responses to validate the IMMS questionnaire: [WinsorizedIMMS.csv](data/WinsorizedIMMS.csv) ([more info ...](data))
+
+* R script to validate the IMI questionnaire ([03-validating-IMI.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/03-validating-IMI.R)).  
+  - _Result_: Validation of univariate distribution of items: [univariate-histogram.png](report/validation-IMI/univariate-histogram.png) ([more info ...](report/validation-IMI))
+  - _Result_: Goodness of fit statistics for the factorial analysis on the responses of IMI questionnaire: [cfa-model-fit.pdf](report/validation-IMI/cfa-model-fit.pdf)
+  - _Result_: Summary of the factorial analysis and reliability analysis: [reliability-analysis.pdf](report/validation-IMI/reliability-analysis.pdf) ([more info ...](report/validation-IMI))
+  - _Result_: Report for the measure sampling adequacy through the KMO method, factorial analysis, and reliability analysis: [RelAnalysis.xlsx](report/validation-IMI/RelAnalysis.xlsx) ([more info ...](report/validation-IMI))
+  - _Result_: Responses on the validated IMI questionnaire: [IMI.csv](data/IMI.csv) ([more info ...](data))
