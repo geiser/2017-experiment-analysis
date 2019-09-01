@@ -1,19 +1,5 @@
 # Data Employed in the Statistical Analysis of the Pilot Empirical Study
 
-### [SignedUpParticipants.csv](SignedUpParticipants.csv)
-
-CSV-file with the list of all students enrolled as participants in the pilot empirical study.
-- On-line visualization: [SignedUpParticipants.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SignedUpParticipants.csv)
-
-| Column | Description |
-|--------|----------|
-| UserID | Integer as user identification to differentiate students on the empirical study |
-| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
-| CLGroup | Name for the CL group in which the student with *UserID* is member of |
-| CLRole | The CL role assigned for the student with *UserID* |
-| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
-
-
 ### [CLActivity.csv](CLActivity.csv)
 
 CSV-file with information related to the execution of CL sessions in the pilot empirical study.
@@ -44,10 +30,25 @@ The possible values for the column *ParticipationLevel* are:
 * _complete_ is the participation level in which the students interacted in CL sessions performing all the necessary interactions, and they answered all the requests made by other members of the CL group.
 
 
+### [SignedUpParticipants.csv](SignedUpParticipants.csv)
+
+CSV-file with the list of all students enrolled as participants in the pilot empirical study.
+- On-line visualization: [SignedUpParticipants.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SignedUpParticipants.csv)
+- R script used to generate this file: [00-processing-mysql.R](../../00-processing-mysql.R) ([more info](../../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+
 ### [EffectiveParticipants.csv](EffectiveParticipants.csv)
 
 CSV-file with the list of students with *effective* participation in the pilot empirical study.
 - On-line visualization: [EffectiveParticipants.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/EffectiveParticipants.csv)
+- R script used to generate this file: [00-processing-mysql.R](../../00-processing-mysql.R) ([more info](../../)) 
 
 | Column | Description |
 |--------|----------|
@@ -68,6 +69,7 @@ semicomplete or incomplete participation level in the CL session.
 
 CSV-file with the legend of IMI questionnaire applied in pilot empirical study.
 - On-line visualization: [SourceIMILegend.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMILegend.csv)
+- R script used to generate this file: [00-processing-mysql.R](../../00-processing-mysql.R) ([more info](../../)) 
 
 | Column | Description |
 |--------|----------|
@@ -82,6 +84,7 @@ CSV-file with the legend of IMI questionnaire applied in pilot empirical study.
 CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
 These responses included careless responses.
 - On-line visualization: [SourceIMIWithCareless.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMIWithCareless.csv)
+- R script used to generate this file: [00-processing-mysql.R](../../00-processing-mysql.R) ([more info](../../)) 
 
 | Column | Description |
 |--------|----------|
@@ -94,6 +97,7 @@ These responses included careless responses.
 CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
 Careless responses were removed from the data using the R script: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R).
 - On-line visualization: [SourceIMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMI.csv)
+- R script used to generate this file: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R) ([more info](../../)) 
 
 | Column | Description |
 |--------|----------|
@@ -110,6 +114,7 @@ Careless responses were removed from the data using the R script: [01-removing-c
 CSV-file with the validated responses gathered throughout the pilot empirical study.
 These response were winsorized, and they only included validated items through the factorial analysis and reliability test ([validation-IMI](../../report/validation-IMI)).
 - On-line visualization: [IMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/IMI.csv)
+- R script used to generate this file: [00-reliability-analysis-IMI.R](../00-reliability-analysis-IMI.R) ([more info](../)) 
 
 | Column | Description |
 |--------|----------|
