@@ -8,6 +8,7 @@ CSV-file with information related to the execution of CL sessions.
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
 | Type | Type of CL session in which the student with *UserID* participated in the empirical study |
 | CLGroup | Name for the CL group in which the student with *UserID* is member of |
 | CLRole | The CL role assigned for the student with *UserID* |
@@ -39,6 +40,7 @@ CSV-file with the list of all students enrolled as participants.
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
 | Type | Type of CL session in which the student with *UserID* participated in the empirical study |
 | CLGroup | Name for the CL group in which the student with *UserID* is member of |
 | CLRole | The CL role assigned for the student with *UserID* |
@@ -53,6 +55,7 @@ CSV-file with the list of students with *effective* participation.
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
 | Type | Type of CL session in which the student with *UserID* participated in the empirical study |
 | CLGroup | Name for the CL group in which the student with *UserID* is member of |
 | CLRole | The CL role assigned for the student with *UserID* |
@@ -65,20 +68,6 @@ semicomplete or incomplete participation level in the CL session.
 
 ## Data Related to the Students' Motivation
 
-### File: [SourceIMILegend.csv](SourceIMILegend.csv)
-
-CSV-file with the legend of IMI questionnaire.
-- On-line visualization: [SourceIMILegend.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/data/SourceIMILegend.csv)
-- R script used to generate this file: [00-processing-mysql.R](../../00-processing-mysql.R) ([more info](../../)) 
-
-| Column | Description |
-|--------|----------|
-| ID | Integer as identification to differentiate the item in the Moodle questionnaire |
-| QID | Integer as identification of the Moodle questionnaire |
-| Item | Identification used to refer to the item in the data related to the students motivation |
-| Content | Description of the item with identification *ID* |
-
-
 ### File: [SourceIMIWithCareless.csv](SourceIMIWithCareless.csv)
 
 CSV-file with responses of the IMI questionnaire.
@@ -89,6 +78,10 @@ These responses included careless responses.
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
+| Gamified | Type of CL session in which the student with *UserID* participated in the empirical study |
+| Group | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
 | ItemX | Value for the 7 point Likert scale with the identification *ItemX*  |
 
 
@@ -101,6 +94,7 @@ CSV-file with responses of the IMI questionnaire, and careless responses removed
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
 | Type | Type of CL session in which the student with *UserID* participated in the empirical study |
 | CLGroup | Name for the CL group in which the student with *UserID* is member of |
 | CLRole | The CL role assigned for the student with *UserID* |
@@ -117,6 +111,7 @@ CSV-file with the validated responses through the factorial analysis and reliabi
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
 | Type | Type of CL session in which the student with *UserID* participated in the empirical study |
 | CLGroup | Name for the CL group in which the student with *UserID* is member of |
 | CLRole | The CL role assigned for the student with *UserID* |
@@ -139,6 +134,7 @@ These estimates were calculated through the building process of RSM-based instru
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
 | Type | Type of CL session in which the student with *UserID* participated in the empirical study |
 | CLGroup | Name for the CL group in which the student with *UserID* is member of |
 | CLRole | The CL role assigned for the student with *UserID* |
@@ -160,6 +156,7 @@ These estimates were calculated through the building process of RSM-based instru
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
 | Type | Type of CL session in which the student with *UserID* participated in the empirical study |
 | CLGroup | Name for the CL group in which the student with *UserID* is member of |
 | CLRole | The CL role assigned for the student with *UserID* |
@@ -181,6 +178,7 @@ These estimates were calculated through the building process of RSM-based instru
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
 | Type | Type of CL session in which the student with *UserID* participated in the empirical study |
 | CLGroup | Name for the CL group in which the student with *UserID* is member of |
 | CLRole | The CL role assigned for the student with *UserID* |
@@ -202,6 +200,7 @@ These estimates were calculated through the building process of RSM-based instru
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
 | Type | Type of CL session in which the student with *UserID* participated in the empirical study |
 | CLGroup | Name for the CL group in which the student with *UserID* is member of |
 | CLRole | The CL role assigned for the student with *UserID* |
@@ -223,6 +222,7 @@ These estimates were calculated through the building process of RSM-based instru
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical study |
+| NroUSP | Integer as user identification to differentiate students on the school |
 | Type | Type of CL session in which the student with *UserID* participated in the empirical study |
 | CLGroup | Name for the CL group in which the student with *UserID* is member of |
 | CLRole | The CL role assigned for the student with *UserID* |
@@ -251,7 +251,7 @@ CSV-file with information from the programming problem tasks solved by the stude
 | PXs3 | Guttman-based score for the programming problem task with identification *PX* and rule *s3*. |
 
 
-#### Guttman-structure scoring rules
+#### Guttman-structure scoring rules for the columns *PXsY*
 
 rule *s0*: _score_(_Q_)
    - `0`: when the solution is incorrect (`Q = 0`), and the solving time is irrelevant
@@ -291,7 +291,7 @@ CSV-file with information from the programming problem tasks solved by the stude
 | PXs2 | Guttman-based score for the programming problem task with identification *PX* and rule *s2*. |
 | PXs3 | Guttman-based score for the programming problem task with identification *PX* and rule *s3*. |
 
-#### Guttman-structure scoring rules
+#### Guttman-structure scoring rules for the columns *PXsY*
 
 rule *s0*: _score_(_Q_)
    - `0`: when the solution is incorrect (`Q = 0`), and the solving time is irrelevant
@@ -307,7 +307,6 @@ rule *s2*: _score_(_Q x T66 x T33_)
  - `(1,0,x) = 1`: when the solution is correct (`Q =1`) and the solving time is greater than 66-th percentile (`t > T66`)
  - `(1,1,0) = 2`: when the solution is correct (`Q =1`) and the solving time is greater than 33-th percentile (`t > T33`)
  - `(1,1,1) = 3`: when the solution is correct (`Q =1`) and the solving time is less than 33-th percentile (`t < T33`)
-
 
 rule *s3*: _score_(_Q x T75 x T50 x T25_)
  - `(0,x,x,x) = 0`: when the solution is incorrect (`Q = 0`) and the solving time is irrelevant
@@ -327,10 +326,8 @@ These estimates were calculated through the stacking process based on the Genera
 | Column | Description |
 |--------|----------|
 | UserID | Integer as user identification to differentiate students on the empirical studies |
-| PXs0 | Guttman-based score for the programming problem task with identification *PX* and rule *s0*. |
-| PXs1 | Guttman-based score for the programming problem task with identification *PX* and rule *s1*. |
-| PXs2 | Guttman-based score for the programming problem task with identification *PX* and rule *s2*. |
-| PXs3 | Guttman-based score for the programming problem task with identification *PX* and rule *s3*. |
+| *QuX* | GPCM-based score for the AMC question with identification *QuX* |
+| *PXsY* | Guttman-based score for the programming problem task with identification *PX* and rule *sY*. |
 | pre.PersonScores | Score calculated as the sum of items used during the *pretest* phase |
 | pos.PersonScores | Score calculated as the sum of items used during the *posttest* phase |
 | pre.theta | Estimate of the latent trait in logit scale for the *pretest* phase |
@@ -339,8 +336,20 @@ These estimates were calculated through the stacking process based on the Genera
 | pos.sd.error | Standard error for the estimate of the latent trait *theta* calculated in the *posttest* phase |
 | gain.theta | Estimate of the difference of latent traits (`pos.theta - pre.theta`) in logit scale |
 
+Columns with name of *QuX* can have values `Qu = {Re, Un, Ap, An, Ev}` and `X = {1, 2, 3}` to represent questions classified according to the Bloom and SOLO taxonomies. `Qu = Re: Remember level`, `Qu = Un: Understand level`, `Qu = Ap: Apply level`, `Qu = An: Analysing level`, `Qu = Ev: Evaluation level`, `X = 1 or X = A: unistructural level`, `X = 2 or X = B: multistructural level`, and `X = 3 or X = C: relational level`. (more information of these taxonomies in [https://dl.acm.org/citation.cfm?id=1379265](https://dl.acm.org/citation.cfm?id=1379265) and in [https://doi.org/10.1145/2676723.2677311](https://doi.org/10.1145/2676723.2677311))
 
-#### Guttman-structure scoring rules
+#### GPCM-based scoring rules for the columns *QuX*
+
+Let *NBC* be the number of correct responses which have been checked in the question *QuX*, *NM* be the number of wrong responses; and *NMC* be the number of wrong responses which have been checked in the question *QuX*; then, the GPCM-scoring rule for a n-th question in the multiple choice questionnaire is given by:
+
+```
+score(n) = 0 ; if NBC = 0 
+score(n) = (NBC * (NM+1)) - NMC; otherwise
+```
+
+  
+
+#### Guttman-structure scoring rules for the columns *PXsY*
 
 rule *s0*: _score_(_Q_)
    - `0`: when the solution is incorrect (`Q = 0`), and the solving time is irrelevant
