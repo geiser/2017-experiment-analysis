@@ -73,15 +73,28 @@ The results obtained by the execution of this R script are:
      - _Result_: Responses from the multiple-choice knowledge questionnaire of recursion *p3c*. Responses obtained throughout the posttest phase and scored using the teacher's rule: [PosAMCscr.csv](study03/data/PosAMCscr.csv) ([more info ...](study03/data))
 
 
-R script to extract information from the adapted version of VPL (Virtual-Programming-Lab) Moodle plugin ([00-processing-vpl.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-vpl.R)). Such adapted version with code recording log can be downloaad from: [https://github.com/geiser/moodle-mod_vpl](https://github.com/geiser/moodle-mod_vpl/) 
-   - _Result_ from programming problem tasks obtained throughout the pretest phase of pilot empirical study, and scored with Guttman-based rules: [PreGuttmanVPL.csv](pilot-study/data/PreGuttmanVPL.csv) ([more info ...](pilot-study/data))
-   - _Result_ from programming problem tasks obtained throughout the pretest phase of pilot empirical study, and scored with Guttman-based rules: [PosGuttmanVPL.csv](pilot-study/data/PosGuttmanVPL.csv) ([more info ...](pilot-study/data))
-   - _Result_ from programming problem tasks obtained throughout the pretest phase of first empirical study, and scored with Guttman-based rules: [PreGuttmanVPL.csv](study01/data/PreGuttmanVPL.csv) ([more info ...](study01/data))
-   - _Result_ from programming problem tasks obtained throughout the pretest phase of first empirical study, and scored with Guttman-based rules: [PosGuttmanVPL.csv](study01/data/PosGuttmanVPL.csv) ([more info ...](study01/data))
-   - _Result_ from programming problem tasks obtained throughout the pretest phase of second empirical study, and scored with Guttman-based rules: [PreGuttmanVPL.csv](study02/data/PreGuttmanVPL.csv) ([more info ...](study02/data))
-   - _Result_ from programming problem tasks obtained throughout the pretest phase of second empirical study, and scored with Guttman-based rules: [PosGuttmanVPL.csv](study02/data/PosGuttmanVPL.csv) ([more info ...](study02/data))
-   - _Result_ from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules: [PreGuttmanVPL.csv](study03/data/PreGuttmanVPL.csv) ([more info ...](study03/data))
-   - _Result_ from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules: [PosGuttmanVPL.csv](study03/data/PosGuttmanVPL.csv) ([more info ...](study03/data))
+### R script to extract information related to the VPL Moodle plugin ([00-processing-vpl.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-vpl.R))
+
+R script to extract information related to the adapted version of VPL (Virtual-Programming-Lab) Moodle plugin. This adapted VPL Moodle plugin with code recording log can be downloaad from: [https://github.com/geiser/moodle-mod_vpl](https://github.com/geiser/moodle-mod_vpl/).
+
+The results obtained by the execution of this R script are: 
+
+* Information of the programming problem tasks solved throughout the *pretest* phase of *pilot* empirical study and scoring with Guttman-based rules<br/>
+  _File_: [PreGuttmanVPL.csv](pilot-study/data/PreGuttmanVPL.csv) ([more info ...](pilot-study/data))
+* Information of the programming problem tasks solved throughout the *posttest* phase of *pilot* empirical study, and scored with Guttman-based rules<br/>
+  _File_: [PosGuttmanVPL.csv](pilot-study/data/PosGuttmanVPL.csv) ([more info ...](pilot-study/data))
+* Information of the programming problem tasks solved throughout the *pretest* phase of *first* empirical study, and scored with Guttman-based rules<br/>
+  _File_: [PreGuttmanVPL.csv](study01/data/PreGuttmanVPL.csv) ([more info ...](study01/data))
+* Result from programming problem tasks obtained throughout the pretest phase of first empirical study, and scored with Guttman-based rules<br/>
+  _File_: [PosGuttmanVPL.csv](study01/data/PosGuttmanVPL.csv) ([more info ...](study01/data))
+* Result from programming problem tasks obtained throughout the pretest phase of second empirical study, and scored with Guttman-based rules<br/>
+  _File_: [PreGuttmanVPL.csv](study02/data/PreGuttmanVPL.csv) ([more info ...](study02/data))
+* Result from programming problem tasks obtained throughout the pretest phase of second empirical study, and scored with Guttman-based rules<br/>
+  _File_: [PosGuttmanVPL.csv](study02/data/PosGuttmanVPL.csv) ([more info ...](study02/data))
+* Result from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules<br/>
+  _File_: [PreGuttmanVPL.csv](study03/data/PreGuttmanVPL.csv) ([more info ...](study03/data))
+* Result from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules.<br/>
+  _File_: [PosGuttmanVPL.csv](study03/data/PosGuttmanVPL.csv) ([more info ...](study03/data))
 
 
 ### R script to remove careless responses ([01-removing-careless-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/01-removing-careless-motivation.R))
