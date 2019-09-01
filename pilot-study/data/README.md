@@ -1,6 +1,6 @@
 # Data Employed in the Statistical Analysis of the Pilot Empirical Study
 
-### [CLActivity.csv](CLActivity.csv)
+### File: [CLActivity.csv](CLActivity.csv)
 
 CSV-file with information related to the execution of CL sessions in the pilot empirical study.
 - On-line visualization: [CLActivity.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/CLActivity.csv)
@@ -30,7 +30,7 @@ The possible values for the column *ParticipationLevel* are:
 * _complete_ is the participation level in which the students interacted in CL sessions performing all the necessary interactions, and they answered all the requests made by other members of the CL group.
 
 
-### [SignedUpParticipants.csv](SignedUpParticipants.csv)
+### File: [SignedUpParticipants.csv](SignedUpParticipants.csv)
 
 CSV-file with the list of all students enrolled as participants in the pilot empirical study.
 - On-line visualization: [SignedUpParticipants.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SignedUpParticipants.csv)
@@ -44,7 +44,7 @@ CSV-file with the list of all students enrolled as participants in the pilot emp
 | CLRole | The CL role assigned for the student with *UserID* |
 | PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
 
-### [EffectiveParticipants.csv](EffectiveParticipants.csv)
+### File: [EffectiveParticipants.csv](EffectiveParticipants.csv)
 
 CSV-file with the list of students with *effective* participation in the pilot empirical study.
 - On-line visualization: [EffectiveParticipants.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/EffectiveParticipants.csv)
@@ -65,7 +65,7 @@ semicomplete or incomplete participation level in the CL session.
 
 ## Data Related to the Students' Motivation
 
-### [SourceIMILegend.csv](SourceIMILegend.csv)
+### File: [SourceIMILegend.csv](SourceIMILegend.csv)
 
 CSV-file with the legend of IMI questionnaire applied in pilot empirical study.
 - On-line visualization: [SourceIMILegend.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMILegend.csv)
@@ -79,7 +79,7 @@ CSV-file with the legend of IMI questionnaire applied in pilot empirical study.
 | Content | Description of the item with identification *ID* |
 
 
-### [SourceIMIWithCareless.csv](SourceIMIWithCareless.csv)
+### File: [SourceIMIWithCareless.csv](SourceIMIWithCareless.csv)
 
 CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
 These responses included careless responses.
@@ -92,7 +92,7 @@ These responses included careless responses.
 | ItemX | Value for the 7 point Likert scale with the identification *ItemX*  |
 
 
-### [SourceIMI.csv](SourceIMI.csv)
+### File: [SourceIMI.csv](SourceIMI.csv)
 
 CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
 Careless responses removed from the data through the process detailed in the file: [outliers-motivation-surveys.pdf](../../report/outliers-motivation-surveys.pdf)
@@ -109,7 +109,7 @@ Careless responses removed from the data through the process detailed in the fil
 | ItemX | Value from a 7 point Likert scale for the item with identification *ItemX* |
 
 
-### [IMI.csv](IMI.csv)
+### File: [IMI.csv](IMI.csv)
 
 CSV-file with the validated responses gathered throughout the pilot empirical study.
 These response only included items validated through the factorial analysis and reliability test detailed in the file: [validation-motivation-surveys.pdf](../../report/validation-motivation-surveys.pdf)
@@ -131,7 +131,7 @@ These response only included items validated through the factorial analysis and 
 | Intrinsic Motivation | Mean of values in the items related to the *Intrinsic Motivation*. This value is calculate as `IM = (IE + PC + EI + 8-PT)/4` |
 
 
-### [InterestEnjoyment.csv](InterestEnjoyment.csv)
+### File: [InterestEnjoyment.csv](InterestEnjoyment.csv)
 
 CSV-file with the IRT-based estimates of Interest Enjoyment for the students on pilot empirical study.
 These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
@@ -152,7 +152,7 @@ These estimates were calculated through the building process of RSM-based instru
 | Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
 
 
-### [PerceivedChoice.csv](PerceivedChoice.csv)
+### File: [PerceivedChoice.csv](PerceivedChoice.csv)
 
 CSV-file with the IRT-based estimates of Perceived Choice for the students on pilot empirical study.
 These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
@@ -173,7 +173,7 @@ These estimates were calculated through the building process of RSM-based instru
 | Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
 
 
-### [PressureTension.csv](PressureTension.csv)
+### File: [PressureTension.csv](PressureTension.csv)
 
 CSV-file with the IRT-based estimates of Pressure/Tension for the students on pilot empirical study.
 These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
@@ -194,7 +194,7 @@ These estimates were calculated through the building process of RSM-based instru
 | Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
 
 
-### [EffortImportance.csv](EffortImportance.csv)
+### File: [EffortImportance.csv](EffortImportance.csv)
 
 CSV-file with the IRT-based estimates of Effort/Importance for the students on pilot empirical study.
 These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
@@ -215,7 +215,7 @@ These estimates were calculated through the building process of RSM-based instru
 | Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
 
 
-### [IntrinsicMotivation.csv](IntrinsicMotivation.csv)
+### File: [IntrinsicMotivation.csv](IntrinsicMotivation.csv)
 
 CSV-file with the IRT-based estimates of Intrinsic Motivation for the students on pilot empirical study.
 These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
