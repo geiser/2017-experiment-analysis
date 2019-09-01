@@ -12,7 +12,7 @@
 
 ## Scripts in this folder - path: [/](https://github.com/geiser/phd-thesis-evaluation/)
 
-#### R script to extract information from Moodle platform ([00-processing-mysql.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-mysql.R))
+### R script to extract information from Moodle platform ([00-processing-mysql.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-mysql.R))
 
 * List of all students as participants in the pilot empirical study (lines 15-70)<br/>
   _Result_: [SignedUpParticipants.csv](pilot-study/data/SignedUpParticipants.csv) ([more info ...](pilot-study/data/))
@@ -76,10 +76,17 @@ R script to extract information from the adapted version of VPL (Virtual-Program
    - _Result_ from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules: [PosGuttmanVPL.csv](study03/data/PosGuttmanVPL.csv) ([more info ...](study03/data))
 
 
-R script to remove careless responses on the data gathered through the IMI and IMMS questionnaires ([01-removing-careless-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/01-removing-careless-motivation.R)). A careless response is defined as a response in which the length of uninterrupted identical values for the items is greater than half of the items in the questionnaire.
-* In reference to the pilot empirical study,
-    - _Result_: Careless responses identified on the IMI questionnaire: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf)
-    - _Result_: Responses of IMI questionnaire without careless responses: [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
+### R script to remove careless responses ([01-removing-careless-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/01-removing-careless-motivation.R))
+
+R script to remove careless responses on the data gathered by the IMI and IMMS questionnaires. A careless response is defined as a response in which the length of uninterrupted identical values for the items is greater than half of the items in the questionnaire.
+
+The results obtained by the execution of the R script are:
+
+* Careless responses identified on the IMI questionnaire with data gathered throughout pilot empirical study
+  _File_: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf)
+* Responses of the IMI questionnaire with data gathered throughout pilot empirical study and without careless responses<br/>
+  _File_: [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
+
 * In reference to the first empirical study,
     - _Result_: Careless responses identified on the IMI questionnaire: [careless-IMI-study01.pdf](report/latex/careless-IMI-study01.pdf)
     - _Result_: Responses of IMI questionnaire without careless responses: [SourceIMI.csv](study01/data/SourceIMI.csv) ([more info ...](study01/data))
@@ -93,7 +100,7 @@ R script to remove careless responses on the data gathered through the IMI and I
     - _Result_: Responses of IMMS questionnaire without careless responses: [SourceIMMS.csv](study03/data/SourceIMMS.csv) ([more info ...](study03/data))
 
 
-#### R script to winsorize extreme responses ([02-winsorizing-extreme-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/02-winsorizing-extreme-motivation.R))
+### R script to winsorize extreme responses ([02-winsorizing-extreme-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/02-winsorizing-extreme-motivation.R))
 
 R script to winsorize extreme responses from the data gathered through the IMI and IMMS questionnaires. Extreme responses correspond to answers given by participants who have tendency to indicate extreme lower and upper values in questionnaires. Such responses are outliers that affect the assumptions for parametric tests, but that can't simply removed to satisfy these assumptions. To reduce the impact of extreme values, they should be shrunk to the border of the main part of the data through the winsorization method.
 
@@ -108,7 +115,8 @@ The results obtained by the execution of the R script are:
 * Data with winsorized responses to validate the IMMS questionnaire.<br/>
   _File_: [WinsorizedIMMS.csv](data/WinsorizedIMMS.csv) ([more info ...](data))
 
-#### R script to validate the IMI questionnaire ([03-validating-IMI.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/03-validating-IMI.R))
+
+### R script to validate the IMI questionnaire ([03-validating-IMI.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/03-validating-IMI.R))
 
 Validation of the adapted Portuguese IMI questionnaire through the exploratory/confirmatory factorial analysis and the reliability test.
 
