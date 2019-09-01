@@ -155,10 +155,29 @@ The results obtained by the execution of this R script are:
 * Validation of univariate distribution for each items.<br/>
   _File_: [univariate-histogram.png](report/validation-IMI/univariate-histogram.png) ([more info ...](report/validation-IMI))
 * Goodness of fit statistics for the factorial analysis on the responses of IMI questionnaire.<br/>
-  _File_: [cfa-model-fit.pdf](report/validation-IMI/cfa-model-fit.pdf)
+  _File_: [cfa-model-fit.pdf](report/validation-IMI/cfa-model-fit.pdf)  ([more info ...](report/validation-IMI))
 * Summary of the factorial analysis and reliability test.<br/>
   _File_: [reliability-analysis.pdf](report/validation-IMI/reliability-analysis.pdf) ([more info ...](report/validation-IMI))
 * Report for the measure sampling adequacy, factorial analysis, and reliability test.<br/>
   _File_: [RelAnalysis.xlsx](report/validation-IMI/RelAnalysis.xlsx) ([more info ...](report/validation-IMI))
 * Data with the responses of the validated IMI questionnaire.<br/>
   _File_: [IMI.csv](data/IMI.csv) ([more info ...](data))
+
+
+### R script to validate the IMMS questionnaire ([03-validating-IMMS.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/03-validating-IMMS.R))
+
+R script to validate the adapted Portuguese IMMS questionnaire through the exploratory/confirmatory factorial analysis and the reliability test.
+
+The results obtained by the execution of this R script are:
+
+* Validation of univariate distribution for each items.<br/>
+  _File_: [univariate-histogram.png](report/validation-IMMS/univariate-histogram.png) ([more info ...](report/validation-IMMS))
+* Goodness of fit statistics for the factorial analysis on the responses of IMI questionnaire.<br/>
+  _File_: [cfa-model-fit.pdf](report/validation-IMMS/cfa-model-fit.pdf)  ([more info ...](report/validation-IMMS))
+* Summary of the factorial analysis and reliability test.<br/>
+  _File_: [reliability-analysis.pdf](report/validation-IMMS/reliability-analysis.pdf) ([more info ...](report/validation-IMMS))
+* Report for the measure sampling adequacy, factorial analysis, and reliability test.<br/>
+  _File_: [RelAnalysis.xlsx](report/validation-IMMS/RelAnalysis.xlsx) ([more info ...](report/validation-IMMS))
+* Data with the responses of the validated IMMS questionnaire.<br/>
+  _File_: [IMMS.csv](data/IMMS.csv) ([more info ...](data))
+
