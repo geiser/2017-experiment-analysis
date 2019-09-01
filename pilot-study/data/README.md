@@ -95,7 +95,8 @@ These responses included careless responses.
 ### [SourceIMI.csv](SourceIMI.csv)
 
 CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
-Careless responses were removed from the data using the R script: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R).
+Careless responses were removed from the data through the process detailed in [outliers-motivation-surveys.pdf](../../report/outliers-motivation-surveys.pdf).
+
 - On-line visualization: [SourceIMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMI.csv)
 - R script used to generate this file: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R) ([more info](../../)) 
 
@@ -131,6 +132,13 @@ These response were winsorized, and they only included validated items through t
 | Intrinsic Motivation | Mean of values in the items related to the *Intrinsic Motivation*. This value is calculate as `IM = (IE + PC + EI + 8-PT)/4` |
 
 
+### [PressureTension.csv](PressureTension.csv)
+
+CSV-file with the IRT (Item Response Theory) estimates of Pressure/Tension for the students on pilot empirical study.
+These estimates were calculated through the building of  RMS response were winsorized, and they only included validated items through the factorial analysis and reliability test ([validation-IMI](../../report/validation-IMI)).
+
+- On-line visualization: [PressureTension.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/PressureTension.csv)
+- R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
 
 
 
