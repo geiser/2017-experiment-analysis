@@ -92,13 +92,13 @@ The results obtained by the execution of this R script are:
   _File_: [PreGuttmanVPL.csv](study01/data/PreGuttmanVPL.csv) ([more info ...](study01/data))
 * Information of the programming problem tasks solved throughout the *pretest* phase of the *first* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PosGuttmanVPL.csv](study01/data/PosGuttmanVPL.csv) ([more info ...](study01/data))
-* Information of the programming problem tasks solved throughout the *pretest* phase of *second* empirical study, and scored with *Guttman-based rules*.<br/>
+* Information of the programming problem tasks solved throughout the *pretest* phase of the *second* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PreGuttmanVPL.csv](study02/data/PreGuttmanVPL.csv) ([more info ...](study02/data))
-* Information of the programming problem tasks solved throughout the *pretest* phase of *second* empirical study, and scored with *Guttman-based rules*.<br/>
+* Information of the programming problem tasks solved throughout the *pretest* phase of the *second* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PosGuttmanVPL.csv](study02/data/PosGuttmanVPL.csv) ([more info ...](study02/data))
-* Information of the programming problem tasks solved throughout the *pretest* phase of *third* empirical study, and scored with *Guttman-based rules*.<br/>
+* Information of the programming problem tasks solved throughout the *pretest* phase of the *third* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PreGuttmanVPL.csv](study03/data/PreGuttmanVPL.csv) ([more info ...](study03/data))
-* Information of the programming problem tasks obtained throughout the *pretest* phase of *third* empirical study, and scored with *Guttman-based rules*.<br/>
+* Information of the programming problem tasks obtained throughout the *pretest* phase of the *third* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PosGuttmanVPL.csv](study03/data/PosGuttmanVPL.csv) ([more info ...](study03/data))
 
 
@@ -108,37 +108,26 @@ R script to remove careless responses on the data gathered by the IMI and IMMS q
 
 The results obtained by the execution of this R script are:
 
-* Careless responses identified on the IMI questionnaire with data gathered throughout the pilot empirical study.<br/>
+* Careless responses identified on the data gathered throughout the *pilot* empirical study and using the IMI questionnaire.<br/>
   _File_: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf) ([more info ...](pilot-study/data))
-* Responses of the IMI questionnaire with data gathered throughout the pilot empirical study and without careless responses.<br/>
+* Responses of the IMI questionnaire with data gathered throughout the *pilot* empirical study and without careless responses.<br/>
   _File_: [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
-
-* Careless responses identified on the IMI questionnaire with data gathered throughout the first empirical study.<br/>
-  _File_: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf) ([more info ...](pilot-study/data))
-* Responses of the IMI questionnaire with data gathered throughout the first empirical study and without careless responses.<br/>
-  _File_: [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
-
-* Careless responses identified on the IMI questionnaire with data gathered throughout pilot empirical study<br/>
-  _File_: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf) ([more info ...](pilot-study/data))
-* Responses of the IMI questionnaire with data gathered throughout pilot empirical study and without careless responses<br/>
-  _File_: [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
-
-* Careless responses identified on the IMI questionnaire with data gathered throughout pilot empirical study<br/>
-  _File_: [careless-IMI-pilot-study.pdf](report/latex/careless-IMI-pilot-study.pdf) ([more info ...](pilot-study/data))
-* Responses of the IMI questionnaire with data gathered throughout pilot empirical study and without careless responses<br/>
-  _File_: [SourceIMI.csv](pilot-study/data/SourceIMI.csv) ([more info ...](pilot-study/data))
-
-* In reference to the first empirical study,
-    - _Result_: Careless responses identified on the IMI questionnaire: [careless-IMI-study01.pdf](report/latex/careless-IMI-study01.pdf)
-    - _Result_: Responses of IMI questionnaire without careless responses: [SourceIMI.csv](study01/data/SourceIMI.csv) ([more info ...](study01/data))
-* In reference to the second empirical study,
-    - _Result_: Careless responses identified on the IMMS questionnaire: [careless-IMMS-study02.pdf](report/latex/careless-IMMS-study02.pdf)
-    - _Result_: Responses of IMMS questionnaire without careless responses: [SourceIMMS.csv](study02/data/SourceIMMS.csv) ([more info ...](study02/data))
-  - In reference to the third empirical study,
-    - _Result_: Careless responses identified on the IMI questionnaire: [careless-IMI-study03.pdf](report/latex/careless-IMI-study03.pdf)
-    - _Result_: Responses of IMI questionnaire without careless responses: [SourceIMI.csv](study03/data/SourceIMI.csv) ([more info ...](study03/data))
-    - _Result_: Careless responses identified on the IMMS questionnaire: [careless-IMMS-study03.pdf](report/latex/careless-IMMS-study03.pdf)
-    - _Result_: Responses of IMMS questionnaire without careless responses: [SourceIMMS.csv](study03/data/SourceIMMS.csv) ([more info ...](study03/data))
+* Careless responses identified on the data gathered throughout the *first* empirical study and using the IMI questionnaire.<br/>
+  _File_: [careless-IMI-study01.pdf](report/latex/careless-IMI-study01.pdf) ([more info ...](pilot-study/data))
+* Responses of the IMI questionnaire with data gathered throughout the *first* empirical study and without careless responses.<br/>
+  _File_: [SourceIMI.csv](study01/data/SourceIMI.csv) ([more info ...](study01/data))
+* Careless responses identified on the data gathered throughout the *second* empirical study and using the IMMS questionnaire.<br/>
+  _File_: [careless-IMMS-study02.pdf](report/latex/careless-IMMS-study02.pdf) ([more info ...](study02/data))
+* Responses of the IMMS questionnaire with data gathered throughout the *second* empirical study and without careless responses.<br/>
+  _File_: [SourceIMMS.csv](study02/data/SourceIMMS.csv) ([more info ...](study02/data))
+* Careless responses identified on the data gathered throughout the *third* empirical study and using the IMI questionnaire.<br/>
+  _File_: [careless-IMI-study03.pdf](report/latex/careless-IMI-study03.pdf) ([more info ...](study03/data))
+* Responses of the IMI questionnaire with data gathered throughout the *third* empirical study and without careless responses.<br/>
+  _File_: [SourceIMI.csv](study03/data/SourceIMI.csv) ([more info ...](study03/data))
+* Careless responses identified on the data gathered throughout the *third* empirical study and using the IMMS questionnaire.<br/>
+  _File_: [careless-IMMS-study03.pdf](report/latex/careless-IMMS-study03.pdf) ([more info ...](study03/data))
+* Responses of the IMMS questionnaire with data gathered throughout the *third* empirical study and without careless responses.<br/>
+  _File_: [SourceIMMS.csv](study03/data/SourceIMMS.csv) ([more info ...](study03/data))
 
 
 ### R script to winsorize extreme responses ([02-winsorizing-extreme-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/02-winsorizing-extreme-motivation.R))
