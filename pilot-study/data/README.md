@@ -95,8 +95,7 @@ These responses included careless responses.
 ### [SourceIMI.csv](SourceIMI.csv)
 
 CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
-Careless responses were removed from the data through the process detailed in [outliers-motivation-surveys.pdf](../../report/outliers-motivation-surveys.pdf).
-
+Careless responses removed from the data through the process detailed in [outliers-motivation-surveys.pdf](../../report/outliers-motivation-surveys.pdf).
 - On-line visualization: [SourceIMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMI.csv)
 - R script used to generate this file: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R) ([more info](../../)) 
 
@@ -113,7 +112,7 @@ Careless responses were removed from the data through the process detailed in [o
 ### [IMI.csv](IMI.csv)
 
 CSV-file with the validated responses gathered throughout the pilot empirical study.
-These response were winsorized, and they only included validated items through the factorial analysis and reliability test ([validation-IMI](../../report/validation-IMI)).
+These response only included items validated through the factorial analysis and reliability test detailed in [validation-motivation-surveys.pdf](../../report/validation-motivation-surveys.pdf).
 - On-line visualization: [IMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/IMI.csv)
 - R script used to generate this file: [00-reliability-analysis-IMI.R](../00-reliability-analysis-IMI.R) ([more info](../)) 
 
@@ -134,11 +133,9 @@ These response were winsorized, and they only included validated items through t
 
 ### [PressureTension.csv](PressureTension.csv)
 
-CSV-file with the IRT (Item Response Theory) estimates of Pressure/Tension for the students on pilot empirical study.
-These estimates were calculated through the building of  RMS response were winsorized, and they only included validated items through the factorial analysis and reliability test ([validation-IMI](../../report/validation-IMI)).
-
+CSV-file with the IRT-based estimates of Pressure/Tension for the students on pilot empirical study.
+These estimates were calculated through the building process of RSM-based instruments detailed in [irt-instruments.pdf](../../report/irt-instruments.pdf).
 - On-line visualization: [PressureTension.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/PressureTension.csv)
 - R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
-
 
 
