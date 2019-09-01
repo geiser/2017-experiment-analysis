@@ -77,5 +77,5 @@
     - _Result_: Careless responses identified on the IMMS questionnaire: [careless-IMMS-study03.pdf](report/latex/careless-IMMS-study03.pdf)
 
 * R script to winsorize extreme responses from the data gathered through the IMI and IMMS questionnaires ([02-winsorizing-extreme-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/02-winsorizing-extreme-motivation.R)). Extreme responses correspond to answers given by participants who have tendency to indicate extreme lower and upper values in questionnaires. Such responses are outliers that affect the assumptions for parametric tests, but that can't simply removed to satisfy these assumptions. To reduce the impact of extreme values, they should be shrunk to the border of the main part of the data through the winsorization method.  
-  - _Result_: Winsorized responses for the validation of adapted Portuguese IMI questionnaire: [WinsorizedIMI.csv](data/WinsorizedIMI.csv)
-  - _Result_: Winsorized responses for the validation of adapted Portuguese IMMS questionnaire: [WinsorizedIMMS.csv](data/WinsorizedIMMS.csv)
+  - _Result_: Winsorized responses to validate the IMI questionnaire: [WinsorizedIMI.csv](data/WinsorizedIMI.csv) ([more info ...](data))
+  - _Result_: Winsorized responses to validate the IMMS questionnaire: [WinsorizedIMMS.csv](data/WinsorizedIMMS.csv) ([more info ...](data))
