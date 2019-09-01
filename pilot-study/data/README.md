@@ -95,7 +95,7 @@ These responses included careless responses.
 ### [SourceIMI.csv](SourceIMI.csv)
 
 CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
-Careless responses removed from the data through the process detailed in [outliers-motivation-surveys.pdf](../../report/outliers-motivation-surveys.pdf).
+Careless responses removed from the data through the process detailed in the file: [outliers-motivation-surveys.pdf](../../report/outliers-motivation-surveys.pdf)
 - On-line visualization: [SourceIMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMI.csv)
 - R script used to generate this file: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R) ([more info](../../)) 
 
@@ -112,7 +112,7 @@ Careless responses removed from the data through the process detailed in [outlie
 ### [IMI.csv](IMI.csv)
 
 CSV-file with the validated responses gathered throughout the pilot empirical study.
-These response only included items validated through the factorial analysis and reliability test detailed in [validation-motivation-surveys.pdf](../../report/validation-motivation-surveys.pdf).
+These response only included items validated through the factorial analysis and reliability test detailed in the file: [validation-motivation-surveys.pdf](../../report/validation-motivation-surveys.pdf)
 - On-line visualization: [IMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/IMI.csv)
 - R script used to generate this file: [00-reliability-analysis-IMI.R](../00-reliability-analysis-IMI.R) ([more info](../)) 
 
@@ -131,11 +131,95 @@ These response only included items validated through the factorial analysis and 
 | Intrinsic Motivation | Mean of values in the items related to the *Intrinsic Motivation*. This value is calculate as `IM = (IE + PC + EI + 8-PT)/4` |
 
 
+### [InterestEnjoyment.csv](InterestEnjoyment.csv)
+
+CSV-file with the IRT-based estimates of Interest Enjoyment for the students on pilot empirical study.
+These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+- On-line visualization: [InterestEnjoyment.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/InterestEnjoyment.csv)
+- R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| Score | Score calculated as the sum of the items in each record |
+| theta | Estimate of the latent trait in logit scale |
+| error | Standard error for the estimate of the latent trait *theta* |
+| Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
+| Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
+
+
+### [PerceivedChoice.csv](PerceivedChoice.csv)
+
+CSV-file with the IRT-based estimates of Perceived Choice for the students on pilot empirical study.
+These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+- On-line visualization: [PerceivedChoice.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/PerceivedChoice.csv)
+- R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| Score | Score calculated as the sum of the items in each record |
+| theta | Estimate of the latent trait in logit scale |
+| error | Standard error for the estimate of the latent trait *theta* |
+| Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
+| Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
+
+
 ### [PressureTension.csv](PressureTension.csv)
 
 CSV-file with the IRT-based estimates of Pressure/Tension for the students on pilot empirical study.
-These estimates were calculated through the building process of RSM-based instruments detailed in [irt-instruments.pdf](../../report/irt-instruments.pdf).
+These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
 - On-line visualization: [PressureTension.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/PressureTension.csv)
+- R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| Score | Score calculated as the sum of the items in each record |
+| theta | Estimate of the latent trait in logit scale |
+| error | Standard error for the estimate of the latent trait *theta* |
+| Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
+| Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
+
+
+### [EffortImportance.csv](EffortImportance.csv)
+
+CSV-file with the IRT-based estimates of Effort/Importance for the students on pilot empirical study.
+These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+- On-line visualization: [EffortImportance.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/EffortImportance.csv)
+- R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical study |
+| Type | Type of CL session in which the student with *UserID* participated in the empirical study |
+| CLGroup | Name for the CL group in which the student with *UserID* is member of |
+| CLRole | The CL role assigned for the student with *UserID* |
+| PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
+| Score | Score calculated as the sum of the items in each record |
+| theta | Estimate of the latent trait in logit scale |
+| error | Standard error for the estimate of the latent trait *theta* |
+| Outfit | outlier-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system.  |
+| Infit | inlier-pattern-sensitive fit statistic based on chi-square test. Values greater than `>2` distorts or degraddes the measurement system. |
+
+
+### [IntrinsicMotivation.csv](IntrinsicMotivation.csv)
+
+CSV-file with the IRT-based estimates of Intrinsic Motivation for the students on pilot empirical study.
+These estimates were calculated through the building process of RSM-based instruments detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+- On-line visualization: [IntrinsicMotivation.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/IntrinsicMotivation.csv)
 - R script used to generate this file: [00-rsm-motivation-measurement-building.R](../00-rsm-motivation-measurement-building.R) ([more info](../)) 
 
 | Column | Description |
