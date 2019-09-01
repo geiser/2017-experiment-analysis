@@ -321,6 +321,50 @@ rule *s3*: _score_(_Q x T75 x T50 x T25_)
 
 CSV-file with the IRT-based estimates of Skill/Knowledge gains.
 These estimates were calculated through the stacking process based on the General Partial Credit Model (GPCM), and detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+- On-line visualization: [GainSkillsKnowledge.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/GainSkillsKnowledge.csv)
+- R script used to generate this file: [00-gpcm-learning-outcomes-measurement-building.R](../00-gpcm-learning-outcomes-measurement-building.R) ([more info](../)) 
+
+| Column | Description |
+|--------|----------|
+| UserID | Integer as user identification to differentiate students on the empirical studies |
+| PXs0 | Guttman-based score for the programming problem task with identification *PX* and rule *s0*. |
+| PXs1 | Guttman-based score for the programming problem task with identification *PX* and rule *s1*. |
+| PXs2 | Guttman-based score for the programming problem task with identification *PX* and rule *s2*. |
+| PXs3 | Guttman-based score for the programming problem task with identification *PX* and rule *s3*. |
+| pre.PersonScores | Score calculated as the sum of items used during the *pretest* phase |
+| pos.PersonScores | Score calculated as the sum of items used during the *posttest* phase |
+| pre.theta | Estimate of the latent trait in logit scale for the *pretest* phase |
+| pos.theta | Estimate of the latent trait in logit scale for the *posttest* phase |
+| pre.sd.error | Standard error for the estimate of the latent trait *theta* calculated in the *pretest* phase |
+| pos.sd.error | Standard error for the estimate of the latent trait *theta* calculated in the *posttest* phase |
+| gain.theta | Estimate of the difference of latent traits (`pos.theta - pre.theta`) in logit scale |
+
+
+#### Guttman-structure scoring rules
+
+rule *s0*: _score_(_Q_)
+   - `0`: when the solution is incorrect (`Q = 0`), and the solving time is irrelevant
+   - `1`: when the solution is correct (`Q = 1`), and the solving time is irrelevant
+
+rule *s1*: _score_(_Q x T50_)
+ - `(0,x) = 0`: when the solution is incorrect (`Q = 0`) and the solving time is irrelevant
+ - `(1,0) = 1`: when the solution is correct (`Q = 1`) and the solving time is greater than the median (`t > T55`)
+ - `(1,1) = 2`: when the solution is correct (`Q = 1`) and the solving time is less than the median (`t < T50`)
+
+rule *s2*: _score_(_Q x T66 x T33_)
+ - `(0,x,x) = 0`: when the solution is incorrect (`Q =0`) and the solving time is irrelevant
+ - `(1,0,x) = 1`: when the solution is correct (`Q =1`) and the solving time is greater than 66-th percentile (`t > T66`)
+ - `(1,1,0) = 2`: when the solution is correct (`Q =1`) and the solving time is greater than 33-th percentile (`t > T33`)
+ - `(1,1,1) = 3`: when the solution is correct (`Q =1`) and the solving time is less than 33-th percentile (`t < T33`)
+
+
+rule *s3*: _score_(_Q x T75 x T50 x T25_)
+ - `(0,x,x,x) = 0`: when the solution is incorrect (`Q = 0`) and the solving time is irrelevant
+ - `(1,0,x,x) = 1`: when the solution is correct (`Q = 1`) and the solving time is greater than 75-th percentile (`t > T75`)
+ - `(1,1,0,x) = 2`: when the solution is correct (`Q = 1`) and the solving time is greater than the median (`t > T50`)
+ - `(1,1,1,0) = 3`: when the solution is correct (`Q = 1`) and the solving time is greater than 25-th percentile (`t > T25`)
+ - `(1,1,1,1) = 4`: when the solution is correct (`Q = 1`) and the solving time is less than 25-th percentile (`t < T25`)
+
 
 
 
