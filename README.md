@@ -12,8 +12,8 @@
 
 ## Scripts in this folder - path: [/](https://github.com/geiser/phd-thesis-evaluation/)
 
+#### R script to extract information from Moodle platform ([00-processing-mysql.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-mysql.R))
 
-R script to extract information from Moodle platform ([00-processing-mysql.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-mysql.R))
 * List of all students as participants in the pilot empirical study (lines 15-70)<br/>
   _Result_: [SignedUpParticipants.csv](pilot-study/data/SignedUpParticipants.csv) ([more info ...](pilot-study/data/))
 * List of students with effective participation in the pilot empirical study (lines 72-80)<br/>
@@ -24,27 +24,35 @@ R script to extract information from Moodle platform ([00-processing-mysql.R](ht
   _Result_: Legend: [SourceIMILegend.csv](pilot-study/data/SourceIMILegend.csv) ([more info ...](pilot-study/data/))<br/>
   _Result_: Responses: [SourceIMIWithCareless.csv](pilot-study/data/SourceIMIWithCareless.csv) ([more info ...](pilot-study/data/))
 * List of all students as participants in the first empirical study (lines 210-272)<br/>
-    _Result_: [SignedUpParticipants.csv](study01/data/SignedUpParticipants.csv) ([more info ...](study01/data/))
-  - List of all students as participants in the second empirical study (lines 273-325)<br/>
-    _Result_: [SignedUpParticipants.csv](study02/data/SignedUpParticipants.csv) ([more info ...](study02/data/))
-  - List of all students as participants in the third empirical study (lines 326-395)<br/>
-    _Result_: [SignedUpParticipants.csv](study03/data/SignedUpParticipants.csv) ([more info ...](study03/data/))
-  - List of students with effective participation in the full-scale empirical studies (400-425)<br/>
-    _Result_: Students of the first empirical study: [EffectiveParticipants.csv](study01/data/EffectiveParticipants.csv) ([more info ...](study01/data/))<br/>
-    _Result_: Students of the second empirical study: [EffectiveParticipants.csv](study02/data/EffectiveParticipants.csv) ([more info ...](study02/data/))<br/>
-    _Result_: Students of the third empirical study: [EffectiveParticipants.csv](study03/data/EffectiveParticipants.csv) ([more info ...](study03/data/))
-  - Experiment designs for the full-scale empirical studies (lines 427-508)<br/>
-    _Result_: [exp_design.csv](report/exp_design.csv) ([more info ...](report/))
+  _Result_: [SignedUpParticipants.csv](study01/data/SignedUpParticipants.csv) ([more info ...](study01/data/))
+* List of all students as participants in the second empirical study (lines 273-325)<br/>
+  _Result_: [SignedUpParticipants.csv](study02/data/SignedUpParticipants.csv) ([more info ...](study02/data/))
+* List of all students as participants in the third empirical study (lines 326-395)<br/>
+  _Result_: [SignedUpParticipants.csv](study03/data/SignedUpParticipants.csv) ([more info ...](study03/data/))
+* List of students with effective participation in the full-scale empirical studies (400-425)<br/>
+  _Result_: Students of the first empirical study: [EffectiveParticipants.csv](study01/data/EffectiveParticipants.csv) ([more info ...](study01/data/))<br/>
+  _Result_: Students of the second empirical study: [EffectiveParticipants.csv](study02/data/EffectiveParticipants.csv) ([more info ...](study02/data/))<br/>
+  _Result_: Students of the third empirical study: [EffectiveParticipants.csv](study03/data/EffectiveParticipants.csv) ([more info ...](study03/data/))
+* Experiment designs for the full-scale empirical studies (lines 427-508)<br/>
+  _Result_: [exp_design.csv](report/exp_design.csv) ([more info ...](report/))
   - Information from the IMI and IMMS questionnaires - third empirical study (lines 510-620)<br/>
     _Result_: Legend: [SourceMotLegend.csv](study03/data/SourceMotLegend.csv) ([more info...](study03/data/))<br/>
     _Result_: Responses of the IMI questionnaire: [SourceIMIWithCareless.csv](study03/data/SourceIMIWithCareless.csv) ([more info ...](study03/data/))<br/>
    _Result_: Responses of the IMMS questionnaire: [SourceIMMSWithCareless.csv](study03/data/SourceIMMSWithCareless.csv) ([more info ...](stbrudy03/data/))
-* R script to extract information from responses of multiple-choice knowledge questionnaires ([00-processing-amc.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-amc.R)). Such questionnaires were built using the AMC (Auto-Multiple-Choice) software - [https://www.auto-multiple-choice.net](https://www.auto-multiple-choice.net) 
- - Getting data to measure skill/knowledge in the first empirical study (lines 10-45)<br/>
-   _Result_: Responses from the multiple-choice knowledge questionnaire of conditional structures *p1a*. Responses obtained throughout the pretest phase and scored using the GPCM-based rule: [PreAMC.csv](study01/data/PreAMC.csv) ([more info ...](study01/data))<br/>
-   _Result_: Responses from the multiple-choice knowledge questionnaire of conditional structures *p1b*. Responses obtained throughout the posttest phase and scored using the GPCM-based rule: [PosAMC.csv](study01/data/PosAMC.csv) ([more info ...](study01/data))<br/>
-   _Result_: Responses from the multiple-choice knowledge questionnaire of conditional structures *p2a*. Responses obtained throughout the pretest phase and scored using the teacher's rule: [PreAMCscr.csv](study01/data/PreAMCscr.csv) ([more info ...](study01/data))<br/>
-   _Result_: Responses from the multiple-choice knowledge questionnaire of conditional structures *p2b*. Responses obtained throughout the posttest phase and scored using the teacher's rule: [PosAMCscr.csv](study01/data/PosAMCscr.csv) ([more info ...](study01/data))
+
+#### R script to extract information from responses of multiple-choice knowledge questionnaires ([00-processing-amc.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-amc.R)).
+
+Such questionnaires were built using the AMC (Auto-Multiple-Choice) software - [https://www.auto-multiple-choice.net](https://www.auto-multiple-choice.net) 
+
+* Getting data to measure skill/knowledge in the first empirical study (lines 10-45)
+  - Responses from the multiple-choice knowledge questionnaire of conditional structures *p1a*. Responses obtained throughout the pretest phase and scored using the GPCM-based rule.<br/>
+    _Result_: [PreAMC.csv](study01/data/PreAMC.csv) ([more info ...](study01/data))
+  - Responses from the multiple-choice knowledge questionnaire of conditional structures *p1b*. Responses obtained throughout the posttest phase and scored using the GPCM-based rule.<br/>
+    _Result_: [PosAMC.csv](study01/data/PosAMC.csv) ([more info ...](study01/data))]
+  - Responses from the multiple-choice knowledge questionnaire of conditional structures *p2a*. Responses obtained throughout the pretest phase and scored using the teacher's rule.<br/>
+    _Result_: [PreAMCscr.csv](study01/data/PreAMCscr.csv) ([more info ...](study01/data))
+  - Responses from the multiple-choice knowledge questionnaire of conditional structures *p2b*. Responses obtained throughout the posttest phase and scored using the teacher's rule.<br/>
+    _Result_: [PosAMCscr.csv](study01/data/PosAMCscr.csv) ([more info ...](study01/data))
  - Getting data to measure the skill/knowledge of participants in the second empirical study (lines 46-80)<br/>
    _Result_: Responses from the multiple-choice knowledge questionnaire of loop structures *p2a*. Responses obtained throughout the pretest phase and scored using the GPCM-based rule: [PreAMC.csv](study02/data/PreAMC.csv) ([more info ...](study02/data))<br/>
    _Result_: Responses from the multiple-choice knowledge questionnaire of loop structures *p2b*. Responses obtained throughout the posttest phase and scored using the GPCM-based rule: [PosAMC.csv](study02/data/PosAMC.csv) ([more info ...](study02/data))<br/>
@@ -92,9 +100,17 @@ R script to winsorize extreme responses from the data gathered through the IMI a
 * Winsorized responses to validate the IMMS questionnaire. _Result_: [WinsorizedIMMS.csv](data/WinsorizedIMMS.csv) ([more info ...](data))
 
 
-R script to validate the IMI questionnaire ([03-validating-IMI.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/03-validating-IMI.R))
-* Validation of univariate distribution of items. _Result_: [univariate-histogram.png](report/validation-IMI/univariate-histogram.png) ([more info ...](report/validation-IMI))
-* Goodness of fit statistics for the factorial analysis on the responses of IMI questionnaire. _Result_: [cfa-model-fit.pdf](report/validation-IMI/cfa-model-fit.pdf)
-* Summary of the factorial analysis and reliability analysis. _Result_: [reliability-analysis.pdf](report/validation-IMI/reliability-analysis.pdf) ([more info ...](report/validation-IMI))
-* Report for the measure sampling adequacy through the KMO method, factorial analysis, and reliability analysis. _Result_: [RelAnalysis.xlsx](report/validation-IMI/RelAnalysis.xlsx) ([more info ...](report/validation-IMI))
-* Responses on the validated IMI questionnaire. _Result_: [IMI.csv](data/IMI.csv) ([more info ...](data))
+#### R script to validate the IMI questionnaire ([03-validating-IMI.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/03-validating-IMI.R))
+
+Validation of the adapted Portuguese IMI questionnaire through an exploratory and confirmatory factorial analysis, and through the reliability test.  
+
+* Validation of univariate distribution of items.<br/>
+  _Result_: [univariate-histogram.png](report/validation-IMI/univariate-histogram.png) ([more info ...](report/validation-IMI))
+* Goodness of fit statistics for the factorial analysis on the responses of IMI questionnaire.<br/>
+  _Result_: [cfa-model-fit.pdf](report/validation-IMI/cfa-model-fit.pdf)
+* Summary of the factorial analysis and reliability test.<br/>
+  _Result_: [reliability-analysis.pdf](report/validation-IMI/reliability-analysis.pdf) ([more info ...](report/validation-IMI))
+* Report for the measure sampling adequacy, factorial analysis, and reliability analysis.<br/>
+  _Result_: [RelAnalysis.xlsx](report/validation-IMI/RelAnalysis.xlsx) ([more info ...](report/validation-IMI))
+* Responses on the validated IMI questionnaire.<br/>
+  _Result_: [IMI.csv](data/IMI.csv) ([more info ...](data))
