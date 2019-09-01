@@ -1,6 +1,6 @@
 # Data Employed in the Statistical Analysis of the Pilot Empirical Study
 
-## [SignedUpParticipants.csv](SignedUpParticipants.csv)
+### [SignedUpParticipants.csv](SignedUpParticipants.csv)
 
 CSV-file with the list of all students enrolled as participants in the pilot empirical study.
 - On-line visualization: [SignedUpParticipants.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SignedUpParticipants.csv)
@@ -14,7 +14,7 @@ CSV-file with the list of all students enrolled as participants in the pilot emp
 | PlayerRole | The player role assigned for the student with *UserID* in ont-gamified CL sessions |
 
 
-## [CLActivity.csv](CLActivity.csv)
+### [CLActivity.csv](CLActivity.csv)
 
 CSV-file with information related to the execution of CL sessions in the pilot empirical study.
 - On-line visualization: [CLActivity.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/CLActivity.csv)
@@ -44,7 +44,7 @@ The possible values for the column *ParticipationLevel* are:
 * _complete_ is the participation level in which the students interacted in CL sessions performing all the necessary interactions, and they answered all the requests made by other members of the CL group.
 
 
-## [EffectiveParticipants.csv](EffectiveParticipants.csv)
+### [EffectiveParticipants.csv](EffectiveParticipants.csv)
 
 CSV-file with the list of students with *effective* participation in the pilot empirical study.
 - On-line visualization: [EffectiveParticipants.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/EffectiveParticipants.csv)
@@ -60,3 +60,47 @@ CSV-file with the list of students with *effective* participation in the pilot e
 *effective*: A student with effective participation is a student that, at least one time, interacted with other member
 of the CL group by following the necessary interactions indicated in the CSCL script. It is a students who had a complete,
 semicomplete or incomplete participation level in the CL session.
+
+
+## Data Related to the Students' Motivation
+
+### [SourceIMILegend.csv](SourceIMILegend.csv)
+
+CSV-file with the legend of IMI questionnaire applied in pilot empirical study.
+- On-line visualization: [SourceIMILegend.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMILegend.csv)
+
+| Column | Description |
+|--------|----------|
+| ID | Integer as identification to differentiate the item in the Moodle questionnaire |
+| QID | Integer as identification of the Moodle questionnaire |
+| Item | Identification used to refer to the item in the data related to the students motivation |
+| Content | Description of the item with identification *ID* |
+
+
+### [SourceIMIWithCareless.csv](SourceIMIWithCareless.csv)
+
+CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
+These responses included careless responses.
+- On-line visualization: [SourceIMIWithCareless.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMIWithCareless.csv)
+
+
+
+### [SourceIMI.csv](SourceIMI.csv)
+
+CSV-file with responses of the IMI questionnaire gathered throughout the pilot empirical study.
+Careless responses were removed from the data using the R script: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R).
+- On-line visualization: [SourceIMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/SourceIMI.csv)
+
+
+
+### [IMI.csv](IMI.csv)
+
+CSV-file with the validated responses gathered throughout the pilot empirical study.
+These response were winsorized, and they only included validated items through the factorial analysis and reliability test ([validation-IMI](../../report/validation-IMI)).
+- On-line visualization: [IMI.csv](https://github.com/geiser/phd-thesis-evaluation/blob/master/pilot-study/data/IMI.csv)
+
+
+
+
+
+
