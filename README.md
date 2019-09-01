@@ -48,57 +48,57 @@ The results obtained by the execution of this R script are:
 
 ### R script to extract information from AMC questionnaires ([00-processing-amc.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-amc.R)).
 
-R script to extract information from responses of AMC (Auto-Multiple-Choice) questionnaires. Such questionnaires were built to measure the skill/knowledge of students throughout the empirical studies, and they were built using the AMC (Auto-Multiple-Choice) software - [https://www.auto-multiple-choice.net](https://www.auto-multiple-choice.net).
+R script to extract information from responses of AMC (Auto-Multiple-Choice) questionnaires. Such questionnaires were built to measure the skill/knowledge of students throughout the empirical studies, and they were built using the AMC software - [https://www.auto-multiple-choice.net](https://www.auto-multiple-choice.net).
 
 The results obtained by the execution of this R script are:
 
-* Data with responses from the multiple-choice knowledge questionnaire of conditional structures *p1a*. Responses obtained throughout the *pretest* phase of the *first* empirical study and scored using the *GPCM-based rule*.<br/>
+* Data with responses from the AMC questionnaire of conditional structures *p1a*. Responses obtained throughout the *pretest* phase of the *first* empirical study and scored using the *GPCM-based rule*.<br/>
   _File_: [PreAMC.csv](study01/data/PreAMC.csv) ([more info ...](study01/data))
-* Data with responses from the multiple-choice knowledge questionnaire of conditional structures *p1b*. Responses obtained throughout the *posttest* phase of the *first* empirical study and scored using the *GPCM-based rule*.<br/>
+* Data with responses from the AMC questionnaire of conditional structures *p1b*. Responses obtained throughout the *posttest* phase of the *first* empirical study and scored using the *GPCM-based rule*.<br/>
   _File_: [PosAMC.csv](study01/data/PosAMC.csv) ([more info ...](study01/data))]
-* Data with responses from the multiple-choice knowledge questionnaire of conditional structures *p2a*. Responses obtained throughout the *pretest* phase of the *first* empirical study and scored using the *teacher's rule*.<br/>
+* Data with responses from the AMC questionnaire of conditional structures *p2a*. Responses obtained throughout the *pretest* phase of the *first* empirical study and scored using the *teacher's rule*.<br/>
   _File_: [PreAMCscr.csv](study01/data/PreAMCscr.csv) ([more info ...](study01/data))
-* Data with responses from the multiple-choice knowledge questionnaire of conditional structures *p2b*. Responses obtained throughout the *posttest* phase of the *first* empirical study and scored using the *teacher's rule*.<br/>
+* Data with responses from the AMC questionnaire of conditional structures *p2b*. Responses obtained throughout the *posttest* phase of the *first* empirical study and scored using the *teacher's rule*.<br/>
   _File_: [PosAMCscr.csv](study01/data/PosAMCscr.csv) ([more info ...](study01/data))
-* Data with responses from the multiple-choice knowledge questionnaire of loop structures *p2a*. Responses obtained throughout the *pretest* phase of thr *second* empirical study and scored using the *GPCM-based rule*.<br/>
+* Data with responses from the AMC questionnaire of loop structures *p2a*. Responses obtained throughout the *pretest* phase of thr *second* empirical study and scored using the *GPCM-based rule*.<br/>
   _File_: [PreAMC.csv](study02/data/PreAMC.csv) ([more info ...](study02/data))
-* Data with responses from the multiple-choice knowledge questionnaire of loop structures *p2b*. Responses obtained throughout the *posttest* phase of the *second* empirical study and scored using the *GPCM-based rule*.<br/>
+* Data with responses from the AMC questionnaire of loop structures *p2b*. Responses obtained throughout the *posttest* phase of the *second* empirical study and scored using the *GPCM-based rule*.<br/>
   _File_: [PosAMC.csv](study02/data/PosAMC.csv) ([more info ...](study02/data))
-* Data with responses from the multiple-choice knowledge questionnaire of loop structures *p2a*. Responses obtained throughout the *pretest* phase of the *second* empirical study and and scored using the *teacher's rule*.<br/>
+* Data with responses from the AMC questionnaire of loop structures *p2a*. Responses obtained throughout the *pretest* phase of the *second* empirical study and and scored using the *teacher's rule*.<br/>
   _File_: [PreAMCscr.csv](study02/data/PreAMCscr.csv) ([more info ...](study02/data))
-* Data with responses from the multiple-choice knowledge questionnaire of loop structures *p2b*. Responses obtained throughout the *posttest* phase of the *second* empirical study and scored using the *teacher's rule*.<br/>
+* Data with responses from the AMC questionnaire of loop structures *p2b*. Responses obtained throughout the *posttest* phase of the *second* empirical study and scored using the *teacher's rule*.<br/>
   _File_: [PosAMCscr.csv](study02/data/PosAMCscr.csv) ([more info ...](study02/data))
-* Data with responses from the multiple-choice knowledge questionnaire of recursion *p3a*. Responses obtained throughout the *pretest* phase of the *third* empirical study and scored using the *GPCM-based rule*.<br/>
+* Data with responses from the AMC questionnaire of recursion *p3a*. Responses obtained throughout the *pretest* phase of the *third* empirical study and scored using the *GPCM-based rule*.<br/>
   _File_: [PreAMC.csv](study03/data/PreAMC.csv) ([more info ...](study03/data))
-* Data with responses from the multiple-choice knowledge questionnaire of recursion *p3c*. Responses obtained throughout the *posttest* phase of the *third* empirical study and scored using the *GPCM-based rule*.<br/>
+* Data with responses from the AMC questionnaire of recursion *p3c*. Responses obtained throughout the *posttest* phase of the *third* empirical study and scored using the *GPCM-based rule*.<br/>
   _File_: [PosAMC.csv](study03/data/PosAMC.csv) ([more info ...](study03/data))
-* Data with responses from the multiple-choice knowledge questionnaire of recursion *p3a*. Responses obtained throughout the *pretest* phase of the *third* empirical study and scored using the *teacher's rule*.<br/>
+* Data with responses from the AMC questionnaire of recursion *p3a*. Responses obtained throughout the *pretest* phase of the *third* empirical study and scored using the *teacher's rule*.<br/>
   _File_: [PreAMCscr.csv](study03/data/PreAMCscr.csv) ([more info ...](study03/data))
-* Data with responses from the multiple-choice knowledge questionnaire of recursion *p3c*. Responses obtained throughout the *posttest* phase of the *third* empirical study and scored using the *teacher's rule*.<br/>
+* Data with responses from the AMC questionnaire of recursion *p3c*. Responses obtained throughout the *posttest* phase of the *third* empirical study and scored using the *teacher's rule*.<br/>
   _File_: [PosAMCscr.csv](study03/data/PosAMCscr.csv) ([more info ...](study03/data))
 
 
 ### R script to extract information related to the VPL Moodle plugin ([00-processing-vpl.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-vpl.R))
 
-R script to extract information related to the adapted version of VPL (Virtual-Programming-Lab) Moodle plugin. This adapted VPL Moodle plugin with code recording log can be downloaad from: [https://github.com/geiser/moodle-mod_vpl](https://github.com/geiser/moodle-mod_vpl/).
+R script to extract information related to the adapted version of VPL (Virtual-Programming-Lab) Moodle plugin. This adapted VPL Moodle plugin with code recording log can be download from: [https://github.com/geiser/moodle-mod_vpl](https://github.com/geiser/moodle-mod_vpl/).
 
 The results obtained by the execution of this R script are: 
 
-* Information of the programming problem tasks solved throughout the *pretest* phase of *pilot* empirical study and scoring with Guttman-based rules<br/>
+* Information of the programming problem tasks solved throughout the *pretest* phase of the *pilot* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PreGuttmanVPL.csv](pilot-study/data/PreGuttmanVPL.csv) ([more info ...](pilot-study/data))
-* Information of the programming problem tasks solved throughout the *posttest* phase of *pilot* empirical study, and scored with Guttman-based rules<br/>
+* Information of the programming problem tasks solved throughout the *posttest* phase of the *pilot* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PosGuttmanVPL.csv](pilot-study/data/PosGuttmanVPL.csv) ([more info ...](pilot-study/data))
-* Information of the programming problem tasks solved throughout the *pretest* phase of *first* empirical study, and scored with Guttman-based rules<br/>
+* Information of the programming problem tasks solved throughout the *pretest* phase of the *first* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PreGuttmanVPL.csv](study01/data/PreGuttmanVPL.csv) ([more info ...](study01/data))
-* Result from programming problem tasks obtained throughout the pretest phase of first empirical study, and scored with Guttman-based rules<br/>
+* Information of the programming problem tasks solved throughout the *pretest* phase of the *first* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PosGuttmanVPL.csv](study01/data/PosGuttmanVPL.csv) ([more info ...](study01/data))
-* Result from programming problem tasks obtained throughout the pretest phase of second empirical study, and scored with Guttman-based rules<br/>
+* Information of the programming problem tasks solved throughout the *pretest* phase of *second* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PreGuttmanVPL.csv](study02/data/PreGuttmanVPL.csv) ([more info ...](study02/data))
-* Result from programming problem tasks obtained throughout the pretest phase of second empirical study, and scored with Guttman-based rules<br/>
+* Information of the programming problem tasks solved throughout the *pretest* phase of *second* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PosGuttmanVPL.csv](study02/data/PosGuttmanVPL.csv) ([more info ...](study02/data))
-* Result from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules<br/>
+* Information of the programming problem tasks solved throughout the *pretest* phase of *third* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PreGuttmanVPL.csv](study03/data/PreGuttmanVPL.csv) ([more info ...](study03/data))
-* Result from programming problem tasks obtained throughout the pretest phase of third empirical study, and scored with Guttman-based rules.<br/>
+* Information of the programming problem tasks obtained throughout the *pretest* phase of *third* empirical study, and scored with *Guttman-based rules*.<br/>
   _File_: [PosGuttmanVPL.csv](study03/data/PosGuttmanVPL.csv) ([more info ...](study03/data))
 
 
