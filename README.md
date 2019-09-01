@@ -93,24 +93,34 @@ R script to remove careless responses on the data gathered through the IMI and I
     - _Result_: Responses of IMMS questionnaire without careless responses: [SourceIMMS.csv](study03/data/SourceIMMS.csv) ([more info ...](study03/data))
 
 
-R script to winsorize extreme responses from the data gathered through the IMI and IMMS questionnaires ([02-winsorizing-extreme-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/02-winsorizing-extreme-motivation.R)). Extreme responses correspond to answers given by participants who have tendency to indicate extreme lower and upper values in questionnaires. Such responses are outliers that affect the assumptions for parametric tests, but that can't simply removed to satisfy these assumptions. To reduce the impact of extreme values, they should be shrunk to the border of the main part of the data through the winsorization method.
-* Extreme responses on the IMI questionnaire. _Result_: [winsorized-IMI.pdf](report/latex/winsorized-IMI.pdf)
-* Winsorized responses to validate the IMI questionnaire. _Result_: [WinsorizedIMI.csv](data/WinsorizedIMI.csv) ([more info ...](data))
-* Extreme responses on the IMMS questionnaire. _Result_: [winsorized-IMMS.pdf](report/latex/winsorized-IMMS.pdf)
-* Winsorized responses to validate the IMMS questionnaire. _Result_: [WinsorizedIMMS.csv](data/WinsorizedIMMS.csv) ([more info ...](data))
+#### R script to winsorize extreme responses ([02-winsorizing-extreme-motivation.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/02-winsorizing-extreme-motivation.R))
 
+R script to winsorize extreme responses from the data gathered through the IMI and IMMS questionnaires. Extreme responses correspond to answers given by participants who have tendency to indicate extreme lower and upper values in questionnaires. Such responses are outliers that affect the assumptions for parametric tests, but that can't simply removed to satisfy these assumptions. To reduce the impact of extreme values, they should be shrunk to the border of the main part of the data through the winsorization method.
+
+The results obtained by the execution of the R script are: 
+
+* Extreme responses identified on the IMI questionnaire.<br/>
+  _File_: [winsorized-IMI.pdf](report/latex/winsorized-IMI.pdf)
+* Extreme responses identified on the IMMS questionnaire.<br/>
+  _File_: [winsorized-IMMS.pdf](report/latex/winsorized-IMMS.pdf)
+* Data with winsorized responses to validate the IMI questionnaire.<br/>
+  _File_: [WinsorizedIMI.csv](data/WinsorizedIMI.csv) ([more info ...](data))
+* Data with winsorized responses to validate the IMMS questionnaire.<br/>
+  _File_: [WinsorizedIMMS.csv](data/WinsorizedIMMS.csv) ([more info ...](data))
 
 #### R script to validate the IMI questionnaire ([03-validating-IMI.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/03-validating-IMI.R))
 
-Validation of the adapted Portuguese IMI questionnaire through an exploratory and confirmatory factorial analysis, and through the reliability test.  
+Validation of the adapted Portuguese IMI questionnaire through the exploratory/confirmatory factorial analysis and the reliability test.
 
-* Validation of univariate distribution of items.<br/>
-  _Result_: [univariate-histogram.png](report/validation-IMI/univariate-histogram.png) ([more info ...](report/validation-IMI))
+The results obtained by the execution of the R script are:
+
+* Validation of univariate distribution for each items.<br/>
+  _File_: [univariate-histogram.png](report/validation-IMI/univariate-histogram.png) ([more info ...](report/validation-IMI))
 * Goodness of fit statistics for the factorial analysis on the responses of IMI questionnaire.<br/>
-  _Result_: [cfa-model-fit.pdf](report/validation-IMI/cfa-model-fit.pdf)
+  _File_: [cfa-model-fit.pdf](report/validation-IMI/cfa-model-fit.pdf)
 * Summary of the factorial analysis and reliability test.<br/>
-  _Result_: [reliability-analysis.pdf](report/validation-IMI/reliability-analysis.pdf) ([more info ...](report/validation-IMI))
-* Report for the measure sampling adequacy, factorial analysis, and reliability analysis.<br/>
-  _Result_: [RelAnalysis.xlsx](report/validation-IMI/RelAnalysis.xlsx) ([more info ...](report/validation-IMI))
-* Responses on the validated IMI questionnaire.<br/>
-  _Result_: [IMI.csv](data/IMI.csv) ([more info ...](data))
+  _File_: [reliability-analysis.pdf](report/validation-IMI/reliability-analysis.pdf) ([more info ...](report/validation-IMI))
+* Report for the measure sampling adequacy, factorial analysis, and reliability test.<br/>
+  _File_: [RelAnalysis.xlsx](report/validation-IMI/RelAnalysis.xlsx) ([more info ...](report/validation-IMI))
+* Data with the responses of the validated IMI questionnaire.<br/>
+  _File_: [IMI.csv](data/IMI.csv) ([more info ...](data))
