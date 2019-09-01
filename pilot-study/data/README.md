@@ -250,30 +250,31 @@ CSV-file with information from the programming problem tasks solved by the stude
 | PXs2 | Guttman-based score for the programming problem task with identification *PX* and rule *s2*. |
 | PXs3 | Guttman-based score for the programming problem task with identification *PX* and rule *s3*. |
 
+
 #### Guttman-structure scoring rules
 
 rule *s0*: _score_(_Q_)
-   - *0*: when the solution is incorrect (Q=0), and the solving time is irrelevant
-   - *1*: when the solution is correct (Q=1), and the solving time is irrelevant
+   - `0`: when the solution is incorrect (`Q = 0`), and the solving time is irrelevant
+   - `1`: when the solution is correct (`Q = 1`), and the solving time is irrelevant
 
 rule *s1*: _score_(_Q x T50_)
- - (0,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
- - (1,0) = *1*: when the solution is correct (Q=1) and the solving time is greater than the median (*t*>T55)
- - (1,1) = *2*: when the solution is correct (Q=1) and the solving time is less than the median (*t*<T50)
+ - `(0,x) = 0`: when the solution is incorrect (`Q = 0`) and the solving time is irrelevant
+ - `(1,0) = 1`: when the solution is correct (`Q = 1`) and the solving time is greater than the median (`t > T55`)
+ - `(1,1) = 2`: when the solution is correct (`Q = 1`) and the solving time is less than the median (`t < T50`)
 
 rule *s2*: _score_(_Q x T66 x T33_)
- - (0,x,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
- - (1,0,x) = *1*: when the solution is correct (Q=1) and the solving time is greater than 66-th percentile (*t*>T66)
- - (1,1,0) = *2*: when the solution is correct (Q=1) and the solving time is greater than 33-th percentile (*t*>T33)
- - (1,1,1) = *3*: when the solution is correct (Q=1) and the solving time is less than 33-th percentile (*t*<T33)
+ - `(0,x,x) = 0`: when the solution is incorrect (`Q =0`) and the solving time is irrelevant
+ - `(1,0,x) = 1`: when the solution is correct (`Q =1`) and the solving time is greater than 66-th percentile (`t > T66`)
+ - `(1,1,0) = 2`: when the solution is correct (`Q =1`) and the solving time is greater than 33-th percentile (`t > T33`)
+ - `(1,1,1) = 3`: when the solution is correct (`Q =1`) and the solving time is less than 33-th percentile (`t < T33`)
 
 
 rule *s3*: _score_(_Q x T75 x T50 x T25_)
- - (0,x,x,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
- - (1,0,x,x) = *1*: when the solution is correct (Q=1) and the solving time is greater than 75-th percentile (*t*>T75)
- - (1,1,0,x) = *2*: when the solution is correct (Q=1) and the solving time is greater than the median (*t*>T50)
- - (1,1,1,0) = *3*: when the solution is correct (Q=1) and the solving time is greater than 25-th percentile (*t*>T25)
- - (1,1,1,1) = *4*: when the solution is correct (Q=1) and the solving time is less than 25-th percentile (*t*<T25)
+ - `(0,x,x,x) = 0`: when the solution is incorrect (`Q = 0`) and the solving time is irrelevant
+ - `(1,0,x,x) = 1`: when the solution is correct (`Q = 1`) and the solving time is greater than 75-th percentile (`t > T75`)
+ - `(1,1,0,x) = 2`: when the solution is correct (`Q = 1`) and the solving time is greater than the median (`t > T50`)
+ - `(1,1,1,0) = 3`: when the solution is correct (`Q = 1`) and the solving time is greater than 25-th percentile (`t > T25`)
+ - `(1,1,1,1) = 4`: when the solution is correct (`Q = 1`) and the solving time is less than 25-th percentile (`t < T25`)
 
 
 ### File: [PosGuttmanVPL.csv](PosGuttmanVPL.csv)
@@ -293,33 +294,33 @@ CSV-file with information from the programming problem tasks solved by the stude
 #### Guttman-structure scoring rules
 
 rule *s0*: _score_(_Q_)
-   - *0*: when the solution is incorrect (Q=0), and the solving time is irrelevant
-   - *1*: when the solution is correct (Q=1), and the solving time is irrelevant
+   - `0`: when the solution is incorrect (`Q = 0`), and the solving time is irrelevant
+   - `1`: when the solution is correct (`Q = 1`), and the solving time is irrelevant
 
 rule *s1*: _score_(_Q x T50_)
- - (0,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
- - (1,0) = *1*: when the solution is correct (Q=1) and the solving time is greater than the median (*t*>T55)
- - (1,1) = *2*: when the solution is correct (Q=1) and the solving time is less than the median (*t*<T50)
+ - `(0,x) = 0`: when the solution is incorrect (`Q = 0`) and the solving time is irrelevant
+ - `(1,0) = 1`: when the solution is correct (`Q = 1`) and the solving time is greater than the median (`t > T55`)
+ - `(1,1) = 2`: when the solution is correct (`Q = 1`) and the solving time is less than the median (`t < T50`)
 
 rule *s2*: _score_(_Q x T66 x T33_)
- - (0,x,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
- - (1,0,x) = *1*: when the solution is correct (Q=1) and the solving time is greater than 66-th percentile (*t*>T66)
- - (1,1,0) = *2*: when the solution is correct (Q=1) and the solving time is greater than 33-th percentile (*t*>T33)
- - (1,1,1) = *3*: when the solution is correct (Q=1) and the solving time is less than 33-th percentile (*t*<T33)
+ - `(0,x,x) = 0`: when the solution is incorrect (`Q =0`) and the solving time is irrelevant
+ - `(1,0,x) = 1`: when the solution is correct (`Q =1`) and the solving time is greater than 66-th percentile (`t > T66`)
+ - `(1,1,0) = 2`: when the solution is correct (`Q =1`) and the solving time is greater than 33-th percentile (`t > T33`)
+ - `(1,1,1) = 3`: when the solution is correct (`Q =1`) and the solving time is less than 33-th percentile (`t < T33`)
 
 
 rule *s3*: _score_(_Q x T75 x T50 x T25_)
- - (0,x,x,x) = *0*: when the solution is incorrect (Q=0) and the solving time is irrelevant
- - (1,0,x,x) = *1*: when the solution is correct (Q=1) and the solving time is greater than 75-th percentile (*t*>T75)
- - (1,1,0,x) = *2*: when the solution is correct (Q=1) and the solving time is greater than the median (*t*>T50)
- - (1,1,1,0) = *3*: when the solution is correct (Q=1) and the solving time is greater than 25-th percentile (*t*>T25)
- - (1,1,1,1) = *4*: when the solution is correct (Q=1) and the solving time is less than 25-th percentile (*t*<T25)
+ - `(0,x,x,x) = 0`: when the solution is incorrect (`Q = 0`) and the solving time is irrelevant
+ - `(1,0,x,x) = 1`: when the solution is correct (`Q = 1`) and the solving time is greater than 75-th percentile (`t > T75`)
+ - `(1,1,0,x) = 2`: when the solution is correct (`Q = 1`) and the solving time is greater than the median (`t > T50`)
+ - `(1,1,1,0) = 3`: when the solution is correct (`Q = 1`) and the solving time is greater than 25-th percentile (`t > T25`)
+ - `(1,1,1,1) = 4`: when the solution is correct (`Q = 1`) and the solving time is less than 25-th percentile (`t < T25`)
 
 
 ### File: [GainSkillsKnowledge.csv](GainSkillsKnowledge.csv)
 
 CSV-file with the IRT-based estimates of Skill/Knowledge gains.
-These estimates were calculated through the stacking process based on the General Partial Credit Model (GPCM) detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
+These estimates were calculated through the stacking process based on the General Partial Credit Model (GPCM), and detailed in the file: [irt-instruments.pdf](../../report/irt-instruments.pdf)
 
 
 
