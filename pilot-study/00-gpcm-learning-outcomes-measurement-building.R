@@ -6,6 +6,11 @@ library(readxl)
 library(parallel)
 #options(mc.cores=7)
 
+source('../common/misc.R')
+source('../common/measurement-building.R')
+source('../common/latex-translator.R')
+
+
 ##################################################################
 ## Testing Guttman Scoring Rules                                ##
 ##################################################################

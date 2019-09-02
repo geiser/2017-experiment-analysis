@@ -6,6 +6,10 @@ library(readxl)
 library(parallel)
 #options(mc.cores=7)
 
+source('../common/misc.R')
+source('../common/measurement-building.R')
+source('../common/latex-translator.R')
+
 participants <- read_csv('data/SignedUpParticipants.csv')
 pre_dat <- merge(read_csv('data/PreAMC.csv')
                  , read_csv('data/PreGuttmanVPL.csv'), by = 'UserID', all.x = T)

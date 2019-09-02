@@ -5,6 +5,10 @@ library(readxl)
 library(parallel)
 #options(mc.cores=7)
 
+source('../common/misc.R')
+source('../common/measurement-building.R')
+source('../common/latex-translator.R')
+
 sources = list(
   "Intrinsic Motivation" = list(
     sheed = "data", wid = "UserID", name = "Intrinsic Motivation"
