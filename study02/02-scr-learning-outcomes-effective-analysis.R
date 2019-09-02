@@ -6,6 +6,12 @@ library(readr)
 library(readxl)
 library(MVN)
 
+source('../common/misc.R')
+source('../common/nonparametric-analysis.R')
+source('../common/parametric-analysis.R')
+source('../common/latex-translator.R')
+
+
 dat_pre <- total_score_from_guttman(read_csv('data/PreGuttmanVPL.csv'), from_cols = c("P2s3","P3s3"), col_score = "PreScore")
 dat_pos <- total_score_from_guttman(read_csv('data/PosGuttmanVPL.csv'), from_cols = c("PCs3","PDs3","PEs3"), col_score = "PosScore")
 dat_prg <- merge(dat_pre, dat_pos)
