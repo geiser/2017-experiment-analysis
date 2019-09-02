@@ -18,6 +18,7 @@ All materials used in the empirical study are available at ([materials](material
 
 **RQ1:** `Do the ont-gamified CL sessions have positive impacts on the students' motivation?`
 
+
 ### R script to validate the IMI questionnaire ([00-reliability-analysis-IMI.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/00-reliability-analysis-IMI.R))
 
 R script to validate data gathered in the empirical study through the IMI questionnaire.
@@ -480,6 +481,73 @@ The results obtained by the execution of this R script are:
 * Excel-file with the detailed information of parametric analysis on the *Intrinsic Motivation*
 
   _File_: [ParametricAnalysis.xlsx](report/motivation/effective-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx)
+
+
+
+## Scripts to answer the RQ2
+
+**RQ2:** `Do the ont-gamified CL sessions affect on the students' learning outcomes?`
+
+
+### R script to find significant differences on the gain scores of academic performance tests for all students ([02-scr-learning-outcomes-signedup-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/02-scr-learning-outcomes-signedup-analysis.R))
+
+R script to find statistical significant differences on the gain scores (`posttest - pretest`) obtained through the AMC questionnaires and solving-programming problem tasks.
+This statistical analysis was carried out with data gathered from the responses of all the students signed-up as participants in the CL sessions.
+Firstly, a nonparametric analysis was carried out by using the Scheirer-Ray-Hare test and the pair-wilcoxon test.
+After this, through the parametric tests of ANOVA and Tukey post-hoc, we confirmed the statistical significant differences found by the nonparametric analysis.
+
+The results obtained by the execution of this R script are:
+
+* PDF-file with the summary of nonparametric and parametric tests
+
+  _File_: [scr-signedup-participants-summary-analysis.pdf](report/latex/learning-outcomes/scr-signedup-participants-summary-analysis.pdf)
+
+* PDF-file with the summary of nonparametric analysis
+
+  _File_: [nonparametric-scr-signedup-participants-scr-analysis.pdf](report/latex/learning-outcomes/nonparametric-scr-signedup-participants-scr-analysis.pdf) 
+
+* Excel-file with the detailed information of nonparametric analysis
+
+  _File_: [NonParametricAnalysis.xlsx](report/learning-outcomes/scr-signedup-participants/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of parametric analysis
+
+  _File_: [parametric-scr-signedup-participants-analysis.pdf](report/latex/learning-outcomes/parametric-scr-signedup-participants-analysis.pdf) 
+
+* Excel-file with the detailed information of parametric analysis
+
+  _File_: [ParametricAnalysis.xlsx](report/learning-outcomes/scr-signedup-participants/ParametricAnalysis.xlsx)
+
+
+### R script to find significant differences on the gain scores of academic performance tests for students with effective participation ([02-scr-learning-outcomes-effective-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/02-scr-learning-outcomes-effective-analysis.R))
+
+R script to find statistical significant differences on the gain scores (`posttest - pretest`) obtained through the AMC questionnaires and solving-programming problem tasks.
+This statistical analysis was carried out with data gathered from the responses of students with effective participation in the CL sessions.
+Firstly, a nonparametric analysis was carried out by using the Scheirer-Ray-Hare test and the pair-wilcoxon test.
+After this, through the parametric tests of ANOVA and Tukey post-hoc, we confirmed the statistical significant differences found by the nonparametric analysis.
+
+The results obtained by the execution of this R script are:
+
+* PDF-file with the summary of nonparametric and parametric tests
+
+  _File_: [scr-effective-participants-summary-analysis.pdf](report/latex/learning-outcomes/scr-effective-participants-summary-analysis.pdf)
+
+* PDF-file with the summary of nonparametric analysis
+
+  _File_: [nonparametric-scr-effective-participants-scr-analysis.pdf](report/latex/learning-outcomes/nonparametric-scr-effective-participants-scr-analysis.pdf) 
+
+* Excel-file with the detailed information of nonparametric analysis
+
+  _File_: [NonParametricAnalysis.xlsx](report/learning-outcomes/scr-effective-participants/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of parametric analysis
+
+  _File_: [parametric-scr-effective-participants-analysis.pdf](report/latex/learning-outcomes/parametric-scr-effective-participants-analysis.pdf) 
+
+* Excel-file with the detailed information of parametric analysis
+
+  _File_: [ParametricAnalysis.xlsx](report/learning-outcomes/scr-effective-participants/ParametricAnalysis.xlsx)
+  
 
 
 
