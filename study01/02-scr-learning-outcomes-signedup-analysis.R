@@ -105,12 +105,6 @@ write_parametric_test_report(
 )
 
 ## translate to latex
-write_winsorized_in_latex(
-  winsor_mod$diff_dat
-  , filename = paste0("report/latex/learning-outcomes/wisorized-",folder,".tex")
-  , in_title = paste("for the differences of scores in the first empirical study for signed-up students")
-)
-
 write_param_statistics_analysis_in_latex(
   parametric_results = list("Type" = result)
   , ivs = c("Type")
