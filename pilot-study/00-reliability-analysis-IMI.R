@@ -9,6 +9,10 @@ library(MVN)
 library(daff)
 library(robustHD)
 
+source('../common/misc.R')
+source('../common/reliability-analysis.R')
+source('../common/latex-translator.R')
+
 sdat <- read_csv('../data/IMI.csv')
 sdat <- sdat[which(sdat$Study == 'pilot'),]
 sdat$Study <- NULL
