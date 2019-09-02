@@ -1,5 +1,9 @@
 # Summary Reports 
 
+* [Detection and treatment of outliers](latex/)
+* [Validation of the IMI questionnaire](validation-IMI/)
+* [Validation of the IMMS questionnaire](validation-IMMS/)
+
 ### File: [irt-instruments.pdf](irt-instruments.pdf)
 
 A summary report for the building of IRT-based instruments to measure students' motivation and gains of skill/knowledge in the empirical studies.
