@@ -5,6 +5,12 @@ library(dplyr)
 library(readr)
 library(readxl)
 
+source('../common/misc.R')
+source('../common/nonparametric-analysis.R')
+source('../common/parametric-analysis.R')
+source('../common/latex-translator.R')
+
+
 participants <- as.data.frame(read_csv("data/SignedUpParticipants.csv"))
 dat <- read_csv('data/GainSkillsKnowledge.csv')
 dat <- merge(participants, dat[,c("UserID","pre.theta","pos.theta","gain.theta")])
