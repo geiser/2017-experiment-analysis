@@ -5,6 +5,11 @@ library(dplyr)
 library(readr)
 library(readxl)
 
+source('../common/misc.R')
+source('../common/nonparametric-analysis.R')
+source('../common/parametric-analysis.R')
+source('../common/latex-translator.R')
+
 dat_pre <- total_score_from_guttman(read_csv('data/PreGuttmanVPL.csv'), from_cols = c("P1s3","P2s3","P3s3","P4s3"), col_score = "PreScore")
 dat_pos <- total_score_from_guttman(read_csv('data/PosGuttmanVPL.csv'), from_cols = c("PAs3","PBs3","PCs3","PDs3"), col_score = "PosScore")
 
