@@ -37,7 +37,7 @@ The results obtained by the execution of this R script are:
   _File_: [IMI.csv](data/IMI.csv) ([more info ...](data/))
 
 
-### R script to find significant differences on the students' motivation ([01-scr-motivation-signedup-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/01-scr-motivation-signedup-analysis.R))
+### R script to find significant differences on the motivation of all students ([01-scr-motivation-signedup-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/01-scr-motivation-signedup-analysis.R))
 
 R script to find significant differences on the motivation scores obtained through the IMI questionnaire, and for all the students signed-up as participants in the CL sessions.
 These differences were firstly finding by using the nonparametric statistical tests as the Scheirer-Ray-Hare test and the pair-wilcoxon test.
