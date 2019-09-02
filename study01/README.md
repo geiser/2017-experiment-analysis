@@ -48,47 +48,47 @@ The results obtained by the execution of this R script are:
  
 * PDF-file with the summary of the IRT-based instruments to estimate the students' motivation
 
-  _File_: [rsm-motivation.pdf](report/latex/rsm-motivation.pdf) ([more info ...](report/latex/))
+  _File_: [report/latex/rsm-motivation.pdf](report/latex/rsm-motivation.pdf) ([more info ...](report/latex/))
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Interest/Enjoyment*.
   
-  _File_: [MeasurementModel.xlsx](report/irt-motivation/interest-enjoyment/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/interest-enjoyment/))
+  _File_: [report/irt-motivation/interest-enjoyment/MeasurementModel.xlsx](report/irt-motivation/interest-enjoyment/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/interest-enjoyment/))
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Perceived Choice*.
   
-  _File_: [MeasurementModel.xlsx](report/irt-motivation/perceived-choice/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/perceived-choice/))
+  _File_: [report/irt-motivation/perceived-choice/MeasurementModel.xlsx](report/irt-motivation/perceived-choice/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/perceived-choice/))
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Pressure/Tension*.
   
-  _File_: [MeasurementModel.xlsx](report/irt-motivation/pressure-tension/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/pressure-tension/))
+  _File_: [report/irt-motivation/pressure-tension/MeasurementModel.xlsx](report/irt-motivation/pressure-tension/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/pressure-tension/))
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Effort/Importance*.
   
-  _File_: [MeasurementModel.xlsx](report/irt-motivation/effort-importance/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/effort-importance/))
+  _File_: [report/irt-motivation/effort-importance/MeasurementModel.xlsx](report/irt-motivation/effort-importance/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/effort-importance/))
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Intrinsic Motivation*.
   
-  _File_: [MeasurementModel.xlsx](report/irt-motivation/intrinsic-motivation/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/intrinsic-motivation/))
+  _File_: [report/irt-motivation/intrinsic-motivation/MeasurementModel.xlsx](report/irt-motivation/intrinsic-motivation/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/intrinsic-motivation/))
 
 * CSV-file with the IRT-based estimates of *Interest/Enjoyment*:
 
-  _File_: [InterestEnjoyment.csv](data/InterestEnjoyment.csv) ([more info ...](data/))
+  _File_: [data/InterestEnjoyment.csv](data/InterestEnjoyment.csv) ([more info ...](data/))
 
 * CSV-file with the IRT-based estimates of *Perceived Choice*:
 
-  _File_: [PerceivedChoice.csv](data/PerceivedChoice.csv) ([more info ...](data/))
+  _File_: [data/PerceivedChoice.csv](data/PerceivedChoice.csv) ([more info ...](data/))
 
 * CSV-file with the IRT-based estimates of *Pressure/Tension*:
 
-  _File_: [PressureTension.csv](data/PressureTension.csv) ([more info ...](data/))
+  _File_: [data/PressureTension.csv](data/PressureTension.csv) ([more info ...](data/))
 
 * CSV-file with the IRT-based estimates of *Effort/Importance*:
 
-  _File_: [EffortImportance.csv](data/EffortImportance.csv) ([more info ...](data/))
+  _File_: [data/EffortImportance.csv](data/EffortImportance.csv) ([more info ...](data/))
 
 * CSV-file with the IRT-based estimates of *Intrinsic Motivation*:
 
-  _File_: [IntrinsicMotivation.csv](data/IntrinsicMotivation.csv) ([more info ...](data/))
+  _File_: [data/IntrinsicMotivation.csv](data/IntrinsicMotivation.csv) ([more info ...](data/))
 
 
 ## Scripts in this folder - path: [/study01/](https://github.com/geiser/phd-thesis-evaluation/tree/master/study01)
