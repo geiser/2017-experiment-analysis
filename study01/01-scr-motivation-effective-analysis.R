@@ -17,6 +17,12 @@ library(ez)
 library(parallel)
 #options(mc.cores=16)
 
+source('../common/misc.R')
+source('../common/nonparametric-analysis.R')
+source('../common/parametric-analysis.R')
+source('../common/latex-translator.R')
+
+
 participants <- read_csv('data/EffectiveParticipants.csv')
 
 sources <- list(
