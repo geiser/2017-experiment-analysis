@@ -560,7 +560,7 @@ The results obtained by the execution of this R script are:
 
   _File_: [gpcm-learning-outcomes.pdf](report/latex/gpcm-learning-outcomes.pdf)
 
-* Excel-file with the report of the stacking process using the GPCM-based instruments to estimate the gains in the students' skill/knowledge (`gain = estimates_of_skill/knowledge(posttest) - estimates_of_skill/knowledge(pretest)`)
+* Excel-file with the report of the stacking process using the GPCM-based instruments to estimate the gains of students' skill/knowledge
   
   _File_: [MeasurementChangeModel.xlsx](report/learning-outcomes/MeasurementChangeModel.xlsx)
 
@@ -569,46 +569,64 @@ The results obtained by the execution of this R script are:
   _File_: [GainSkillsKnowledge.csv](data/GainSkillsKnowledge.csv) ([more info ...](data/))
 
 
+### R script to find significant differences on the estimates of skill/knowledge gains for all students ([02-gpcm-learning-outcomes-signedup-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/02-gpcm-learning-outcomes-signedup-analysis.R))
+
+R script to find statistical significant differences on the estimates of skill/knowledge gains (`posttest - pretest`) obtained through the AMC questionnaires and solving-programming problem tasks.
+This statistical analysis was carried out with data gathered from the responses of all the students signed-up as participants in the CL sessions.
+Firstly, a nonparametric analysis was carried out by using the Scheirer-Ray-Hare test and the pair-wilcoxon test.
+After this, through the parametric tests of ANOVA and Tukey post-hoc, we confirmed the statistical significant differences found by the nonparametric analysis.
+
+The results obtained by the execution of this R script are:
+
+* PDF-file with the summary of nonparametric and parametric tests
+
+  _File_: [signedup-participants-summary-analysis.pdf](report/latex/learning-outcomes/signedup-participants-summary-analysis.pdf)
+
+* PDF-file with the summary of nonparametric analysis
+
+  _File_: [nonparametric-signedup-participants-analysis.pdf](report/latex/learning-outcomes/nonparametric-signedup-participants-analysis.pdf) 
+
+* Excel-file with the detailed information of nonparametric analysis
+
+  _File_: [NonParametricAnalysis.xlsx](report/learning-outcomes/signedup-participants/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of parametric analysis
+
+  _File_: [parametric-signedup-participants-analysis.pdf](report/latex/learning-outcomes/parametric-signedup-participants-analysis.pdf) 
+
+* Excel-file with the detailed information of parametric analysis
+
+  _File_: [ParametricAnalysis.xlsx](report/learning-outcomes/signedup-participants/ParametricAnalysis.xlsx)
 
 
+### R script to find significant differences on the estimates of skill/knowledge gains for students with effective participation ([02-gpcm-learning-outcomes-effective-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/02-gpcm-learning-outcomes-effective-analysis.R))
 
-# Significant Differences on Learning Outcomes
+R script to find statistical significant differences on the estimates of skill/knowledge gains (`posttest - pretest`) obtained through the AMC questionnaires and solving-programming problem tasks.
+This statistical analysis was carried out with data gathered from the responses of students with effective participation in the CL sessions.
+Firstly, a nonparametric analysis was carried out by using the Scheirer-Ray-Hare test and the pair-wilcoxon test.
+After this, through the parametric tests of ANOVA and Tukey post-hoc, we confirmed the statistical significant differences found by the nonparametric analysis.
 
-## Finding significant differences based on the estimates of IRT-based models for all students (signed-up students)
+The results obtained by the execution of this R script are:
 
-* Summary of Nonparametric and Parametric tests ([summary-analysis.pdf](report/latex/motivation-signedup/summary-analysis.pdf))
+* PDF-file with the summary of nonparametric and parametric tests
 
-* Nonparametric tests of Intrinsic Motivation ([nonparametric-intrinsic-motivation-analysis.pdf](report/latex/motivation-signedup/nonparametric-intrinsic-motivation-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/signedup-participants/intrinsic-motivation/by-Type/NonParametricAnalysis.xlsx))
-* Parametric tests of Intrinsic Motivation ([parametric-intrinsic-motivation-analysis.pdf](report/latex/motivation-signedup/parametric-intrinsic-motivation-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/signedup-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx) with normality test)
+  _File_: [effective-participants-summary-analysis.pdf](report/latex/learning-outcomes/effective-participants-summary-analysis.pdf)
 
-* Nonparametric tests of Interest/Enjoyment ([nonparametric-interest-enjoyment-analysis.pdf](report/latex/motivation-signedup/nonparametric-interest-enjoyment-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/signedup-participants/interest-enjoyment/by-Type/NonParametricAnalysis.xlsx))
-* Parametric tests of Interest/Enjoyment ([parametric-interest-enjoyment-analysis.pdf](report/latex/motivation-signedup/parametric-interest-enjoyment-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/signedup-participants/interest-enjoyment/by-Type/ParametricAnalysis.xlsx) with normality test)
+* PDF-file with the summary of nonparametric analysis
 
-* Nonparametric tests of Perceived Choice ([nonparametric-perceived-choice-analysis.pdf](report/latex/motivation-signedup/nonparametric-perceived-choice-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/signedup-participants/perceived-choice/by-Type/NonParametricAnalysis.xlsx))
-* Parametric tests of Perceived Choice ([parametric-perceived-choice-analysis.pdf](report/latex/motivation-signedup/parametric-perceived-choice-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/signedup-participants/perceived-choice/by-Type/ParametricAnalysis.xlsx) with normality test)
+  _File_: [nonparametric-effective-participants-analysis.pdf](report/latex/learning-outcomes/nonparametric-effective-participants-analysis.pdf) 
 
-* Nonparametric tests of Pressure/Tension ([nonparametric-perceived-choice-analysis.pdf](report/latex/motivation-signedup/nonparametric-pressure-tension-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/signedup-participants/pressure-tension/by-Type/NonParametricAnalysis.xlsx))
-* Parametric tests of Pressure/Tension ([parametric-pressure-tension-analysis.pdf](report/latex/motivation-signedup/parametric-pressure-tension-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/signedup-participants/pressure-tension/by-Type/ParametricAnalysis.xlsx) with normality test)
+* Excel-file with the detailed information of nonparametric analysis
 
-* Nonparametric tests of Effort/Importance ([nonparametric-effort-importance-analysis.pdf](report/latex/motivation-signedup/nonparametric-effort-importance-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/signedup-participants/effort-importance/by-Type/NonParametricAnalysis.xlsx))
-* Parametric tests of Effort/Importance ([parametric-effort-importance-analysis.pdf](report/latex/motivation-signedup/parametric-effort-importance-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/signedup-participants/effort-importance/by-Type/ParametricAnalysis.xlsx) with normality test)
+  _File_: [NonParametricAnalysis.xlsx](report/learning-outcomes/effective-participants/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of parametric analysis
 
-## Finding significant differences based on the estimates of IRT-based models for students with effective participation (effective students)
+  _File_: [parametric-scr-effective-participants-analysis.pdf](report/latex/learning-outcomes/parametric-effective-participants-analysis.pdf) 
 
-* Summary of Nonparametric and Parametric tests ([summary-analysis.pdf](report/latex/motivation-effective/summary-analysis.pdf))
+* Excel-file with the detailed information of parametric analysis
 
-* Nonparametric tests of Intrinsic Motivation ([nonparametric-intrinsic-motivation-analysis.pdf](report/latex/motivation-effective/nonparametric-intrinsic-motivation-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/effective-participants/intrinsic-motivation/by-Type/NonParametricAnalysis.xlsx))
-* Parametric tests of Intrinsic Motivation ([parametric-intrinsic-motivation-analysis.pdf](report/latex/motivation-effective/parametric-intrinsic-motivation-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/effective-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx) with normality test)
+  _File_: [ParametricAnalysis.xlsx](report/learning-outcomes/effective-participants/ParametricAnalysis.xlsx)
+  
 
-* Nonparametric tests of Interest/Enjoyment ([nonparametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-interest-enjoyment-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/interest-enjoyment/by-Type/NonParametricAnalysis.xlsx))
-* Parametric tests of Interest/Enjoyment ([parametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-effective/parametric-interest-enjoyment-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/interest-enjoyment/by-Type/ParametricAnalysis.xlsx) with normality test)
-
-* Nonparametric tests of Perceived Choice ([nonparametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-perceived-choice-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/perceived-choice/by-Type/NonParametricAnalysis.xlsx))
-* Parametric tests of Perceived Choice ([parametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-effective/parametric-perceived-choice-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/perceived-choice/by-Type/ParametricAnalysis.xlsx) with normality test)
-
-* Nonparametric tests of Pressure/Tension ([nonparametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-pressure-tension-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/pressure-tension/by-Type/NonParametricAnalysis.xlsx))
-* Parametric tests of Pressure/Tension ([parametric-pressure-tension-scr-analysis.pdf](report/latex/motivation-effective/parametric-pressure-tension-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/pressure-tension/by-Type/ParametricAnalysis.xlsx) with normality test)
-
-* Nonparametric tests of Effort/Importance ([nonparametric-effort-importance-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-effort-importance-scr-analysis.pdf), [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/effort-importance/by-Type/NonParametricAnalysis.xlsx))
-* Parametric tests of Effort/Importance ([parametric-effort-importance-scr-analysis.pdf](report/latex/motivation-effective/parametric-effort-importance-scr-analysis.pdf), [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/effort-importance/by-Type/ParametricAnalysis.xlsx) with normality test)
 
