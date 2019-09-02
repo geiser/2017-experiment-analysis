@@ -15,6 +15,11 @@ library(dplyr)
 library(stats)
 library(ez)
 
+source('../common/misc.R')
+source('../common/nonparametric-analysis.R')
+source('../common/parametric-analysis.R')
+source('../common/latex-translator.R')
+
 participants <- read_csv('data/EffectiveParticipants.csv')
 
 sources <- list(
