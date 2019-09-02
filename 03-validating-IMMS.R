@@ -2,6 +2,8 @@ wants <- c('readr','dplyr','psych','lavaan','ggraph','semPlot','robustHD')
 has <- wants %in% rownames(installed.packages())
 if (any(!has)) install.packages(wants[!has])
 
+source('common/misc.R')
+source('common/latex-translator.R')
 source('common/reliability-analysis.R')
 
 library(readr)
