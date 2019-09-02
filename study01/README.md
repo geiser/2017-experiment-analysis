@@ -8,6 +8,93 @@ Comparing ontology-based gamified CL sessions (ont-gamified) against non-gamifie
 
 All materials used in the empirical study are available at ([materials](materials/))
 
+### Research Questions (RQs)
+
+1. Do the ont-gamified CL sessions have positive impacts on the students' motivation?
+2. Do the ont-gamified CL sessions affect on the students' learning outcomes?
+3. Are the participants' motivation and learning outcomes linked in those sessions?
+
+## Scripts to answer the RQ1
+
+**Research Question (RQ1):**
+```
+Do the ont-gamified CL sessions have positive impacts on the students' motivation?
+```
+
+### R script to validate the IMI questionnaire ([00-reliability-analysis-IMI.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/00-reliability-analysis-IMI.R))
+
+R script to validate data gathered in the empirical study through the IMI questionnaire.
+
+The results obtained by the execution of this R script are:
+
+* Summary of fatorial analysis and reliability test
+
+  _File_: [IMI-reliability-analysis.pdf](report/latex/IMI-reliability-analysis.pdf) ([more info ...](report/latex/)) 
+
+* Report with the detailed information of measure sampling adequacy, factorial analysis, and reliability test
+
+  _File_: [IMI.xlsx](report/reliability-analysis/IMI.xlsx) ([more info ...](report/reliability-analysis/))
+
+* Responses of the IMI questinnaire with the validated items
+
+  _File_: [IMI.csv](data/IMI.csv) ([more info ...](data/))
+
+
+### R script to calculate the IRT-based estimates of students' motivation ([00-rsm-motivation-measurement-building.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/00-rsm-motivation-measurement-building.R))
+
+R script to calculate the IRT-based estimates of students' motivations through the building of RMS-based measurement instruments. These estimates were calculated based on the *Item Response Theory* (IRT) and *Rating Scale Model* (RSM), and through the process detailed in the file: [irt-instruments.pdf](../report/irt-instruments.pdf). 
+
+The results obtained by the execution of this R script are:
+ 
+* PDF-file with the summary of the IRT-based instruments to estimate the students' motivation
+
+  _File_: [rsm-motivation.pdf](report/latex/rsm-motivation.pdf) ([more info ...](report/latex/))
+
+* Excel-file with the report of the IRT-based instrument to calculate the estimates of *Interest/Enjoyment*.
+  
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/interest-enjoyment/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/interest-enjoyment/))
+
+* Excel-file with the report of the IRT-based instrument to calculate the estimates of *Perceived Choice*.
+  
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/perceived-choice/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/perceived-choice/))
+
+* Excel-file with the report of the IRT-based instrument to calculate the estimates of *Pressure/Tension*.
+  
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/pressure-tension/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/pressure-tension/))
+
+* Excel-file with the report of the IRT-based instrument to calculate the estimates of *Effort/Importance*.
+  
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/effort-importance/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/effort-importance/))
+
+* Excel-file with the report of the IRT-based instrument to calculate the estimates of *Intrinsic Motivation*.
+  
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/intrinsic-motivation/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/intrinsic-motivation/))
+
+* CSV-file with the IRT-based estimates of *Interest/Enjoyment*:
+
+  _File_: [InterestEnjoyment.csv](data/InterestEnjoyment.csv) ([more info ...](data/))
+
+* CSV-file with the IRT-based estimates of *Perceived Choice*:
+
+  _File_: [PerceivedChoice.csv](data/PerceivedChoice.csv) ([more info ...](data/))
+
+* CSV-file with the IRT-based estimates of *Pressure/Tension*:
+
+  _File_: [PressureTension.csv](data/PressureTension.csv) ([more info ...](data/))
+
+* CSV-file with the IRT-based estimates of *Effort/Importance*:
+
+  _File_: [EffortImportance.csv](data/EffortImportance.csv) ([more info ...](data/))
+
+* CSV-file with the IRT-based estimates of *Intrinsic Motivation*:
+
+  _File_: [IntrinsicMotivation.csv](data/IntrinsicMotivation.csv) ([more info ...](data/))
+
+
+## Scripts in this folder - path: [/study01/](https://github.com/geiser/phd-thesis-evaluation/tree/master/study01)
+
+For answering these Research Questions (RQs), the R scripts should be executed as follows:
+
 
 # Validation of IMI
 
