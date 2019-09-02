@@ -13,7 +13,7 @@ sources = list(
   "Level of Motivation" = list(
     sheed = "data", wid = "UserID", name = "Level of Motivation"
     , filename = "data/IMMS.csv"
-    , path = "report/motivation/level-of-motivation/"
+    , path = "report/irt-motivation/level-of-motivation/"
     , start.with = c("Item"), end.withs = c("A", "R", "S")
     , inv.keys = c("Item15R","Item21R", "Item10R"#, "Item08R"
                    ) # Item08 degrade the system
@@ -34,7 +34,7 @@ sources = list(
   , "Attention" = list(
     sheed = "data", wid = "UserID", name = "Attention"
     , filename = "data/IMMS.csv"
-    , path = "report/motivation/attention/"
+    , path = "report/irt-motivation/attention/"
     , start.with = c("Item"), end.withs = c("A")
     , inv.keys = c()
     , column_names = list(Item12A = c("Item12A"), Item19A = c("Item19A")
@@ -49,7 +49,7 @@ sources = list(
   , "Relevance" = list(
     sheed = "data", wid = "UserID", name = "Relevance"
     , filename = "data/IMMS.csv"
-    , path = "report/motivation/relevance/"
+    , path = "report/irt-motivation/relevance/"
     , start.with = c("Item"), end.withs = c("R")
     , inv.keys = c("Item15R", "Item21R", "Item10R", "Item08R")
     , column_names = list(Item15R = c("Item15R"), Item21R = c("Item21R")
@@ -63,7 +63,7 @@ sources = list(
   , "Satisfaction" = list(
     sheed = "data", wid = "UserID", name = "Satisfaction"
     , filename = "data/IMMS.csv"
-    , path = "report/motivation/satisfaction/"
+    , path = "report/irt-motivation/satisfaction/"
     , start.with = c("Item"), end.withs = c("S")
     , inv.keys = c()
     , column_names = list(Item13S = c("Item13S"), Item14S = c("Item14S")

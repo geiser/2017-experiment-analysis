@@ -13,7 +13,7 @@ sources = list(
   "Intrinsic Motivation" = list(
     sheed = "data", wid = "UserID", name = "Intrinsic Motivation"
     , filename = "data/IMI.csv"
-    , path = "report/motivation/intrinsic-motivation/"
+    , path = "report/irt-motivation/intrinsic-motivation/"
     , start.with = c("Item"), end.withs = c("IE","PC","PT","EI")
     , inv.keys = c("Item17PC", "Item15PC", "Item06PC", "Item02PC", "Item08PC"
                    , "Item16PT", "Item14PT", "Item18PT"
@@ -42,7 +42,7 @@ sources = list(
   , "Interest/Enjoyment" = list(
     sheed = "data", wid = "UserID", name = "Interest/Enjoyment"
     , filename = "data/IMI.csv"
-    , path = "report/motivation/interest-enjoyment/"
+    , path = "report/irt-motivation/interest-enjoyment/"
     , start.with = c("Item"), end.withs = c("IE")
     , inv.keys = c()
     , column_names = list(Item22IE = c("Item22IE"), Item09IE = c("Item09IE")
@@ -57,7 +57,7 @@ sources = list(
   , "Perceived Choice" = list(
     sheed = "data", wid = "UserID", name = "Perceived Choice"
     , filename = "data/IMI.csv"
-    , path = "report/motivation/perceived-choice/"
+    , path = "report/irt-motivation/perceived-choice/"
     , start.with = c("Item"), end.withs = c("PC")
     , inv.keys = c("Item17PC", "Item15PC", "Item06PC", "Item02PC", "Item08PC")
     , column_names = list(Item17PC = c("Item17PC"), Item15PC = c("Item15PC")
@@ -72,7 +72,7 @@ sources = list(
   , "Pressure/Tension" = list(
     sheed = "data", wid = "UserID", name = "Pressure/Tension"
     , filename = "data/IMI.csv"
-    , path = "report/motivation/pressure-tension/"
+    , path = "report/irt-motivation/pressure-tension/"
     , start.with = c("Item"), end.withs = c("PT")
     , inv.keys = c("Item11PT")
     , column_names = list(Item16PT = c("Item16PT"), Item14PT = c("Item14PT")
@@ -86,7 +86,7 @@ sources = list(
   , "Effort/Importance" = list(
     sheed = "data", wid = "UserID", name = "Effort/Importance"
     , filename = "data/IMI.csv"
-    , path = "report/motivation/effort-importance/"
+    , path = "report/irt-motivation/effort-importance/"
     , start.with = c("Item"), end.withs = c("EI")
     , inv.keys = c("Item13EI", "Item07EI")
     , column_names = list(Item13EI = c("Item13EI"), Item03EI = c("Item03EI")
@@ -100,7 +100,7 @@ sources = list(
   , "Level of Motivation" = list(
     sheed = "data", wid = "UserID", name = "Level of Motivation"
     , filename = "data/IMMS.csv"
-    , path = "report/motivation/level-of-motivation/"
+    , path = "report/irt-motivation/level-of-motivation/"
     , start.with = c("Item"), end.withs = c("A", "R", "S")
     , inv.keys = c(#"Item15R",
                    "Item21R", "Item10R", "Item08R") # item 15 cause non-monotonocity
@@ -121,7 +121,7 @@ sources = list(
   , "Attention" = list(
     sheed = "data", wid = "UserID", name = "Attention"
     , filename = "data/IMMS.csv"
-    , path = "report/motivation/attention/"
+    , path = "report/irt-motivation/attention/"
     , start.with = c("Item"), end.withs = c("A")
     , inv.keys = c()
     , column_names = list(Item12A = c("Item12A"), Item19A = c("Item19A")
@@ -136,7 +136,7 @@ sources = list(
   , "Relevance" = list(
     sheed = "data", wid = "UserID", name = "Relevance"
     , filename = "data/IMMS.csv"
-    , path = "report/motivation/relevance/"
+    , path = "report/irt-motivation/relevance/"
     , start.with = c("Item"), end.withs = c("R")
     , inv.keys = c("Item15R", "Item21R", "Item10R", "Item08R")
     , column_names = list(Item15R = c("Item15R"), Item21R = c("Item21R")
@@ -150,7 +150,7 @@ sources = list(
   , "Satisfaction" = list(
     sheed = "data", wid = "UserID", name = "Satisfaction"
     , filename = "data/IMMS.csv"
-    , path = "report/motivation/satisfaction/"
+    , path = "report/irt-motivation/satisfaction/"
     , start.with = c("Item"), end.withs = c("S")
     , inv.keys = c()
     , column_names = list(Item13S = c("Item13S"), Item14S = c("Item14S")
