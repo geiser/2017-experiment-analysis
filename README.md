@@ -12,6 +12,7 @@
 
 ## Scripts in this folder - path: [/](https://github.com/geiser/phd-thesis-evaluation/)
 
+For the validation of the IMI and IMMS questionnaires, the R scripts should be executed as follows:
 
 ### R script to extract information from the Moodle platform ([00-processing-mysql.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/00-processing-mysql.R))
 
