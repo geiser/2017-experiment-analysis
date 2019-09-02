@@ -549,6 +549,26 @@ The results obtained by the execution of this R script are:
   _File_: [ParametricAnalysis.xlsx](report/learning-outcomes/scr-effective-participants/ParametricAnalysis.xlsx)
   
 
+### R script to calculate the IRT-based estimates of learning outcomes ([00-gpcm-learning-outcomes-measurement-building.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/00-gpcm-learning-outcomes-measurement-building.R))
+
+R script to calculate the IRT-based estimates of the students' gains in skill/knowledge.
+These estimates were calculated using the stacking process based on the *General-Partial Credit Model* (GPCM), and this process is detailed in the file: [irt-instruments.pdf](../report/irt-instruments.pdf). 
+
+The results obtained by the execution of this R script are:
+ 
+* PDF-file with the summary of the GPCM-based instruments to estimate the students' skill/knowledge during the pretest and posttest phases 
+
+  _File_: [gpcm-learning-outcomes.pdf](report/latex/gpcm-learning-outcomes.pdf)
+
+* Excel-file with the report of the stacking process using the GPCM-based instruments to estimate the gains in the students' skill/knowledge (`gain = estimates_of_skill/knowledge(posttest) - estimates_of_skill/knowledge(pretest)`)
+  
+  _File_: [MeasurementChangeModel.xlsx](report/learning-outcomes/MeasurementChangeModel.xlsx)
+
+* CSV-file with the IRT-based estimates of *Gain in Skill/Knowledge* of students
+
+  _File_: [GainSkillsKnowledge.csv](data/GainSkillsKnowledge.csv) ([more info ...](data/))
+
+
 
 
 
