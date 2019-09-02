@@ -39,7 +39,8 @@ PDF-file with the summary of careless responses identified on the data gathered 
 PDF-file with the summary of careless responses identified on the data gathered throughout the *third* empirical study and using the IMI questionnaire.
 
 - On-line visualization: [careless-IMI-study03.pdf](https://github.com/geiser/phd-thesis-evaluation/blob/master/report/latex/careless-IMI-study03.pdf)
-- R script used to generate this file: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R) ([more info](../../))
+- R script used to generate this file: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R)
+
 
 ### File: [careless-IMMS-study03.pdf](careless-IMMS-study03.pdf)
 
