@@ -50,7 +50,7 @@ PDF-file with the summary of careless responses identified on the data gathered 
 - R script used to generate this file: [01-removing-careless-motivation.R](../../01-removing-careless-motivation.R)
 
 
-## Files related to the idetification and treatment of extreme values on the responses
+## Files related to the idetification and treatment of extreme values
 
 ### File: [winsorized-IMI.pdf](winsorized-IMI.pdf)
 
