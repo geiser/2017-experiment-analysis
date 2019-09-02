@@ -24,15 +24,15 @@ R script to validate data gathered in the empirical study through the IMI questi
 
 The results obtained by the execution of this R script are:
 
-* Summary of fatorial analysis and reliability test
+* PDF-file with the summary of fatorial analysis and reliability test
 
   _File_: [IMI-reliability-analysis.pdf](report/latex/IMI-reliability-analysis.pdf)
 
-* Report with the detailed information of measure sampling adequacy, factorial analysis, and reliability test
+* Excel-file with detailed information of measure sampling adequacy, factorial analysis, and reliability test
 
   _File_: [IMI.xlsx](report/reliability-analysis/IMI.xlsx)
 
-* Responses of the IMI questinnaire with the validated items
+* CSV-file with the responses on the IMI questionnaire with validated items
 
   _File_: [IMI.csv](data/IMI.csv) ([more info ...](data/))
 
@@ -45,53 +45,93 @@ After this, by using the parametric tests of ANOVA and Tukey post-hoc, we confir
 
 The results obtained by the execution of this R script are:
 
-* Summary of nonparametric and parametric tests
+* PDF-file with the summary of nonparametric and parametric tests
 
   _File_: [summary-scr-analysis.pdf](report/latex/motivation-signedup/summary-scr-analysis.pdf)
 
-* Summary of Scheirer-Ray-Hare and pair-wilcoxon tests (nonparametric analysis) for *Interest/Enjoyment*
+* PDF-file with the summary of nonparametric analysis on the *Interest/Enjoyment*
 
   _File_: [nonparametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-interest-enjoyment-scr-analysis.pdf) 
+
+* Excel-file with the detailed information of nonparametric analysis on the *Interest/Enjoyment*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/interest-enjoyment/by-Type/NonParametricAnalysis.xlsx)
   
-* Summary of Scheirer-Ray-Hare and pair-wilcoxon tests (nonparametric analysis) for *Perceived Choice*
+* PDF-file with the summary of nonparametric analysis on the *Perceived Choice*
 
   _File_: [nonparametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-perceived-choice-scr-analysis.pdf)  
 
-* Summary of Scheirer-Ray-Hare and pair-wilcoxon tests (nonparametric analysis) for *Pressure/Tension*
+* Excel-file with the detailed information of nonparametric analysis on the *Perceived Choice*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/perceived-choice/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Pressure/Tension*
 
   _File_: [nonparametric-pressure-tension-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-pressure-tension-scr-analysis.pdf)
 
-* Summary of Scheirer-Ray-Hare and pair-wilcoxon tests (nonparametric analysis) for *Effort/Importance*
+* Excel-file with the detailed information of nonparametric analysis on the *Pressure/Tension*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/pressure-tension/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of nonparametric analysis on the *Effort/Importance*
 
   _File_: [nonparametric-effort-importance-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-effort-importance-scr-analysis.pdf)
 
-* Summary of Scheirer-Ray-Hare and pair-wilcoxon tests (nonparametric analysis) for *Intrinsic Motivation*
+* Excel-file with the detailed information of nonparametric analysis on the *Effort/Importance*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/effort-importance/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of nonparametric analysis on the *Intrinsic Motivation*
 
   _File_: [nonparametric-intrinsic-motivation-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-intrinsic-motivation-scr-analysis.pdf)
 
-* Summary of winsorization applied to perform the parametric analysis
+* Excel-file with the detailed information of nonparametric analysis on the *Intrinsic Motivation*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/intrinsic-motivation/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of winsorization applied to perform the parametric analysis
 
   _File_: [wisorized-scr-intrinsic-motivation.pdf](report/latex/motivation-signedup/wisorized-scr-intrinsic-motivation.pdf)
 
-* Summary of Anova and Tukey post-hoc tests (parametric analysis) for *Interest/Enjoyment*
+* PDF-file with the summary of parametric analysis on the *Interest/Enjoyment*
 
   _File_: [parametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-signedup/parametric-interest-enjoyment-scr-analysis.pdf) 
+
+* Excel-file with the detailed information of parametric analysis on the *Interest/Enjoyment*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/interest-enjoyment/by-Type/ParametricAnalysis.xlsx)
   
-* Summary of Anova and Tukey post-hoc tests (parametric analysis) for *Perceived Choice*
+* PDF-file with the summary of parametric analysis on the *Perceived Choice*
 
-  _File_: [parametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-signedup/parametric-perceived-choice-scr-analysis.pdf)  
+  _File_: [parametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-signedup/parametric-perceived-choice-scr-analysis.pdf)
 
-* Summary of Anova and Tukey post-hoc tests (parametric analysis) for *Pressure/Tension*
+* Excel-file with the detailed information of parametric analysis on the *Perceived Choice*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/perceived-choice/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Pressure/Tension*
 
   _File_: [parametric-pressure-tension-scr-analysis.pdf](report/latex/motivation-signedup/parametric-pressure-tension-scr-analysis.pdf)
 
-* Summary of Anova and Tukey post-hoc tests (parametric analysis) for *Effort/Importance*
+* Excel-file with the detailed information of parametric analysis on the *Pressure/Tension*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/pressure-tension/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Effort/Importance*
 
   _File_: [parametric-effort-importance-scr-analysis.pdf](report/latex/motivation-signedup/parametric-effort-importance-scr-analysis.pdf)
 
-* Summary of Anova and Tukey post-hoc tests (parametric analysis) for *Intrinsic Motivation*
+* Excel-file with the detailed information of parametric analysis on the *Effort/Importance*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/effort-importance/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Intrinsic Motivation*
 
   _File_: [parametric-intrinsic-motivation-scr-analysis.pdf](report/latex/motivation-signedup/parametric-intrinsic-motivation-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Intrinsic Motivation*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx)
 
 
 
