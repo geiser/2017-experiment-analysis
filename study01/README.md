@@ -16,10 +16,7 @@ All materials used in the empirical study are available at ([materials](material
 
 ## Scripts to answer the RQ1
 
-**Research Question (RQ1):**
-```
-Do the ont-gamified CL sessions have positive impacts on the students' motivation?
-```
+**RQ1:** `Do the ont-gamified CL sessions have positive impacts on the students' motivation?`
 
 ### R script to validate the IMI questionnaire ([00-reliability-analysis-IMI.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/00-reliability-analysis-IMI.R))
 
@@ -29,15 +26,75 @@ The results obtained by the execution of this R script are:
 
 * Summary of fatorial analysis and reliability test
 
-  _File_: [IMI-reliability-analysis.pdf](report/latex/IMI-reliability-analysis.pdf) ([more info ...](report/latex/)) 
+  _File_: [IMI-reliability-analysis.pdf](report/latex/IMI-reliability-analysis.pdf)
 
 * Report with the detailed information of measure sampling adequacy, factorial analysis, and reliability test
 
-  _File_: [IMI.xlsx](report/reliability-analysis/IMI.xlsx) ([more info ...](report/reliability-analysis/))
+  _File_: [IMI.xlsx](report/reliability-analysis/IMI.xlsx)
 
 * Responses of the IMI questinnaire with the validated items
 
   _File_: [IMI.csv](data/IMI.csv) ([more info ...](data/))
+
+
+### R script to find significant differences on the students' motivation ([01-scr-motivation-signedup-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/01-scr-motivation-signedup-analysis.R))
+
+R script to find significant differences on the motivation scores obtained through the IMI questionnaire, and for all the students signed-up as participants in the CL sessions.
+These differences were firstly finding by using the nonparametric statistical tests as the Scheirer-Ray-Hare test and the pair-wilcoxon test.
+After this, by using the parametric tests of ANOVA and Tukey post-hoc, we confirmed the statistical significant differences found on the students' motivation.
+
+The results obtained by the execution of this R script are:
+
+* Summary of nonparametric and parametric tests
+
+  _File_: [summary-scr-analysis.pdf](report/latex/motivation-signedup/summary-scr-analysis.pdf)
+
+* Summary of Scheirer-Ray-Hare and pair-wilcoxon tests (nonparametric analysis) for *Interest/Enjoyment*
+
+  _File_: [nonparametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-interest-enjoyment-scr-analysis.pdf) 
+  
+* Summary of Scheirer-Ray-Hare and pair-wilcoxon tests (nonparametric analysis) for *Perceived Choice*
+
+  _File_: [nonparametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-perceived-choice-scr-analysis.pdf)  
+
+* Summary of Scheirer-Ray-Hare and pair-wilcoxon tests (nonparametric analysis) for *Pressure/Tension*
+
+  _File_: [nonparametric-pressure-tension-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-pressure-tension-scr-analysis.pdf)
+
+* Summary of Scheirer-Ray-Hare and pair-wilcoxon tests (nonparametric analysis) for *Effort/Importance*
+
+  _File_: [nonparametric-effort-importance-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-effort-importance-scr-analysis.pdf)
+
+* Summary of Scheirer-Ray-Hare and pair-wilcoxon tests (nonparametric analysis) for *Intrinsic Motivation*
+
+  _File_: [nonparametric-intrinsic-motivation-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-intrinsic-motivation-scr-analysis.pdf)
+
+* Summary of winsorization applied to perform the parametric analysis
+
+  _File_: [wisorized-scr-intrinsic-motivation.pdf](report/latex/motivation-signedup/wisorized-scr-intrinsic-motivation.pdf)
+
+* Summary of Anova and Tukey post-hoc tests (parametric analysis) for *Interest/Enjoyment*
+
+  _File_: [parametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-signedup/parametric-interest-enjoyment-scr-analysis.pdf) 
+  
+* Summary of Anova and Tukey post-hoc tests (parametric analysis) for *Perceived Choice*
+
+  _File_: [parametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-signedup/parametric-perceived-choice-scr-analysis.pdf)  
+
+* Summary of Anova and Tukey post-hoc tests (parametric analysis) for *Pressure/Tension*
+
+  _File_: [parametric-pressure-tension-scr-analysis.pdf](report/latex/motivation-signedup/parametric-pressure-tension-scr-analysis.pdf)
+
+* Summary of Anova and Tukey post-hoc tests (parametric analysis) for *Effort/Importance*
+
+  _File_: [parametric-effort-importance-scr-analysis.pdf](report/latex/motivation-signedup/parametric-effort-importance-scr-analysis.pdf)
+
+* Summary of Anova and Tukey post-hoc tests (parametric analysis) for *Intrinsic Motivation*
+
+  _File_: [parametric-intrinsic-motivation-scr-analysis.pdf](report/latex/motivation-signedup/parametric-intrinsic-motivation-scr-analysis.pdf)
+
+
+
 
 
 ### R script to calculate the IRT-based estimates of students' motivation ([00-rsm-motivation-measurement-building.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/00-rsm-motivation-measurement-building.R))
@@ -48,47 +105,47 @@ The results obtained by the execution of this R script are:
  
 * PDF-file with the summary of the IRT-based instruments to estimate the students' motivation
 
-  _File_: [report/latex/rsm-motivation.pdf](report/latex/rsm-motivation.pdf) ([more info ...](report/latex/))
+  _File_: [rsm-motivation.pdf](report/latex/rsm-motivation.pdf) ([more info ...](report/latex/))
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Interest/Enjoyment*.
   
-  _File_: [report/irt-motivation/interest-enjoyment/MeasurementModel.xlsx](report/irt-motivation/interest-enjoyment/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/interest-enjoyment/))
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/interest-enjoyment/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/interest-enjoyment/))
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Perceived Choice*.
   
-  _File_: [report/irt-motivation/perceived-choice/MeasurementModel.xlsx](report/irt-motivation/perceived-choice/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/perceived-choice/))
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/perceived-choice/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/perceived-choice/))
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Pressure/Tension*.
   
-  _File_: [report/irt-motivation/pressure-tension/MeasurementModel.xlsx](report/irt-motivation/pressure-tension/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/pressure-tension/))
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/pressure-tension/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/pressure-tension/))
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Effort/Importance*.
   
-  _File_: [report/irt-motivation/effort-importance/MeasurementModel.xlsx](report/irt-motivation/effort-importance/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/effort-importance/))
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/effort-importance/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/effort-importance/))
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Intrinsic Motivation*.
   
-  _File_: [report/irt-motivation/intrinsic-motivation/MeasurementModel.xlsx](report/irt-motivation/intrinsic-motivation/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/intrinsic-motivation/))
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/intrinsic-motivation/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/intrinsic-motivation/))
 
 * CSV-file with the IRT-based estimates of *Interest/Enjoyment*:
 
-  _File_: [data/InterestEnjoyment.csv](data/InterestEnjoyment.csv) ([more info ...](data/))
+  _File_: [InterestEnjoyment.csv](data/InterestEnjoyment.csv) ([more info ...](data/))
 
 * CSV-file with the IRT-based estimates of *Perceived Choice*:
 
-  _File_: [data/PerceivedChoice.csv](data/PerceivedChoice.csv) ([more info ...](data/))
+  _File_: [PerceivedChoice.csv](data/PerceivedChoice.csv) ([more info ...](data/))
 
 * CSV-file with the IRT-based estimates of *Pressure/Tension*:
 
-  _File_: [data/PressureTension.csv](data/PressureTension.csv) ([more info ...](data/))
+  _File_: [PressureTension.csv](data/PressureTension.csv) ([more info ...](data/))
 
 * CSV-file with the IRT-based estimates of *Effort/Importance*:
 
-  _File_: [data/EffortImportance.csv](data/EffortImportance.csv) ([more info ...](data/))
+  _File_: [EffortImportance.csv](data/EffortImportance.csv) ([more info ...](data/))
 
 * CSV-file with the IRT-based estimates of *Intrinsic Motivation*:
 
-  _File_: [data/IntrinsicMotivation.csv](data/IntrinsicMotivation.csv) ([more info ...](data/))
+  _File_: [IntrinsicMotivation.csv](data/IntrinsicMotivation.csv) ([more info ...](data/))
 
 
 ## Scripts in this folder - path: [/study01/](https://github.com/geiser/phd-thesis-evaluation/tree/master/study01)
