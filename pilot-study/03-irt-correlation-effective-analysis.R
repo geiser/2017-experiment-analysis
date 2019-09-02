@@ -4,6 +4,11 @@ library(dplyr)
 library(readxl)
 library(PerformanceAnalytics)
 
+
+source('../common/misc.R')
+source('../common/correlation-analysis.R')
+source('../common/latex-translator.R')
+
 participants <- read_csv('data/EffectiveParticipants.csv')
 
 info_src <- list(
