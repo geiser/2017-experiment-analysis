@@ -134,7 +134,103 @@ The results obtained by the execution of this R script are:
   _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx)
 
 
+### R script to find significant differences on the motivation of students with effective participation ([01-scr-motivation-effective-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/01-scr-motivation-effective-analysis.R))
 
+R script to find significant differences on the motivation scores obtained through the IMI questionnaire, and for the students with effective participation in the CL sessions.
+These differences were firstly finding by using the nonparametric statistical tests as the Scheirer-Ray-Hare test and the pair-wilcoxon test.
+After this, by using the parametric tests of ANOVA and Tukey post-hoc, we confirmed the statistical significant differences found on the students' motivation.
+
+`A student with effective participation is a student that, at least one time, interacted with other member of the CL group by following the necessary interactions indicated in the CSCL script`
+
+The results obtained by the execution of this R script are:
+
+* PDF-file with the summary of nonparametric and parametric tests
+
+  _File_: [summary-scr-analysis.pdf](report/latex/motivation-effective/summary-scr-analysis.pdf)
+
+* PDF-file with the summary of nonparametric analysis on the *Interest/Enjoyment*
+
+  _File_: [nonparametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-interest-enjoyment-scr-analysis.pdf) 
+
+* Excel-file with the detailed information of nonparametric analysis on the *Interest/Enjoyment*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/interest-enjoyment/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Perceived Choice*
+
+  _File_: [nonparametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-perceived-choice-scr-analysis.pdf)  
+
+* Excel-file with the detailed information of nonparametric analysis on the *Perceived Choice*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/perceived-choice/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Pressure/Tension*
+
+  _File_: [nonparametric-pressure-tension-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-pressure-tension-scr-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Pressure/Tension*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/pressure-tension/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of nonparametric analysis on the *Effort/Importance*
+
+  _File_: [nonparametric-effort-importance-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-effort-importance-scr-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Effort/Importance*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/effort-importance/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of nonparametric analysis on the *Intrinsic Motivation*
+
+  _File_: [nonparametric-intrinsic-motivation-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-intrinsic-motivation-scr-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Intrinsic Motivation*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/intrinsic-motivation/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of winsorization applied to perform the parametric analysis
+
+  _File_: [wisorized-scr-intrinsic-motivation.pdf](report/latex/motivation-effective/wisorized-scr-intrinsic-motivation.pdf)
+
+* PDF-file with the summary of parametric analysis on the *Interest/Enjoyment*
+
+  _File_: [parametric-interest-enjoyment-scr-analysis.pdf](report/latex/motivation-effective/parametric-interest-enjoyment-scr-analysis.pdf) 
+
+* Excel-file with the detailed information of parametric analysis on the *Interest/Enjoyment*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/interest-enjoyment/by-Type/ParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of parametric analysis on the *Perceived Choice*
+
+  _File_: [parametric-perceived-choice-scr-analysis.pdf](report/latex/motivation-effective/parametric-perceived-choice-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Perceived Choice*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/perceived-choice/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Pressure/Tension*
+
+  _File_: [parametric-pressure-tension-scr-analysis.pdf](report/latex/motivation-effective/parametric-pressure-tension-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Pressure/Tension*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/pressure-tension/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Effort/Importance*
+
+  _File_: [parametric-effort-importance-scr-analysis.pdf](report/latex/motivation-effective/parametric-effort-importance-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Effort/Importance*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/effort-importance/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Intrinsic Motivation*
+
+  _File_: [parametric-intrinsic-motivation-scr-analysis.pdf](report/latex/motivation-effective/parametric-intrinsic-motivation-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Intrinsic Motivation*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx)
 
 
 ### R script to calculate the IRT-based estimates of students' motivation ([00-rsm-motivation-measurement-building.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/00-rsm-motivation-measurement-building.R))
