@@ -2,9 +2,9 @@
 
 Comparing *ontology-based gamified CL sessions* (**ont-gamified**) against *non-gamified CL sessions* (**non-gamified**).
 
-* CSCL Script: CSCL script inspired by Cognitive Apprentice
-* Content-domain: Conditional Structures - Course of Introduction to Computer Science
-* Participants: 62 undergraduate Brazilian Computer Engineering Students
+* **CSCL Script**: CSCL script inspired by Cognitive Apprentice
+* **Content-domain**: Conditional Structures - Course of Introduction to Computer Science
+* **Participants**: 62 undergraduate Brazilian Computer Engineering Students
 
 All materials used in the empirical study are available at ([materials](materials/))
 
