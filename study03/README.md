@@ -2,9 +2,9 @@
 
 Comparing *ontology-based gamified CL sessions* (**ont-gamified**) against *CL sessions gamified without using the ontology OntoGaCLeS* (**w/o-gamified**).
 
-* CSCL Script: CSCL script inspired by Cognitive Apprentice
-* Content-domain: Recursion - Course of Introduction to Computer Science
-* Participants: 59 undergraduate Brazilian Computer Engineering Students
+* **CSCL Script**: CSCL script inspired by Cognitive Apprentice
+* **Content-domain**: Recursion - Course of Introduction to Computer Science
+* **Participants**: 59 undergraduate Brazilian Computer Engineering Students
 
 All materials used in the empirical study are available at ([materials](materials/))
 
