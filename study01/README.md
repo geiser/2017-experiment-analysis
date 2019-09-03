@@ -244,27 +244,27 @@ The results obtained by the execution of this R script are:
  
 * PDF-file with the summary of the IRT-based instruments to estimate the students' motivation
 
-  _File_: [rsm-motivation.pdf](report/latex/rsm-motivation.pdf) ([more info ...](report/latex/))
+  _File_: [rsm-motivation.pdf](report/latex/rsm-motivation.pdf)
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Interest/Enjoyment*.
   
-  _File_: [MeasurementModel.xlsx](report/irt-motivation/interest-enjoyment/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/interest-enjoyment/))
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/interest-enjoyment/MeasurementModel.xlsx)
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Perceived Choice*.
   
-  _File_: [MeasurementModel.xlsx](report/irt-motivation/perceived-choice/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/perceived-choice/))
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/perceived-choice/MeasurementModel.xlsx)
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Pressure/Tension*.
   
-  _File_: [MeasurementModel.xlsx](report/irt-motivation/pressure-tension/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/pressure-tension/))
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/pressure-tension/MeasurementModel.xlsx)
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Effort/Importance*.
   
-  _File_: [MeasurementModel.xlsx](report/irt-motivation/effort-importance/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/effort-importance/))
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/effort-importance/MeasurementModel.xlsx)
 
 * Excel-file with the report of the IRT-based instrument to calculate the estimates of *Intrinsic Motivation*.
   
-  _File_: [MeasurementModel.xlsx](report/irt-motivation/intrinsic-motivation/MeasurementModel.xlsx) ([more info ...](report/irt-motivation/intrinsic-motivation/))
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/intrinsic-motivation/MeasurementModel.xlsx)
 
 * CSV-file with the IRT-based estimates of *Interest/Enjoyment*:
 
@@ -622,11 +622,135 @@ The results obtained by the execution of this R script are:
   
 * PDF-file with the summary of parametric analysis
 
-  _File_: [parametric-scr-effective-participants-analysis.pdf](report/latex/learning-outcomes/parametric-effective-participants-analysis.pdf) 
+  _File_: [parametric-effective-participants-analysis.pdf](report/latex/learning-outcomes/parametric-effective-participants-analysis.pdf) 
 
 * Excel-file with the detailed information of parametric analysis
 
   _File_: [ParametricAnalysis.xlsx](report/learning-outcomes/effective-participants/ParametricAnalysis.xlsx)
   
 
+## Scripts to answer the RQ3
+
+**RQ3:** `Are the participants' motivation and learning outcomes linked in ont-gamified and non-gamified CL sessions?`
+
+
+### R script to find significant correlations between motivation scores and gain scores on academic performance tests for all the students ([03-scr-correlation-signedup-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/03-scr-correlation-signedup-analysis.R))
+
+R script to statistically find significant correlations between students' motivation and their gains of skill/knowledge during the empirical study.
+The students' motivation for this correlation analysis was carried out employing the motivation scores calculated through the IMI questionnaires, and for all the students signed-up as participants in the CL sessions.
+The students' gains of skill/knowledge were calculated by teacher-based rules on the AMC questionnaires and programming problem tasks. Spearman's Rank method was also used for this correlation analysis.
+
+The results obtained by the execution of this R script are:
+
+* PDF-file with the summary of Sperman's Rank correlation tests
+
+  _File_: [correlation-scr-signedup-analysis.pdf](report/latex/correlation-scr-signedup-analysis.pdf)
+  
+* Excel-file with detailed information of the Spearman's Rank correlation
+
+  _File_: [CorrMatrixAnalysis.xlsx](report/correlation/scr-signedup-participants/CorrMatrixAnalysis.xlsx)
+
+* Excel-file with detailed information of the Spearman's Rank weak correlation
+
+  _File_: [SimpleCorrPairAnalysis-weak.xlsx](report/correlation/scr-signedup-participants/SimpleCorrPairAnalysis-weak.xlsx)
+
+* Excel-file with detailed information of the Spearman's Rank moderate correlation
+
+  _File_: [SimpleCorrPairAnalysis-moderate.xlsx](report/correlation/scr-signedup-participants/SimpleCorrPairAnalysis-moderate.xlsx)
+
+* Excel-file with detailed information of the the Spearman's Rank strong correlation
+
+  _File_: [SimpleCorrPairAnalysis-strong.xlsx](report/correlation/scr-signedup-participants/SimpleCorrPairAnalysis-strong.xlsx)
+
+
+### R script to find significant correlations between motivation scores and gain scores on academic performance tests for students with effective participation ([03-scr-correlation-effective-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/03-scr-correlation-effective-analysis.R))
+
+R script to statistically find significant correlations between students' motivation and their gains of skill/knowledge during the empirical study.
+The students' motivation for this correlation analysis was carried out employing the motivation scores calculated through the IMI questionnaires, and for students with effective participation in the CL sessions.
+The students' gains of skill/knowledge were calculated by teacher-based rules on the AMC questionnaires and programming problem tasks. Spearman's Rank method was also used for this correlation analysis.
+
+`A student with effective participation is a student that, at least one time, interacted with other member of the CL group by following the necessary interactions indicated in the CSCL script`
+
+The results obtained by the execution of this R script are:
+
+* PDF-file with the summary of Sperman's Rank correlation tests
+
+  _File_: [correlation-scr-effective-analysis.pdf](report/latex/correlation-scr-effective-analysis.pdf)
+  
+* Excel-file with detailed information of the Spearman's Rank correlation
+
+  _File_: [CorrMatrixAnalysis.xlsx](report/correlation/scr-effective-participants/CorrMatrixAnalysis.xlsx)
+
+* Excel-file with detailed information of the Spearman's Rank weak correlation
+
+  _File_: [SimpleCorrPairAnalysis-weak.xlsx](report/correlation/scr-effective-participants/SimpleCorrPairAnalysis-weak.xlsx)
+
+* Excel-file with detailed information of the Spearman's Rank moderate correlation
+
+  _File_: [SimpleCorrPairAnalysis-moderate.xlsx](report/correlation/scr-effective-participants/SimpleCorrPairAnalysis-moderate.xlsx)
+
+* Excel-file with detailed information of the the Spearman's Rank strong correlation
+
+  _File_: [SimpleCorrPairAnalysis-strong.xlsx](report/correlation/scr-effective-participants/SimpleCorrPairAnalysis-strong.xlsx)
+
+
+
+### R script to find significant correlations between the estimates of motivation and the gain of skill/knownedge for all the students ([03-irt-correlation-signedup-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/03-irt-correlation-signedup-analysis.R))
+
+R script to statistically find significant correlations between students' motivation and their gains of skill/knowledge during the empirical study.
+The students' motivation for this correlation analysis was carried out employing the IRT-based estimates of motivation calculated through the RSM-based intruments, and for all the students signed-up as participants in the CL sessions.
+The students' gains of skill/knowledge were estimated by GPCM-based instruments on the AMC questionnaires and programming problem tasks. Spearman's Rank method was also used for this correlation analysis.
+
+The results obtained by the execution of this R script are:
+
+* PDF-file with the summary of Sperman's Rank correlation tests
+
+  _File_: [correlation-signedup-analysis.pdf](report/latex/correlation-signedup-analysis.pdf)
+  
+* Excel-file with detailed information of the Spearman's Rank correlation
+
+  _File_: [CorrMatrixAnalysis.xlsx](report/correlation/signedup-participants/CorrMatrixAnalysis.xlsx)
+
+* Excel-file with detailed information of the Spearman's Rank weak correlation
+
+  _File_: [SimpleCorrPairAnalysis-weak.xlsx](report/correlation/signedup-participants/SimpleCorrPairAnalysis-weak.xlsx)
+
+* Excel-file with detailed information of the Spearman's Rank moderate correlation
+
+  _File_: [SimpleCorrPairAnalysis-moderate.xlsx](report/correlation/signedup-participants/SimpleCorrPairAnalysis-moderate.xlsx)
+
+* Excel-file with detailed information of the the Spearman's Rank strong correlation
+
+  _File_: [SimpleCorrPairAnalysis-strong.xlsx](report/correlation/signedup-participants/SimpleCorrPairAnalysis-strong.xlsx)
+
+
+### R script to find significant correlations between the estimates of motivation and the gain of skill/knownedge for students with effective participation ([03-scr-correlation-effective-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study01/03-itr-correlation-effective-analysis.R))
+
+R script to statistically find significant correlations between students' motivation and their gains of skill/knowledge during the empirical study.
+The students' motivation for this correlation analysis was carried out employing the IRT-based estimates of motivation calculated through the RSM-based intruments, and for students with effective participantion in the CL sessions.
+The students' gains of skill/knowledge were estimated by GPCM-based instruments on the AMC questionnaires and programming problem tasks. Spearman's Rank method was also used for this correlation analysis.
+
+`A student with effective participation is a student that, at least one time, interacted with other member of the CL group by following the necessary interactions indicated in the CSCL script`
+
+The results obtained by the execution of this R script are:
+
+* PDF-file with the summary of Sperman's Rank correlation tests
+
+  _File_: [correlation-effective-analysis.pdf](report/latex/correlation-effective-analysis.pdf)
+  
+* Excel-file with detailed information of the Spearman's Rank correlation
+
+  _File_: [CorrMatrixAnalysis.xlsx](report/correlation/effective-participants/CorrMatrixAnalysis.xlsx)
+
+* Excel-file with detailed information of the Spearman's Rank weak correlation
+
+  _File_: [SimpleCorrPairAnalysis-weak.xlsx](report/correlation/effective-participants/SimpleCorrPairAnalysis-weak.xlsx)
+
+* Excel-file with detailed information of the Spearman's Rank moderate correlation
+
+  _File_: [SimpleCorrPairAnalysis-moderate.xlsx](report/correlation/effective-participants/SimpleCorrPairAnalysis-moderate.xlsx)
+
+* Excel-file with detailed information of the the Spearman's Rank strong correlation
+
+  _File_: [SimpleCorrPairAnalysis-strong.xlsx](report/correlation/signedup-participants/SimpleCorrPairAnalysis-strong.xlsx)
 
