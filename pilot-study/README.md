@@ -1,10 +1,10 @@
 # Pilot Empirical Study
 
-Comparing ontology-based gamified CL sessions (ont-gamified) against non-gamified CL sessions (non-gamified CL sessions).
+Comparing *ontology-based gamified CL sessions* (**ont-gamified**) against *non-gamified CL sessions* (**non-gamified**)
 
-* CSCL Script: CSCL script inspired by Cognitive Apprentice
-* Content-domain: Conditional Structures - Course of Introduction to Computer Science
-* Participants: 39 undergraduate Brazilian Computer Science students
+* **CSCL Script**: CSCL script inspired by Cognitive Apprentice
+* **Content-domain**: Loop Structures - Course of Introduction to Computer Science
+* **Participants**: 39 undergraduate Brazilian Computer Science Students
 
 All materials used in the empirical study are available at ([materials](materials/))
 
