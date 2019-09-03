@@ -40,9 +40,30 @@ The results obtained by the execution of this R script are:
 This validation of the IMI questionnarie was carried out with all the data gathered throughout all empirical studies, and this procedure is detailed in [../report/validation-IMI/](../report/validation-IMI/).
 
 
+### R script to validate the IMMS questionnaire ([00-reliability-analysis-IMMS.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/00-reliability-analysis-IMMS.R))
+
+R script to validate data gathered in the empirical study through the IMMS questionnaire.
+
+The results obtained by the execution of this R script are:
+
+* PDF-file with the summary of fatorial analysis and reliability test
+
+  _File_: [IMMS-reliability-analysis.pdf](report/latex/IMMS-reliability-analysis.pdf)
+
+* Excel-file with detailed information of measure sampling adequacy, factorial analysis, and reliability test
+
+  _File_: [IMMS.xlsx](report/reliability-analysis/IMMS.xlsx)
+
+* CSV-file with the responses on the IMMS questionnaire with validated items
+
+  _File_: [IMMS.csv](data/IMMS.csv) ([more info ...](data/))
+
+This validation of the IMMS questionnarie was carried out with all the data gathered throughout all empirical studies, and this procedure is detailed in [../report/validation-IMMS/](../report/validation-IMMS/).
+
+
 ### R script to find significant differences on the scores of motivation for all students ([01-scr-motivation-signedup-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/01-scr-motivation-signedup-analysis.R))
 
-R script to find significant differences on the motivation scores obtained through the IMI questionnaire, and for all the students signed-up as participants in the CL sessions.
+R script to find significant differences on the motivation scores obtained through the IMI and IMMS questionnaire, and for all the students signed-up as participants in the CL sessions.
 These differences were firstly finding by using the nonparametric statistical tests as the Scheirer-Ray-Hare test and the pair-wilcoxon test.
 After this, by using the parametric tests of ANOVA and Tukey post-hoc, we confirmed the statistical significant differences found on the students' motivation.
 
@@ -135,6 +156,75 @@ The results obtained by the execution of this R script are:
 * Excel-file with the detailed information of parametric analysis on the *Intrinsic Motivation*
 
   _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of nonparametric analysis on the *Attention*
+
+  _File_: [nonparametric-attention-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-attention-scr-analysis.pdf) 
+
+* Excel-file with the detailed information of nonparametric analysis on the *Attention*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/attention/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Relevance*
+
+  _File_: [nonparametric-relevance-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-relevance-scr-analysis.pdf)  
+
+* Excel-file with the detailed information of nonparametric analysis on the *Relevance*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/relevance/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Satisfaction*
+
+  _File_: [nonparametric-satisfaction-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-satisfaction-scr-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Satisfaction*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/satisfaction/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of nonparametric analysis on the *Level of Motivation*
+
+  _File_: [nonparametric-level-of-motivation-scr-analysis.pdf](report/latex/motivation-signedup/nonparametric-level-of-motivation-scr-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Level of Motivation*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/level-of-motivation/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of winsorization applied to perform the parametric analysis
+
+  _File_: [wisorized-scr-level-of-motivation.pdf](report/latex/motivation-signedup/wisorized-scr-level-of-motivation.pdf)
+
+* PDF-file with the summary of parametric analysis on the *Attention*
+
+  _File_: [parametric-attention-scr-analysis.pdf](report/latex/motivation-signedup/parametric-attention-scr-analysis.pdf) 
+
+* Excel-file with the detailed information of parametric analysis on the *Attention*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/attention/by-Type/ParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of parametric analysis on the *Relevance*
+
+  _File_: [parametric-relevance-scr-analysis.pdf](report/latex/motivation-signedup/parametric-relevance-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Relevance*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/relevance/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Satisfaction*
+
+  _File_: [parametric-satisfaction-scr-analysis.pdf](report/latex/motivation-signedup/parametric-satisfaction-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Satisfaction*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/satisfaction/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Level of Motivation*
+
+  _File_: [parametric-level-of-motivation-scr-analysis.pdf](report/latex/motivation-signedup/parametric-level-of-motivation-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Level of Motivation*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-signedup-participants/level-of-motivation/by-Type/ParametricAnalysis.xlsx)
+
 
 
 ### R script to find significant differences on the scores of motivation for students with effective participation ([01-scr-motivation-effective-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/01-scr-motivation-effective-analysis.R))
@@ -235,6 +325,75 @@ The results obtained by the execution of this R script are:
 
   _File_: [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx)
 
+* PDF-file with the summary of nonparametric analysis on the *Attention*
+
+  _File_: [nonparametric-attention-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-attention-scr-analysis.pdf) 
+
+* Excel-file with the detailed information of nonparametric analysis on the *Attention*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/attention/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Relevance*
+
+  _File_: [nonparametric-relevance-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-relevance-scr-analysis.pdf)  
+
+* Excel-file with the detailed information of nonparametric analysis on the *Relevance*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/relevance/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Satisfaction*
+
+  _File_: [nonparametric-satisfaction-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-satisfaction-scr-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Satisfaction*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/satisfaction/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of nonparametric analysis on the *Level of Motivation*
+
+  _File_: [nonparametric-level-of-motivation-scr-analysis.pdf](report/latex/motivation-effective/nonparametric-level-of-motivation-scr-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Level of Motivation*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/scr-effective-participants/level-of-motivation/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of winsorization applied to perform the parametric analysis
+
+  _File_: [wisorized-scr-level-of-motivation.pdf](report/latex/motivation-effective/wisorized-scr-level-of-motivation.pdf)
+
+* PDF-file with the summary of parametric analysis on the *Attention*
+
+  _File_: [parametric-attention-scr-analysis.pdf](report/latex/motivation-effective/parametric-attention-scr-analysis.pdf) 
+
+* Excel-file with the detailed information of parametric analysis on the *Attention*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/attention/by-Type/ParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of parametric analysis on the *Relevance*
+
+  _File_: [parametric-relevance-scr-analysis.pdf](report/latex/motivation-effective/parametric-relevance-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Relevance*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/relevance/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Satisfaction*
+
+  _File_: [parametric-satisfaction-scr-analysis.pdf](report/latex/motivation-effective/parametric-satisfaction-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Satisfaction*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/satisfaction/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Level of Motivation*
+
+  _File_: [parametric-level-of-motivation-scr-analysis.pdf](report/latex/motivation-effective/parametric-level-of-motivation-scr-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Level of Motivation*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/scr-effective-participants/level-of-motivation/by-Type/ParametricAnalysis.xlsx)
+
+
 
 ### R script to calculate the IRT-based estimates of students' motivation ([00-rsm-motivation-measurement-building.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/00-rsm-motivation-measurement-building.R))
 
@@ -266,6 +425,22 @@ The results obtained by the execution of this R script are:
   
   _File_: [MeasurementModel.xlsx](report/irt-motivation/intrinsic-motivation/MeasurementModel.xlsx)
 
+* Excel-file with the report of the IRT-based instrument to calculate the estimates of *Attention*.
+  
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/attention/MeasurementModel.xlsx)
+
+* Excel-file with the report of the IRT-based instrument to calculate the estimates of *Relevance*.
+  
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/relevance/MeasurementModel.xlsx)
+
+* Excel-file with the report of the IRT-based instrument to calculate the estimates of *Satisfaction*.
+  
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/satisfaction/MeasurementModel.xlsx)
+
+* Excel-file with the report of the IRT-based instrument to calculate the estimates of the *Level of Motivation*.
+  
+  _File_: [MeasurementModel.xlsx](report/irt-motivation/level-of-motivation/MeasurementModel.xlsx)
+
 * CSV-file with the IRT-based estimates of *Interest/Enjoyment*:
 
   _File_: [InterestEnjoyment.csv](data/InterestEnjoyment.csv) ([more info ...](data/))
@@ -285,6 +460,22 @@ The results obtained by the execution of this R script are:
 * CSV-file with the IRT-based estimates of *Intrinsic Motivation*:
 
   _File_: [IntrinsicMotivation.csv](data/IntrinsicMotivation.csv) ([more info ...](data/))
+
+* CSV-file with the IRT-based estimates of *Attention*:
+
+  _File_: [Attention.csv](data/Attention.csv) ([more info ...](data/))
+
+* CSV-file with the IRT-based estimates of *Relevance*:
+
+  _File_: [Relevance.csv](data/Relevance.csv) ([more info ...](data/))
+
+* CSV-file with the IRT-based estimates of *Satisfaction*:
+
+  _File_: [Satisfaction.csv](data/Satisfaction.csv) ([more info ...](data/))
+
+* CSV-file with the IRT-based estimates of *Level of Motivation*:
+
+  _File_: [LevelofMotivation.csv](data/LevelofMotivation.csv) ([more info ...](data/))
 
 
 ### R script to find significant differences on the IRT-based estimates of motivation for all students ([01-rsm-motivation-signedup-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/01-rsm-motivation-signedup-analysis.R))
@@ -382,6 +573,78 @@ The results obtained by the execution of this R script are:
 * Excel-file with the detailed information of parametric analysis on the *Intrinsic Motivation*
 
   _File_: [ParametricAnalysis.xlsx](report/motivation/signedup-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of nonparametric and parametric tests
+
+  _File_: [summary-analysis.pdf](report/latex/motivation-signedup/summary-analysis.pdf)
+
+* PDF-file with the summary of nonparametric analysis on the *Attention*
+
+  _File_: [nonparametric-attention-analysis.pdf](report/latex/motivation-signedup/nonparametric-attention-analysis.pdf) 
+
+* Excel-file with the detailed information of nonparametric analysis on the *Attention*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/signedup-participants/attention/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Relevance*
+
+  _File_: [nonparametric-relevance-analysis.pdf](report/latex/motivation-signedup/nonparametric-relevance-analysis.pdf)  
+
+* Excel-file with the detailed information of nonparametric analysis on the *Relevance*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/signedup-participants/relevance/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Satisfaction*
+
+  _File_: [nonparametric-satisfaction-analysis.pdf](report/latex/motivation-signedup/nonparametric-satisfaction-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Satisfaction*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/signedup-participants/satisfaction/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of nonparametric analysis on the *Level of Motivation*
+
+  _File_: [nonparametric-level-of-motivation-analysis.pdf](report/latex/motivation-signedup/nonparametric-level-of-motivation-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Level of Motivation*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/signedup-participants/level-of-motivation/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of winsorization applied to perform the parametric analysis
+
+  _File_: [wisorized-level-motivation.pdf](report/latex/motivation-signedup/wisorized-level-motivation.pdf)
+
+* PDF-file with the summary of parametric analysis on the *Attention*
+
+  _File_: [parametric-attention-analysis.pdf](report/latex/motivation-signedup/parametric-attention-analysis.pdf) 
+
+* Excel-file with the detailed information of parametric analysis on the *Attention*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/signedup-participants/attention/by-Type/ParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of parametric analysis on the *Relevance*
+
+  _File_: [parametric-relevance-analysis.pdf](report/latex/motivation-signedup/parametric-relevance-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Relevance*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/signedup-participants/relevance/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Satisfaction*
+
+  _File_: [parametric-satisfaction-analysis.pdf](report/latex/motivation-signedup/parametric-satisfaction-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Satisfaction*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/signedup-participants/satisfaction/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Level of Motivation*
+
+  _File_: [parametric-level-of-motivation-analysis.pdf](report/latex/motivation-signedup/parametric-level-of-motivation-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Level of Motivation*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/signedup-participants/level-of-motivation/by-Type/ParametricAnalysis.xlsx)
 
 
 ### R script to find significant differences on the IRT-based estimates of motivation for students with effective participation ([01-rsm-motivation-effective-analysis.R](https://github.com/geiser/phd-thesis-evaluation/blob/master/study03/01-rsm-motivation-effective-analysis.R))
@@ -482,6 +745,73 @@ The results obtained by the execution of this R script are:
 
   _File_: [ParametricAnalysis.xlsx](report/motivation/effective-participants/intrinsic-motivation/by-Type/ParametricAnalysis.xlsx)
 
+* PDF-file with the summary of nonparametric analysis on the *Attention*
+
+  _File_: [nonparametric-attention-analysis.pdf](report/latex/motivation-effective/nonparametric-attention-analysis.pdf) 
+
+* Excel-file with the detailed information of nonparametric analysis on the *Attention*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/effective-participants/attention/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Relevance*
+
+  _File_: [nonparametric-relevance-analysis.pdf](report/latex/motivation-effective/nonparametric-relevance-analysis.pdf)  
+
+* Excel-file with the detailed information of nonparametric analysis on the *Relevance*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/effective-participants/relevance/by-Type/NonParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of nonparametric analysis on the *Satisfaction*
+
+  _File_: [nonparametric-satisfaction-analysis.pdf](report/latex/motivation-effective/nonparametric-satisfaction-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Satisfaction*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/effective-participants/satisfaction/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of nonparametric analysis on the *Level of Motivation*
+
+  _File_: [nonparametric-level-of-motivation-analysis.pdf](report/latex/motivation-effective/nonparametric-level-of-motivation-analysis.pdf)
+
+* Excel-file with the detailed information of nonparametric analysis on the *Level of Motivation*
+
+  _File_: [NonParametricAnalysis.xlsx](report/motivation/effective-participants/level-of-motivation/by-Type/NonParametricAnalysis.xlsx)
+
+* PDF-file with the summary of winsorization applied to perform the parametric analysis
+
+  _File_: [wisorized-level-motivation.pdf](report/latex/motivation-effective/wisorized-level-motivation.pdf)
+
+* PDF-file with the summary of parametric analysis on the *Attention*
+
+  _File_: [parametric-attention-analysis.pdf](report/latex/motivation-effective/parametric-attention-analysis.pdf) 
+
+* Excel-file with the detailed information of parametric analysis on the *Attention*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/effective-participants/attention/by-Type/ParametricAnalysis.xlsx)
+  
+* PDF-file with the summary of parametric analysis on the *Relevance*
+
+  _File_: [parametric-relevance-analysis.pdf](report/latex/motivation-effective/parametric-relevance-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Relevance*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/effective-participants/relevance/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Satisfaction*
+
+  _File_: [parametric-satisfaction-analysis.pdf](report/latex/motivation-effective/parametric-satisfaction-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Satisfaction*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/effective-participants/satisfaction/by-Type/ParametricAnalysis.xlsx)
+
+* PDF-file with the summary of parametric analysis on the *Level of Motivation*
+
+  _File_: [parametric-level-of-motivation-analysis.pdf](report/latex/motivation-effective/parametric-level-of-motivation-analysis.pdf)
+
+* Excel-file with the detailed information of parametric analysis on the *Level of Motivation*
+
+  _File_: [ParametricAnalysis.xlsx](report/motivation/effective-participants/level-of-motivation/by-Type/ParametricAnalysis.xlsx)
 
 
 ## Scripts to answer the RQ2
