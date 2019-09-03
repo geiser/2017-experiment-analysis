@@ -752,5 +752,5 @@ The results obtained by the execution of this R script are:
 
 * Excel-file with detailed information of the the Spearman's Rank strong correlation
 
-  _File_: [SimpleCorrPairAnalysis-strong.xlsx](report/correlation/signedup-participants/SimpleCorrPairAnalysis-strong.xlsx)
+  _File_: [SimpleCorrPairAnalysis-strong.xlsx](report/correlation/effective-participants/SimpleCorrPairAnalysis-strong.xlsx)
 
