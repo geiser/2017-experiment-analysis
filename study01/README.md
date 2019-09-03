@@ -8,11 +8,11 @@ Comparing *ontology-based gamified CL sessions* (**ont-gamified**) against *non-
 
 All materials used in the empirical study are available at ([materials](materials/))
 
-### Research Questions (RQs)
+### Research Questions
 
-1. Do the ont-gamified CL sessions have positive impacts on the students' motivation?
-2. Do the ont-gamified CL sessions affect on the students' learning outcomes?
-3. Are the participants' motivation and learning outcomes linked in those sessions?
+* **RQ1**: Do the ont-gamified CL sessions have positive impacts on the students' motivation?
+* **RQ2**: Do the ont-gamified CL sessions affect on the students' learning outcomes?
+* **RQ3**: Are the participants' motivation and learning outcomes linked in those sessions?
 
 ## Scripts to answer the RQ1
 
