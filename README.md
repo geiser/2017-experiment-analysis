@@ -1,8 +1,6 @@
 # Evaluation of the Ontological Engineering Approach to Gamify Collaborative Learning Scenarios
 
 
-
-
 ## Empirical Studies
 
 * [pilot empirical study](pilot-study/)
@@ -181,4 +179,53 @@ The results obtained by the execution of this R script are:
   _File_: [RelAnalysis.xlsx](report/validation-IMMS/RelAnalysis.xlsx) ([more info ...](report/validation-IMMS))
 * Data with the responses of the validated IMMS questionnaire.<br/>
   _File_: [IMMS.csv](data/IMMS.csv) ([more info ...](data))
+
+
+## Install & Run the R Scripts
+
+Requirements:
+- Docker (>= 18.06.0)
+- Docker Compose (>= 1.22.0)
+
+Procedure to install requirements in Ubuntu 18.04:
+```
+sudo apt-get purge docker docker-engine docker.io docker-ce
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs)  stable" 
+sudo apt-get update
+sudo apt-get install docker-ce
+```
+
+Procedure to update docker compose in Ubuntu 18.04
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+```
+The output will look something like this: ```docker-compose version 1.23.1, build b02f1306```
+
+
+Setup the docker as service and run it at startup
+```
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+1. Download source code:
+```
+git clone https://github.com/geiser/phd-thesis-evaluation.git
+```
+
+3. Configure and build imagens to run the project as container
+```
+cd phd-thesis-evaluation
+./configure
+make
+```
+
+  * Use `make shell` to run the `/bins/bash` on the container `geiser/r-studio:latest` 
+  * Use `make run` to run the r-studio and execute the scripts through the http://127.0.0.1:8787/
+  * Use `make help` to view more options
 
